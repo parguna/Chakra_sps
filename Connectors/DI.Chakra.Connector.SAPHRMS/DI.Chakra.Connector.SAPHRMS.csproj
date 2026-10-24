@@ -87,7 +87,7 @@
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="rscp4n">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\3rdParty\SAP3.1\rscp4n.dll</HintPath>
+      <HintPath>..\..\..\3rdParty\rscp4n.dll</HintPath>
     </Reference>
     <Reference Include="SAP.Connector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=50436dca5c7f7d23">
       <SpecificVersion>False</SpecificVersion>
@@ -103,11 +103,11 @@
     </Reference>
     <Reference Include="sapnco">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\3rdParty\SAP3.1\sapnco.dll</HintPath>
+      <HintPath>..\..\..\..\SP\Application\Application\3rdParty\SAP\sapnco.dll</HintPath>
     </Reference>
     <Reference Include="sapnco_utils">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\3rdParty\SAP3.1\sapnco_utils.dll</HintPath>
+      <HintPath>..\..\..\..\SP\Application\Application\3rdParty\SAP\sapnco_utils.dll</HintPath>
     </Reference>
     <Reference Include="SAPUserDetailsComponent, Version=1.0.4441.29424, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -142,6 +142,10 @@
     <Compile Include="SAPHRMSConnector.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\DI.Chakra.DBConfigHelper\DI.Chakra.DBConfigHelper.csproj">
+      <Project>{9A356356-E584-4682-9BDD-F0AE42F59F62}</Project>
+      <Name>DI.Chakra.DBConfigHelper</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\DI.Chakra.DomainModel\DI.Chakra.DomainModel.csproj">
       <Project>{dba76d9a-9381-4313-8cf0-b1098be94d41}</Project>
       <Name>DI.Chakra.DomainModel</Name>
