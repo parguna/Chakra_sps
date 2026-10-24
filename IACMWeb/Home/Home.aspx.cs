@@ -40,7 +40,7 @@ namespace DI.Chakra.Web
         #region Page Load
         protected void Page_Init(object sender, EventArgs e)
         {
-            //LoadDashBoards();
+            LoadDashBoards();
         }
         protected void Page_Load(object sender, EventArgs e)
         {
