@@ -1,0 +1,1 @@
+Update DI_M_IMConfigurationMaster Set ConfigValue='0' where ConfigKey='IsDeploymentInProgress'

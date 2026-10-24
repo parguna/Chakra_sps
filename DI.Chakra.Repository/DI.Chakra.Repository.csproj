@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5ECFF37E-0617-4642-9D08-7CB0C8423D29}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DI.Chakra.Repository</RootNamespace>
+    <AssemblyName>DI.Chakra.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\Solution\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DI.Chakra.DomainModel">
+      <HintPath>..\IACMWeb\Bin\DI.Chakra.DomainModel.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Solution\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.BulkInsert, Version=6.0.2.8, Culture=neutral, PublicKeyToken=630a17433349cb76, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\EntityFramework.BulkInsert-ef6.6.0.2.8\lib\Net45\EntityFramework.BulkInsert.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.MappingAPI, Version=6.1.0.9, Culture=neutral, PublicKeyToken=7ee2e825d201459e, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\EntityFramework.MappingAPI.6.1.0.9\lib\net45\EntityFramework.MappingAPI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Solution\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TrackerEnabledDbContext, Version=3.6.1.0, Culture=neutral, PublicKeyToken=4f92af0b908c4a0a, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\TrackerEnabledDbContext.3.6.1\lib\net45\TrackerEnabledDbContext.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TrackerEnabledDbContext.Common, Version=3.6.1.0, Culture=neutral, PublicKeyToken=4f92af0b908c4a0a, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\TrackerEnabledDbContext.Common.3.6.1\lib\net45\TrackerEnabledDbContext.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="AdHocRequest\AdHocAccessRequestRepository.cs" />
+    <Compile Include="AdHocRequest\PresentationSODEntitlementConflictRepository.cs" />
+    <Compile Include="Attestation\AttestationCampaignRepository.cs" />
+    <Compile Include="Bulk Request\BulkRequestRepository.cs" />
+    <Compile Include="Core\ACL\PresentationRoleAccessRepository.cs" />
+    <Compile Include="Attestation\AttestationHierarchyRepository.cs" />
+    <Compile Include="Attestation\AttestationSnapshotActionHistoryRepository.cs" />
+    <Compile Include="Attestation\AttestationSnapshotActionRepository.cs" />
+    <Compile Include="Attestation\AttestationSnapshotRepository.cs" />
+    <Compile Include="Attestation\EndpointHierarchyRepository.cs" />
+    <Compile Include="Core\ACL\AccessRightsRepository.cs" />
+    <Compile Include="Core\ACL\RoleRepository.cs" />
+    <Compile Include="Core\Attestation\AttestationProcessRepository.cs" />
+    <Compile Include="Core\Attestation\PresentationAttestationEndPointRepository.cs" />
+    <Compile Include="Core\Attestation\PresentationAttestationRepository.cs" />
+    <Compile Include="Core\Attestation\PresentationAttestationScopeRepository.cs" />
+    <Compile Include="Core\Attestation\PresentationAttetstationCampaignRepository.cs" />
+    <Compile Include="Core\Attestation\PresentationReviewerRepository.cs" />
+    <Compile Include="Core\Common\AccessRequestSourcePieSeriesRepository.cs" />
+    <Compile Include="Core\Common\Chart\AccessRequestProgressStatusByMonthRepository.cs" />
+    <Compile Include="Core\Common\Chart\AccessRequestSourceByMonthRepository.cs" />
+    <Compile Include="Core\Common\Chart\AccessRequestSourceChartDataRepository.cs" />
+    <Compile Include="Core\Common\Chart\AdhocRequestAccountTyebyMonthRepository.cs" />
+    <Compile Include="Core\Common\Chart\AttentionRepository.cs" />
+    <Compile Include="Core\Common\Chart\AttestationCompletedPieSeriesRepository.cs" />
+    <Compile Include="Core\Common\GroupRepository.cs" />
+    <Compile Include="Core\Complaince\ComplianceProcessRepository.cs" />
+    <Compile Include="Core\Discovery\DiscoveryProcessRepository.cs" />
+    <Compile Include="Core\EndPoint\PresentationEndpointProvisioningFieldRepository.cs" />
+    <Compile Include="Core\EndPoint\PresentationSystemDecommissionRepository.cs" />
+    <Compile Include="Core\MetaData\DesignationRepository.cs" />
+    <Compile Include="Core\MetaData\Presentation\MetaDataRepository.cs" />
+    <Compile Include="Core\Notification\PresentationNotificationRepository.cs" />
+    <Compile Include="Core\OrgChart\PresentationOrgChartRepository.cs" />
+    <Compile Include="Core\Reporting\ReportingProcessRepository.cs" />
+    <Compile Include="Core\Scheduler\ProcessRepository.cs" />
+    <Compile Include="Core\Tasks\InterimStoreRepository.cs" />
+    <Compile Include="Core\User\UserBusinessRoleMappingRepository.cs" />
+    <Compile Include="Core\User\PresentationUserExclusionRepository.cs" />
+    <Compile Include="Core\User\PresentationUserRepository.cs" />
+    <Compile Include="Core\User\PasswordActionRepository.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\PresentationADSActiveAccountsWithInActiveUserRepository.cs" />
+    <Compile Include="Endpoint\Configuration\EndpointConfigurationRepository.cs" />
+    <Compile Include="Endpoint\NOVA\NOVAExceptionalRoleMatrixRepository.cs" />
+    <Compile Include="Endpoint\NOVA\NOVAManagementRoleMatrixRepository.cs" />
+    <Compile Include="Endpoint\NOVA\NOVASoDExceptionsMatrixRepository.cs" />
+    <Compile Include="Endpoint\NOVA\NOVAUserRoleMatrixRepository.cs" />
+    <Compile Include="Endpoint\NOVA\SAPEamNovaUserInfoRepository.cs" />
+    <Compile Include="Endpoint\NPAC\NPACSectionInfoRepository.cs" />
+    <Compile Include="Endpoint\NPAC\NPACUserInfoRepository.cs" />
+    <Compile Include="Endpoint\GEMS\GEMSRoleMatrixRepository.cs" />
+    <Compile Include="Endpoint\GEMS\GEMSRoleInfoRepository.cs" />
+    <Compile Include="Endpoint\GEMS\GEMSUserInfoRepository.cs" />
+    <Compile Include="Endpoint\IACM\IACMGroupInfoRepository.cs" />
+    <Compile Include="Endpoint\IACM\IACMUserInfoRepository.cs" />
+    <Compile Include="Endpoint\InhouseSystems\InhouseUserInfoRepository.cs" />
+    <Compile Include="Endpoint\O365\O365GroupInfoRepository.cs" />
+    <Compile Include="Endpoint\O365\O365UserInfoRepository.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANACompositeRoleInfoRepository.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANAGroupInfoRepository.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANAObjectInfoRepository.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANAProfileInfoRepository.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANARoleInfoRepository.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANARoleToAuthMapRepository.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANARoleToTCodesRepository.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANATCodeInfoRepository.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANAUserInfoRepository.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANAUserPositionInfoRepository.cs" />
+    <Compile Include="Endpoint\SAP\SAPGRCRoleRepository.cs" />
+    <Compile Include="Endpoint\SAP\SAPRoleToTCodes.cs" />
+    <Compile Include="Endpoint\SAP\SAPUserPositionInfoRepository.cs" />
+    <Compile Include="Endpoint\SkypeForBusiness\SkypeForBusinessUnAssignedNumberRepository.cs" />
+    <Compile Include="Endpoint\SkypeForBusiness\SkypeForBusinessUserRepository.cs" />
+    <Compile Include="Endpoint\SkypeForBusiness\SkypeForBusinessResponseGroupRepository.cs" />
+    <Compile Include="Endpoint\SMS\SMSUserInfoRepository.cs" />
+    <Compile Include="Endpoint\SRM\SAPSRMMainRoleMatrixRepository.cs" />
+    <Compile Include="Endpoint\SSIDS\SSIDSUserInfoRepository.cs" />
+    <Compile Include="Endpoint\VPN\VPNUserInfoRepository.cs" />
+    <Compile Include="Log\DiscoveryLogRepository.cs" />
+    <Compile Include="Log\UILogRepository.cs" />
+    <Compile Include="Matrix\AD\ADSXLProvisioningMatrixRepository.cs" />
+    <Compile Include="Matrix\SAPFLINS\ProvisioningConfigMatrixEEGrpRepository.cs" />
+    <Compile Include="Matrix\SAPFLINS\ProvisioningConfigMatrixSAPPositionRepository.cs" />
+    <Compile Include="Matrix\SAPFLINS\ProvisioningConfigMatrixSAPOrgRepository.cs" />
+    <Compile Include="Matrix\SAPFLINS\SAPHRFLINSRoleMatrixRepository.cs" />
+    <Compile Include="Endpoint\SAP\SAPParameterHistoryInfoRepository.cs" />
+    <Compile Include="Helper\CheckNull.cs" />
+    <Compile Include="Base\IQueryableExtensions.cs" />
+    <Compile Include="Core\ACL\PagePermissionRepository.cs" />
+    <Compile Include="Core\ACL\PageUrlRepository.cs" />
+    <Compile Include="Core\ACL\TabMenuRepository.cs" />
+    <Compile Include="Core\ACL\WebPageRepository.cs" />
+    <Compile Include="Core\Attestation\AttestationRepository.cs" />
+    <Compile Include="Core\Common\TablePropertiesRepository.cs" />
+    <Compile Include="Core\Configuration\PasswordPolicyRepository.cs" />
+    <Compile Include="Core\Email\MailRepository.cs" />
+    <Compile Include="Core\EndPoint\EndPointRespository.cs" />
+    <Compile Include="Core\HouseKeeping\PurgeConfigRepository.cs" />
+    <Compile Include="Core\Scheduler\SchedulerRepository.cs" />
+    <Compile Include="Core\SqlConnection\ConnectionType.cs" />
+    <Compile Include="Core\SqlConnection\IACMDbOperator.cs" />
+    <Compile Include="Core\SqlConnection\QueryExecutor.cs" />
+    <Compile Include="Core\SqlConnection\SQLBulkUploader.cs" />
+    <Compile Include="Core\Tasks\AttestationTaskSummaryRepository.cs" />
+    <Compile Include="Core\Tasks\TaskDelegationRepository.cs" />
+    <Compile Include="Core\Tasks\TaskRepository.cs" />
+    <Compile Include="Core\User\UserRepository.cs" />
+    <Compile Include="Core\Workflow\WorkflowConfigurationRepository.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\ADSComputerInfoRepository.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\ADSGroupInfoRepository.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\ADSOuInfoRepository.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\ADSPrinterInfoRepository.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\ADSUserInfoRepository.cs" />
+    <Compile Include="Endpoint\InhouseSystems\InhousePermissionsRepository.cs" />
+    <Compile Include="Endpoint\SAPEP\SAPEPGroupInfoRepository.cs" />
+    <Compile Include="Endpoint\SAPEP\SAPEPRoleInfoRepository.cs" />
+    <Compile Include="Endpoint\SAPEP\SAPEPUserInfoRepository.cs" />
+    <Compile Include="Endpoint\SAP\SAPCompositeRoleInfoRepository.cs" />
+    <Compile Include="Endpoint\SAP\SAPEPRoleInfoTempRepository.cs" />
+    <Compile Include="Endpoint\SAP\SAPGroupInfoRepository.cs" />
+    <Compile Include="Endpoint\SAP\SAPObjectInfoRepository.cs" />
+    <Compile Include="Endpoint\SAP\SAPProfileInfoRepository.cs" />
+    <Compile Include="Endpoint\SAP\SAPRoleInfoRepository.cs" />
+    <Compile Include="Endpoint\SAP\SAPRoleToAuthMapRepository.cs" />
+    <Compile Include="Endpoint\SAP\SAPTCodeInfoRepository.cs" />
+    <Compile Include="Endpoint\SAP\SAPUserInfoRepository.cs" />
+    <Compile Include="Matrix\SMS\SMSXLProvisioningMatrixRepository.cs" />
+    <Compile Include="Matrix\VPN\VPNApplicationEnvironmentRepository.cs" />
+    <Compile Include="OrgChartRevamp\NCostCenterRepository.cs" />
+    <Compile Include="OrgChartRevamp\NRulesetRepository.cs" />
+    <Compile Include="OrgChartRevamp\NProvisioningFieldRepository.cs" />
+    <Compile Include="OrgChartRevamp\NOrganisationHeadRepository.cs" />
+    <Compile Include="OrgChartRevamp\NDesignationRepository.cs" />
+    <Compile Include="OrgChartRevamp\NOrganisationRepository.cs" />
+    <Compile Include="OrgChartRevamp\Presentation\PresentationNRulesetForApplicationRepository.cs" />
+    <Compile Include="Preferences\DashboardRepository.cs" />
+    <Compile Include="Preferences\DashboardRightsRepository.cs" />
+    <Compile Include="Preferences\PresentationDashBoardPreferenceRepository.cs" />
+    <Compile Include="Preferences\PresentationDefaultRoleQuickLinkRepository.cs" />
+    <Compile Include="Preferences\PresentationQuickLinkAccessRightsRepository.cs" />
+    <Compile Include="Preferences\QuickLinkRepository.cs" />
+    <Compile Include="Preferences\UserPreferenceRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Base\RepositoryBase.cs" />
+    <Compile Include="Base\SqlSafetyGuard.cs" />
+    <Compile Include="Provisioning\AccessRequestRepository.cs" />
+    <Compile Include="Provisioning\AccountReconcilationRepository.cs" />
+    <Compile Include="Provisioning\EmployeeEventTriggerRepository.cs" />
+    <Compile Include="Provisioning\EntitlementReconcilationRepository.cs" />
+    <Compile Include="Provisioning\AccessSnapshotsRepository.cs" />
+    <Compile Include="Provisioning\OUChangeSnapshotsRepository.cs" />
+    <Compile Include="Provisioning\PresentationOrganisationRepository.cs" />
+    <Compile Include="PUB\PUBEmployeesRepository.cs" />
+    <Compile Include="PUB\PUBFileRepository.cs" />
+    <Compile Include="SOD\CompliancePolicyRepository.cs" />
+    <Compile Include="SOD\ConflictRepository.cs" />
+    <Compile Include="SOD\RiskCodeRepository.cs" />
+    <Compile Include="SOD\RiskLevelRepository.cs" />
+    <Compile Include="SOD\RiskScoreRepository.cs" />
+    <Compile Include="SOD\SODConflictFunctionsRepository.cs" />
+    <Compile Include="SOD\SODExceptionRepository.cs" />
+    <Compile Include="SOD\SODFunctionItemRepository.cs" />
+    <Compile Include="SOD\SODFunctionRepository.cs" />
+    <Compile Include="SOD\SODMitigationRepository.cs" />
+    <Compile Include="SOD\SODPolicyConfiguration.cs" />
+    <Compile Include="SOD\SODPolicyExecutionDefinitionRepository.cs" />
+    <Compile Include="SOD\SODPolicyReportRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DI.Chakra.DBClient\DI.Chakra.DBClient.csproj">
+      <Project>{3f44ac92-447c-4016-9025-4bccd91b1267}</Project>
+      <Name>DI.Chakra.DBClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.EntityModel\DI.Chakra.EntityModel.csproj">
+      <Project>{65af207b-2342-4009-b3ea-0c829ff25cdc}</Project>
+      <Name>DI.Chakra.EntityModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Infrastructure\DI.Chakra.Infrastructure.csproj">
+      <Project>{9a13b27d-b9dc-474a-9fe6-1c60fd52e5a7}</Project>
+      <Name>DI.Chakra.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Logger\DI.Chakra.Logger.csproj">
+      <Project>{1e273971-c665-4e37-88ec-9621c81a7009}</Project>
+      <Name>DI.Chakra.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Transaction\DI.Chakra.Transaction.csproj">
+      <Project>{4f42aeb0-8003-4791-afc4-3a70a421fd58}</Project>
+      <Name>DI.Chakra.Transaction</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

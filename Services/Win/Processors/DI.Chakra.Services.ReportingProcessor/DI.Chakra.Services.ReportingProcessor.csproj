@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{27FD535D-7B1A-4F01-A3FE-14F706473F59}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DI.Chakra.Services.ReportingProcessor</RootNamespace>
+    <AssemblyName>DI.Chakra.Services.ReportingProcessor</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPPlus, Version=4.1.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\3rdParty\EPPlusXlsxCreator\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Reporting, Version=11.0.17.222, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\3rdParty\Telerik\Telerik.Reporting.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="BackgroundWorkerHelper.cs" />
+    <Compile Include="ReportingEngine.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportingService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\DI.Chakra.DBConfigHelper\DI.Chakra.DBConfigHelper.csproj">
+      <Project>{9a356356-e584-4682-9bdd-f0ae42f59f62}</Project>
+      <Name>DI.Chakra.DBConfigHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\DI.Chakra.DomainModel\DI.Chakra.DomainModel.csproj">
+      <Project>{dba76d9a-9381-4313-8cf0-b1098be94d41}</Project>
+      <Name>DI.Chakra.DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\DI.Chakra.EntityModel\DI.Chakra.EntityModel.csproj">
+      <Project>{65af207b-2342-4009-b3ea-0c829ff25cdc}</Project>
+      <Name>DI.Chakra.EntityModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\DI.Chakra.Infrastructure\DI.Chakra.Infrastructure.csproj">
+      <Project>{9a13b27d-b9dc-474a-9fe6-1c60fd52e5a7}</Project>
+      <Name>DI.Chakra.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\DI.Chakra.Logger\DI.Chakra.Logger.csproj">
+      <Project>{1e273971-c665-4e37-88ec-9621c81a7009}</Project>
+      <Name>DI.Chakra.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\DI.Chakra.Transaction\DI.Chakra.Transaction.csproj">
+      <Project>{4f42aeb0-8003-4791-afc4-3a70a421fd58}</Project>
+      <Name>DI.Chakra.Transaction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Services.EmailingProcessor\DI.Chakra.Services.EmailingProcessor.csproj">
+      <Project>{2335b14f-bbe7-452e-9f99-4a4af01cdc94}</Project>
+      <Name>DI.Chakra.Services.EmailingProcessor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

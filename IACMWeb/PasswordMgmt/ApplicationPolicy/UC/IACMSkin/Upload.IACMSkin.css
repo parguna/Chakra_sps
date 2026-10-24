@@ -1,0 +1,79 @@
+﻿/*@import url("../assets/styles/Upload.css");*/
+
+.RadUpload_IACMSkin {
+    color: #000;
+}
+.RadUpload_IACMSkin .ruFileWrap {
+    height: 2em!important;
+    line-height: 1.8em!important;
+}
+.RadUpload_IACMSkin .ruFileProgressWrap {
+    height: 4px!important;
+    background-color: #e8e8e8!important;
+}
+.RadUpload_IACMSkin .ruFileProgress {
+    height: 4px!important;
+    background-color: #25a0da!important;
+}
+.RadUpload_IACMSkin .ruFakeInput {
+    padding: 0!important;
+    height: 2em!important;
+    border: 1px solid #dddddd!important;
+    color: #000;
+    line-height: 1.8em;
+    vertical-align: top;
+}
+.RadUpload_IACMSkin .ruStyled .ruFileInput, .RadUpload_IACMSkin .ruFakeInput {
+    box-sizing: inherit;
+}
+.RadUpload_IACMSkin .ruUploadProgress {
+    margin-right: 10px!important;
+}
+.RadUpload_IACMSkin .ruButton:active, .RadUpload_IACMSkin .ruButton:focus {
+    border: none!important;
+}
+.RadUpload_IACMSkin .ruButton {
+    background: #eee;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #2077bd;
+    font-size: 14px;
+    font-weight: 700;
+    height: 2em;
+    line-height: 14px;
+    padding: 0.5em 1em;
+    width: auto;
+}
+.RadUpload_IACMSkin .ruButtonHover {
+    border-color: #207bbd;
+    box-shadow: 0 0 3px 0 #2077bd;
+    color: #207bbd;
+}
+
+.RadUpload_IACMSkin .ruButton.ruRemove {
+    background: url(../Images/ruSprite.png);
+}
+.RadUpload_IACMSkin .ruRemove {
+    background: url(../Images/ruSprite.png);
+    background-position: 0 84px !important;
+    background-repeat: no-repeat;
+    width: auto!important;
+    text-indent: 0.5em!important;
+    border: none;
+}
+/*
+.RadUpload_IACMSkin .ruRemove:hover {
+    background-position: -58px -3308px!important;
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+*/
+.RadUpload_IACMSkin .ruDropZone {
+    background: #eee;
+    border-color: #dddddd;
+    color: #2077bd;
+    font-size: 1em;
+    font-style: italic;
+}

@@ -1,0 +1,16 @@
+Application,BusinessRole,Description,TechnicalRole,Level1Approver,Level1ApproverType,Level2Approver,Level2ApproverType,Level3Approver,Level3ApproverType
+SAP IDES,EAM - Helpdesk,EAM - Helpdesk,SAP_BCS_ACTIV,,0,,0,,0
+SAP IDES,EAM User,EAM User,SAP_BCS_ADMIN,,0,,0,,0
+SAP IDES,EAM - Controller Role,EAM - Controller Role,SAP_BCS_CREAT,,0,,0,,0
+SAP IDES,ARA Process Owner,ARA Process Owner,SAP_BCS_VALID,,0,,0,,0
+SAP IDES,Access Control OPS,Access Control OPS,SAP_BC_AI_ADMIN,,0,,0,,0
+SAP IDES,Access Control Administrator,Access Control Administrator,SAP_BC_AI_LANDSCAPE_DB_RFC,,0,,0,,0
+SAP IDES,Alarm Admin,Alarm Admin,SAP_BC_ALM_ADMIN,,0,,0,,0
+SAP IDES,Alert User,Alert User,SAP_BC_ALM_ALERT_USER,,0,,0,,0
+SAP IDES,Alarm Customer,Alarm Customer,SAP_BC_ALM_CUST,,0,,0,,0
+SAP IDES,IT Security Role,IT Security Role,SAP_BC_AUTH_DATA_ADMIN,,0,,0,,0
+SAP IDES,Security Audit Configuration,Security Audit Configuration,SAP_BC_AUTH_PROFILE_ADMIN,,0,,0,,0
+SAP IDES,Overview of job selection Display,Overview of job selection Display,SAP_BC_BASIS_ADMIN,,0,,0,,0
+SAP IDES,Basis Monitoring,Basis Monitoring,SAP_BC_BASIS_MONITORING,,0,,0,,0
+SAP IDES,IT Security Role with view rights,IT Security Role with view rights,SAP_BC_BATCH_ADMIN,,0,,0,,0
+SAP IDES,MSG Access,MSG Access,SAP_BC_BDC_ADMIN,,0,,0,,0

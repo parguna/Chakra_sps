@@ -1,0 +1,357 @@
+/*@import url("../assets/styles/Window.css");*/
+.RadWindow_IACMSkin {
+    font-family: inherit;
+    font-size: 1em;
+    background-color: #fff;
+    border-radius: 0;
+    color: #666;
+    line-height: 1.2;
+    height: auto;
+    width: auto
+}
+.RadWindow_IACMSkin.rwShadow {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2)
+}
+.RadWindow_IACMSkin.rwShadow .rwTopResize {
+    height: 6px
+}
+.RadWindow_IACMSkin .rwTitleRow .rwCorner,
+.RadWindow_IACMSkin .rwTitleRow .rwTitlebar {
+    background-color: #fff;
+    border-bottom: 1px solid #383F46;
+    padding: 10px 0;
+}
+.RadWindow_IACMSkin.rwNoTitleBar .rwTitleRow .rwCorner,
+.RadWindow_IACMSkin.rwNoTitleBar .rwTitleRow .rwTitlebar {
+    background-color: transparent;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: transparent;
+
+}
+.RadWindow_IACMSkin .rwTitleRow .rwTopLeft {
+    border-radius: 0
+}
+.RadWindow_IACMSkin .rwTitleRow .rwTopRight {
+    border-radius: 0 0;
+}
+.RadWindow_IACMSkin .rwTitlebarControls {
+    height: 26px;
+    *height: 38px
+}
+.RadWindow_IACMSkin .rwCorner, .RadWindow_IACMSkin .rwTitlebar, .RadWindow_IACMSkin .rwStatusbar, .RadWindow_IACMSkin .rwFooterCenter, .RadWindow_IACMSkin .rwTitlebarControls td {
+    vertical-align: bottom;
+}
+.RadWindow_IACMSkin.rwShadow .rwTitlebarControls {
+    height: 22px
+}
+.RadWindow_IACMSkin .rwTitlebarControls em {
+    font-size: 16px;
+    line-height: 1.7em;
+    margin-left: 10px;
+}
+.RadWindow_IACMSkin .rwFooterRow {
+    background: #383f46
+}
+.RadWindow_IACMSkin .rwControlButtons li a {
+    width: 32px;
+    height: 32px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent
+}
+.RadWindow_IACMSkin .rwControlButtons li a:hover {
+    background-color: #ebebeb;
+    border-color: #c2c2c2;
+    border-radius: 3px
+}
+.RadWindow_IACMSkin table.rwShadow em {
+    padding: 0 0 0 1px
+}
+.RadWindow_IACMSkin .rwStatusbar input {
+    background-color: #fff
+}
+.RadWindow_IACMSkin .rwStatusbar div {
+    background-image: url('../Images/radActionsSprite.png');
+    background-position: -18px -2212px;
+    margin: 6px -3px 0 0
+}
+.RadWindow_IACMSkin.rwShadow .rwStatusbar div {
+    margin: 9px -9px 0 0
+}
+.RadWindow_IACMSkin .rwTable .rwTitlebarControls .rwIcon {
+    /*background-image: url('../Images/Window/rwIcon.png');
+    background-position: 0 0;
+    margin:5px 5px 0 0*/
+    display: none;
+}
+.RadWindow_IACMSkin .rwTable.rwShadow .rwTitlebarControls .rwIcon {
+    margin: 5px 5px 0 0
+}
+.RadWindow_IACMSkin .rwTable .rwTitlebarControls em {
+    color: #666;
+    font-weight: 700;
+}
+.RadWindow_IACMSkin .rwDialogText {
+    text-align: left;
+    margin-bottom: 25px;
+}
+.RadWindow_IACMSkin .rwTable .rwDialogInput,
+.RadWindow_IACMSkin .rwTable .rwDialogInput:hover {
+    height: 1.5em;
+    padding: .42857em .85714em;
+    background-color: #fff;
+    color: #555;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ccc
+}
+.RadWindow_IACMSkin .rwTable .rwDialogInput:focus {
+    background-color: #fff;
+    color: #555;
+    border-color: #66afe9;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
+    outline: 0 none
+}
+.RadWindow_IACMSkin .rwTable .rwDialogInput:active {
+    background-color: #fff;
+    color: #555;
+    border-color: #ccc
+}
+.RadWindow_IACMSkin td.rwWindowContent {
+    background-color: #fff;
+    color: #333
+}
+.RadWindow_IACMSkin .rwTable tr td.rwLoading {
+    background-color: #fff
+}
+.RadWindow_IACMSkin td.rwWindowContent.rwLoading {
+    background-image: url('../Images/loading.gif')
+}
+.RadWindow_IACMSkin input.rwLoading {
+    background-image: url('../Images/loading_small.gif')
+}
+.RadWindow .rwDialogPopup .rwPopupButton, .RadWindow .rwDialogPopup .rwPopupButton span {
+    float: right;
+}
+.RadWindow_IACMSkin .rwTable a.rwCancel,
+.RadWindow_IACMSkin .rwTable a.rwCancel span {
+    background: 0;
+    cursor: pointer
+}
+.RadWindow_IACMSkin .rwTable a.rwCancel span span {
+    color: #333;
+    text-decoration: underline
+}
+.RadWindow_IACMSkin .rwControlButtons {
+    margin: -2px 0 0;
+    *margin: 0
+}
+.RadWindow_IACMSkin.rwShadow .rwControlButtons {
+    margin: 0;
+}
+.RadWindow_IACMSkin .rwTable .rwControlButtons li a {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin: 0 0 0 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    background-image: url('../Images/radActionsSprite.png')
+}
+.RadWindow_IACMSkin .rwTable .rwControlButtons li a:hover {
+    background-color: #ebebeb;
+    border-color: #c2c2c2;
+    border-radius: 3px
+}
+.RadWindow_IACMSkin .rwCloseButton,
+.RadWindow_IACMSkin .rwCloseButton:hover {
+    background-position: -13px -1912px
+}
+.RadWindow_IACMSkin .rwPinButton,
+.RadWindow_IACMSkin .rwPinButton:hover {
+    background-position: -13px -1263px
+}
+.RadWindow_IACMSkin .rwPinButton.on,
+.RadWindow_IACMSkin .rwPinButton.on:hover {
+    background-position: -13px -1302px
+}
+.RadWindow_IACMSkin .rwMinimizeButton,
+.RadWindow_IACMSkin .rwMinimizeButton:hover {
+    background-position: -13px -1515px
+}
+.RadWindow_IACMSkin .rwMaximizeButton,
+.RadWindow_IACMSkin .rwMaximizeButton:hover {
+    background-position: -13px -1613px
+}
+.RadWindow_IACMSkin.rwMaximizedWindow .rwMaximizeButton,
+.RadWindow_IACMSkin.rwMinimizedWindow .rwMinimizeButton,
+.RadWindow_IACMSkin.rwMaximizedWindow .rwMaximizeButton:hover,
+.RadWindow_IACMSkin.rwMinimizedWindow .rwMinimizeButton:hover {
+    background-position: -13px -1812px
+}
+.RadWindow_IACMSkin .rwReloadButton,
+.RadWindow_IACMSkin .rwReloadButton:hover {
+    background-position: -13px -1313px
+}
+.RadWindow_IACMSkin .rwStatusbarRow .rwCorner,
+.RadWindow_IACMSkin .rwStatusbarRow .rwStatusbar {
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: #ddd
+}
+.RadWindow_IACMSkin a.rwPopupButton span {
+    height: auto;
+    line-height: 1;
+    color: #207bbd;
+    padding: 0;
+}
+.RadWindow_IACMSkin a.rwPopupButton {
+    height: auto;
+    background: #eeeeee none repeat scroll 0 0;
+    border: 1px solid #ddd;
+    color: #2077bd;
+    font-size: 1em;
+    font-weight: 700;
+    height: auto;
+    line-height: 1em;
+    padding: 0.5em 1em;
+    border-radius: 3px;
+}
+.RadWindow .rwWindowContent .rwPopupButton .rwInnerSpan,
+.RadWindow .rwWindowContent .rwPopupButton:hover .rwInnerSpan {
+    padding: 0;
+}
+
+.RadWindow_IACMSkin .rwWindowContent a.rwPopupButton:hover {
+    border: 1px solid #207bbd;
+    padding: 0.5em 1em;
+}
+.RadWindow_IACMSkin a.rwPopupButton:focus {
+    border: 1px dotted #ddd;
+}
+.RadWindow_IACMSkin a.rwPopupButton:active {
+    border-color: #c2c2c2;
+    color: #333;
+    background-color: #e0e0e0;
+    background-image: linear-gradient();
+    color: #333;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset;
+    border-color: #c2c2c2
+}
+.RadWindow_IACMSkin .rwDialogPopup {
+    font: 1em"Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 1px 0 16px 45px;
+}
+.RadWindow_IACMSkin.rwMinimizedWindow,
+.RadWindow_IACMSkin .RadWindow .rwMinimizedWindowOverlay {
+    width: 214px!important;
+    height: 36px!important
+}
+.RadWindow_IACMSkin.rwMinimizedWindow .rwControlButtons {
+    margin: -3px 0 0
+}
+.RadWindow_IACMSkin.rwMinimizedWindow .rwTable {
+    width: 214px!important;
+    height: 55px!important
+}
+.RadWindow_IACMSkin.rwMinimizedWindow .rwControlButtons {
+    width: 86px!important
+}
+.RadWindow_IACMSkin .rwWindowContent .radconfirm {
+    background-image: none;
+}
+.RadWindow_IACMSkin .rwWindowContent .radconfirm::before { 
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    background-position: 0 0;
+    background-repeat: repeat;
+    display: inline;
+    height: auto;
+    line-height: normal;
+    margin-top: 0;
+    vertical-align: baseline;
+    width: auto;
+    background-position: 0.55em 0.45em;
+    background-repeat: no-repeat;
+    background-size: 2em auto;
+    display: inline-block;
+    max-height: 100%;
+    max-width: 100%;
+    padding: 1em !important;
+    font-size: 2.5rem;
+    color: #207bbd;
+    padding: 0 0.2em !important;
+    content: "\f059";
+    display: inline-block;
+    position: absolute;
+    left: 10px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    -webkit-text-stroke: 0.5px #207bbd;
+    }
+.TelerikModalOverlay {
+    background-color: #000 !important;
+}
+.RadWindow .rwCorner {
+    width: 0px;
+}
+.RadWindow .rwStatusbarRow, .RadWindow .rwFooterRow {
+   background: #383F46;
+   color: #fff;
+}
+.RadWindow .rwFooterRow {
+    background: #383f46;
+}
+ .RadWindow .rwFooterLeft, .RadWindow .rwFooterRight, .RadWindow .rwFooterCenter {
+    height: 0;
+ }
+.RadWindow .rwStatusbar {
+    height: 40px;
+}
+.RadWindow .rwWindowContent iframe {
+    padding: 20px 0;
+}
+.rwDialogPopup.radconfirm div:last-child {
+    background: #383F46;
+    bottom: 0;
+    display: block;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+.rwDialogPopup.radconfirm .rwPopupButton {
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: #fff;
+}
+.RadWindow_IACMSkin .rwDialogPopup.radconfirm a.rwPopupButton span {
+    color: #fff !important;
+}
+.rwDialogPopup.radconfirm .rwPopupButton:focus {
+    background-color: transparent;
+    border: 1px dotted #fff;
+    color: #fff;
+}
+.rwDialogPopup.radconfirm .rwPopupButton:focus:hover {
+    background-color:#595d61;
+     border: 1px dotted #fff !important;
+}
+.rwDialogPopup.radconfirm .rwPopupButton:hover {
+    background-color: #595d61;
+    border: 1px solid #595d61 !important;
+    box-shadow: none;
+    color: #fff !important;
+}
+.rwDialogPopup.radalert div:last-child {
+    background: #383F46;
+    bottom: 0;
+    display: block;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}

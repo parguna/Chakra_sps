@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project name="localproperties">
+
+  <property name="build.environment" value="dev" />
+  
+  <property name="build.deployTempRootDir" value="C:\IACM\Build\Web\" />
+  <property name="build.deployTempDomainApiRootDir" value="C:\IACM\Build\DomainApi\" />
+  <property name="build.deployTempDomainServiceRootDir" value="C:\IACM\Build\DomainService\" />
+  <property name="build.deployTempWfRootDir" value="C:\IACM\Build\Wf\" />
+  
+  <property name="build.deployTempAttestationServiceRootDir" value="C:\IACM\Build\AttestationService\" />
+  <property name="build.deployTempDiscoveryServiceRootDir" value="C:\IACM\Build\DiscoveryService\" />
+  <property name="build.deployTempEmailingServiceRootDir" value="C:\IACM\Build\EmailingService\" />
+  <property name="build.deployTempProvisioningServiceRootDir" value="C:\IACM\Build\ProvisioningService\" />
+  <property name="build.deployTempMiscServiceRootDir" value="C:\IACM\Build\MiscService\" />
+  <property name="build.deployTempComplianceServiceRootDir" value="C:\IACM\Build\ComplianceService\" />
+  <property name="build.deployTempReportingServiceRootDir" value="C:\IACM\Build\ReportingService\" />
+  
+  
+  <property name="build.deployRootDir" value="C:\IACM\IACMNEWV5\Web\" />
+  <property name="build.deployDomainApiRootDir" value="C:\IACM\IACMNEWV5\DomainApi\" />
+  <property name="build.deployRootDomainServiceDir" value="C:\IACM\IACMNEWV5\DomainService" />
+  <property name="build.deployRootWfDir" value="C:\IACM\IACMNEWV5\Workflow" />
+
+  <property name="build.deployAttestationService" value="C:\IACM\IACMNEWV5\Attestation Service" />
+  <property name="build.deployDiscoveryService" value="C:\IACM\IACMNEWV5\Discovery Service" />
+  <property name="build.deployEmailingService" value="C:\IACM\IACMNEWV5\Emailing Service" />
+  <property name="build.deployProvisioningService" value="C:\IACM\IACMNEWV5\Provisioning Service" />
+  <property name="build.deployMiscService" value="C:\IACM\IACMNEWV5\Misc Service" />
+  <property name="build.deployComplianceService" value="C:\IACM\IACMNEWV5\Compliance Service" />
+  <property name="build.deployReportingService" value="C:\IACM\IACMNEWV5\Reporting Service" />
+  
+  <property name="build.deployServiceDir" value="${build.deployRootDir}\Service" />
+  <property name="build.deploydatabasedir" value="${build.deployRootDir}\DataBase" />
+  <property name="build.deployconfigdir" value="C:\IACM\Config\V5\web\" />
+  <property name="build.deployconfigDomainApidir" value="C:\IACM\Config\V5\DomainApi\" />
+  <property name="build.deployconfigDomainServicedir" value="C:\IACM\Config\V5\DomainService\" />
+  <property name="build.deployconfigWfdir" value="C:\IACM\Config\V5\wf\" />
+  <property name="build.deployconfigServicesdir" value="C:\IACM\Config\V5\Services\" />
+  <property name="build.outputdir" value="C:\TeamCity\buildAgent\work\4e058435cc04ef19\IACMWeb\bin\" />
+  <property name="build.outputDirService" value="${build.outputdir}\Services" />
+
+  <property name="web.virtualdir" value="IACMNEWV5" />
+  <property name="web.hostname" value="192.168.15.76" />
+  <property name="wf.hostname" value="192.168.15.76" />
+  <property name="wf.virtualdir" value="WFNEWV5" />
+
+  <property name="config.webValidationSettingsUnobtrusiveValidationMode" value="None" />
+  <property name="config.webaspnetMaxHttpCollectionKeys" value="5000" />
+  <property name="config.webConnection" value="Local" />
+  <property name="config.webClient" value="DEEPIDENTITY" />
+  <property name="config.webAllowMultipleSession" value="False" />
+  <property name="config.webPrimaryTrustedSource" value="SAP" />
+  <property name="config.webSrcPath" value="C:\TrustedSource" />
+  <property name="config.webLoginLink" value="http://192.168.15.227/IACMUAT/Login.aspx" />
+  <property name="config.webDbBackupPath" value="D:\IACM\BackUp\DataBase" />
+
+  <property name="config.discoveryConnection" value="Local" />
+  <property name="config.discoverySrcpath" value="C:\TrustedSource" />
+  <property name="config.discoveryTimerIntervalInMinutes" value="2" />
+  <property name="config.discoveryDefaultPassword" value="di" />
+  <property name="config.discoverySAPMappingTablePopulation" value="False" />
+
+  <property name="config.attestationConnection" value="Local" />
+  <property name="config.attestationLoginLink" value="http://192.168.15.227/IACMUAT/Login.aspx" />
+  <property name="config.attestationTimerIntervalInMinutes" value="2" />
+
+  <property name="config.emailingConnection" value="Local" />
+  <property name="config.emailingLoginLink" value="http://192.168.15.227/IACMUAT/Login.aspx" />
+  <property name="config.emailingTimerIntervalInMinutes" value="5" />
+
+  <property name="config.filewatcherFolderToWatch" value="C:\\PasswordFilter\\" />
+  <property name="config.filewatcherBackupLocation" value="C:\\PasswordFilter\\Backup\\" />
+  <property name="config.filewatcherLogFile" value="C:\\PasswordFilter\\Log\\Log.txt" />
+
+  <property name="config.provisioningConnection" value="Local" />
+  <property name="config.provisioningSrcPath" value="C:\TrustedSource" />
+  <property name="config.provisioningLoginLink" value="http://192.168.15.227/IACMUAT/Login.aspx" />
+  <property name="config.provisioningAutomaticClosureTimeOfChangeRequestInDays" value="10" />
+  <property name="config.provisioningPostActivityDataFilePath" value="C:\Users\Shailesh\Desktop\PostActivityData.xml" />
+  <property name="config.provisioningTimerIntervalInMinutes" value="5" />
+  <property name="config.provisioningTrustedSourceChangePropagationTimerIntervalInMinutes" value="60" />
+  <property name="config.provisioningDefaultLNOU" value="\\192.168.15.230\certIds\cert.id" />
+  <property name="config.provisioningLNSCertifier_CIT" value="\\192.168.15.230\certIds\cit.id" />
+  <property name="config.provisioningLNSCertifier_Admissions" value="\\192.168.15.230\certIds\admissio.id" />
+  <property name="config.provisioningSAPMappingTablePopulation" value="False" />
+  <property name="config.provisioningCreateMailbox" value="True" />
+
+  <property name="database.server" value="192.168.15.76" />
+  <property name="database.databasename" value="IACM_V5" />
+  <property name="database.username" value="sa" />
+  <property name="database.password" value="deep@identity09" />
+</project>

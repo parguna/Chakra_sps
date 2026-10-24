@@ -1,0 +1,3 @@
+Rule,Endpoint,AccountType,ProvisioningFieldName,Value
+Fin,AD,User,Password,bcd1234
+Fin,AD,User,AccountName,Ramya

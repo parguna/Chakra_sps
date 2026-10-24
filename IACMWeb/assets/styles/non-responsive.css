@@ -1,0 +1,335 @@
+﻿/* Template-specific stuff
+ *
+ * Customizations just for the template; these are not necessary for anything
+ * with disabling the responsiveness.
+ */
+
+/* Account for fixed navbar */
+body {
+  min-width: 970px;
+}
+
+/* Finesse the page header spacing */
+.page-header {
+  margin-bottom: 30px;
+}
+.page-header .lead {
+  margin-bottom: 10px;
+}
+
+
+/* Non-responsive overrides
+ *
+ * Utilitze the following CSS to disable the responsive-ness of the container,
+ * grid system, and navbar.
+ */
+
+/* Reset the container */
+.container, .container-fluid {
+  width: 1240px;
+  max-width: none !important;
+}
+
+/* Demonstrate the grids */
+
+.container .navbar-header,
+.container .navbar-collapse {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/* Always float the navbar header */
+.navbar-header {
+  float: left;
+}
+
+/* Undo the collapsing navbar */
+.navbar-collapse {
+  display: block !important;
+  height: auto !important;
+  padding-bottom: 0;
+  overflow: visible !important;
+}
+
+.navbar-toggle {
+  display: none;
+}
+.navbar-collapse {
+  border-top: 0;
+}
+
+.navbar-brand {
+  margin-left: -15px;
+}
+
+/* Always apply the floated nav */
+.navbar-nav {
+  float: left;
+  margin: 0;
+}
+.navbar-nav > li {
+  float: left;
+}
+.navbar-nav > li > a {
+  padding: 15px;
+}
+
+/* Redeclare since we override the float above */
+.navbar-nav.navbar-right {
+  float: right;
+}
+
+/* Undo custom dropdowns */
+.navbar .navbar-nav .open .dropdown-menu {
+  position: absolute;
+  float: left;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-width: 0 1px 1px;
+  border-radius: 0 0 4px 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+  color: #333;
+}
+.navbar .navbar-nav .open .dropdown-menu > li > a:hover,
+.navbar .navbar-nav .open .dropdown-menu > li > a:focus,
+.navbar .navbar-nav .open .dropdown-menu > .active > a,
+.navbar .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar .navbar-nav .open .dropdown-menu > .active > a:focus {
+  color: #fff !important;
+  background-color: #428bca !important;
+}
+.navbar .navbar-nav .open .dropdown-menu > .disabled > a,
+.navbar .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+.navbar .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+  color: #999 !important;
+  background-color: transparent !important;
+}
+
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+/* IE10+ CSS styles go here */
+    .tab-content {
+        min-height: auto !important;
+    }
+}
+@media only screen and (max-width: 699px){
+    /* Small screen, non-retina */
+    .content, .container-fluid {
+    	max-width: 90%;
+	    min-width: 300px;
+	} 
+    .dashboard .col-md-6 {
+        width: 100%;
+        display: block;
+        clear: both;
+        height: auto;
+        min-height: auto;
+    }
+    .dashboard-wrapper.task, .dashboard-wrapper.risk {
+        position: relative;
+    }
+    .dashboard .row {
+     display:block;
+    }
+    .dashboard-wrapper .dashboard-title {
+        width: 65%;
+    }
+
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 699px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 699px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 699px), only screen and (min-device-pixel-ratio: 2) and (max-width: 699px), only screen and (min-resolution: 192dpi) and (max-width: 699px), only screen and (min-resolution: 2dppx) and (max-width: 699px) { 
+    /* Small screen, retina, stuff to override above media query */
+    .content, .container-fluid  {
+	    max-width: 100%;
+	    min-width: 300px;
+	}
+}
+
+@media only screen and (min-width: 700px) {
+    /* Medium screen, tablets, non-retina */
+    html, body {
+        font-size: 10px;
+        line-height: 12px;
+    }
+    .full-width-box {
+        height: auto; 
+    }
+    footer {
+        position: relative;
+    }
+    .content, .container-fluid {
+        max-width: 100%;
+        min-width: 680px;
+        width: 100%;
+    }
+    .di-modal .modal-dialog {
+        min-width: auto;
+        width: 95%;
+    }
+    .login-box { 
+        width: 32%; 
+    }
+    .loginnotes {
+        font-size: 7.4pt;
+    }
+}
+
+@media only screen 
+and (min-width : 768px) 
+and (max-width : 1024px) 
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio: 2) {
+    /* tablet with Retina*/
+    html, body {
+        font-size: 10px;
+        line-height: 12px;
+    }
+      .content, .container-fluid {
+        max-width: 1020px;
+        min-width: 748px;
+        width: 100%;
+	}
+
+    .di-tab-content .nav-tabs li a, .di-tab-content .nav-tabs li.active a {
+        font-size: 1em;
+    }
+    .login-box { 
+        width: 30%; 
+    }
+    .loginnotes {
+        font-size: 8pt;
+    }
+}
+@media screen and (min-width: 1280) {
+    .login-box { 
+        width: 28%;  /*width: 25%;*/
+    }
+}
+@media only screen and (min-width: 1280px) 
+and (max-width: 1600px) {
+  /* Large screen, Desktop, non-retina */
+    html, body {
+        font-size: 13px;
+        line-height: 14px;
+    }
+  	.content, .container-fluid  {
+  		width: 95%;
+        min-width: 1200px;
+	}
+    .pending-tasks div {
+        max-height: 170px;
+    }
+
+    img.risk-widget {
+        max-height: 150px;
+        width: auto;
+        height: auto;
+    }
+    .login-box { 
+        width: 28%; /*width: 25%;*/
+    }
+    .RadDock.RadDock_IACMSkin:first-of-type {
+    margin-right: 22px;
+}
+
+    /*.di-tab-content .nav-tabs li a, .di-tab-content .nav-tabs li.active a {
+        font-size: 1.2em;
+    }
+
+    .form-horizontal .control-label, .form-group label {
+        font-size: 1.08em;
+    }*/
+    .loginnotes {
+        font-size: 8pt;
+    }
+}
+
+@media screen 
+  and (min-width: 1280px) 
+  and (max-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) { 
+  /* Large screen, retina, stuff to override above media query */
+	html, body {
+	    font-size: 12px;
+	    line-height: 14px;
+	}
+	.content, .container-fluid  {
+	    min-width: 1100px;
+        max-width: 100%;
+        width: 94%;
+	}
+	.customer-login-logo img {
+        max-width: 14em;
+	}
+	.wizards .nav-tabs.nav-pills li a {
+	}
+    .login-box {
+        width: 28%;
+    }
+    .loginnotes {
+        font-size: 8pt;
+    }
+}
+@media screen 
+  and (min-width: 1600px) { 
+  /* Large screen */
+	    html, body {
+	    font-size: 14px;
+	    line-height: 16px;
+	}
+	.content, .container-fluid  {
+        min-width: 1400px;
+        max-width: 100%;
+        width: 90%;
+	}
+	.customer-login-logo img {
+	    max-width: 14em;
+	}
+	.wizards .nav-tabs.nav-pills li a {
+	}
+    .login-box {
+        width: 28%;
+    }
+    .loginnotes {
+        font-size: 10pt;
+    }
+}
+@media screen 
+  and (min-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) { 
+  /* Large screen, retina, stuff to override above media query */
+	html, body {
+	font-size: 14px;
+	line-height: 16px;
+	}
+	.content, .container-fluid  {
+	    min-width: 1400px;
+        max-width: 100%;
+        width: 90%;
+	}
+	.customer-login-logo img {
+	max-width: 14em;
+	}
+    .quicklinks .glyphicon-plus {
+        font-size: 2em;
+        padding-bottom: 0.2em;
+    }
+	.wizards .nav-tabs.nav-pills li a {
+	}
+    .login-box { 
+        width: 22%; 
+    }
+    .loginnotes {
+        font-size: 6pt;
+    }
+}
+@media only screen and (max-width: 699px) {
+    .loginnotes {
+        font-size: 6pt;
+    }
+}

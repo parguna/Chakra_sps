@@ -1,0 +1,244 @@
+<Activity mc:Ignorable="sap sap2010 sads" x:Class="DI.Chakra.Workflow.ActivityLibraries.ApprovalTimeoutActivity"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:dm="clr-namespace:DI.Chakra.DomainModel;assembly=DI.Chakra.DomainModel"
+ xmlns:local="clr-namespace:DI.Chakra.Workflow.ActivityLibraries"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="workflowInstanceId" Type="InArgument(s:Guid)" />
+    <x:Property Name="workflowConfiguration" Type="InArgument(dm:WorkflowConfiguration)" />
+    <x:Property Name="workflowState" Type="InArgument(x:Byte)" />
+    <x:Property Name="timeoutDelay" Type="InArgument(x:Double)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap2010:WorkflowViewState.IdRef>DI.Chakra.Workflow.ActivityLibraries.ApprovalTimeoutActivity_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.ServiceModel.Activities</x:String>
+      <x:String>DI.Chakra.DomainModel</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>DI.Chakra.ConfigHelper</AssemblyReference>
+      <AssemblyReference>DI.Chakra.Email</AssemblyReference>
+      <AssemblyReference>DI.Chakra.Facade</AssemblyReference>
+      <AssemblyReference>DI.Chakra.Infrastructure</AssemblyReference>
+      <AssemblyReference>DI.Chakra.Logger</AssemblyReference>
+      <AssemblyReference>DI.Chakra.DomainModel</AssemblyReference>
+      <AssemblyReference>DI.Chakra.Services.PasswordSync</AssemblyReference>
+      <AssemblyReference>DI.Chakra.Support</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>DI.Chakra.Workflow.ActivityLibraries</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Task Timeout" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Double" Name="timeoutTimespan">
+        <Variable.Default>
+          <mca:CSharpValue x:TypeArguments="x:Double">timeoutDelay</mca:CSharpValue>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="isMailSent" />
+      <Variable x:TypeArguments="x:Boolean" Name="isEscalationRequired" />
+      <Variable x:TypeArguments="x:Boolean" Name="waitAfterEscalation" />
+      <Variable x:TypeArguments="x:Boolean" Default="True" Name="isPendingTasksExists" />
+      <Variable x:TypeArguments="scg:List(dm:Task)" Name="pendingTasks" />
+    </Sequence.Variables>
+    <Assign sap2010:WorkflowViewState.IdRef="Assign_11">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Double">
+          <mca:CSharpReference x:TypeArguments="x:Double">timeoutTimespan</mca:CSharpReference>
+        </OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Double">
+          <mca:CSharpValue x:TypeArguments="x:Double">timeoutDelay</mca:CSharpValue>
+        </InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap2010:WorkflowViewState.IdRef="Assign_13">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Boolean">
+          <mca:CSharpReference x:TypeArguments="x:Boolean">isEscalationRequired</mca:CSharpReference>
+        </OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Boolean">
+          <mca:CSharpValue x:TypeArguments="x:Boolean">workflowConfiguration.WorkflowConfigurationDetails.FirstOrDefault(item =&gt; item.SequenceNumber == workflowState).IsEscalationRequired</mca:CSharpValue>
+        </InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap2010:WorkflowViewState.IdRef="Assign_15">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Boolean">
+          <mca:CSharpReference x:TypeArguments="x:Boolean">waitAfterEscalation</mca:CSharpReference>
+        </OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Boolean">
+          <mca:CSharpValue x:TypeArguments="x:Boolean">workflowConfiguration.WorkflowConfigurationDetails.FirstOrDefault(item =&gt; item.SequenceNumber == workflowState).DaysToWaitAfterEscalation.HasValue</mca:CSharpValue>
+        </InArgument>
+      </Assign.Value>
+    </Assign>
+    <Sequence DisplayName="Task Timeout Sequence" sap2010:WorkflowViewState.IdRef="Sequence_39">
+      <Delay DisplayName="Task Timeout delay" sap2010:WorkflowViewState.IdRef="Delay_9">
+        <InArgument x:TypeArguments="x:TimeSpan">
+          <mca:CSharpValue x:TypeArguments="x:TimeSpan">TimeSpan.FromDays(timeoutTimespan)</mca:CSharpValue>
+        </InArgument>
+      </Delay>
+      <If DisplayName="If Escalation Required" sap2010:WorkflowViewState.IdRef="If_16">
+        <If.Condition>
+          <InArgument x:TypeArguments="x:Boolean">
+            <mca:CSharpValue x:TypeArguments="x:Boolean">isEscalationRequired</mca:CSharpValue>
+          </InArgument>
+        </If.Condition>
+        <If.Then>
+          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_36">
+            <local:GetPendingTasksByWorkflowInstance sap2010:WorkflowViewState.IdRef="GetPendingTasksByWorkflowInstance_8">
+              <local:GetPendingTasksByWorkflowInstance.PendingTasks>
+                <OutArgument x:TypeArguments="scg:List(dm:Task)">
+                  <mca:CSharpReference x:TypeArguments="scg:List(dm:Task)">pendingTasks</mca:CSharpReference>
+                </OutArgument>
+              </local:GetPendingTasksByWorkflowInstance.PendingTasks>
+              <local:GetPendingTasksByWorkflowInstance.WorkflowInstanceId>
+                <InArgument x:TypeArguments="s:Guid">
+                  <mca:CSharpValue x:TypeArguments="s:Guid">workflowInstanceId</mca:CSharpValue>
+                </InArgument>
+              </local:GetPendingTasksByWorkflowInstance.WorkflowInstanceId>
+            </local:GetPendingTasksByWorkflowInstance>
+            <ForEach x:TypeArguments="dm:Task" DisplayName="ForEach&lt;Task&gt;" sap2010:WorkflowViewState.IdRef="ForEach`1_6">
+              <ForEach.Values>
+                <InArgument x:TypeArguments="scg:IEnumerable(dm:Task)">
+                  <mca:CSharpValue x:TypeArguments="scg:IEnumerable(dm:Task)">pendingTasks</mca:CSharpValue>
+                </InArgument>
+              </ForEach.Values>
+              <ActivityAction x:TypeArguments="dm:Task">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="dm:Task" Name="task" />
+                </ActivityAction.Argument>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_34">
+                  <local:SendEscalationEmail sap2010:WorkflowViewState.IdRef="SendEscalationEmail_4">
+                    <local:SendEscalationEmail.IsMailSent>
+                      <OutArgument x:TypeArguments="x:Boolean">
+                        <mca:CSharpReference x:TypeArguments="x:Boolean">isMailSent</mca:CSharpReference>
+                      </OutArgument>
+                    </local:SendEscalationEmail.IsMailSent>
+                    <local:SendEscalationEmail.Task>
+                      <InArgument x:TypeArguments="dm:Task">
+                        <mca:CSharpValue x:TypeArguments="dm:Task">task</mca:CSharpValue>
+                      </InArgument>
+                    </local:SendEscalationEmail.Task>
+                    <local:SendEscalationEmail.WorkflowConfiguration>
+                      <InArgument x:TypeArguments="dm:WorkflowConfiguration">
+                        <mca:CSharpValue x:TypeArguments="dm:WorkflowConfiguration">workflowConfiguration</mca:CSharpValue>
+                      </InArgument>
+                    </local:SendEscalationEmail.WorkflowConfiguration>
+                  </local:SendEscalationEmail>
+                  <local:UpdateEscalationFlag sap2010:WorkflowViewState.IdRef="UpdateEscalationFlag_3">
+                    <local:UpdateEscalationFlag.Task>
+                      <InArgument x:TypeArguments="dm:Task">
+                        <mca:CSharpValue x:TypeArguments="dm:Task">task</mca:CSharpValue>
+                      </InArgument>
+                    </local:UpdateEscalationFlag.Task>
+                  </local:UpdateEscalationFlag>
+                </Sequence>
+              </ActivityAction>
+            </ForEach>
+            <If sap2010:WorkflowViewState.IdRef="If_15">
+              <If.Condition>
+                <InArgument x:TypeArguments="x:Boolean">
+                  <mca:CSharpValue x:TypeArguments="x:Boolean">waitAfterEscalation</mca:CSharpValue>
+                </InArgument>
+              </If.Condition>
+              <If.Then>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_35">
+                  <Delay DisplayName="Wait after escalation Delay" sap2010:WorkflowViewState.IdRef="Delay_10">
+                    <InArgument x:TypeArguments="x:TimeSpan">
+                      <mca:CSharpValue x:TypeArguments="x:TimeSpan">TimeSpan.FromDays((double)workflowConfiguration.WorkflowConfigurationDetails.FirstOrDefault(item =&gt; item.SequenceNumber == workflowState).DaysToWaitAfterEscalation.Value)</mca:CSharpValue>
+                    </InArgument>
+                  </Delay>
+                </Sequence>
+              </If.Then>
+            </If>
+          </Sequence>
+        </If.Then>
+      </If>
+    </Sequence>
+    <sads:DebugSymbol.Symbol>d3VGOlxESVxQcm9qZWN0c1xQUk9EVUNUNC4wXGJyYW5jaGVzXERldjEuMFxTT1VSQ0VcRGVlcElkZW50aXR5LldvcmtmbG93LkFjdGl2aXR5TGlicmFyaWVzXEFwcHJvdmFsVGltZW91dEFjdGl2aXR5LnhhbWwkOgPAAQ4CAQE+Cz5VAgEEQTVBPAIBA0Q1RDsCAQJHBVIOAwHGAVMFXg4DAa8BXwVqDgMBmAFrBb4BEAIBD08LT1UDAdIBSgtKYAMBxwFbC1vRAQMBuwFWC1ZmAwGwAWcLZ98BAwGkAWILYmUDAZkBbAdwDwMBjAFxB70BDAIBEG4Lbm0DAY0BdA10YAIBEXgLuwEWAgEceQ2EATcCAXWFAQ2qARcCATarAQ26ARICAR18E3xuAwGBAYEBE4EBYQIBdogBE4gBbQIBao8BEagBHAIBN64BE64BZQIBHrIBEbgBHAIBKZABE6ABLwIBRaEBE6cBMAIBOLMBE7cBGwIBKpgBGZgBWgIBXp0BGZ0BfAIBUpMBGZMBagIBRqQBGaQBWgIBObUBF7UBhAICASs=</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="Assign_11" sap:VirtualizedContainerService.HintSize="633,62" />
+      <sap2010:ViewStateData Id="Assign_13" sap:VirtualizedContainerService.HintSize="633,62" />
+      <sap2010:ViewStateData Id="Assign_15" sap:VirtualizedContainerService.HintSize="633,62" />
+      <sap2010:ViewStateData Id="Delay_9" sap:VirtualizedContainerService.HintSize="611,22" />
+      <sap2010:ViewStateData Id="GetPendingTasksByWorkflowInstance_8" sap:VirtualizedContainerService.HintSize="464,22" />
+      <sap2010:ViewStateData Id="SendEscalationEmail_4" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="UpdateEscalationFlag_3" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Sequence_34" sap:VirtualizedContainerService.HintSize="222,208">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ForEach`1_6" sap:VirtualizedContainerService.HintSize="464,358" />
+      <sap2010:ViewStateData Id="Delay_10" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Sequence_35" sap:VirtualizedContainerService.HintSize="222,146">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="If_15" sap:VirtualizedContainerService.HintSize="464,296" />
+      <sap2010:ViewStateData Id="Sequence_36" sap:VirtualizedContainerService.HintSize="486,880">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="If_16" sap:VirtualizedContainerService.HintSize="611,1030" />
+      <sap2010:ViewStateData Id="Sequence_39" sap:VirtualizedContainerService.HintSize="633,1216">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="655,1646">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="DI.Chakra.Workflow.ActivityLibraries.ApprovalTimeoutActivity_1" sap:VirtualizedContainerService.HintSize="695,1726" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>

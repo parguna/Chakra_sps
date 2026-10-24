@@ -1,0 +1,18 @@
+CompanyCode,DepartmentCode,DivisionCode,OrganisationId,OrganisationName,CostCenterCode,CostDistributionCode,MailServer,CertifierIdFile,CertifierOU,DefaultGroups,PolicyName,ReplicatSever
+ALL,ALL,ALL,ALL,ALL,ALL,ALL,192.168.15.236,admissio.id,OU=Admissions/O=abccorp.com/C=SG,Admissions,NULL,NULL
+8500,AU01,ALL,ALL,ALL,ALL,ALL,192.168.15.236,cit.id,OU=CIT/O=abccorp.com/C=SG,Admissions,NULL,NULL
+8500,AU02,ALL,ALL,ALL,ALL,ALL,192.168.15.236,cit.id,OU=CIT/O=abccorp.com/C=SG,Comms IT Group,NULL,NULL
+8500,AU03,ALL,ALL,ALL,ALL,ALL,192.168.15.236,cit.id,OU=CIT/O=abccorp.com/C=SG,Legal,NULL,NULL
+8500,AU04,ALL,ALL,ALL,ALL,ALL,192.168.15.236,cit.id,OU=CIT/O=abccorp.com/C=SG,Finance Administration,NULL,NULL
+8500,AU05,ALL,ALL,ALL,ALL,ALL,192.168.15.236,legal.id,OU=Legal/O=abccorp.com/C=SG,Production Group,NULL,NULL
+8500,AU06,ALL,ALL,ALL,ALL,ALL,192.168.15.236,legal.id,OU=Legal/O=abccorp.com/C=SG,Sales,NULL,NULL
+8500,AU07,ALL,ALL,ALL,ALL,ALL,192.168.15.236,legal.id,OU=Legal/O=abccorp.com/C=SG,Admissions,NULL,NULL
+8500,AU08,ALL,ALL,ALL,ALL,ALL,192.168.15.236,legal.id,OU=Legal/O=abccorp.com/C=SG,Comms IT Group,NULL,NULL
+8500,AU01,0001,ALL,ALL,ALL,ALL,192.168.15.236,cit.id,OU=CIT/O=abccorp.com/C=SG,Legal,NULL,NULL
+8500,AU02,0001,ALL,ALL,ALL,ALL,192.168.15.236,cit.id,OU=CIT/O=abccorp.com/C=SG,Finance Administration,NULL,NULL
+8500,AU03,0001,ALL,ALL,ALL,ALL,192.168.15.236,cit.id,OU=CIT/O=abccorp.com/C=SG,Production Group,NULL,NULL
+8500,AU04,0001,ALL,ALL,ALL,ALL,192.168.15.236,cit.id,OU=CIT/O=abccorp.com/C=SG,Sales,NULL,NULL
+8500,AU05,0001,ALL,ALL,ALL,ALL,192.168.15.236,legal.id,OU=Legal/O=abccorp.com/C=SG,Admissions,NULL,NULL
+8500,AU06,0001,ALL,ALL,ALL,ALL,192.168.15.236,legal.id,OU=Legal/O=abccorp.com/C=SG,Comms IT Group,NULL,NULL
+8500,AU07,0001,ALL,ALL,ALL,ALL,192.168.15.236,legal.id,OU=Legal/O=abccorp.com/C=SG,Legal,NULL,NULL
+8500,AU08,0001,ALL,ALL,ALL,ALL,192.168.15.236,legal.id,OU=Legal/O=abccorp.com/C=SG,Finance Administration,NULL,NULL

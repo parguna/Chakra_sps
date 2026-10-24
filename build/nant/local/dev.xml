@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project name="localproperties">
+
+  <property name="build.environment" value="dev" />
+  <property name="build.deployTempRootDir" value="C:\IACM\Build\Web\" />
+  <property name="build.deployTempAuthRootDir" value="C:\IACM\Build\Auth\" />
+  <property name="build.deployTempWfRootDir" value="C:\IACM\Build\Wf\" />
+  <property name="build.deployRootDir" value="C:\IACM\IACMNEWV5\Web" />
+  <property name="build.deployRootAuthDir" value="C:\IACM\IACMNEWV5\Auth" />
+  <property name="build.deployRootWfDir" value="C:\IACM\IACMNEWV5\Wf" />
+  <property name="build.deployServiceDir" value="${build.deployRootDir}\Service" />
+  <property name="build.deploydatabasedir" value="${build.deployRootDir}\DataBase" />
+  <property name="build.deployconfigdir" value="${build.deployRootDir}\ConfigFiles" />
+  <property name="build.outputdir" value="C:\IACMTest\V5_Build" />
+  <property name="build.outputDirService" value="${build.outputdir}\Services" />
+
+
+  <property name="web.virtualdir" value="IACMNEWV5" />
+  <property name="web.hostname" value="192.168.15.76" />
+  <property name="wf.hostname" value="192.168.15.76" />
+  <property name="wf.virtualdir" value="WFNEWV5" />
+
+  <property name="config.webValidationSettingsUnobtrusiveValidationMode" value="None" />
+  <property name="config.webaspnetMaxHttpCollectionKeys" value="5000" />
+  <property name="config.webConnection" value="Local" />
+  <property name="config.webClient" value="DEEPIDENTITY" />
+  <property name="config.webAuthentication" value="IACM Connection" />
+  <property name="config.webAllowMultipleSession" value="False" />
+  <property name="config.webPrimaryTrustedSource" value="SAP" />
+  <property name="config.webSrcPath" value="C:\TrustedSource" />
+  <property name="config.webProdHostName" value="Domain System - DI" />
+  <property name="config.webLoginLink" value="http://192.168.15.227/IACMUAT/Login.aspx" />
+  <property name="config.webLogFileLocation" value="C:\\IACMUatLog" />
+  <property name="config.webIMConfigurationFilePath" value="D:\Work\DeepIdentity\IACMSVN\DeepIdentity.Scheduler\IMConfiguration.xml" />
+  <property name="config.webDbBackupPath" value="D:\IACM\BackUp\DataBase" />
+  <property name="config.webLogProviderType" value="DI.Chakra.Logger.DBLogProvider" />
+  <property name="config.webLoggerExceptionFile" value="C:\\IACMLog\\LoggerException.log" />
+
+  <property name="config.discoveryConnection" value="Local" />
+  <property name="config.discoverySrcpath" value="C:\TrustedSource" />
+  <property name="config.discoveryTimerIntervalInMinutes" value="2" />
+  <property name="config.discoveryLogProviderType" value="DI.Chakra.Logger.DBLogProvider" />
+  <property name="config.discoveryLoggerExceptionFile" value="C:\\IACMLog\\LoggerException.log" />
+  <property name="config.discoveryDefaultPassword" value="di" />
+  <property name="config.discoverySAPMappingTablePopulation" value="False" />
+
+  <property name="config.attestationConnection" value="Local" />
+  <property name="config.attestationLoginLink" value="http://192.168.15.227/IACMUAT/Login.aspx" />
+  <property name="config.attestationTimerIntervalInMinutes" value="2" />
+  <property name="config.attestationLogProviderType" value="DI.Chakra.Logger.DBLogProvider" />
+  <property name="config.attestationLoggerExceptionFile" value="C:\\IACMLog\\LoggerException.log" />
+
+  <property name="config.emailingConnection" value="Local" />
+  <property name="config.emailingLoginLink" value="http://192.168.15.227/IACMUAT/Login.aspx" />
+  <property name="config.emailingTimerIntervalInMinutes" value="5" />
+  <property name="config.emailingLogProviderType" value="DI.Chakra.Logger.DBLogProvider" />
+  <property name="config.emailingLoggerExceptionFile" value="C:\\IACMLog\\LoggerException.log" />
+
+  <property name="config.filewatcherFolderToWatch" value="C:\\PasswordFilter\\" />
+  <property name="config.filewatcherBackupLocation" value="C:\\PasswordFilter\\Backup\\" />
+  <property name="config.filewatcherLogFile" value="C:\\PasswordFilter\\Log\\Log.txt" />
+
+  <property name="config.provisioningConnection" value="Local" />
+  <property name="config.provisioningSrcPath" value="C:\TrustedSource" />
+  <property name="config.provisioningLoginLink" value="http://192.168.15.227/IACMUAT/Login.aspx" />
+  <property name="config.provisioningAutomaticClosureTimeOfChangeRequestInDays" value="10" />
+  <property name="config.provisioningPostActivityDataFilePath" value="C:\Users\Shailesh\Desktop\PostActivityData.xml" />
+  <property name="config.provisioningTimerIntervalInMinutes" value="5" />
+  <property name="config.provisioningTrustedSourceChangePropagationTimerIntervalInMinutes" value="60" />
+  <property name="config.provisioningLogProviderType" value="DI.Chakra.Logger.DBLogProvider" />
+  <property name="config.provisioningLoggerExceptionFile" value="C:\\IACMLog\\LoggerException.log" />
+  <property name="config.provisioningDefaultLNOU" value="\\192.168.15.230\certIds\cert.id" />
+  <property name="config.provisioningLNSCertifier_CIT" value="\\192.168.15.230\certIds\cit.id" />
+  <property name="config.provisioningLNSCertifier_Admissions" value="\\192.168.15.230\certIds\admissio.id" />
+  <property name="config.provisioningSAPMappingTablePopulation" value="False" />
+  <property name="config.provisioningCreateMailbox" value="True" />
+
+  <property name="wf.attestation.address.WSHttpBinding_IWFService" value="http://${wf.hostname}/${wf.virtualdir}/Attestation/AllSequentialITFirstOneBusinessApprovalAttestationWFService.xamlx" />
+  <property name="wf.attestation.address.WSHttpBinding_IWFService2" value="http://${wf.hostname}/${wf.virtualdir}/Attestation/AllSequentialITFirstTwoBusinessApprovalAttestationWFService.xamlx" />
+  <property name="wf.attestation.address.WSHttpBinding_IWFService3" value="http://${wf.hostname}/${wf.virtualdir}/Attestation/AllSequentialOneBusinessFirstOneITApprovalAttestationWFService.xamlx" />
+  <property name="wf.attestation.address.WSHttpBinding_IWFService5" value="http://${wf.hostname}/${wf.virtualdir}/Attestation/AllSequentialTwoBusinessApprovalAttestationWFService.xamlx" />
+  <property name="wf.attestation.address.WSHttpBinding_IWFService6" value="http://${wf.hostname}/${wf.virtualdir}/Attestation/AllSequentialTwoBusinessFirstOneITApprovalAttestationWFService.xamlx" />
+  <property name="wf.attestation.address.WSHttpBinding_IWFService7" value="http://${wf.hostname}/${wf.virtualdir}/Attestation/ITFirstAndTwoParallelBusinessApprovalAttestationWFService.xamlx" />
+  <property name="wf.attestation.address.WSHttpBinding_IWFService9" value="http://${wf.hostname}/${wf.virtualdir}/Attestation/SingleApprovalAttestationWFService.xamlx" />
+  <property name="wf.attestation.address.WSHttpBinding_IWFService12" value="http://${wf.hostname}/${wf.virtualdir}/Attestation/TwoParallelBusinessApprovalAttestationWFService.xamlx" />
+  <property name="wf.attestation.address.WSHttpBinding_IWFService13" value="http://${wf.hostname}/${wf.virtualdir}/Attestation/TwoParallelBusinessFirstAndITApprovalAttestationWFService.xamlx" />
+
+  <property name="log.root"         value="C:\\IACMLocalLog" />
+  <property name="log.scheduler"    value="${log.root}\\scheduler.log" />
+  <property name="log.discovery"    value="${log.root}\\discovery.log" />
+  <property name="log.general"      value="${log.root}\\general.log" />
+  <property name="log.attestation"  value="${log.root}\\attestation.log" />
+  <property name="log.workflow"     value="${log.root}\\workflow.log" />
+  <property name="log.provisioning" value="${log.root}\\provisioning.log" />
+  <property name="log.uiauditlog" value="${log.root}\\UIAuditLog.log" />
+  <property name="log.uierrorlog" value="${log.root}\\UIErrorLog.log" />
+
+  <property name="database.server" value="192.168.15.76" />
+  <property name="database.databasename" value="IACM_V5" />
+  <property name="database.username" value="sa" />
+  <property name="database.password" value="deep@identity09" />
+
+
+
+</project>

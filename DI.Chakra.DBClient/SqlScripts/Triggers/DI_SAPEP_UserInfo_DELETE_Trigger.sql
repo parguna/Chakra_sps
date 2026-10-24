@@ -1,0 +1,111 @@
+﻿CREATE   TRIGGER [dbo].[DI_SAPEP_UserInfo_DELETE_Trigger] ON [dbo].[DI_SAPEP_UserInfo]  AFTER DELETE
+AS
+BEGIN
+SET NOCOUNT ON;
+
+      DECLARE @EndPointSystemId  int
+      DECLARE @HistoryId Int
+     
+      SELECT  @EndPointSystemId =EndPointSystemId FROM DELETED
+      SET @HistoryId=0
+             
+			 
+	  INSERT INTO [dbo].[DI_SAPEP_UserInfoHistory]
+					([UserId]
+					,[HistoryId]
+					,
+					,[EndPointSystemId]
+					,[UserName]
+					,[UniqueName]
+					,[FirstName]
+					,[LastName]
+					,[Salutation]
+					,[DisplayName]
+					,[Email]
+					,[Department]
+					,[JobTitle]
+					,[Title]
+					,[Company]
+					,[Cellphone]
+					,[Telephone]
+					,[Fax]
+					,[Street]
+					,[City]
+					,[State]
+					,[Country]
+					,[Zip]
+					,[Currency]
+					,[Language]
+					,[Password]
+					,[UserLastLogOnTime]
+					,[StartDate]
+					,[EndDate]
+					,[IsCompanyUser]
+					,[UniqueId]
+					,[SpecialAccount]
+					,[DIUserId]
+					,[PwdResetCnt]
+					,[Extra1]
+					,[Extra2]
+					,[Extra3]
+					,[IACMLastPasswordChange]
+					,[CreatedBy]
+					,[CreatedDate]
+					,[LastModifiedBy]
+					,[LastModifiedDate]
+					,[MappingType]
+					,[IsServiceAccount]
+					,[IfUnmappedMapTo]
+					,[Version]
+					,[RecordStatus])
+				SELECT [UserId]
+					  ,@HistoryId
+					  ,
+					  ,[EndPointSystemId]
+					  ,[UserName]
+					  ,[UniqueName]
+					  ,[FirstName]
+					  ,[LastName]
+					  ,[Salutation]
+					  ,[DisplayName]
+					  ,[Email]
+					  ,[Department]
+					  ,[JobTitle]
+					  ,[Title]
+					  ,[Company]
+					  ,[Cellphone]
+					  ,[Telephone]
+					  ,[Fax]
+					  ,[Street]
+					  ,[City]
+					  ,[State]
+					  ,[Country]
+					  ,[Zip]
+					  ,[Currency]
+					  ,[Language]
+					  ,[Password]
+					  ,[UserLastLogOnTime]
+					  ,[StartDate]
+					  ,[EndDate]
+					  ,[IsCompanyUser]
+					  ,[UniqueId]
+					  ,[SpecialAccount]
+					  ,[DIUserId]
+					  ,[PwdResetCnt]
+					  ,[Extra1]
+					  ,[Extra2]
+					  ,[Extra3]
+					  ,[IACMLastPasswordChange]
+					  ,[CreatedBy]
+					  ,[CreatedDate]
+					  ,[LastModifiedBy]
+					  ,[LastModifiedDate]
+					  ,[MappingType]
+					  ,[IsServiceAccount]
+					  ,[IfUnmappedMapTo]
+					  ,[Version]
+					  ,'Deleted'
+					FROM deleted
+			   
+     
+END

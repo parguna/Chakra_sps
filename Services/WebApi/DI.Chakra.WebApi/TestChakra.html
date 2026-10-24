@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Tester</title>
+</head>
+<body>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+    <script>
+        var baseUri = 'http://localhost:51138/';
+        var uriTestConnection = baseUri + 'api/Account/TestConnection';
+        var uriAuthenticate = baseUri + 'api/Account/Authenticate?userName=Fail&password=di';
+
+
+        var testConnectionData = { IMEI: "hello", MobileNumber: "world", SerialNumber : "test" };
+
+        (function ($) {
+            $.postJSON = function (url, data) {
+                var o = {
+                    url: url,
+                    type: "POST",
+                    dataType: "json",
+                    contentType: 'application/json; charset=utf-8'
+                };
+                if (data !== undefined) {
+                    //o.data = JSON.stringify(data);
+                    o.data = data;
+                }
+                return $.ajax(o);
+            };
+        }(jQuery));
+
+       
+        function calljs(uri, verb, input) {
+            if (verb == "GET") {
+                $.getJSON(uriTest)
+                .done(function (data) {
+                    var jsonText = JSON.stringify(data);
+                    document.write(jsonText);
+                })
+            }
+            else {
+                $.postJSON(uri, input)
+                .success(function (data) {
+                    var jsonText = JSON.stringify(data);
+                    document.write(jsonText);
+                })
+            }
+        }
+    </script>
+    <div>
+        <h2>Test Chakra Service</h2>
+        URL: <input type="text" id="urlName" size="200" /><br>
+        Data:   <textarea id="inputData" cols="100" rows="10"></textarea> <br><br>
+        <input type="button" value="Test" style="font-size:x-large" onclick="calljs($('#urlName').val(), 'POST', $('#inputData').val());" /><br>
+        <p id="product" />
+    </div>
+</body>
+</html>

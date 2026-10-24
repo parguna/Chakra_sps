@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report Width="27.4999971403017cm" Name="ReviewStatusSummaryReport" xmlns="http://schemas.telerik.com/reporting/2012/4.2">
+  <DataSources>
+    <SqlDataSource QueryDesignerState="null" ConnectionString="V5RWSDBAmjathDemo" SelectCommand="select top 4 * from di_m_user" Name="RWSDataSource" />
+  </DataSources>
+  <Items>
+    <PageHeaderSection Height="1.01763892204176cm" Name="pageHeaderSection1">
+      <Items>
+        <TextBox Width="14.1999988562122cm" Height="0.799899935722351cm" Left="6.19999983178245cm" Top="0cm" Value="RWS Restricted" CanGrow="False" Name="Text1">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Size="10pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="4.59999990463257cm" Height="1cm" Left="22.2450008392334cm" Top="0cm" Value="Page: {PageNumber} of {PageCount}" Name="textBox10">
+          <Style>
+            <Font Name="Segoe UI" />
+          </Style>
+        </TextBox>
+      </Items>
+    </PageHeaderSection>
+    <DetailSection Height="14.082915842611cm" Name="detailSection1">
+      <Items>
+        <Table DataSourceName="RWSDataSource" Width="25.6810899692203cm" Height="4.25874620435299cm" Left="1.0127454996109cm" Top="1.58236111160175cm" ColumnHeadersPrintOnEveryPage="True" Name="table1">
+          <Body>
+            <Cells>
+              <TableCell RowIndex="0" ColumnIndex="5" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="3.14652681350708cm" Height="0.894305109977722cm" Left="0cm" Top="0cm" Value="= Fields.Occurance" Name="textBox14" StyleName="">
+                    <Style BackgroundColor="WhiteSmoke" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Size="9pt" Bold="False" />
+                      <BorderStyle Default="Solid" />
+                      <BorderColor Default="White" />
+                      <BorderWidth Default="0.5pt" />
+                    </Style>
+                    <ConditionalFormatting>
+                      <FormattingRule>
+                        <Style BackgroundColor="LightSteelBlue" />
+                        <Filters>
+                          <Filter Expression="= RowNumber()%2" Operator="Equal" Value="1" />
+                        </Filters>
+                      </FormattingRule>
+                    </ConditionalFormatting>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="6" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="2.82902503013611cm" Height="0.894305109977722cm" Left="0cm" Top="0cm" Value="= Fields.StartDate" Name="textBox16" StyleName="">
+                    <Style BackgroundColor="WhiteSmoke" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Size="9pt" Bold="False" />
+                      <BorderStyle Default="Solid" />
+                      <BorderColor Default="White" />
+                      <BorderWidth Default="0.5pt" />
+                    </Style>
+                    <ConditionalFormatting>
+                      <FormattingRule>
+                        <Style BackgroundColor="LightSteelBlue" />
+                        <Filters>
+                          <Filter Expression="= RowNumber()%2" Operator="Equal" Value="1" />
+                        </Filters>
+                      </FormattingRule>
+                    </ConditionalFormatting>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="2.3731427192688cm" Height="0.894305467605591cm" Left="0cm" Top="0cm" Value="= Fields.SerialNo" Name="textBox8" StyleName="">
+                    <Style BackgroundColor="WhiteSmoke" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Size="9pt" Bold="False" />
+                      <BorderStyle Default="Solid" />
+                      <BorderColor Default="White" />
+                      <BorderWidth Default="0.5pt" />
+                    </Style>
+                    <ConditionalFormatting>
+                      <FormattingRule>
+                        <Style BackgroundColor="LightSteelBlue" />
+                        <Filters>
+                          <Filter Expression="= RowNumber()%2" Operator="Equal" Value="1" />
+                        </Filters>
+                      </FormattingRule>
+                    </ConditionalFormatting>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="2.3731427192688cm" Height="0.458611100912094cm" Left="0cm" Top="0cm" Name="textBox2" StyleName="">
+                    <Style BackgroundColor="White" VerticalAlign="Middle">
+                      <Font Size="9pt" />
+                      <BorderStyle Default="None" Bottom="Solid" />
+                      <BorderColor Default="White" Bottom="White" />
+                      <BorderWidth Default="0.5pt" Bottom="1pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="2.81411147117615cm" Height="0.458611100912094cm" Left="0cm" Top="0cm" Name="textBox26" StyleName="">
+                    <Style BackgroundColor="White" VerticalAlign="Middle">
+                      <Font Size="9pt" />
+                      <BorderStyle Default="None" Bottom="Solid" />
+                      <BorderColor Default="White" Bottom="White" />
+                      <BorderWidth Default="0.5pt" Bottom="1pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="3.322918176651cm" Height="0.458611100912094cm" Left="0cm" Top="0cm" Name="textBox27" StyleName="">
+                    <Style BackgroundColor="White" VerticalAlign="Middle">
+                      <Font Size="9pt" />
+                      <BorderStyle Default="None" Bottom="Solid" />
+                      <BorderColor Default="White" Bottom="White" />
+                      <BorderWidth Default="0.5pt" Bottom="1pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="2.26731300354004cm" Height="0.458611100912094cm" Left="0cm" Top="0cm" Name="textBox28" StyleName="">
+                    <Style BackgroundColor="White" TextAlign="Left" VerticalAlign="Middle">
+                      <Font Size="9pt" />
+                      <BorderStyle Default="None" Bottom="Solid" />
+                      <BorderColor Default="White" Bottom="White" />
+                      <BorderWidth Default="0.5pt" Bottom="1pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="4" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="2.01763534545898cm" Height="0.458611100912094cm" Left="0cm" Top="0cm" Name="textBox29" StyleName="">
+                    <Style BackgroundColor="White" VerticalAlign="Middle">
+                      <Font Size="9pt" />
+                      <BorderStyle Default="None" Bottom="Solid" />
+                      <BorderColor Default="White" Bottom="White" />
+                      <BorderWidth Default="0.5pt" Bottom="1pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="5" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="3.14652585983276cm" Height="0.458611100912094cm" Left="0cm" Top="0cm" Name="textBox30" StyleName="">
+                    <Style BackgroundColor="White" VerticalAlign="Middle">
+                      <Font Size="9pt" />
+                      <BorderStyle Default="None" Bottom="Solid" />
+                      <BorderColor Default="White" Bottom="White" />
+                      <BorderWidth Default="0.5pt" Bottom="1pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="6" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="2.82902526855469cm" Height="0.458611100912094cm" Left="0cm" Top="0cm" Name="textBox31" StyleName="">
+                    <Style BackgroundColor="White" VerticalAlign="Middle">
+                      <Font Size="9pt" />
+                      <BorderStyle Default="None" Bottom="Solid" />
+                      <BorderColor Default="White" Bottom="White" />
+                      <BorderWidth Default="0.5pt" Bottom="1pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="7" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="2.91722440719604cm" Height="0.458611100912094cm" Left="0cm" Top="0cm" Name="textBox35" StyleName="">
+                    <Style BackgroundColor="White" VerticalAlign="Middle">
+                      <Font Size="9pt" />
+                      <BorderStyle Default="None" Bottom="Solid" />
+                      <BorderColor Default="White" Bottom="White" />
+                      <BorderWidth Default="0.5pt" Bottom="1pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="7" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="2.91722440719604cm" Height="0.894304990768433cm" Left="0cm" Top="0cm" Value="= Fields.CompleteDate" Name="textBox22" StyleName="">
+                    <Style BackgroundColor="WhiteSmoke" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Size="9pt" Bold="False" />
+                      <BorderStyle Default="Solid" />
+                      <BorderColor Default="White" />
+                      <BorderWidth Default="0.5pt" />
+                      <Padding Left="5pt" />
+                    </Style>
+                    <ConditionalFormatting>
+                      <FormattingRule>
+                        <Style BackgroundColor="LightSteelBlue" />
+                        <Filters>
+                          <Filter Expression="= RowNumber()%2" Operator="Equal" Value="1" />
+                        </Filters>
+                      </FormattingRule>
+                    </ConditionalFormatting>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="8" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="3.99319505691528cm" Height="0.458611100912094cm" Left="0cm" Top="0cm" Name="textBox95" StyleName="">
+                    <Style BackgroundColor="White" VerticalAlign="Middle">
+                      <Font Size="9pt" />
+                      <BorderStyle Bottom="Solid" />
+                      <BorderColor Default="White" Bottom="White" />
+                      <BorderWidth Default="0.5pt" Bottom="1pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="8" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="3.9931948184967cm" Height="0.894305050373077cm" Left="0cm" Top="0cm" Value="= Fields.Status" Name="textBox107" StyleName="">
+                    <Style BackgroundColor="WhiteSmoke" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Size="9pt" Bold="False" />
+                      <BorderStyle Default="Solid" />
+                      <BorderColor Default="White" />
+                      <BorderWidth Default="0.5pt" />
+                      <Padding Left="5pt" />
+                    </Style>
+                    <ConditionalFormatting>
+                      <FormattingRule>
+                        <Style BackgroundColor="LightSteelBlue" />
+                        <Filters>
+                          <Filter Expression="= RowNumber()%2" Operator="Equal" Value="1" />
+                        </Filters>
+                      </FormattingRule>
+                    </ConditionalFormatting>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="2" ColumnIndex="0" RowSpan="1" ColumnSpan="9">
+                <ReportItem>
+                  <TextBox Width="25.6810932159424cm" Height="1.06444370746613cm" Left="0cm" Top="0cm" Value="-------- End of Report------------" Name="textBox38" StyleName="">
+                    <Style BackgroundColor="White" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Size="9pt" />
+                      <BorderStyle Bottom="Solid" />
+                      <BorderColor Bottom="Black" />
+                      <BorderWidth Default="0pt" Bottom="0pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="2">
+                <ReportItem>
+                  <TextBox Width="6.13703012466431cm" Height="0.894305050373077cm" Left="0cm" Top="0cm" Value="= Fields.CampaignName" Name="textBox25" StyleName="">
+                    <Style BackgroundColor="WhiteSmoke" VerticalAlign="Middle">
+                      <Font Size="9pt" Bold="False" />
+                      <BorderStyle Default="Solid" />
+                      <BorderColor Default="White" />
+                      <BorderWidth Default="0.5pt" />
+                    </Style>
+                    <ConditionalFormatting>
+                      <FormattingRule>
+                        <Style BackgroundColor="LightSteelBlue" />
+                        <Filters>
+                          <Filter Expression="= RowNumber()%2" Operator="Equal" Value="1" />
+                        </Filters>
+                      </FormattingRule>
+                    </ConditionalFormatting>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="3" RowSpan="1" ColumnSpan="2">
+                <ReportItem>
+                  <TextBox Width="4.28495025634766cm" Height="0.894305109977722cm" Left="0cm" Top="0cm" Value="= Fields.ReviewType" Name="textBox6">
+                    <Style BackgroundColor="WhiteSmoke" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Size="9pt" Bold="False" />
+                      <BorderStyle Default="Solid" />
+                      <BorderColor Default="White" />
+                      <BorderWidth Default="0.5pt" />
+                    </Style>
+                    <ConditionalFormatting>
+                      <FormattingRule>
+                        <Style BackgroundColor="LightSteelBlue" />
+                        <Filters>
+                          <Filter Expression="= RowNumber()%2" Operator="Equal" Value="1" />
+                        </Filters>
+                      </FormattingRule>
+                    </ConditionalFormatting>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="3" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="2.3731427192688cm" Height="0.605833292007446cm" Left="0cm" Top="0cm" Name="textBox4" StyleName="">
+                    <Style BackgroundColor="White" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Size="9pt" />
+                      <BorderStyle Bottom="Solid" />
+                      <BorderWidth Default="0pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="3" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="2.81411170959473cm" Height="0.605833292007446cm" Left="0cm" Top="0cm" Name="textBox7" StyleName="">
+                    <Style BackgroundColor="White" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Size="9pt" />
+                      <BorderStyle Bottom="Solid" />
+                      <BorderWidth Default="0pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="3" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="3.322918176651cm" Height="0.605833292007446cm" Left="0cm" Top="0cm" Name="textBox9" StyleName="">
+                    <Style BackgroundColor="White" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Size="9pt" />
+                      <BorderStyle Bottom="Solid" />
+                      <BorderWidth Default="0pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="3" ColumnIndex="6" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="2.82902503013611cm" Height="0.605833292007446cm" Left="0cm" Top="0cm" Value="Total" Name="textBox19" StyleName="">
+                    <Style BackgroundColor="White" TextAlign="Left" VerticalAlign="Middle">
+                      <Font Size="9pt" Underline="True" />
+                      <BorderStyle Bottom="Solid" />
+                      <BorderWidth Default="0pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="3" ColumnIndex="7" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="2.91722440719604cm" Height="0.605833292007446cm" Left="0cm" Top="0cm" Name="textBox20" StyleName="">
+                    <Style BackgroundColor="White" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Size="9pt" />
+                      <BorderStyle Bottom="Solid" />
+                      <BorderWidth Default="0pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="3" ColumnIndex="8" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="3.9931948184967cm" Height="0.605833292007446cm" Left="0cm" Top="0cm" Name="textBox21" StyleName="">
+                    <Style BackgroundColor="White" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Size="9pt" />
+                      <BorderStyle Bottom="Solid" />
+                      <BorderWidth Default="0pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="3" ColumnIndex="3" RowSpan="1" ColumnSpan="3">
+                <ReportItem>
+                  <TextBox Width="7.43147373199463cm" Height="0.605833292007446cm" Left="0cm" Top="0cm" Value="Summary" Name="textBox12" StyleName="">
+                    <Style BackgroundColor="White" TextAlign="Left" VerticalAlign="Middle">
+                      <Font Size="9pt" Underline="True" />
+                      <BorderStyle Bottom="Solid" />
+                      <BorderWidth Default="0pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="4" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="2.3731427192688cm" Height="0.5cm" Left="0cm" Top="0cm" Name="textBox17" StyleName="">
+                    <Style BackgroundColor="White" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Size="9pt" />
+                      <BorderStyle Bottom="Solid" />
+                      <BorderWidth Default="0pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="4" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="2.81411170959473cm" Height="0.5cm" Left="0cm" Top="0cm" Name="textBox18" StyleName="">
+                    <Style BackgroundColor="White" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Size="9pt" />
+                      <BorderStyle Bottom="Solid" />
+                      <BorderWidth Default="0pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="4" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="3.322918176651cm" Height="0.5cm" Left="0cm" Top="0cm" Name="textBox32" StyleName="">
+                    <Style BackgroundColor="White" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Size="9pt" />
+                      <BorderStyle Bottom="Solid" />
+                      <BorderWidth Default="0pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="4" ColumnIndex="7" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="2.91722440719604cm" Height="0.5cm" Left="0cm" Top="0cm" Name="textBox39" StyleName="">
+                    <Style BackgroundColor="White" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Size="9pt" />
+                      <BorderStyle Bottom="Solid" />
+                      <BorderWidth Default="0pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="4" ColumnIndex="8" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="3.9931948184967cm" Height="0.5cm" Left="0cm" Top="0cm" Name="textBox40" StyleName="">
+                    <Style BackgroundColor="White" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Size="9pt" />
+                      <BorderStyle Bottom="Solid" />
+                      <BorderWidth Default="0pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="4" ColumnIndex="3" RowSpan="1" ColumnSpan="3">
+                <ReportItem>
+                  <TextBox Width="7.43147420883179cm" Height="0.500000059604645cm" Left="0cm" Top="0cm" Value="Number of records printed " Name="textBox33" StyleName="">
+                    <Style BackgroundColor="White" VerticalAlign="Middle">
+                      <Font Size="9pt" Underline="False" />
+                      <BorderStyle Bottom="Solid" />
+                      <BorderWidth Default="0pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="4" ColumnIndex="6" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="2.82902503013611cm" Height="0.5cm" Left="0cm" Top="0cm" Value="=Exec('table1',Count(Fields.SerialNo))" Name="textBox154" StyleName="Normal.TableBody">
+                    <Style TextAlign="Left" VerticalAlign="Middle" LineStyle="Dashed" LineWidth="0pt" LineColor="White">
+                      <Font Name="Segoe UI Light" Size="11pt" Bold="True" />
+                      <BorderStyle Default="None" />
+                      <Padding Left="2px" Right="2px" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+            </Cells>
+            <Columns>
+              <Column Width="2.37314298189264cm" />
+              <Column Width="2.81411171348377cm" />
+              <Column Width="3.32291721097827cm" />
+              <Column Width="2.26731317271076cm" />
+              <Column Width="2.01763544565546cm" />
+              <Column Width="3.14652577675778cm" />
+              <Column Width="2.82902525154836cm" />
+              <Column Width="2.91722450843067cm" />
+              <Column Width="3.99319505579677cm" />
+            </Columns>
+            <Rows>
+              <Row Height="0.894305008320038cm" />
+              <Row Height="0.458610857639cm" />
+              <Row Height="1.06444229253336cm" />
+              <Row Height="0.605832355068186cm" />
+              <Row Height="0.500000212750046cm" />
+            </Rows>
+          </Body>
+          <Corner />
+          <RowGroups>
+            <TableGroup Name="detailTableGroup">
+              <Groupings>
+                <Grouping />
+              </Groupings>
+            </TableGroup>
+            <TableGroup Name="group8" />
+            <TableGroup Name="group9" />
+            <TableGroup Name="group4" />
+            <TableGroup Name="group5" />
+          </RowGroups>
+          <ColumnGroups>
+            <TableGroup Name="tableGroup">
+              <ReportItem>
+                <TextBox Width="2.37314291432265cm" Height="0.735555444095887cm" Left="0cm" Top="0cm" Value="S/N" Name="textBox1">
+                  <Style BackgroundColor="SteelBlue" Color="White" TextAlign="Center" VerticalAlign="Middle">
+                    <BorderStyle Default="None" />
+                    <BorderWidth Default="0.5pt" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="tableGroup1">
+              <ReportItem>
+                <TextBox Width="6.13702905319401cm" Height="0.735555444095887cm" Left="0cm" Top="0cm" Value="Campaign Name" Name="textBox3">
+                  <Style BackgroundColor="SteelBlue" Color="White" TextAlign="Center" VerticalAlign="Middle">
+                    <BorderStyle Default="None" />
+                    <BorderWidth Default="0.5pt" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+              <ChildGroups>
+                <TableGroup Name="group10" />
+                <TableGroup Name="group" />
+              </ChildGroups>
+            </TableGroup>
+            <TableGroup Name="tableGroup2">
+              <ReportItem>
+                <TextBox Width="4.28494865050467cm" Height="0.735555444095887cm" Left="0cm" Top="0cm" Value="Review Type" Name="textBox5">
+                  <Style BackgroundColor="SteelBlue" Color="White" TextAlign="Left" VerticalAlign="Middle">
+                    <BorderStyle Default="None" />
+                    <BorderWidth Default="0.5pt" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+              <ChildGroups>
+                <TableGroup Name="group11" />
+                <TableGroup Name="group1" />
+              </ChildGroups>
+            </TableGroup>
+            <TableGroup Name="group2">
+              <ReportItem>
+                <TextBox Width="3.1465259408619cm" Height="0.735555444095887cm" Left="0cm" Top="0cm" Value="Occurance" Name="textBox13" StyleName="">
+                  <Style BackgroundColor="SteelBlue" Color="White" TextAlign="Center" VerticalAlign="Middle">
+                    <BorderStyle Default="None" />
+                    <BorderWidth Default="0.5pt" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="group3">
+              <ReportItem>
+                <TextBox Width="2.82902520775449cm" Height="0.735555444095887cm" Left="0cm" Top="0cm" Value="Start Date" Name="textBox15" StyleName="">
+                  <Style BackgroundColor="SteelBlue" Color="White" TextAlign="Center" VerticalAlign="Middle">
+                    <BorderStyle Default="None" />
+                    <BorderWidth Default="0.5pt" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="group7">
+              <ReportItem>
+                <TextBox Width="2.91722446923675cm" Height="0.735555444095887cm" Left="0cm" Top="0cm" Value="Complete Date" Name="textBox23" StyleName="">
+                  <Style BackgroundColor="SteelBlue" Color="White" TextAlign="Center" VerticalAlign="Middle">
+                    <BorderStyle Default="None" />
+                    <BorderWidth Default="0.5pt" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="group16">
+              <ReportItem>
+                <TextBox Width="3.99319488138005cm" Height="0.735555444095887cm" Left="0cm" Top="0cm" Value="Status" Name="textBox24" StyleName="">
+                  <Style BackgroundColor="SteelBlue" Color="White" TextAlign="Center" VerticalAlign="Middle">
+                    <BorderWidth Default="0.5pt" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+          </ColumnGroups>
+        </Table>
+        <Table Width="11.2006890696948cm" Height="0.59972220659256cm" Left="9.52291760553086cm" Top="5.9823613134628cm" Name="table2">
+          <Body>
+            <Cells>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="7.44360647496667cm" Height="0.59972220659256cm" Left="0cm" Top="0cm" Value="= IsNull(Fields.ReviewType, &quot;&quot;) + &quot; &quot; + IsNull(Fields.Status, &quot;&quot;)" Name="textBox34">
+                    <Style TextAlign="Left" VerticalAlign="Middle">
+                      <Font Name="Arial" Size="9pt" Bold="False" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="3.75708347758179cm" Height="0.59972220659256cm" Left="0cm" Top="0cm" Value="= Count(SerialNo)" Name="textBox41">
+                    <Style TextAlign="Left" VerticalAlign="Middle">
+                      <Font Name="Arial" Size="9pt" Bold="False" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+            </Cells>
+            <Columns>
+              <Column Width="7.443605592113cm" />
+              <Column Width="3.7570834775818cm" />
+            </Columns>
+            <Rows>
+              <Row Height="0.59972220659256cm" />
+            </Rows>
+          </Body>
+          <Corner />
+          <RowGroups>
+            <TableGroup Name="detailTableGroup">
+              <Groupings>
+                <Grouping Expression="= Fields.ReviewType" />
+                <Grouping Expression="= Fields.Status" />
+              </Groupings>
+            </TableGroup>
+          </RowGroups>
+          <ColumnGroups>
+            <TableGroup Name="tableGroup" />
+            <TableGroup Name="tableGroup1" />
+          </ColumnGroups>
+        </Table>
+        <TextBox Width="4.91567611694336cm" Height="0.800000071525574cm" Left="22.2450003137257cm" Top="0.582283294163877cm" Value="Generated by: IDAS" Name="textBox48">
+          <Style>
+            <Font Name="Segoe UI" />
+          </Style>
+        </TextBox>
+        <TextBox Width="5.1000018119812cm" Height="1cm" Left="22.2450003137257cm" Top="0.0001999770214829cm" Value="Generated on: {Today().ToShortDateString()}" Name="textBox47">
+          <Style>
+            <Font Name="Segoe UI" />
+          </Style>
+        </TextBox>
+        <Table Width="15.7515272802393cm" Height="0.500000014012227cm" Left="6.04675499097261cm" Top="0.400477805124344cm" Name="table3">
+          <Body>
+            <Cells>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="15.7515272802393cm" Height="0.5cm" Left="0cm" Top="0cm" Value="= &quot;Review Status Summary for the period from&quot; +  Format('{0:dd/MM/yyyy}',First(Fields.ReportStartDate)) + &quot; to &quot; + Format('{0:dd/MM/yyyy}', First(Fields.ReportEndDate))" Name="textBox37">
+                    <Style Color="Red">
+                      <Font Size="11pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+            </Cells>
+            <Columns>
+              <Column Width="15.7515272802393cm" />
+            </Columns>
+            <Rows>
+              <Row Height="0.500000014012227cm" />
+            </Rows>
+          </Body>
+          <Corner />
+          <RowGroups>
+            <TableGroup Name="group6" />
+          </RowGroups>
+          <ColumnGroups>
+            <TableGroup Name="tableGroup3" />
+          </ColumnGroups>
+        </Table>
+      </Items>
+    </DetailSection>
+    <PageFooterSection Height="2cm" Name="pageFooterSection1" />
+  </Items>
+  <PageSettings PaperKind="A4" Landscape="True" ContinuousPaper="False">
+    <Margins>
+      <MarginsU Left="0.5cm" Right="0.5cm" Top="2cm" Bottom="2cm" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+</Report>

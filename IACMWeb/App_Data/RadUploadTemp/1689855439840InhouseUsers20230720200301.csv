@@ -1,0 +1,3 @@
+"UserName","Inhouse System Code","Employee Id","Email","Display Name","First Name","Last Name","Account Type","Account Created Date","Last Login Date","Is Locked","IsDisabled","IsDeleted","Remarks1","Remarks2","Remarks3","Remarks4","Remarks5","Permission","Validation Message"
+"	nirmala","	AMTS","	10000862","	","	Kanchana Chinnaiyan","	","	","	Service","	20-07-2023","	20-07-2023","	False","	False","	False","	","	","	","	","	","	BACKEND","	Employee have already had a user account : kanchana"
+"	TOBT717A","	AMTS","	10000862","	ongbtt@spgroup.com.sg","	Ong Boon Tat Terence","	","	","	Secondary","	20-07-2023","	20-07-2023","	False","	False","	False","	","	","	","	","	","	BACKEND","	Employee Id Not Found"

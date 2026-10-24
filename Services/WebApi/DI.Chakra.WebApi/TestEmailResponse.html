@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        #txtComments {
+            height: 107px;
+            width: 513px;
+        }
+    </style>
+</head>
+<body>
+
+    <form method="post" action="http://localhost:51138/ProcessReply.aspx">
+        Task Id : 4564
+        <input name="txtUserName" type="text" value="wrlkss" style="visibility: hidden" /><br />
+        <input name="txtTaskId" type="text" value="4564" style="visibility: hidden" /><br />
+        <br />
+        Request Detail : Domain Controller - New Account<br />
+        <br />
+        <strong>Action :</strong><br />
+        <br />
+       <input id="radApprove" name="optAction" type="radio" checked="checked" />
+        Approve<br />
+        <br />
+        <input id="radRevoke" name="optAction"  type="radio"/>
+        Revoke<br />
+        <br />
+        <strong>Comments :
+        </strong>
+        <br />
+        <br />
+        <textarea name="txtComments"></textarea><br />
+        <br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="iacm" default="int"> 
+  <property name="build.phase" value="Phase1" />
+  <property name="MSBuildPath" value="C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe"/>
+  <property name="build.client" value="DEEPIDENTITY" />
+  <property name="build.sourcedir" value="C:\IACM\Source\4e058435cc04ef19\" />
+  <property name="build.solutiondir" value="${build.sourcedir}Solution\" />
+  <property name="build.webprojDir" value="${build.sourcedir}IACMWeb\" />
+  <property name="build.domainApiprojDir" value="${build.sourcedir}DI.Chakra.DomainApi\" />
+  <property name="build.domainServiceprojDir" value="${build.sourcedir}DI.Chakra.DomainService\" />
+  <property name="build.wfprojDir" value="${build.sourcedir}Workflows\DI.Chakra.Workflow.Services\" />
+
+  <property name="build.AttestationServiceprojDir" value="${build.sourcedir}Services\Win\DI.Chakra.Services.Attestation\" />
+  <property name="build.DiscoveryServiceprojDir" value="${build.sourcedir}Services\Win\DI.Chakra.Services.Discovery\" />
+  <property name="build.EmailingServiceprojDir" value="${build.sourcedir}Services\Win\DI.Chakra.Services.Emailing\" />
+  <property name="build.ProvisioningServiceprojDir" value="${build.sourcedir}Services\Win\DI.Chakra.Services.Provisioning\" />
+  <property name="build.MiscServiceprojDir" value="${build.sourcedir}Services\Win\DI.Chakra.Services.Misc\" />
+  <property name="build.ComplianceServiceprojDir" value="${build.sourcedir}Services\Win\DI.Chakra.Services.Compliance\" />
+  <property name="build.ReportingServiceprojDir" value="${build.sourcedir}Services\Win\DI.Chakra.Services.Reporting\" />
+  
+  
+  <property name="properties.devfile" value="${build.sourcedir}build\nant\qa\dev.xml" />
+
+  <tstamp>
+    <formatter property="build.date" pattern="yyyyMMdd"/>
+    <formatter property="build.time" pattern="hh.mm.ss" />
+  </tstamp>
+
+  <target name="dev" description="Build solution and copy dev files">
+    <property name="environmentfile" value="${properties.devfile}"/>
+    <call target="build"/>
+  </target>
+
+  <target name="build">
+    
+    <call target="importProperties" cascade="false"/>
+    
+    <!--
+    <call target="cleantemp"/>
+    
+    <call target="buildweb"/>
+    <call target="buildDomainApi"/>
+    <call target="buildDomainService"/>
+    <call target="buildWf"/>
+
+    <call target="buildAttestationService"/>
+    <call target="buildDiscoveryService"/>
+    <call target="buildEmailingService"/>
+    <call target="buildProvisioningService"/>
+    <call target="buildMiscService"/>
+    <call target="buildComplianceService"/>
+    <call target="buildReportingService"/>
+    
+    <call target="deployTempWeb"/>
+    <call target="deployTempDomainApi"/>
+    <call target="deployTempDomainService"/>
+    <call target="deployTempWf"/>
+    <call target="deployTempAttestationService"/>
+    <call target="deployTempDiscoveryService"/>
+    <call target="deployTempEmailingService"/>
+    <call target="deployTempProvisioningService"/>
+    <call target="deployTempMiscService"/>
+    <call target="deployTempComplianceService"/>
+    <call target="deployTempReportingService"/>
+    -->
+    <trycatch>
+      <try>
+        <call target="UninstallAttestationService"/>
+      </try>
+      <catch></catch>
+    </trycatch>
+    <trycatch>
+      <try>
+        <call target="UninstallDiscoveryService"/>
+      </try>
+      <catch></catch>
+    </trycatch>
+    <trycatch>
+      <try>
+        <call target="UninstallEmailingService"/>
+      </try>
+      <catch></catch>
+    </trycatch>
+    <trycatch>
+      <try>
+        <call target="UninstallProvisioningService"/>
+      </try>
+      <catch></catch>
+    </trycatch>
+    <trycatch>
+      <try>
+        <call target="UninstallMiscService"/>
+      </try>
+      <catch></catch>
+    </trycatch>
+    <trycatch>
+      <try>
+        <call target="UninstallComplianceService"/>
+      </try>
+      <catch></catch>
+    </trycatch>
+    <trycatch>
+      <try>
+        <call target="UninstallReportingService"/>
+      </try>
+      <catch></catch>
+    </trycatch>
+    
+    <call target="cleanroot"/>
+
+    <call target="deployWeb"/>
+    <call target="deployDomainApi"/>
+    <call target="deployDomainService"/>
+    <call target="deployWf"/>
+
+    <call target="deployAttestation"/>
+    <call target="deployDiscovery"/>
+    <call target="deployEmailing"/>
+    <call target="deployProvisioning"/>
+    <call target="deployMisc"/>
+    <call target="deployCompliance"/>
+    <call target="deployReporting"/>
+    
+    <call target="copyWebConfig"/>
+    <call target="copyDomainApiConfig"/>
+    <call target="copyDomainServiceConfig"/>
+    <call target="copyWfConfig"/>
+    
+    <call target="copyAttestationConfig"/>
+    <call target="copyDiscoveryConfig"/>
+    <call target="copyEmailingConfig"/>
+    <call target="copyProvisioningConfig"/>
+    <call target="copyMiscConfig"/>
+    <call target="copyComplianceConfig"/>
+    <call target="copyReportingConfig"/>
+
+    <call target="InstallAttestationService"/>
+    <call target="InstallDiscoveryService"/>
+    <call target="InstallEmailingService"/>
+    <call target="InstallProvisioningService"/>
+    <call target="InstallMiscService"/>
+    <call target="InstallComplianceService"/>
+    <call target="InstallReportingService"/>
+       
+  </target>
+
+  <target name="importProperties">
+    <property name="propertiesFile" value="${environmentfile}"/>
+    <if test="${file::exists(propertiesFile)}">
+      <include buildfile="${propertiesFile}"/>
+    </if>
+    <if test="${not file::exists(propertiesFile)}">
+      <fail message="Properties file ${propertiesFile} could not be found."/>
+    </if>
+  </target>
+
+
+  <target name="cleantemp" description="Clean deploy folder">
+    <delete dir="${build.deployTempRootDir}"/>
+    <delete dir="${build.deployTempDomainApiRootDir}"/>
+    <delete dir="${build.deployTempDomainServiceRootDir}"/>
+    <delete dir="${build.deployTempWfRootDir}"/>
+    <delete dir="${build.deployTempAttestationServiceRootDir}"/>
+    <delete dir="${build.deployTempDiscoveryServiceRootDir}"/>
+    <delete dir="${build.deployTempEmailingServiceRootDir}"/>
+    <delete dir="${build.deployTempProvisioningServiceRootDir}"/>
+    <delete dir="${build.deployTempMiscServiceRootDir}"/>
+    <delete dir="${build.deployTempComplianceServiceRootDir}"/>
+    <delete dir="${build.deployTempReportingServiceRootDir}"/>
+  </target>
+
+  <target name="UninstallAttestationService" description="Uninstall Attestation Service">
+    <exec program="${build.deployAttestationService}\UNinstall_attestationService.bat">
+    </exec>
+  </target>
+  <target name="UninstallDiscoveryService" description="Uninstall Discovery Service">
+    <exec program="${build.deployDiscoveryService}\UNinstall_discoveryService.bat">
+    </exec>
+  </target>
+  <target name="UninstallEmailingService" description="Uninstall Emailing Service">
+    <exec program="${build.deployEmailingService}\UNinstall_emailingService.bat">
+    </exec>
+  </target>
+  <target name="UninstallProvisioningService" description="Uninstall Provisioning Service">
+    <exec program="${build.deployProvisioningService}\UNinstall_provisioningService.bat">
+    </exec>
+  </target>
+  <target name="UninstallMiscService" description="Uninstall Misc Service">
+    <exec program="${build.deployMiscService}\Uninstall_MiscService.bat">
+    </exec>
+  </target>
+  <target name="UninstallComplianceService" description="Uninstall Compliance Service">
+    <exec program="${build.deployComplianceService}\UNinstall_complianceService.bat">
+    </exec>
+  </target>
+  <target name="UninstallReportingService" description="Uninstall Reporting Service">
+    <exec program="${build.deployReportingService}\UninstallReportService.bat">
+    </exec>
+  </target>
+  
+  <target name="cleanroot" description="Clean deploy folder">
+    <delete dir="${build.deployRootDir}\"/>
+    <delete dir="${build.deployDomainApiRootDir}\"/>
+    <delete dir="${build.deployRootDomainServiceDir}\"/>
+    <delete dir="${build.deployRootWfDir}\"/>
+    <delete dir="${build.deployAttestationService}"/>
+    <delete dir="${build.deployDiscoveryService}"/>
+    <delete dir="${build.deployEmailingService}"/>
+    <delete dir="${build.deployProvisioningService}"/>
+    <delete dir="${build.deployMiscService}"/>
+    <delete dir="${build.deployComplianceService}"/>
+    <delete dir="${build.deployReportingService}"/>
+  </target>
+
+  <target name="buildweb" description="Build the solution">
+    <exec program="${MSBuildPath}">
+      <arg line="${build.webprojDir}DI.Chakra.Web.csproj" />
+      <arg line="/p:Configuration=Release" />
+      <arg value="/target:Rebuild" />
+      <arg value="/p:outdir=${build.webprojDir}bin\" />
+    </exec>
+  </target>
+  <target name="buildDomainApi" description="Build the solution">
+    <exec program="${MSBuildPath}">
+      <arg line="${build.domainApiprojDir}DI.Chakra.DomainApi.csproj" />
+      <arg line="/p:Configuration=Release" />
+      <arg value="/target:Rebuild" />
+      <arg value="/p:outdir=${build.domainApiprojDir}bin\" />
+    </exec>
+  </target>
+  <target name="buildDomainService" description="Build the domain service">
+    <exec program="${MSBuildPath}">
+      <arg line="${build.domainServiceprojDir}DI.Chakra.DomainService.csproj" />
+      <arg line="/p:Configuration=Release" />
+      <arg value="/target:Rebuild" />
+      <arg value="/p:outdir=${build.domainServiceprojDir}bin\" />
+    </exec>
+  </target>
+  <target name="buildWf" description="Build the Workflow service">
+    <exec program="${MSBuildPath}">
+      <arg line="${build.wfprojDir}DI.Chakra.Workflow.Services.csproj" />
+      <arg line="/p:Configuration=Release" />
+      <arg value="/target:Rebuild" />
+      <arg value="/p:outdir=${build.wfprojDir}bin\" />
+    </exec>
+  </target>
+
+  <target name="buildAttestationService" description="Build the Attestation service">
+    <exec program="${MSBuildPath}">
+      <arg line="${build.AttestationServiceprojDir}DI.Chakra.Services.Attestation.csproj" />
+      <arg line="/p:Configuration=Release" />
+      <arg value="/target:Rebuild" />
+      <arg value="/p:outdir=${build.AttestationServiceprojDir}bin\Release\" />
+    </exec>
+  </target>
+  <target name="buildDiscoveryService" description="Build the Discovery service">
+    <exec program="${MSBuildPath}">
+      <arg line="${build.DiscoveryServiceprojDir}DI.Chakra.Services.Discovery.csproj" />
+      <arg line="/p:Configuration=Release" />
+      <arg value="/target:Rebuild" />
+      <arg value="/p:outdir=${build.DiscoveryServiceprojDir}bin\Release\" />
+    </exec>
+  </target>
+  <target name="buildEmailingService" description="Build the Emailing service">
+    <exec program="${MSBuildPath}">
+      <arg line="${build.EmailingServiceprojDir}DI.Chakra.Services.Emailing.csproj" />
+      <arg line="/p:Configuration=Release" />
+      <arg value="/target:Rebuild" />
+      <arg value="/p:outdir=${build.EmailingServiceprojDir}bin\Release\" />
+    </exec>
+  </target>
+  <target name="buildProvisioningService" description="Build the Provisioning service">
+    <exec program="${MSBuildPath}">
+      <arg line="${build.ProvisioningServiceprojDir}DI.Chakra.Services.Provisioning.csproj" />
+      <arg line="/p:Configuration=Release" />
+      <arg value="/target:Rebuild" />
+      <arg value="/p:outdir=${build.ProvisioningServiceprojDir}bin\Release\" />
+    </exec>
+  </target>
+  <target name="buildMiscService" description="Build the Misc service">
+    <exec program="${MSBuildPath}">
+      <arg line="${build.MiscServiceprojDir}DI.Chakra.Services.Misc.csproj" />
+      <arg line="/p:Configuration=Release" />
+      <arg value="/target:Rebuild" />
+      <arg value="/p:outdir=${build.MiscServiceprojDir}bin\Release\" />
+    </exec>
+  </target>
+  <target name="buildComplianceService" description="Build the Compliance service">
+    <exec program="${MSBuildPath}">
+      <arg line="${build.ComplianceServiceprojDir}DI.Chakra.Services.Compliance.csproj" />
+      <arg line="/p:Configuration=Release" />
+      <arg value="/target:Rebuild" />
+      <arg value="/p:outdir=${build.ComplianceServiceprojDir}bin\Release\" />
+    </exec>
+  </target>
+  <target name="buildReportingService" description="Build the Reporting service">
+    <exec program="${MSBuildPath}">
+      <arg line="${build.ReportingServiceprojDir}DI.Chakra.Services.Reporting.csproj" />
+      <arg line="/p:Configuration=Release" />
+      <arg value="/target:Rebuild" />
+      <arg value="/p:outdir=${build.ReportingServiceprojDir}bin\Release\" />
+    </exec>
+  </target>
+  
+  <target name="deployTempWeb" description="Copy built files">
+    <copy todir="${build.deployTempRootDir}">
+      <fileset basedir="${build.webprojDir}bin\_PublishedWebsites\DI.Chakra.Web">
+        <include name="**" />
+        <exclude name="web.config"/>
+        <exclude name="Web.Debug.**"/>
+        <exclude name="Web.Release.**"/>
+        <exclude name="**.pdb"/>
+      </fileset>
+    </copy>
+
+    <attrib normal="true">
+      <fileset basedir="${build.deployTempRootDir}">
+        <include name="**"/>
+      </fileset>
+    </attrib>
+
+    <attrib readonly="false">
+      <fileset basedir="${build.deployTempRootDir}">
+        <include name="**"/>
+      </fileset>
+    </attrib>
+  </target>
+
+  <target name="deployTempDomainApi" description="Copy built files">
+    <copy todir="${build.deployTempDomainApiRootDir}">
+      <fileset basedir="${build.domainApiprojDir}bin\_PublishedWebsites\DI.Chakra.DomainApi">
+        <include name="**" />
+        <exclude name="web.config"/>
+        <exclude name="Web.Debug.**"/>
+        <exclude name="Web.Release.**"/>
+        <exclude name="**.pdb"/>
+        <exclude name="ConnectionString.config"/>
+      </fileset>
+    </copy>
+
+    <attrib normal="true">
+      <fileset basedir="${build.deployTempDomainApiRootDir}">
+        <include name="**"/>
+      </fileset>
+    </attrib>
+
+    <attrib readonly="false">
+      <fileset basedir="${build.deployTempDomainApiRootDir}">
+        <include name="**"/>
+      </fileset>
+    </attrib>
+  </target>
+  
+  <target name="deployTempDomainService" description="Copy built files">
+    <copy todir="${build.deployTempDomainServiceRootDir}">
+      <fileset basedir="${build.domainServiceprojDir}bin\_PublishedWebsites\DI.Chakra.DomainService">
+        <include name="**" />
+        <exclude name="web.config"/>
+        <exclude name="Web.Debug.**"/>
+        <exclude name="Web.Release.**"/>
+        <exclude name="**.pdb"/>
+        <exclude name="ConnectionString.config" />
+        <!--Suresh - Temp code-->
+        <exclude name="bin\ProcessAdminP.dll" />
+        <exclude name="bin\ResetPassword.dll" />
+        <exclude name="bin\DI.Chakra.Connector.LotusNotes.dll" />
+      </fileset>
+    </copy>
+
+    <attrib normal="true">
+      <fileset basedir="${build.deployTempDomainServiceRootDir}">
+        <include name="**"/>
+      </fileset>
+    </attrib>
+
+    <attrib readonly="false">
+      <fileset basedir="${build.deployTempDomainServiceRootDir}">
+        <include name="**"/>
+      </fileset>
+    </attrib>
+  </target>
+  <target name="deployTempWf" description="Copy built files">
+    <copy todir="${build.deployTempWfRootDir}">
+      <fileset basedir="${build.wfprojDir}bin\_PublishedWebsites\DI.Chakra.Workflow.Services">
+        <include name="**" />
+        <exclude name="web.config"/>
+        <exclude name="Web.Debug.**"/>
+        <exclude name="Web.Release.**"/>
+        <exclude name="**.pdb"/>
+        <exclude name="ConnectionString.config"/>
+      </fileset>
+    </copy>
+
+    <attrib normal="true">
+      <fileset basedir="${build.deployTempWfRootDir}">
+        <include name="**"/>
+      </fileset>
+    </attrib>
+
+    <attrib readonly="false">
+      <fileset basedir="${build.deployTempWfRootDir}">
+        <include name="**"/>
+      </fileset>
+    </attrib>
+  </target>
+
+  <target name="deployTempAttestationService" description="Copy built files">
+    <copy todir="${build.deployTempAttestationServiceRootDir}">
+      <fileset basedir="${build.AttestationServiceprojDir}bin\Release">
+        <include name="**" />
+        <exclude name="**.pdb"/>
+        <exclude name="ConnectionString.config"/>
+      </fileset>
+    </copy>
+    <attrib normal="true">
+      <fileset basedir="${build.deployTempAttestationServiceRootDir}">
+        <include name="**"/>
+      </fileset>
+    </attrib>
+    <attrib readonly="false">
+      <fileset basedir="${build.deployTempAttestationServiceRootDir}">
+        <include name="**"/>
+      </fileset>
+    </attrib>
+  </target>
+
+  <target name="deployTempDiscoveryService" description="Copy built files">
+    <copy todir="${build.deployTempDiscoveryServiceRootDir}">
+      <fileset basedir="${build.DiscoveryServiceprojDir}bin\Release">
+        <include name="**" />
+        <exclude name="**.pdb"/>
+        <exclude name="ConnectionString.config"/>
+      </fileset>
+    </copy>
+    <attrib normal="true">
+      <fileset basedir="${build.deployTempDiscoveryServiceRootDir}">
+        <include name="**"/>
+      </fileset>
+    </attrib>
+    <attrib readonly="false">
+      <fileset basedir="${build.deployTempDiscoveryServiceRootDir}">
+        <include name="**"/>
+      </fileset>
+    </attrib>
+  </target>
+
+  <target name="deployTempEmailingService" description="Copy built files">
+    <copy todir="${build.deployTempEmailingServiceRootDir}">
+      <fileset basedir="${build.EmailingServiceprojDir}bin\Release">
+        <include name="**" />
+        <exclude name="**.pdb"/>
+        <exclude name="ConnectionString.config"/>
+      </fileset>
+    </copy>
+    <attrib normal="true">
+      <fileset basedir="${build.deployTempEmailingServiceRootDir}">
+        <include name="**"/>
+      </fileset>
+    </attrib>
+    <attrib readonly="false">
+      <fileset basedir="${build.deployTempEmailingServiceRootDir}">
+        <include name="**"/>
+      </fileset>
+    </attrib>
+  </target>
+
+  <target name="deployTempProvisioningService" description="Copy built files">
+    <copy todir="${build.deployTempProvisioningServiceRootDir}">
+      <fileset basedir="${build.ProvisioningServiceprojDir}bin\Release">
+        <include name="**" />
+        <exclude name="**.pdb"/>
+        <exclude name="ConnectionString.config"/>
+      </fileset>
+    </copy>
+    <attrib normal="true">
+      <fileset basedir="${build.deployTempProvisioningServiceRootDir}">
+        <include name="**"/>
+      </fileset>
+    </attrib>
+    <attrib readonly="false">
+      <fileset basedir="${build.deployTempProvisioningServiceRootDir}">
+        <include name="**"/>
+      </fileset>
+    </attrib>
+  </target>
+  
+  <target name="deployTempMiscService" description="Copy built files">
+    <copy todir="${build.deployTempMiscServiceRootDir}">
+      <fileset basedir="${build.MiscServiceprojDir}bin\Release">
+        <include name="**" />
+        <exclude name="**.pdb"/>
+        <exclude name="ConnectionString.config"/>
+      </fileset>
+    </copy>
+    <attrib normal="true">
+      <fileset basedir="${build.deployTempMiscServiceRootDir}">
+        <include name="**"/>
+      </fileset>
+    </attrib>
+    <attrib readonly="false">
+      <fileset basedir="${build.deployTempMiscServiceRootDir}">
+        <include name="**"/>
+      </fileset>
+    </attrib>
+  </target>
+  <target name="deployTempComplianceService" description="Copy built files">
+    <copy todir="${build.deployTempComplianceServiceRootDir}">
+      <fileset basedir="${build.ComplianceServiceprojDir}bin\Release">
+        <include name="**" />
+        <exclude name="**.pdb"/>
+        <exclude name="ConnectionString.config"/>
+      </fileset>
+    </copy>
+    <attrib normal="true">
+      <fileset basedir="${build.deployTempComplianceServiceRootDir}">
+        <include name="**"/>
+      </fileset>
+    </attrib>
+    <attrib readonly="false">
+      <fileset basedir="${build.deployTempComplianceServiceRootDir}">
+        <include name="**"/>
+      </fileset>
+    </attrib>
+  </target>
+  <target name="deployTempReportingService" description="Copy built files">
+    <copy todir="${build.deployTempReportingServiceRootDir}">
+      <fileset basedir="${build.ReportingServiceprojDir}bin\Release">
+        <include name="**" />
+        <exclude name="**.pdb"/>
+        <exclude name="ConnectionString.config"/>
+      </fileset>
+    </copy>
+    <attrib normal="true">
+      <fileset basedir="${build.deployTempReportingServiceRootDir}">
+        <include name="**"/>
+      </fileset>
+    </attrib>
+    <attrib readonly="false">
+      <fileset basedir="${build.deployTempReportingServiceRootDir}">
+        <include name="**"/>
+      </fileset>
+    </attrib>
+  </target>
+
+  <target name="stopAppPool" description="Stop Application Pool">
+
+    <loadtasks assembly="C:\TeamCity\buildAgent\nant\nantcontrib\bin\NAnt.Contrib.Tasks.dll" />
+
+    <iisapppool action="Stop" pool="Test" server="192.168.15.76" />
+  </target>
+
+  <target name="deployWeb" description="Copy built files">
+    <copy todir="${build.deployRootDir}">
+      <fileset basedir="${build.deployTempRootDir}">
+        <include name="**.*"/>
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="deployDomainApi" description="Copy built files">
+    <copy todir="${build.deployDomainApiRootDir}">
+      <fileset basedir="${build.deployTempDomainApiRootDir}">
+        <include name="**"/>
+      </fileset>
+    </copy>
+  </target>
+  <target name="deployDomainService" description="Copy built files">
+
+    <copy todir="${build.deployRootDomainServiceDir}">
+      <fileset basedir="${build.deployTempDomainServiceRootDir}">
+        <include name="**"/>
+      </fileset>
+    </copy>
+
+  </target>
+  <target name="deployWf" description="Copy built files">
+
+    <copy todir="${build.deployRootWfDir}">
+      <fileset basedir="${build.deployTempWfRootDir}">
+        <include name="**"/>
+      </fileset>
+    </copy>
+
+  </target>
+
+  <target name="deployAttestation" description="Copy built files">
+    <copy todir="${build.deployAttestationService}">
+      <fileset basedir="${build.deployTempAttestationServiceRootDir}">
+        <include name="**"/>
+      </fileset>
+    </copy>
+  </target>
+  <target name="deployDiscovery" description="Copy built files">
+    <copy todir="${build.deployDiscoveryService}">
+      <fileset basedir="${build.deployTempDiscoveryServiceRootDir}">
+        <include name="**"/>
+      </fileset>
+    </copy>
+  </target>
+  <target name="deployEmailing" description="Copy built files">
+    <copy todir="${build.deployEmailingService}">
+      <fileset basedir="${build.deployTempEmailingServiceRootDir}">
+        <include name="**"/>
+      </fileset>
+    </copy>
+  </target>
+  <target name="deployProvisioning" description="Copy built files">
+    <copy todir="${build.deployProvisioningService}">
+      <fileset basedir="${build.deployTempProvisioningServiceRootDir}">
+        <include name="**"/>
+      </fileset>
+    </copy>
+  </target>
+  <target name="deployMisc" description="Copy built files">
+    <copy todir="${build.deployMiscService}">
+      <fileset basedir="${build.deployTempMiscServiceRootDir}">
+        <include name="**"/>
+      </fileset>
+    </copy>
+  </target>
+  <target name="deployCompliance" description="Copy built files">
+    <copy todir="${build.deployComplianceService}">
+      <fileset basedir="${build.deployTempComplianceServiceRootDir}">
+        <include name="**"/>
+      </fileset>
+    </copy>
+  </target>
+  <target name="deployReporting" description="Copy built files">
+    <copy todir="${build.deployReportingService}">
+      <fileset basedir="${build.deployTempReportingServiceRootDir}">
+        <include name="**"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="copyWebConfig" description="Copy config files">
+    <copy todir="${build.deployRootDir}" overwrite="true">
+      <fileset basedir="${build.deployconfigdir}">
+        <include name="**"/>
+      </fileset>
+    </copy>
+  </target>
+  <target name="copyDomainApiConfig" description="Copy config files">
+    <copy todir="${build.deployDomainApiRootDir}" overwrite="true">
+      <fileset basedir="${build.deployconfigDomainApidir}">
+        <include name="**"/>
+      </fileset>
+    </copy>
+  </target>
+    <target name="copyDomainServiceConfig" description="Copy config files">
+      <copy todir="${build.deployRootDomainServiceDir}" overwrite="true">
+        <fileset basedir="${build.deployconfigDomainServicedir}">
+          <include name="**"/>
+        </fileset>
+      </copy>
+
+    </target>
+    <target name="copyWfConfig" description="Copy config files">
+      <copy todir="${build.deployRootWfDir}" overwrite="true">
+        <fileset basedir="${build.deployconfigWfdir}">
+          <include name="**"/>
+        </fileset>
+      </copy>
+    </target>
+  
+  <target name="copyAttestationConfig" description="Copy config files">
+    <copy todir="${build.deployAttestationService}" overwrite="true">
+      <fileset basedir="${build.deployconfigServicesdir}Attestation\">
+        <include name="**"/>
+      </fileset>
+    </copy>
+  </target>
+  <target name="copyDiscoveryConfig" description="Copy config files">
+    <copy todir="${build.deployDiscoveryService}" overwrite="true">
+      <fileset basedir="${build.deployconfigServicesdir}Discovery\">
+        <include name="**"/>
+      </fileset>
+    </copy>
+  </target>
+  <target name="copyEmailingConfig" description="Copy config files">
+    <copy todir="${build.deployEmailingService}" overwrite="true">
+      <fileset basedir="${build.deployconfigServicesdir}Emailing\">
+        <include name="**"/>
+      </fileset>
+    </copy>
+  </target>
+  <target name="copyProvisioningConfig" description="Copy config files">
+    <copy todir="${build.deployProvisioningService}" overwrite="true">
+      <fileset basedir="${build.deployconfigServicesdir}Provisioning\">
+        <include name="**"/>
+      </fileset>
+    </copy>
+  </target>
+   <target name="copyMiscConfig" description="Copy config files">
+    <copy todir="${build.deployMiscService}" overwrite="true">
+      <fileset basedir="${build.deployconfigServicesdir}Misc\">
+        <include name="**"/>
+      </fileset>
+    </copy>
+  </target>
+  <target name="copyComplianceConfig" description="Copy config files">
+    <copy todir="${build.deployComplianceService}" overwrite="true">
+      <fileset basedir="${build.deployconfigServicesdir}Compliance\">
+        <include name="**"/>
+      </fileset>
+    </copy>
+  </target>
+  <target name="copyReportingConfig" description="Copy config files">
+    <copy todir="${build.deployReportingService}" overwrite="true">
+      <fileset basedir="${build.deployconfigServicesdir}Reporting\">
+        <include name="**"/>
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="InstallAttestationService" description="Install Attestation Service">
+    <exec program="${build.deployAttestationService}\install_attestationService.bat">
+    </exec>
+  </target>
+  <target name="InstallDiscoveryService" description="Install Discovery Service">
+    <exec program="${build.deployDiscoveryService}\install_discoveryService.bat">
+    </exec>
+  </target>
+  <target name="InstallEmailingService" description="Install Emailing Service">
+    <exec program="${build.deployEmailingService}\install_emailingService.bat">
+    </exec>
+  </target>
+  <target name="InstallProvisioningService" description="Install Provisioning Service">
+    <exec program="${build.deployProvisioningService}\install_provisioningService.bat">
+    </exec>
+  </target>
+  <target name="InstallMiscService" description="Install Misc Service">
+    <exec program="${build.deployMiscService}\Install_MiscService.bat">
+    </exec>
+  </target>
+  <target name="InstallComplianceService" description="Install Compliance Service">
+    <exec program="${build.deployComplianceService}\install_complianceService.bat">
+    </exec>
+  </target>
+  <target name="InstallReportingService" description="Install Reporting Service">
+    <exec program="${build.deployReportingService}\InstallReportService.bat">
+    </exec>
+  </target>
+
+
+</project>

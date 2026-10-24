@@ -1,0 +1,958 @@
+﻿Company Code,Section Code,Jobs (Positions),User Roles,Role Description,Personas,BW Access,xECM Access,Remarks
+SPAST,AS,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,ZBW_EAM_SPAST_PP,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,"16 Nov 17 - Gab - for 1 nov 17 org changes, Added BW Access"
+SPAST,AS,HOS,Y_FR_SPAST_EAM_PS_RES_AS,PS Restriction Role for Section AS for SPPA,,,,
+SPAST,AS,HOS,Y_LR_SPAST_EAM_CS_RES_AS,CS restrictions for Section AS for SPPA,,,,
+SPAST,AS,HOS,Y_LR_SPGRD_EAM_PPM_SPPG_ADMIN,PPM Role for SSPG Top Bucket with Admin and Create Access,,,,
+SPAST,AS,HOS,Y_PR_SPAST_EAM_PRTL_AS_HOS,Portal Workflow Role for AS HOS,,,,
+SPAST,AS,HOS,Y_FR_SPAST_EAM_PS_RES_APB_CD,PS Restriction Role for  AM Branch Cover Duty,,,,Mar13[Gab] - Added for HOS cover duty
+SPAST,AS,HOS,Y_LR_SPGRD_EAM_PPM_SPPG_READ,PPM Role for SSPG Top Bucket with Read Access,,,,"16 Nov 17 - Gab - for 1 nov 17 org changes, Added PPM Roles"
+SPAST,AS,Project Support Officer,Y_EC_SPAST_EAM_PROJSUPOFCR,Project Support Officer Role for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,ZBW_EAM_SPAST_PP,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,"16 Nov 17 - Gab - for 1 nov 17 org changes, Added BW Access"
+SPAST,AS,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_AS,PS Restriction Role for Section AS for SPPA,,,,
+SPAST,BDC,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_BDC_D&D,ZBW_EAM_SPAST_BDC,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,BDC,HOS,Y_FR_SPAST_EAM_PS_RES_BDC,PS Restriction Role for Section BDC for SPPA,,,,
+SPAST,BDC,HOS,Y_PR_SPAST_EAM_PRTL_BDC_HOS,Portal Workflow Role for BDC HOS,,,,
+SPAST,BDC,HOS,Y_LR_SPAST_EAM_CS_RES_BDC,CS and PM Restriction role for Section BDC for SPPA,,,,
+SPAST,BDC,Project Jr. Officer,Y_EC_SPAST_EAM_PROJOFFICER,Project Jr. Officer for Controlling Area SPPA,ZGRP_EAM_BDC_D&D,ZBW_EAM_SPAST_BDC,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,BDC,Project Jr. Officer,Y_FR_SPAST_EAM_PS_RES_BDC,PS Restriction Role for Section BDC for SPPA,,,,
+SPAST,BDC,Project Jr. Officer,Y_FR_SPAST_EAM_PS_RES_EHVN,Cost Center Role for Section EHVN for SPPA,,,,
+SPAST,BDC,Project Jr. Officer,Y_FR_SPAST_EAM_PS_RES_RNE,PS Restriction Role for Section RNE for SPPA,,,,
+SPAST,BDC,Project Jr. Officer,Y_FR_SPAST_EAM_PS_RES_RNW,PS Restriction Role for Section RNW for SPPA,,,,
+SPAST,BDC,Project Jr. Officer,Y_LR_SPAST_EAM_CS_RES_EHVN,CS Restriction Role for Section EHVN for SPPA,,,,
+SPAST,BDC,Project Jr. Officer,Y_LR_SPAST_EAM_CS_RES_RNE,CS Restriction Role for Section RNE for SPPA,,,,
+SPAST,BDC,Project Jr. Officer,Y_LR_SPAST_EAM_CS_RES_RNW,CS Restriction Role for Section RNW for SPPA,,,,
+SPAST,BDC,Project Jr. Officer,Y_LR_SPAST_EAM_CS_RES_BDC,CS and PM Restriction role for Section BDC for SPPA,,,,
+SPAST,BDC,Project Sr. Officer,Y_EC_SPAST_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area SPPA,ZGRP_EAM_BDC_D&D,ZBW_EAM_SPAST_BDC,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,BDC,Project Sr. Officer,Y_FR_SPAST_EAM_PS_RES_BDC,PS Restriction Role for Section BDC for SPPA,,,,
+SPAST,BDC,Project Sr. Officer,Y_FR_SPAST_EAM_PS_RES_EHVN,Cost Center Role for Section EHVN for SPPA,,,,
+SPAST,BDC,Project Sr. Officer,Y_FR_SPAST_EAM_PS_RES_RNE,PS Restriction Role for Section RNE for SPPA,,,,
+SPAST,BDC,Project Sr. Officer,Y_FR_SPAST_EAM_PS_RES_RNW,PS Restriction Role for Section RNW for SPPA,,,,
+SPAST,BDC,Project Sr. Officer,Y_LR_SPAST_EAM_CS_RES_EHVN,CS Restriction Role for Section EHVN for SPPA,,,,
+SPAST,BDC,Project Sr. Officer,Y_LR_SPAST_EAM_CS_RES_RNE,CS Restriction Role for Section RNE for SPPA,,,,
+SPAST,BDC,Project Sr. Officer,Y_LR_SPAST_EAM_CS_RES_RNW,CS Restriction Role for Section RNW for SPPA,,,,
+SPAST,BDC,Project Sr. Officer,Y_LR_SPAST_EAM_CS_RES_BDC,CS and PM Restriction role for Section BDC for SPPA,,,,
+SPAST,CM,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,CM,HOS,Y_FR_SPAST_EAM_PS_RES_CM,PS Restriction Role for Section CM for SPPA,,,,
+SPAST,CM,HOS,Y_PR_SPAST_EAM_PRTL_CM_HOS,Portal Workflow Role for CM HOS,,,,
+SPAST,CM,HOS,Y_LR_SPAST_EAM_CS_RES_CM,CS and PM Restriction role for Section CM for SPPA,,,,
+SPAST,CM,Project Support Officer,Y_EC_SPAST_EAM_PROJSUPOFCR,Project Support Officer Role for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,CM,Project Support Officer,Y_LR_SPAST_EAM_CS_RES_CM,CS and PM Restriction role for Section CM for SPPA,,,,
+SPAST,CM,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_CM,PS Restriction Role for Section CM for SPPA,,,,
+SPAST,CPE,Admin,Y_EC_SPAST_EAM_ADMIN,Admin Role for Controlling Area SPPA,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPAST_CPE,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,CPE,Admin,Y_FR_SPAST_EAM_PS_RES_CPE,PS Restriction Role for Section CPE for SPPA,,,,
+SPAST,CPE,Admin,Y_LR_SPAST_EAM_CS_RES_CPE,CS Restriction Role for Section CPE for SPPA,,,,
+SPAST,CPE,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPAST_CPE,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,CPE,HOS,Y_FR_SPAST_EAM_PS_RES_CPE,PS Restriction Role for Section CPE for SPPA,,,,
+SPAST,CPE,HOS,Y_LR_SPAST_EAM_CS_RES_CPE,CS Restriction Role for Section CPE for SPPA,,,,
+SPAST,CPE,HOS,Y_PR_SPAST_EAM_PRTL_CPE_HOS,Portal Workflow Role for CPE HOS,,,,
+SPAST,CPE,Project Jr. Officer,Y_EC_SPAST_EAM_PROJOFFICER,Project Jr. Officer for Controlling Area SPPA,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPAST_CPE,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,CPE,Project Jr. Officer,Y_FR_SPAST_EAM_PS_RES_CPE,PS Restriction Role for Section CPE for SPPA,,,,
+SPAST,CPE,Project Jr. Officer,Y_LR_SPAST_EAM_CS_RES_CPE,CS Restriction Role for Section CPE for SPPA,,,,
+SPAST,CPE,Project Sr. Officer,Y_EC_SPAST_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area SPPA,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPAST_CPE,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,CPE,Project Sr. Officer,Y_FR_SPAST_EAM_PS_RES_CPE,PS Restriction Role for Section CPE for SPPA,,,,
+SPAST,CPE,Project Sr. Officer,Y_LR_SPAST_EAM_CS_RES_CPE,CS Restriction Role for Section CPE for SPPA,,,,
+SPAST,CPW,Admin,Y_EC_SPAST_EAM_ADMIN,Admin Role for Controlling Area SPPA,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPAST_CPW,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,CPW,Admin,Y_FR_SPAST_EAM_PS_RES_CPW,PS Restriction Role for Section CPW for SPPA,,,,
+SPAST,CPW,Admin,Y_LR_SPAST_EAM_CS_RES_CPW,CS Restriction Role for Section CPW for SPPA,,,,
+SPAST,CPE,HOS,Y_FR_SPAST_EAM_PS_RES_CPB_CD,PS Restriction Role for CP Branch Cover Duty,,,,Mar13[Gab] - Added for HOS cover duty
+SPAST,CPW,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPAST_CPW,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,CPW,HOS,Y_FR_SPAST_EAM_PS_RES_CPW,PS Restriction Role for Section CPW for SPPA,,,,
+SPAST,CPW,HOS,Y_LR_SPAST_EAM_CS_RES_CPW,CS Restriction Role for Section CPW for SPPA,,,,
+SPAST,CPW,HOS,Y_PR_SPAST_EAM_PRTL_CPW_HOS,Portal Workflow Role for CPW HOS,,,,
+SPAST,CPW,Project Jr. Officer,Y_EC_SPAST_EAM_PROJOFFICER,Project Jr. Officer for Controlling Area SPPA,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPAST_CPW,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,CPW,Project Jr. Officer,Y_FR_SPAST_EAM_PS_RES_CPW,PS Restriction Role for Section CPW for SPPA,,,,
+SPAST,CPW,Project Jr. Officer,Y_LR_SPAST_EAM_CS_RES_CPW,CS Restriction Role for Section CPW for SPPA,,,,
+SPAST,CPW,Project Sr. Officer,Y_EC_SPAST_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area SPPA,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPAST_CPW,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,CPW,Project Sr. Officer,Y_FR_SPAST_EAM_PS_RES_CPW,PS Restriction Role for Section CPW for SPPA,,,,
+SPAST,CPW,Project Sr. Officer,Y_LR_SPAST_EAM_CS_RES_CPW,CS Restriction Role for Section CPW for SPPA,,,,
+SPAST,D&D,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_BDC_D&D,ZBW_EAM_SPAST_D&D,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,D&D,HOS,Y_EC_SPAST_EAM_PROJOFFICER,Project Jr. Officer for Controlling Area SPPA,,,,
+SPAST,D&D,HOS,Y_FR_SPAST_EAM_PS_RES_D&D,"PS Restriction Role for Section D&D for SPPA, PGAS",,,,
+SPAST,D&D,HOS,Y_LR_SPAST_EAM_CS_RES_D&D,CS Restriction Role for Section D&D for SPPA,,,,
+SPAST,D&D,HOS,Y_PR_SPAST_EAM_PRTL_D&D_HOS,Portal Workflow Role for D&D HOS,,,,
+SPAST,D&D,Project Jr. Officer,Y_EC_SPAST_EAM_PROJOFFICER,Project Jr. Officer for Controlling Area SPPA,ZGRP_EAM_BDC_D&D,ZBW_EAM_SPAST_D&D,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,D&D,Project Jr. Officer,Y_FR_SPAST_EAM_PS_RES_D&D,"PS Restriction Role for Section D&D for SPPA, PGAS",,,,
+SPAST,D&D,Project Jr. Officer,Y_LR_SPAST_EAM_CS_RES_D&D,CS Restriction Role for Section D&D for SPPA,,,,
+SPAST,D&D,Project Sr. Officer,Y_EC_SPAST_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area SPPA,ZGRP_EAM_BDC_D&D,ZBW_EAM_SPAST_D&D,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,D&D,Project Sr. Officer,Y_FR_SPAST_EAM_PS_RES_D&D,"PS Restriction Role for Section D&D for SPPA, PGAS",,,,
+SPAST,D&D,Project Sr. Officer,Y_LR_SPAST_EAM_CS_RES_D&D,CS Restriction Role for Section D&D for SPPA,,,,
+SPAST,DNC,Admin,Y_EC_SPAST_EAM_ADMIN,Admin Role for Controlling Area SPPA,ZGRP_EAM_DN,ZBW_EAM_SPAST_DNC,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,DNC,Admin,Y_FR_SPAST_EAM_PS_RES_DNC,PS Restriction Role for Section DNC for SPPA,,,,
+SPAST,DNC,Admin,Y_LR_SPAST_EAM_CS_RES_DNC,CS Restriction Role for Section DNC for SPPA,,,,
+SPAST,DNC,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_DN,ZBW_EAM_SPAST_DNC,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,DNC,HOS,Y_FR_SPAST_EAM_PS_RES_DNC,PS Restriction Role for Section DNC for SPPA,,,,
+SPAST,DNC,HOS,Y_LR_SPAST_EAM_CS_RES_DNC,CS Restriction Role for Section DNC for SPPA,,,,
+SPAST,DNC,HOS,Y_PR_SPAST_EAM_PRTL_DNC_HOS,Portal Workflow Role for DNC HOS,,,,
+SPAST,DNC,Planner,Y_EC_SPAST_EAM_PLANNER,Planner Role for Controlling Area SPPA,ZGRP_EAM_DN,ZBW_EAM_SPAST_DNC,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,DNC,Planner,Y_FR_SPAST_EAM_PS_RES_DNC,PS Restriction Role for Section DNC for SPPA,,,,
+SPAST,DNC,Planner,Y_LR_SPAST_EAM_CS_RES_DNC,CS Restriction Role for Section DNC for SPPA,,,,
+SPAST,DNC,Project Jr. Officer,Y_EC_SPAST_EAM_PROJOFFICER,Project Jr. Officer for Controlling Area SPPA,ZGRP_EAM_DN,ZBW_EAM_SPAST_DNC,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,DNC,Project Jr. Officer,Y_FR_SPAST_EAM_PS_RES_DNC,PS Restriction Role for Section DNC for SPPA,,,,
+SPAST,DNC,Project Jr. Officer,Y_LR_SPAST_EAM_CS_RES_DNC,CS Restriction Role for Section DNC for SPPA,,,,
+SPAST,DNC,Project Sr. Officer,Y_EC_SPAST_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area SPPA,ZGRP_EAM_DN,ZBW_EAM_SPAST_DNC,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,DNC,Project Sr. Officer,Y_FR_SPAST_EAM_PS_RES_DNC,PS Restriction Role for Section DNC for SPPA,,,,
+SPAST,DNC,Project Sr. Officer,Y_LR_SPAST_EAM_CS_RES_DNC,CS Restriction Role for Section DNC for SPPA,,,,
+SPAST,DNC,HOS,Y_FR_SPAST_EAM_PS_RES_DNB_CD,PS Restriction Role for  DN Branch Cover Duty,,,,Mar13[Gab] - Added for HOS cover duty
+SPAST,DNE,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_DN,ZBW_EAM_SPAST_DNE,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,DNE,HOS,Y_FR_SPAST_EAM_PS_RES_DNE,PS Restriction Role for Section DNE for SPPA,,,,
+SPAST,DNE,HOS,Y_LR_SPAST_EAM_CS_RES_DNE,CS Restriction Role for Section DNE for SPPA,,,,
+SPAST,DNE,HOS,Y_PR_SPAST_EAM_PRTL_DNE_HOS,Portal Workflow Role for DNE HOS,,,,
+SPAST,DNE,Planner,Y_EC_SPAST_EAM_PLANNER,Planner Role for Controlling Area SPPA,ZGRP_EAM_DN,ZBW_EAM_SPAST_DNE,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,DNE,Planner,Y_FR_SPAST_EAM_PS_RES_DNE,PS Restriction Role for Section DNE for SPPA,,,,
+SPAST,DNE,Planner,Y_LR_SPAST_EAM_CS_RES_DNE,CS Restriction Role for Section DNE for SPPA,,,,
+SPAST,DNE,Project Jr. Officer,Y_EC_SPAST_EAM_PLANNER,Planner Role for Controlling Area SPPA,ZGRP_EAM_DN,ZBW_EAM_SPAST_DNE,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,DNE,Project Jr. Officer,Y_EC_SPAST_EAM_PROJOFFICER,Project Jr. Officer for Controlling Area SPPA,,,,
+SPAST,DNE,Project Jr. Officer,Y_FR_SPAST_EAM_PS_RES_DNE,PS Restriction Role for Section DNE for SPPA,,,,
+SPAST,DNE,Project Jr. Officer,Y_LR_SPAST_EAM_CS_RES_DNE,CS Restriction Role for Section DNE for SPPA,,,,
+SPAST,DNE,Project Sr. Officer,Y_EC_SPAST_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area SPPA,ZGRP_EAM_DN,ZBW_EAM_SPAST_DNE,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,DNE,Project Sr. Officer,Y_FR_SPAST_EAM_PS_RES_DNE,PS Restriction Role for Section DNE for SPPA,,,,
+SPAST,DNE,Project Sr. Officer,Y_LR_SPAST_EAM_CS_RES_DNE,CS Restriction Role for Section DNE for SPPA,,,,
+SPAST,DNE,HOS,Y_FR_SPAST_EAM_PS_RES_DNB_CD,PS Restriction Role for  DN Branch Cover Duty,,,,Mar13[Gab] - Added for HOS cover duty
+SPAST,DNN,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_DN,ZBW_EAM_SPAST_DNN,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,DNN,HOS,Y_FR_SPAST_EAM_PS_RES_DNN,PS Restriction Role for Section DNN for SPPA,,,,
+SPAST,DNN,HOS,Y_LR_SPAST_EAM_CS_RES_DNN,CS Restriction Role for Section DNN for SPPA,,,,
+SPAST,DNN,HOS,Y_PR_SPAST_EAM_PRTL_DNN_HOS,Portal Workflow Role for DNN HOS,,,,
+SPAST,DNN,Planner,Y_EC_SPAST_EAM_PLANNER,Planner Role for Controlling Area SPPA,ZGRP_EAM_DN,ZBW_EAM_SPAST_DNN,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,DNN,Planner,Y_FR_SPAST_EAM_PS_RES_DNN,PS Restriction Role for Section DNN for SPPA,,,,
+SPAST,DNN,Planner,Y_LR_SPAST_EAM_CS_RES_DNN,CS Restriction Role for Section DNN for SPPA,,,,
+SPAST,DNN,Project Jr. Officer,Y_EC_SPAST_EAM_PLANNER,Planner Role for Controlling Area SPPA,ZGRP_EAM_DN,ZBW_EAM_SPAST_DNN,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,DNN,Project Jr. Officer,Y_EC_SPAST_EAM_PROJOFFICER,Project Jr. Officer for Controlling Area SPPA,,,,
+SPAST,DNN,Project Jr. Officer,Y_FR_SPAST_EAM_PS_RES_DNN,PS Restriction Role for Section DNN for SPPA,,,,
+SPAST,DNN,Project Jr. Officer,Y_LR_SPAST_EAM_CS_RES_DNN,CS Restriction Role for Section DNN for SPPA,,,,
+SPAST,DNN,Project Sr. Officer,Y_EC_SPAST_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area SPPA,ZGRP_EAM_DN,ZBW_EAM_SPAST_DNN,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,DNN,Project Sr. Officer,Y_FR_SPAST_EAM_PS_RES_DNN,PS Restriction Role for Section DNN for SPPA,,,,
+SPAST,DNN,Project Sr. Officer,Y_LR_SPAST_EAM_CS_RES_DNN,CS Restriction Role for Section DNN for SPPA,,,,
+SPAST,DP II,Admin,Y_EC_SPAST_EAM_ADMIN,Admin Role for Controlling Area SPPA,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPAST_DNP,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,28 Aug 18 - Gab - Updated section code to DP II from DNP
+SPAST,DP II,Admin,Y_FR_SPAST_EAM_PS_RES_DNP,PS Restriction Role for Section DP II for SPPA,,,,28 Aug 18 - Gab - Updated section code to DP II from DNP
+SPAST,DP II,Admin,Y_LR_SPAST_EAM_CS_RES_DNP,CS Restriction Role for Section DP II for SPPA,,,,28 Aug 18 - Gab - Updated section code to DP II from DNP
+SPAST,DP II,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPAST_DNP,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,28 Aug 18 - Gab - Updated section code to DP II from DNP
+SPAST,DP II,HOS,Y_FR_SPAST_EAM_PS_RES_DNP,PS Restriction Role for Section DP II for SPPA,,,,28 Aug 18 - Gab - Updated section code to DP II from DNP
+SPAST,DP II,HOS,Y_LR_SPAST_EAM_CS_RES_DNP,CS Restriction Role for Section DP II for SPPA,,,,28 Aug 18 - Gab - Updated section code to DP II from DNP
+SPAST,DP II,HOS,Y_PR_SPAST_EAM_PRTL_DNP_HOS,Portal Workflow Role for DP II HOS,,,,"Mar13[Gab] - Added for HOS cover duty
+28 Aug 18 - Gab - Updated section code to DP II from DNP"
+SPAST,DP II,Project Jr. Officer,Y_EC_SPAST_EAM_PROJOFFICER,Project Jr. Officer for Controlling Area SPPA,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPAST_DNP,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,28 Aug 18 - Gab - Updated section code to DP II from DNP
+SPAST,DP II,Project Jr. Officer,Y_FR_SPAST_EAM_PS_RES_DNP,PS Restriction Role for Section DP II for SPPA,,,,28 Aug 18 - Gab - Updated section code to DP II from DNP
+SPAST,DP II,Project Jr. Officer,Y_LR_SPAST_EAM_CS_RES_DNP,CS Restriction Role for Section DP II for SPPA,,,,28 Aug 18 - Gab - Updated section code to DP II from DNP
+SPAST,DP II,Project Jr. Officer,Y_FR_SPAST_EAM_TC_PROJOFFICER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,28 Aug 18 - Gab - Updated section code to DP II from DNP
+SPAST,DP II,Project Sr. Officer,Y_EC_SPAST_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area SPPA,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPAST_DNP,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,28 Aug 18 - Gab - Updated section code to DP II from DNP
+SPAST,DP II,Project Sr. Officer,Y_FR_SPAST_EAM_PS_RES_DNP,PS Restriction Role for Section DP II for SPPA,,,,28 Aug 18 - Gab - Updated section code to DP II from DNP
+SPAST,DP II,Project Sr. Officer,Y_LR_SPAST_EAM_CS_RES_DNP,CS Restriction Role for Section DP II for SPPA,,,,28 Aug 18 - Gab - Updated section code to DP II from DNP
+SPAST,DNS,Admin,Y_EC_SPAST_EAM_ADMIN,Admin Role for Controlling Area SPPA,ZGRP_EAM_DN,ZBW_EAM_SPAST_DNS,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,DNS,Admin,Y_FR_SPAST_EAM_PS_RES_DNS,PS Restriction Role for Section DNS for SPPA,,,,
+SPAST,DNS,Admin,Y_LR_SPAST_EAM_CS_RES_DNS,CS Restriction Role for Section DNS for SPPA,,,,
+SPAST,DNN,HOS,Y_FR_SPAST_EAM_PS_RES_DNB_CD,PS Restriction Role for  DN Branch Cover Duty,,,,Mar13[Gab] - Added for HOS cover duty
+SPAST,DNS,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_DN,ZBW_EAM_SPAST_DNS,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,DNS,HOS,Y_FR_SPAST_EAM_PS_RES_DNS,PS Restriction Role for Section DNS for SPPA,,,,
+SPAST,DNS,HOS,Y_LR_SPAST_EAM_CS_RES_DNS,CS Restriction Role for Section DNS for SPPA,,,,
+SPAST,DNS,HOS,Y_PR_SPAST_EAM_PRTL_DNS_HOS,Portal Workflow Role for DNS HOS,,,,
+SPAST,DNS,Planner,Y_EC_SPAST_EAM_PLANNER,Planner Role for Controlling Area SPPA,ZGRP_EAM_DN,ZBW_EAM_SPAST_DNS,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,DNS,Planner,Y_FR_SPAST_EAM_PS_RES_DNS,PS Restriction Role for Section DNS for SPPA,,,,
+SPAST,DNS,Planner,Y_LR_SPAST_EAM_CS_RES_DNS,CS Restriction Role for Section DNS for SPPA,,,,
+SPAST,DNS,Project Jr. Officer,Y_EC_SPAST_EAM_PLANNER,Planner Role for Controlling Area SPPA,ZGRP_EAM_DN,ZBW_EAM_SPAST_DNS,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,DNS,Project Jr. Officer,Y_EC_SPAST_EAM_PROJOFFICER,Project Jr. Officer for Controlling Area SPPA,,,,
+SPAST,DNS,Project Jr. Officer,Y_FR_SPAST_EAM_PS_RES_DNS,PS Restriction Role for Section DNS for SPPA,,,,
+SPAST,DNS,Project Jr. Officer,Y_LR_SPAST_EAM_CS_RES_DNS,CS Restriction Role for Section DNS for SPPA,,,,
+SPAST,DNS,Project Sr. Officer,Y_EC_SPAST_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area SPPA,ZGRP_EAM_DN,ZBW_EAM_SPAST_DNS,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,DNS,Project Sr. Officer,Y_FR_SPAST_EAM_PS_RES_DNS,PS Restriction Role for Section DNS for SPPA,,,,
+SPAST,DNS,Project Sr. Officer,Y_LR_SPAST_EAM_CS_RES_DNS,CS Restriction Role for Section DNS for SPPA,,,,
+SPAST,DNS,HOS,Y_FR_SPAST_EAM_PS_RES_DNB_CD,PS Restriction Role for  DN Branch Cover Duty,,,,Mar13[Gab] - Added for HOS cover duty
+SPAST,DNW,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_DN,ZBW_EAM_SPAST_DNW,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,DNW,HOS,Y_FR_SPAST_EAM_PS_RES_DNW,PS Restriction Role for Section DNW for SPPA,,,,
+SPAST,DNW,HOS,Y_LR_SPAST_EAM_CS_RES_DNW,CS Restriction Role for Section DNW for SPPA,,,,
+SPAST,DNW,HOS,Y_PR_SPAST_EAM_PRTL_DNW_HOS,Portal Workflow Role for DNW HOS,,,,
+SPAST,DNW,Planner,Y_EC_SPAST_EAM_PLANNER,Planner Role for Controlling Area SPPA,ZGRP_EAM_DN,ZBW_EAM_SPAST_DNW,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,DNW,Planner,Y_FR_SPAST_EAM_PS_RES_DNW,PS Restriction Role for Section DNW for SPPA,,,,
+SPAST,DNW,Planner,Y_LR_SPAST_EAM_CS_RES_DNW,CS Restriction Role for Section DNW for SPPA,,,,
+SPAST,DNW,Project Jr. Officer,Y_EC_SPAST_EAM_PLANNER,Planner Role for Controlling Area SPPA,ZGRP_EAM_DN,ZBW_EAM_SPAST_DNW,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,DNW,Project Jr. Officer,Y_EC_SPAST_EAM_PROJOFFICER,Project Jr. Officer for Controlling Area SPPA,,,,
+SPAST,DNW,Project Jr. Officer,Y_FR_SPAST_EAM_PS_RES_DNW,PS Restriction Role for Section DNW for SPPA,,,,
+SPAST,DNW,Project Jr. Officer,Y_LR_SPAST_EAM_CS_RES_DNW,CS Restriction Role for Section DNW for SPPA,,,,
+SPAST,DNW,Project Sr. Officer,Y_EC_SPAST_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area SPPA,ZGRP_EAM_DN,ZBW_EAM_SPAST_DNW,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,DNW,Project Sr. Officer,Y_FR_SPAST_EAM_PS_RES_DNW,PS Restriction Role for Section DNW for SPPA,,,,
+SPAST,DNW,Project Sr. Officer,Y_LR_SPAST_EAM_CS_RES_DNW,CS Restriction Role for Section DNW for SPPA,,,,
+SPAST,DPL,Admin,Y_EC_SPAST_EAM_ADMIN,Admin Role for Controlling Area SPPA,ZGRP_EAM_DPL,ZBW_EAM_SPAST_DPL,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,DPL,Admin,Y_FR_SPAST_EAM_PS_RES_DPL,PS Restriction Role for Section DPL for SPPA,,,,
+SPAST,DPL,Admin,Y_FR_SPAST_EAM_PS_RES_TPL,PS Restriction Role for Section TPL for SPPA,,,,
+SPAST,DPL,Admin,Y_LR_SPAST_EAM_CS_RES_DPL,CS Restriction Role for Section DPL for SPPA,,,,
+SPAST,DPL,Admin,Y_LR_SPAST_EAM_PPM_DX_READ,PPM Role for Distribution Bucket with Read Access for SPPA,,,,
+SPAST,CM,HOS,Y_FR_SPAST_EAM_PS_RES_APMB_CD,PS Restriction Role for  APM Branch Cover Duty,,,,Mar13[Gab] - Added for HOS cover duty
+SPAST,AS,Project Support Officer,Y_LR_SPAST_EAM_CS_RES_AS,CS restrictions for Section AS for SPPA,,,,
+SPAST,DPL,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_DPL,ZBW_EAM_SPAST_DPL,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,DPL,HOS,Y_FR_SPAST_EAM_PS_RES_DPL,PS Restriction Role for Section DPL for SPPA,,,,
+SPAST,DPL,HOS,Y_FR_SPAST_EAM_PS_RES_CPE,PS Restriction Role for Section CPE for SPPA,,,,C0009028 - Additional PS restriction roles required to Asset Management HOS/HOB/HOD
+SPAST,DPL,HOS,Y_FR_SPAST_EAM_PS_RES_CPW,PS Restriction Role for Section CPW for SPPA,,,,C0009028 - Additional PS restriction roles required to Asset Management HOS/HOB/HOD
+SPAST,DPL,HOS,Y_FR_SPAST_EAM_PS_RES_DNC,PS Restriction Role for Section DNC for SPPA,,,,C0009028 - Additional PS restriction roles required to Asset Management HOS/HOB/HOD
+SPAST,DPL,HOS,Y_FR_SPAST_EAM_PS_RES_DNE,PS Restriction Role for Section DNE for SPPA,,,,C0009028 - Additional PS restriction roles required to Asset Management HOS/HOB/HOD
+SPAST,DPL,HOS,Y_FR_SPAST_EAM_PS_RES_DNN,PS Restriction Role for Section DNN for SPPA,,,,C0009028 - Additional PS restriction roles required to Asset Management HOS/HOB/HOD
+SPAST,DPL,HOS,Y_FR_SPAST_EAM_PS_RES_DNP,PS Restriction Role for Section DNP for SPPA,,,,C0009028 - Additional PS restriction roles required to Asset Management HOS/HOB/HOD
+SPAST,DPL,HOS,Y_FR_SPAST_EAM_PS_RES_DNS,PS Restriction Role for Section DNS for SPPA,,,,C0009028 - Additional PS restriction roles required to Asset Management HOS/HOB/HOD
+SPAST,DPL,HOS,Y_FR_SPAST_EAM_PS_RES_DNW,PS Restriction Role for Section DNW for SPPA,,,,C0009028 - Additional PS restriction roles required to Asset Management HOS/HOB/HOD
+SPAST,DPL,HOS,Y_FR_SPAST_EAM_PS_RES_DRP,PS Restriction Role for Section DRP for SPPA,,,,C0009028 - Additional PS restriction roles required to Asset Management HOS/HOB/HOD
+SPAST,DPL,HOS,Y_LR_SPAST_EAM_CS_RES_DPL,CS Restriction Role for Section DPL for SPPA,,,,
+SPAST,DPL,HOS,Y_LR_SPAST_EAM_PPM_DX_READ,PPM Role for Distribution Bucket with Read Access for SPPA,,,,
+SPAST,DPL,HOS,Y_PR_SPAST_EAM_PRTL_DPL_HOS,Portal Workflow Role for DPL HOS,,,,
+SPAST,DPL,Planner,Y_EC_SPAST_EAM_PLANNER,Planner Role for Controlling Area SPPA,ZGRP_EAM_DPL,ZBW_EAM_SPAST_DPL,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,DPL,Planner,Y_FR_SPAST_EAM_PS_RES_CPE,PS Restriction Role for Section CPE for SPPA,,,,
+SPAST,DPL,Planner,Y_FR_SPAST_EAM_PS_RES_CPW,PS Restriction Role for Section CPW for SPPA,,,,
+SPAST,DPL,Planner,Y_FR_SPAST_EAM_PS_RES_DNC,PS Restriction Role for Section DNC for SPPA,,,,
+SPAST,DPL,Planner,Y_FR_SPAST_EAM_PS_RES_DNE,PS Restriction Role for Section DNE for SPPA,,,,
+SPAST,DPL,Planner,Y_FR_SPAST_EAM_PS_RES_DNN,PS Restriction Role for Section DNN for SPPA,,,,
+SPAST,DPL,Planner,Y_FR_SPAST_EAM_PS_RES_DNP,PS Restriction Role for Section DNP for SPPA,,,,
+SPAST,DPL,Planner,Y_FR_SPAST_EAM_PS_RES_DNS,PS Restriction Role for Section DNS for SPPA,,,,
+SPAST,DPL,Planner,Y_FR_SPAST_EAM_PS_RES_DNW,PS Restriction Role for Section DNW for SPPA,,,,
+SPAST,DPL,Planner,Y_FR_SPAST_EAM_PS_RES_DPL,PS Restriction Role for Section DPL for SPPA,,,,
+SPAST,DPL,Planner,Y_FR_SPAST_EAM_PS_RES_DRP,PS Restriction Role for Section DRP for SPPA,,,,
+SPAST,DPL,Planner,Y_LR_SPAST_EAM_CS_RES_DPL,CS Restriction Role for Section DPL for SPPA,,,,
+SPAST,DPL,Planner,Y_LR_SPAST_EAM_PPM_DX_READ,PPM Role for Distribution Bucket with Read Access for SPPA,,,,
+SPAST,DPL,Planner,Y_LR_SPAST_EAM_PPM_DX_WRITE,PPM Role for Distribution Bucket with Write Access for SPPA,,,,
+SPAST,DP I,Admin,Y_EC_SPAST_EAM_ADMIN,Admin Role for Controlling Area SPPA,ZGRP_EAM_DRP,ZBW_EAM_SPAST_DRP,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,28 Aug 18 - Gab - Updated section code to DP I from DRP
+SPAST,DP I,Admin,Y_FR_SPAST_EAM_PS_RES_DRP,PS Restriction Role for Section DP I for SPPA,,,,28 Aug 18 - Gab - Updated section code to DP I from DRP
+SPAST,DP I,Admin,Y_LR_SPAST_EAM_CS_RES_DRP,CS Restriction Role for Section DP I for SPPA,,,,28 Aug 18 - Gab - Updated section code to DP I from DRP
+SPAST,DP II,HOS,Y_FR_SPAST_EAM_PS_RES_DPB_CD,PS Restriction Role for  DP Branch Cover Duty,,,,28 Aug 18 - Gab - Updated section code to DP II from DNP
+SPAST,DP I,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_DRP,ZBW_EAM_SPAST_DRP,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,28 Aug 18 - Gab - Updated section code to DP I from DRP
+SPAST,DP I,HOS,Y_FR_SPAST_EAM_PS_RES_DRP,PS Restriction Role for Section DP I for SPPA,,,,28 Aug 18 - Gab - Updated section code to DP I from DRP
+SPAST,DP I,HOS,Y_LR_SPAST_EAM_CS_RES_DRP,CS Restriction Role for Section DP I for SPPA,,,,28 Aug 18 - Gab - Updated section code to DP I from DRP
+SPAST,DP I,HOS,Y_PR_SPAST_EAM_PRTL_DRP_HOS,Portal Workflow Role for DP I HOS,,,,28 Aug 18 - Gab - Updated section code to DP I from DRP
+SPAST,DP I,Project Jr. Officer,Y_EC_SPAST_EAM_PROJOFFICER,Project Jr. Officer for Controlling Area SPPA,ZGRP_EAM_DRP,ZBW_EAM_SPAST_DRP,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,28 Aug 18 - Gab - Updated section code to DP I from DRP
+SPAST,DP I,Project Jr. Officer,Y_FR_SPAST_EAM_PS_RES_DRP,PS Restriction Role for Section DP I for SPPA,,,,28 Aug 18 - Gab - Updated section code to DP I from DRP
+SPAST,DP I,Project Jr. Officer,Y_LR_SPAST_EAM_CS_RES_DRP,CS Restriction Role for Section DP I for SPPA,,,,28 Aug 18 - Gab - Updated section code to DP I from DRP
+SPAST,DP I,Project Sr. Officer,Y_EC_SPAST_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area SPPA,ZGRP_EAM_DRP,ZBW_EAM_SPAST_DRP,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,28 Aug 18 - Gab - Updated section code to DP I from DRP
+SPAST,DP I,Project Sr. Officer,Y_FR_SPAST_EAM_PS_RES_DRP,PS Restriction Role for Section DP I for SPPA,,,,28 Aug 18 - Gab - Updated section code to DP I from DRP
+SPAST,DP I,Project Sr. Officer,Y_LR_SPAST_EAM_CS_RES_DRP,CS Restriction Role for Section DP I for SPPA,,,,28 Aug 18 - Gab - Updated section code to DP I from DRP
+SPAST,DTE,Admin,Y_EC_SPAST_EAM_ADMIN,Admin Role for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,DTE,Admin,Y_FR_SPAST_EAM_PS_RES_DTE,PS Restriction Role for Section DTE for SPPA,,,,
+SPAST,DTE,Admin,Y_LR_SPAST_EAM_CS_RES_DTE,CS Restriction Role for Section DTE for SPPA,,,,
+SPAST,DTE,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,DTE,HOS,Y_FR_SPAST_EAM_PS_RES_DTE,PS Restriction Role for Section DTE for SPPA,,,,
+SPAST,DTE,HOS,Y_LR_SPAST_EAM_CS_RES_DTE,CS Restriction Role for Section DTE for SPPA,,,,
+SPAST,DTE,HOS,Y_PR_SPAST_EAM_PRTL_DTE_HOS,Portal Workflow Role for DTE HOS,,,,
+SPAST,DTE,Project Support Officer,Y_EC_SPAST_EAM_PROJSUPOFCR,Project Support Officer Role for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,DTE,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_DTE,PS Restriction Role for Section DTE for SPPA,,,,
+SPAST,DTE,Project Support Officer,Y_LR_SPAST_EAM_CS_RES_DTE,CS Restriction Role for Section DTE for SPPA,,,,
+SPAST,EHVN,Admin,Y_EC_SPAST_EAM_ADMIN,Admin Role for Controlling Area SPPA,ZGRP_EAM_EHVN_RN,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,EHVN,Admin,Y_FR_SPAST_EAM_PS_RES_EHVN,Cost Center Role for Section EHVN for SPPA,,,,
+SPAST,EHVN,Admin,Y_LR_SPAST_EAM_CS_RES_EHVN,CS Restriction Role for Section EHVN for SPPA,,,,
+SPAST,EHVN,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_EHVN_RN,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,EHVN,HOS,Y_FR_SPAST_EAM_PS_RES_EHVN,Cost Center Role for Section EHVN for SPPA,,,,
+SPAST,EHVN,HOS,Y_LR_SPAST_EAM_CS_RES_EHVN,CS Restriction Role for Section EHVN for SPPA,,,,
+SPAST,EHVN,HOS,Y_PR_SPAST_EAM_PRTL_EHVN_HOS,Portal Workflow Role for EHVN HOS,,,,
+SPAST,EHVN,Planner,Y_EC_SPAST_EAM_PLANNER,Planner Role for Controlling Area SPPA,ZGRP_EAM_EHVN_RN,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,EHVN,Planner,Y_FR_SPAST_EAM_PS_RES_EHVN,Cost Center Role for Section EHVN for SPPA,,,,
+SPAST,EHVN,Planner,Y_LR_SPAST_EAM_CS_RES_EHVN,CS Restriction Role for Section EHVN for SPPA,,,,
+SPAST,EHVN,Project Jr. Officer,Y_EC_SPAST_EAM_PROJOFFICER,Project Jr. Officer for Controlling Area SPPA,ZGRP_EAM_EHVN_RN,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,EHVN,Project Jr. Officer,Y_FR_SPAST_EAM_PS_RES_EHVN,Cost Center Role for Section EHVN for SPPA,,,,
+SPAST,EHVN,Project Jr. Officer,Y_LR_SPAST_EAM_CS_RES_EHVN,CS Restriction Role for Section EHVN for SPPA,,,,
+SPAST,EHVN,Project Sr. Officer,Y_EC_SPAST_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area SPPA,ZGRP_EAM_EHVN_RN,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,EHVN,Project Sr. Officer,Y_FR_SPAST_EAM_PS_RES_EHVN,Cost Center Role for Section EHVN for SPPA,,,,
+SPAST,EHVN,Project Sr. Officer,Y_LR_SPAST_EAM_CS_RES_EHVN,CS Restriction Role for Section EHVN for SPPA,,,,
+SPAST,EMTR-CT,Admin,Y_EC_SPAST_EAM_ADMIN,Admin Role for Controlling Area SPPA,ZGRP_EAM_METER,ZBW_EAM_SPAST_EMTR,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,EMTR-CT,Admin,Y_FR_SPAST_EAM_PS_RES_EMTR,PS Restriction Role for Section EMTR for SPPA,,,,
+SPAST,EMTR-CT,Admin,Y_LR_SPAST_EAM_CS_RES_EMTR-CT,CS restriction Role for Section EMTR for Current Transformer,,,,
+SPAST,EMTR-CT,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_METER,ZBW_EAM_SPAST_EMTR,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,EMTR-CT,HOS,Y_FR_SPAST_EAM_PS_RES_EMTR,PS Restriction Role for Section EMTR for SPPA,,,,
+SPAST,EMTR-CT,HOS,Y_LR_SPAST_EAM_CS_RES_EMTR-CT,CS restriction Role for Section EMTR for Current Transformer,,,,
+SPAST,EMTR-CT,HOS,Y_PR_SPAST_EAM_PRTL_EMTR_HOS,Portal Workflow Role for EMTR HOS,,,,
+SPAST,EMTR-CT,Project Support Officer,Y_EC_SPAST_EAM_PROJSUPOFCR,Project Support Officer Role for Controlling Area SPPA,ZGRP_EAM_METER,ZBW_EAM_SPAST_EMTR,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,EMTR-CT,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_EMTR,PS Restriction Role for Section EMTR for SPPA,,,,
+SPAST,EMTR-CT,Project Support Officer,Y_LR_SPAST_EAM_CS_RES_EMTR-CT,CS restriction Role for Section EMTR for Current Transformer,,,,
+SPAST,EMTR-CT,Project Support Officer,Y_LR_SPAST_EAM_CS_CHNG_APPLCN,CS Change Application Role for SP PowerAssets Ltd,,,,May27[AS - Gab] - Newly added to EMTR officers -SD0079739
+SPAST,EMTR-CT,Project Support Officer,Y_LR_SPAST_EAM_CS_CRT_APPLCN,CS Create Application Role for SP PowerAssets Ltd,,,,May27[AS - Gab] - Newly added to EMTR officers -SD0079739
+SPAST,EMTR-CT,Project Support Officer,Y_LR_SPAST_EAM_PM_EQUIP_CE,Equipment Create and Maintenance Role  for SP PowerAssets Ltd,,,,May27[AS - Gab] - Newly added to EMTR officers -SD0079739
+SPAST,EMTR-WC,Admin,Y_EC_SPAST_EAM_ADMIN,Admin Role for Controlling Area SPPA,ZGRP_EAM_METER,ZBW_EAM_SPAST_EMTR,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,EMTR-WC,Admin,Y_FR_SPAST_EAM_PS_RES_EMTR,PS Restriction Role for Section EMTR for SPPA,,,,
+SPAST,EMTR-WC,Admin,Y_LR_SPAST_EAM_CS_RES_EMTR-WC,CS restriction Role for Section EMTR for Whole Current,,,,
+SPAST,EMTR-WC,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_METER,ZBW_EAM_SPAST_EMTR,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,EMTR-WC,HOS,Y_FR_SPAST_EAM_PS_RES_EMTR,PS Restriction Role for Section EMTR for SPPA,,,,
+SPAST,EMTR-WC,HOS,Y_LR_SPAST_EAM_CS_RES_EMTR-WC,CS restriction Role for Section EMTR for Whole Current,,,,
+SPAST,EMTR-WC,HOS,Y_PR_SPAST_EAM_PRTL_EMTR_HOS,Portal Workflow Role for EMTR HOS,,,,
+SPAST,EMTR-WC,Project Support Officer,Y_EC_SPAST_EAM_PROJSUPOFCR,Project Support Officer Role for Controlling Area SPPA,ZGRP_EAM_METER,ZBW_EAM_SPAST_EMTR,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,EMTR-WC,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_EMTR,PS Restriction Role for Section EMTR for SPPA,,,,
+SPAST,EMTR-WC,Project Support Officer,Y_LR_SPAST_EAM_CS_RES_EMTR-WC,CS restriction Role for Section EMTR for Whole Current,,,,
+SPAST,EMTR-WC,Project Support Officer,Y_LR_SPAST_EAM_CS_CHNG_APPLCN,CS Change Application Role for SP PowerAssets Ltd,,,,May27[AS - Gab] - Newly added to EMTR officers -SD0079739
+SPAST,EMTR-WC,Project Support Officer,Y_LR_SPAST_EAM_CS_CRT_APPLCN,CS Create Application Role for SP PowerAssets Ltd,,,,May27[AS - Gab] - Newly added to EMTR officers -SD0079739
+SPAST,EMTR-WC,Project Support Officer,Y_LR_SPAST_EAM_PM_EQUIP_CE,Equipment Create and Maintenance Role  for SP PowerAssets Ltd,,,,May27[AS - Gab] - Newly added to EMTR officers -SD0079739
+SPAST,EP1,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPAST_EP1,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,EP1,HOS,Y_FR_SPAST_EAM_PS_RES_EP1,PS Restriction Role for Section EP1 for SPPA,,,,
+SPAST,EP1,HOS,Y_LR_SPAST_EAM_CS_RES_EP1,CS and PM Restriction role for Section EP1 for SPPA,,,,
+SPAST,EP1,HOS,Y_PR_SPAST_EAM_PRTL_EP1_HOS,Portal Workflow Role for EP I HOS,,,,
+SPAST,EP1,Project Jr. Officer,Y_EC_SPAST_EAM_PROJOFFICER,Project Jr. Officer for Controlling Area SPPA,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPAST_EP1,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,EP1,Project Jr. Officer,Y_FR_SPAST_EAM_PS_RES_EP1,PS Restriction Role for Section EP1 for SPPA,,,,
+SPAST,EP1,Project Jr. Officer,Y_LR_SPAST_EAM_CS_RES_EP1,CS and PM Restriction role for Section EP1 for SPPA,,,,
+SPAST,EP1,Project Sr. Officer,Y_EC_SPAST_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area SPPA,,,,
+SPAST,EP1,Project Sr. Officer,Y_LR_SPAST_EAM_CS_RES_EP1,CS and PM Restriction role for Section EP1 for SPPA,,,,
+SPAST,EP1,Project Sr. Officer,Y_FR_SPAST_EAM_PS_RES_EP1,PS Restriction Role for Section EP1 for SPPA,,,,
+SPAST,EP1,HOS,Y_FR_SPAST_EAM_PS_RES_TPB_CD,PS Restriction Role for TP Branch Cover Duty,,,,Mar13[Gab] - Added for HOS cover duty
+SPAST,EP2,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPAST_EP2,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,Jul29[AS - Gab] - Change from ep1 to ep2
+SPAST,EP2,HOS,Y_FR_SPAST_EAM_PS_RES_EP2,PS Restriction Role for Section EP2 for SPPA,,,,Jul29[AS - Gab] - Change from ep1 to ep2
+SPAST,EP2,HOS,Y_PR_SPAST_EAM_PRTL_EP2_HOS,Portal Workflow Role for EP II HOS,,,,Jul29[AS - Gab] - Change from ep1 to ep2
+SPAST,EP2,HOS,Y_LR_SPAST_EAM_CS_RES_EP2,CS and PM Restriction role for Section EP2 for SPPA,,,,Jul29[AS - Gab] - Change from ep1 to ep2
+SPAST,EP2,Project Jr. Officer,Y_EC_SPAST_EAM_PROJOFFICER,Project Jr. Officer for Controlling Area SPPA,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPAST_EP2,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,Jul29[AS - Gab] - Change from ep1 to ep2
+SPAST,EP2,Project Jr. Officer,Y_FR_SPAST_EAM_PS_RES_EP2,PS Restriction Role for Section EP2 for SPPA,,,,Jul29[AS - Gab] - Change from ep1 to ep2
+SPAST,EP2,Project Jr. Officer,Y_LR_SPAST_EAM_CS_RES_EP2,CS and PM Restriction role for Section EP2 for SPPA,,,,Jul29[AS - Gab] - Change from ep1 to ep2
+SPAST,EP2,Project Sr. Officer,Y_EC_SPAST_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area SPPA,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPAST_EP2,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,Jul29[AS - Gab] - Change from ep1 to ep2
+SPAST,EP2,Project Sr. Officer,Y_LR_SPAST_EAM_CS_RES_EP2,CS and PM Restriction role for Section EP2 for SPPA,,,,Jul29[AS - Gab] - Change from ep1 to ep2
+SPAST,EP2,Project Sr. Officer,Y_FR_SPAST_EAM_PS_RES_EP2,PS Restriction Role for Section EP2 for SPPA,,,,Jul29[AS - Gab] - Change from ep1 to ep2
+SPAST,ESCS,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,ESCS,HOS,Y_FR_SPAST_EAM_PS_RES_ESCS,PS Restriction Role for Section ESCS for SPPA,,,,
+SPAST,ESCS,HOS,Y_LR_SPAST_EAM_CS_RES_ESCS,CS Restriction Role for Section ESCS for SPPA,,,,
+SPAST,ESCS,HOS,Y_LR_SPAST_EAM_PPM_IP_READ,PPM Role for Infrastructure Projects Bucket with Read Access for SPPA,,,,
+SPAST,ESCS,HOS,Y_PR_SPAST_EAM_PRTL_ESCS_HOS,Portal Workflow Role for ESCS HOS,,,,
+SPAST,ESCS,Planner,Y_EC_SPAST_EAM_PLANNER,Planner Role for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,ESCS,Planner,Y_FR_SPAST_EAM_PS_RES_ESCS,PS Restriction Role for Section ESCS for SPPA,,,,
+SPAST,ESCS,Planner,Y_LR_SPAST_EAM_CS_RES_ESCS,CS Restriction Role for Section ESCS for SPPA,,,,
+SPAST,ESCS,Planner,Y_LR_SPAST_EAM_PPM_ESCS_PLANNR,PPM Planner Role for ELECT ESCS Section,,,,
+SPAST,ESCS,Project Jr. Officer,Y_EC_SPAST_EAM_PLANNER,Planner Role for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,ESCS,Project Jr. Officer,Y_EC_SPAST_EAM_PROJOFFICER,Project Jr. Officer for Controlling Area SPPA,,,,
+SPAST,ESCS,Project Jr. Officer,Y_FR_SPAST_EAM_PS_RES_ESCS,PS Restriction Role for Section ESCS for SPPA,,,,
+SPAST,ESCS,Project Jr. Officer,Y_LR_SPAST_EAM_CS_RES_ESCS,CS Restriction Role for Section ESCS for SPPA,,,,
+SPAST,ESCS,Project Sr. Officer,Y_EC_SPAST_EAM_PLANNER,Planner Role for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,ESCS,Project Sr. Officer,Y_EC_SPAST_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area SPPA,,,,
+SPAST,ESCS,Project Sr. Officer,Y_FR_SPAST_EAM_PS_RES_ESCS,PS Restriction Role for Section ESCS for SPPA,,,,
+SPAST,ESCS,Project Sr. Officer,Y_LR_SPAST_EAM_CS_RES_ESCS,CS Restriction Role for Section ESCS for SPPA,,,,
+SPAST,FM,Admin,Y_EC_SPAST_EAM_ADMIN,Admin Role for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,FM,Admin,Y_FR_SPAST_EAM_PS_RES_FM,PS Restriction Role for Section FM for SPPA,,,,
+SPAST,FM,Admin,Y_LR_SPAST_EAM_CS_RES_FM,CS Restriction Role for Section FM for SPPA,,,,
+SPAST,BDC,HOS,Y_FR_SPAST_EAM_PS_RES_BDPMB_CD,PS Restriction Role for  BDPM Branch Cover Duty,,,,Mar13[Gab] - Added for HOS cover duty
+SPAST,FM,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,FM,HOS,Y_FR_SPAST_EAM_PS_RES_FM,PS Restriction Role for Section FM for SPPA,,,,
+SPAST,FM,HOS,Y_LR_SPAST_EAM_CS_RES_FM,CS Restriction Role for Section FM for SPPA,,,,
+SPAST,FM,HOS,Y_LR_SPAST_EAM_PPM_IP_READ,PPM Role for Infrastructure Projects Bucket with Read Access for SPPA,,,,
+SPAST,FM,HOS,Y_PR_SPAST_EAM_PRTL_FM_HOS,Portal Workflow Role for FM HOS,,,,
+SPAST,FM,Planner,Y_EC_SPAST_EAM_PLANNER,Planner Role for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,FM,Planner,Y_FR_SPAST_EAM_PS_RES_FM,PS Restriction Role for Section FM for SPPA,,,,
+SPAST,FM,Planner,Y_LR_SPAST_EAM_CS_RES_FM,CS Restriction Role for Section FM for SPPA,,,,
+SPAST,FM,Planner,Y_LR_SPHCO_EAM_PPM_PLANNER,PPM Planner for All Controlling Areas (SPPA/SPT/TLTT),,,,
+SPAST,FM,Project Jr. Officer,Y_EC_SPAST_EAM_PROJOFFICER,Project Jr. Officer for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,FM,Project Jr. Officer,Y_FR_SPAST_EAM_PS_RES_FM,PS Restriction Role for Section FM for SPPA,,,,
+SPAST,FM,Project Jr. Officer,Y_LR_SPAST_EAM_CS_RES_FM,CS Restriction Role for Section FM for SPPA,,,,
+SPAST,FM,Project Sr. Officer,Y_EC_SPAST_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,FM,Project Sr. Officer,Y_FR_SPAST_EAM_PS_RES_FM,PS Restriction Role for Section FM for SPPA,,,,
+SPAST,FM,Project Sr. Officer,Y_LR_SPAST_EAM_CS_RES_FM,CS Restriction Role for Section FM for SPPA,,,,
+SPAST,GIS,Project Support Officer,Y_LR_SPAST_EAM_PM_PROJSUPOFCR1,PM Project Support Officer 1 for SP PowerAssets Ltd,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPAST,GIS,Project Support Officer,Y_LR_SPAST_EAM_CS_PROJSUPOFCR1,CS Project Support Officer 1 for SP PowerAssets Ltd,,,,
+SPAST,GIS,Project Support Officer,Y_LR_SPAST_EAM_CS_RES_GIS,CS Restriction Role for Section GIS for SPPA,,,,
+SPAST,MRTU,Project Support Officer,Y_EC_SPAST_EAM_PROJSUPOFCR,Project Support Officer Role for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPAST,MRTU,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_MRTU,PS Restriction Role for Section MRTU for SPPA,,,,
+SPAST,MRTU,Project Support Officer,Y_LR_SPAST_EAM_CS_RES_MRTU,CS Restriction Role for Section MRTU for SPPA,,,,
+SPAST,OPA,Project Support Officer,Y_EC_SPAST_EAM_PROJSUPOFCR,Project Support Officer Role for Controlling Area SPPA,ZGRP_EAM_BDC_D&D,ZBW_EAM_SPGRD_OPA,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPAST,OPA,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_OPA,PS Restriction Role for Section OPA for SPPA,,,,
+SPAST,OPA,Project Support Officer,Y_LR_SPAST_EAM_CS_RES_OPA,CS Restriction Role for Section OPA for SPPA,,,,
+SPAST,PCT,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_PCT,ZBW_EAM_SPAST_PCT,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPAST,PCT,HOS,Y_FR_SPAST_EAM_PS_RES_PCT,PS Restriction Role for Section PCT for SPPA,,,,
+SPAST,PCT,HOS,Y_LR_SPAST_EAM_CS_RES_PCT,CS Restriction Role for Section PCT for SPPA,,,,
+SPAST,PCT,Project Support Officer,Y_EC_SPAST_EAM_PROJSUPOFCR,Project Support Officer Role for Controlling Area SPPA,ZGRP_EAM_PCT,ZBW_EAM_SPAST_PCT,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPAST,PCT,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_EP1,PS Restriction Role for Section EP1 for SPPA,,,,
+SPAST,PCT,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_EP2,PS Restriction Role for Section EP2 for SPPA,,,,
+SPAST,PCT,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_PCT,PS Restriction Role for Section PCT for SPPA,,,,
+SPAST,PCT,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_RPE,PS Restriction Role for Section RPE for SPPA,,,,
+SPAST,PCT,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_RPW,PS Restriction Role for Section RPW for SPPA,,,,
+SPAST,PCT,Project Support Officer,Y_LR_SPAST_EAM_CS_RES_PCT,CS Restriction Role for Section PCT for SPPA,,,,
+SPAST,PIMU,Project Sr. Officer,Y_EC_SPAST_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,Jan23[Gab] - Change to Edit access for xECM access
+SPAST,PIMU,Project Sr. Officer,Y_FR_SPAST_EAM_PS_RES_PIMU,PS Restriction Role for Section PIMU for SPPA,,,,
+SPAST,AS,Project Support Officer,Y_LR_SPGRD_EAM_PPM_SPPG_ADMIN,PPM Role for SSPG Top Bucket with Admin and Create Access,,,,
+SPAST,AS,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_BDC,PS Restriction Role for Section BDC for SPPA,,,,"16 Nov 17 - Gab - for 1 nov 17 org changes, Added Existing PP required ps restriction roles"
+SPAST,AS,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_EP1,PS Restriction Role for Section EP1 for SPPA,,,,"16 Nov 17 - Gab - for 1 nov 17 org changes, Added Existing PP required ps restriction roles"
+SPAST,AS,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_EP2,PS Restriction Role for Section EP2 for SPPA,,,,"16 Nov 17 - Gab - for 1 nov 17 org changes, Added Existing PP required ps restriction roles"
+SPAST,AS,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_RPE,PS Restriction Role for Section RPE for SPPA,,,,"16 Nov 17 - Gab - for 1 nov 17 org changes, Added Existing PP required ps restriction roles"
+SPAST,AS,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_RPW,PS Restriction Role for Section RPW for SPPA,,,,"16 Nov 17 - Gab - for 1 nov 17 org changes, Added Existing PP required ps restriction roles"
+SPAST,AS,Project Support Officer,Y_FR_SPHCO_COS_PS_VERSION,PS Group Version (E53),,,,"16 Nov 17 - Gab - for 1 nov 17 org changes, Added Existing PP required ps restriction roles"
+SPAST,AS,Project Support Officer,Y_LR_SPGRD_EAM_PPM_SPPG_READ,PPM Role for SSPG Top Bucket with Read Access,,,,"16 Nov 17 - Gab - for 1 nov 17 org changes, Added Existing PP required ps restriction roles"
+SPAST,PP,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_PP,ZBW_EAM_SPAST_PP,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,16 Nov 17 - Gab - Role no longer required as PP have combined with AS
+SPAST,PP,HOS,Y_FR_SPAST_EAM_PS_RES_PP,PS Restriction Role for Section PP for SPPA,,,,16 Nov 17 - Gab - Role no longer required as PP have combined with AS
+SPAST,PP,HOS,Y_LR_SPAST_EAM_CS_RES_PP,CS Restriction Role for Section PP for SPPA,,,,16 Nov 17 - Gab - Role no longer required as PP have combined with AS
+SPAST,PP,HOS,Y_LR_SPGRD_EAM_PPM_SPPG_READ,PPM Role for SSPG Top Bucket with Read Access,,,,16 Nov 17 - Gab - Role no longer required as PP have combined with AS
+SPAST,PP,HOS,Y_PR_SPAST_EAM_PRTL_PP_HOS,Portal Workflow Role for PP HOS,,,,16 Nov 17 - Gab - Role no longer required as PP have combined with AS
+SPAST,PP,HOS,Y_FR_SPAST_EAM_PS_RES_APMB_CD,PS Restriction Role for  APM Branch Cover Duty,,,,"Mar13[Gab] - Added for HOS cover duty
+16 Nov 17 - Gab - Role no longer required as PP have combined with AS"
+SPAST,PP,Project Support Officer,Y_EC_SPAST_EAM_PROJSUPOFCR,Project Support Officer Role for Controlling Area SPPA,ZGRP_EAM_PP,ZBW_EAM_SPAST_PP,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,16 Nov 17 - Gab - Role no longer required as PP have combined with AS
+SPAST,PP,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_BDC,PS Restriction Role for Section BDC for SPPA,,,,16 Nov 17 - Gab - Role no longer required as PP have combined with AS
+SPAST,PP,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_EP1,PS Restriction Role for Section EP1 for SPPA,,,,16 Nov 17 - Gab - Role no longer required as PP have combined with AS
+SPAST,PP,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_EP2,PS Restriction Role for Section EP2 for SPPA,,,,16 Nov 17 - Gab - Role no longer required as PP have combined with AS
+SPAST,PP,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_PP,PS Restriction Role for Section PP for SPPA,,,,16 Nov 17 - Gab - Role no longer required as PP have combined with AS
+SPAST,PP,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_RPE,PS Restriction Role for Section RPE for SPPA,,,,16 Nov 17 - Gab - Role no longer required as PP have combined with AS
+SPAST,PP,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_RPW,PS Restriction Role for Section RPW for SPPA,,,,16 Nov 17 - Gab - Role no longer required as PP have combined with AS
+SPAST,PP,Project Support Officer,Y_FR_SPHCO_COS_PS_VERSION,PS Group Version (E53),,,,16 Nov 17 - Gab - Role no longer required as PP have combined with AS
+SPAST,PP,Project Support Officer,Y_LR_SPAST_EAM_CS_RES_PP,CS Restriction Role for Section PP for SPPA,,,,16 Nov 17 - Gab - Role no longer required as PP have combined with AS
+SPAST,PQTM,Admin,Y_EC_SPAST_EAM_ADMIN,Admin Role for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPAST,PQTM,Admin,Y_FR_SPAST_EAM_PS_RES_PQTM,PS Restriction Role for Section PQTM for SPPA,,,,
+SPAST,PQTM,Admin,Y_LR_SPAST_EAM_CS_RES_PQTM,CS Restriction Role for Section PQTM for SPPA,,,,
+SPAST,PP,Project Support Officer,Y_LR_SPGRD_EAM_PPM_SPPG_READ,PPM Role for SSPG Top Bucket with Read Access,,,,16 Nov 17 - Gab - Role no longer required as PP have combined with AS
+SPAST,PQTM,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPAST,PQTM,HOS,Y_FR_SPAST_EAM_PS_RES_PQTM,PS Restriction Role for Section PQTM for SPPA,,,,
+SPAST,PQTM,HOS,Y_LR_SPAST_EAM_CS_RES_PQTM,CS Restriction Role for Section PQTM for SPPA,,,,
+SPAST,PQTM,HOS,Y_PR_SPAST_EAM_PRTL_PQTM_HOS,Portal Workflow Role for PQTM HOS,,,,
+SPAST,PQTM,Planner,Y_EC_SPAST_EAM_PLANNER,Planner Role for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPAST,PQTM,Planner,Y_FR_SPAST_EAM_PS_RES_PQTM,PS Restriction Role for Section PQTM for SPPA,,,,
+SPAST,PQTM,Planner,Y_LR_SPAST_EAM_CS_RES_PQTM,CS Restriction Role for Section PQTM for SPPA,,,,
+SPAST,PQTM,Project Jr. Officer,Y_EC_SPAST_EAM_PROJOFFICER,Project Jr. Officer for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,Jan23[Gab] - Change to Edit access for xECM access
+SPAST,PQTM,Project Jr. Officer,Y_FR_SPAST_EAM_PS_RES_PQTM,PS Restriction Role for Section PQTM for SPPA,,,,
+SPAST,PQTM,Project Jr. Officer,Y_LR_SPAST_EAM_CS_RES_PQTM,CS Restriction Role for Section PQTM for SPPA,,,,
+SPAST,PQTM,Project Sr. Officer,Y_EC_SPAST_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,Jan23[Gab] - Change to Edit access for xECM access
+SPAST,PQTM,Project Sr. Officer,Y_FR_SPAST_EAM_PS_RES_PQTM,PS Restriction Role for Section PQTM for SPPA,,,,
+SPAST,PQTM,Project Sr. Officer,Y_LR_SPAST_EAM_CS_RES_PQTM,CS Restriction Role for Section PQTM for SPPA,,,,
+SPAST,PROT,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPAST,PROT,HOS,Y_FR_SPAST_EAM_PS_RES_PROT,PS Restriction Role for Section PROT for SPPA,,,,
+SPAST,PROT,HOS,Y_LR_SPAST_EAM_CS_RES_PROT,CS and PM Restriction role for Section PROT for SPPA,,,,
+SPAST,PROT,HOS,Y_PR_SPAST_EAM_PRTL_PROT_HOS,Portal Workflow Role for PROT HOS,,,,
+SPAST,PROT,Project Support Officer,Y_EC_SPAST_EAM_PROJSUPOFCR,Project Support Officer Role for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPAST,PROT,Project Support Officer,Y_LR_SPAST_EAM_CS_RES_PROT,CS and PM Restriction role for Section PROT for SPPA,,,,
+SPAST,PROT,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_PROT,PS Restriction Role for Section PROT for SPPA,,,,
+SPAST,RM,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_FINANCE_RM_EP,N/A,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPAST,RM,HOS,Y_FR_SPAST_EAM_PS_RES_RM,PS Restriction Role for Section RM for SPPA,,,,
+SPAST,RM,HOS,Y_LR_SPAST_EAM_CS_RES_RM,CS Restriction role for Section SPPA for RM,,,,
+SPAST,RM,HOS,Y_LR_SPAST_EAM_CS_RM_APPROVER,Approver Role for Section RM,,,,
+SPAST,RM,Project Support Officer,Y_EC_SPAST_EAM_PROJSUPOFCR,Project Support Officer Role for Controlling Area SPPA,ZGRP_EAM_FINANCE_RM_EP,N/A,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPAST,RM,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_RM,PS Restriction Role for Section RM for SPPA,,,,
+SPAST,RM,Project Support Officer,Y_LR_SPAST_EAM_CS_RES_RM,CS Restriction role for Section SPPA for RM,,,,
+SPAST,RNE,Admin,Y_EC_SPAST_EAM_ADMIN,Admin Role for Controlling Area SPPA,ZGRP_EAM_EHVN_RN,ZBW_EAM_SPAST_RNE,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPAST,RNE,Admin,Y_FR_SPAST_EAM_PS_RES_RNE,PS Restriction Role for Section RNE for SPPA,,,,
+SPAST,RNE,Admin,Y_LR_SPAST_EAM_CS_RES_RNE,CS Restriction Role for Section RNE for SPPA,,,,
+SPAST,EHVN,HOS,Y_FR_SPAST_EAM_PS_RES_TNB_CD,PS Restriction Role for  TN Branch Cover Duty,,,,Mar13[Gab] - Added for HOS cover duty
+SPAST,RNE,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_EHVN_RN,ZBW_EAM_SPAST_RNE,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPAST,RNE,HOS,Y_FR_SPAST_EAM_PS_RES_RNE,PS Restriction Role for Section RNE for SPPA,,,,
+SPAST,RNE,HOS,Y_LR_SPAST_EAM_CS_RES_RNE,CS Restriction Role for Section RNE for SPPA,,,,
+SPAST,RNE,HOS,Y_PR_SPAST_EAM_PRTL_RNE_HOS,Portal Workflow Role for RNE HOS,,,,
+SPAST,RNE,Planner,Y_EC_SPAST_EAM_PLANNER,Planner Role for Controlling Area SPPA,ZGRP_EAM_EHVN_RN,ZBW_EAM_SPAST_RNE,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPAST,RNE,Planner,Y_FR_SPAST_EAM_PS_RES_RNE,PS Restriction Role for Section RNE for SPPA,,,,
+SPAST,RNE,Planner,Y_LR_SPAST_EAM_CS_RES_RNE,CS Restriction Role for Section RNE for SPPA,,,,
+SPAST,RNE,Project Jr. Officer,Y_EC_SPAST_EAM_PROJOFFICER,Project Jr. Officer for Controlling Area SPPA,ZGRP_EAM_EHVN_RN,ZBW_EAM_SPAST_RNE,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,Jan23[Gab] - Change to Edit access for xECM access
+SPAST,RNE,Project Jr. Officer,Y_FR_SPAST_EAM_PS_RES_RNE,PS Restriction Role for Section RNE for SPPA,,,,
+SPAST,RNE,Project Jr. Officer,Y_LR_SPAST_EAM_CS_RES_RNE,CS Restriction Role for Section RNE for SPPA,,,,
+SPAST,RNE,Project Sr. Officer,Y_EC_SPAST_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area SPPA,ZGRP_EAM_EHVN_RN,ZBW_EAM_SPAST_RNE,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,Jan23[Gab] - Change to Edit access for xECM access
+SPAST,RNE,Project Sr. Officer,Y_FR_SPAST_EAM_PS_RES_RNE,PS Restriction Role for Section RNE for SPPA,,,,
+SPAST,RNE,Project Sr. Officer,Y_LR_SPAST_EAM_CS_RES_RNE,CS Restriction Role for Section RNE for SPPA,,,,
+SPAST,RNW,Admin,Y_EC_SPAST_EAM_ADMIN,Admin Role for Controlling Area SPPA,ZGRP_EAM_EHVN_RN,ZBW_EAM_SPAST_RNW,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPAST,RNW,Admin,Y_FR_SPAST_EAM_PS_RES_RNW,PS Restriction Role for Section RNW for SPPA,,,,
+SPAST,RNW,Admin,Y_LR_SPAST_EAM_CS_RES_RNW,CS Restriction Role for Section RNW for SPPA,,,,
+SPAST,RNE,HOS,Y_FR_SPAST_EAM_PS_RES_TNB_CD,PS Restriction Role for  TN Branch Cover Duty,,,,Mar13[Gab] - Added for HOS cover duty
+SPAST,RNW,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_EHVN_RN,ZBW_EAM_SPAST_RNW,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPAST,RNW,HOS,Y_FR_SPAST_EAM_PS_RES_RNW,PS Restriction Role for Section RNW for SPPA,,,,
+SPAST,RNW,HOS,Y_LR_SPAST_EAM_CS_RES_RNW,CS Restriction Role for Section RNW for SPPA,,,,
+SPAST,RNW,HOS,Y_PR_SPAST_EAM_PRTL_RNW_HOS,Portal Workflow Role for RNW HOS,,,,
+SPAST,RNW,Planner,Y_EC_SPAST_EAM_PLANNER,Planner Role for Controlling Area SPPA,ZGRP_EAM_EHVN_RN,ZBW_EAM_SPAST_RNW,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPAST,RNW,Planner,Y_FR_SPAST_EAM_PS_RES_RNW,PS Restriction Role for Section RNW for SPPA,,,,
+SPAST,RNW,Planner,Y_LR_SPAST_EAM_CS_RES_RNW,CS Restriction Role for Section RNW for SPPA,,,,
+SPAST,RNW,Project Jr. Officer,Y_EC_SPAST_EAM_PROJOFFICER,Project Jr. Officer for Controlling Area SPPA,ZGRP_EAM_EHVN_RN,ZBW_EAM_SPAST_RNW,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,Jan23[Gab] - Change to Edit access for xECM access
+SPAST,RNW,Project Jr. Officer,Y_FR_SPAST_EAM_PS_RES_RNW,PS Restriction Role for Section RNW for SPPA,,,,
+SPAST,RNW,Project Jr. Officer,Y_LR_SPAST_EAM_CS_RES_RNW,CS Restriction Role for Section RNW for SPPA,,,,
+SPAST,RNW,Project Sr. Officer,Y_EC_SPAST_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area SPPA,ZGRP_EAM_EHVN_RN,ZBW_EAM_SPAST_RNW,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,Jan23[Gab] - Change to Edit access for xECM access
+SPAST,RNW,Project Sr. Officer,Y_FR_SPAST_EAM_PS_RES_RNW,PS Restriction Role for Section RNW for SPPA,,,,
+SPAST,RNW,Project Sr. Officer,Y_LR_SPAST_EAM_CS_RES_RNW,CS Restriction Role for Section RNW for SPPA,,,,
+SPAST,RPE,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPAST_RPE,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPAST,RPE,HOS,Y_FR_SPAST_EAM_PS_RES_RPE,PS Restriction Role for Section RPE for SPPA,,,,
+SPAST,RPE,HOS,Y_LR_SPAST_EAM_CS_RES_RPE,CS and PM Restriction role for Section RPE for SPPA,,,,
+SPAST,RPE,HOS,Y_PR_SPAST_EAM_PRTL_RPE_HOS,Portal Workflow Role for RPE HOS,,,,
+SPAST,RPE,Project Jr. Officer,Y_EC_SPAST_EAM_PROJOFFICER,Project Jr. Officer for Controlling Area SPPA,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPAST_RPE,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,Jan23[Gab] - Change to Edit access for xECM access
+SPAST,RPE,Project Jr. Officer,Y_LR_SPAST_EAM_CS_RES_RPE,CS and PM Restriction role for Section RPE for SPPA,,,,
+SPAST,RPE,Project Jr. Officer,Y_FR_SPAST_EAM_PS_RES_RPE,PS Restriction Role for Section RPE for SPPA,,,,
+SPAST,RPE,Project Sr. Officer,Y_EC_SPAST_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area SPPA,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPAST_RPE,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,Jan23[Gab] - Change to Edit access for xECM access
+SPAST,RPE,Project Sr. Officer,Y_LR_SPAST_EAM_CS_RES_RPE,CS and PM Restriction role for Section RPE for SPPA,,,,
+SPAST,RPE,Project Sr. Officer,Y_FR_SPAST_EAM_PS_RES_RPE,PS Restriction Role for Section RPE for SPPA,,,,
+SPAST,RPE,HOS,Y_FR_SPAST_EAM_PS_RES_RPB_CD,PS Restriction Role for RP Branch Cover Duty,,,,Mar13[Gab] - Added for HOS cover duty
+SPAST,RPW,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPAST_RPW,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPAST,RPW,HOS,Y_LR_SPAST_EAM_CS_RES_RPW,CS and PM Restriction role for Section RPW for SPPA,,,,
+SPAST,RPW,HOS,Y_FR_SPAST_EAM_PS_RES_RPW,PS Restriction Role for Section RPW for SPPA,,,,
+SPAST,RPW,Project Jr. Officer,Y_EC_SPAST_EAM_PROJOFFICER,Project Jr. Officer for Controlling Area SPPA,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPAST_RPW,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,Jan23[Gab] - Change to Edit access for xECM access
+SPAST,RPW,Project Jr. Officer,Y_LR_SPAST_EAM_CS_RES_RPW,CS and PM Restriction role for Section RPW for SPPA,,,,
+SPAST,RPW,Project Jr. Officer,Y_FR_SPAST_EAM_PS_RES_RPW,PS Restriction Role for Section RPW for SPPA,,,,
+SPAST,RPW,Project Sr. Officer,Y_EC_SPAST_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area SPPA,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPAST_RPW,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,Jan23[Gab] - Change to Edit access for xECM access
+SPAST,RPW,Project Sr. Officer,Y_LR_SPAST_EAM_CS_RES_RPW,CS and PM Restriction role for Section RPW for SPPA,,,,
+SPAST,RPW,Project Sr. Officer,Y_FR_SPAST_EAM_PS_RES_RPW,PS Restriction Role for Section RPW for SPPA,,,,
+SPAST,SA,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_SPS_SA,N/A,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPAST,SA,HOS,Y_LR_SPAST_EAM_CS_RES_SA,CS Restriction Role for Section SA (Supply Application) for SPPA,,,,
+SPAST,SA,HOS,Y_LR_SPAST_EAM_CS_RES_SA_DISP,CS restrictions for Section SA (Supply Application) Display Only Role for SPPA,,,,
+SPAST,SA,Planner,Y_EC_SPAST_EAM_PLANNER,Planner Role for Controlling Area SPPA,ZGRP_EAM_SPS_SA,N/A,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPAST,SA,Planner,Y_LR_SPAST_EAM_CS_RES_SA,CS Restriction Role for Section SA (Supply Application) for SPPA,,,,
+SPAST,SA,Project Support Officer,Y_EC_SPAST_EAM_PROJSUPOFCR,Project Support Officer Role for Controlling Area SPPA,ZGRP_EAM_SPS_SA,N/A,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPAST,SA,Project Support Officer,Y_LR_SPAST_EAM_CS_RES_SA_DISP,CS restrictions for Section SA (Supply Application) Display Only Role for SPPA,,,,
+SPAST,SCADA,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_SCADA ,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,Mar13[Gab] - Change to edit access for xecm access
+SPAST,SCADA,HOS,Y_FR_SPAST_EAM_PS_RES_SCADA,PS Restriction Role for Section SCADA for SPPA,,,,
+SPAST,SCADA,HOS,Y_LR_SPAST_EAM_CS_RES_SCADA,CS Restriction Role for Section SCADA for SPPA,,,,
+SPAST,SCADA,HOS,Y_LR_SPAST_EAM_PPM_SCADA_READ,PPM Role for SCADA Bucket with Read Access for SPPA,,,,
+SPAST,SCADA,HOS,Y_PR_SPAST_EAM_PRTL_SCADA_HOS,Portal Workflow Role for SCADA HOS,,,,
+SPAST,SCADA,Planner,Y_EC_SPAST_EAM_PLANNER,Planner Role for Controlling Area SPPA,ZGRP_EAM_SCADA ,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,Mar13[Gab] - Change to edit access for xecm access
+SPAST,SCADA,Planner,Y_FR_SPAST_EAM_PS_RES_SCADA,PS Restriction Role for Section SCADA for SPPA,,,,
+SPAST,SCADA,Planner,Y_LR_SPAST_EAM_CS_RES_SCADA,CS Restriction Role for Section SCADA for SPPA,,,,
+SPAST,SCADA,Planner,Y_LR_SPAST_EAM_PPM_SCADA_WRITE,PPM Role for SCADA Bucket with Write Access for SPPA,,,,
+SPAST,SCADA,Project Jr. Officer,Y_EC_SPAST_EAM_PROJOFFICER,Project Jr. Officer for Controlling Area SPPA,ZGRP_EAM_SCADA ,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,Jan23[Gab] - Change to Edit access for xECM access
+SPAST,SCADA,Project Jr. Officer,Y_FR_SPAST_EAM_PS_RES_SCADA,PS Restriction Role for Section SCADA for SPPA,,,,
+SPAST,SCADA,Project Jr. Officer,Y_LR_SPAST_EAM_CS_RES_SCADA,CS Restriction Role for Section SCADA for SPPA,,,,
+SPAST,SCADA,Project Sr. Officer,Y_EC_SPAST_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area SPPA,ZGRP_EAM_SCADA ,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,Jan23[Gab] - Change to Edit access for xECM access
+SPAST,SCADA,Project Sr. Officer,Y_FR_SPAST_EAM_PS_RES_SCADA,PS Restriction Role for Section SCADA for SPPA,,,,
+SPAST,SCADA,Project Sr. Officer,Y_LR_SPAST_EAM_CS_RES_SCADA,CS Restriction Role for Section SCADA for SPPA,,,,
+SPAST,TNL,Project Jr. Officer,Y_EC_SPAST_EAM_PROJOFFICER,Project Jr. Officer for Controlling Area SPPA,ZGRP_EAM_BDC_D&D,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,Jan23[Gab] - Change to Edit access for xECM access
+SPAST,TNL,Project Jr. Officer,Y_LR_SPAST_EAM_CS_RES_TNL,CS and PM Restriction role for Section TNL for SPPA,,,,
+SPAST,TNL,Project Jr. Officer,Y_FR_SPAST_EAM_PS_RES_TNL,PS Restriction Role for Section Tunnel for SPPA,,,,
+SPAST,TPL,Admin,Y_EC_SPAST_EAM_ADMIN,Admin Role for Controlling Area SPPA,ZGRP_EAM_TPL,ZBW_EAM_SPAST_TPL,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTRE_EDIT; EAM_CSNOTIFICATION_EDIT,Jun21[AS - Gab] - Sync up with RTUM list to allow all users created for TPL to have edit access to xecm
+SPAST,TPL,Admin,Y_FR_SPAST_EAM_PS_RES_TPL,PS Restriction Role for Section TPL for SPPA,,,,
+SPAST,TPL,Admin,Y_LR_SPAST_EAM_CS_RES_TPL,CS Restriction Role for Section TPL for SPPA,,,,
+SPAST,TPL,Admin,Y_LR_SPAST_EAM_PPM_TX_READ,PPM Role for Transmission Bucket with Read Access for SPPA,,,,
+SPAST,DPL,HOS,Y_FR_SPAST_EAM_PS_RES_APB_CD,PS Restriction Role for  AM Branch Cover Duty,,,,Mar13[Gab] - Added for HOS cover duty
+SPAST,TPL,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_TPL,ZBW_EAM_SPAST_TPL,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTRE_EDIT; EAM_CSNOTIFICATION_EDIT,Jun21[AS - Gab] - Sync up with RTUM list to allow all users created for TPL to have edit access to xecm
+SPAST,TPL,HOS,Y_FR_SPAST_EAM_PS_RES_TPL,PS Restriction Role for Section TPL for SPPA,,,,
+SPAST,TPL,HOS,Y_LR_SPAST_EAM_CS_RES_TPL,CS Restriction Role for Section TPL for SPPA,,,,
+SPAST,TPL,HOS,Y_LR_SPAST_EAM_PPM_TX_READ,PPM Role for Transmission Bucket with Read Access for SPPA,,,,
+SPAST,TPL,HOS,Y_PR_SPAST_EAM_PRTL_TPL_HOS,Portal Workflow Role for TPL HOS,,,,
+SPAST,TPL,Planner,Y_EC_SPAST_EAM_PLANNER,Planner Role for Controlling Area SPPA,ZGRP_EAM_TPL,ZBW_EAM_SPAST_TPL,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTRE_EDIT; EAM_CSNOTIFICATION_EDIT,Jun21[AS - Gab] - Sync up with RTUM list to allow all users created for TPL to have edit access to xecm
+SPAST,TPL,Planner,Y_FR_COMMON_EAM_PS_CI_EVALUATN,Common Role for CI Evaluation,,,,
+SPAST,TPL,Planner,Y_FR_SPAST_EAM_PS_RES_TPL,PS Restriction Role for Section TPL for SPPA,,,,
+SPAST,TPL,Planner,Y_FR_SPHCO_COS_PS_VERSION,PS Group Version (E53),,,,
+SPAST,TPL,Planner,Y_LR_SPAST_EAM_CS_RES_TPL,CS Restriction Role for Section TPL for SPPA,,,,
+SPAST,TPL,Planner,Y_LR_SPAST_EAM_PPM_TX_READ,PPM Role for Transmission Bucket with Read Access for SPPA,,,,
+SPAST,TPL,Planner,Y_LR_SPAST_EAM_PPM_TX_WRITE,PPM Role for Transmission Bucket with Write Access for SPPA,,,,
+SPAST,TPL,Planner,Y_LR_SPHCO_EAM_PPM_PLANNER,PPM Planner for All Controlling Areas (SPPA/SPT/TLTT),,,,
+SPAST,TRE,Admin,Y_EC_SPAST_EAM_ADMIN,Admin Role for Controlling Area SPPA,ZGRP_EAM_TRE,ZBW_EAM_SPAST_TRE,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPAST,TRE,Admin,Y_FR_SPAST_EAM_PS_RES_EP1,PS Restriction Role for Section EP1 for SPPA,,,,
+SPAST,TRE,Admin,Y_FR_SPAST_EAM_PS_RES_EP2,PS Restriction Role for Section EP2 for SPPA,,,,
+SPAST,TRE,Admin,Y_FR_SPAST_EAM_PS_RES_RPE,PS Restriction Role for Section RPE for SPPA,,,,
+SPAST,TRE,Admin,Y_FR_SPAST_EAM_PS_RES_RPW,PS Restriction Role for Section RPW for SPPA,,,,
+SPAST,TRE,Admin,Y_LR_SPAST_EAM_CS_RES_TRE,CS Restriction role for Section TRE for SPPA,,,,
+SPAST,TRE,Admin,Y_FR_SPAST_EAM_PS_RES_TRE,PS Restriction Role for Section TRE for SPPA,,,,
+SPAST,TRE,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_TRE,ZBW_EAM_SPAST_TRE,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPAST,TRE,HOS,Y_FR_SPAST_EAM_PS_RES_EP1,PS Restriction Role for Section EP1 for SPPA,,,,
+SPAST,TRE,HOS,Y_FR_SPAST_EAM_PS_RES_EP2,PS Restriction Role for Section EP2 for SPPA,,,,
+SPAST,TRE,HOS,Y_FR_SPAST_EAM_PS_RES_RPE,PS Restriction Role for Section RPE for SPPA,,,,
+SPAST,TRE,HOS,Y_FR_SPAST_EAM_PS_RES_RPW,PS Restriction Role for Section RPW for SPPA,,,,
+SPAST,TRE,HOS,Y_FR_SPAST_EAM_PS_RES_TRE,PS Restriction Role for Section TRE for SPPA,,,,
+SPAST,TRE,HOS,Y_PR_SPAST_EAM_PRTL_TRE_HOS,Portal Workflow Role for TRE HOS,,,,
+SPAST,TRE,HOS,Y_LR_SPAST_EAM_CS_RES_TRE,CS Restriction role for Section TRE for SPPA,,,,
+SPAST,TRE,Project Support Officer,Y_EC_SPAST_EAM_PROJSUPOFCR,Project Support Officer Role for Controlling Area SPPA,ZGRP_EAM_TRE,ZBW_EAM_SPAST_TRE,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPAST,TRE,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_EP1,PS Restriction Role for Section EP1 for SPPA,,,,
+SPAST,TRE,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_EP2,PS Restriction Role for Section EP2 for SPPA,,,,
+SPAST,TRE,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_RPE,PS Restriction Role for Section RPE for SPPA,,,,
+SPAST,TRE,Project Support Officer,Y_LR_SPAST_EAM_CS_RES_TRE,CS Restriction role for Section TRE for SPPA,,,,
+SPAST,TRE,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_RPW,PS Restriction Role for Section RPW for SPPA,,,,
+SPAST,TRE,Project Support Officer,Y_FR_SPAST_EAM_PS_RES_TRE,PS Restriction Role for Section TRE for SPPA,,,,
+SPAST,FIN,Finance Officer,Y_LR_SPAST_EAM_CS_FIN_OFFICER,CS Finance Officer for SP PowerAssets Ltd,ZGRP_EAM_FINANCE_RM_EP,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,27 sep 2017 - Changes to xECM access from View to Edit
+SPAST,FIN,Finance Officer,Y_FR_SPAST_EAM_PS_RES_FIN,PS Restriction Role for Section FIN for SPPA,,,,
+SPAST,FIN,Finance Officer,Y_LR_SPAST_EAM_CS_RES_FIN,CS Restriction role for Section FIN for SPPA,,,,
+SPAST,FIN,Finance Officer,Y_LR_SPAST_EAM_PPM_ITP_ADMIN,PPM Role for IT Projects Bucket with Admin and Create Access for SPPA,,,,
+SPAST,FIN,Finance Officer,Y_LR_SPAST_EAM_PPM_MISC_ADMIN,PPM Role for Misc Bucket with Admin and Create Access for SPPA,,,,
+SPAST,FIN,Finance Officer,Y_LR_SPHCO_EAM_PPM_PLANNER,PPM Planner for All Controlling Areas (SPPA/SPT/TLTT),,,,
+SPAST,FIN,Finance Officer,Y_FR_SPAST_EAM_PS_FIN_OFFICER,PS Finance Officer for SP PowerAssets Ltd,,,,
+SPAST,FIN,Finance Officer,Y_LR_SPGRD_EAM_PPM_SPPG_WRITE,PPM Role for ELECT Bucket with Write Access for SPPA,,,,
+SPAST,Electricity Operation Department Admin,Department Admin,Y_EC_SPAST_EAM_ADMIN,Admin Role for Controlling Area SPPA,ZGRP_EAM_DN,ZBW_EAM_SPAST_DNC,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,Electricity Operation Department Admin,Department Admin,Y_FR_SPAST_EAM_PS_RES_DNC,PS Restriction Role for Section DNC for SPPA,ZGRP_EAM_PERSOS_DISPALL,ZBW_EAM_SPAST_DNE,,
+SPAST,Electricity Operation Department Admin,Department Admin,Y_LR_SPAST_EAM_CS_RES_DNC,CS Restriction role for Section DNC for SPPA,,ZBW_EAM_SPAST_DNN,,
+SPAST,Electricity Operation Department Admin,Department Admin,Y_FR_SPAST_EAM_PS_RES_DNE,PS Restriction Role for Section DNE for SPPA,,ZBW_EAM_SPAST_DNS,,
+SPAST,Electricity Operation Department Admin,Department Admin,Y_LR_SPAST_EAM_CS_RES_DNE,CS Restriction role for Section DNE for SPPA,,ZBW_EAM_SPAST_DNW,,
+SPAST,Electricity Operation Department Admin,Department Admin,Y_FR_SPAST_EAM_PS_RES_DNN,PS Restriction Role for Section DNN for SPPA,,,,
+SPAST,Electricity Operation Department Admin,Department Admin,Y_LR_SPAST_EAM_CS_RES_DNN,CS Restriction role for Section DNN for SPPA,,,,
+SPAST,Electricity Operation Department Admin,Department Admin,Y_FR_SPAST_EAM_PS_RES_DNS,PS Restriction Role for Section DNS for SPPA,,,,
+SPAST,Electricity Operation Department Admin,Department Admin,Y_LR_SPAST_EAM_CS_RES_DNS,CS Restriction role for Section DNS for SPPA,,,,
+SPAST,Electricity Operation Department Admin,Department Admin,Y_FR_SPAST_EAM_PS_RES_DNW,PS Restriction Role for Section DNW for SPPA,,,,
+SPAST,Electricity Operation Department Admin,Department Admin,Y_LR_SPAST_EAM_CS_RES_DNW,CS Restriction role for Section DNW for SPPA,,,,
+SPAST,Electricity Operation Department Admin,Department Admin,Y_FR_SPAST_EAM_PS_RES_DCCS,PS Restriction Role for Section DCCS for SPPA,,,,
+SPAST,Electricity Operation Department Admin,Department Admin,Y_LR_SPAST_EAM_CS_RES_DCCS,CS Restriction Role for Section DCCS for SPPA,,,,
+SPAST,Electricity Operation Department Admin,Department Admin,Y_FR_SPAST_EAM_PS_RES_NM,PS Restriction Role for Section NM for SPPA,,,,
+SPAST,Electricity Operation Department Admin,Department Admin,Y_LR_SPAST_EAM_CS_RES_NM,CS Restriction role for Section NM Admin for SPPA,,,,
+SPAST,Electricity Operation Department Admin,Department Admin,Y_LR_SPAST_EAM_CS_RES_ND,CS Restriction role for Section ND for SPPA,,,,"Jan03[Gab] - To be removed, roles not longer required for JOB Roles"
+SPAST,Electricity Operation Department Admin,Department Admin,Y_FR_SPAST_EAM_PS_RES_ND,PS Restriction Role for Section ND for SPPA,,,,"Jan03[Gab] - To be removed, roles not longer required for JOB Roles"
+SPAST,Electricity Operation Department Admin,Department Admin,Y_FR_SPAST_EAM_PS_RES_EHVN,Cost Center Role for Section EHVN for SPPA,,,,Jan03[Gab] - newly Added Roles
+SPAST,Electricity Operation Department Admin,Department Admin,Y_LR_SPAST_EAM_CS_RES_EHVN,CS Restriction Role for Section EHVN for SPPA,,,,Jan03[Gab] - newly Added Roles
+SPAST,Electricity Operation Department Admin,Department Admin,Y_FR_SPAST_EAM_PS_RES_RNE,PS Restriction Role for Section RNE for SPPA,,,,Jan03[Gab] - newly Added Roles
+SPAST,Electricity Operation Department Admin,Department Admin,Y_LR_SPAST_EAM_CS_RES_RNE,CS Restriction Role for Section RNE for SPPA,,,,Jan03[Gab] - newly Added Roles
+SPAST,Electricity Operation Department Admin,Department Admin,Y_FR_SPAST_EAM_PS_RES_RNW,PS Restriction Role for Section RNW for SPPA,,,,Jan03[Gab] - newly Added Roles
+SPAST,Electricity Operation Department Admin,Department Admin,Y_LR_SPAST_EAM_CS_RES_RNW,CS Restriction Role for Section RNW for SPPA,,,,Jan03[Gab] - newly Added Roles
+SPAST,Asset Management Department Admin,Department Admin,Y_FR_SPAST_EAM_PS_RES_AM,PS Restriction Role for Section AM for SPPA,ZGRP_EAM_PERSOS_DISPALL,ZBW_EAM_SPAST_DPL,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPAST,Asset Management Department Admin,Department Admin,Y_LR_SPAST_EAM_CS_RES_AM,CS restrictions for Section AM for SPPA,ZGRP_EAM_DPL,ZBW_EAM_SPAST_PP,,
+SPAST,Asset Management Department Admin,Department Admin,Y_EC_SPAST_EAM_ADMIN,Admin Role for Controlling Area SPPA,ZGRP_EAM_PP,ZBW_EAM_SPAST_TPL,,
+SPAST,Asset Management Department Admin,Department Admin,Y_FR_SPAST_EAM_PS_RES_AS,PS Restriction Role for Section AS for SPPA,ZGRP_EAM_TPL,ZBW_EAM_SPAST_TRE,,
+SPAST,Asset Management Department Admin,Department Admin,Y_LR_SPAST_EAM_CS_RES_AS,CS restrictions for Section AS for SPPA,ZGRP_EAM_TRE,,,
+SPAST,Asset Management Department Admin,Department Admin,Y_LR_SPGRD_EAM_PPM_SPPG_ADMIN,PPM Role for SSPG Top Bucket with Admin and Create Access,,,,
+SPAST,Asset Management Department Admin,Department Admin,Y_FR_SPAST_EAM_PS_RES_DPL,PS Restriction Role for Section DPL for SPPA,,,,
+SPAST,Asset Management Department Admin,Department Admin,Y_FR_SPAST_EAM_PS_RES_TPL,PS Restriction Role for Section TPL for SPPA,,,,
+SPAST,Asset Management Department Admin,Department Admin,Y_LR_SPAST_EAM_CS_RES_DPL,CS Restriction role for Section DPL for SPPA,,,,
+SPAST,Asset Management Department Admin,Department Admin,Y_LR_SPAST_EAM_PPM_DX_READ,PPM Role for Distribution Bucket with Read Access for SPPA,,,,
+SPAST,Asset Management Department Admin,Department Admin,Y_FR_SPAST_EAM_PS_RES_DTE,PS Restriction Role for Section DTE for SPPA,,,,
+SPAST,Asset Management Department Admin,Department Admin,Y_LR_SPAST_EAM_CS_RES_DTE,CS Restriction role for Section DTE for SPPA,,,,
+SPAST,Asset Management Department Admin,Department Admin,Y_EC_SPGAS_EAM_ADMIN,Admin Role for Controlling Area PGAS,,,,"Jan03[Gab] - To be removed, roles not longer required for JOB Roles"
+SPAST,Asset Management Department Admin,Department Admin,Y_FR_SPGAS_EAM_PS_RES_GASCM,PS Restriction Role for Section GASCM for PGAS,,,,"Jan03[Gab] - To be removed, roles not longer required for JOB Roles"
+SPAST,Asset Management Department Admin,Department Admin,Y_FR_SPAST_EAM_PS_RES_PP,PS Restriction Role for Section PP for SPPA,,,,
+SPAST,Asset Management Department Admin,Department Admin,Y_LR_SPAST_EAM_CS_RES_PP,CS Restriction role for Section PP for SPPA,,,,
+SPAST,Asset Management Department Admin,Department Admin,Y_LR_SPGRD_EAM_PPM_SPPG_READ,PPM Role for SPPG Top Bucket with Read Access,,,,
+SPAST,Asset Management Department Admin,Department Admin,Y_FR_SPAST_EAM_PS_RES_PQTM,PS Restriction Role for Section PQTM for SPPA,,,,
+SPAST,Asset Management Department Admin,Department Admin,Y_LR_SPAST_EAM_CS_RES_PQTM,CS Restriction role for Section PQTM for SPPA,,,,
+SPAST,Asset Management Department Admin,Department Admin,Y_LR_SPAST_EAM_CS_RES_TPL,CS Restriction role for Section TPL for SPPA,,,,
+SPAST,Asset Management Department Admin,Department Admin,Y_LR_SPAST_EAM_PPM_TX_READ,PPM Role for Transmission Bucket with Read Access for SPPA,,,,
+SPAST,Asset Management Department Admin,Department Admin,Y_FR_SPAST_EAM_PS_RES_EP1,PS Restriction Role for Section EP1 for SPPA,,,,
+SPAST,Asset Management Department Admin,Department Admin,Y_FR_SPAST_EAM_PS_RES_EP2,PS Restriction Role for Section EP2 for SPPA,,,,
+SPAST,Asset Management Department Admin,Department Admin,Y_FR_SPAST_EAM_PS_RES_RPE,PS Restriction Role for Section RPE for SPPA,,,,
+SPAST,Asset Management Department Admin,Department Admin,Y_FR_SPAST_EAM_PS_RES_RPW,PS Restriction Role for Section RPW for SPPA,,,,
+SPAST,Asset Management Department Admin,Department Admin,Y_FR_SPAST_EAM_PS_RES_TRE,PS Restriction Role for Section TRE for SPPA,,,,
+SPAST,Asset Management Department Admin,Department Admin,Y_LR_SPAST_EAM_CS_RES_TRE,CS Restriction role for Section TRE for SPPA,,,,
+SPAST,Infrastructure & Projects Department Admin (ELEC),Department Admin,Y_EC_SPAST_EAM_PROJSUPOFCR,Project Support Officer Role for Controlling Area SPPA,ZGRP_EAM_BDC_D&D,ZBW_EAM_SPAST_BDC,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,Jan03[Gab] - Change section code to Infrastructure & Projects Department Admin (ELEC)
+SPAST,Infrastructure & Projects Department Admin (ELEC),Department Admin,Y_FR_SPAST_EAM_PS_RES_BDC,PS Restriction Role for Section BDC for SPPA,ZGRP_EAM_METER,ZBW_EAM_SPAST_D&D,,Jan03[Gab] - Change section code to Infrastructure & Projects Department Admin (ELEC)
+SPAST,Infrastructure & Projects Department Admin (ELEC),Department Admin,Y_LR_SPAST_EAM_CS_RES_BDC,CS and PM Restriction role for Section BDC for SPPA,ZGRP_EAM_PERSOS_DISPALL,ZBW_EAM_SPAST_EMTR,,Jan03[Gab] - Change section code to Infrastructure & Projects Department Admin (ELEC)
+SPAST,Infrastructure & Projects Department Admin (ELEC),Department Admin,Y_FR_SPAST_EAM_PS_RES_D&D,"PS Restriction Role for Section D&D for SPPA, PGAS",,,,Jan03[Gab] - Change section code to Infrastructure & Projects Department Admin (ELEC)
+SPAST,Infrastructure & Projects Department Admin (ELEC),Department Admin,Y_LR_SPAST_EAM_CS_RES_D&D,CS Restriction role for Section D&D for SPPA,,,,Jan03[Gab] - Change section code to Infrastructure & Projects Department Admin (ELEC)
+SPAST,Properties & Infrastructure Department Admin,Department Admin,Y_LR_SPAST_EAM_CS_RES_EMTR-CT,CS restriction role for Section EMTR for Current Transformer,,,,"Jan03[Gab] - To be removed, roles not longer required for JOB Roles"
+SPAST,Properties & Infrastructure Department Admin,Department Admin,Y_FR_SPAST_EAM_PS_RES_EMTR,PS Restriction Role for Section EMTR for SPPA,,,,"Jan03[Gab] - To be removed, roles not longer required for JOB Roles"
+SPAST,Properties & Infrastructure Department Admin,Department Admin,Y_LR_SPAST_EAM_CS_RES_EMTR-WC,CS restriction role for Section EMTR for Whole Current,,,,"Jan03[Gab] - To be removed, roles not longer required for JOB Roles"
+SPAST,Properties & Infrastructure Department Admin,Department Admin,Y_FR_SPAST_EAM_PS_RES_ESCS,PS Restriction Role for Section ESCS for SPPA,,,,"Jan03[Gab] - To be removed, roles not longer required for JOB Roles"
+SPAST,Properties & Infrastructure Department Admin,Department Admin,Y_LR_SPAST_EAM_CS_RES_ESCS,CS Restriction role for Section ESCS for SPPA,,,,"Jan03[Gab] - To be removed, roles not longer required for JOB Roles"
+SPAST,Infrastructure & Projects Department Admin (ELEC),Department Admin,Y_FR_SPAST_EAM_PS_RES_FM,PS Restriction Role for Section FM for SPPA,,,,Jan03[Gab] - Change section code to Infrastructure & Projects Department Admin (ELEC)
+SPAST,Infrastructure & Projects Department Admin (ELEC),Department Admin,Y_LR_SPAST_EAM_CS_RES_FM,CS Restriction role for Section FM for SPPA,,,,Jan03[Gab] - Change section code to Infrastructure & Projects Department Admin (ELEC)
+SPAST,BDC,Project Sr. Officer,Y_FR_SPAST_EAM_TC_PROJMANAGER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,BDC,Project Jr. Officer,Y_FR_SPAST_EAM_TC_PROJOFFICER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,CPE,Project Sr. Officer,Y_FR_SPAST_EAM_TC_PROJMANAGER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,CPE,Project Jr. Officer,Y_FR_SPAST_EAM_TC_PROJOFFICER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,CPW,Project Sr. Officer,Y_FR_SPAST_EAM_TC_PROJMANAGER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,CPW,Project Jr. Officer,Y_FR_SPAST_EAM_TC_PROJOFFICER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,D&D,Project Sr. Officer,Y_FR_SPAST_EAM_TC_PROJMANAGER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,D&D,Project Jr. Officer,Y_FR_SPAST_EAM_TC_PROJOFFICER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,DNC,Project Sr. Officer,Y_FR_SPAST_EAM_TC_PROJMANAGER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,DNC,Project Jr. Officer,Y_FR_SPAST_EAM_TC_PROJOFFICER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,DNE,Project Sr. Officer,Y_FR_SPAST_EAM_TC_PROJMANAGER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,DNE,Project Jr. Officer,Y_FR_SPAST_EAM_TC_PROJOFFICER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,DNN,Project Sr. Officer,Y_FR_SPAST_EAM_TC_PROJMANAGER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,DNN,Project Jr. Officer,Y_FR_SPAST_EAM_TC_PROJOFFICER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,DP II,Project Sr. Officer,Y_FR_SPAST_EAM_TC_PROJMANAGER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,28 Aug 18 - Gab - Updated section code to DP II from DNP
+SPAST,DNS,Project Sr. Officer,Y_FR_SPAST_EAM_TC_PROJMANAGER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,DNS,Project Jr. Officer,Y_FR_SPAST_EAM_TC_PROJOFFICER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,DNW,Project Sr. Officer,Y_FR_SPAST_EAM_TC_PROJMANAGER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,DNW,Project Jr. Officer,Y_FR_SPAST_EAM_TC_PROJOFFICER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,DP I,Project Sr. Officer,Y_FR_SPAST_EAM_TC_PROJMANAGER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,28 Aug 18 - Gab - Updated section code to DP I from DRP
+SPAST,DP I,Project Jr. Officer,Y_FR_SPAST_EAM_TC_PROJOFFICER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,28 Aug 18 - Gab - Updated section code to DP I from DRP
+SPAST,EHVN,Project Sr. Officer,Y_FR_SPAST_EAM_TC_PROJMANAGER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,EHVN,Project Jr. Officer,Y_FR_SPAST_EAM_TC_PROJOFFICER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,EP2,Project Sr. Officer,Y_FR_SPAST_EAM_TC_PROJMANAGER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,Jul29[AS - Gab] - Change from ep1 to ep2
+SPAST,EP1,Project Jr. Officer,Y_FR_SPAST_EAM_TC_PROJOFFICER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,ESCS,Project Sr. Officer,Y_FR_SPAST_EAM_TC_PROJMANAGER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,ESCS,Project Jr. Officer,Y_FR_SPAST_EAM_TC_PROJOFFICER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,FM,Project Sr. Officer,Y_FR_SPAST_EAM_TC_PROJMANAGER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,FM,Project Jr. Officer,Y_FR_SPAST_EAM_TC_PROJOFFICER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,PIMU,Project Sr. Officer,Y_FR_SPAST_EAM_TC_PROJMANAGER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,PQTM,Project Sr. Officer,Y_FR_SPAST_EAM_TC_PROJMANAGER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,PQTM,Project Jr. Officer,Y_FR_SPAST_EAM_TC_PROJOFFICER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,RNE,Project Sr. Officer,Y_FR_SPAST_EAM_TC_PROJMANAGER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,RNE,Project Jr. Officer,Y_FR_SPAST_EAM_TC_PROJOFFICER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,RNW,Project Sr. Officer,Y_FR_SPAST_EAM_TC_PROJMANAGER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,RNW,Project Jr. Officer,Y_FR_SPAST_EAM_TC_PROJOFFICER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,RPE,Project Sr. Officer,Y_FR_SPAST_EAM_TC_PROJMANAGER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,RPE,Project Jr. Officer,Y_FR_SPAST_EAM_TC_PROJOFFICER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,RPW,Project Sr. Officer,Y_FR_SPAST_EAM_TC_PROJMANAGER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,RPW,Project Jr. Officer,Y_FR_SPAST_EAM_TC_PROJOFFICER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,SCADA,Project Sr. Officer,Y_FR_SPAST_EAM_TC_PROJMANAGER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,SCADA,Project Jr. Officer,Y_FR_SPAST_EAM_TC_PROJOFFICER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,TNL,Project Jr. Officer,Y_FR_SPAST_EAM_TC_PROJOFFICER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,
+SPAST,RM,Project Support Officer,Y_FR_SPTEL_EAM_PS_RES_RM,PS Restriction Role for Section RM for SPTEL,,,,
+SPAST,EP1,Project Sr. Officer,Y_FR_SPAST_EAM_TC_PROJMANAGER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,Jul29[AS - Gab] - Added
+SPAST,EP2,Project Jr. Officer,Y_FR_SPAST_EAM_TC_PROJOFFICER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,Jul29[AS - Gab] - Added
+SPAST,FM,HOS,Y_FR_SPAST_EAM_PS_RES_BDPMB_CD,PS Restriction Role for  BDPM Branch Cover Duty,,,,Mar13[Gab] - Added for HOS cover duty
+SPAST,SM,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,Sep27[Gab]-Added
+SPAST,SM,HOS,Y_FR_SPAST_EAM_PS_RES_SM,PS Restriction Role for Section SM for SPPA,,,,Sep27[Gab]-Added
+SPAST,SM,HOS,Y_LR_SPAST_EAM_CS_RES_SM,CS Restriction role for Section SM for SPPA,,,,Sep27[Gab]-Added
+SPAST,SM,HOS,Y_PR_SPAST_EAM_PRTL_SM_HOS,Portal Workflow Role for SM HOS,,,,Sep27[Gab]-Added
+SPAST,SM,Planner,Y_EC_SPAST_EAM_PLANNER,Planner Role for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,"Oct31[Gab] - Changes required for Admin, Sr and Jr Project officer role for security management"
+SPAST,SM,Planner,Y_LR_SPHCO_EAM_PPM_PLANNER,PPM Planner for All Controlling Areas (SPPA/SPT/TLTT),,,,"Oct31[Gab] - Changes required for Admin, Sr and Jr Project officer role for security management"
+SPAST,SM,Planner,Y_FR_SPAST_EAM_PS_RES_SM,PS Restriction Role for Section SM for SPPA,,,,"Oct31[Gab] - Changes required for Admin, Sr and Jr Project officer role for security management"
+SPAST,SM,Planner,Y_LR_SPAST_EAM_CS_RES_SM,CS Restriction role for Section SM for SPPA,,,,"Oct31[Gab] - Changes required for Admin, Sr and Jr Project officer role for security management"
+SPAST,SM,Project Sr. Officer,Y_EC_SPAST_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,"Oct31[Gab] - Changes required for Admin, Sr and Jr Project officer role for security management"
+SPAST,SM,Project Sr. Officer,Y_FR_SPAST_EAM_TC_PROJMANAGER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,"Oct31[Gab] - Changes required for Admin, Sr and Jr Project officer role for security management"
+SPAST,SM,Project Sr. Officer,Y_FR_SPAST_EAM_PS_RES_SM,PS Restriction Role for Section SM for SPPA,,,,"Oct31[Gab] - Changes required for Admin, Sr and Jr Project officer role for security management"
+SPAST,SM,Project Sr. Officer,Y_LR_SPAST_EAM_CS_RES_SM,CS Restriction role for Section SM for SPPA,,,,"Oct31[Gab] - Changes required for Admin, Sr and Jr Project officer role for security management"
+SPAST,SM,Project Jr. Officer,Y_EC_SPAST_EAM_PROJOFFICER,Project Jr. Officer for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,"Oct31[Gab] - Changes required for Admin, Sr and Jr Project officer role for security management"
+SPAST,SM,Project Jr. Officer,Y_FR_SPAST_EAM_TC_PROJOFFICER1,Replacement Role for FLINs Role Y_FR_SPAST_FIN_PA_PROJOFFICER1,,,,"Oct31[Gab] - Changes required for Admin, Sr and Jr Project officer role for security management"
+SPAST,SM,Project Jr. Officer,Y_FR_SPAST_EAM_PS_RES_SM,PS Restriction Role for Section SM for SPPA,,,,"Oct31[Gab] - Changes required for Admin, Sr and Jr Project officer role for security management"
+SPAST,SM,Project Jr. Officer,Y_LR_SPAST_EAM_CS_RES_SM,CS Restriction role for Section SM for SPPA,,,,"Oct31[Gab] - Changes required for Admin, Sr and Jr Project officer role for security management"
+SPAST,Infrastructure & Projects Department Admin (ELEC),Department Admin,Y_FR_SPAST_EAM_PS_RES_CPE,PS Restriction Role for Section CPE for SPPA,,,,"Jan03[Gab] - newly Added Roles
+Jan03[Gab] - Change section code to Infrastructure & Projects Department Admin (ELEC)"
+SPAST,Infrastructure & Projects Department Admin (ELEC),Department Admin,Y_FR_SPAST_EAM_PS_RES_CPW,PS Restriction Role for Section CPW for SPPA,,,,"Jan03[Gab] - newly Added Roles
+Jan03[Gab] - Change section code to Infrastructure & Projects Department Admin (ELEC)"
+SPAST,Infrastructure & Projects Department Admin (ELEC),Department Admin,Y_FR_SPAST_EAM_PS_RES_DNP,PS Restriction Role for Section DNP for SPPA,,,,"Jan03[Gab] - newly Added Roles
+Jan03[Gab] - Change section code to Infrastructure & Projects Department Admin (ELEC)"
+SPAST,Infrastructure & Projects Department Admin (ELEC),Department Admin,Y_FR_SPAST_EAM_PS_RES_DRP,PS Restriction Role for Section DRP for SPPA,,,,"Jan03[Gab] - newly Added Roles
+Jan03[Gab] - Change section code to Infrastructure & Projects Department Admin (ELEC)"
+SPAST,Infrastructure & Projects Department Admin (ELEC),Department Admin,Y_FR_SPAST_EAM_PS_RES_RPE,PS Restriction Role for Section RPE for SPPA,,,,"Jan03[Gab] - newly Added Roles
+Jan03[Gab] - Change section code to Infrastructure & Projects Department Admin (ELEC)"
+SPAST,Infrastructure & Projects Department Admin (ELEC),Department Admin,Y_FR_SPAST_EAM_PS_RES_RPW,PS Restriction Role for Section RPW for SPPA,,,,"Jan03[Gab] - newly Added Roles
+Jan03[Gab] - Change section code to Infrastructure & Projects Department Admin (ELEC)"
+SPAST,Infrastructure & Projects Department Admin (ELEC),Department Admin,Y_FR_SPAST_EAM_PS_RES_EP1,PS Restriction Role for Section EP1 for SPPA,,,,"Jan03[Gab] - newly Added Roles
+Jan03[Gab] - Change section code to Infrastructure & Projects Department Admin (ELEC)"
+SPAST,Infrastructure & Projects Department Admin (ELEC),Department Admin,Y_FR_SPAST_EAM_PS_RES_EP2,PS Restriction Role for Section EP2 for SPPA,,,,"Jan03[Gab] - newly Added Roles
+Jan03[Gab] - Change section code to Infrastructure & Projects Department Admin (ELEC)"
+SPAST,Infrastructure & Projects Department Admin (ELEC),Department Admin,Y_FR_SPAST_EAM_PS_RES_SM,PS Restriction Role for Section SM for SPPA,,,,"Jan03[Gab] - newly Added Roles
+Jan03[Gab] - Change section code to Infrastructure & Projects Department Admin (ELEC)"
+SPAST,Infrastructure & Projects Department Admin (ELEC),Department Admin,Y_LR_SPAST_EAM_CS_RES_CPE,CS Restriction role for Section CPE for SPPA,,,,"Jan03[Gab] - newly Added Roles
+Jan03[Gab] - Change section code to Infrastructure & Projects Department Admin (ELEC)"
+SPAST,Infrastructure & Projects Department Admin (ELEC),Department Admin,Y_LR_SPAST_EAM_CS_RES_CPW,CS Restriction role for Section CPW for SPPA,,,,"Jan03[Gab] - newly Added Roles
+Jan03[Gab] - Change section code to Infrastructure & Projects Department Admin (ELEC)"
+SPAST,Infrastructure & Projects Department Admin (ELEC),Department Admin,Y_LR_SPAST_EAM_CS_RES_DNP,CS Restriction role for Section DNP for SPPA,,,,"Jan03[Gab] - newly Added Roles
+Jan03[Gab] - Change section code to Infrastructure & Projects Department Admin (ELEC)"
+SPAST,Infrastructure & Projects Department Admin (ELEC),Department Admin,Y_LR_SPAST_EAM_CS_RES_DRP,CS Restriction role for Section DRP for SPPA,,,,"Jan03[Gab] - newly Added Roles
+Jan03[Gab] - Change section code to Infrastructure & Projects Department Admin (ELEC)"
+SPAST,Infrastructure & Projects Department Admin (ELEC),Department Admin,Y_LR_SPAST_EAM_CS_RES_RPE,CS Restriction role for Section RPE for SPPA,,,,"Jan03[Gab] - newly Added Roles
+Jan03[Gab] - Change section code to Infrastructure & Projects Department Admin (ELEC)"
+SPAST,Infrastructure & Projects Department Admin (ELEC),Department Admin,Y_LR_SPAST_EAM_CS_RES_RPW,CS Restriction role for Section RPW for SPPA,,,,"Jan03[Gab] - newly Added Roles
+Jan03[Gab] - Change section code to Infrastructure & Projects Department Admin (ELEC)"
+SPAST,Infrastructure & Projects Department Admin (ELEC),Department Admin,Y_LR_SPAST_EAM_CS_RES_EP1,CS Restriction role for Section EP1 for SPPA,,,,"Jan03[Gab] - newly Added Roles
+Jan03[Gab] - Change section code to Infrastructure & Projects Department Admin (ELEC)"
+SPAST,Infrastructure & Projects Department Admin (ELEC),Department Admin,Y_LR_SPAST_EAM_CS_RES_EP2,CS Restriction role for Section EP2 for SPPA,,,,"Jan03[Gab] - newly Added Roles
+Jan03[Gab] - Change section code to Infrastructure & Projects Department Admin (ELEC)"
+SPAST,Infrastructure & Projects Department Admin (ELEC),Department Admin,Y_LR_SPAST_EAM_CS_RES_SM,CS Restriction role for Section SM for SPPA,,,,"Jan03[Gab] - newly Added Roles
+Jan03[Gab] - Change section code to Infrastructure & Projects Department Admin (ELEC)"
+SPAST,SM,Admin,Y_EC_SPAST_EAM_ADMIN,Admin Role for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,"Oct31[Gab] - Changes required for Admin, Sr and Jr Project officer role for security management"
+SPAST,SM,Admin,Y_FR_SPAST_EAM_PS_RES_SM,PS Restriction Role for Section SM for SPPA,,,,"Oct31[Gab] - Changes required for Admin, Sr and Jr Project officer role for security management"
+SPAST,SM,Admin,Y_LR_SPAST_EAM_CS_RES_SM,CS Restriction role for Section SM for SPPA,,,,"Oct31[Gab] - Changes required for Admin, Sr and Jr Project officer role for security management"
+SPAST,EP2,HOS,Y_FR_SPAST_EAM_PS_RES_TPB_CD,PS Restriction Role for TP Branch Cover Duty,,,,Mar13[Gab] - Added for HOS cover duty
+SPAST,RPW,HOS,Y_FR_SPAST_EAM_PS_RES_RPB_CD,PS Restriction Role for RP Branch Cover Duty,,,,Mar13[Gab] - Added for HOS cover duty
+SPAST,DP I,HOS,Y_FR_SPAST_EAM_PS_RES_DPB_CD,PS Restriction Role for  DP Branch Cover Duty,,,,"Mar13[Gab] - Added for HOS cover duty
+28 Aug 18 - Gab - Updated section code to DP I from DRP"
+SPAST,CPW,HOS,Y_FR_SPAST_EAM_PS_RES_CPB_CD,PS Restriction Role for CP Branch Cover Duty,,,,Mar13[Gab] - Added for HOS cover duty
+SPAST,SM,HOS,Y_FR_SPAST_EAM_PS_RES_BDPMB_CD,PS Restriction Role for  BDPM Branch Cover Duty,,,,Mar13[Gab] - Added for HOS cover duty
+SPAST,RNW,HOS,Y_FR_SPAST_EAM_PS_RES_TNB_CD,PS Restriction Role for  TN Branch Cover Duty,,,,Mar13[Gab] - Added for HOS cover duty
+SPAST,DNW,HOS,Y_FR_SPAST_EAM_PS_RES_DNB_CD,PS Restriction Role for  DN Branch Cover Duty,,,,Mar13[Gab] - Added for HOS cover duty
+SPAST,TPL,HOS,Y_FR_SPAST_EAM_PS_RES_APB_CD,PS Restriction Role for  AM Branch Cover Duty,,,,Mar13[Gab] - Added for HOS cover duty
+SPAST,PQTM,HOS,Y_FR_SPAST_EAM_PS_RES_APMB_CD,PS Restriction Role for  APM Branch Cover Duty,,,,Mar13[Gab] - Added for HOS cover duty
+,,,,,,,,
+SPAST,TDTM,HOS,Y_EC_SPAST_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area SPPA,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,30 Oct 2017 - Newly added for ESCS TDTM section
+SPAST,TDTM,HOS,Y_FR_SPAST_EAM_PS_RES_ESCS,PS Restriction Role for Section ESCS for SPPA,,,,30 Oct 2017 - Newly added for ESCS TDTM section
+SPAST,TDTM,HOS,Y_LR_SPAST_EAM_CS_RES_ESCS,CS Restriction Role for Section ESCS for SPPA,,,,30 Oct 2017 - Newly added for ESCS TDTM section
+SPAST,TDTM,HOS,Y_LR_SPAST_EAM_PPM_IP_READ,PPM Role for Infrastructure Projects Bucket with Read Access for SPPA,,,,30 Oct 2017 - Newly added for ESCS TDTM section
+SPAST,TDTM,HOS,Y_PR_SPAST_EAM_PRTL_TDTM_HOS,Portal Workflow Role for ESCS HOS,,,,30 Oct 2017 - Newly added for ESCS TDTM section
+SPGAS,DPOM,Admin,Y_EC_SPGAS_EAM_ADMIN,Admin Role for Controlling Area PGAS,ZGRP_EAM_DPOM,ZBW_EAM_SPGAS_DPOM,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,DPOM,Admin,Y_FR_SPGAS_EAM_PS_RES_DPOM,PS Restriction Role for Section DPOM for PGAS,,,,
+SPGAS,DPOM,Admin,Y_LR_SPGAS_EAM_CS_RES_DPOM,CS Restriction Role for Section DPOM for PGAS,,,,
+SPGAS,DPOM,HOS,Y_EC_SPGAS_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area PGAS,ZGRP_EAM_DPOM,ZBW_EAM_SPGAS_DPOM,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,DPOM,HOS,Y_FR_SPGAS_EAM_PS_RES_DPOM,PS Restriction Role for Section DPOM for PGAS,,,,
+SPGAS,DPOM,HOS,Y_LR_SPGAS_EAM_CS_RES_DPOM,CS Restriction Role for Section DPOM for PGAS,,,,
+SPGAS,DPOM,HOS,Y_LR_SPGAS_EAM_PPM_NMD_READ,PPM Role for Network Management Distribution Bucket with Read Access for PGAS,,,,
+SPGAS,DPOM,HOS,Y_LR_SPGAS_EAM_PPM_SASD_READ,PPM Role for Safety and Security Distribution Bucket with Read Access for PGAS,,,,
+SPGAS,DPOM,HOS,Y_PR_SPGAS_EAM_PRTL_DPOM_HOS,Portal Workflow Role for DPOM HOS,,,,
+SPGAS,DPOM,Planner,Y_EC_SPGAS_EAM_PLANNER,Planner Role for Controlling Area PGAS,ZGRP_EAM_DPOM,ZBW_EAM_SPGAS_DPOM,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,DPOM,Planner,Y_FR_SPGAS_EAM_PS_RES_DPOM,PS Restriction Role for Section DPOM for PGAS,,,,
+SPGAS,DPOM,Planner,Y_LR_SPGAS_EAM_CS_RES_DPOM,CS Restriction Role for Section DPOM for PGAS,,,,
+SPGAS,DPOM,Planner,Y_LR_SPGAS_EAM_PPM_NMD_WRITE,PPM Role for Network Management Distribution Bucket with Write Access for PGAS,,,,
+SPGAS,DPOM,Planner,Y_LR_SPGAS_EAM_PPM_SASD_WRITE,PPM Role for Safety and Security Distribution Bucket with Write Access for PGAS,,,,
+SPGAS,DPOM,Project Jr. Officer,Y_EC_SPGAS_EAM_PROJOFFICER,Project Jr. Officer Role for Controlling Area PGAS,ZGRP_EAM_DPOM,ZBW_EAM_SPGAS_DPOM,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,DPOM,Project Jr. Officer,Y_FR_SPGAS_EAM_PS_RES_DPOM,PS Restriction Role for Section DPOM for PGAS,,,,
+SPGAS,DPOM,Project Jr. Officer,Y_LR_SPGAS_EAM_CS_RES_DPOM,CS Restriction Role for Section DPOM for PGAS,,,,
+SPGAS,DPOM,Project Sr. Officer,Y_EC_SPGAS_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area for PGAS,ZGRP_EAM_DPOM,ZBW_EAM_SPGAS_DPOM,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,DPOM,Project Sr. Officer,Y_FR_SPGAS_EAM_PS_RES_DPOM,PS Restriction Role for Section DPOM for PGAS,,,,
+SPGAS,DPOM,Project Sr. Officer,Y_LR_SPGAS_EAM_CS_RES_DPOM,CS Restriction Role for Section DPOM for PGAS,,,,
+SPGAS,ERRM,Admin,Y_EC_SPGAS_EAM_ADMIN,Admin Role for Controlling Area PGAS,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,ERRM,Admin,Y_FR_SPGAS_EAM_PS_RES_ERRM,PS Restriction Role for Section ERRM for PGAS,,,,
+SPGAS,ERRM,Admin,Y_LR_SPGAS_EAM_CS_RES_ERRM,CS Restriction role for Section ERRM for PGAS,,,,
+SPGAS,DPOM,HOS,Y_FR_SPGAS_EAM_PS_RES_GDMB_CD,PS Restriction Role for  GDM Branch Cover Duty,,,,Mar13[Gab] - Added for HOS cover duty
+SPGAS,ERRM,HOS,Y_EC_SPGAS_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area PGAS,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,ERRM,HOS,Y_FR_SPGAS_EAM_PS_RES_ERRM,PS Restriction Role for Section ERRM for PGAS,,,,
+SPGAS,ERRM,HOS,Y_LR_SPGAS_EAM_PPM_NMD_READ,PPM Role for Network Management Distribution Bucket with Read Access for PGAS,,,,
+SPGAS,ERRM,HOS,Y_LR_SPGAS_EAM_PPM_SASD_READ,PPM Role for Safety and Security Distribution Bucket with Read Access for PGAS,,,,
+SPGAS,ERRM,HOS,Y_PR_SPGAS_EAM_PRTL_ERRM_HOS,Portal Workflow Role for ERRM HOS,,,,
+SPGAS,ERRM,HOS,Y_LR_SPGAS_EAM_CS_RES_ERRM,CS Restriction role for Section ERRM for PGAS,,,,
+SPGAS,ERRM,Planner,Y_EC_SPGAS_EAM_PLANNER,Planner Role for Controlling Area PGAS,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,ERRM,Planner,Y_FR_SPGAS_EAM_PS_RES_ERRM,PS Restriction Role for Section ERRM for PGAS,,,,
+SPGAS,ERRM,Planner,Y_LR_SPGAS_EAM_PPM_NMD_WRITE,PPM Role for Network Management Distribution Bucket with Write Access for PGAS,,,,
+SPGAS,ERRM,Planner,Y_LR_SPGAS_EAM_PPM_SASD_WRITE,PPM Role for Safety and Security Distribution Bucket with Write Access for PGAS,,,,
+SPGAS,ERRM,Planner,Y_LR_SPGAS_EAM_CS_RES_ERRM,CS Restriction role for Section ERRM for PGAS,,,,
+SPGAS,ERRM,Project Jr. Officer,Y_EC_SPGAS_EAM_PROJOFFICER,Project Jr. Officer Role for Controlling Area PGAS,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,ERRM,Project Jr. Officer,Y_FR_SPGAS_EAM_PS_RES_ERRM,PS Restriction Role for Section ERRM for PGAS,,,,
+SPGAS,ERRM,Project Jr. Officer,Y_LR_SPGAS_EAM_CS_RES_ERRM,CS Restriction role for Section ERRM for PGAS,,,,
+SPGAS,ERRM,Project Sr. Officer,Y_EC_SPGAS_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area for PGAS,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,ERRM,Project Sr. Officer,Y_LR_SPGAS_EAM_CS_RES_ERRM,CS Restriction role for Section ERRM for PGAS,,,,
+SPGAS,ERRM,Project Sr. Officer,Y_FR_SPGAS_EAM_PS_RES_ERRM,PS Restriction Role for Section ERRM for PGAS,,,,
+SPGAS,GASCM,Admin,Y_EC_SPGAS_EAM_ADMIN,Admin Role for Controlling Area PGAS,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GASCM,Admin,Y_FR_SPGAS_EAM_PS_RES_GASCM,PS Restriction Role for Section GASCM for PGAS,,,,
+SPGAS,GASCM,Admin,Y_LR_SPGAS_EAM_CS_RES_GASCM,CS and PM Restriction role for Section FM for PGAS,,,,
+SPGAS,GASCM,HOS,Y_EC_SPGAS_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area PGAS,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GASCM,HOS,Y_FR_SPGAS_EAM_PS_RES_GASCM,PS Restriction Role for Section GASCM for PGAS,,,,
+SPGAS,GASCM,HOS,Y_PR_SPGAS_EAM_PRTL_GASCM_HOS,Portal Workflow Role for GASCM HOS,,,,
+SPGAS,GASCM,HOS,Y_LR_SPGAS_EAM_CS_RES_GASCM,CS and PM Restriction role for Section FM for PGAS,,,,
+SPGAS,GASCM,Project Jr. Officer,Y_EC_SPGAS_EAM_PROJOFFICER,Project Jr. Officer Role for Controlling Area PGAS,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GASCM,Project Jr. Officer,Y_FR_SPGAS_EAM_PS_RES_GASCM,PS Restriction Role for Section GASCM for PGAS,,,,
+SPGAS,GASCM,Project Jr. Officer,Y_LR_SPGAS_EAM_CS_RES_GASCM,CS and PM Restriction role for Section FM for PGAS,,,,
+SPGAS,GASCM,Project Sr. Officer,Y_EC_SPGAS_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area for PGAS,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GASCM,Project Sr. Officer,Y_LR_SPGAS_EAM_CS_RES_GASCM,CS and PM Restriction role for Section FM for PGAS,,,,
+SPGAS,GASCM,Project Sr. Officer,Y_FR_SPGAS_EAM_PS_RES_GASCM,PS Restriction Role for Section GASCM for PGAS,,,,
+SPGAS,GDP,Admin,Y_EC_SPGAS_EAM_ADMIN,Admin Role for Controlling Area PGAS,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPGAS_GDP,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GDP,Admin,Y_FR_SPGAS_EAM_PS_RES_GDP,PS Restriction Role for Section GDP for PGAS,,,,
+SPGAS,GDP,Admin,Y_LR_SPGAS_EAM_CS_RES_GDP,CS restrictions for Section GDP for PGAS,,,,
+SPGAS,GDP,HOS,Y_EC_SPGAS_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area PGAS,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPGAS_GDP,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GDP,HOS,Y_FR_SPGAS_EAM_PS_RES_GDP,PS Restriction Role for Section GDP for PGAS,,,,
+SPGAS,GDP,HOS,Y_LR_SPGAS_EAM_CS_RES_GDP,CS restrictions for Section GDP for PGAS,,,,
+SPGAS,GDP,HOS,Y_PR_SPGAS_EAM_PRTL_GDP_HOS,Portal Workflow Role for GDP HOS,,,,
+SPGAS,GDP,Project Jr. Officer,Y_EC_SPGAS_EAM_PROJOFFICER,Project Jr. Officer Role for Controlling Area PGAS,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPGAS_GDP,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GDP,Project Jr. Officer,Y_FR_SPGAS_EAM_PS_RES_GDP,PS Restriction Role for Section GDP for PGAS,,,,
+SPGAS,GDP,Project Jr. Officer,Y_LR_SPGAS_EAM_CS_RES_GDP,CS restrictions for Section GDP for PGAS,,,,
+SPGAS,GDP,Project Jr. Officer,Y_FR_SPGAS_EAM_TC_PROJOFFICER3,Replacement Role for FLINs Role Y_FR_SPGAS_FIN_PA_PROJOFFICER3,,,,
+SPGAS,GDP,Project Sr. Officer,Y_EC_SPGAS_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area for PGAS,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPGAS_GDP,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GDP,Project Sr. Officer,Y_FR_SPGAS_EAM_PS_RES_GDP,PS Restriction Role for Section GDP for PGAS,,,,
+SPGAS,GFOM,HOS,Y_EC_SPGAS_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area PGAS,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GFOM,HOS,Y_FR_SPGAS_EAM_PS_RES_GFOM,Cost Center Role for Section GFOM for PGAS,,,,
+SPGAS,GFOM,HOS,Y_LR_SPGAS_EAM_CS_RES_GFOM,CS Restriction Role for Section GFOM for PGAS,,,,
+SPGAS,GFOM,HOS,Y_LR_SPGAS_EAM_PPM_NMT_READ,PPM Role for Network Management Transmission Bucket with Read Access for PGAS,,,,
+SPGAS,GFOM,HOS,Y_LR_SPGAS_EAM_PPM_SAST_READ,PPM Role for Safety and Security Transmission Bucket with Read Access for PGAS,,,,
+SPGAS,GFOM,HOS,Y_PR_SPGAS_EAM_PRTL_GFOM_HOS,Portal Workflow Role for GFOM HOS,,,,
+SPGAS,GFOM,Planner,Y_EC_SPGAS_EAM_PLANNER,Planner Role for Controlling Area PGAS,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GFOM,Planner,Y_FR_SPGAS_EAM_PS_RES_GFOM,Cost Center Role for Section GFOM for PGAS,,,,
+SPGAS,GFOM,Planner,Y_LR_SPGAS_EAM_CS_RES_GFOM,CS Restriction Role for Section GFOM for PGAS,,,,
+SPGAS,GFOM,Planner,Y_LR_SPGAS_EAM_PPM_NMD_WRITE,PPM Role for Network Management Distribution Bucket with Write Access for PGAS,,,,
+SPGAS,GFOM,Planner,Y_LR_SPGAS_EAM_PPM_SAST_WRITE,PPM Role for Safety and Security Transmission Bucket with Write Access for PGAS,,,,
+SPGAS,GFOM,Planner,Y_LR_SPHCO_EAM_PPM_PLANNER,PPM Planner for All Controlling Areas (SPPA/SPT/TLTT),,,,
+SPGAS,GFOM,Project Jr. Officer,Y_EC_SPGAS_EAM_PROJOFFICER,Project Jr. Officer Role for Controlling Area PGAS,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GFOM,Project Jr. Officer,Y_FR_SPGAS_EAM_PS_RES_GFOM,Cost Center Role for Section GFOM for PGAS,,,,
+SPGAS,GFOM,Project Jr. Officer,Y_LR_SPGAS_EAM_CS_RES_GFOM,CS Restriction Role for Section GFOM for PGAS,,,,
+SPGAS,GFOM,Project Sr. Officer,Y_EC_SPGAS_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area for PGAS,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GFOM,Project Sr. Officer,Y_FR_SPGAS_EAM_PS_RES_GFOM,Cost Center Role for Section GFOM for PGAS,,,,
+SPGAS,GFOM,Project Sr. Officer,Y_LR_SPGAS_EAM_CS_RES_GFOM,CS Restriction Role for Section GFOM for PGAS,,,,
+SPGAS,GILS,Admin,Y_EC_SPGAS_EAM_ADMIN,Admin Role for Controlling Area PGAS,ZGRP_EAM_GILS,"N/A (but possible to assign Exceptional role for BW Self Service), in which case please make sure to also assign the 3 BW common roles.",EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GILS,Admin,Y_FR_SPGAS_EAM_PS_RES_GILS,PS Restriction Role for Section GILS for PGAS,,,,
+SPGAS,GILS,Admin,Y_LR_SPGAS_EAM_CS_RES_GILS,CS Restriction Role for Section GILS for PGAS,,,,
+SPGAS,ERRM,HOS,Y_FR_SPGAS_EAM_PS_RES_GDMB_CD,PS Restriction Role for  GDM Branch Cover Duty,,,,Mar13[Gab] - Added for HOS cover duty
+SPGAS,GILS,HOS,Y_EC_SPGAS_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area PGAS,ZGRP_EAM_GILS,"N/A (but possible to assign Exceptional role for BW Self Service), in which case please make sure to also assign the 3 BW common roles.",EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GILS,HOS,Y_FR_SPGAS_EAM_PS_RES_GILS,PS Restriction Role for Section GILS for PGAS,,,,
+SPGAS,GILS,HOS,Y_LR_SPGAS_EAM_CS_RES_GILS,CS Restriction Role for Section GILS for PGAS,,,,
+SPGAS,GILS,HOS,Y_LR_SPGAS_EAM_PPM_NMD_READ,PPM Role for Network Management Distribution Bucket with Read Access for PGAS,,,,
+SPGAS,GILS,HOS,Y_LR_SPGAS_EAM_PPM_SASD_READ,PPM Role for Safety and Security Distribution Bucket with Read Access for PGAS,,,,
+SPGAS,GILS,HOS,Y_PR_SPGAS_EAM_PRTL_GILS_HOS,Portal Workflow Role for GILS HOS,,,,
+SPGAS,GILS,Planner,Y_EC_SPGAS_EAM_PLANNER,Planner Role for Controlling Area PGAS,ZGRP_EAM_GILS,"N/A (but possible to assign Exceptional role for BW Self Service), in which case please make sure to also assign the 3 BW common roles.",EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GILS,Planner,Y_FR_SPGAS_EAM_PS_RES_GILS,PS Restriction Role for Section GILS for PGAS,,,,
+SPGAS,GILS,Planner,Y_LR_SPGAS_EAM_CS_RES_GILS,CS Restriction Role for Section GILS for PGAS,,,,
+SPGAS,GILS,Planner,Y_LR_SPGAS_EAM_PPM_NMD_WRITE,PPM Role for Network Management Distribution Bucket with Write Access for PGAS,,,,
+SPGAS,GILS,Planner,Y_LR_SPGAS_EAM_PPM_SASD_WRITE,PPM Role for Safety and Security Distribution Bucket with Write Access for PGAS,,,,
+SPGAS,GILS,Project Jr. Officer,Y_EC_SPGAS_EAM_PROJOFFICER,Project Jr. Officer Role for Controlling Area PGAS,ZGRP_EAM_GILS,"N/A (but possible to assign Exceptional role for BW Self Service), in which case please make sure to also assign the 3 BW common roles.",EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GILS,Project Jr. Officer,Y_FR_SPGAS_EAM_PS_RES_GILS,PS Restriction Role for Section GILS for PGAS,,,,
+SPGAS,GILS,Project Jr. Officer,Y_LR_SPGAS_EAM_CS_RES_GILS,CS Restriction Role for Section GILS for PGAS,,,,
+SPGAS,GILS,Project Sr. Officer,Y_EC_SPGAS_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area for PGAS,ZGRP_EAM_GILS,"N/A (but possible to assign Exceptional role for BW Self Service), in which case please make sure to also assign the 3 BW common roles.",EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GILS,Project Sr. Officer,Y_FR_SPGAS_EAM_PS_RES_GILS,PS Restriction Role for Section GILS for PGAS,,,,
+SPGAS,GILS,Project Sr. Officer,Y_LR_SPGAS_EAM_CS_RES_GILS,CS Restriction Role for Section GILS for PGAS,,,,
+SPGAS,GMO,Admin,Y_EC_SPGAS_EAM_ADMIN,Admin Role for Controlling Area PGAS,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GMO,Admin,Y_FR_SPGAS_EAM_PS_RES_GMO,PS Restriction Role for Section GMO for PGAS,,,,
+SPGAS,GMO,HOS,Y_EC_SPGAS_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area PGAS,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GMO,HOS,Y_FR_SPGAS_EAM_PS_RES_GMO,PS Restriction Role for Section GMO for PGAS,,,,
+SPGAS,GMO,HOS,Y_PR_SPGAS_EAM_PRTL_GMO_HOS,Portal Workflow Role for GMO HOS,,,,
+SPGAS,GMO,Project Jr. Officer,Y_EC_SPGAS_EAM_PROJOFFICER,Project Jr. Officer Role for Controlling Area PGAS,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GMO,Project Jr. Officer,Y_FR_SPGAS_EAM_PS_RES_GMO,PS Restriction Role for Section GMO for PGAS,,,,
+SPGAS,GMO,Project Sr. Officer,Y_EC_SPGAS_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area for PGAS,ZGRP_EAM_PERSOS_DISPALL,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GMO,Project Sr. Officer,Y_FR_SPGAS_EAM_PS_RES_GMO,PS Restriction Role for Section GMO for PGAS,,,,
+SPGAS,GMTR,HOS,Y_PR_SPGAS_EAM_PRTL_GMTR_HOS,Portal Workflow role for GMTR HOS,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GMTR,Project Jr. Officer,Y_EC_SPGAS_EAM_PROJOFFICER,Project Jr. Officer Role for Controlling Area PGAS,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GMTR,Project Jr. Officer,Y_FR_SPGAS_EAM_PS_RES_GMTR,PS Restriction Role for Section GMTR for PGAS,,,,
+SPGAS,GMTR,Project Jr. Officer,Y_LR_SPGAS_EAM_CS_RES_GMTR,CS restrictions for Section GMTR for PGAS,,,,
+SPGAS,GMTR,Project Sr. Officer,Y_EC_SPGAS_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area for PGAS,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GMTR,Project Sr. Officer,Y_FR_SPGAS_EAM_PS_RES_GMTR,PS Restriction Role for Section GMTR for PGAS,,,,
+SPGAS,GMTR,Project Sr. Officer,Y_LR_SPGAS_EAM_CS_RES_GMTR,CS restrictions for Section GMTR for PGAS,,,,
+SPGAS,GMO,HOS,Y_FR_SPGAS_EAM_PS_RES_GSOB_CD,PS Restriction Role for  GSO Branch Cover Duty,,,,Mar13[Gab] - Added for HOS cover duty
+SPGAS,GNO,HOS,Y_EC_SPGAS_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area PGAS,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GNO,HOS,Y_FR_SPGAS_EAM_PS_RES_GNO,PS Restriction Role for Section GNO for PGAS,,,,
+SPGAS,GNO,HOS,Y_LR_SPGAS_EAM_CS_RES_GNO,CS Restriction Role for Section GNO for PGAS,,,,
+SPGAS,GNO,HOS,Y_LR_SPGAS_EAM_PPM_SO_READ,PPM Role for System Operations Bucket with Read Access for PGAS,,,,
+SPGAS,GNO,HOS,Y_PR_SPGAS_EAM_PRTL_GNO_HOS,Portal Workflow Role for GNO HOS,,,,
+SPGAS,GNO,Planner,Y_EC_SPGAS_EAM_PLANNER,Planner Role for Controlling Area PGAS,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GNO,Planner,Y_FR_SPGAS_EAM_PS_RES_GNO,PS Restriction Role for Section GNO for PGAS,,,,
+SPGAS,GNO,Planner,Y_LR_SPGAS_EAM_CS_RES_GNO,CS Restriction Role for Section GNO for PGAS,,,,
+SPGAS,GNO,Planner,Y_LR_SPGAS_EAM_PPM_SO_WRITE,PPM Role for System Operations Bucket with Write Access for PGAS,,,,
+SPGAS,GNO,Project Jr. Officer,Y_EC_SPGAS_EAM_PROJOFFICER,Project Jr. Officer Role for Controlling Area PGAS,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GNO,Project Jr. Officer,Y_FR_SPGAS_EAM_PS_RES_GNO,PS Restriction Role for Section GNO for PGAS,,,,
+SPGAS,GNO,Project Jr. Officer,Y_LR_SPGAS_EAM_CS_RES_GNO,CS Restriction Role for Section GNO for PGAS,,,,
+SPGAS,GNO,Project Sr. Officer,Y_EC_SPGAS_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area for PGAS,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GNO,Project Sr. Officer,Y_FR_SPGAS_EAM_PS_RES_GNO,PS Restriction Role for Section GNO for PGAS,,,,
+SPGAS,GNO,Project Sr. Officer,Y_LR_SPGAS_EAM_CS_RES_GNO,CS Restriction Role for Section GNO for PGAS,,,,
+SPGAS,GDP,Project Sr. Officer,Y_LR_SPGAS_EAM_CS_RES_GDP,CS restrictions for Section GDP for PGAS,,,,
+SPGAS,GDP,Project Sr. Officer,Y_FR_SPGAS_EAM_TC_PROJMANAGER1,Replacement Role for FLINs Role Y_FR_SPGAS_FIN_PA_PROJOFFICER3,,,,
+SPGAS,GNPL,Admin,Y_EC_SPGAS_EAM_ADMIN,Admin Role for Controlling Area PGAS,ZGRP_EAM_GNPL,ZBW_EAM_SPGAS_GNPL,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GNPL,Admin,Y_FR_SPGAS_EAM_PS_RES_GNPL,PS Restriction Role for Section GNPL for PGAS,,,,
+SPGAS,GNPL,Admin,Y_LR_SPGAS_EAM_CS_RES_GNPL,CS Restriction Role for Section GNPL for PGAS,,,,
+SPGAS,GASCM,HOS,Y_FR_SPGAS_EAM_PS_RES_GAMB_CD,PS Restriction Role for  GAM Branch Cover Duty,,,,Mar13[Gab] - Added for HOS cover duty
+SPGAS,GNPL,HOS,Y_EC_SPGAS_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area PGAS,ZGRP_EAM_GNPL,ZBW_EAM_SPGAS_GNPL,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GNPL,HOS,Y_FR_SPGAS_EAM_PS_RES_GNPL,PS Restriction Role for Section GNPL for PGAS,,,,
+SPGAS,GNPL,HOS,Y_LR_SPGAS_EAM_CS_RES_GNPL,CS Restriction Role for Section GNPL for PGAS,,,,
+SPGAS,GNPL,HOS,Y_LR_SPGAS_EAM_PPM_ND_READ,PPM Role for Network Development Bucket with Read Access for PGAS,,,,
+SPGAS,GNPL,HOS,Y_PR_SPGAS_EAM_PRTL_GNPL_HOS,Portal Workflow Role for GNPL HOS,,,,
+SPGAS,GNPL,Planner,Y_EC_SPGAS_EAM_PLANNER,Planner Role for Controlling Area PGAS,ZGRP_EAM_GNPL,ZBW_EAM_SPGAS_GNPL,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,GNPL,Planner,Y_FR_SPGAS_EAM_PS_RES_DPOM,PS Restriction Role for Section DPOM for PGAS,,,,
+SPGAS,GNPL,Planner,Y_FR_SPGAS_EAM_PS_RES_GDP,PS Restriction Role for Section GDP for PGAS,,,,
+SPGAS,GNPL,Planner,Y_FR_SPGAS_EAM_PS_RES_GNPL,PS Restriction Role for Section GNPL for PGAS,,,,
+SPGAS,GNPL,Planner,Y_FR_SPGAS_EAM_PS_RES_GTP,PS Restriction Role for Section GTP for PGAS,,,,
+SPGAS,GNPL,Planner,Y_LR_SPGAS_EAM_CS_RES_GNPL,CS Restriction Role for Section GNPL for PGAS,,,,
+SPGAS,GTP,Admin,Y_EC_SPGAS_EAM_ADMIN,Admin Role for Controlling Area PGAS,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPGAS_GTP,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPGAS,GTP,Admin,Y_FR_SPGAS_EAM_PS_RES_GTP,PS Restriction Role for Section GTP for PGAS,,,,
+SPGAS,GTP,Admin,Y_LR_SPGAS_EAM_CS_RES_GTP,CS restrictions for Section GTP for PGAS,,,,
+SPGAS,GDP,HOS,Y_FR_SPGAS_EAM_PS_RES_GNPB_CD,PS Restriction Role for  GNP Branch Cover Duty,,,,Mar13[Gab] - Added for HOS cover duty
+SPGAS,GTP,HOS,Y_EC_SPGAS_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area PGAS,,,,
+SPGAS,GTP,HOS,Y_FR_SPGAS_EAM_PS_RES_GTP,PS Restriction Role for Section GTP for PGAS,,,,
+SPGAS,GTP,HOS,Y_LR_SPGAS_EAM_CS_RES_GTP,CS restrictions for Section GTP for PGAS,,,,
+SPGAS,GTP,HOS,Y_PR_SPGAS_EAM_PRTL_GTP_HOS,Portal Workflow Role for GTP HOS,,,,
+SPGAS,GTP,Project Jr. Officer,Y_EC_SPGAS_EAM_PROJOFFICER,Project Jr. Officer Role for Controlling Area PGAS,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPGAS_GTP,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPGAS,GTP,Project Jr. Officer,Y_FR_SPGAS_EAM_PS_RES_GTP,PS Restriction Role for Section GTP for PGAS,,,,
+SPGAS,GTP,Project Jr. Officer,Y_LR_SPGAS_EAM_CS_RES_GTP,CS restrictions for Section GTP for PGAS,,,,
+SPGAS,GTP,Project Sr. Officer,Y_EC_SPGAS_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area for PGAS,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPGAS_GTP,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPGAS,GTP,Project Sr. Officer,Y_FR_SPGAS_EAM_PS_RES_GTP,PS Restriction Role for Section GTP for PGAS,,,,
+SPGAS,GTP,Project Sr. Officer,Y_LR_SPGAS_EAM_CS_RES_GTP,CS restrictions for Section GTP for PGAS,,,,
+SPGAS,OPA,Project Support Officer,Y_EC_SPGAS_EAM_PROJSUPOFCR,Project Support Officer Role for Controlling Area PGAS,ZGRP_EAM_BDC_D&D,ZBW_EAM_SPGRD_OPA,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPGAS,OPA,Project Support Officer,Y_FR_SPGAS_EAM_PS_RES_OPA,PS Restriction Role for Section OPA for PGAS,,,,
+SPGAS,OPA,Project Support Officer,Y_LR_SPGAS_EAM_CS_RES_OPA,CS Restriction Role for Section OPA for PGAS,,,,
+SPGAS,TGCV,Admin,Y_EC_SPGAS_EAM_ADMIN,Admin Role for Controlling Area PGAS,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,N/A,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPGAS,TGCV,Admin,Y_FR_SPGAS_EAM_PS_RES_TGCV,PS Restriction Role for Section TGCV for PGAS,,,,
+SPGAS,TGCV,Admin,Y_LR_SPGAS_EAM_CS_RES_TGCV,CS Restriction Role for Section TGCV for PGAS,,,,
+SPGAS,GTP,HOS,Y_FR_SPGAS_EAM_PS_RES_GNPB_CD,PS Restriction Role for  GNP Branch Cover Duty,,,,Mar13[Gab] - Added for HOS cover duty
+SPGAS,TGCV,HOS,Y_EC_SPGAS_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area PGAS,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,N/A,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPGAS,TGCV,HOS,Y_FR_SPGAS_EAM_PS_RES_TGCV,PS Restriction Role for Section TGCV for PGAS,,,,
+SPGAS,TGCV,HOS,Y_LR_SPGAS_EAM_CS_RES_TGCV,CS Restriction Role for Section TGCV for PGAS,,,,
+SPGAS,TGCV,HOS,Y_PR_SPGAS_EAM_PRTL_TGCV_HOS,Portal Workflow Role for TGCV HOS,,,,
+SPGAS,TGCV,Planner,Y_EC_SPGAS_EAM_PLANNER,Planner Role for Controlling Area PGAS,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,N/A,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPGAS,TGCV,Planner,Y_FR_SPGAS_EAM_PS_RES_TGCV,PS Restriction Role for Section TGCV for PGAS,,,,
+SPGAS,TGCV,Planner,Y_LR_SPGAS_EAM_CS_RES_TGCV,CS Restriction Role for Section TGCV for PGAS,,,,
+SPGAS,TGCV,Planner,Y_LR_SPHCO_EAM_PPM_PLANNER,PPM Planner for All Controlling Areas (SPPA/SPT/TLTT),,,,
+SPGAS,TGCV,Project Jr. Officer,Y_EC_SPGAS_EAM_PROJOFFICER,Project Jr. Officer Role for Controlling Area PGAS,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,N/A,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPGAS,TGCV,Project Jr. Officer,Y_FR_SPGAS_EAM_PS_RES_TGCV,PS Restriction Role for Section TGCV for PGAS,,,,
+SPGAS,TGCV,Project Jr. Officer,Y_LR_SPGAS_EAM_CS_RES_TGCV,CS Restriction Role for Section TGCV for PGAS,,,,
+SPGAS,TGCV,Project Sr. Officer,Y_EC_SPGAS_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area for PGAS,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,N/A,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPGAS,TGCV,Project Sr. Officer,Y_FR_SPGAS_EAM_PS_RES_TGCV,PS Restriction Role for Section TGCV for PGAS,,,,
+SPGAS,TGCV,Project Sr. Officer,Y_LR_SPGAS_EAM_CS_RES_TGCV,CS Restriction Role for Section TGCV for PGAS,,,,
+SPGAS,TPOM,Admin,Y_EC_SPGAS_EAM_ADMIN,Admin Role for Controlling Area PGAS,ZGRP_EAM_TPOM,N/A,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPGAS,TPOM,Admin,Y_FR_SPGAS_EAM_PS_RES_TPOM,PS Restriction Role for Section TPOM for Controlling Area PGAS,,,,
+SPGAS,TPOM,Admin,Y_LR_SPGAS_EAM_CS_RES_TPOM,CS Restriction Role for Section TPOM for PGAS,,,,
+SPGAS,GFOM,HOS,Y_FR_SPGAS_EAM_PS_RES_GTMB_CD,PS Restriction Role for  GTM Branch Cover Duty,,,,Mar13[Gab] - Added for HOS cover duty
+SPGAS,TPOM,HOS,Y_EC_SPGAS_EAM_HEADOFSECTN,Head Of Section Role for Controlling Area PGAS,ZGRP_EAM_TPOM,N/A,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPGAS,TPOM,HOS,Y_FR_SPGAS_EAM_PS_RES_TPOM,PS Restriction Role for Section TPOM for Controlling Area PGAS,,,,
+SPGAS,TPOM,HOS,Y_LR_SPGAS_EAM_CS_RES_TPOM,CS Restriction Role for Section TPOM for PGAS,,,,
+SPGAS,TPOM,HOS,Y_LR_SPGAS_EAM_PPM_NMT_READ,PPM Role for Network Management Transmission Bucket with Read Access for PGAS,,,,
+SPGAS,TPOM,HOS,Y_LR_SPGAS_EAM_PPM_SAST_READ,PPM Role for Safety and Security Transmission Bucket with Read Access for PGAS,,,,
+SPGAS,TPOM,HOS,Y_PR_SPGAS_EAM_PRTL_TPOM_HOS,Portal Workflow Role for TPOM HOS,,,,
+SPGAS,TPOM,Planner,Y_EC_SPGAS_EAM_PLANNER,Planner Role for Controlling Area PGAS,ZGRP_EAM_TPOM,N/A,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPGAS,TPOM,Planner,Y_FR_SPGAS_EAM_PS_RES_TPOM,PS Restriction Role for Section TPOM for Controlling Area PGAS,,,,
+SPGAS,TPOM,Planner,Y_LR_SPGAS_EAM_CS_RES_TPOM,CS Restriction Role for Section TPOM for PGAS,,,,
+SPGAS,TPOM,Planner,Y_LR_SPGAS_EAM_PPM_NMD_WRITE,PPM Role for Network Management Distribution Bucket with Write Access for PGAS,,,,
+SPGAS,TPOM,Planner,Y_LR_SPGAS_EAM_PPM_SAST_WRITE,PPM Role for Safety and Security Transmission Bucket with Write Access for PGAS,,,,
+SPGAS,TPOM,Planner,Y_LR_SPHCO_EAM_PPM_PLANNER,PPM Planner for All Controlling Areas (SPPA/SPT/TLTT),,,,
+SPGAS,TPOM,Project Jr. Officer,Y_EC_SPGAS_EAM_PROJOFFICER,Project Jr. Officer Role for Controlling Area PGAS,ZGRP_EAM_TPOM,N/A,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPGAS,TPOM,Project Jr. Officer,Y_FR_SPGAS_EAM_PS_RES_TPOM,PS Restriction Role for Section TPOM for Controlling Area PGAS,,,,
+SPGAS,TPOM,Project Jr. Officer,Y_LR_SPGAS_EAM_CS_RES_TPOM,CS Restriction Role for Section TPOM for PGAS,,,,
+SPGAS,TPOM,Project Sr. Officer,Y_EC_SPGAS_EAM_PROJMANAGER,Project Sr. Officer Role for Controlling Area for PGAS,ZGRP_EAM_TPOM,N/A,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,
+SPGAS,TPOM,Project Sr. Officer,Y_FR_SPGAS_EAM_PS_RES_TPOM,PS Restriction Role for Section TPOM for Controlling Area PGAS,,,,
+SPGAS,TPOM,Project Sr. Officer,Y_LR_SPGAS_EAM_CS_RES_TPOM,CS Restriction Role for Section TPOM for PGAS,,,,
+SPGAS,FIN,CS Finance Officer for PowerGas Ltd,Y_LR_SPGAS_EAM_CS_FIN_OFFICER,CS Finance Officer for PowerGas Ltd,ZGRP_EAM_FINANCE_RM_EP,N/A,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,27 sep 2017 - Changes to xECM access from View to Edit
+SPGAS,FIN,Finance Officer,Y_FR_SPGAS_EAM_PS_RES_FIN,PS Restriction role for Section FIN for PGAS,,,,
+SPGAS,FIN,Finance Officer,Y_LR_SPGAS_EAM_CS_RES_FIN,CS Restriction role for Section FIN for PGAS,,,,
+SPGAS,FIN,Finance Officer,Y_LR_SPGAS_EAM_PPM_DP_ADMIN,PPM Role for Direct Purchase Bucket with Admin and Create Access for PGAS,,,,
+SPGAS,FIN,Finance Officer,Y_LR_SPGAS_EAM_PPM_GAS_WRITE,PPM Role for GAS Bucket with Write Access for PGAS,,,,
+SPGAS,FIN,Portal Workflow Role for Finance Capex for PGAS,Y_PR_SPGAS_EAM_PRTL_FINCAPEX,Portal Workflow Role for Finance Capex for PGAS,,,,
+SPGAS,FIN,Portal Workflow Role for Finance Capex Management Approval for PGAS,Y_PR_SPGAS_EAM_PRTL_FINMGMAPR,Portal Workflow Role for Finance Capex Management Approval for PGAS,,,,
+SPGAS,FIN,Portal Workflow Role for FinanceDistribution for SPPA,Y_PR_SPGAS_EAM_PRTL_FINDIST,Portal Workflow Role for FinanceDistribution for SPPA,,,,
+SPGAS,FIN,Finance Officer,Y_LR_SPHCO_EAM_PPM_PLANNER,PPM Planner for All Controlling Areas (SPPA/SPT/TLTT),,,,
+SPGAS,FIN,PS Finance Officer for PowerGas Ltd,Y_FR_SPGAS_EAM_PS_FIN_OFFICER,PS Finance Officer for PowerGas Ltd,,,,
+SPGAS,Gas Operation Department Admin,Department Admin,Y_EC_SPGAS_EAM_ADMIN,Admin Role for Controlling Area PGAS,ZGRP_EAM_DPOM,ZBW_EAM_SPGAS_DPOM,EAM_WBS_EDIT; EAM_NETWORK_EDIT; EAM_EQUIPMENT_EDIT; EAM_WORKCENTER_EDIT; EAM_CSNOTIFICATION_EDIT,
+SPGAS,Gas Operation Department Admin,Department Admin,Y_FR_SPGAS_EAM_PS_RES_DPOM,PS Restriction Role for Section DPOM for PGAS,ZGRP_EAM_PERSOS_DISPALL,ZBW_EAM_SPGAS_GDP,,
+SPGAS,Gas Operation Department Admin,Department Admin,Y_LR_SPGAS_EAM_CS_RES_DPOM,CS Restriction role for Section DPOM for PGAS,ZGRP_EAM_DP_CP_TP_GAS_PROJECTS,ZBW_EAM_SPGAS_GNPL,,
+SPGAS,Gas Operation Department Admin,Department Admin,Y_FR_SPGAS_EAM_PS_RES_ERRM,PS Restriction Role for Section ERRM for PGAS,ZGRP_EAM_GNO_GFOM,ZBW_EAM_SPGAS_GTP,,
+SPGAS,Gas Operation Department Admin,Department Admin,Y_FR_SPGAS_EAM_PS_RES_GDP,PS Restriction Role for Section GDP for PGAS,ZGRP_EAM_GILS,,,"Jan03[Gab] - To be removed, roles not longer required for JOB Roles"
+SPGAS,Gas Operation Department Admin,Department Admin,Y_LR_SPGAS_EAM_CS_RES_GDP,CS restrictions for Section GDP for PGAS,ZGRP_EAM_GNPL,,,"Jan03[Gab] - To be removed, roles not longer required for JOB Roles"
+SPGAS,Gas Operation Department Admin,Department Admin,Y_FR_SPGAS_EAM_PS_RES_GFOM,PS Restriction Role for Section GFOM for PGAS,ZGRP_EAM_TPOM,,,
+SPGAS,Gas Operation Department Admin,Department Admin,Y_LR_SPGAS_EAM_CS_RES_GFOM,CS Restriction role for Section GFOM for PGAS,,,,
+SPGAS,Gas Operation Department Admin,Department Admin,Y_FR_SPGAS_EAM_PS_RES_GILS,PS Restriction Role for Section GILS for PGAS,,,,
+SPGAS,Gas Operation Department Admin,Department Admin,Y_LR_SPGAS_EAM_CS_RES_GILS,CS Restriction role for Section GILS for PGAS,,,,
+SPGAS,Gas Operation Department Admin,Department Admin,Y_FR_SPGAS_EAM_PS_RES_GMO,PS Restriction Role for Section GMO for PGAS,,,,
+SPGAS,Gas Operation Department Admin,Department Admin,Y_FR_SPGAS_EAM_PS_RES_GMTR,PS Restriction Role for Section GMTR for PGAS,,,,"Jan03[Gab] - To be removed, roles not longer required for JOB Roles"
+SPGAS,Gas Operation Department Admin,Department Admin,Y_LR_SPGAS_EAM_CS_RES_GMTR,CS restrictions for Section GMTR for PGAS,,,,"Jan03[Gab] - To be removed, roles not longer required for JOB Roles"
+SPGAS,Gas Operation Department Admin,Department Admin,Y_FR_SPGAS_EAM_PS_RES_GNO,PS Restriction Role for Section GNO for PGAS,,,,
+SPGAS,Gas Operation Department Admin,Department Admin,Y_LR_SPGAS_EAM_CS_RES_GNO,CS Restriction role for Section GNO for PGAS,,,,
+SPGAS,Gas Operation Department Admin,Department Admin,Y_FR_SPGAS_EAM_PS_RES_GNPL,PS Restriction Role for Section GNPL for PGAS,,,,
+SPGAS,Gas Operation Department Admin,Department Admin,Y_LR_SPGAS_EAM_CS_RES_GNPL,CS Restriction role for Section GNPL for PGAS,,,,
+SPGAS,Gas Operation Department Admin,Department Admin,Y_FR_SPGAS_EAM_PS_RES_GTP,PS Restriction Role for Section GTP for PGAS,,,,"Jan03[Gab] - To be removed, roles not longer required for JOB Roles"
+SPGAS,Gas Operation Department Admin,Department Admin,Y_LR_SPGAS_EAM_CS_RES_GTP,CS restrictions for Section GTP for PGAS,,,,"Jan03[Gab] - To be removed, roles not longer required for JOB Roles"
+SPGAS,Gas Operation Department Admin,Department Admin,Y_FR_SPGAS_EAM_PS_RES_TGCV,PS Restriction Role for Section TGCV for PGAS,,,,"Jan03[Gab] - To be removed, roles not longer required for JOB Roles"
+SPGAS,Gas Operation Department Admin,Department Admin,Y_LR_SPGAS_EAM_CS_RES_TGCV,CS Restriction role for Section TGCV for PGAS,,,,"Jan03[Gab] - To be removed, roles not longer required for JOB Roles"
+SPGAS,Gas Operation Department Admin,Department Admin,Y_FR_SPGAS_EAM_PS_RES_TPOM,PS Restriction Role for Section TPOM for Controlling Area PGAS,,,,
+SPGAS,Gas Operation Department Admin,Department Admin,Y_LR_SPGAS_EAM_CS_RES_TPOM,CS Restriction role for Section TPOM for PGAS,,,,
+SPGAS,RM,Project Support Officer,Y_EC_SPGAS_EAM_PROJSUPOFCR,Project Support Officer Role for Controlling Area PGAS,ZGRP_EAM_FINANCE_RM_EP,N/A,EAM_WBS_VIEW; EAM_NETWORK_VIEW; EAM_EQUIPMENT_VIEW; EAM_WORKCENTER_VIEW; EAM_CSNOTIFICATION_VIEW,

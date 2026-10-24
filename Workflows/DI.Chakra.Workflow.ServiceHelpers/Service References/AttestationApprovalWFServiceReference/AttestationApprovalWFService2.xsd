@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure.Enums" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure.Enums" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:53412/Attestation/AttestationApprovalWFService.xamlx?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="AccountType">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="unsignedByte" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="User" />
+      <xs:enumeration value="System" />
+      <xs:enumeration value="Testing" />
+      <xs:enumeration value="PrivilegedSystem" />
+      <xs:enumeration value="PrivilegedSupport" />
+      <xs:enumeration value="PrivilegedApplication" />
+      <xs:enumeration value="PrivilegedService" />
+      <xs:enumeration value="Shared" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AccountType" nillable="true" type="tns:AccountType" />
+  <xs:simpleType name="AdHocActionType">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="unsignedByte" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="NewAccount" />
+      <xs:enumeration value="AmendmentAdd" />
+      <xs:enumeration value="AmendmentRemove" />
+      <xs:enumeration value="DeleteAccount" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AdHocActionType" nillable="true" type="tns:AdHocActionType" />
+  <xs:simpleType name="ProcessType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Discovery">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Attestation">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Compliance">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Reporting">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ProcessType" nillable="true" type="tns:ProcessType" />
+  <xs:simpleType name="Occurence">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="OneTime" />
+      <xs:enumeration value="Daily" />
+      <xs:enumeration value="Weekly" />
+      <xs:enumeration value="Monthly" />
+      <xs:enumeration value="RunNow" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Occurence" nillable="true" type="tns:Occurence" />
+  <xs:simpleType name="EndpointType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="ActiveDirectory" />
+      <xs:enumeration value="LotusNotes" />
+      <xs:enumeration value="SAP" />
+      <xs:enumeration value="SAPEnterprisePortal" />
+      <xs:enumeration value="VPN">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InhouseSystems">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SqlUserManagement">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">12</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Windows">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">13</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unix">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">14</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OracleEBS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Linux">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">17</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ORCLUM">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">18</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Exchange">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">19</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CopHRMS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">20</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Peoplesoft">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">21</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MSSQL">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">22</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CustomApplication">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">23</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FileHRMS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">24</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CMS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">25</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SharePoint">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">26</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EndpointType" nillable="true" type="tns:EndpointType" />
+  <xs:simpleType name="EmployeeType">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="unsignedByte" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Permanent" />
+      <xs:enumeration value="AgencyContract" />
+      <xs:enumeration value="Temporary" />
+      <xs:enumeration value="Probation" />
+      <xs:enumeration value="Vendor" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EmployeeType" nillable="true" type="tns:EmployeeType" />
+  <xs:simpleType name="ACRCategory">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="SpecialAccessRequest" />
+      <xs:enumeration value="PrivilegedAccess" />
+      <xs:enumeration value="DGM" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ACRCategory" nillable="true" type="tns:ACRCategory" />
+  <xs:simpleType name="AccessItemType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TechnicalRole" />
+      <xs:enumeration value="Catalog" />
+      <xs:enumeration value="Application" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AccessItemType" nillable="true" type="tns:AccessItemType" />
+  <xs:simpleType name="EntitlementType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Role" />
+      <xs:enumeration value="Group" />
+      <xs:enumeration value="Profile" />
+      <xs:enumeration value="Parameter" />
+      <xs:enumeration value="Position" />
+      <xs:enumeration value="Permission" />
+      <xs:enumeration value="Level" />
+      <xs:enumeration value="TCodes" />
+      <xs:enumeration value="Responsibility" />
+      <xs:enumeration value="Catalog" />
+      <xs:enumeration value="Schema" />
+      <xs:enumeration value="Roles" />
+      <xs:enumeration value="AccessLevel" />
+      <xs:enumeration value="Function" />
+      <xs:enumeration value="Account" />
+      <xs:enumeration value="Site" />
+      <xs:enumeration value="File" />
+      <xs:enumeration value="Folder" />
+      <xs:enumeration value="Subfolder" />
+      <xs:enumeration value="List" />
+      <xs:enumeration value="Member" />
+      <xs:enumeration value="MemberOf" />
+      <xs:enumeration value="SecurityGroup" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EntitlementType" nillable="true" type="tns:EntitlementType" />
+  <xs:simpleType name="AccessRequestProgress">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="long" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="WaitingforApproval" />
+      <xs:enumeration value="RequestRejected" />
+      <xs:enumeration value="ReadytoExecute" />
+      <xs:enumeration value="Executing" />
+      <xs:enumeration value="Completed" />
+      <xs:enumeration value="ExecutionFailed" />
+      <xs:enumeration value="ValidationFailed" />
+      <xs:enumeration value="Withdrawn" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AccessRequestProgress" nillable="true" type="tns:AccessRequestProgress" />
+  <xs:simpleType name="AccessRequestSource">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="long" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="OnBoarding" />
+      <xs:enumeration value="OffBoarding" />
+      <xs:enumeration value="OUChange" />
+      <xs:enumeration value="AdhocRequest" />
+      <xs:enumeration value="ReOrganisation" />
+      <xs:enumeration value="Propagation" />
+      <xs:enumeration value="EmployeeExtension" />
+      <xs:enumeration value="AttestationRemediation" />
+      <xs:enumeration value="EmployeeCreation" />
+      <xs:enumeration value="Rehire" />
+      <xs:enumeration value="Promotion" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AccessRequestSource" nillable="true" type="tns:AccessRequestSource" />
+  <xs:simpleType name="AccessRequestStatus">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="long" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Requested" />
+      <xs:enumeration value="Approved" />
+      <xs:enumeration value="Rejected" />
+      <xs:enumeration value="Granted" />
+      <xs:enumeration value="Withdrawn" />
+      <xs:enumeration value="Submitted" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AccessRequestStatus" nillable="true" type="tns:AccessRequestStatus" />
+  <xs:simpleType name="StatusType">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="unsignedByte" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Pending">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Approved">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Rejected">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AutoCompleted">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NotInitiated">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Withdrawn">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StatusType" nillable="true" type="tns:StatusType" />
+  <xs:simpleType name="AttestationDefaultReviewStatus">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="unsignedByte" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Approve" />
+      <xs:enumeration value="Revoke" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AttestationDefaultReviewStatus" nillable="true" type="tns:AttestationDefaultReviewStatus" />
+  <xs:simpleType name="ApprovalUserType">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="unsignedByte" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="User" />
+      <xs:enumeration value="Role" />
+      <xs:enumeration value="Group" />
+      <xs:enumeration value="UseApplicationConfiguration" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ApprovalUserType" nillable="true" type="tns:ApprovalUserType" />
+</xs:schema>

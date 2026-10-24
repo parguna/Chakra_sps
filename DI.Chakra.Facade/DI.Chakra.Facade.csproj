@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BF250503-6752-4E49-AF1C-FE82AE517CD5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DI.Chakra.Facade</RootNamespace>
+    <AssemblyName>DI.Chakra.Facade</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Web - DEBUG|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Web - DEBUG\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Web - DEBUG|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Web - DEBUG\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'de|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\de\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'de|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\de\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="AccessRequestFacade.cs" />
+    <Compile Include="AccessRightsFacade.cs" />
+    <Compile Include="ACLFacade.cs" />
+    <Compile Include="ActiveDirectoryFacade.cs" />
+    <Compile Include="AdHocRequestFacade.cs" />
+    <Compile Include="AppCustomizationFacade.cs" />
+    <Compile Include="ARFacade.cs" />
+    <Compile Include="AttestationFacade.cs" />
+    <Compile Include="AutoCompleteDataFacade.cs" />
+    <Compile Include="AutoCompleteFacade.cs" />
+    <Compile Include="CodeSnippetFacade.cs" />
+    <Compile Include="Contracts\IEndpointFacade.cs" />
+    <Compile Include="CulturePreferenceFacade.cs" />
+    <Compile Include="DesignationFacade.cs" />
+    <Compile Include="ORCLUMFacade.cs" />
+    <Compile Include="OracleEBSFacade.cs" />
+    <Compile Include="ProvisioningRoleFacade.cs" />
+    <Compile Include="ReportFacade.cs" />
+    <Compile Include="RulesetFacade.cs" />
+    <Compile Include="TriggerFacade.cs" />
+    <Compile Include="DiscoveryProcessFacade.cs" />
+    <Compile Include="GridFacade.cs" />
+    <Compile Include="HouseKeepingFacade.cs" />
+    <Compile Include="InhouseSystemFacade.cs" />
+    <Compile Include="PasswordManagementFacade.cs" />
+    <Compile Include="AdminModeItemFacade.cs" />
+    <Compile Include="ProcessFacade.cs" />
+    <Compile Include="ReconcilationFacade.cs" />
+    <Compile Include="LoggerFacade.cs" />
+    <Compile Include="MasterFacade.cs" />
+    <Compile Include="ProvisioningConfigurationFacade.cs" />
+    <Compile Include="DashboardFacade.cs" />
+    <Compile Include="InterimStoreFacade.cs" />
+    <Compile Include="RoleMatrixFacade.cs" />
+    <Compile Include="SodFacade.cs" />
+    <Compile Include="TaskFacade.cs" />
+    <Compile Include="TenantFacade.cs" />
+    <Compile Include="LinuxFacade.cs" />
+    <Compile Include="UserAccountFacade.cs" />
+    <Compile Include="UserQuickLinkFacade.cs" />
+    <Compile Include="V5EndpointFacade.cs" />
+    <Compile Include="VPNMasterFacade.cs" />
+    <Compile Include="WorkFlowConfigurationFacade.cs" />
+    <Compile Include="ProvisioningFormFacade.cs" />
+    <Compile Include="SAPEPFacade.cs" />
+    <Compile Include="DiConfigurationFacade.cs" />
+    <Compile Include="EndPointFacade.cs" />
+    <Compile Include="GroupFacade.cs" />
+    <Compile Include="LotusNotesFacade.cs" />
+    <Compile Include="OrganisationFacade.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoleAssignmentFacade.cs" />
+    <Compile Include="RoleFacade.cs" />
+    <Compile Include="SAPFacade.cs" />
+    <Compile Include="SchedulerFacade.cs" />
+    <Compile Include="TabMenuFacade.cs" />
+    <Compile Include="UserAttributeConstructor.cs" />
+    <Compile Include="UserFacade.cs" />
+    <Compile Include="XLDataFacade.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DI.Chakra.DataAccess\DI.Chakra.DataAccess.csproj">
+      <Project>{b46440d7-2afa-4dbf-8421-e728499f77f7}</Project>
+      <Name>DI.Chakra.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Logger\DI.Chakra.Logger.csproj">
+      <Project>{1e273971-c665-4e37-88ec-9621c81a7009}</Project>
+      <Name>DI.Chakra.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Model\DI.Chakra.Model.csproj">
+      <Project>{A35DDE44-7C93-433D-A8A7-A41A06896A51}</Project>
+      <Name>DI.Chakra.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Infrastructure\DI.Chakra.Infrastructure.csproj">
+      <Project>{9a13b27d-b9dc-474a-9fe6-1c60fd52e5a7}</Project>
+      <Name>DI.Chakra.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Win\Processors\DI.Chakra.Services.EmailingProcessor\DI.Chakra.Services.EmailingProcessor.csproj">
+      <Project>{2335b14f-bbe7-452e-9f99-4a4af01cdc94}</Project>
+      <Name>DI.Chakra.Services.EmailingProcessor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

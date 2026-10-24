@@ -1,0 +1,88 @@
+CREATE   TRIGGER [dbo].[DI_WIN_UserInfo_DELETE_Trigger] ON [dbo].[DI_WIN_UserInfo]  AFTER DELETE
+AS
+BEGIN
+SET NOCOUNT ON;
+
+      DECLARE @EndPointSystemId  int
+      DECLARE @HistoryId Int
+     
+      SELECT  @EndPointSystemId =EndPointSystemId FROM DELETED
+      SET @HistoryId=0
+               
+      INSERT INTO [dbo].[DI_WIN_UserInfoHistory]
+           ([UserId]
+					,[HistoryId]
+					,[TenantId]
+					,[EndPointSystemId]
+					,[UserFlags]
+					,[MaxStorage]
+					,[PasswordAge]
+					,[PasswordExpired]
+					,[LoginHours]
+					,[FullName]
+					,[Description]
+					,[BadPasswordAttempts]
+					,[LastLogin]
+					,[HomeDirectory]
+					,[LoginScript]
+					,[Profile]
+					,[HomeDirDrive]
+					,[Parameters]
+					,[PrimaryGroupID]
+					,[Name]
+					,[MinPasswordLength]
+					,[MaxPasswordAge]
+					,[MinPasswordAge]
+					,[PasswordHistoryLength]
+					,[AutoUnlockInterval]
+					,[LockoutObservationInterval]
+					,[MaxBadPasswordsAllowed]
+					,[objectSid]
+					,[MappingType]
+					,[SpecialAccount]
+					,[AccountType]
+					,[CreatedBy]
+					,[CreatedDate]
+					,[LastModifiedBy]
+					,[LastModifiedDate]
+					,[Version]
+					,[RecordStatus])
+     SELECT  [UserId]
+					,@HistoryId
+					,[TenantId]
+					,[EndPointSystemId]
+					,[UserFlags]
+					,[MaxStorage]
+					,[PasswordAge]
+					,[PasswordExpired]
+					,[LoginHours]
+					,[FullName]
+					,[Description]
+					,[BadPasswordAttempts]
+					,[LastLogin]
+					,[HomeDirectory]
+					,[LoginScript]
+					,[Profile]
+					,[HomeDirDrive]
+					,[Parameters]
+					,[PrimaryGroupID]
+					,[Name]
+					,[MinPasswordLength]
+					,[MaxPasswordAge]
+					,[MinPasswordAge]
+					,[PasswordHistoryLength]
+					,[AutoUnlockInterval]
+					,[LockoutObservationInterval]
+					,[MaxBadPasswordsAllowed]
+					,[objectSid]
+					,[MappingType]
+					,[SpecialAccount]
+					,[AccountType]
+					,[CreatedBy]
+					,[CreatedDate]
+					,[LastModifiedBy]
+					,[LastModifiedDate]
+					,[Version]
+				,'DELETED'
+        FROM deleted
+END

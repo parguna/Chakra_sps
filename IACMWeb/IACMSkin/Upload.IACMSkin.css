@@ -1,0 +1,120 @@
+﻿/*@import url("../assets/styles/Upload.css");*/
+
+.RadUpload_IACMSkin {
+    color: #000;
+    width: auto !important;
+}
+
+.RadUpload_IACMSkin .ruFileWrap {
+    height: 2.6em !important;
+    line-height: 1.2em !important;
+}
+
+.RadUpload_IACMSkin .ruFileProgressWrap {
+    height: 4px!important;
+    background-color: #e8e8e8!important;
+}
+
+.RadUpload_IACMSkin .ruFileProgress {
+    height: 4px!important;
+    background-color: #25a0da!important;
+}
+
+.RadUpload_IACMSkin .ruFakeInput {
+    padding: 0!important;
+    vertical-align: top;
+    line-height: 2.4em !important;
+    height: 2.4em !important;
+    border: 1px solid #dddddd!important;
+    color: #000;
+}
+
+.RadUpload_IACMSkin .ruStyled .ruFileInput, .RadUpload_IACMSkin .ruFakeInput {
+    box-sizing: inherit;
+}
+
+.RadUpload_IACMSkin .ruFileWrap {
+    line-height: 23px;
+}
+
+.RadUpload_IACMSkin .ruUploadProgress {
+    margin-right: 10px!important;
+    margin-top: 5px;
+    width: 170px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #207bbd;
+    font-weight: 600;
+    width: 100%;
+    padding: 5px;
+    background-color: #f5f5f5;
+    border: 1px solid #dcdcdc !important;
+    padding-right: 15px;
+}
+
+.RadUpload_IACMSkin .ruButton:active, .RadUpload_IACMSkin .ruButton:focus {
+    border: none!important;
+}
+
+.RadUpload_IACMSkin .ruButton {
+    background: #eee;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #2077bd;
+    font-size: 14px;
+    font-weight: 700;
+    height: auto;
+    line-height: 1.2;
+    padding: 5px 15px;
+    width: auto;
+}
+
+.RadUpload_IACMSkin .ruButtonHover {
+    border-color: #207bbd;
+    box-shadow: 0 0 3px 0 #2077bd;
+    color: #207bbd;
+    border-radius: 4px;
+}
+
+.RadUpload_IACMSkin .ruButton.ruRemove {
+    background: url(../Images/Common/radActionsSprite.png);
+    background-position: 0px -1142px !important;
+    background-repeat: no-repeat;
+    border: none;
+    width: 10px !important;
+    text-indent: 15px !important;
+    padding-left: 0px;
+    right: 5px;
+    top: 10px;
+    position: absolute;
+    overflow: hidden;
+    height: 15px;
+    border-left: 1px solid #dcdcdc;
+    border-radius: unset;
+}
+/*.RadUpload_IACMSkin .ruRemove:hover {
+    background-position: -58px -3308px!important;
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}*/
+
+.RadUpload_IACMSkin .ruDropZone {
+    background: #eee;
+    border-color: #dddddd;
+    color: #2077bd;
+    font-size: 1em;
+    font-style: italic;
+}
+.RadUpload_IACMSkin .ruInputs li:not(:last-of-type) {
+    background: #e8f5ff;
+    padding: 5px;
+    border: 1px solid #bfdaee;
+}
+.RadUpload_IACMSkin .ruInputs li .ruFileWrap {
+    height: auto !important;
+    width: 100%;
+    margin-right: 5px;
+}

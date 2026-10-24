@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DI.Chakra.Dto.Presentation
+{
+    [Serializable]
+    public class PresentationConflictRemarks
+    {
+        public string EndpointName { get; set; }
+        public string RequestedRole { get; set; }
+        public string ConflictedRole { get; set; }
+        public string ConflictRemarks { get; set; }
+        public string Source { get; set; }
+        public string UserWithAccountName { get; set; }
+        public override string ToString()
+        {
+            return $"{EndpointName}:RequestedRole:{RequestedRole} Conflicts With:{ConflictedRole} Remarks:{ConflictRemarks} Conflicts Source :{Source} {(!string.IsNullOrWhiteSpace(UserWithAccountName) ? "for the User - "+ UserWithAccountName:"") }";
+        }
+    }
+}

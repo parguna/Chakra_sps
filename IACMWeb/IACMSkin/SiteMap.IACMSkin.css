@@ -1,0 +1,38 @@
+.RadSiteMap_IACMSkin {
+    color: #333;
+    font-size: 1.1em;
+}
+.RadSiteMap_IACMSkin .rsmManyLevels>.rsmItem>.rsmLink {
+    border-color: #c7c7c7
+}
+.RadSiteMap_IACMSkin .rsmTwoLevels>.rsmItem>.rsmLink,
+.RadSiteMap_IACMSkin .rsmThreeLevels>.rsmItem>.rsmLink,
+.RadSiteMap_IACMSkin .rsmManyLevels .rsmLevel1>.rsmItem>.rsmLink {
+    border-color: #c7c7c7
+}
+.RadSiteMap_IACMSkin .rsmOneLevel .rsmLink,
+.RadSiteMap_IACMSkin .rsmTwoLevels .rsmLevel1 .rsmLink,
+.RadSiteMap_IACMSkin .rsmThreeLevels .rsmLevel1 .rsmLink,
+.RadSiteMap_IACMSkin .rsmManyLevels .rsmLevel2 .rsmLink {
+    padding: 4px;
+    border-radius: 0;
+    color: #207bbd
+}
+.RadSiteMap_IACMSkin .rsmOneLevel .rsmLink:hover,
+.RadSiteMap_IACMSkin .rsmTwoLevels .rsmLevel1 .rsmLink:hover,
+.RadSiteMap_IACMSkin .rsmThreeLevels .rsmLevel1 .rsmLink:hover,
+.RadSiteMap_IACMSkin .rsmManyLevels .rsmLevel2 .rsmLink:hover {
+    color: #fff;
+    background-color: #207bbd;
+}
+*+html .RadSiteMap_IACMSkin .rsmLink {
+    color: #333;
+}
+.RadSiteMap_IACMSkin .rsmList>.rsmItem {
+    margin-bottom: 2px;
+}
+.RadSiteMap .rsmTwoLevels > .rsmItem > .rsmLink { 
+    font-size: 1.1em; 
+    font-weight: 700
+
+}

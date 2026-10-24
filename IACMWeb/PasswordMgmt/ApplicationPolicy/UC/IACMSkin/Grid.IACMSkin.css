@@ -1,0 +1,801 @@
+/*@import url("../assets/styles/Grid.css");*/
+.RadGrid_IACMSkin {
+    color: #555;
+    background-color: #fff;
+}
+.RadGrid_IACMSkin:focus {
+    outline: none;
+}
+.RadGrid_IACMSkin .rgHeaderWrapper,.RadGrid_IACMSkin .rgDataDiv,.RadGrid_IACMSkin .rgDataDiv+table.rgMasterTable {
+    border-right: 1px solid #c5c5c5;
+}
+.RadGrid_IACMSkin div.rgHeaderWrapper {
+    border-left: 1px solid #c5c5c5;
+    border-right: 1px solid #c5c5c5;
+}
+.RadGrid_IACMSkin .rgDataDiv {
+    /*border-bottom: 1px solid #c5c5c5;
+    border-left: 1px solid #c5c5c5;
+    border-top: medium none;*/
+}
+.RadGrid_IACMSkin .rgDataDiv + table.rgMasterTable {
+    border-left: 0 none;
+    border-top: 0 none;
+}
+.rgMasterTable {
+    border-bottom: 1px solid #c5c5c5;
+}
+.rgDataDiv {
+    max-height: auto;
+    height: auto !important;
+    overflow-y: scroll !important;
+}
+.RadGrid_IACMSkin, .RadGrid_IACMSkin .rgMasterTable, .RadGrid_IACMSkin .rgDetailTable, .RadGrid_IACMSkin .rgGroupPanel table, .RadGrid_IACMSkin .rgCommandRow table, .RadGrid_IACMSkin .rgEditForm table, .RadGrid_IACMSkin .rgPager table {
+  	 font-weight: normal;
+    font-size: 1em;
+    line-height: 1.2;
+     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.rgEditForm table,.rgEditForm input[type=text] {
+    width: 100%;
+}
+.rgEditForm td:first-child {
+    width: 20%;
+}
+.RadGrid_IACMSkin .rgRow {
+    background: #fff;
+}
+.RadGrid_IACMSkin .rgInput {
+    background-color: #fff;
+    border: 1px solid #c5c5c5;
+    color: #555;
+}
+/*.RadGrid_IACMSkin .rgHeader:first-child, .RadGrid_IACMSkin th.rgResizeCol:first-child, .RadGrid_IACMSkin .rgFilterRow>td:first-child, .RadGrid_IACMSkin .rgRow>td:first-child, .RadGrid_IACMSkin .rgAltRow>td:first-child {
+    border-left-width: 0;
+    padding-left: 8px;
+}*/
+.RadGrid_IACMSkin .rgFilterRow > td {
+    /*/*border-right: 1px solid #c5c5c5;*/*/
+}
+.RadGrid_IACMSkin .rgFilterRow > td:first-child {
+    border-left: 1px solid #c5c5c5;
+}
+.RadGrid .rgFilterRow>td, .RadGrid .rgFilterRow>td  {
+    padding-bottom: 4px;
+}
+.RadGrid_IACMSkin .rgSave, .RadGrid_IACMSkin .rgUpdate, .RadGrid_IACMSkin .rgCancel, .RadGrid_IACMSkin .rgEdit, .RadGrid_IACMSkin .rgDel, .RadGrid_IACMSkin .rgExpand, .RadGrid_IACMSkin .rgCollapse, .RadGrid_IACMSkin .rgFilter, .RadGrid_IACMSkin .rgAdd, .RadGrid_IACMSkin .rgRefresh, .RadGrid_IACMSkin .rgSortAsc, .RadGrid_IACMSkin .rgSortDesc, .RadGrid_IACMSkin .rgUngroup, .RadGrid_IACMSkin .rgPagePrev, .RadGrid_IACMSkin .rgPageNext, .RadGrid_IACMSkin .rgPageFirst, .RadGrid_IACMSkin .rgPageLast, .RadGrid_IACMSkin .rgPrev span, .RadGrid_IACMSkin .rgNext span {
+    background: url("../Images/sprite_2x.png");
+    background-size: 412px 407px;
+    opacity: .8;
+}
+.RadGrid_IACMSkin .rgHeader, .RadGrid_IACMSkin th.rgResizeCol, .RadGrid_IACMSkin .rgHeaderWrapper, .RadGrid_IACMSkin .rgMultiHeaderRow th.rgHeader, .RadGrid_IACMSkin .rgMultiHeaderRow th.rgResizeCol {
+    border: 0;
+    border-bottom: 1px solid #c5c5c5;
+    border-left: 1px solid #c5c5c5;
+    overflow: hidden;
+	border-style: solid;
+	border-width: 0 0 1px 1px;
+	padding: .5em .6em .4em .6em;
+	font-weight: normal;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-align: left;
+}
+.RadGrid_IACMSkin .rgHeader, .RadGrid_IACMSkin th.rgResizeCol, .RadGrid_IACMSkin .rgHeaderWrapper {
+    background-image: none,-webkit-linear-gradient(top,rgba(255,255,255,.45) 0,rgba(255,255,255,0) 100%);
+    background-image: none,-moz-linear-gradient(top,rgba(255,255,255,.45) 0,rgba(255,255,255,0) 100%);
+    background-image: none,-o-linear-gradient(top,rgba(255,255,255,.45) 0,rgba(255,255,255,0) 100%);
+    background-image: none,linear-gradient(to bottom,rgba(255,255,255,.45) 0,rgba(255,255,255,0) 100%);
+    background-position: 50% 50%;
+    background-color: #e2e2e2;
+	border-left-width: 0;
+	border-right-width: 1px;
+	border-color: #c5c5c5;
+}
+.RadGrid_IACMSkin .rgHeader:first-of-type {
+    border-left-width: 1px;
+}
+.RadGrid_IACMSkin .rgHeaderDiv {
+    border-right: 1px solid #c5c5c5;
+    margin-right: 16px!important;
+}
+.RadGrid_IACMSkin .rgHeaderWrapper {
+    border-bottom: 1px solid #c5c5c5;
+}
+/*.RadGrid_IACMSkin th.rgSorted {
+    background-color: #207bbd;
+}*/
+.RadGrid_IACMSkin .rgHeader, .RadGrid_IACMSkin .rgHeader a {
+    color: #555;
+    font-weight: 700;
+    position: relative;
+    line-height: 18px;
+    margin: -0.5em -0.6em -0.4em;
+    min-height: 18px;
+    overflow: hidden;
+    padding: 0.5em 0.6em 0.4em;
+    text-overflow: ellipsis;
+}
+/*.RadGrid_IACMSkin th.rgSorted, .RadGrid_IACMSkin th.rgSorted a {
+    color: #fff;
+}*/
+.RadGrid_IACMSkin .rgRow>td, .RadGrid_IACMSkin .rgAltRow>td {
+    border-color: #c5c5c5;
+    border-style: solid;
+    border-width: 0 1px 0 0;
+    font-size: 14px;
+    line-height: 1.6em;
+    overflow: hidden;
+    padding: 0.4em 0.6em;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+.RadGrid_IACMSkin .rgFooter>td {
+    border: 0;
+}
+.RadGrid_IACMSkin .rgEditRow>td {
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: #e8e8e8;
+}
+.RadGrid_IACMSkin .rgAltRow {
+    background: #f5f5f5;
+}
+
+/*.RadGrid_IACMSkin td.rgSorted {
+    background-color: #f0f0f0;
+    border-color: #f0f0f0;
+}
+.RadGrid_IACMSkin .rgAltRow td.rgSorted {
+    background-color: #e9e9e9;
+    border-color: #e9e9e9;
+}*/
+.RadGrid_IACMSkin .rgSelectedRow .rgSorted, .RadGrid_IACMSkin .rgActiveRow .rgSorted, .RadGrid_IACMSkin .rgHoveredRow .rgSorted, .RadGrid_IACMSkin .rgEditRow .rgSorted {
+    background-color: transparent;
+    border-color: transparent;
+}
+.RadGrid_IACMSkin .rgRow a, .RadGrid_IACMSkin .rgAltRow a, .RadGrid_IACMSkin tr.rgEditRow a, .RadGrid_IACMSkin .rgFooter a, .RadGrid_IACMSkin .rgEditForm a {
+    color: #207bbd;
+    text-decoration: none;
+}
+.RadGrid_IACMSkin .rgHoveredRow {
+    background: #e8e8e8;
+    border-color: #e8e8e8;
+}
+.RadGrid_IACMSkin .rgMasterTable .rgSelectedCell, .RadGrid_IACMSkin .rgSelectedRow, .RadGrid_IACMSkin td.rgEditRow .rgSelectedRow, .RadGrid_IACMSkin .rgSelectedRow td.rgSorted {
+    color: #fff;
+    background: #207bbd;
+    border-color: #207bbd;
+}
+.RadGrid_IACMSkin .rgSelectedCell a, .RadGrid_IACMSkin .rgSelectedRow a {
+    color: #fff;
+}
+.RadGrid_IACMSkin .rgMasterTable .rgActiveCell {
+    background: #fff;
+    color: #555;
+}
+.RadGrid_IACMSkin .rgMasterTable .rgActiveCell {
+    border-color: #207bbd;
+    border-right-width: 1px;
+}
+.RadGrid_IACMSkin .rgActiveCell a, .RadGrid_IACMSkin .rgActiveRow input {
+    color: #555;
+}
+*+html .RadGrid_IACMSkin .rgSelectedRow .rgSorted {
+    background-color: #207bbd;
+}
+* html .RadGrid_IACMSkin .rgSelectedRow .rgSorted {
+    background-color: #207bbd;
+}
+*+html .RadGrid_IACMSkin .rgActiveRow .rgSorted, *+html .RadGrid_IACMSkin .rgHoveredRow .rgSorted {
+    background-color: #e8e8e8;
+}
+* html .RadGrid_IACMSkin .rgActiveRow .rgSorted, * html .RadGrid_IACMSkin .rgHoveredRow .rgSorted {
+    background-color: #e8e8e8;
+}
+.RadGrid_IACMSkin .rgEditRow {
+    background: #c5c5c5;
+}
+*+html .RadGrid_IACMSkin .rgEditRow .rgSorted {
+    background-color: #c5c5c5;
+}
+* html .RadGrid_IACMSkin .rgEditRow .rgSorted {
+    background-color: #c5c5c5;
+}
+.RadGrid_IACMSkin .rgHoveredRow>td, .RadGrid_IACMSkin .rgHoveredRow td.rgSorted {
+    border-color: #e8e8e8;
+}
+.RadGrid_IACMSkin .rgActiveRow>td, .RadGrid_IACMSkin .rgActiveRow td.rgSorted, .RadGrid_IACMSkin .rgSelectedRow>td, .RadGrid_IACMSkin .rgSelectedRow td.rgSorted {
+    border-color: #207bbd;
+}
+.RadGrid_IACMSkin .rgEditRow>td, .RadGrid_IACMSkin .rgEditRow td.rgSorted {
+    border-color: #c5c5c5;
+}
+.RadGrid_IACMSkin .rgDrag {
+    background-image: url('../Images/Grid/rgDrag.gif');
+    width: 25px;
+    height: 25px;
+}
+tfoot, .rgMasterTable {
+    background-image: none,-webkit-linear-gradient(top,rgba(255,255,255,.45) 0,rgba(255,255,255,0) 100%);
+    background-image: none,-moz-linear-gradient(top,rgba(255,255,255,.45) 0,rgba(255,255,255,0) 100%);
+    background-image: none,-o-linear-gradient(top,rgba(255,255,255,.45) 0,rgba(255,255,255,0) 100%);
+    background-image: none,linear-gradient(to bottom,rgba(255,255,255,.45) 0,rgba(255,255,255,0) 100%);
+    background-position: 50% 50%;
+    background-color: #e2e2e2;
+	border-left-width: 0;
+	border-right-width: 1px;
+	border-color: #c5c5c5;
+    border-bottom: medium none;
+}
+
+.RadGrid_IACMSkin .rgFooterDiv, .RadGrid_IACMSkin .rgFooter {
+    background: none;
+}
+.RadGrid_IACMSkin .rgFooter>td, .RadGrid_IACMSkin .rgFooterWrapper {
+    border-top: 1px solid;
+      border-color: #c5c5c5;
+}
+.RadGrid_IACMSkin .rgPager .rgStatus {
+    border: solid;
+    border-color: #c5c5c5;
+    border-width: 1px 0 0 0;
+}
+.RadGrid_IACMSkin .rgStatus div {
+    background-image: url('"../Images/Common/loading_small.gif');
+    width: 40px;
+}
+.RadGrid_IACMSkin td.rgPagerCell {
+    border: solid;
+    border-color: #c5c5c5;
+    border-width: 1px 0 0 1px;
+    padding: 0;
+}
+.RadGrid_IACMSkin .rgPager>td>table {
+    height: 48px;
+}
+.RadGrid_IACMSkin .rgPager .riTextBox, *+html .RadGrid_IACMSkin .rgPager .riSingle .riTextBox, *+html .RadForm.RadForm_IACMSkin .RadGrid_IACMSkin .rgPager .riSingle input[type='text'].rfdDecorated {
+    height: 29px;
+    line-height: 29px;
+}
+.RadGrid_IACMSkin .rgPager .riSingle .riTextBox {
+    height: 36px;
+}
+.RadGrid_IACMSkin .rgInfoPart {
+    color: #777;
+}
+.RadGrid_IACMSkin .rgInfoPart strong {
+    color: #555;
+}
+.RadGrid_IACMSkin .rgWrap {
+    line-height: 34px;
+}
+.RadGrid_IACMSkin .rgPagePrev, .RadGrid_IACMSkin .rgPageNext, .RadGrid_IACMSkin .rgPageFirst, .RadGrid_IACMSkin .rgPageLast {
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	width: 28px;
+	height: 28px;
+	border: 1px solid #c5c5c5;
+	background-color: transparent;
+	float: left;
+	margin: 1px;
+	line-height: 28px;
+	cursor: pointer;
+	text-align: center;
+}
+.RadGrid_IACMSkin .rgPagePrev:hover, .RadGrid_IACMSkin .rgPageNext:hover, .RadGrid_IACMSkin .rgPageFirst:hover, .RadGrid_IACMSkin .rgPageLast:hover {
+        background-color: #bcb4b0;
+        border-color: #bcb4b0;
+        color: #2e2e2e;
+    }
+ .RadGrid_IACMSkin .rgPagePrev:hover::before, .RadGrid_IACMSkin .rgPageNext:hover::before, .RadGrid_IACMSkin .rgPageFirst:hover::before, .RadGrid_IACMSkin .rgPageLast:hover::before {
+    background-image: none, linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0) 100%);
+}
+.RadGrid_IACMSkin .rgPagePrev:active, .RadGrid_IACMSkin .rgPageNext:active, .RadGrid_IACMSkin .rgPageFirst:active, .RadGrid_IACMSkin .rgPageLast:active {
+   background-color: #bcb4b0;
+    border-color: #bcb4b0;
+    color: #2e2e2e;
+}
+.RadGrid_IACMSkin .rgPageFirst {
+      background-position: 3px -132px;
+}
+.RadGrid_IACMSkin .rgPageFirst:active {
+    background-position: 3px -132px;
+}
+.RadGrid_IACMSkin .rgPagePrev {
+    background-position: 3px -55px;
+ }
+.RadGrid_IACMSkin .rgPagePrev:active {
+    background-position: 3px -55px;
+}
+.RadGrid_IACMSkin .rgPageNext {
+    background-position: 3px -16px;
+}
+.RadGrid_IACMSkin .rgPageNext:active {
+    background-position: 3px -16px;
+}
+.RadGrid_IACMSkin .rgPageLast {
+   background-position: 3px -93px;
+}
+.RadGrid_IACMSkin .rgPageLast:active {
+    background-position: 3px -93px;
+}
+.RadGrid_IACMSkin .rgPager .rgPagerButton {
+    border-color: #bcb4b0;
+    background: #bcb4b0;
+    color: #fff;
+    height: 36px;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 34px;
+    font-family: inherit;
+}
+.RadGrid_IACMSkin .rgNumPart a {
+	border: none;
+	line-height: 26px;
+	min-width: 26px;
+    width: auto;
+	height: 26px;
+	padding: 0 3px;
+	color: #333;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    margin: 1px;
+    text-indent: 1px;
+}
+.RadGrid_IACMSkin .rgNumPart span {
+    float: none;
+    padding: 0;
+}
+.RadGrid_IACMSkin .rgNumPart a:hover {
+    background-color: #bcb4b0;
+    border-color: #bcb4b0;
+    color: #333;
+}
+.RadGrid_IACMSkin .rgNumPart a.rgCurrentPage, .RadGrid_IACMSkin .rgNumPart a.rgCurrentPage:hover {
+    background-color: #207bbd;
+    border: 1px solid #207bbd;
+    color: #fff;
+}
+.RadGrid_IACMSkin .rgPager .riTextBox {
+    vertical-align: top;
+}
+.RadGrid_IACMSkin .rgHeader .rgSortAsc, .RadGrid_IACMSkin .rgHeader .rgSortDesc {
+    height: 7px;
+    
+}
+.RadGrid_IACMSkin .rgHeader .rgSortAsc {
+    background-position: -20px 363px;
+}
+.RadGrid_IACMSkin .rgHeader .rgSortDesc {
+    background-position: -20px 401px;
+}
+.RadGrid_IACMSkin .rgCommandRow .rgPrev, .RadGrid_IACMSkin .rgCommandRow .rgNext {
+    padding: 7px 15px;
+    line-height: 20px;
+    border-color: #c5c5c5;
+    color: #555;
+    background-color: #f9f9f9;
+    margin-right: 10px;
+}
+.RadGrid_IACMSkin .rgCommandRow .rgPrev span, .RadGrid_IACMSkin .rgCommandRow .rgNext span {
+    width: 10px;
+    height: 10px;
+}
+.RadGrid_IACMSkin .rgCommandRow .rgPrev.rgDisabled:hover, .RadGrid_IACMSkin .rgCommandRow .rgNext.rgDisabled:hover {
+    border-color: #c5c5c5;
+    color: #555;
+    background-color: #f9f9f9;
+}
+.RadGrid_IACMSkin .rgCommandRow .rgPrev:hover, .RadGrid_IACMSkin .rgCommandRow .rgNext:hover {
+    border-color: #c5c5c5;
+    color: #555;
+    background-color: #e8e8e8;
+}
+.RadGrid_IACMSkin .rgPrev span {
+    margin-right: 15px;
+    background-position: -20px -120px;
+}
+.RadGrid_IACMSkin .rgNext span {
+    margin-left: 15px;
+    background-position: -20px -170px;
+}
+.RadGrid_IACMSkin .rgFilterRow>td {
+    border-bottom: 1px solid #c5c5c5;
+}
+.RadGrid_IACMSkin .rgFilter {
+    background-position: -37px -4571px;
+    border: 1px solid #c5c5c5;
+    height: 25px;
+    overflow: hidden;
+    padding: 2px;
+    width: 25px;
+}
+.RadGrid_IACMSkin .rgFilter:focus {
+    border: 1px solid #bcb4b0 !important;
+}
+.RadGrid_IACMSkin .rgFilter:hover {
+    border-color: #bcb4b0;
+    background-color: #bcb4b0;
+}
+.RadGrid_IACMSkin .rgFiltered, .RadGrid_IACMSkin .rgFiltered:hover {
+    background-position: -37px -4571px;
+}
+.RadGrid_IACMSkin .rgFilterActive, .RadGrid_IACMSkin .rgFilterActive:hover {
+    background-color: #bcb4b0;
+    border-color: #bcb4b0;
+    background-position: -37px -4571px;
+}
+.RadGrid_IACMSkin .rgFilterBox {
+    border-color: #c5c5c5;
+    font-weight: 100;
+    font-size: 1em;
+    line-height: 1;
+    color: #555;
+    height: 1.4em;
+    padding: 2px 1px;
+}
+.RadGrid_IACMSkin .rgFilterRow .riSingle .riTextBox {
+    height: 1.8em;
+    vertical-align: top;
+    width: 100%;
+}
+.RadGrid_IACMSkin .rgGroupPanel {
+    border: 0;
+    border-bottom: 1px solid #fff;
+    padding: 10px;
+    height: 34px;
+}
+.RadGrid_IACMSkin .rgGroupPanel, .RadGrid_IACMSkin .rgGroupPanel caption {
+    background: #207bbd;
+    color: #fff;
+}
+.RadGrid_IACMSkin .rgGroupPanel td {
+    border: 0;
+    padding: 3px 4px;
+}
+.RadGrid_IACMSkin .rgGroupPanel td td {
+    padding: 0;
+    color: #fff;
+    line-height: 1px;
+}
+*+html .RadGrid_IACMSkin .rgGroupPanel td td {
+    line-height: 20px;
+}
+.RadGrid_IACMSkin .rgGroupPanel .rgSortAsc {
+    background-position: -114.5px -14.5px;
+}
+.RadGrid_IACMSkin .rgGroupPanel .rgSortDesc {
+    background-position: -114.5px -64.5px;
+}
+.RadGrid_IACMSkin .rgUngroup {
+    background-position: -114.5px -3364.5px;
+}
+.RadGrid_IACMSkin .rgGroupItem {
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    border-radius: 16px;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 0 5px 1px 10px;
+}
+.RadGrid_IACMSkin .rgMasterTable td.rgGroupCol, .RadGrid_IACMSkin .rgMasterTable td.rgExpandCol {
+      border-right: 0;
+}
+.RadGrid_IACMSkin .rgGroupHeader {
+    background: #e8e8e8;
+    font-size: 1.1em;
+    line-height: 34px;
+    color: #555;
+}
+.RadGrid_IACMSkin .rgGroupHeader>td {
+    padding-left: 8px;
+    padding-bottom: 2px;
+    border-top: 1px solid #fff;
+}
+.RadGrid_IACMSkin .rgExpand {
+	background-position: -2px -234px;
+}
+.RadGrid_IACMSkin .rgCollapse {
+	  background-position: -2px -274px;
+}
+.RadGrid_IACMSkin .rgEditForm {
+    border-bottom: 1px solid #c5c5c5;
+    width: 100%;
+}
+.RadGrid_IACMSkin .rgUpdate {
+    background-position: -12px -2612px;
+}
+.RadGrid_IACMSkin .rgUpdate:active {
+    background-position: -112px -2612px;
+}
+.RadGrid_IACMSkin .rgCancel {
+    background-position: -12px -2812px;
+}
+.RadGrid_IACMSkin .rgCancel:active {
+    background-position: -112px -2812px;
+}
+.RadGrid_IACMSkin .rgDetailTable {
+    border-color: #c5c5c5;
+}
+.RadGrid_IACMSkin .rgCommandRow {
+    background-color: #fff;
+}
+.RadGrid_IACMSkin .rgCommandRow, .RadGrid_IACMSkin .rgCommandRow a {
+    color: #333;
+    text-decoration: none;
+}
+/*.RadGrid_IACMSkin .rgCommandRow a {
+    padding-right: 1em;
+    border-right: 1px solid #c5c5c5;
+    margin-right: 1em;
+}*/
+.RadGrid_IACMSkin .rgCommandCell {
+    border: 0;
+    border-bottom: 1px solid #c5c5c5;
+    padding: 0;
+}
+.RadGrid_IACMSkin tfoot .rgCommandCell, .RadGrid_IACMSkin .rgMasterTable>tbody>tr.rgCommandRow .rgCommandCell {
+    border-top: 1px solid #c5c5c5;
+    border-bottom: 0;
+}
+.RadGrid_IACMSkin .rgCommandTable td {
+    border: 0;
+    padding: 2px 0px;
+}
+.RadGrid_IACMSkin .rgCommandTable {
+    border: 0;
+}
+.RadGrid_IACMSkin .rgAdd, .RadGrid_IACMSkin .rgRefresh {
+    vertical-align: middle;
+}
+.RadGrid_IACMSkin input.rgAdd, .RadGrid_IACMSkin input.rgRefresh, .RadGrid_IACMSkin .rgSave, .RadGrid_IACMSkin .rgCommandRow .rgCancel {
+    margin-right: 4px;
+    width: 21px;
+    height: 24px;
+}
+/*.RadGrid_IACMSkin input.rgAdd:hover, .RadGrid_IACMSkin input.rgAdd:active, .RadGrid_IACMSkin input.rgRefresh:hover, .RadGrid_IACMSkin input.rgRefresh:active, .RadGrid_IACMSkin .rgSave:hover, .RadGrid_IACMSkin .rgSave:active, .RadGrid_IACMSkin .rgCommandRow .rgCancel:hover, .RadGrid_IACMSkin .rgCommandRow .rgCancel:active {
+    border: 1px solid #fff;
+}*/
+.RadGrid_IACMSkin input.rgAdd {
+    background-position: -112px -3012px;
+}
+.RadGrid_IACMSkin input.rgAdd:hover, .RadGrid_IACMSkin input.rgAdd:active {
+    background-position: -62px -3012px;
+}
+.RadGrid_IACMSkin input.rgRefresh {
+    background-position: -34px -948px;
+}
+/*.RadGrid_IACMSkin input.rgRefresh:hover, .RadGrid_IACMSkin input.rgRefresh:active {
+    background-position: -62px -1312px;
+}*/
+.RadGrid_IACMSkin .rgSave {
+    background-position: -112px -4962px;
+}
+.RadGrid_IACMSkin .rgSave:hover, .RadGrid_IACMSkin .rgSave:active {
+    background-position: -62px -4962px;
+}
+.RadGrid_IACMSkin .rgCommandRow .rgCancel {
+    background-position: -112px -2812px;
+}
+.RadGrid_IACMSkin .rgCommandRow .rgCancel:hover, .RadGrid_IACMSkin .rgCommandRow .rgCancel:active {
+    background-position: -62px -2812px;
+}
+.RadGrid_IACMSkin .rgEdit {
+    margin-right: 3px;
+    background-position: -12px -3112px;
+}
+.RadGrid_IACMSkin .rgEdit:active {
+    background-position: -112px -3112px;
+}
+.RadGrid_IACMSkin .rgDel {
+    margin-right: 3px;
+    background-position: -12px -3312px;
+}
+.RadGrid_IACMSkin .rgDel:active {
+    background-position: -12px -3312px;
+}
+.RadGrid_IACMSkin .rgExpXLS, .RadGrid_IACMSkin .rgExpDOC, .RadGrid_IACMSkin .rgExpPDF, .RadGrid_IACMSkin .rgExpCSV {
+    background-image: url('../Images/excel.png');
+    background-size: 16px;
+}
+.RadGrid_IACMSkin .rgExpXLS {
+    background-position: 0 0;
+}
+.RadGrid_IACMSkin .rgExpDOC {
+    background-position: 0 -50px;
+}
+.RadGrid_IACMSkin .rgExpPDF {
+    background-position: 0 -100px;
+}
+.RadGrid_IACMSkin .rgExpCSV {
+    background-position: 0 -150px;
+}
+.RadMenu_IACMSkin .rgHCMClear, .RadMenu_IACMSkin .rgHCMFilter {
+    border-color: #7e7e7e;
+    background: #207bbd;
+    color: #555;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+.RadMenu_IACMSkin .rgHCMClear:hover, .RadMenu_IACMSkin .rgHCMFilter:hover {
+    border-color: #c5c5c5;
+    background-color: #ffe79c;
+    color: #882501;
+}
+.RadMenu_IACMSkin_Context .rgFilterApply, .RadMenu_IACMSkin_Context .rgFilterCancel {
+    border-color: #c5c5c5;
+    color: #555;
+    background-color: #f9f9f9;
+    font-family: inherit;
+    font-size: 16px;
+    height: 36px;
+}
+.RadMenu_IACMSkin_Context .rlbCheck {
+    margin-top: 10px;
+}
+div.RadMenu_IACMSkin_Context .rlbGroup {
+    border-color: #c5c5c5;
+}
+.GridContextMenu_IACMSkin .rmLeftImage {
+    background-image: url('"../Images/Grid/contextMenu.gif');
+}
+.GridContextMenu_IACMSkin .rgHCMSortAsc .rmLeftImage {
+    background-position: 0 0;
+}
+.GridContextMenu_IACMSkin .rgHCMSortDesc .rmLeftImage {
+    background-position: 0 -40px;
+}
+.GridContextMenu_IACMSkin .rgHCMUnsort .rmLeftImage {
+    background-position: 0 -80px;
+}
+.GridContextMenu_IACMSkin .rgHCMGroup .rmLeftImage {
+    background-position: 0 -120px;
+}
+.GridContextMenu_IACMSkin .rgHCMUngroup .rmLeftImage {
+    background-position: 0 -160px;
+}
+.GridContextMenu_IACMSkin .rgHCMCols .rmLeftImage {
+    background-position: 0 -200px;
+}
+.GridContextMenu_IACMSkin .rgHCMFilter .rmLeftImage {
+    background-position: 0 -240px;
+}
+.GridContextMenu_IACMSkin .rgHCMUnfilter .rmLeftImage {
+    background-position: 0 -280px;
+}
+.GridReorderTop_IACMSkin, .GridReorderBottom_IACMSkin {
+    width: 1px;
+    height: 30px;
+    margin: 24px 0 0 -2px;
+    border-right: 1px solid #808080;
+    border-left: 1px solid #808080;
+    border-color: rgba(255, 255, 255, 0.5);
+    background: #000!important;
+}
+.GridReorderBottom_IACMSkin {
+    margin: -24px 0 0 -2px;
+}
+.GridReorderBottom_IACMSkin:after, .GridReorderTop_IACMSkin:before {
+    content: "";
+    display: block;
+    width: 9px;
+    height: 9px;
+    margin-left: -5px;
+    margin-top: -6px;
+    background: #000;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    border-radius: 16px;
+    border: 1px solid #808080;
+    border-bottom-width: 0;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+.GridReorderBottom_IACMSkin:after {
+    border-top-width: 0;
+    border-bottom-width: 1px;
+    margin-top: 29px;
+}
+.rgCellSelectorArea_IACMSkin, .GridRowSelector_IACMSkin {
+    background: #4c4e54;
+}
+.GridItemDropIndicator_IACMSkin {
+    border-top: 1px dashed #666;
+}
+.GridToolTip_IACMSkin {
+    border: 1px solid #c5c5c5;
+    padding: 3px;
+    background: #ffefbd;
+    color: #333;
+}
+.RadGridRTL_IACMSkin .rgHeader:first-child, .RadGridRTL_IACMSkin th.rgResizeCol:first-child, .RadGridRTL_IACMSkin .rgFilterRow>td:first-child, .RadGridRTL_IACMSkin .rgRow>td:first-child, .RadGridRTL_IACMSkin .rgAltRow>td:first-child {
+    border-right-width: 1px;
+    padding-left: 7px;
+}
+.RadGridRTL_IACMSkin .rgPageFirst {
+    background-position: -11px -761px;
+}
+.RadGridRTL_IACMSkin .rgPageFirst:active {
+    background-position: -111px -761px;
+}
+.RadGridRTL_IACMSkin .rgPagePrev {
+    background-position: -11px -161px;
+}
+.RadGridRTL_IACMSkin .rgPagePrev:active {
+    background-position: -111px -161px;
+}
+.RadGridRTL_IACMSkin .rgPageNext {
+    background-position: -11px -111px;
+}
+.RadGridRTL_IACMSkin .rgPageNext:active {
+    background-position: -111px -111px;
+}
+.RadGridRTL_IACMSkin .rgPageLast {
+    background-position: -11px -711px;
+}
+.RadGridRTL_IACMSkin .rgPageLast:active {
+    background-position: -111px -711px;
+}
+.RadGridRTL_IACMSkin .rgExpand {
+    background-position: -12px -112px;
+}
+/*.RadGrid_IACMSkin col:first-of-type, .RadGrid_IACMSkin  col:first-of-type {
+  width: 27px !important;
+}*/
+.rgNoRecords td {
+    border-left: 1px solid #c5c5c5;
+    border-right: 1px solid #c5c5c5;
+}
+.RadGrid_IACMSkin .rgRow>td:last-of-type, .RadGrid_IACMSkin .rgAltRow>td:last-of-type,
+.RadGrid_IACMSkin .rgHeader:last-of-type, .RadGrid_IACMSkin th.rgResizeCol:last-of-type, .RadGrid_IACMSkin .rgHeaderWrapper:last-of-type {
+	border-right-width: 1px;
+}
+.RadGrid_IACMSkin .rgRow>:first-child, .RadGrid_IACMSkin .rgAltRow>td:first-child{
+    border-left: 1px solid #c5c5c5;
+}
+.rgPager td{
+    border-bottom: 1px solid #c5c5c5;
+    border-right: 1px solid #c5c5c5;
+}
+.rgClipCells .rgPager td:first-of-type {
+    border-right: 0;
+}
+.rgClipCells .rgHeader:first-of-type, .rgClipCells .rgFilterRow > td:first-child {
+    border-left-width: 0;
+}
+.RadGrid_IACMSkin .rgEditForm td {
+    padding: 3px;
+}
+.RadGrid_IACMSkin .rcbArrowCell, .RadGrid_IACMSkin .rcbInput, .RadGrid_IACMSkin .rcbInputCell {
+    background-color: transparent !important;
+    color: #666;
+}
+.RadGrid_IACMSkin .rcbArrowCell:hover, .RadGrid_IACMSkin .rcbInput:hover, .RadGrid_IACMSkin .rcbHovered {
+    background-color: #f5f5f5;
+    color: #666;
+}
+/*.rgHeaderWrapper .rgHeaderDiv {
+    margin-right: 16px;
+}*/
+.RadGrid_IACMSkin .rgAdvPart .rcbInput, .RadGrid_IACMSkin .rgAdvPart .rcbInput:focus, .RadGrid_IACMSkin .rgAdvPart .rcbInput:active {
+    color: #666 !important;
+    border: none !important;
+}
+.RadGrid .rgPager .RadComboBox {
+    width: 75px !important;
+}
+.RadGrid_IACMSkin .rgEditForm a {
+  color: #2077bd;
+  font-weight: 700;
+  font-size: 1em;
+  line-height: 1em;
+  padding: 0 0.5em;
+  height: auto;
+  position: relative;
+  margin: 5px 0;
+}

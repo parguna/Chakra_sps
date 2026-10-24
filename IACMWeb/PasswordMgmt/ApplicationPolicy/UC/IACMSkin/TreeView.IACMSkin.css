@@ -1,0 +1,58 @@
+/*@import url("../assets/styles/TreeView.css");*/
+
+.RadTreeView_IACMSkin {
+    font: inherit;
+}
+.RadTreeView_IACMSkin .rtIn, .RadTreeView .rtLines .rtTop, .RadTreeView .rtLines .rtMid, .RadTreeView .rtLines .rtBot, .RadTreeView .rtLines .rtLI {
+    background-image: none;
+}
+.RadTreeView_IACMSkin a.rtIn {
+    *color: #333
+}
+/*.RadTreeView_IACMSkin .rtHover .rtIn {
+    border-color: #b0b0b0;
+    color: #000;
+    background-color: #c5c5c5;
+    background-image: linear-gradient(#e1e1e1, #c5c5c5)
+}
+.RadTreeView_IACMSkin .rtSelected .rtIn {
+    border-color: #6c6c6c;
+    color: #fff;
+    background-color: #828282;
+    background-image: linear-gradient(#969696, #828282)
+}*/
+.RadTreeView_IACMSkin .rtEdit .rtIn input {
+    *color: #fff
+}
+.RadTreeView_IACMSkin .rtChecked,
+.RadTreeView_IACMSkin .rtUnchecked,
+.RadTreeView_IACMSkin .rtIndeterminate {
+    background-image: url('../Images/radFormToggleSprite.png')
+}
+.RadTreeView_IACMSkin .rtLoadingIcon {
+    background-image: url('../Images/loading_small.gif')
+}
+.RadTreeView_IACMSkin .rtPlus, RadTreeView_IACMSkin .rtPlusHover,
+.RadTreeView_IACMSkin .rtMinus, .RadTreeView_IACMSkin .rtMinusHover {
+    background-image: url('../../Images/Common/radActionsSprite.png')
+}
+.RadTreeView_IACMSkin_disabled .rtIn,
+.RadTreeView_IACMSkin .rtDisabled .rtIn {
+    color: #ccc
+}
+.RadTreeView .rtPlus, .RadTreeView .rtMinus {
+    height: 14px;
+    margin: 8px 3px 0 -17px;
+    width: 14px;
+}
+.RadTreeView .rtPlus {
+    background-position: -4px -64px;
+}
+.RadTreeView .rtMinus {
+    background-position: -3px -1383px;
+}
+.rtSelected .rtIn, .rtHover .rtIn {
+    background: #207bbd none repeat scroll 15px 0;
+    border-radius: 2px;
+    color: #fff;
+}

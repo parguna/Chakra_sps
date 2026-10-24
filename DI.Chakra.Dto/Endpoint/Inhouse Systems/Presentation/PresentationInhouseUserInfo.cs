@@ -1,0 +1,123 @@
+﻿using DI.Chakra.Infrastructure.Enums;
+using System;
+
+namespace DI.Chakra.Dto.Presentation
+{
+    [Serializable]
+    public class PresentationInhouseUserInfo: IIDMSReportPropertyExtractor
+    {
+        public long ReconciliationId { get; set; }
+        public long UserId { get; set; }
+        public long Id { get; set; }
+        public long? DIUserID { get; set; }
+        public string UserName { get; set; }
+        public string InhouseSystemCode { get; set; }
+        public string DisplayName { get; set; }
+        public string NRIC { get; set; }
+        public string Email { get; set; }
+        public string EmployeeId { get; set; }
+        public int InhouseSystemId { get; set; }
+        public Nullable<int> EndpointSystemId { get; set; }
+        public string SystemName { get; set; }
+        public string ApplicationOwner { get; set; }
+        public string Permission { get; set; }
+        public string SystemCode { get; set; }
+        public bool IsActive { get; set; }
+        public bool IsDisabled { get; set; }
+        public bool IsLocked { get; set; }
+        public bool IsDeleted { get; set; }
+        public AccountType AccountType { get; set; }
+        public string AccountTypeString
+        {
+            get
+            {
+                return Convert.ToString(AccountType);
+            }
+            set
+            {
+            }
+        }
+        public LockScenario Lockscenario { get; set; }
+
+
+        public System.DateTime? AccountCreatedDate { get; set; }
+        public System.DateTime? LastLoginDate { get; set; }
+        public System.DateTime? DisabledDate { get; set; }
+        public System.DateTime? DeletedDate { get; set; }
+        public string CreatedBy { get; set; }
+        public System.DateTime CreatedDate { get; set; }
+        public string LastModifiedBy { get; set; }
+        public Nullable<System.DateTime> LastModifiedDate { get; set; }
+        public string IsMapped { get; set; }
+        public string Owner { get; set; }
+        public string Remarks1 { get; set; }
+        public string Remarks2 { get; set; }
+        public string Remarks3 { get; set; }
+        public string Remarks4 { get; set; }
+        public string Remarks5 { get; set; }
+        public string GetReportPropertyValue(string propertyName, string format)
+        {
+            var returnValue = string.Empty;
+            switch (propertyName)
+            {
+                case "UserName":
+                    returnValue = UserName ?? "";
+                    break;
+                case "InhouseSystemCode":
+                    returnValue = InhouseSystemCode ?? "";
+                    break;
+                case "EmployeeId":
+                    returnValue = EmployeeId ?? "";
+                    break;
+                case "Email":
+                    returnValue = Email ?? "";
+                    break;
+                case "DisplayName":
+                    returnValue = DisplayName ?? "";
+                    break;
+                
+                case "AccountType":
+                    returnValue = AccountType.ToString();
+                    break;
+                case "AccountCreatedDate":
+                    returnValue = AccountCreatedDate.HasValue ? AccountCreatedDate.Value.ToString("dd-MM-yyyy") : "";
+                    break;
+                case "LastLoginDate":
+                    returnValue = LastLoginDate.HasValue ? LastLoginDate.Value.ToString("dd-MM-yyyy") : "";
+                    break;
+                case "IsLocked":
+                    returnValue = IsLocked.ToString();
+                    break;
+                case "IsDisabled":
+                    returnValue = IsDisabled.ToString();
+                    break;
+                case "IsDeleted":
+                    returnValue = IsDeleted.ToString();
+                    break;
+                case "Remarks1":
+                    returnValue = Remarks1 ?? "";
+                    break;
+                case "Remarks2":
+                    returnValue = Remarks2 ?? "";
+                    break;
+                case "Remarks3":
+                    returnValue = Remarks3 ?? "";
+                    break;
+                case "Remarks4":
+                    returnValue = Remarks4 ?? "";
+                    break;
+                case "Remarks5":
+                    returnValue = Remarks5 ?? "";
+                    break;
+                case "Permission":
+                    returnValue = Permission ?? "";
+                    break;
+                
+                default:
+                    break;
+            }
+            return returnValue;
+        }
+
+    }
+}

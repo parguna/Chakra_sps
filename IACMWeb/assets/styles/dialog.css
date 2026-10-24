@@ -1,0 +1,13 @@
+﻿@import url(../bootstrap/css/bootstrap.min.css);
+@import url(../iacm/appIacmSkin.css);
+
+
+body{
+    background: #FFF !important;
+}
+div#ReplacePage {
+    display: none;
+}
+.form-control, .input-group-addon, .input-group-btn .btn, input, select {
+    height: auto !important;
+}

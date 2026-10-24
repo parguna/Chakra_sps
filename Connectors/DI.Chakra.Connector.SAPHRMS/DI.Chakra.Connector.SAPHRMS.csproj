@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D419E494-94B8-4957-B990-8603161108A8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DI.Chakra.Connector.SAPHRMS</RootNamespace>
+    <AssemblyName>DI.Chakra.Connector.SAPHRMS</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Web - DEBUG|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Web - DEBUG\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Web - DEBUG|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Web - DEBUG\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="rscp4n">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\3rdParty\SAP3.1\rscp4n.dll</HintPath>
+    </Reference>
+    <Reference Include="SAP.Connector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=50436dca5c7f7d23">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Assemblies\SAP.Connector.dll</HintPath>
+    </Reference>
+    <Reference Include="SAP.Connector.Rfc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=50436dca5c7f7d23">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Assemblies\SAP.Connector.Rfc.dll</HintPath>
+    </Reference>
+    <Reference Include="SAPComp, Version=1.0.5194.25935, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Assemblies\SAPComp.dll</HintPath>
+    </Reference>
+    <Reference Include="sapnco">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\3rdParty\SAP3.1\sapnco.dll</HintPath>
+    </Reference>
+    <Reference Include="sapnco_utils">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\3rdParty\SAP3.1\sapnco_utils.dll</HintPath>
+    </Reference>
+    <Reference Include="SAPUserDetailsComponent, Version=1.0.4441.29424, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Assemblies\SAPUserDetailsComponent.dll</HintPath>
+    </Reference>
+    <Reference Include="SAPUserGrp, Version=1.0.5556.14477, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Assemblies\SAPUserGrp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SAPHRMSConnector.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DI.Chakra.DomainModel\DI.Chakra.DomainModel.csproj">
+      <Project>{dba76d9a-9381-4313-8cf0-b1098be94d41}</Project>
+      <Name>DI.Chakra.DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DI.Chakra.EntityModel\DI.Chakra.EntityModel.csproj">
+      <Project>{65af207b-2342-4009-b3ea-0c829ff25cdc}</Project>
+      <Name>DI.Chakra.EntityModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DI.Chakra.ProvisioningUtility\DI.Chakra.ProvisioningUtility.csproj">
+      <Project>{89971326-900C-4030-96B0-04B45D4E9142}</Project>
+      <Name>DI.Chakra.ProvisioningUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DI.Chakra.Transaction\DI.Chakra.Transaction.csproj">
+      <Project>{4f42aeb0-8003-4791-afc4-3a70a421fd58}</Project>
+      <Name>DI.Chakra.Transaction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Connector.SAPBase\DI.Chakra.Connector.SAPBase.csproj">
+      <Project>{a79236ae-f25f-4f41-88e8-0ca1227f1e87}</Project>
+      <Name>DI.Chakra.Connector.SAPBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Connector\DI.Chakra.Connector.csproj">
+      <Project>{04c4c7c7-177d-462d-ae23-8fc918327791}</Project>
+      <Name>DI.Chakra.Connector</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DI.Chakra.Logger\DI.Chakra.Logger.csproj">
+      <Project>{1e273971-c665-4e37-88ec-9621c81a7009}</Project>
+      <Name>DI.Chakra.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DI.Chakra.Infrastructure\DI.Chakra.Infrastructure.csproj">
+      <Project>{9a13b27d-b9dc-474a-9fe6-1c60fd52e5a7}</Project>
+      <Name>DI.Chakra.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="bin\Debug\DI.Chakra.Connector.dll.config" />
+    <None Include="bin\Debug\DI.Chakra.Connector.SAPHRMS.dll.config" />
+    <None Include="bin\Debug\DI.Chakra.DBClient.dll.config" />
+    <None Include="bin\Debug\DI.Chakra.DomainModel.dll.config" />
+    <None Include="bin\Debug\DI.Chakra.Dto.dll.config" />
+    <None Include="bin\Debug\DI.Chakra.Logger.dll.config" />
+    <None Include="bin\Debug\DI.Chakra.Repository.dll.config" />
+    <None Include="bin\Debug\DI.Chakra.Services.EmailingProcessor.dll.config" />
+    <None Include="bin\Debug\DI.Chakra.Transaction.dll.config" />
+    <None Include="bin\Debug\DI.Chakra.Workflow.ServiceHelpers.dll.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\DI.Chakra.Connector.dll" />
+    <Content Include="bin\Debug\DI.Chakra.Connector.pdb" />
+    <Content Include="bin\Debug\DI.Chakra.Connector.SAPHRMS.dll" />
+    <Content Include="bin\Debug\DI.Chakra.Connector.SAPHRMS.pdb" />
+    <Content Include="bin\Debug\DI.Chakra.DBClient.dll" />
+    <Content Include="bin\Debug\DI.Chakra.DBClient.pdb" />
+    <Content Include="bin\Debug\DI.Chakra.DomainModel.dll" />
+    <Content Include="bin\Debug\DI.Chakra.DomainModel.pdb" />
+    <Content Include="bin\Debug\DI.Chakra.Dto.dll" />
+    <Content Include="bin\Debug\DI.Chakra.Dto.pdb" />
+    <Content Include="bin\Debug\DI.Chakra.EntityModel.dll" />
+    <Content Include="bin\Debug\DI.Chakra.EntityModel.pdb" />
+    <Content Include="bin\Debug\DI.Chakra.Infrastructure.dll" />
+    <Content Include="bin\Debug\DI.Chakra.Infrastructure.pdb" />
+    <Content Include="bin\Debug\DI.Chakra.Logger.dll" />
+    <Content Include="bin\Debug\DI.Chakra.Logger.pdb" />
+    <Content Include="bin\Debug\DI.Chakra.ProvisioningUtility.dll" />
+    <Content Include="bin\Debug\DI.Chakra.ProvisioningUtility.pdb" />
+    <Content Include="bin\Debug\DI.Chakra.Repository.dll" />
+    <Content Include="bin\Debug\DI.Chakra.Repository.pdb" />
+    <Content Include="bin\Debug\DI.Chakra.Services.EmailingProcessor.dll" />
+    <Content Include="bin\Debug\DI.Chakra.Services.EmailingProcessor.pdb" />
+    <Content Include="bin\Debug\DI.Chakra.Transaction.dll" />
+    <Content Include="bin\Debug\DI.Chakra.Transaction.pdb" />
+    <Content Include="bin\Debug\DI.Chakra.Workflow.ServiceHelpers.dll" />
+    <Content Include="bin\Debug\DI.Chakra.Workflow.ServiceHelpers.pdb" />
+    <Content Include="bin\Debug\EntityFramework.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\Debug\EntityFramework.xml" />
+    <Content Include="bin\Debug\EPPlus.dll" />
+    <Content Include="bin\Debug\EPPlus.xml" />
+    <Content Include="bin\Debug\libicudecnumber.dll" />
+    <Content Include="bin\Debug\Newtonsoft.Json.dll" />
+    <Content Include="bin\Debug\Newtonsoft.Json.xml" />
+    <Content Include="bin\Debug\SAP.Connector.dll" />
+    <Content Include="bin\Debug\SAP.Connector.Rfc.dll" />
+    <Content Include="bin\Debug\SAPComp.dll" />
+    <Content Include="bin\Debug\SAPUserDetailsComponent.dll" />
+    <Content Include="bin\Debug\SAPUserGrp.dll" />
+    <Content Include="bin\Debug\System.Linq.Dynamic.dll" />
+    <Content Include="bin\Debug\System.Management.Automation.dll" />
+    <Content Include="bin\Debug\System.Net.Http.Formatting.dll" />
+    <Content Include="bin\Debug\System.Net.Http.Formatting.xml" />
+    <Content Include="bin\Debug\TrackerEnabledDbContext.Common.dll" />
+    <Content Include="bin\Debug\TrackerEnabledDbContext.dll" />
+    <Content Include="bin\Release\libicudecnumber.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

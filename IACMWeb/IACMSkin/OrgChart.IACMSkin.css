@@ -1,0 +1,409 @@
+﻿
+.RadOrgChart_IACMSkin {
+    line-height: 1.42857;
+    white-space: nowrap;
+    width: 100% !important;
+    overflow:auto;
+}
+.RadOrgChart_IACMSkin ul {
+    margin: 0;
+    padding: 0;
+}
+.RadOrgChart_IACMSkin .rocViewPort {
+    margin: 0 auto;
+    text-align: center;
+}
+.RadOrgChart_IACMSkin .rocNodeList {
+    list-style: outside none none;
+    margin-top: 50px;
+    padding: 0;
+}
+.RadOrgChart_IACMSkin .rocNode {
+    display: inline-block;
+    padding: 0 5px;
+    position: relative;
+    vertical-align: top;
+    /*margin-right: 5px;*/
+}
+.RadOrgChart_IACMSkin .rocNode.rocShadowNode {
+    opacity: 0.5;
+}
+.RadOrgChart_IACMSkin .rocGroup {
+    display: inline-block;
+    padding: 0 9px 9px;
+    position: relative;
+    text-align: left;
+    vertical-align: top;
+    width: auto!important;
+    background-color: #ECECEC;
+}
+.RadOrgChart_IACMSkin .rocItemList {
+    clear: both;
+    list-style: outside none none;
+    padding: 0;
+}
+.RadOrgChart_IACMSkin .rocItemWrap {
+    display: inline-block;
+    margin: 10px 10px 0 0;
+    vertical-align: top;
+    width: 16.6667em;
+}
+.RadOrgChart_IACMSkin .rocItemWrap.rocFirst, .RadOrgChart_IACMSkin .rocItemWrap.rocFirstInRow {
+    margin-left: 0;
+}
+.RadOrgChart_IACMSkin .rocItemWrap.rocLast, .RadOrgChart_IACMSkin .rocItemWrap.rocLastInRow {
+    margin-right: 0;
+}
+.RadOrgChart_IACMSkin .rocItem {
+    border: 1px solid #A5D1F3;
+    box-sizing: border-box;
+    height: 8.33333em;
+    margin: 0 auto;
+    padding: 0.833333em;
+    position: relative;
+    text-align: left;
+    white-space: normal;
+    width: auto;
+    font-size: 11.5px;
+    background: #daeeff;
+}
+.RadOrgChart_IACMSkin .rocItem {
+    padding-left: 5.66667em;
+}
+.RadOrgChart_IACMSkin .rocItem.rocNoOwnImage, .RadOrgChart_IACMSkin .rocItem.rocNotLoadedItem {
+    padding-left: 0.833333em;
+}
+.RadOrgChart_IACMSkin .rocItem.rocShadowItem {
+    opacity: 0.5;
+}
+.RadOrgChart_IACMSkin .rocItem.rocItemTemplate {
+    padding-left: 0.83333em;
+}
+.rocItemTemplate span:first-of-type {
+    font-weight: 700;
+    color: #207bbd;
+    font-size:12px;
+}
+.RadOrgChart_IACMSkin .rocItem.rocEmptyItem {
+    background: transparent none repeat scroll 0 0;
+    border-color: transparent;
+}
+.RadOrgChart_IACMSkin .rocItemText {
+    max-height: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.RadOrgChart_IACMSkin .rocItemField {
+    margin-top: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 700;
+    color: #207bbd;
+}
+.RadOrgChart_IACMSkin .rocImage {
+    left: 0.833333em;
+    overflow: hidden;
+    position: absolute;
+    top: 0.833333em;
+    width: 4em;
+}
+.RadOrgChart_IACMSkin .rocImageReplacement::before {
+    content:"\e251";
+    font-family: "Glyphicons Halflings";
+    font-size: 4.7em;
+    left: 0.0882768em;
+    line-height: 1em;
+    opacity: 0.3;
+    position: absolute;
+    text-indent: -0.0886525em;
+    top: 0.177305em;
+}
+.RadOrgChart_IACMSkin .rocImageWrap {
+    position: absolute;
+    top: 0.2em;
+    left: 0.2em;
+}
+.RadOrgChart_IACMSkin .rocNode::before {
+    border-top: 1px dotted;
+    content: "";
+    left: 0;
+    position: absolute;
+    top: -25px;
+    width: 100%;
+}
+.RadOrgChart_IACMSkin .rocFirst::before {
+    left: 50%;
+    width: 50%;
+}
+.RadOrgChart_IACMSkin .rocLast::before {
+    width: 50%;
+}
+.RadOrgChart_IACMSkin .rocRootNode::before, .RadOrgChart_IACMSkin .rocOnly::before {
+    display: none;
+}
+.RadOrgChart_IACMSkin .rocGroup::before, .RadOrgChart_IACMSkin.rocSimple .rocNode::after {
+    border-left: 1px dotted #999;
+    content: "";
+    height: 24px;
+    left: 50%;
+    position: absolute;
+    top: -25px;
+}
+.RadOrgChart_IACMSkin .rocRootNode > .rocGroup::before, .RadOrgChart_IACMSkin.rocSimple .rocRootNode::after {
+    display: none;
+}
+.RadOrgChart_IACMSkin .rocGroup::after, .RadOrgChart_IACMSkin.rocSimple .rocItem::after, .RadOrgChart_IACMSkin.rocSimple .rocItemTemplate::after {
+    /*border-left: 1px dotted #999;*/
+    bottom: -25px;
+    content: "";
+    height: 25px;
+    left: 50%;
+    position: absolute;
+}
+.RadOrgChart_IACMSkin .rocLastLevel .rocGroup::after, .RadOrgChart_IACMSkin.rocSimple .rocLastLevel .rocItem::after, .RadOrgChart_IACMSkin.rocSimple .rocLastLevel .rocItemTemplate::after, .RadOrgChart_IACMSkin .rocLoadingNodes > .rocGroup::after, .RadOrgChart_IACMSkin.rocSimple .rocLoadingNodes > .rocItem::after, .RadOrgChart_IACMSkin.rocSimple .rocLoadingNodes > .rocItemTemplate::after {
+    display: none;
+}
+.RadOrgChart_IACMSkin .rocExpandArrow, .RadOrgChart_IACMSkin .rocCollapseArrow, .RadOrgChart_IACMSkin .rocExpandGroupArrow, .RadOrgChart_IACMSkin .rocCollapseGroupArrow {
+    border: 1px solid #A5D1F3;
+    cursor: pointer;
+    font-family: "Glyphicons Halflings";
+    font-size: 8px;
+    height: 18px;
+    line-height: 13px;
+    overflow: hidden;
+    padding: 2px 4px;
+    position: relative;
+    text-align: center;
+    width: 18px;
+    z-index: 1;
+    border-radius: 3px;
+   color: #207bbd;
+    background-color: #D0EAFF;
+}
+.RadOrgChart_IACMSkin .rocExpandArrow:hover, .RadOrgChart_IACMSkin .rocCollapseArrow:hover, .RadOrgChart_IACMSkin .rocExpandGroupArrow:hover, .RadOrgChart_IACMSkin .rocCollapseGroupArrow:hover {
+    text-decoration: none;
+}
+.RadOrgChart_IACMSkin .rocExpandArrow::before, .RadOrgChart_IACMSkin .rocCollapseArrow::before, .RadOrgChart_IACMSkin .rocExpandGroupArrow::before, .RadOrgChart_IACMSkin .rocCollapseGroupArrow::before {
+    display: block;
+}
+.RadOrgChart_IACMSkin .rocExpandArrow, .RadOrgChart_IACMSkin .rocCollapseArrow {
+    bottom: -36px;
+    left: 50%;
+    margin-left: -9px;
+    position: absolute;
+}
+.RadOrgChart_IACMSkin .rocExpandArrow:hover, .RadOrgChart_IACMSkin .rocCollapseArrow:hover {
+    text-decoration: none;
+}
+.RadOrgChart_IACMSkin .rocExpandGroupArrow, .RadOrgChart_IACMSkin .rocCollapseGroupArrow {
+    float: right;
+    margin-top: 10px;
+}
+.RadOrgChart_IACMSkin .rocExpandGroupArrow::before {
+    content: "\e250";
+}
+.RadOrgChart_IACMSkin .rocCollapseGroupArrow::before {
+    content:"\e251";
+}
+.RadOrgChart_IACMSkin .rocExpandArrow::before {
+    content: "\002b";
+}
+.RadOrgChart_IACMSkin .rocCollapseArrow::before {
+    content: "\2212";
+}
+.RadOrgChart_IACMSkin .rocLoadingNodes .rocExpandArrow, .RadOrgChart_IACMSkin .rocLoadingNodes .rocCollapseArrow, .RadOrgChart_IACMSkin .rocLoadingGroups .rocExpandGroupArrow, .RadOrgChart_IACMSkin .rocLoadingGroups .rocCollapseGroupArrow {
+    background-position: 6px 6px;
+    background-repeat: no-repeat;
+}
+.RadOrgChart_IACMSkin .rocLoadingNodes .rocExpandArrow::before, .RadOrgChart_IACMSkin .rocLoadingNodes .rocCollapseArrow::before, .RadOrgChart_IACMSkin .rocLoadingGroups .rocExpandGroupArrow::before, .RadOrgChart_IACMSkin .rocLoadingGroups .rocCollapseGroupArrow::before {
+    content: "";
+}
+.RadOrgChart_IACMSkin .rocLoadingGroups .rocExpandGroupArrow, .RadOrgChart_IACMSkin .rocLoadingGroups .rocCollapseGroupArrow {
+    top: 0.416667em;
+}
+.RadOrgChart_IACMSkin .rocCollapsedNode .rocLineDown {
+    display: none;
+}
+.RadOrgChart_IACMSkin .rocCollapsedNode .rocNodeList {
+    display: none;
+}
+.RadOrgChart_IACMSkin .rocCollapsedGroup .rocItemWrap {
+    display: none;
+}
+.RadOrgChart_IACMSkin .rocCollapsedGroup .rocItemWrap.rocFirst {
+    display: inline-block;
+    margin-right: 0;
+}
+.RadOrgChart_IACMSkin.rocHorizontal {
+    padding-top: 28px;
+}
+.RadOrgChart_IACMSkin.rocHorizontal .rocViewPort {
+    text-align: left;
+}
+.RadOrgChart_IACMSkin.rocHorizontal .rocNodeFields {
+    padding: 0 3px;
+}
+.RadOrgChart_IACMSkin.rocHorizontal .rocNodeList {
+    display: inline-block;
+    margin-left: 45px;
+    margin-top: 0;
+    vertical-align: middle;
+}
+.RadOrgChart_IACMSkin.rocHorizontal .rocRootNodeList {
+    margin-left: 0;
+}
+.RadOrgChart_IACMSkin.rocHorizontal .rocCollapsedNode .rocNodeList {
+    display: none;
+}
+.RadOrgChart_IACMSkin.rocHorizontal .rocNode {
+    display: block;
+    padding: 16px 0;
+}
+.RadOrgChart_IACMSkin.rocHorizontal .rocGroup {
+    display: inline-block;
+    vertical-align: middle;
+}
+.RadOrgChart_IACMSkin.rocHorizontal .rocItemList {
+    margin: 0;
+}
+.RadOrgChart_IACMSkin.rocHorizontal .rocExpandArrow, .RadOrgChart_IACMSkin.rocHorizontal .rocCollapseArrow {
+    left: auto;
+    margin-top: -10px;
+    right: -34px;
+    top: 50%;
+}
+.RadOrgChart_IACMSkin.rocHorizontal .rocCollapseGroupArrow, .RadOrgChart_IACMSkin.rocHorizontal .rocExpandGroupArrow {
+    margin-right: 5px;
+}
+.RadOrgChart_IACMSkin.rocHorizontal .rocGroup::before, .RadOrgChart_IACMSkin.rocHorizontal.rocSimple .rocNode::after {
+    border-top: 1px dotted;
+    height: 0;
+    left: -22px;
+    top: 50%;
+    width: 20px;
+}
+.RadOrgChart_IACMSkin.rocHorizontal .rocGroup::after, .RadOrgChart_IACMSkin.rocHorizontal.rocSimple .rocItem::after, .RadOrgChart_IACMSkin.rocHorizontal.rocSimple .rocItemTemplate::after {
+    border-top: 1px dotted #999;
+    height: 0;
+    left: auto;
+    right: -22px;
+    top: 50%;
+    width: 20px;
+}
+.RadOrgChart_IACMSkin.rocHorizontal .rocNode::before {
+    border-left: 1px dotted;
+    height: 100%;
+    left: -23px;
+    top: 0;
+    width: 0;
+}
+.RadOrgChart_IACMSkin.rocHorizontal .rocFirst::before {
+    height: 50%;
+    top: 50%;
+}
+.RadOrgChart_IACMSkin.rocHorizontal .rocLast::before {
+    height: 50%;
+}
+.RadOrgChart_IACMSkin.rocHorizontal.rocSimple .rocItem, .RadOrgChart_IACMSkin.rocHorizontal.rocSimple .rocItemTemplate {
+    display: inline-block;
+    vertical-align: middle;
+}
+.RadOrgChart_IACMSkin .rocDetachedItem,.RadOrgChart_IACMSkin .rocDetachedNode {
+    border: 1px solid;
+    display: none;
+    overflow: hidden;
+    padding: 10px 10px 10px 30px;
+    position: absolute;
+    white-space: nowrap;
+    z-index: 9000;
+}
+.RadOrgChart_IACMSkin .rocDetachedItem::before,.RadOrgChart_IACMSkin .rocDetachedNode::before {
+    display: inline-block;
+    font-family: "TelerikWebUI";
+    font-size: 1.4em;
+    margin: 0 7px 0 -22px;
+    vertical-align: bottom;
+}
+.RadOrgChart_IACMSkin .rocDetachedItem.rocNoDropClue::before, .RadOrgChart_IACMSkin .rocDetachedNode.rocNoDropClue::before {
+    content: "";
+}
+.RadOrgChart_IACMSkin .rocDetachedItem.rocAddClue::before, .RadOrgChart_IACMSkin .rocDetachedNode.rocAddClue::before {
+    content: "";
+}
+.RadOrgChart_IACMSkin .rocDetachedItem.rocAppendClue::before, .RadOrgChart_IACMSkin .rocDetachedNode.rocAppendClue::before {
+    border-top: 1px solid;
+    content: "";
+}
+.RadOrgChart_IACMSkin .rocToolbar {
+    display: none;
+    line-height: 1.42857;
+    padding: 4px;
+    position: absolute;
+    z-index: 3000;
+}
+.RadOrgChart_IACMSkin .rocToolbar::after {
+    clear: both;
+    content: "";
+    display: block;
+    height: 0;
+}
+.RadOrgChart_IACMSkin .rocToolbar ul {
+    list-style: outside none none;
+    margin: 0 0 0 -0.25em;
+    padding: 0;
+}
+.RadOrgChart_IACMSkin .rocToolbar ul::after {
+    clear: both;
+    content: "";
+    display: block;
+    height: 0;
+}
+.RadOrgChart_IACMSkin .rocToolbar li {
+    float: left;
+    margin: 0 0 0 0.25em;
+}
+.RadOrgChart_IACMSkin .rocToolbar .rocToolbarButton {
+    border: 1px solid;
+    color: inherit;
+    display: block;
+    font-family: "TelerikWebUI";
+    font-size: 16px;
+    line-height: 16px;
+    padding: 2px;
+    text-align: center;
+    text-decoration: none;
+    width: 16px;
+}
+.RadOrgChart_IACMSkin .rocToolbar .rocToolbarButton::before {
+    content: "";
+}
+.RadOrgChart_IACMSkin .rocToolbar .rocToolbarButton.rocActionGoToParent::before {
+    content: "";
+}
+.RadOrgChart_IACMSkin .rocToolbar .rocToolbarButton.rocActionGoToRoot::before {
+    content: "";
+}
+.RadOrgChart_IACMSkin .rocToolbar .rocHidden {
+    display: none;
+}
+/*.RadOrgChart_IACMSkin .rocLast .rocGroup::after {
+    display: none
+}*/
+.RadOrgChart_IACMSkin .rocLast .rocGroup::before {
+    left: 49%;
+}
+.rocNode.rocExpandedNode>.rocGroup::after{
+    border-left:1px dotted #999;
+}
+.rocNode.rocFirst:before {
+    margin-left: 2px;
+}
+.RadOrgChart_IACMSkin .rocCollapsedNode .rocGroup:after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -25px;
+    height: 25px;
+    border-left: 1px dotted #999;
+}

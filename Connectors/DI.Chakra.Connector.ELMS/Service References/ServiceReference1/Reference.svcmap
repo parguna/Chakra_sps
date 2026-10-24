@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d037d42d-b832-43e9-b0e3-1e3dfc8707fd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address=" http://di-yasila/RWSDemoSvcNew/WcfService_RWSDemoSvcNew.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WcfService_RWSDemoSvcNew.xsd" MetadataType="Schema" ID="2b90674d-17dd-4da7-b136-d95a6c478273" SourceId="1" SourceUrl="http://di-yasila/RWSDemoSvcNew/WcfService_RWSDemoSvcNew.svc?xsd=xsd3" />
+    <MetadataFile FileName="BizTalkServiceInstance.wsdl" MetadataType="Wsdl" ID="69b8045b-e42c-4f46-897f-2664d1be82f8" SourceId="1" SourceUrl="http://di-yasila/RWSDemoSvcNew/WcfService_RWSDemoSvcNew.svc?wsdl" />
+    <MetadataFile FileName="WcfService_RWSDemoSvcNew1.xsd" MetadataType="Schema" ID="7fd086d8-d732-48ec-b17d-dc8a953b77c1" SourceId="1" SourceUrl="http://di-yasila/RWSDemoSvcNew/WcfService_RWSDemoSvcNew.svc?xsd=xsd7" />
+    <MetadataFile FileName="WcfService_RWSDemoSvcNew2.xsd" MetadataType="Schema" ID="46ed418c-7a2e-4ef3-858b-c62668844fc7" SourceId="1" SourceUrl="http://di-yasila/RWSDemoSvcNew/WcfService_RWSDemoSvcNew.svc?xsd=xsd4" />
+    <MetadataFile FileName="WcfService_RWSDemoSvcNew.disco" MetadataType="Disco" ID="88ea99be-909d-45ca-ac2e-fc3e93e0d8a6" SourceId="1" SourceUrl="http://di-yasila/RWSDemoSvcNew/WcfService_RWSDemoSvcNew.svc?disco" />
+    <MetadataFile FileName="WcfService_RWSDemoSvcNew3.xsd" MetadataType="Schema" ID="7d646cb5-112a-4d66-8ae3-02b62a7ef815" SourceId="1" SourceUrl="http://di-yasila/RWSDemoSvcNew/WcfService_RWSDemoSvcNew.svc?xsd=xsd6" />
+    <MetadataFile FileName="WcfService_RWSDemoSvcNew4.xsd" MetadataType="Schema" ID="a15aacd2-1a0e-487f-abfe-9593cbe5d082" SourceId="1" SourceUrl="http://di-yasila/RWSDemoSvcNew/WcfService_RWSDemoSvcNew.svc?xsd=xsd5" />
+    <MetadataFile FileName="WcfService_RWSDemoSvcNew5.xsd" MetadataType="Schema" ID="7ab5bda0-00a9-49f6-8337-92179099259c" SourceId="1" SourceUrl="http://di-yasila/RWSDemoSvcNew/WcfService_RWSDemoSvcNew.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

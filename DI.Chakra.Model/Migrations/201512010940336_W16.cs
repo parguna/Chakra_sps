@@ -1,0 +1,154 @@
+namespace DI.Chakra.Model.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class W16 : DbMigration
+    {
+        public override void Up()
+        {
+            DropForeignKey("dbo.DI_M_ReviewEndpointSystems", "AttestationReviewEndpointSystem_Id", "dbo.DI_M_AttestationReview_EndpointSystem");
+            DropForeignKey("dbo.DI_M_ProvisioningForm", "EndPoint_Id", "dbo.DI_M_EndpointSystem");
+            DropForeignKey("dbo.DI_M_Attestation_Endpoint", "EndPoint_Id", "dbo.DI_M_EndpointSystem");
+            DropForeignKey("dbo.DI_INH_Permission", "EndPoint_Id", "dbo.DI_M_EndpointSystem");
+            DropForeignKey("dbo.DI_INH_UserInfo", "EndPoint_Id", "dbo.DI_M_EndpointSystem");
+            DropForeignKey("dbo.DI_M_TaskReviews", "AttestationReview_Id", "dbo.DI_M_AttestationReview");
+            DropForeignKey("dbo.DI_M_PasswordPolicyEndpoint", "Endpoint_Id", "dbo.DI_M_EndpointSystem");
+            DropIndex("dbo.DI_M_ReviewEndpointSystems", new[] { "AttestationReviewEndpointSystem_Id" });
+            DropIndex("dbo.DI_M_ProvisioningForm", new[] { "EndPoint_Id" });
+            DropIndex("dbo.DI_M_Attestation_Endpoint", new[] { "EndPoint_Id" });
+            DropIndex("dbo.DI_INH_Permission", new[] { "EndPoint_Id" });
+            DropIndex("dbo.DI_INH_UserInfo", new[] { "EndPoint_Id" });
+            DropIndex("dbo.DI_M_TaskReviews", new[] { "AttestationReview_Id" });
+            DropIndex("dbo.DI_M_PasswordPolicyEndpoint", new[] { "Endpoint_Id" });
+            //DropColumn("dbo.DI_M_AdHocAccessRequest", "EndpointSystemId");
+            //DropColumn("dbo.DI_M_ReviewEndpointSystems", "ReviewEndpointId");
+            //DropColumn("dbo.DI_M_ProvisioningForm", "EndpointSystemId");
+            //DropColumn("dbo.DI_M_Attestation_Endpoint", "EndpointSystemId");
+            //DropColumn("dbo.DI_M_WorkflowConfiguration", "EndpointSystemId");
+            //DropColumn("dbo.DI_INH_Permission", "EndPointSystemId");
+            //DropColumn("dbo.DI_INH_UserInfo", "EndPointSystemId");
+            //DropColumn("dbo.DI_M_TaskReviews", "ReviewId");
+            //DropColumn("dbo.DI_M_PasswordPolicyEndpoint", "EndpointSystemId");
+            //RenameColumn(table: "dbo.DI_M_AdHocAccessRequest", name: "EndPoint_Id", newName: "EndpointSystemId");
+            //RenameColumn(table: "dbo.DI_M_ReviewEndpointSystems", name: "AttestationReviewEndpointSystem_Id", newName: "ReviewEndpointId");
+            //RenameColumn(table: "dbo.DI_M_ProvisioningForm", name: "EndPoint_Id", newName: "EndpointSystemId");
+            //RenameColumn(table: "dbo.DI_M_Attestation_Endpoint", name: "EndPoint_Id", newName: "EndpointSystemId");
+            //RenameColumn(table: "dbo.DI_M_WorkflowConfiguration", name: "Endpoint_Id", newName: "EndpointSystemId");
+            //RenameColumn(table: "dbo.DI_INH_Permission", name: "EndPoint_Id", newName: "EndPointSystemId");
+            //RenameColumn(table: "dbo.DI_INH_UserInfo", name: "EndPoint_Id", newName: "EndPointSystemId");
+            //RenameColumn(table: "dbo.DI_M_TaskReviews", name: "AttestationReview_Id", newName: "ReviewId");
+            //RenameColumn(table: "dbo.DI_M_PasswordPolicyEndpoint", name: "Endpoint_Id", newName: "EndpointSystemId");
+            //RenameIndex(table: "dbo.DI_M_AdHocAccessRequest", name: "IX_EndPoint_Id", newName: "IX_EndpointSystemId");
+            //RenameIndex(table: "dbo.DI_M_WorkflowConfiguration", name: "IX_Endpoint_Id", newName: "IX_EndpointSystemId");
+            AddColumn("dbo.DI_SAP_RoleCatalog", "EndpointSystemId", c => c.Int(nullable: false));
+            AddColumn("dbo.DI_SAP_RoleCatalog", "BusinessRole", c => c.String());
+            AddColumn("dbo.DI_SAP_RoleCatalog", "Description", c => c.String());
+            AlterColumn("dbo.DI_M_ReviewEndpointSystems", "ReviewEndpointId", c => c.Long(nullable: false));
+            AlterColumn("dbo.DI_M_ProvisioningForm", "EndpointSystemId", c => c.Int(nullable: false));
+            AlterColumn("dbo.DI_M_Attestation_Endpoint", "EndpointSystemId", c => c.Int(nullable: false));
+            AlterColumn("dbo.DI_INH_Permission", "EndPointSystemId", c => c.Int(nullable: false));
+            AlterColumn("dbo.DI_INH_UserInfo", "EndPointSystemId", c => c.Int(nullable: false));
+            AlterColumn("dbo.DI_M_TaskReviews", "ReviewId", c => c.Long(nullable: false));
+            AlterColumn("dbo.DI_M_PasswordPolicyEndpoint", "EndpointSystemId", c => c.Int(nullable: false));
+            AlterColumn("dbo.DI_SAP_RoleCatalog", "Application", c => c.String());
+            AlterColumn("dbo.DI_SAP_RoleCatalog", "TechnicalRole", c => c.String());
+            AlterColumn("dbo.DI_SAP_RoleCatalog", "Level1Approver", c => c.String());
+            AlterColumn("dbo.DI_SAP_RoleCatalog", "Level2Approver", c => c.String());
+            AlterColumn("dbo.DI_SAP_RoleCatalog", "Level3Approver", c => c.String());
+            //CreateIndex("dbo.DI_M_ReviewEndpointSystems", "ReviewEndpointId");
+            //CreateIndex("dbo.DI_M_ProvisioningForm", "EndpointSystemId");
+            //CreateIndex("dbo.DI_M_Attestation_Endpoint", "EndpointSystemId");
+            //CreateIndex("dbo.DI_INH_Permission", "EndPointSystemId");
+            //CreateIndex("dbo.DI_INH_UserInfo", "EndPointSystemId");
+            //CreateIndex("dbo.DI_M_TaskReviews", "ReviewId");
+            //CreateIndex("dbo.DI_M_PasswordPolicyEndpoint", "EndpointSystemId");
+            //AddForeignKey("dbo.DI_M_ReviewEndpointSystems", "ReviewEndpointId", "dbo.DI_M_AttestationReview_EndpointSystem", "Id", cascadeDelete: true);
+            //AddForeignKey("dbo.DI_M_ProvisioningForm", "EndpointSystemId", "dbo.DI_M_EndpointSystem", "Id", cascadeDelete: true);
+            //AddForeignKey("dbo.DI_M_Attestation_Endpoint", "EndpointSystemId", "dbo.DI_M_EndpointSystem", "Id", cascadeDelete: true);
+            //AddForeignKey("dbo.DI_INH_Permission", "EndPointSystemId", "dbo.DI_M_EndpointSystem", "Id", cascadeDelete: true);
+            //AddForeignKey("dbo.DI_INH_UserInfo", "EndPointSystemId", "dbo.DI_M_EndpointSystem", "Id", cascadeDelete: true);
+            //AddForeignKey("dbo.DI_M_TaskReviews", "ReviewId", "dbo.DI_M_AttestationReview", "Id", cascadeDelete: true);
+            //AddForeignKey("dbo.DI_M_PasswordPolicyEndpoint", "EndpointSystemId", "dbo.DI_M_EndpointSystem", "Id", cascadeDelete: true);
+            DropColumn("dbo.DI_SAP_RoleCatalog", "Remarks");
+            DropColumn("dbo.DI_SAP_RoleCatalog", "Module");
+            DropColumn("dbo.DI_SAP_RoleCatalog", "SubModule");
+            DropColumn("dbo.DI_SAP_RoleCatalog", "BusinessRoleName");
+            DropColumn("dbo.DI_SAP_RoleCatalog", "IsModified");
+            DropColumn("dbo.DI_SAP_RoleCatalog", "IsDeleted");
+        }
+        
+        public override void Down()
+        {
+            AddColumn("dbo.DI_SAP_RoleCatalog", "IsDeleted", c => c.Boolean());
+            AddColumn("dbo.DI_SAP_RoleCatalog", "IsModified", c => c.Boolean());
+            AddColumn("dbo.DI_SAP_RoleCatalog", "BusinessRoleName", c => c.String(maxLength: 250));
+            AddColumn("dbo.DI_SAP_RoleCatalog", "SubModule", c => c.String(maxLength: 250));
+            AddColumn("dbo.DI_SAP_RoleCatalog", "Module", c => c.String(maxLength: 250));
+            AddColumn("dbo.DI_SAP_RoleCatalog", "Remarks", c => c.String(maxLength: 250));
+            //DropForeignKey("dbo.DI_M_PasswordPolicyEndpoint", "EndpointSystemId", "dbo.DI_M_EndpointSystem");
+            //DropForeignKey("dbo.DI_M_TaskReviews", "ReviewId", "dbo.DI_M_AttestationReview");
+            //DropForeignKey("dbo.DI_INH_UserInfo", "EndPointSystemId", "dbo.DI_M_EndpointSystem");
+            //DropForeignKey("dbo.DI_INH_Permission", "EndPointSystemId", "dbo.DI_M_EndpointSystem");
+            //DropForeignKey("dbo.DI_M_Attestation_Endpoint", "EndpointSystemId", "dbo.DI_M_EndpointSystem");
+            //DropForeignKey("dbo.DI_M_ProvisioningForm", "EndpointSystemId", "dbo.DI_M_EndpointSystem");
+            //DropForeignKey("dbo.DI_M_ReviewEndpointSystems", "ReviewEndpointId", "dbo.DI_M_AttestationReview_EndpointSystem");
+            //DropIndex("dbo.DI_M_PasswordPolicyEndpoint", new[] { "EndpointSystemId" });
+            //DropIndex("dbo.DI_M_TaskReviews", new[] { "ReviewId" });
+            //DropIndex("dbo.DI_INH_UserInfo", new[] { "EndPointSystemId" });
+            //DropIndex("dbo.DI_INH_Permission", new[] { "EndPointSystemId" });
+            //DropIndex("dbo.DI_M_Attestation_Endpoint", new[] { "EndpointSystemId" });
+            //DropIndex("dbo.DI_M_ProvisioningForm", new[] { "EndpointSystemId" });
+            //DropIndex("dbo.DI_M_ReviewEndpointSystems", new[] { "ReviewEndpointId" });
+            AlterColumn("dbo.DI_SAP_RoleCatalog", "Level3Approver", c => c.String(maxLength: 250));
+            AlterColumn("dbo.DI_SAP_RoleCatalog", "Level2Approver", c => c.String(maxLength: 250));
+            AlterColumn("dbo.DI_SAP_RoleCatalog", "Level1Approver", c => c.String(maxLength: 250));
+            AlterColumn("dbo.DI_SAP_RoleCatalog", "TechnicalRole", c => c.String(maxLength: 250));
+            AlterColumn("dbo.DI_SAP_RoleCatalog", "Application", c => c.String(maxLength: 250));
+            //AlterColumn("dbo.DI_M_PasswordPolicyEndpoint", "EndpointSystemId", c => c.Int());
+            //AlterColumn("dbo.DI_M_TaskReviews", "ReviewId", c => c.Long());
+            //AlterColumn("dbo.DI_INH_UserInfo", "EndPointSystemId", c => c.Int());
+            //AlterColumn("dbo.DI_INH_Permission", "EndPointSystemId", c => c.Int());
+            //AlterColumn("dbo.DI_M_Attestation_Endpoint", "EndpointSystemId", c => c.Int());
+            //AlterColumn("dbo.DI_M_ProvisioningForm", "EndpointSystemId", c => c.Int());
+            //AlterColumn("dbo.DI_M_ReviewEndpointSystems", "ReviewEndpointId", c => c.Long());
+            DropColumn("dbo.DI_SAP_RoleCatalog", "Description");
+            DropColumn("dbo.DI_SAP_RoleCatalog", "BusinessRole");
+            DropColumn("dbo.DI_SAP_RoleCatalog", "EndpointSystemId");
+            //RenameIndex(table: "dbo.DI_M_WorkflowConfiguration", name: "IX_EndpointSystemId", newName: "IX_Endpoint_Id");
+            //RenameIndex(table: "dbo.DI_M_AdHocAccessRequest", name: "IX_EndpointSystemId", newName: "IX_EndPoint_Id");
+            //RenameColumn(table: "dbo.DI_M_PasswordPolicyEndpoint", name: "EndpointSystemId", newName: "Endpoint_Id");
+            //RenameColumn(table: "dbo.DI_M_TaskReviews", name: "ReviewId", newName: "AttestationReview_Id");
+            //RenameColumn(table: "dbo.DI_INH_UserInfo", name: "EndPointSystemId", newName: "EndPoint_Id");
+            //RenameColumn(table: "dbo.DI_INH_Permission", name: "EndPointSystemId", newName: "EndPoint_Id");
+            //RenameColumn(table: "dbo.DI_M_WorkflowConfiguration", name: "EndpointSystemId", newName: "Endpoint_Id");
+            //RenameColumn(table: "dbo.DI_M_Attestation_Endpoint", name: "EndpointSystemId", newName: "EndPoint_Id");
+            //RenameColumn(table: "dbo.DI_M_ProvisioningForm", name: "EndpointSystemId", newName: "EndPoint_Id");
+            //RenameColumn(table: "dbo.DI_M_ReviewEndpointSystems", name: "ReviewEndpointId", newName: "AttestationReviewEndpointSystem_Id");
+            //RenameColumn(table: "dbo.DI_M_AdHocAccessRequest", name: "EndpointSystemId", newName: "EndPoint_Id");
+            //AddColumn("dbo.DI_M_PasswordPolicyEndpoint", "EndpointSystemId", c => c.Int(nullable: false));
+            //AddColumn("dbo.DI_M_TaskReviews", "ReviewId", c => c.Long(nullable: false));
+            //AddColumn("dbo.DI_INH_UserInfo", "EndPointSystemId", c => c.Int(nullable: false));
+            //AddColumn("dbo.DI_INH_Permission", "EndPointSystemId", c => c.Int(nullable: false));
+            //AddColumn("dbo.DI_M_WorkflowConfiguration", "EndpointSystemId", c => c.Int());
+            //AddColumn("dbo.DI_M_Attestation_Endpoint", "EndpointSystemId", c => c.Int(nullable: false));
+            //AddColumn("dbo.DI_M_ProvisioningForm", "EndpointSystemId", c => c.Int(nullable: false));
+            //AddColumn("dbo.DI_M_ReviewEndpointSystems", "ReviewEndpointId", c => c.Long(nullable: false));
+            //AddColumn("dbo.DI_M_AdHocAccessRequest", "EndpointSystemId", c => c.Int());
+            //CreateIndex("dbo.DI_M_PasswordPolicyEndpoint", "Endpoint_Id");
+            //CreateIndex("dbo.DI_M_TaskReviews", "AttestationReview_Id");
+            //CreateIndex("dbo.DI_INH_UserInfo", "EndPoint_Id");
+            //CreateIndex("dbo.DI_INH_Permission", "EndPoint_Id");
+            //CreateIndex("dbo.DI_M_Attestation_Endpoint", "EndPoint_Id");
+            //CreateIndex("dbo.DI_M_ProvisioningForm", "EndPoint_Id");
+            //CreateIndex("dbo.DI_M_ReviewEndpointSystems", "AttestationReviewEndpointSystem_Id");
+            //AddForeignKey("dbo.DI_M_PasswordPolicyEndpoint", "Endpoint_Id", "dbo.DI_M_EndpointSystem", "Id");
+            //AddForeignKey("dbo.DI_M_TaskReviews", "AttestationReview_Id", "dbo.DI_M_AttestationReview", "Id");
+            //AddForeignKey("dbo.DI_INH_UserInfo", "EndPoint_Id", "dbo.DI_M_EndpointSystem", "Id");
+            //AddForeignKey("dbo.DI_INH_Permission", "EndPoint_Id", "dbo.DI_M_EndpointSystem", "Id");
+            //AddForeignKey("dbo.DI_M_Attestation_Endpoint", "EndPoint_Id", "dbo.DI_M_EndpointSystem", "Id");
+            //AddForeignKey("dbo.DI_M_ProvisioningForm", "EndPoint_Id", "dbo.DI_M_EndpointSystem", "Id");
+            //AddForeignKey("dbo.DI_M_ReviewEndpointSystems", "AttestationReviewEndpointSystem_Id", "dbo.DI_M_AttestationReview_EndpointSystem", "Id");
+        }
+    }
+}

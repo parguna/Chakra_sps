@@ -1,0 +1,1947 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A35DDE44-7C93-433D-A8A7-A41A06896A51}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DI.Chakra.Model</RootNamespace>
+    <AssemblyName>DI.Chakra.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\Solution\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Web - DEBUG|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Web - DEBUG\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'de|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\de\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.3\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.3\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services, Version=5.6.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Services.5.6.3\lib\net40\Microsoft.Data.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.6.3\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\System.Management.Automation_PowerShell_3.0.6.3.9600.17400\lib\net40\System.Management.Automation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Spatial, Version=5.6.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Spatial.5.6.3\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="AdHocRequest\AccessRequestConfiguration.cs" />
+    <Compile Include="AdHocRequest\AdHocInhouseSystemRequest.cs" />
+    <Compile Include="AdHocRequest\AdHocLINUXRequest.cs" />
+    <Compile Include="AdHocRequest\AdHocOracleEBSRequest.cs" />
+    <Compile Include="AdHocRequest\AdHocAccessRequest.cs" />
+    <Compile Include="AdHocRequest\AdHocADRequest.cs" />
+    <Compile Include="AdHocRequest\AdHocLNSRequest.cs" />
+    <Compile Include="AdHocRequest\AdHocSAPRequest.cs" />
+    <Compile Include="AdHocRequest\AdhocSingleEntitlementRequest.cs" />
+    <Compile Include="AdHocRequest\AdHocVPNRequest.cs" />
+    <Compile Include="AdHocRequest\AdHocOracleUMRequest.cs" />
+    <Compile Include="Contracts\IEndpointEntitlementInfo.cs" />
+    <Compile Include="Core\ACL\AccessRightHistory.cs" />
+    <Compile Include="Core\ACL\AccessRights.cs" />
+    <Compile Include="Core\ACL\Page.cs" />
+    <Compile Include="Core\ACL\PagePermission.cs" />
+    <Compile Include="Core\ACL\PageUrl.cs" />
+    <Compile Include="Core\ACL\Permission.cs" />
+    <Compile Include="Core\ACL\Role.cs" />
+    <Compile Include="Core\ACL\RoleHistory.cs" />
+    <Compile Include="Core\ACL\TabMenu.cs" />
+    <Compile Include="Core\Attestation\Attestation.cs" />
+    <Compile Include="Core\Attestation\AttestationEndpoint.cs" />
+    <Compile Include="Core\Attestation\AttestationProcess.cs" />
+    <Compile Include="Core\Attestation\AttestationProcessHistory.cs" />
+    <Compile Include="Core\Attestation\AttestationReview.cs" />
+    <Compile Include="Core\Attestation\AttestationReviewEndpointSystem.cs" />
+    <Compile Include="Core\Attestation\AttestationReviewEndpointSystemHistory.cs" />
+    <Compile Include="Core\Attestation\AttestationReviewEndpointSystemL2Detail.cs" />
+    <Compile Include="Core\Attestation\AttestationReviewEndpointSystemL2DetailHistory.cs" />
+    <Compile Include="Core\Attestation\AttestationReviewEndpointSystemL3Detail.cs" />
+    <Compile Include="Core\Attestation\AttestationReviewEndpointSystemL3DetailHistory.cs" />
+    <Compile Include="Core\Attestation\AttestationJobList.cs" />
+    <Compile Include="Core\Common\Group.cs" />
+    <Compile Include="Core\Common\GroupHistory.cs" />
+    <Compile Include="Core\Common\PieSeriesModel.cs" />
+    <Compile Include="Core\Common\Tenant.cs" />
+    <Compile Include="Core\Compliance\ComplianceJobList.cs" />
+    <Compile Include="Core\Compliance\ComplianceProcess.cs" />
+    <Compile Include="Core\Compliance\ComplianceProcessHistory.cs" />
+    <Compile Include="Core\Configuration\ConfigGeneralTrustedSource.cs" />
+    <Compile Include="Core\Configuration\ConfigurationMaster.cs" />
+    <Compile Include="Core\Configuration\ConfigurationMasterHistory.cs" />
+    <Compile Include="Core\Configuration\PasswordPolicyEndpoint.cs" />
+    <Compile Include="Core\Configuration\RequestApprovalConfiguration.cs" />
+    <Compile Include="Core\Configuration\PasswordPolicy.cs" />
+    <Compile Include="Core\Configuration\PasswordSyncConfiguration.cs" />
+    <Compile Include="Core\Configuration\PasswordSyncConfigurationDetails.cs" />
+    <Compile Include="Core\Database\DatabaseConfiguration.cs" />
+    <Compile Include="Core\Database\MySqlConfiguration.cs" />
+    <Compile Include="Core\Database\OracleConfiguration.cs" />
+    <Compile Include="Core\Database\SqlConfiguration.cs" />
+    <Compile Include="Core\Discovery\DiscoveryJobList.cs" />
+    <Compile Include="Core\Discovery\DiscoveryProcess.cs" />
+    <Compile Include="Core\Discovery\DiscoveryProcessHistory.cs" />
+    <Compile Include="Core\Email\MailTemplateVariables.cs" />
+    <Compile Include="Core\Email\EmailInfo.cs" />
+    <Compile Include="Core\Email\EmailInfoHistory.cs" />
+    <Compile Include="Core\Email\MailServerConfiguration.cs" />
+    <Compile Include="Core\Email\MailTemplate.cs" />
+    <Compile Include="Core\Endpoint\AttributeMappingColumns.cs" />
+    <Compile Include="Core\Endpoint\EndPoint.cs" />
+    <Compile Include="Core\Endpoint\EndPointFunctionType.cs" />
+    <Compile Include="Core\Endpoint\EndpointInformation.cs" />
+    <Compile Include="Core\Endpoint\EndPointObjects.cs" />
+    <Compile Include="Core\Endpoint\EndPointSystemType.cs" />
+    <Compile Include="Core\GridSettings\UserGridFilterSettings.cs" />
+    <Compile Include="Core\GridSettings\UserGridSettings.cs" />
+    <Compile Include="Core\HouseKeeping\PurgeConfig.cs" />
+    <Compile Include="Core\Log\AttestationLog.cs" />
+    <Compile Include="Core\Log\ServiceLog.cs" />
+    <Compile Include="Core\Log\DiscoveryLog.cs" />
+    <Compile Include="Core\Log\EmailLog.cs" />
+    <Compile Include="Core\Log\ProvisioningLog.cs" />
+    <Compile Include="Core\Log\SchedulerLog.cs" />
+    <Compile Include="Core\Log\UILog.cs" />
+    <Compile Include="Core\MetaData\AccessRequestCategory.cs" />
+    <Compile Include="Core\MetaData\AccessRequestProgress.cs" />
+    <Compile Include="Core\MetaData\AccessRequestSourceClass.cs" />
+    <Compile Include="Core\MetaData\AccessRequestStatusClass.cs" />
+    <Compile Include="Core\MetaData\AccountActionCategory.cs" />
+    <Compile Include="Core\MetaData\AccountCategory.cs" />
+    <Compile Include="Core\MetaData\ApprovalUserTypes.cs" />
+    <Compile Include="Core\MetaData\Designation.cs" />
+    <Compile Include="Core\MetaData\EmployeeTerm.cs" />
+    <Compile Include="Core\MetaData\EndpointSystemType.cs" />
+    <Compile Include="Core\MetaData\OffboardingAccountAction.cs" />
+    <Compile Include="Core\MetaData\RequestTypes.cs" />
+    <Compile Include="Core\MetaData\RoleTypes.cs" />
+    <Compile Include="Core\Org\Company.cs" />
+    <Compile Include="Core\Org\CostCenter.cs" />
+    <Compile Include="Core\Org\Department.cs" />
+    <Compile Include="Core\Org\Division.cs" />
+    <Compile Include="Core\Org\Organisation.cs" />
+    <Compile Include="Core\Preference\Dashboard.cs" />
+    <Compile Include="Core\Preference\DashboardRights.cs" />
+    <Compile Include="Core\Preference\DefaultRoleDashboardPreference.cs" />
+    <Compile Include="Core\Preference\DefaultRoleQuickLink.cs" />
+    <Compile Include="Core\Preference\AdminModeItem.cs" />
+    <Compile Include="Core\Preference\QuickLinks.cs" />
+    <Compile Include="Core\Preference\QuickLinkRights.cs" />
+    <Compile Include="Core\Preference\UserCulturePreference.cs" />
+    <Compile Include="Core\Preference\UserDashboardPreference.cs" />
+    <Compile Include="Core\Preference\UserFilterInfo.cs" />
+    <Compile Include="Core\Preference\UserGridInfo.cs" />
+    <Compile Include="Core\Preference\UserPreference.cs" />
+    <Compile Include="Core\Preference\UserQuickLink.cs" />
+    <Compile Include="Core\Prov\Role\ProvisioningRoleDetail.cs" />
+    <Compile Include="Core\Prov\Role\ProvisioningRole.cs" />
+    <Compile Include="Core\Prov\Role\ProvisioningRoleWithDetails.cs" />
+    <Compile Include="Core\Ruleset\RunTimeCodeSnippets.cs" />
+    <Compile Include="Core\Ruleset\Ruleset.cs" />
+    <Compile Include="Core\Scheduler\Process.cs" />
+    <Compile Include="Core\Scheduler\ProcessHistory.cs" />
+    <Compile Include="Core\Scheduler\Scheduler.cs" />
+    <Compile Include="Core\SecurityQA\GlobalAnswer.cs" />
+    <Compile Include="Core\SecurityQA\GlobalQuestion.cs" />
+    <Compile Include="Core\Tasks\RequestAttachment.cs" />
+    <Compile Include="Core\Tasks\Notification.cs" />
+    <Compile Include="Core\Tasks\InterimStore.cs" />
+    <Compile Include="Core\Tasks\ReviewEndpointSystem.cs" />
+    <Compile Include="Core\Tasks\SubTask.cs" />
+    <Compile Include="Core\Tasks\TaskDelegation.cs" />
+    <Compile Include="Core\Tasks\TaskReview.cs" />
+    <Compile Include="Core\Tasks\Tasks.cs" />
+    <Compile Include="Core\User\User.cs" />
+    <Compile Include="Core\User\UserImage.cs" />
+    <Compile Include="Core\Workflow\WorkflowConfiguration.cs" />
+    <Compile Include="Core\Workflow\WorkflowConfigurationDetail.cs" />
+    <Compile Include="Custom\CustomEntities\AccessRequestFilterCriteria.cs" />
+    <Compile Include="Custom\CustomEntities\AccessRequestItem.cs" />
+    <Compile Include="Custom\CustomEntities\AccountDetail.cs" />
+    <Compile Include="Custom\CustomEntities\ApprovalChain.cs" />
+    <Compile Include="Custom\CustomEntities\AttestationTaskSummary.cs" />
+    <Compile Include="Custom\CustomEntities\BusinessRole.cs" />
+    <Compile Include="Custom\CustomEntities\ChartData.cs" />
+    <Compile Include="Custom\CustomEntities\MatrixParams.cs" />
+    <Compile Include="Custom\CustomEntities\OrgChangeTrack.cs" />
+    <Compile Include="Custom\CustomEntities\UserAccount.cs" />
+    <Compile Include="Custom\CustomEntities\UserEntitlement.cs" />
+    <Compile Include="Custom\CustomEntities\WorkflowAccessCriteria.cs" />
+    <Compile Include="Custom\GridData\AccessRequestGridData.cs" />
+    <Compile Include="Custom\GridData\ACLPagePermissionGridData.cs" />
+    <Compile Include="Custom\GridData\AdHocGroupManagementGridData.cs" />
+    <Compile Include="Custom\GridData\AdhocRequestGridData.cs" />
+    <Compile Include="Custom\GridData\ApproversGridData.cs" />
+    <Compile Include="Custom\GridData\AttestationActionGridData.cs" />
+    <Compile Include="Custom\GridData\AttestationReviewEndpointSystemGridData.cs" />
+    <Compile Include="Custom\GridData\AttestationReviewPageL2DetailGridData.cs" />
+    <Compile Include="Custom\GridData\AttestationReviewPageSAP_Level1GridData.cs" />
+    <Compile Include="Custom\GridData\AutoProvisioningGridData.cs" />
+    <Compile Include="Custom\GridData\DeprovisioningUserDetailsGridData.cs" />
+    <Compile Include="Custom\GridData\DeptChangedUserGridData.cs" />
+    <Compile Include="Custom\GridData\DiscoveryJobGridData.cs" />
+    <Compile Include="Custom\GridData\DiscoveryLogExportData.cs" />
+    <Compile Include="Custom\GridData\EmployeeEventGridData.cs" />
+    <Compile Include="Custom\GridData\EndPointSystemTypeLog.cs" />
+    <Compile Include="Custom\GridData\ExceptionReconGridData.cs" />
+    <Compile Include="Custom\GridData\FailedRequestGridData.cs" />
+    <Compile Include="Custom\GridData\FlowConfigurationGridData.cs" />
+    <Compile Include="Custom\GridData\InhouseSystemEntitlementsGridData.cs" />
+    <Compile Include="Custom\GridData\InhouseSystemsGridData.cs" />
+    <Compile Include="Custom\GridData\ListAttestationGridData.cs" />
+    <Compile Include="Custom\GridData\MailGridData.cs" />
+    <Compile Include="Custom\GridData\MetadataGridData.cs" />
+    <Compile Include="Custom\GridData\MyRequestsGridData.cs" />
+    <Compile Include="Custom\GridData\OUTransferSnapshotGridData.cs" />
+    <Compile Include="Custom\GridData\PasswordSyncConfigGridData.cs" />
+    <Compile Include="Custom\GridData\PreviousApproversGridData.cs" />
+    <Compile Include="Custom\GridData\ProvisioningFormEndpointSystemType.cs" />
+    <Compile Include="Custom\GridData\ProvisioningLogGridData.cs" />
+    <Compile Include="Custom\GridData\RequestGridData.cs" />
+    <Compile Include="Custom\GridData\RoleMatrixGridData.cs" />
+    <Compile Include="Custom\GridData\SisUserHistoryInfoGridData.cs" />
+    <Compile Include="Custom\GridData\TableProperties.cs" />
+    <Compile Include="Custom\GridData\TaskDelegationGridData.cs" />
+    <Compile Include="Custom\GridData\TaskGridData.cs" />
+    <Compile Include="Custom\GridData\UserGlobalQuestionGridData.cs" />
+    <Compile Include="Custom\GridData\UserListGridData.cs" />
+    <Compile Include="Custom\GridData\UserPasswordCountGridData.cs" />
+    <Compile Include="Custom\GridData\UserProvisioningRolesGridData.cs" />
+    <Compile Include="Custom\GridData\UsersByEndPointGridData.cs" />
+    <Compile Include="Custom\GridData\UsersEndPointSystemDetailsGridData.cs" />
+    <Compile Include="Custom\GridData\WindowsShareFolderApproverGridData.cs" />
+    <Compile Include="Custom\GridData\WorkflowApproverGridData.cs" />
+    <Compile Include="Custom\GridData\WorkflowGridData.cs" />
+    <Compile Include="Custom\ReportData\AccessListingGroupUserData.cs" />
+    <Compile Include="Custom\ReportData\AccountReconciliationReport.cs" />
+    <Compile Include="Custom\ReportData\ADEXAccountRequests.cs" />
+    <Compile Include="Custom\ReportData\ADEXGroupRequestReportData.cs" />
+    <Compile Include="Custom\ReportData\ADEXGroupRevokeRequestReportData.cs" />
+    <Compile Include="Custom\ReportData\ADEXRevokeRequestReportData.cs" />
+    <Compile Include="Custom\ReportData\ADSComputerObjectsReportData.cs" />
+    <Compile Include="Custom\ReportData\ADSGroupToUsersReportData.cs" />
+    <Compile Include="Custom\ReportData\ADSOUsReportData.cs" />
+    <Compile Include="Custom\ReportData\ADSUsersReportData.cs" />
+    <Compile Include="Custom\ReportData\ADSUserToGroupsReportData.cs" />
+    <Compile Include="Custom\ReportData\AllUsersReportData.cs" />
+    <Compile Include="Custom\ReportData\AttestationActionReportData.cs" />
+    <Compile Include="Custom\ReportData\AttestationsByGroupAndRoleLevelReportData.cs" />
+    <Compile Include="Custom\ReportData\Attestation_ListOfAttestation.cs" />
+    <Compile Include="Custom\ReportData\Attestation_ListOfUsersByAttestationStatusReportData.cs" />
+    <Compile Include="Custom\ReportData\AuditReportData.cs" />
+    <Compile Include="Custom\ReportData\AutoProvisioningDetailsReportData.cs" />
+    <Compile Include="Custom\ReportData\DiscoveryReportData.cs" />
+    <Compile Include="Custom\ReportData\EndPointPwdResetCountReportData.cs" />
+    <Compile Include="Custom\ReportData\EndPointsOfType.cs" />
+    <Compile Include="Custom\ReportData\EndPointUnMappedUsersReportData.cs" />
+    <Compile Include="Custom\ReportData\ExUserToDistributionReportData.cs" />
+    <Compile Include="Custom\ReportData\InhouseAccountRequests.cs" />
+    <Compile Include="Custom\ReportData\InhouseGroupRequestReportData.cs" />
+    <Compile Include="Custom\ReportData\InhouseGroupRevokeRequestReportData.cs" />
+    <Compile Include="Custom\ReportData\InhouseRevokeRequestReportData.cs" />
+    <Compile Include="Custom\ReportData\LNSAccountRequests.cs" />
+    <Compile Include="Custom\ReportData\LNSGroupRequestReportData.cs" />
+    <Compile Include="Custom\ReportData\LNSGroupRevokeRequestReportData.cs" />
+    <Compile Include="Custom\ReportData\LNSGroupToUsersReportData.cs" />
+    <Compile Include="Custom\ReportData\LNSRevokeRequestReportData.cs" />
+    <Compile Include="Custom\ReportData\LNSUserToGroupsReportData.cs" />
+    <Compile Include="Custom\ReportData\LotusNotesGroupsReportData.cs" />
+    <Compile Include="Custom\ReportData\LotusNotesUsersReportData.cs" />
+    <Compile Include="Custom\ReportData\OracleEBSAccountRequests.cs" />
+    <Compile Include="Custom\ReportData\OracleEBSGroupRevokeRequestReportData.cs" />
+    <Compile Include="Custom\ReportData\OracleEBSReports.cs" />
+    <Compile Include="Custom\ReportData\OracleEBSRevokeRequestReportData.cs" />
+    <Compile Include="Custom\ReportData\OracleUMReports.cs" />
+    <Compile Include="Custom\ReportData\OrganisationReportData.cs" />
+    <Compile Include="Custom\ReportData\PrivilegedUsersReportData.cs" />
+    <Compile Include="Custom\ReportData\ProvUsersHavingDefaultInfoReportData.cs" />
+    <Compile Include="Custom\ReportData\ReconcilationExceptionForEntitlmentsReport.cs" />
+    <Compile Include="Custom\ReportData\ReconcilationExceptionReport.cs" />
+    <Compile Include="Custom\ReportData\RoleAssignmentReportData.cs" />
+    <Compile Include="Custom\ReportData\SAPEPAccountRequestsReportData.cs" />
+    <Compile Include="Custom\ReportData\SAPEPGroupToUsersReportData.cs" />
+    <Compile Include="Custom\ReportData\SAPEPRevokeRequestReportData.cs" />
+    <Compile Include="Custom\ReportData\SAPEPRoleRequestReportData.cs" />
+    <Compile Include="Custom\ReportData\SAPEPRoleRevokeRequestReportData.cs" />
+    <Compile Include="Custom\ReportData\SAPEPRoleToUsersReportData.cs" />
+    <Compile Include="Custom\ReportData\SAPEPUserInfoReportData.cs" />
+    <Compile Include="Custom\ReportData\SAPEPUserToGroupsReportData.cs" />
+    <Compile Include="Custom\ReportData\SAPEPUserToRolesReportData.cs" />
+    <Compile Include="Custom\ReportData\SAPGroupReportData.cs" />
+    <Compile Include="Custom\ReportData\SAPProfileReportData.cs" />
+    <Compile Include="Custom\ReportData\SAPRoleReportData.cs" />
+    <Compile Include="Custom\ReportData\SAPRoleRequestReportData.cs" />
+    <Compile Include="Custom\ReportData\SapRoleToAuthorizationReportData.cs" />
+    <Compile Include="Custom\ReportData\SAPTCodeReportData.cs" />
+    <Compile Include="Custom\ReportData\SAPUserAccessReportData.cs" />
+    <Compile Include="Custom\ReportData\SAPUserReportData.cs" />
+    <Compile Include="Custom\ReportData\SAPUserRoleTCodeAuth.cs" />
+    <Compile Include="Custom\ReportData\SapUserRoleTCodeAuthorization.cs" />
+    <Compile Include="Custom\ReportData\SAPUsersToGroupsReportData.cs" />
+    <Compile Include="Custom\ReportData\SAPUsersToProfilesReportData.cs" />
+    <Compile Include="Custom\ReportData\SAPUsersToRolesReportData.cs" />
+    <Compile Include="Custom\ReportData\SQLUMDatabaseLoginReportData.cs" />
+    <Compile Include="Custom\ReportData\SQLUMDatabaseLoginRoleReportData.cs" />
+    <Compile Include="Custom\ReportData\SQLUMDatabaseRolePermissionsReportData.cs" />
+    <Compile Include="Custom\ReportData\SQLUMLoginReportData.cs" />
+    <Compile Include="Custom\ReportData\SQLUMServerRolePermissionsReportData.cs" />
+    <Compile Include="Custom\ReportData\TaskDelegationReportData.cs" />
+    <Compile Include="Custom\ReportData\TaskReportData.cs" />
+    <Compile Include="Custom\ReportData\UnMappedUsers.cs" />
+    <Compile Include="Custom\ReportData\UserAccessDetailMatrixGridData.cs" />
+    <Compile Include="Custom\ReportData\UserInternetAndEmailAccessReportData.cs" />
+    <Compile Include="Custom\ReportData\UsersByDepartmentReportData.cs" />
+    <Compile Include="Custom\ReportData\UsersByEndPointReportData.cs" />
+    <Compile Include="Custom\ReportData\UsersByGroupReportData.cs" />
+    <Compile Include="Custom\ReportData\UsersByManagerReportData.cs" />
+    <Compile Include="Custom\ReportData\UserToEndPointsReportData.cs" />
+    <Compile Include="Data\ADSXLProvisioningMatrix.cs" />
+    <Compile Include="Data\ADS\ADSCatalog.cs" />
+    <Compile Include="Data\ApproverException.cs" />
+    <Compile Include="Data\LINUXXLProvisioningMatrix.cs" />
+    <Compile Include="Data\IXLData.cs" />
+    <Compile Include="Data\LNSMailQuotaConfig.cs" />
+    <Compile Include="Data\LNSXLProvisioningMatrix.cs" />
+    <Compile Include="Data\LNS\LNSCatalog.cs" />
+    <Compile Include="Data\OracleEBSXLProvisioningMatrix.cs" />
+    <Compile Include="Data\OracleXLProvisioningMatrix.cs" />
+    <Compile Include="Data\SAP\SAPCriticalTCodeMatrix.cs" />
+    <Compile Include="Data\SAP\SAPPositionsMatrix.cs" />
+    <Compile Include="Data\SAP\SAPRoleCatalog.cs" />
+    <Compile Include="Data\SAP\SAPXLProvisioningMatrix.cs" />
+    <Compile Include="Endpoint\AbcCorpHRMS\AbcCorpHRMSConfiguration.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\ActiveDirectoryObject.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\ADSComputerGroup.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\ADSComputerInfo.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\ADSConfiguration.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\ADSGroupInfo.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\ADSGroupInfoHistory.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\ADSOuInfo.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\ADSOuInfoHistory.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\ADSPrinterInfo.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\ADSSharedFolderInfo.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\ADSUserInfo.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\ADSUserInfoHistory.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\ADSConfigurationHistory.cs" />
+    <Compile Include="Endpoint\GEMS\GemsUserInfo.cs" />
+    <Compile Include="Endpoint\Inhouse Systems\InhousePermission.cs" />
+    <Compile Include="Endpoint\Inhouse Systems\InhouseSystemConfiguration.cs" />
+    <Compile Include="Endpoint\Inhouse Systems\InhouseUserInfo.cs" />
+    <Compile Include="Endpoint\LINUX\LinuxUserGroupMap.cs" />
+    <Compile Include="Endpoint\LotusNotes\LNSConfiguration.cs" />
+    <Compile Include="Endpoint\LotusNotes\LotusCertifierInfo.cs" />
+    <Compile Include="Endpoint\LotusNotes\LotusDomainHistoryInfo.cs" />
+    <Compile Include="Endpoint\LotusNotes\LotusDomainInfo.cs" />
+    <Compile Include="Endpoint\LotusNotes\LotusGroupHistoryInfo.cs" />
+    <Compile Include="Endpoint\LotusNotes\LotusGroupInfo.cs" />
+    <Compile Include="Endpoint\LotusNotes\LotusNotesObject.cs" />
+    <Compile Include="Endpoint\LotusNotes\LotusProfileHistoryInfo.cs" />
+    <Compile Include="Endpoint\LotusNotes\LotusProfileInfo.cs" />
+    <Compile Include="Endpoint\LotusNotes\LotusServerMailUsersHistoryInfo.cs" />
+    <Compile Include="Endpoint\LotusNotes\LotusServerMailUsersInfo.cs" />
+    <Compile Include="Endpoint\LotusNotes\LotusUserGroupMap.cs" />
+    <Compile Include="Endpoint\LotusNotes\LotusUserGroupMapHistory.cs" />
+    <Compile Include="Endpoint\LotusNotes\LotusUserHistoryInfo.cs" />
+    <Compile Include="Endpoint\LotusNotes\LotusUserInfo.cs" />
+    <Compile Include="Endpoint\ORCLUM\OracleUMConfiguration.cs" />
+    <Compile Include="Endpoint\ORCLUM\OracleUMRoleInfo.cs" />
+    <Compile Include="Endpoint\ORCLUM\OracleUMRoleInfoHistory.cs" />
+    <Compile Include="Endpoint\ORCLUM\OracleUMTableInfo.cs" />
+    <Compile Include="Endpoint\ORCLUM\OracleUMUserinfo.cs" />
+    <Compile Include="Endpoint\ORCLUM\OracleUMUserInfoHistory.cs" />
+    <Compile Include="Endpoint\ORCLUM\OracleUMUserRole.cs" />
+    <Compile Include="Endpoint\ORCLUM\OracleUMUserTable.cs" />
+    <Compile Include="Endpoint\ORCLUM\OracleUMUserTableMap.cs" />
+    <Compile Include="Endpoint\OracleEBS\OracleEBSConfiguration.cs" />
+    <Compile Include="Endpoint\OracleEBS\OracleEBSHRMSUserinfo.cs" />
+    <Compile Include="Endpoint\OracleEBS\OracleEBSHRMSUserinfoHistory.cs" />
+    <Compile Include="Endpoint\OracleEBS\OracleEBSMenusInfo.cs" />
+    <Compile Include="Endpoint\OracleEBS\OracleEBSResponsibilitiesInfo.cs" />
+    <Compile Include="Endpoint\OracleEBS\OracleEBSResponsibilitiesInfoHistory.cs" />
+    <Compile Include="Endpoint\OracleEBS\OracleEBSResponsibilitiesToUser.cs" />
+    <Compile Include="Endpoint\OracleEBS\OracleEBSRoleInfo.cs" />
+    <Compile Include="Endpoint\OracleEBS\OracleEBSRoleInfoHistory.cs" />
+    <Compile Include="Endpoint\OracleEBS\OracleEBSSubMenus.cs" />
+    <Compile Include="Endpoint\OracleEBS\OracleEBSUserinfo.cs" />
+    <Compile Include="Endpoint\OracleEBS\OracleEBSUserinfoHistory.cs" />
+    <Compile Include="Endpoint\OracleEBS\OracleEBSUserToResponsibilities.cs" />
+    <Compile Include="Endpoint\SAPEP\SAPEPConfiguration.cs" />
+    <Compile Include="Endpoint\SAPEP\SAPEPGroupInfo.cs" />
+    <Compile Include="Endpoint\SAPEP\SAPEPGroupInfoHistory.cs" />
+    <Compile Include="Endpoint\SAPEP\SAPEPRoleInfo.cs" />
+    <Compile Include="Endpoint\SAPEP\SAPEPRoleInfoHistory.cs" />
+    <Compile Include="Endpoint\SAPEP\SAPEPRoleInfoTemp.cs" />
+    <Compile Include="Endpoint\SAPEP\SAPEPUserGroup.cs" />
+    <Compile Include="Endpoint\SAPEP\SAPEPUserGroupHistory.cs" />
+    <Compile Include="Endpoint\SAPEP\SAPEPUserInfo.cs" />
+    <Compile Include="Endpoint\SAPEP\SAPEPUserInfoHistory.cs" />
+    <Compile Include="Endpoint\SAPEP\SAPEPUserRole.cs" />
+    <Compile Include="Endpoint\SAPEP\SAPEPUserRoleHistory.cs" />
+    <Compile Include="Endpoint\SAP\SAPActivityInfo.cs" />
+    <Compile Include="Endpoint\SAP\SAPAuthorizationProfile.cs" />
+    <Compile Include="Endpoint\SAP\SAPAuthorizationToObject.cs" />
+    <Compile Include="Endpoint\SAP\SAPCompositeProfile.cs" />
+    <Compile Include="Endpoint\SAP\SAPCompositeRoleInfo.cs.cs" />
+    <Compile Include="Endpoint\SAP\SAPConfigurationDetails.cs" />
+    <Compile Include="Endpoint\SAP\SAPFieldValueMapping.cs" />
+    <Compile Include="Endpoint\SAP\SAPGroupHistoryInfo.cs" />
+    <Compile Include="Endpoint\SAP\SAPGroupInfo.cs" />
+    <Compile Include="Endpoint\SAP\SAPHRP1001.cs" />
+    <Compile Include="Endpoint\SAP\SAPObjectInfo.cs" />
+    <Compile Include="Endpoint\SAP\SAPObjectValues.cs" />
+    <Compile Include="Endpoint\SAP\SAPParameterHistoryInfo.cs" />
+    <Compile Include="Endpoint\SAP\SAPParameterInfo.cs" />
+    <Compile Include="Endpoint\SAP\SAPPosition.cs" />
+    <Compile Include="Endpoint\SAP\SAPProfileHistoryInfo.cs" />
+    <Compile Include="Endpoint\SAP\SAPProfileInfo.cs" />
+    <Compile Include="Endpoint\SAP\SAPRoleHistoryInfo.cs" />
+    <Compile Include="Endpoint\SAP\SAPRoleInfo.cs" />
+    <Compile Include="Endpoint\SAP\SapRoleProfileMapping.cs" />
+    <Compile Include="Endpoint\SAP\SapRoleTCodeMapping.cs" />
+    <Compile Include="Endpoint\SAP\SAPRoleToAuthMap.cs" />
+    <Compile Include="Endpoint\SAP\SAPSingleRoleInfo.cs" />
+    <Compile Include="Endpoint\SAP\SAPTCodeInfo.cs" />
+    <Compile Include="Endpoint\SAP\SAPTCodeObjectMap.cs" />
+    <Compile Include="Endpoint\SAP\SAPUserHistoryInfo.cs" />
+    <Compile Include="Endpoint\SAP\SAPUserinfo.cs" />
+    <Compile Include="Endpoint\SAP\SAPUserProfile.cs" />
+    <Compile Include="Endpoint\SAP\SAPUserStartMenuHistoryInfo.cs" />
+    <Compile Include="Endpoint\SAP\SAPUserStartMenuMapInfo.cs" />
+    <Compile Include="Endpoint\SAP\SAPUserToObject.cs" />
+    <Compile Include="Endpoint\VPN\VPNGridData.cs" />
+    <Compile Include="Endpoint\VPN\VPNMaster.cs" />
+    <Compile Include="INH\INHCatalog.cs" />
+    <Compile Include="Migrations\201509250759325_InitialScript.cs" />
+    <Compile Include="Migrations\201509250759325_InitialScript.Designer.cs">
+      <DependentUpon>201509250759325_InitialScript.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509280945005_linux.cs" />
+    <Compile Include="Migrations\201509280945005_linux.Designer.cs">
+      <DependentUpon>201509280945005_linux.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509280237147_H_1.cs" />
+    <Compile Include="Migrations\201509280237147_H_1.Designer.cs">
+      <DependentUpon>201509280237147_H_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509280603055_MissingMigration.cs" />
+    <Compile Include="Migrations\201509280603055_MissingMigration.Designer.cs">
+      <DependentUpon>201509280603055_MissingMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509280616432_AccountTypeChanges.cs" />
+    <Compile Include="Migrations\201509280616432_AccountTypeChanges.Designer.cs">
+      <DependentUpon>201509280616432_AccountTypeChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509280920261_QuickLinkPrefChanges.cs" />
+    <Compile Include="Migrations\201509280920261_QuickLinkPrefChanges.Designer.cs">
+      <DependentUpon>201509280920261_QuickLinkPrefChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509281043175_AllIacmv5.cs" />
+    <Compile Include="Migrations\201509281043175_AllIacmv5.Designer.cs">
+      <DependentUpon>201509281043175_AllIacmv5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509281016314_H_2.cs" />
+    <Compile Include="Migrations\201509281016314_H_2.Designer.cs">
+      <DependentUpon>201509281016314_H_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509281057435_H_3.cs" />
+    <Compile Include="Migrations\201509281057435_H_3.Designer.cs">
+      <DependentUpon>201509281057435_H_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509290319358_H_4.cs" />
+    <Compile Include="Migrations\201509290319358_H_4.Designer.cs">
+      <DependentUpon>201509290319358_H_4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509290555431_AccessRequestChanges.cs" />
+    <Compile Include="Migrations\201509290555431_AccessRequestChanges.Designer.cs">
+      <DependentUpon>201509290555431_AccessRequestChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509300425427_AttestationModelChange.cs" />
+    <Compile Include="Migrations\201509300425427_AttestationModelChange.Designer.cs">
+      <DependentUpon>201509300425427_AttestationModelChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509300431193_RunTimeCodeSnippet.cs" />
+    <Compile Include="Migrations\201509300431193_RunTimeCodeSnippet.Designer.cs">
+      <DependentUpon>201509300431193_RunTimeCodeSnippet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509300643556_R_QuickLink.cs" />
+    <Compile Include="Migrations\201509300643556_R_QuickLink.Designer.cs">
+      <DependentUpon>201509300643556_R_QuickLink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509301323421_Oracle11gMigration.cs" />
+    <Compile Include="Migrations\201509301323421_Oracle11gMigration.Designer.cs">
+      <DependentUpon>201509301323421_Oracle11gMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510010632436_OracleUMLinuxNameChange.cs" />
+    <Compile Include="Migrations\201510010632436_OracleUMLinuxNameChange.Designer.cs">
+      <DependentUpon>201510010632436_OracleUMLinuxNameChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510011012461_Cleanup.cs" />
+    <Compile Include="Migrations\201510011012461_Cleanup.Designer.cs">
+      <DependentUpon>201510011012461_Cleanup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510011015260_AttestationRemediationChanges.cs" />
+    <Compile Include="Migrations\201510011015260_AttestationRemediationChanges.Designer.cs">
+      <DependentUpon>201510011015260_AttestationRemediationChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510020200545_W_1.cs" />
+    <Compile Include="Migrations\201510020200545_W_1.Designer.cs">
+      <DependentUpon>201510020200545_W_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510020237156_AttestationRemediationChanges1.cs" />
+    <Compile Include="Migrations\201510020237156_AttestationRemediationChanges1.Designer.cs">
+      <DependentUpon>201510020237156_AttestationRemediationChanges1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510020351300_AttestationRemediationChanges2.cs" />
+    <Compile Include="Migrations\201510020351300_AttestationRemediationChanges2.Designer.cs">
+      <DependentUpon>201510020351300_AttestationRemediationChanges2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510020500588_AttestationModelChanges.cs" />
+    <Compile Include="Migrations\201510020500588_AttestationModelChanges.Designer.cs">
+      <DependentUpon>201510020500588_AttestationModelChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510020738208_AttestationModelChanges1.cs" />
+    <Compile Include="Migrations\201510020738208_AttestationModelChanges1.Designer.cs">
+      <DependentUpon>201510020738208_AttestationModelChanges1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510021001348_AdhocRequestChanges.cs" />
+    <Compile Include="Migrations\201510021001348_AdhocRequestChanges.Designer.cs">
+      <DependentUpon>201510021001348_AdhocRequestChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510060320538_W_2.cs" />
+    <Compile Include="Migrations\201510060320538_W_2.Designer.cs">
+      <DependentUpon>201510060320538_W_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510060451157_LINUXXLMatrix_Migrations.cs" />
+    <Compile Include="Migrations\201510060451157_LINUXXLMatrix_Migrations.Designer.cs">
+      <DependentUpon>201510060451157_LINUXXLMatrix_Migrations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510061117525_Q_AccessRights.cs" />
+    <Compile Include="Migrations\201510061117525_Q_AccessRights.Designer.cs">
+      <DependentUpon>201510061117525_Q_AccessRights.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510070808397_ProvConfiguration.cs" />
+    <Compile Include="Migrations\201510070808397_ProvConfiguration.Designer.cs">
+      <DependentUpon>201510070808397_ProvConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510070834011_RulesetTableRename.cs" />
+    <Compile Include="Migrations\201510070834011_RulesetTableRename.Designer.cs">
+      <DependentUpon>201510070834011_RulesetTableRename.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510080314413_ProvConfigChanges.cs" />
+    <Compile Include="Migrations\201510080314413_ProvConfigChanges.Designer.cs">
+      <DependentUpon>201510080314413_ProvConfigChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510211000554_W9.cs" />
+    <Compile Include="Migrations\201510211000554_W9.Designer.cs">
+      <DependentUpon>201510211000554_W9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510220347033_W10.cs" />
+    <Compile Include="Migrations\201510220347033_W10.Designer.cs">
+      <DependentUpon>201510220347033_W10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510220446498_W11.cs" />
+    <Compile Include="Migrations\201510220446498_W11.Designer.cs">
+      <DependentUpon>201510220446498_W11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510230743309_MailTemplateVariable.cs" />
+    <Compile Include="Migrations\201510230743309_MailTemplateVariable.Designer.cs">
+      <DependentUpon>201510230743309_MailTemplateVariable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510230748276_MailTemplateVariable1.cs" />
+    <Compile Include="Migrations\201510230748276_MailTemplateVariable1.Designer.cs">
+      <DependentUpon>201510230748276_MailTemplateVariable1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510230838072_W12.cs" />
+    <Compile Include="Migrations\201510230838072_W12.Designer.cs">
+      <DependentUpon>201510230838072_W12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510270600496_ADSConfigHistory.cs" />
+    <Compile Include="Migrations\201510270600496_ADSConfigHistory.Designer.cs">
+      <DependentUpon>201510270600496_ADSConfigHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510280647048_PasswordPolicyChanges.cs" />
+    <Compile Include="Migrations\201510280647048_PasswordPolicyChanges.Designer.cs">
+      <DependentUpon>201510280647048_PasswordPolicyChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510290932072_YP20151029.cs" />
+    <Compile Include="Migrations\201510290932072_YP20151029.Designer.cs">
+      <DependentUpon>201510290932072_YP20151029.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510300432169_w13.cs" />
+    <Compile Include="Migrations\201510300432169_w13.Designer.cs">
+      <DependentUpon>201510300432169_w13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511020655537_NotificationChanges.cs" />
+    <Compile Include="Migrations\201511020655537_NotificationChanges.Designer.cs">
+      <DependentUpon>201511020655537_NotificationChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511020719476_AttachmentChanges.cs" />
+    <Compile Include="Migrations\201511020719476_AttachmentChanges.Designer.cs">
+      <DependentUpon>201511020719476_AttachmentChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511030747039_H_6.cs" />
+    <Compile Include="Migrations\201511030747039_H_6.Designer.cs">
+      <DependentUpon>201511030747039_H_6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511050726472_AccessRequestProgressClass.cs" />
+    <Compile Include="Migrations\201511050726472_AccessRequestProgressClass.Designer.cs">
+      <DependentUpon>201511050726472_AccessRequestProgressClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511050913055_DashboardType.cs" />
+    <Compile Include="Migrations\201511050913055_DashboardType.Designer.cs">
+      <DependentUpon>201511050913055_DashboardType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511060806079_AccessRequestSourceClass.cs" />
+    <Compile Include="Migrations\201511060806079_AccessRequestSourceClass.Designer.cs">
+      <DependentUpon>201511060806079_AccessRequestSourceClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511060858018_AccessRequestStatusClass.cs" />
+    <Compile Include="Migrations\201511060858018_AccessRequestStatusClass.Designer.cs">
+      <DependentUpon>201511060858018_AccessRequestStatusClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511061158535_removepoppulateiacmandmapiacm.cs" />
+    <Compile Include="Migrations\201511061158535_removepoppulateiacmandmapiacm.Designer.cs">
+      <DependentUpon>201511061158535_removepoppulateiacmandmapiacm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511090359447_W14.cs" />
+    <Compile Include="Migrations\201511090359447_W14.Designer.cs">
+      <DependentUpon>201511090359447_W14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511091058231_W15.cs" />
+    <Compile Include="Migrations\201511091058231_W15.Designer.cs">
+      <DependentUpon>201511091058231_W15.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511110328573_H_7.cs" />
+    <Compile Include="Migrations\201511110328573_H_7.Designer.cs">
+      <DependentUpon>201511110328573_H_7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511120539330_H_8.cs" />
+    <Compile Include="Migrations\201511120539330_H_8.Designer.cs">
+      <DependentUpon>201511120539330_H_8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511130703491_H_9.cs" />
+    <Compile Include="Migrations\201511130703491_H_9.Designer.cs">
+      <DependentUpon>201511130703491_H_9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511160526200_H_10.cs" />
+    <Compile Include="Migrations\201511160526200_H_10.Designer.cs">
+      <DependentUpon>201511160526200_H_10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511160910422_UserImageChanges.cs" />
+    <Compile Include="Migrations\201511160910422_UserImageChanges.Designer.cs">
+      <DependentUpon>201511160910422_UserImageChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511180350517_H_11.cs" />
+    <Compile Include="Migrations\201511180350517_H_11.Designer.cs">
+      <DependentUpon>201511180350517_H_11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511240549427_H_12.cs" />
+    <Compile Include="Migrations\201511240549427_H_12.Designer.cs">
+      <DependentUpon>201511240549427_H_12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511250554053_H_13.cs" />
+    <Compile Include="Migrations\201511250554053_H_13.Designer.cs">
+      <DependentUpon>201511250554053_H_13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511260658250_ServiceLog.cs" />
+    <Compile Include="Migrations\201511260658250_ServiceLog.Designer.cs">
+      <DependentUpon>201511260658250_ServiceLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511261005108_Configmaster.cs" />
+    <Compile Include="Migrations\201511261005108_Configmaster.Designer.cs">
+      <DependentUpon>201511261005108_Configmaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511261005108_Configmaster1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>201511261005108_Configmaster.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511261417423_RenameIdColumn_1.cs" />
+    <Compile Include="Migrations\201511261417423_RenameIdColumn_1.Designer.cs">
+      <DependentUpon>201511261417423_RenameIdColumn_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511270436293_RenameIdColumn_2.cs" />
+    <Compile Include="Migrations\201511270436293_RenameIdColumn_2.Designer.cs">
+      <DependentUpon>201511270436293_RenameIdColumn_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511271250552_RenameIdColumn_3.cs" />
+    <Compile Include="Migrations\201511271250552_RenameIdColumn_3.Designer.cs">
+      <DependentUpon>201511271250552_RenameIdColumn_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511271244238_RenameIdColumn_4.cs" />
+    <Compile Include="Migrations\201511271244238_RenameIdColumn_4.Designer.cs">
+      <DependentUpon>201511271244238_RenameIdColumn_4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511301340142_RenameIdColumn_5.cs" />
+    <Compile Include="Migrations\201511301340142_RenameIdColumn_5.Designer.cs">
+      <DependentUpon>201511301340142_RenameIdColumn_5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512010940336_W16.cs" />
+    <Compile Include="Migrations\201512010940336_W16.Designer.cs">
+      <DependentUpon>201512010940336_W16.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512020355036_W17.cs" />
+    <Compile Include="Migrations\201512020355036_W17.Designer.cs">
+      <DependentUpon>201512020355036_W17.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512020426027_W18.cs" />
+    <Compile Include="Migrations\201512020426027_W18.Designer.cs">
+      <DependentUpon>201512020426027_W18.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512080945172_RenameIdColumn_6.cs" />
+    <Compile Include="Migrations\201512080945172_RenameIdColumn_6.Designer.cs">
+      <DependentUpon>201512080945172_RenameIdColumn_6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512101005370_UserCulPrefence.cs" />
+    <Compile Include="Migrations\201512101005370_UserCulPrefence.Designer.cs">
+      <DependentUpon>201512101005370_UserCulPrefence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512101040589_RenameIdColumn_7.cs" />
+    <Compile Include="Migrations\201512101040589_RenameIdColumn_7.Designer.cs">
+      <DependentUpon>201512101040589_RenameIdColumn_7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512101028305_LogChanges.cs" />
+    <Compile Include="Migrations\201512101028305_LogChanges.Designer.cs">
+      <DependentUpon>201512101028305_LogChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512101150105_RenameIdColumn_8.cs" />
+    <Compile Include="Migrations\201512101150105_RenameIdColumn_8.Designer.cs">
+      <DependentUpon>201512101150105_RenameIdColumn_8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512101532115_ComplianceChanges.cs" />
+    <Compile Include="Migrations\201512101532115_ComplianceChanges.Designer.cs">
+      <DependentUpon>201512101532115_ComplianceChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512111207204_SAPXLProvMatrix.cs" />
+    <Compile Include="Migrations\201512111207204_SAPXLProvMatrix.Designer.cs">
+      <DependentUpon>201512111207204_SAPXLProvMatrix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512141028100_RenameIdColumn_9.cs" />
+    <Compile Include="Migrations\201512141028100_RenameIdColumn_9.Designer.cs">
+      <DependentUpon>201512141028100_RenameIdColumn_9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512150534466_M2.cs" />
+    <Compile Include="Migrations\201512150534466_M2.Designer.cs">
+      <DependentUpon>201512150534466_M2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512150726523_ComplianceChanges_1.cs" />
+    <Compile Include="Migrations\201512150726523_ComplianceChanges_1.Designer.cs">
+      <DependentUpon>201512150726523_ComplianceChanges_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512151016177_purgeconfig.cs" />
+    <Compile Include="Migrations\201512151016177_purgeconfig.Designer.cs">
+      <DependentUpon>201512151016177_purgeconfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512160759018_RenameIdColumn_10.cs" />
+    <Compile Include="Migrations\201512160759018_RenameIdColumn_10.Designer.cs">
+      <DependentUpon>201512160759018_RenameIdColumn_10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512161157308_ComplianceChanges_3.cs" />
+    <Compile Include="Migrations\201512161157308_ComplianceChanges_3.Designer.cs">
+      <DependentUpon>201512161157308_ComplianceChanges_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512170549595_EndPointSystemType_Property_Addition.cs" />
+    <Compile Include="Migrations\201512170549595_EndPointSystemType_Property_Addition.Designer.cs">
+      <DependentUpon>201512170549595_EndPointSystemType_Property_Addition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512171022335_RenameIdColumn_13.cs" />
+    <Compile Include="Migrations\201512171022335_RenameIdColumn_13.Designer.cs">
+      <DependentUpon>201512171022335_RenameIdColumn_13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512180605127_RenameIdColumn_12.cs" />
+    <Compile Include="Migrations\201512180605127_RenameIdColumn_12.Designer.cs">
+      <DependentUpon>201512180605127_RenameIdColumn_12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512180702173_RenameIdColumn_14.cs" />
+    <Compile Include="Migrations\201512180702173_RenameIdColumn_14.Designer.cs">
+      <DependentUpon>201512180702173_RenameIdColumn_14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512180718520_RenameIdColumn_11.cs" />
+    <Compile Include="Migrations\201512180718520_RenameIdColumn_11.Designer.cs">
+      <DependentUpon>201512180718520_RenameIdColumn_11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512210723123_RenameIdColumn_15.cs" />
+    <Compile Include="Migrations\201512210723123_RenameIdColumn_15.Designer.cs">
+      <DependentUpon>201512210723123_RenameIdColumn_15.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512211105448_RenameIdColumn_17.cs" />
+    <Compile Include="Migrations\201512211105448_RenameIdColumn_17.Designer.cs">
+      <DependentUpon>201512211105448_RenameIdColumn_17.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512211129056_RenameIdColumn_16.cs" />
+    <Compile Include="Migrations\201512211129056_RenameIdColumn_16.Designer.cs">
+      <DependentUpon>201512211129056_RenameIdColumn_16.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512220812524_RenameIdColumn_18.cs" />
+    <Compile Include="Migrations\201512220812524_RenameIdColumn_18.Designer.cs">
+      <DependentUpon>201512220812524_RenameIdColumn_18.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512220932472_RenameIdColumn_19.cs" />
+    <Compile Include="Migrations\201512220932472_RenameIdColumn_19.Designer.cs">
+      <DependentUpon>201512220932472_RenameIdColumn_19.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512221041245_RenameIdColumn_20.cs" />
+    <Compile Include="Migrations\201512221041245_RenameIdColumn_20.Designer.cs">
+      <DependentUpon>201512221041245_RenameIdColumn_20.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512230021393_AttachmentRelatedChanges.cs" />
+    <Compile Include="Migrations\201512230021393_AttachmentRelatedChanges.Designer.cs">
+      <DependentUpon>201512230021393_AttachmentRelatedChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512230031129_NotificationRelatedChanges.cs" />
+    <Compile Include="Migrations\201512230031129_NotificationRelatedChanges.Designer.cs">
+      <DependentUpon>201512230031129_NotificationRelatedChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512301105583_UIAuditLog.cs" />
+    <Compile Include="Migrations\201512301105583_UIAuditLog.Designer.cs">
+      <DependentUpon>201512301105583_UIAuditLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512301236022_IdColumnDatatypeChange_1.cs" />
+    <Compile Include="Migrations\201512301236022_IdColumnDatatypeChange_1.Designer.cs">
+      <DependentUpon>201512301236022_IdColumnDatatypeChange_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512310607201_IdColumnDatatypeChange_2.cs" />
+    <Compile Include="Migrations\201512310607201_IdColumnDatatypeChange_2.Designer.cs">
+      <DependentUpon>201512310607201_IdColumnDatatypeChange_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601040430508_IdColumnDatatypeChange_3.cs" />
+    <Compile Include="Migrations\201601040430508_IdColumnDatatypeChange_3.Designer.cs">
+      <DependentUpon>201601040430508_IdColumnDatatypeChange_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601041004227_IdColumnDatatypeChange_4.cs" />
+    <Compile Include="Migrations\201601041004227_IdColumnDatatypeChange_4.Designer.cs">
+      <DependentUpon>201601041004227_IdColumnDatatypeChange_4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601050635517_IdColumnDatatypeChange_5.cs" />
+    <Compile Include="Migrations\201601050635517_IdColumnDatatypeChange_5.Designer.cs">
+      <DependentUpon>201601050635517_IdColumnDatatypeChange_5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601060810129_IdColumnDatatypeChange_7.cs" />
+    <Compile Include="Migrations\201601060810129_IdColumnDatatypeChange_7.Designer.cs">
+      <DependentUpon>201601060810129_IdColumnDatatypeChange_7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601060818466_IdColumnDatatypeChange_8.cs" />
+    <Compile Include="Migrations\201601060818466_IdColumnDatatypeChange_8.Designer.cs">
+      <DependentUpon>201601060818466_IdColumnDatatypeChange_8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601061432294_IdColumnDatatypeChange_10.cs" />
+    <Compile Include="Migrations\201601061432294_IdColumnDatatypeChange_10.Designer.cs">
+      <DependentUpon>201601061432294_IdColumnDatatypeChange_10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601070545331_IdColumnDatatypeChange_12.cs" />
+    <Compile Include="Migrations\201601070545331_IdColumnDatatypeChange_12.Designer.cs">
+      <DependentUpon>201601070545331_IdColumnDatatypeChange_12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601061805430_IdColumnDatatypeChange_9.cs" />
+    <Compile Include="Migrations\201601061805430_IdColumnDatatypeChange_9.Designer.cs">
+      <DependentUpon>201601061805430_IdColumnDatatypeChange_9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601070517016_IdColumnDatatypeChange_11.cs" />
+    <Compile Include="Migrations\201601070517016_IdColumnDatatypeChange_11.Designer.cs">
+      <DependentUpon>201601070517016_IdColumnDatatypeChange_11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601070714258_IdColumnDatatypeChange_121.cs" />
+    <Compile Include="Migrations\201601070714258_IdColumnDatatypeChange_121.Designer.cs">
+      <DependentUpon>201601070714258_IdColumnDatatypeChange_121.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601070849015_IdColumnDatatypeChange_13.cs" />
+    <Compile Include="Migrations\201601070849015_IdColumnDatatypeChange_13.Designer.cs">
+      <DependentUpon>201601070849015_IdColumnDatatypeChange_13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601071002015_IdColumnDatatypeChange_15.cs" />
+    <Compile Include="Migrations\201601071002015_IdColumnDatatypeChange_15.Designer.cs">
+      <DependentUpon>201601071002015_IdColumnDatatypeChange_15.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601070951208_IdColumnDatatypeChange_14.cs" />
+    <Compile Include="Migrations\201601070951208_IdColumnDatatypeChange_14.Designer.cs">
+      <DependentUpon>201601070951208_IdColumnDatatypeChange_14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601071055017_IdColumnDatatypeChange_16.cs" />
+    <Compile Include="Migrations\201601071055017_IdColumnDatatypeChange_16.Designer.cs">
+      <DependentUpon>201601071055017_IdColumnDatatypeChange_16.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601071148252_IdColumnDatatypeChange_17.cs" />
+    <Compile Include="Migrations\201601071148252_IdColumnDatatypeChange_17.Designer.cs">
+      <DependentUpon>201601071148252_IdColumnDatatypeChange_17.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601071349132_IdColumnDatatypeChange_18.cs" />
+    <Compile Include="Migrations\201601071349132_IdColumnDatatypeChange_18.Designer.cs">
+      <DependentUpon>201601071349132_IdColumnDatatypeChange_18.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601071056115_IdColumnDatatypeChange_6.cs" />
+    <Compile Include="Migrations\201601071056115_IdColumnDatatypeChange_6.Designer.cs">
+      <DependentUpon>201601071056115_IdColumnDatatypeChange_6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601081422081_IdColumnDatatypeChange_19.cs" />
+    <Compile Include="Migrations\201601081422081_IdColumnDatatypeChange_19.Designer.cs">
+      <DependentUpon>201601081422081_IdColumnDatatypeChange_19.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601110650242_IdColumnDatatypeChange_20.cs" />
+    <Compile Include="Migrations\201601110650242_IdColumnDatatypeChange_20.Designer.cs">
+      <DependentUpon>201601110650242_IdColumnDatatypeChange_20.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601110812519_IdColumnDatatypeChange_22.cs" />
+    <Compile Include="Migrations\201601110812519_IdColumnDatatypeChange_22.Designer.cs">
+      <DependentUpon>201601110812519_IdColumnDatatypeChange_22.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601111017122_IdColumnDatatypeChange_24.cs" />
+    <Compile Include="Migrations\201601111017122_IdColumnDatatypeChange_24.Designer.cs">
+      <DependentUpon>201601111017122_IdColumnDatatypeChange_24.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601110915440_IdColumnDatatypeChange_23.cs" />
+    <Compile Include="Migrations\201601110915440_IdColumnDatatypeChange_23.Designer.cs">
+      <DependentUpon>201601110915440_IdColumnDatatypeChange_23.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601111042452_IdColumnDatatypeChange_25.cs" />
+    <Compile Include="Migrations\201601111042452_IdColumnDatatypeChange_25.Designer.cs">
+      <DependentUpon>201601111042452_IdColumnDatatypeChange_25.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601111202084_IdColumnDatatypeChange_21.cs" />
+    <Compile Include="Migrations\201601111202084_IdColumnDatatypeChange_21.Designer.cs">
+      <DependentUpon>201601111202084_IdColumnDatatypeChange_21.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601111348093_IdColumnDatatypeChange_26.cs" />
+    <Compile Include="Migrations\201601111348093_IdColumnDatatypeChange_26.Designer.cs">
+      <DependentUpon>201601111348093_IdColumnDatatypeChange_26.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601120813137_IdColumnDatatypeChange_27.cs" />
+    <Compile Include="Migrations\201601120813137_IdColumnDatatypeChange_27.Designer.cs">
+      <DependentUpon>201601120813137_IdColumnDatatypeChange_27.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601121207407_IdColumnDatatypeChange_28.cs" />
+    <Compile Include="Migrations\201601121207407_IdColumnDatatypeChange_28.Designer.cs">
+      <DependentUpon>201601121207407_IdColumnDatatypeChange_28.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601121231016_IdColumnDatatypeChange_29.cs" />
+    <Compile Include="Migrations\201601121231016_IdColumnDatatypeChange_29.Designer.cs">
+      <DependentUpon>201601121231016_IdColumnDatatypeChange_29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601180551250_IdColumnDatatypeChange_30.cs" />
+    <Compile Include="Migrations\201601180551250_IdColumnDatatypeChange_30.Designer.cs">
+      <DependentUpon>201601180551250_IdColumnDatatypeChange_30.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601181731266_RenameIdColumn_21.cs" />
+    <Compile Include="Migrations\201601181731266_RenameIdColumn_21.Designer.cs">
+      <DependentUpon>201601181731266_RenameIdColumn_21.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601191056227_IdColumnDatatypeChange_31.cs" />
+    <Compile Include="Migrations\201601191056227_IdColumnDatatypeChange_31.Designer.cs">
+      <DependentUpon>201601191056227_IdColumnDatatypeChange_31.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601200418120_ADLockIssueFacedInMOM.cs" />
+    <Compile Include="Migrations\201601200418120_ADLockIssueFacedInMOM.Designer.cs">
+      <DependentUpon>201601200418120_ADLockIssueFacedInMOM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601290750032_AddedActionDateInTask.cs" />
+    <Compile Include="Migrations\201601290750032_AddedActionDateInTask.Designer.cs">
+      <DependentUpon>201601290750032_AddedActionDateInTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602121253032_Role.cs" />
+    <Compile Include="Migrations\201602121253032_Role.Designer.cs">
+      <DependentUpon>201602121253032_Role.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602150724210_RoleMatrix_RoleMatrixDetail_ColumnNameDataTypeChange.cs" />
+    <Compile Include="Migrations\201602150724210_RoleMatrix_RoleMatrixDetail_ColumnNameDataTypeChange.Designer.cs">
+      <DependentUpon>201602150724210_RoleMatrix_RoleMatrixDetail_ColumnNameDataTypeChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602151443260_ProvisioningFormIdRename.cs" />
+    <Compile Include="Migrations\201602151443260_ProvisioningFormIdRename.Designer.cs">
+      <DependentUpon>201602151443260_ProvisioningFormIdRename.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602160825454_IdColumnDatatypeChangeRuleset.cs" />
+    <Compile Include="Migrations\201602160825454_IdColumnDatatypeChangeRuleset.Designer.cs">
+      <DependentUpon>201602160825454_IdColumnDatatypeChangeRuleset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602160948192_IdColumnDatatypeChangesQuickLinkId.cs" />
+    <Compile Include="Migrations\201602160948192_IdColumnDatatypeChangesQuickLinkId.Designer.cs">
+      <DependentUpon>201602160948192_IdColumnDatatypeChangesQuickLinkId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602170743357_QuickLinkAccessRights.cs" />
+    <Compile Include="Migrations\201602170743357_QuickLinkAccessRights.Designer.cs">
+      <DependentUpon>201602170743357_QuickLinkAccessRights.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602171236056_dynamictableids.cs" />
+    <Compile Include="Migrations\201602171236056_dynamictableids.Designer.cs">
+      <DependentUpon>201602171236056_dynamictableids.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602181150325_RenameTableSOD.cs" />
+    <Compile Include="Migrations\201602181150325_RenameTableSOD.Designer.cs">
+      <DependentUpon>201602181150325_RenameTableSOD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602181315384_Process.cs" />
+    <Compile Include="Migrations\201602181315384_Process.Designer.cs">
+      <DependentUpon>201602181315384_Process.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602190832259_DataTypeChangeSODFunctionItem.cs" />
+    <Compile Include="Migrations\201602190832259_DataTypeChangeSODFunctionItem.Designer.cs">
+      <DependentUpon>201602190832259_DataTypeChangeSODFunctionItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602190958316_renametablesod1.cs" />
+    <Compile Include="Migrations\201602190958316_renametablesod1.Designer.cs">
+      <DependentUpon>201602190958316_renametablesod1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602220951378_DataTypeChangeSOD.cs" />
+    <Compile Include="Migrations\201602220951378_DataTypeChangeSOD.Designer.cs">
+      <DependentUpon>201602220951378_DataTypeChangeSOD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602221235304_RenameDynamicTableSOD.cs" />
+    <Compile Include="Migrations\201602221235304_RenameDynamicTableSOD.Designer.cs">
+      <DependentUpon>201602221235304_RenameDynamicTableSOD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602230945575_YP_TaskIdChange.cs" />
+    <Compile Include="Migrations\201602230945575_YP_TaskIdChange.Designer.cs">
+      <DependentUpon>201602230945575_YP_TaskIdChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602231034010_UserExtensionSchema.cs" />
+    <Compile Include="Migrations\201602231034010_UserExtensionSchema.Designer.cs">
+      <DependentUpon>201602231034010_UserExtensionSchema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602260944523_AbcCorpSchema.cs" />
+    <Compile Include="Migrations\201602260944523_AbcCorpSchema.Designer.cs">
+      <DependentUpon>201602260944523_AbcCorpSchema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602260645126_MailTemplateVariable_Path2.cs" />
+    <Compile Include="Migrations\201602260645126_MailTemplateVariable_Path2.Designer.cs">
+      <DependentUpon>201602260645126_MailTemplateVariable_Path2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602261700079_ET.cs" />
+    <Compile Include="Migrations\201602261700079_ET.Designer.cs">
+      <DependentUpon>201602261700079_ET.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602281601061_ComplianceSodPolicyExecutionDefinition.cs" />
+    <Compile Include="Migrations\201602281601061_ComplianceSodPolicyExecutionDefinition.Designer.cs">
+      <DependentUpon>201602281601061_ComplianceSodPolicyExecutionDefinition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603011041496_ReferenceIdDataTypeChangeinServiceLog.cs" />
+    <Compile Include="Migrations\201603011041496_ReferenceIdDataTypeChangeinServiceLog.Designer.cs">
+      <DependentUpon>201603011041496_ReferenceIdDataTypeChangeinServiceLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603030728294_DataTypeChange_UserImage.cs" />
+    <Compile Include="Migrations\201603030728294_DataTypeChange_UserImage.Designer.cs">
+      <DependentUpon>201603030728294_DataTypeChange_UserImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603041042236_ABCTableRename.cs" />
+    <Compile Include="Migrations\201603041042236_ABCTableRename.Designer.cs">
+      <DependentUpon>201603041042236_ABCTableRename.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603111111390_ScopeInTemplate.cs" />
+    <Compile Include="Migrations\201603111111390_ScopeInTemplate.Designer.cs">
+      <DependentUpon>201603111111390_ScopeInTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603111214513_TemplateEnumAdded.cs" />
+    <Compile Include="Migrations\201603111214513_TemplateEnumAdded.Designer.cs">
+      <DependentUpon>201603111214513_TemplateEnumAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603140733446_CreatedINHCatalog.cs" />
+    <Compile Include="Migrations\201603140733446_CreatedINHCatalog.Designer.cs">
+      <DependentUpon>201603140733446_CreatedINHCatalog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Provisioning\ProvisioningConfiguration.cs" />
+    <Compile Include="Migrations\201510080446056_W_4.cs" />
+    <Compile Include="Migrations\201510080446056_W_4.Designer.cs">
+      <DependentUpon>201510080446056_W_4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510080536330_provformchanges1.cs" />
+    <Compile Include="Migrations\201510080536330_provformchanges1.Designer.cs">
+      <DependentUpon>201510080536330_provformchanges1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510080904490_W_5.cs" />
+    <Compile Include="Migrations\201510080904490_W_5.Designer.cs">
+      <DependentUpon>201510080904490_W_5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510081152122_DB_Configuration.cs" />
+    <Compile Include="Migrations\201510081152122_DB_Configuration.Designer.cs">
+      <DependentUpon>201510081152122_DB_Configuration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510081236195_AdminModeItemChanges.cs" />
+    <Compile Include="Migrations\201510081236195_AdminModeItemChanges.Designer.cs">
+      <DependentUpon>201510081236195_AdminModeItemChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510081324523_AdminModeItemModification.cs" />
+    <Compile Include="Migrations\201510081324523_AdminModeItemModification.Designer.cs">
+      <DependentUpon>201510081324523_AdminModeItemModification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510090359590_W_6.cs" />
+    <Compile Include="Migrations\201510090359590_W_6.Designer.cs">
+      <DependentUpon>201510090359590_W_6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510090735518_RequestApprovalConfig.cs" />
+    <Compile Include="Migrations\201510090735518_RequestApprovalConfig.Designer.cs">
+      <DependentUpon>201510090735518_RequestApprovalConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510090823112_W_7.cs" />
+    <Compile Include="Migrations\201510090823112_W_7.Designer.cs">
+      <DependentUpon>201510090823112_W_7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510120329509_AccesRequestChanges.cs" />
+    <Compile Include="Migrations\201510120329509_AccesRequestChanges.Designer.cs">
+      <DependentUpon>201510120329509_AccesRequestChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510121109243_OracleUM xl Prov matrix.cs" />
+    <Compile Include="Migrations\201510121109243_OracleUM xl Prov matrix.Designer.cs">
+      <DependentUpon>201510121109243_OracleUM xl Prov matrix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510131011365_W8.cs" />
+    <Compile Include="Migrations\201510131011365_W8.Designer.cs">
+      <DependentUpon>201510131011365_W8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Provisioning\ProvisioningNameConstructor.cs" />
+    <Compile Include="Provisioning\DefaultProvisioningFormGeneralData.cs" />
+    <Compile Include="Provisioning\ProvisioningFormLINUX.cs" />
+    <Compile Include="Provisioning\ProvisioningFormOracle11g.cs" />
+    <Compile Include="Provisioning\ProvisioningFormOracleEBS.cs" />
+    <Compile Include="Endpoint\LINUX\LinuxConfiguration.cs" />
+    <Compile Include="Endpoint\LINUX\LinuxGroupInfo.cs" />
+    <Compile Include="Endpoint\LINUX\LinuxGroupInfoHistory.cs" />
+    <Compile Include="Endpoint\LINUX\LinuxResourceInfo.cs" />
+    <Compile Include="Endpoint\LINUX\LinuxResourceInfoHistory.cs" />
+    <Compile Include="Endpoint\LINUX\LinuxUserGroup.cs" />
+    <Compile Include="Endpoint\LINUX\LinuxUserInfo.cs" />
+    <Compile Include="Endpoint\LINUX\LinuxUserInfoHistory.cs" />
+    <Compile Include="Provisioning\OUChangeSnapshot.cs" />
+    <Compile Include="Contracts\IApprover.cs" />
+    <Compile Include="Contracts\IEntitlementDetail.cs" />
+    <Compile Include="Contracts\ILogger.cs" />
+    <Compile Include="Contracts\IEndpointConfiguration.cs" />
+    <Compile Include="Contracts\IAggregateRoot.cs" />
+    <Compile Include="Contracts\IProvisioningForm.cs" />
+    <Compile Include="Contracts\IEndpointUserInfo.cs" />
+    <Compile Include="Provisioning\EmployeeEventTrigger.cs" />
+    <Compile Include="Provisioning\RoleMatrixSimpleData.cs" />
+    <Compile Include="EntityFramework\IACMDBContext.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provisioning\AccessRequest.cs" />
+    <Compile Include="Provisioning\AccessRequestHistory.cs" />
+    <Compile Include="Provisioning\AccountReconcilation.cs" />
+    <Compile Include="Provisioning\RoleMatrixDetail.cs" />
+    <Compile Include="Provisioning\RoleMatrix.cs" />
+    <Compile Include="Provisioning\EntitlementReconcilation.cs" />
+    <Compile Include="Provisioning\ProvisioningForm.cs" />
+    <Compile Include="Provisioning\ProvisioningFormAD.cs" />
+    <Compile Include="Provisioning\ProvisioningFormGeneralData.cs" />
+    <Compile Include="Provisioning\ProvisioningFormLNS.cs" />
+    <Compile Include="Provisioning\ProvisioningFormSAP.cs" />
+    <Compile Include="Provisioning\ProvisioningFormSAPEP.cs" />
+    <Compile Include="PSScriptRunner.cs" />
+    <Compile Include="SOD\CompliancePolicy.cs" />
+    <Compile Include="SOD\ComplianceReportModules.cs" />
+    <Compile Include="SOD\PolicyType.cs" />
+    <Compile Include="SOD\SODAuthorizationReport.cs" />
+    <Compile Include="SOD\SODComplianceReport.cs" />
+    <Compile Include="SOD\SODConflict.cs" />
+    <Compile Include="SOD\SODConflictFunctionMap.cs" />
+    <Compile Include="SOD\SODConflictFunctions.cs" />
+    <Compile Include="SOD\SODEndPointPolicySelection.cs" />
+    <Compile Include="SOD\SODException.cs" />
+    <Compile Include="SOD\SodExceptionItem.cs" />
+    <Compile Include="SOD\SODExecutionConfig.cs" />
+    <Compile Include="SOD\SodFunction.cs" />
+    <Compile Include="SOD\SODMitigation.cs" />
+    <Compile Include="SOD\SODPolicy.cs" />
+    <Compile Include="SOD\SODPolicyExceutionDefnition.cs" />
+    <Compile Include="SOD\SODPolicyReport.cs" />
+    <Compile Include="SOD\SODRiskCode.cs" />
+    <Compile Include="SOD\SODRiskLevel.cs" />
+    <Compile Include="SOD\SODRiskScore.cs" />
+    <Compile Include="SOD\SODRunPolicy.cs" />
+    <Compile Include="SOD\SODRunPolicySelection.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlScripts\Data\InsertData\Core\ACL\01_Page.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\ACL\03_Page_Risk.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\ACL\04_Page_Compliance.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\ACL\05_Page_Conflict.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\ACL\06_Page_Policy.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\ACL\07_Page_PolicyExecution.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\ACL\08_Page_Exception.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\ACL\09_Page_Mitigation.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\ACL\10_Page_BulkOperation.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\ACL\11_Page_Reports.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\ACL\12_Permission.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\ACL\13_AccessRightsScript.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\ACL\02_Page_Data.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\ACL\AppText.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\01_CleanUp.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\RequestWithdrawn.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\Misc\RuntimeCodeCompiler.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Preference\QuickLink.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Setup\GlobalQuestion.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Setup\Initial.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Setup\MetaData.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Setup\Org.sql" />
+    <Content Include="SqlScripts\Data\InsertData\DataTfr.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\AbcCorp\AbcCorp.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\EndPointFunctionType.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\INH\INH.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\INH\Page_Data.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\Linux\Page.Data.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\OracleEBS\OEBS.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\OracleEBS\Page.Data.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\ORCLUM\OracleUM.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\ORCLUM\Page.Data.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\ADS\Page_Data.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\ADS\Page_Report.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\Linux\Page_Report.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\LNS\Page_Data.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\LNS\Page_Report.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\OracleEBS\Page_Report.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\ORCLUM\Page_Report.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\Peoplesoft\Peoplesoft.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\SAP\Page_Data.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\SAP\Page_Report.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\SAP\SAP.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Setup\ConfigMaster.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\Amendment.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\DeleteAccount.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\DeleteNonConnectedSystemNotification.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\DiscoveryJobFailed.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\EscalateAccessRequest.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\EscalateAttestationTask.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\MissingMatrixData.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\NewAccount.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\NewIDMSAccount.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\NotifyAttestationTask.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\NotifyTask.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\OffboardingApprover.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\OffboardingEmployee.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\OnboardingEmployee.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\OrgTransfer.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\PasswordReset.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\RemainderAccessRequest.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\RemainderAttestationTask.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\RequestFailed.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\RequestRejected.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\WelcomeEmail.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\Preference\DashboardScript.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Preference\AdminModeItem.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Setup\Rulesets.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Setup\TrustedSource.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\ADS\ADS.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\Linux\Linux.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\LNS\LNS.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\TRS.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Trigger.sql" />
+    <Content Include="SqlScripts\Data\InsertData\SOD\ComplianceDatascript.sql" />
+    <Content Include="SqlScripts\PS\ReadMe.txt" />
+    <Content Include="SqlScripts\Triggers\DI_GEMS_UserInfo_TRIGGER.sql" />
+    <Content Include="SqlScripts\Triggers\DI_GTSS_UserInfo_TRIGGER.sql" />
+    <Content Include="SqlScripts\Triggers\DI_LNS_Groups_DELETE_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_LNS_Groups_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_LNS_Users_DELETE_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_LNS_Users_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_ADS_GroupInfo_DELETE_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_ADS_GroupInfo_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_ADS_OuInfo_DELETE_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_ADS_OuInfo_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_ADS_UserInfo_DELETE_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_ADS_UserInfo_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_M_AccessRequest_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_M_AttestationReview_EndpointSystem_L2Detail_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_M_AttestationReview_EndpointSystem_L3Detail_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_M_AttestationReview_EndpointSystem_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_M_DiscoveryProcess_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_M_Email_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_M_Organisation_DELETE_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_M_Organisation_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_NPAC_UserInfo_TRIGGER.sql" />
+    <Content Include="SqlScripts\Triggers\DI_SAPEP_GroupInfo_DELETE_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_SAPEP_GroupInfo_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_SAPEP_RoleInfo_DELETE_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_SAPEP_RoleInfo_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_SAPEP_UserInfo_DELETE_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_SAPEP_UserInfo_TRIGGER.sql" />
+    <Content Include="SqlScripts\Triggers\DI_SAP_UserInfo_DELETE_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_SAP_USERINFO_TRIGGER.sql" />
+    <Content Include="SqlScripts\Triggers\DI_Win_GroupInfo_DELETE_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_Win_GroupInfo_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_Win_ResourceInfo_DELETE_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_Win_ResourceInfo_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_Win_UserInfo_DELETE_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_Win_UserInfo_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\New Triggers\LogTriggers.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="SqlScripts\PS\Core\Setup.ps1" />
+    <None Include="SqlScripts\PS\Core\Setup-Preference.ps1" />
+    <None Include="SqlScripts\PS\Core\Setup-MailTemplates.ps1" />
+    <None Include="SqlScripts\PS\Core\Setup-Misc.ps1" />
+    <None Include="SqlScripts\PS\Core\Setup-ACL.ps1" />
+    <None Include="SqlScripts\PS\Core\Test.ps1" />
+    <None Include="SqlScripts\PS\C_Var.ps1" />
+    <None Include="SqlScripts\PS\Endpoint\AbcCorp.ps1" />
+    <None Include="SqlScripts\PS\Endpoint\INH.ps1" />
+    <None Include="SqlScripts\PS\Endpoint\ADS.ps1" />
+    <None Include="SqlScripts\PS\Endpoint\ORCLUM.ps1" />
+    <None Include="SqlScripts\PS\Endpoint\Linux.ps1" />
+    <None Include="SqlScripts\PS\Endpoint\SAPEP.ps1" />
+    <None Include="SqlScripts\PS\Endpoint\SAP.ps1" />
+    <None Include="SqlScripts\PS\Endpoint\LNS.ps1" />
+    <None Include="SqlScripts\PS\__Var.ps1" />
+    <None Include="SqlScripts\PS\Core\Setup-All.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201509250759325_InitialScript.resx">
+      <DependentUpon>201509250759325_InitialScript.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509280945005_linux.resx">
+      <DependentUpon>201509280945005_linux.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509280237147_H_1.resx">
+      <DependentUpon>201509280237147_H_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509280603055_MissingMigration.resx">
+      <DependentUpon>201509280603055_MissingMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509280616432_AccountTypeChanges.resx">
+      <DependentUpon>201509280616432_AccountTypeChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509280920261_QuickLinkPrefChanges.resx">
+      <DependentUpon>201509280920261_QuickLinkPrefChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509281043175_AllIacmv5.resx">
+      <DependentUpon>201509281043175_AllIacmv5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509281016314_H_2.resx">
+      <DependentUpon>201509281016314_H_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509281057435_H_3.resx">
+      <DependentUpon>201509281057435_H_3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509290319358_H_4.resx">
+      <DependentUpon>201509290319358_H_4.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509290555431_AccessRequestChanges.resx">
+      <DependentUpon>201509290555431_AccessRequestChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509300425427_AttestationModelChange.resx">
+      <DependentUpon>201509300425427_AttestationModelChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509300431193_RunTimeCodeSnippet.resx">
+      <DependentUpon>201509300431193_RunTimeCodeSnippet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509300643556_R_QuickLink.resx">
+      <DependentUpon>201509300643556_R_QuickLink.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509301323421_Oracle11gMigration.resx">
+      <DependentUpon>201509301323421_Oracle11gMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510010632436_OracleUMLinuxNameChange.resx">
+      <DependentUpon>201510010632436_OracleUMLinuxNameChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510011012461_Cleanup.resx">
+      <DependentUpon>201510011012461_Cleanup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510011015260_AttestationRemediationChanges.resx">
+      <DependentUpon>201510011015260_AttestationRemediationChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510020200545_W_1.resx">
+      <DependentUpon>201510020200545_W_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510020237156_AttestationRemediationChanges1.resx">
+      <DependentUpon>201510020237156_AttestationRemediationChanges1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510020351300_AttestationRemediationChanges2.resx">
+      <DependentUpon>201510020351300_AttestationRemediationChanges2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510020500588_AttestationModelChanges.resx">
+      <DependentUpon>201510020500588_AttestationModelChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510020738208_AttestationModelChanges1.resx">
+      <DependentUpon>201510020738208_AttestationModelChanges1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510021001348_AdhocRequestChanges.resx">
+      <DependentUpon>201510021001348_AdhocRequestChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510060320538_W_2.resx">
+      <DependentUpon>201510060320538_W_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510060451157_LINUXXLMatrix_Migrations.resx">
+      <DependentUpon>201510060451157_LINUXXLMatrix_Migrations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510061117525_Q_AccessRights.resx">
+      <DependentUpon>201510061117525_Q_AccessRights.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510070808397_ProvConfiguration.resx">
+      <DependentUpon>201510070808397_ProvConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510070834011_RulesetTableRename.resx">
+      <DependentUpon>201510070834011_RulesetTableRename.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510080314413_ProvConfigChanges.resx">
+      <DependentUpon>201510080314413_ProvConfigChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510080446056_W_4.resx">
+      <DependentUpon>201510080446056_W_4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510080536330_provformchanges1.resx">
+      <DependentUpon>201510080536330_provformchanges1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510080904490_W_5.resx">
+      <DependentUpon>201510080904490_W_5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510081152122_DB_Configuration.resx">
+      <DependentUpon>201510081152122_DB_Configuration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510081236195_AdminModeItemChanges.resx">
+      <DependentUpon>201510081236195_AdminModeItemChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510081324523_AdminModeItemModification.resx">
+      <DependentUpon>201510081324523_AdminModeItemModification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510090359590_W_6.resx">
+      <DependentUpon>201510090359590_W_6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510090735518_RequestApprovalConfig.resx">
+      <DependentUpon>201510090735518_RequestApprovalConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510090823112_W_7.resx">
+      <DependentUpon>201510090823112_W_7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510120329509_AccesRequestChanges.resx">
+      <DependentUpon>201510120329509_AccesRequestChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510121109243_OracleUM xl Prov matrix.resx">
+      <DependentUpon>201510121109243_OracleUM xl Prov matrix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510131011365_W8.resx">
+      <DependentUpon>201510131011365_W8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510211000554_W9.resx">
+      <DependentUpon>201510211000554_W9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510220347033_W10.resx">
+      <DependentUpon>201510220347033_W10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510220446498_W11.resx">
+      <DependentUpon>201510220446498_W11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510230743309_MailTemplateVariable.resx">
+      <DependentUpon>201510230743309_MailTemplateVariable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510230748276_MailTemplateVariable1.resx">
+      <DependentUpon>201510230748276_MailTemplateVariable1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510230838072_W12.resx">
+      <DependentUpon>201510230838072_W12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510270600496_ADSConfigHistory.resx">
+      <DependentUpon>201510270600496_ADSConfigHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510280647048_PasswordPolicyChanges.resx">
+      <DependentUpon>201510280647048_PasswordPolicyChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510290932072_YP20151029.resx">
+      <DependentUpon>201510290932072_YP20151029.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510300432169_w13.resx">
+      <DependentUpon>201510300432169_w13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511020655537_NotificationChanges.resx">
+      <DependentUpon>201511020655537_NotificationChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511020719476_AttachmentChanges.resx">
+      <DependentUpon>201511020719476_AttachmentChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511030747039_H_6.resx">
+      <DependentUpon>201511030747039_H_6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511050726472_AccessRequestProgressClass.resx">
+      <DependentUpon>201511050726472_AccessRequestProgressClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511050913055_DashboardType.resx">
+      <DependentUpon>201511050913055_DashboardType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511060806079_AccessRequestSourceClass.resx">
+      <DependentUpon>201511060806079_AccessRequestSourceClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511060858018_AccessRequestStatusClass.resx">
+      <DependentUpon>201511060858018_AccessRequestStatusClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511061158535_removepoppulateiacmandmapiacm.resx">
+      <DependentUpon>201511061158535_removepoppulateiacmandmapiacm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511090359447_W14.resx">
+      <DependentUpon>201511090359447_W14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511091058231_W15.resx">
+      <DependentUpon>201511091058231_W15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511110328573_H_7.resx">
+      <DependentUpon>201511110328573_H_7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511120539330_H_8.resx">
+      <DependentUpon>201511120539330_H_8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511130703491_H_9.resx">
+      <DependentUpon>201511130703491_H_9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511160526200_H_10.resx">
+      <DependentUpon>201511160526200_H_10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511160910422_UserImageChanges.resx">
+      <DependentUpon>201511160910422_UserImageChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511180350517_H_11.resx">
+      <DependentUpon>201511180350517_H_11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511240549427_H_12.resx">
+      <DependentUpon>201511240549427_H_12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511250554053_H_13.resx">
+      <DependentUpon>201511250554053_H_13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511260658250_ServiceLog.resx">
+      <DependentUpon>201511260658250_ServiceLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511261005108_Configmaster.resx">
+      <DependentUpon>201511261005108_Configmaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511261417423_RenameIdColumn_1.resx">
+      <DependentUpon>201511261417423_RenameIdColumn_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511270436293_RenameIdColumn_2.resx">
+      <DependentUpon>201511270436293_RenameIdColumn_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511271244238_RenameIdColumn_4.resx">
+      <DependentUpon>201511271244238_RenameIdColumn_4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511271250552_RenameIdColumn_3.resx">
+      <DependentUpon>201511271250552_RenameIdColumn_3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511301340142_RenameIdColumn_5.resx">
+      <DependentUpon>201511301340142_RenameIdColumn_5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512010940336_W16.resx">
+      <DependentUpon>201512010940336_W16.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512020355036_W17.resx">
+      <DependentUpon>201512020355036_W17.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512020426027_W18.resx">
+      <DependentUpon>201512020426027_W18.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512080945172_RenameIdColumn_6.resx">
+      <DependentUpon>201512080945172_RenameIdColumn_6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512101005370_UserCulPrefence.resx">
+      <DependentUpon>201512101005370_UserCulPrefence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512101028305_LogChanges.resx">
+      <DependentUpon>201512101028305_LogChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512101040589_RenameIdColumn_7.resx">
+      <DependentUpon>201512101040589_RenameIdColumn_7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512101150105_RenameIdColumn_8.resx">
+      <DependentUpon>201512101150105_RenameIdColumn_8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512101532115_ComplianceChanges.resx">
+      <DependentUpon>201512101532115_ComplianceChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512111207204_SAPXLProvMatrix.resx">
+      <DependentUpon>201512111207204_SAPXLProvMatrix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512141028100_RenameIdColumn_9.resx">
+      <DependentUpon>201512141028100_RenameIdColumn_9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512150534466_M2.resx">
+      <DependentUpon>201512150534466_M2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512150726523_ComplianceChanges_1.resx">
+      <DependentUpon>201512150726523_ComplianceChanges_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512151016177_purgeconfig.resx">
+      <DependentUpon>201512151016177_purgeconfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512160759018_RenameIdColumn_10.resx">
+      <DependentUpon>201512160759018_RenameIdColumn_10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512161157308_ComplianceChanges_3.resx">
+      <DependentUpon>201512161157308_ComplianceChanges_3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512170549595_EndPointSystemType_Property_Addition.resx">
+      <DependentUpon>201512170549595_EndPointSystemType_Property_Addition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512171022335_RenameIdColumn_13.resx">
+      <DependentUpon>201512171022335_RenameIdColumn_13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512180605127_RenameIdColumn_12.resx">
+      <DependentUpon>201512180605127_RenameIdColumn_12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512180702173_RenameIdColumn_14.resx">
+      <DependentUpon>201512180702173_RenameIdColumn_14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512180718520_RenameIdColumn_11.resx">
+      <DependentUpon>201512180718520_RenameIdColumn_11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512210723123_RenameIdColumn_15.resx">
+      <DependentUpon>201512210723123_RenameIdColumn_15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512211105448_RenameIdColumn_17.resx">
+      <DependentUpon>201512211105448_RenameIdColumn_17.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512211129056_RenameIdColumn_16.resx">
+      <DependentUpon>201512211129056_RenameIdColumn_16.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512220812524_RenameIdColumn_18.resx">
+      <DependentUpon>201512220812524_RenameIdColumn_18.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512220932472_RenameIdColumn_19.resx">
+      <DependentUpon>201512220932472_RenameIdColumn_19.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512221041245_RenameIdColumn_20.resx">
+      <DependentUpon>201512221041245_RenameIdColumn_20.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512230021393_AttachmentRelatedChanges.resx">
+      <DependentUpon>201512230021393_AttachmentRelatedChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512230031129_NotificationRelatedChanges.resx">
+      <DependentUpon>201512230031129_NotificationRelatedChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512301105583_UIAuditLog.resx">
+      <DependentUpon>201512301105583_UIAuditLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512301236022_IdColumnDatatypeChange_1.resx">
+      <DependentUpon>201512301236022_IdColumnDatatypeChange_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512310607201_IdColumnDatatypeChange_2.resx">
+      <DependentUpon>201512310607201_IdColumnDatatypeChange_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601040430508_IdColumnDatatypeChange_3.resx">
+      <DependentUpon>201601040430508_IdColumnDatatypeChange_3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601041004227_IdColumnDatatypeChange_4.resx">
+      <DependentUpon>201601041004227_IdColumnDatatypeChange_4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601050635517_IdColumnDatatypeChange_5.resx">
+      <DependentUpon>201601050635517_IdColumnDatatypeChange_5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601060810129_IdColumnDatatypeChange_7.resx">
+      <DependentUpon>201601060810129_IdColumnDatatypeChange_7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601060818466_IdColumnDatatypeChange_8.resx">
+      <DependentUpon>201601060818466_IdColumnDatatypeChange_8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601061432294_IdColumnDatatypeChange_10.resx">
+      <DependentUpon>201601061432294_IdColumnDatatypeChange_10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601070545331_IdColumnDatatypeChange_12.resx">
+      <DependentUpon>201601070545331_IdColumnDatatypeChange_12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601061805430_IdColumnDatatypeChange_9.resx">
+      <DependentUpon>201601061805430_IdColumnDatatypeChange_9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601070517016_IdColumnDatatypeChange_11.resx">
+      <DependentUpon>201601070517016_IdColumnDatatypeChange_11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601070714258_IdColumnDatatypeChange_121.resx">
+      <DependentUpon>201601070714258_IdColumnDatatypeChange_121.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601070849015_IdColumnDatatypeChange_13.resx">
+      <DependentUpon>201601070849015_IdColumnDatatypeChange_13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601070951208_IdColumnDatatypeChange_14.resx">
+      <DependentUpon>201601070951208_IdColumnDatatypeChange_14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601071002015_IdColumnDatatypeChange_15.resx">
+      <DependentUpon>201601071002015_IdColumnDatatypeChange_15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601071055017_IdColumnDatatypeChange_16.resx">
+      <DependentUpon>201601071055017_IdColumnDatatypeChange_16.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601071148252_IdColumnDatatypeChange_17.resx">
+      <DependentUpon>201601071148252_IdColumnDatatypeChange_17.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601071349132_IdColumnDatatypeChange_18.resx">
+      <DependentUpon>201601071349132_IdColumnDatatypeChange_18.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601071056115_IdColumnDatatypeChange_6.resx">
+      <DependentUpon>201601071056115_IdColumnDatatypeChange_6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601081422081_IdColumnDatatypeChange_19.resx">
+      <DependentUpon>201601081422081_IdColumnDatatypeChange_19.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601110650242_IdColumnDatatypeChange_20.resx">
+      <DependentUpon>201601110650242_IdColumnDatatypeChange_20.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601110812519_IdColumnDatatypeChange_22.resx">
+      <DependentUpon>201601110812519_IdColumnDatatypeChange_22.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601111017122_IdColumnDatatypeChange_24.resx">
+      <DependentUpon>201601111017122_IdColumnDatatypeChange_24.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601110915440_IdColumnDatatypeChange_23.resx">
+      <DependentUpon>201601110915440_IdColumnDatatypeChange_23.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601111042452_IdColumnDatatypeChange_25.resx">
+      <DependentUpon>201601111042452_IdColumnDatatypeChange_25.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601111202084_IdColumnDatatypeChange_21.resx">
+      <DependentUpon>201601111202084_IdColumnDatatypeChange_21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601111348093_IdColumnDatatypeChange_26.resx">
+      <DependentUpon>201601111348093_IdColumnDatatypeChange_26.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601120813137_IdColumnDatatypeChange_27.resx">
+      <DependentUpon>201601120813137_IdColumnDatatypeChange_27.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601121207407_IdColumnDatatypeChange_28.resx">
+      <DependentUpon>201601121207407_IdColumnDatatypeChange_28.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601121231016_IdColumnDatatypeChange_29.resx">
+      <DependentUpon>201601121231016_IdColumnDatatypeChange_29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601180551250_IdColumnDatatypeChange_30.resx">
+      <DependentUpon>201601180551250_IdColumnDatatypeChange_30.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601181731266_RenameIdColumn_21.resx">
+      <DependentUpon>201601181731266_RenameIdColumn_21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601191056227_IdColumnDatatypeChange_31.resx">
+      <DependentUpon>201601191056227_IdColumnDatatypeChange_31.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601200418120_ADLockIssueFacedInMOM.resx">
+      <DependentUpon>201601200418120_ADLockIssueFacedInMOM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601290750032_AddedActionDateInTask.resx">
+      <DependentUpon>201601290750032_AddedActionDateInTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602121253032_Role.resx">
+      <DependentUpon>201602121253032_Role.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602150724210_RoleMatrix_RoleMatrixDetail_ColumnNameDataTypeChange.resx">
+      <DependentUpon>201602150724210_RoleMatrix_RoleMatrixDetail_ColumnNameDataTypeChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602151443260_ProvisioningFormIdRename.resx">
+      <DependentUpon>201602151443260_ProvisioningFormIdRename.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602160825454_IdColumnDatatypeChangeRuleset.resx">
+      <DependentUpon>201602160825454_IdColumnDatatypeChangeRuleset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602160948192_IdColumnDatatypeChangesQuickLinkId.resx">
+      <DependentUpon>201602160948192_IdColumnDatatypeChangesQuickLinkId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602170743357_QuickLinkAccessRights.resx">
+      <DependentUpon>201602170743357_QuickLinkAccessRights.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602171236056_dynamictableids.resx">
+      <DependentUpon>201602171236056_dynamictableids.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602181150325_RenameTableSOD.resx">
+      <DependentUpon>201602181150325_RenameTableSOD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602181315384_Process.resx">
+      <DependentUpon>201602181315384_Process.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602190832259_DataTypeChangeSODFunctionItem.resx">
+      <DependentUpon>201602190832259_DataTypeChangeSODFunctionItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602190958316_renametablesod1.resx">
+      <DependentUpon>201602190958316_renametablesod1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602220951378_DataTypeChangeSOD.resx">
+      <DependentUpon>201602220951378_DataTypeChangeSOD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602221235304_RenameDynamicTableSOD.resx">
+      <DependentUpon>201602221235304_RenameDynamicTableSOD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602230945575_YP_TaskIdChange.resx">
+      <DependentUpon>201602230945575_YP_TaskIdChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602231034010_UserExtensionSchema.resx">
+      <DependentUpon>201602231034010_UserExtensionSchema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602260944523_AbcCorpSchema.resx">
+      <DependentUpon>201602260944523_AbcCorpSchema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602260645126_MailTemplateVariable_Path2.resx">
+      <DependentUpon>201602260645126_MailTemplateVariable_Path2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602261700079_ET.resx">
+      <DependentUpon>201602261700079_ET.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602281601061_ComplianceSodPolicyExecutionDefinition.resx">
+      <DependentUpon>201602281601061_ComplianceSodPolicyExecutionDefinition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603011041496_ReferenceIdDataTypeChangeinServiceLog.resx">
+      <DependentUpon>201603011041496_ReferenceIdDataTypeChangeinServiceLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603030728294_DataTypeChange_UserImage.resx">
+      <DependentUpon>201603030728294_DataTypeChange_UserImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603041042236_ABCTableRename.resx">
+      <DependentUpon>201603041042236_ABCTableRename.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603111111390_ScopeInTemplate.resx">
+      <DependentUpon>201603111111390_ScopeInTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603111214513_TemplateEnumAdded.resx">
+      <DependentUpon>201603111214513_TemplateEnumAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603140733446_CreatedINHCatalog.resx">
+      <DependentUpon>201603140733446_CreatedINHCatalog.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DI.Chakra.EntityModel\DI.Chakra.EntityModel.csproj">
+      <Project>{65af207b-2342-4009-b3ea-0c829ff25cdc}</Project>
+      <Name>DI.Chakra.EntityModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Infrastructure\DI.Chakra.Infrastructure.csproj">
+      <Project>{9a13b27d-b9dc-474a-9fe6-1c60fd52e5a7}</Project>
+      <Name>DI.Chakra.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

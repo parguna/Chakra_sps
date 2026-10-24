@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A307A2D3-0ACE-4DF9-8FC1-9694F12CAF65}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DI.Chakra.Connector.SAPEP701</RootNamespace>
+    <AssemblyName>DI.Chakra.Connector.SAPEP701</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="GroupInfoOrchestrator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoleInfoOrchestrator.cs" />
+    <Compile Include="SAP701Connector.cs" />
+    <Compile Include="SAP701ServiceProxy.cs" />
+    <Compile Include="SAP701UserMap.cs" />
+    <Compile Include="UserInfoOrchestrator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DI.Chakra.Connector\DI.Chakra.Connector.csproj">
+      <Project>{04c4c7c7-177d-462d-ae23-8fc918327791}</Project>
+      <Name>DI.Chakra.Connector</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DI.Chakra.DataAccess\DI.Chakra.DataAccess.csproj">
+      <Project>{b46440d7-2afa-4dbf-8421-e728499f77f7}</Project>
+      <Name>DI.Chakra.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DI.Chakra.Facade\DI.Chakra.Facade.csproj">
+      <Project>{bf250503-6752-4e49-af1c-fe82ae517cd5}</Project>
+      <Name>DI.Chakra.Facade</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DI.Chakra.Logger\DI.Chakra.Logger.csproj">
+      <Project>{1e273971-c665-4e37-88ec-9621c81a7009}</Project>
+      <Name>DI.Chakra.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DI.Chakra.Model\DI.Chakra.Model.csproj">
+      <Project>{a35dde44-7c93-433d-a8a7-a41a06896a51}</Project>
+      <Name>DI.Chakra.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DI.Chakra.Infrastructure\DI.Chakra.Infrastructure.csproj">
+      <Project>{9a13b27d-b9dc-474a-9fe6-1c60fd52e5a7}</Project>
+      <Name>DI.Chakra.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

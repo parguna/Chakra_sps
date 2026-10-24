@@ -1,0 +1,3 @@
+Catalog,Endpoint,EntitlementType,EntitlementName,Approver
+Fin,AD,Group,Administrators,1|User|IACMAdmin
+Sal,AD,Group,Backup Operators,1|User|IACMAdmin

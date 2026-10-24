@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="iacm" default="int">
+  <property name="build.phase" value="Phase1" />
+  <property name="MSBuildPath" value="C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe"/>
+  <property name="build.client" value="DEEPIDENTITY" />
+  <property name="build.sourcedir" value="F:\DeepIdentity\Version5\PRODUCT4.0\branches\V5\SOURCE\" />
+  <property name="build.solutiondir" value="${build.sourcedir}" />
+  <property name="build.webprojDir" value="${build.sourcedir}\IACMWeb\" />
+  <property name="build.authprojDir" value="${build.sourcedir}\DeepIdentity.Services\" />
+  <property name="build.wfprojDir" value="${build.sourcedir}\DeepIdentity.Workflow.Services\" />
+  <property name="properties.devfile" value="${build.sourcedir}buildfiles\dev.xml" />
+  
+  <tstamp>
+    <formatter property="build.date" pattern="yyyyMMdd"/>
+    <formatter property="build.time" pattern="hh.mm.ss" />
+  </tstamp>
+
+  <target name="dev" description="Build solution and copy dev files">
+    <property name="environmentfile" value="${properties.devfile}"/>
+    <call target="build"/>
+  </target>
+
+  <target name="build">
+    <call target="importProperties" cascade="false"/>
+    <call target="clean"/>
+    <call target="buildweb"/>
+    <call target="buildAuth"/>
+    <call target="buildWf"/>
+    <call target="deployTempWeb"/>
+    <call target="deployTempAuth"/>
+    <call target="deployTempWf"/>
+    <call target="deployWeb"/>
+    <call target="deployAuth"/>
+    <call target="deployWf"/>
+  </target>
+
+  <target name="importProperties">
+    <property name="propertiesFile" value="${environmentfile}"/>
+    <if test="${file::exists(propertiesFile)}">
+      <include buildfile="${propertiesFile}"/>
+    </if>
+    <if test="${not file::exists(propertiesFile)}">
+      <fail message="Properties file ${propertiesFile} could not be found."/>
+    </if>
+  </target>
+
+
+  <target name="clean" description="Clean deploy folder">
+    <delete dir="${build.deployTempRootDir}"/>
+    <delete dir="${build.deployTempAuthRootDir}"/>
+    <delete dir="${build.deployTempWfRootDir}"/>
+  </target>
+
+  <target name="buildweb" description="Build the solution">
+    <exec program="${MSBuildPath}">
+      <arg line="${build.webprojDir}IACMWeb.csproj" />
+      <arg line="/p:Configuration=Release" />
+      <arg value="/target:Rebuild" />
+      <arg value="/p:outdir=${build.webprojDir}bin\" />
+    </exec>
+  </target>
+  <target name="buildAuth" description="Build the authentication service">
+    <exec program="${MSBuildPath}">
+      <arg line="${build.authprojDir}DeepIdentity.Services.csproj" />
+      <arg line="/p:Configuration=Release" />
+      <arg value="/target:Rebuild" />
+      <arg value="/p:outdir=${build.authprojDir}bin\" />
+    </exec>
+  </target>
+  <target name="buildWf" description="Build the Workflow service">
+    <exec program="${MSBuildPath}">
+      <arg line="${build.wfprojDir}DeepIdentity.Workflow.Services.csproj" />
+      <arg line="/p:Configuration=Release" />
+      <arg value="/target:Rebuild" />
+      <arg value="/p:outdir=${build.wfprojDir}bin\" />
+    </exec>
+  </target>
+  <target name="deployTempWeb" description="Copy built files">
+    <copy todir="${build.deployTempRootDir}">
+      <fileset basedir="${build.webprojDir}bin\_PublishedWebsites\IACMWeb">
+        <exclude name="assets"/>
+        <exclude name="web.config"/>
+        <exclude name="**.pdb"/>
+        <include name="**.config"/>
+        <include name="**.xml"/>
+        <include name="**.dll"/>
+        <include name="**.txt"/>
+        <include name="**.aspx"/>
+        <include name="**.ascx"/>
+        <include name="**.asax.**"/>
+        <include name="**.resx"/>
+        <include name="**.master"/>
+        <include name="**.html"/>
+        <include name="**\Images\**"/>
+        <include name="**.css"/>
+        <include name="**.js"/>
+        <include name="**.svc"/>
+      </fileset>
+    </copy>
+
+    <attrib normal="true">
+      <fileset basedir="${build.deployTempRootDir}">
+        <include name="**"/>
+      </fileset>
+    </attrib>
+
+    <attrib readonly="false">
+      <fileset basedir="${build.deployTempRootDir}">
+        <include name="**"/>
+      </fileset>
+    </attrib>
+  </target>
+  <target name="deployTempAuth" description="Copy built files">
+    <copy todir="${build.deployTempAuthRootDir}">
+      <fileset basedir="${build.authprojDir}bin\_PublishedWebsites\DeepIdentity.Services">
+        <exclude name="web.config"/>
+        <exclude name="Web.Debug.**"/>
+        <exclude name="Web.Release.**"/>
+        <exclude name="**.pdb"/>
+        <include name="**.config"/>
+        <include name="**.xml"/>
+        <include name="**.dll"/>
+        <include name="**.svc"/>
+        <include name="**.xamlx"/>
+      </fileset>
+    </copy>
+
+    <attrib normal="true">
+      <fileset basedir="${build.deployTempAuthRootDir}">
+        <include name="**"/>
+      </fileset>
+    </attrib>
+
+    <attrib readonly="false">
+      <fileset basedir="${build.deployTempAuthRootDir}">
+        <include name="**"/>
+      </fileset>
+    </attrib>
+  </target>
+  <target name="deployTempWf" description="Copy built files">
+    <copy todir="${build.deployTempWfRootDir}">
+      <fileset basedir="${build.wfprojDir}bin\_PublishedWebsites\DeepIdentity.Workflow.Services">
+        <exclude name="web.config"/>
+        <exclude name="Web.Debug.**"/>
+        <exclude name="Web.Release.**"/>
+        <exclude name="**.pdb"/>
+        <include name="**.config"/>
+        <include name="**.xml"/>
+        <include name="**.dll"/>
+        <include name="**.svc"/>
+        <include name="**.xamlx"/>
+      </fileset>
+    </copy>
+
+    <attrib normal="true">
+      <fileset basedir="${build.deployTempWfRootDir}">
+        <include name="**"/>
+      </fileset>
+    </attrib>
+
+    <attrib readonly="false">
+      <fileset basedir="${build.deployTempWfRootDir}">
+        <include name="**"/>
+      </fileset>
+    </attrib>
+  </target>
+  <target name="stopAppPool" description="Stop Application Pool">
+    
+    <loadtasks assembly="c:\nantcontrib\bin\NAnt.Contrib.Tasks.dll" />
+
+    <iisapppool action="Stop" pool="Test" server="localhost" />
+  </target>
+  
+  <target name="deployWeb" description="Copy built files">   
+
+    <copy todir="${build.deployRootDir}">
+      <fileset basedir="${build.deployTempRootDir}">
+        <include name="**.*"/>
+      </fileset>
+    </copy>
+
+  </target>
+  <target name="deployAuth" description="Copy built files">
+
+    <copy todir="${build.deployRootAuthDir}">
+      <fileset basedir="${build.deployTempAuthRootDir}">
+        <include name="**.*"/>
+      </fileset>
+    </copy>
+
+  </target>
+  <target name="deployWf" description="Copy built files">
+
+    <copy todir="${build.deployRootWfDir}">
+      <fileset basedir="${build.deployTempWfRootDir}">
+        <include name="**.*"/>
+      </fileset>
+    </copy>
+
+  </target>
+</project>

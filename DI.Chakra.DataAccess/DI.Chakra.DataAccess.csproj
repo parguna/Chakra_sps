@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B46440D7-2AFA-4DBF-8421-E728499F77F7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DI.Chakra.DataAccess</RootNamespace>
+    <AssemblyName>DI.Chakra.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\Solution\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Web - DEBUG|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Web - DEBUG\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Web - DEBUG|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Web - DEBUG\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'de|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\de\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'de|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\de\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Assemblies\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Implementation\ACLDA.cs" />
+    <Compile Include="Implementation\AppCustomizationDA.cs" />
+    <Compile Include="Implementation\ARDA.cs" />
+    <Compile Include="Implementation\AuditDA.cs" />
+    <Compile Include="Implementation\CodeSnippetDA.cs" />
+    <Compile Include="Implementation\CulturePreferenceDA.cs" />
+    <Compile Include="Implementation\GlobalAnswerDA.cs" />
+    <Compile Include="Implementation\GlobalQuestionDA.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Implementation\ORCLUMDA.cs" />
+    <Compile Include="Implementation\OracleEBSDA.cs" />
+    <Compile Include="Implementation\ProvisioningRoleDA.cs" />
+    <Compile Include="Implementation\RulesetDA.cs" />
+    <Compile Include="Implementation\TriggerDA.cs" />
+    <Compile Include="Implementation\GridDA.cs" />
+    <Compile Include="Implementation\HouseKeepingDA.cs" />
+    <Compile Include="Implementation\AccessRequestDA.cs" />
+    <Compile Include="Implementation\AdHocRequestDA.cs" />
+    <Compile Include="Implementation\ExcelConnect.cs" />
+    <Compile Include="Implementation\InhouseSystemDA.cs" />
+    <Compile Include="Implementation\PasswordSynchronizationDA.cs" />
+    <Compile Include="Implementation\AdminModeItemDA.cs" />
+    <Compile Include="Implementation\ProcessDA.cs" />
+    <Compile Include="Implementation\ReconcilationDA.cs" />
+    <Compile Include="Implementation\LoggerDA.cs" />
+    <Compile Include="Implementation\MasterDA.cs" />
+    <Compile Include="Implementation\ProvisioningConfigurationDA.cs" />
+    <Compile Include="Implementation\DashboardDA.cs" />
+    <Compile Include="Implementation\PasswordSyncConfigurationDA.cs" />
+    <Compile Include="Implementation\InterimStoreDA.cs" />
+    <Compile Include="Implementation\RoleMatrixDA.cs" />
+    <Compile Include="Implementation\SAPAccountRequestsReportData.cs" />
+    <Compile Include="Implementation\SAPRevokeRequestReportData.cs" />
+    <Compile Include="Implementation\SAPRoleTCode.cs" />
+    <Compile Include="Implementation\TaskDA.cs" />
+    <Compile Include="Implementation\PasswordPolicyDA.cs" />
+    <Compile Include="Implementation\TenantDA.cs" />
+    <Compile Include="Implementation\TextDataConnect.cs" />
+    <Compile Include="Implementation\UserAccountDA.cs" />
+    <Compile Include="Implementation\UserQuickLinkDA.cs" />
+    <Compile Include="Implementation\WorkFlowConfigurationDA.cs" />
+    <Compile Include="Implementation\GeneralDA.cs" />
+    <Compile Include="Implementation\ProvisioningFormDA.cs" />
+    <Compile Include="Implementation\SAPEPDA.cs" />
+    <Compile Include="SodDA.cs" />
+    <Compile Include="Implementation\AccessRightsDA.cs" />
+    <Compile Include="Implementation\ActiveDirectoryDA.cs" />
+    <Compile Include="Implementation\AttestationDA.cs" />
+    <Compile Include="Helper\CheckNull.cs" />
+    <Compile Include="Helper\CheckSqlLiteral.cs" />
+    <Compile Include="Core\SqlConnection\ConnectionType.cs" />
+    <Compile Include="Implementation\AttestationProcessDA.cs" />
+    <Compile Include="Implementation\DiConfigurationDA.cs" />
+    <Compile Include="Implementation\DiscoveryProcessDA.cs" />
+    <Compile Include="Implementation\EndPointDA.cs" />
+    <Compile Include="Helper\GetDbNull.cs" />
+    <Compile Include="Core\SqlConnection\IACMDbConnection.cs" />
+    <Compile Include="Implementation\EndpointObjectDA.cs" />
+    <Compile Include="Implementation\GroupDA.cs" />
+    <Compile Include="Implementation\LotusNotesDA.cs" />
+    <Compile Include="Implementation\OrganisationDA.cs" />
+    <Compile Include="Implementation\RoleAssignmentDA.cs" />
+    <Compile Include="Implementation\RoleDA.cs" />
+    <Compile Include="Implementation\SAPConnectorDA.cs" />
+    <Compile Include="Implementation\TabMenuDA.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Core\SqlConnection\QueryExecutor.cs" />
+    <Compile Include="Implementation\SchedulerDA.cs" />
+    <Compile Include="Core\SqlConnection\SQLBulkUploader.cs" />
+    <Compile Include="Implementation\UserDA.cs" />
+    <Compile Include="TestDA.cs" />
+    <Compile Include="Implementation\LinuxDA.cs" />
+    <Compile Include="VPNMasterDA.cs" />
+    <Compile Include="XLProcesssor\ADSCatalogDataValidator.cs" />
+    <Compile Include="XLProcesssor\ADSProvMatrixDataValidator.cs" />
+    <Compile Include="XLProcesssor\LNSCatalogDataValidator.cs" />
+    <Compile Include="XLProcesssor\SAPProvMatrixDataValidator.cs" />
+    <Compile Include="XLProcesssor\SAPRoleCatalogDataValidator.cs" />
+    <Compile Include="XLProcesssor\TextProcessor.cs" />
+    <Compile Include="XLProcesssor\VPNProvMatrixDataValidator.cs" />
+    <Compile Include="XLProcesssor\Inhouse\InhousePermissionXLValidator.cs" />
+    <Compile Include="XLProcesssor\Inhouse\InhouseUserXLValidator.cs" />
+    <Compile Include="XLProcesssor\LNSMailQuotaXLValidator.cs" />
+    <Compile Include="XLProcesssor\IValidator.cs" />
+    <Compile Include="XLProcesssor\LNSProvMatrixDataValidator.cs" />
+    <Compile Include="XLProcesssor\SAPCriticalTCodeMatrixDataValidator.cs" />
+    <Compile Include="XLProcesssor\SAPPositionMatrixDataValidator.cs" />
+    <Compile Include="XLProcesssor\XLDataProcessor.cs" />
+    <Compile Include="XLProcesssor\XLDataValidator.cs" />
+    <Compile Include="XLProcesssor\XLProcessor.cs" />
+    <Compile Include="XLProcesssor\XLTemplates.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DI.Chakra.DomainModel\DI.Chakra.DomainModel.csproj">
+      <Project>{dba76d9a-9381-4313-8cf0-b1098be94d41}</Project>
+      <Name>DI.Chakra.DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.EntityModel\DI.Chakra.EntityModel.csproj">
+      <Project>{65af207b-2342-4009-b3ea-0c829ff25cdc}</Project>
+      <Name>DI.Chakra.EntityModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Logger\DI.Chakra.Logger.csproj">
+      <Project>{1e273971-c665-4e37-88ec-9621c81a7009}</Project>
+      <Name>DI.Chakra.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Model\DI.Chakra.Model.csproj">
+      <Project>{a35dde44-7c93-433d-a8a7-a41a06896a51}</Project>
+      <Name>DI.Chakra.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Infrastructure\DI.Chakra.Infrastructure.csproj">
+      <Project>{9a13b27d-b9dc-474a-9fe6-1c60fd52e5a7}</Project>
+      <Name>DI.Chakra.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

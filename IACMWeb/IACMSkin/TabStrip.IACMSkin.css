@@ -1,0 +1,143 @@
+.RadTabStrip_IACMSkin {
+    color: #333
+}
+
+.RadTabStrip_IACMSkin .rtsLevel1 {
+    border-color: #c9c9c9
+}
+
+.RadTabStrip_IACMSkin .rtsLevel1 .rtsLink {
+    border-color: #c9c9c9;
+    color: #5f5f5f;
+    background-color: #d6d5d4;
+    background-image: linear-gradient(#fff, #d6d5d4)
+}
+
+.RadTabStrip_IACMSkin .rtsLevel1 .rtsHovered .rtsLink {
+    border-color: #c9c9c9;
+    color: #333;
+    background-color: #c5c4c3;
+    background-image: linear-gradient(#ebebeb, #c5c4c3)
+}
+
+.RadTabStrip_IACMSkin .rtsLevel1 .rtsSelected .rtsLink {
+    border-color: #d4d4d4;
+    color: #14afca;
+    background-color: #fff;
+    background-image: linear-gradient(#efefef, #fff)
+}
+
+.RadTabStrip_IACMSkin .rtsLevel1 .rtsSelected .rtsLink:before {
+    content: "";
+    display: block;
+    position: absolute;
+    border-color: #14afca
+}
+
+.RadTabStrip_IACMSkin .rtsLevel1 .rtsFocused .rtsLink {
+    border-color: #d4d4d4;
+    box-shadow: inset 0 0 5px #d4d4d4
+}
+
+.RadTabStrip_IACMSkin.rtsHorizontal .rtsLevel1 .rtsLink:before {
+    width: 100%;
+    border-width: 4px 0 0;
+    border-style: solid;
+    left: 0
+}
+
+.RadTabStrip_IACMSkin.rtsVertical .rtsLevel1 .rtsLink:before {
+    height: 100%;
+    border-width: 0 0 0 4px;
+    border-style: solid;
+    top: 0
+}
+
+.RadTabStrip_IACMSkin.rtsTop .rtsLevel1 .rtsLink:before {
+    top: 0
+}
+
+.RadTabStrip_IACMSkin.rtsBottom .rtsLevel1 .rtsLink:before {
+    bottom: 0
+}
+
+.RadTabStrip_IACMSkin.rtsLeft .rtsLevel1 .rtsLink:before {
+    left: 0
+}
+
+.RadTabStrip_IACMSkin.rtsRight .rtsLevel1 .rtsLink:before {
+    right: 0
+}
+
+.RadTabStrip_IACMSkin .rtsLevel1 ~ .rtsLevel {
+    border-color: #c9c9c9;
+    color: #333;
+    background-color: #fff
+}
+
+.RadTabStrip_IACMSkin .rtsLevel1 ~ .rtsLevel .rtsLink {
+    color: #0394ae
+}
+
+.RadTabStrip_IACMSkin .rtsLevel1 ~ .rtsLevel .rtsHovered .rtsLink {
+    color: #0394ae
+}
+
+.RadTabStrip_IACMSkin .rtsLevel1 ~ .rtsLevel .rtsSelected .rtsLink {
+    color: #000
+}
+
+.RadTabStrip_IACMSkin .rtsLevel1 ~ .rtsLevel .rtsFocused .rtsLink {
+    border-color: #d4d4d4;
+    box-shadow: inset 0 0 5px #d4d4d4
+}
+
+.RadTabStrip_IACMSkin .rtsGhostTab {
+    border-color: #c9c9c9;
+    color: #5f5f5f;
+    background-color: #d6d5d4;
+    background-image: linear-gradient(#fff, #d6d5d4)
+}
+
+.RadTabStrip.rtsTop .rtsLevel1 .rtsSelected .rtsLink {
+    border-bottom-color: transparent
+}
+
+.RadTabStrip.rtsBottom .rtsLevel1 .rtsSelected .rtsLink {
+    border-top-color: transparent
+}
+
+.RadTabStrip.rtsLeft .rtsLevel1 .rtsSelected .rtsLink {
+    border-right-color: transparent
+}
+
+.RadTabStrip.rtsRight .rtsLevel1 .rtsSelected .rtsLink {
+    border-left-color: transparent
+}
+.RadTabStrip_IACMSkin .rtsLI {
+    display: inline-flex;
+    position: relative;
+}
+.RadTabStrip_IACMSkin .rtsLevel1 .rtsSelected .rtsLink {
+    border-color: #d4d4d4;
+    color: #14afca;
+    background-color: #fff;
+    background-image: linear-gradient(#e5e5e5,#fff);
+}
+.RadTabStrip_IACMSkin .rtsLevel1 .rtsLink.rtsSelected {
+    background: #FFF !important;
+    color: #207bbd !important;
+    position: relative;
+    border-bottom: 1px solid #fff;
+}
+.RadTabStrip_IACMSkin .rtsLevel1 .rtsLink.rtsSelected:before {
+    content: "";
+    display: block;
+    position: absolute;
+    border-color: #14afca;
+    width: 100%;
+    border-width: 4px 0 0;
+    border-style: solid;
+    left: 0;
+    top: 0;
+}

@@ -1,0 +1,2 @@
+Catalog,Endpoint,EntitlementType,EntitlementName,Approver
+Fin,AD,Group,Administrators,1|User|IACMAdmin;2|User|00001276 

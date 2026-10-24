@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9A13B27D-B9DC-474A-9FE6-1C60FD52E5A7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DI.Chakra.Infrastructure</RootNamespace>
+    <AssemblyName>DI.Chakra.Infrastructure</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Web - DEBUG|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Web - DEBUG\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Web - DEBUG|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Web - DEBUG\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.0.30714, Culture=neutral, PublicKeyToken=b32731d11ce58905">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Assemblies\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="AccountNavigatorHelper.cs" />
+    <Compile Include="AppSettingsHelper.cs" />
+    <Compile Include="AppTextLocation.cs" />
+    <Compile Include="Constants\AttestationConstants.cs" />
+    <Compile Include="Constants\Constants.cs" />
+    <Compile Include="Constants\PUBConstants.cs" />
+    <Compile Include="CustomObjects\InhouseUserCustomInfo.cs" />
+    <Compile Include="DBConfigConstant\ConfigConstants.cs" />
+    <Compile Include="EntitlementmanagementNavigatorHelper.cs" />
+    <Compile Include="EnumAttributes.cs" />
+    <Compile Include="EnumDescriptionReadExtensionMethod.cs" />
+    <Compile Include="Enums\AccessItemType.cs" />
+    <Compile Include="Enums\AccessRequestBuilderType.cs" />
+    <Compile Include="Enums\AccessRequestEntitlementType.cs" />
+    <Compile Include="Enums\AccessRequestProgress.cs" />
+    <Compile Include="Enums\AccessRequestMode.cs" />
+    <Compile Include="Enums\AttestationType.cs" />
+    <Compile Include="Enums\CustomReportParameterTypes.cs" />
+    <Compile Include="Enums\DiscoveryServiceInstance.cs" />
+    <Compile Include="Enums\ACRCategory.cs" />
+    <Compile Include="Enums\ApplicationType.cs" />
+    <Compile Include="Enums\AttestationCampaignStatus.cs" />
+    <Compile Include="Enums\AttestationDefaultReviewStatus.cs" />
+    <Compile Include="Enums\AttestationReportType.cs" />
+    <Compile Include="Enums\EndpointConfigurationScope.cs" />
+    <Compile Include="Enums\NotificationStatus.cs" />
+    <Compile Include="Enums\NovaMatrixType.cs" />
+    <Compile Include="Enums\O365Objects.cs" />
+    <Compile Include="Enums\OffboardStatus.cs" />
+    <Compile Include="Enums\Operator.cs" />
+    <Compile Include="Enums\NOrganisationScope.cs" />
+    <Compile Include="Enums\OrgScopeLevel.cs" />
+    <Compile Include="Enums\OrgChartNodeType.cs" />
+    <Compile Include="Enums\PasswordActionType.cs" />
+    <Compile Include="Enums\ACLAction.cs" />
+    <Compile Include="Enums\AdHocActionType.cs" />
+    <Compile Include="Enums\AlertType.cs" />
+    <Compile Include="Enums\AttestationScope.cs" />
+    <Compile Include="CollectionHelper.cs" />
+    <Compile Include="Enums\ApprovalUserType.cs" />
+    <Compile Include="Enums\AccessType.cs" />
+    <Compile Include="Enums\AccessRequestStatus.cs" />
+    <Compile Include="Enums\AccessRequestSource.cs" />
+    <Compile Include="Enums\AccountType.cs" />
+    <Compile Include="Enums\AccessRequestItemType.cs" />
+    <Compile Include="Enums\AttestationRemediationStatus.cs" />
+    <Compile Include="Enums\AuthenticationMode.cs" />
+    <Compile Include="Enums\BusinessLogicSource.cs" />
+    <Compile Include="Enums\ForgotPwdType.cs" />
+    <Compile Include="Enums\Occurence.cs" />
+    <Compile Include="Enums\OTPOption.cs" />
+    <Compile Include="Enums\PasswordResetOption.cs" />
+    <Compile Include="Enums\ProcessType.cs" />
+    <Compile Include="Enums\ProvisionedThrough.cs" />
+    <Compile Include="Enums\ProvisioningFieldScope.cs" />
+    <Compile Include="Enums\PurgeMode.cs" />
+    <Compile Include="Enums\ReportType.cs" />
+    <Compile Include="Enums\Category.cs" />
+    <Compile Include="Enums\RiskScoreOperator.cs" />
+    <Compile Include="Enums\RulesetOperator.cs" />
+    <Compile Include="Enums\ServiceLogType.cs" />
+    <Compile Include="Enums\ServiceName.cs" />
+    <Compile Include="Enums\DashboardType.cs" />
+    <Compile Include="Enums\PasswordSource.cs" />
+    <Compile Include="Enums\SODOutputType.cs" />
+    <Compile Include="Enums\UserResponse.cs" />
+    <Compile Include="Enums\OffBoardingAccountAction.cs" />
+    <Compile Include="Enums\MappingType.cs" />
+    <Compile Include="Enums\DatabaseTypes.cs" />
+    <Compile Include="Enums\InterimStoreItemType.cs" />
+    <Compile Include="Enums\ExceptionTypes.cs" />
+    <Compile Include="Enums\AdminModeItemType.cs" />
+    <Compile Include="Enums\LockScenario.cs" />
+    <Compile Include="Enums\EmailActivityType.cs" />
+    <Compile Include="Enums\EnvironmentType.cs" />
+    <Compile Include="Enums\DiscoveryObjectType.cs" />
+    <Compile Include="Enums\Ethinicity.cs" />
+    <Compile Include="Enums\EmployeeType.cs" />
+    <Compile Include="Enums\EmployeeEvents.cs" />
+    <Compile Include="Enums\SAPUserType.cs" />
+    <Compile Include="Enums\SourceChangeType.cs" />
+    <Compile Include="Enums\StatusType.cs" />
+    <Compile Include="Enums\ScheduleJobType.cs" />
+    <Compile Include="Enums\EntitlementType.cs" />
+    <Compile Include="Enums\EndpointSystemType.cs" />
+    <Compile Include="Enums\EmailType.cs" />
+    <Compile Include="Enums\SchedulerStatus.cs" />
+    <Compile Include="Enums\VersionNo.cs" />
+    <Compile Include="Enums\VPNMatrixEnviornmentType.cs" />
+    <Compile Include="Enums\WorkflowState.cs" />
+    <Compile Include="Enums\RoleType.cs" />
+    <Compile Include="Enums\RequestType.cs" />
+    <Compile Include="Enums\XLTemplates.cs" />
+    <Compile Include="Exception\EndpointNotConnectedException.cs" />
+    <Compile Include="Exception\ConfigurationException.cs" />
+    <Compile Include="Exception\DomainException.cs" />
+    <Compile Include="Exception\EntityNotFoundException.cs" />
+    <Compile Include="Exception\ExceptionExtensions.cs" />
+    <Compile Include="Exception\FormExecutorException.cs" />
+    <Compile Include="Exception\SchedulerException.cs" />
+    <Compile Include="ExpandoHelper.cs" />
+    <Compile Include="InhouserEntitlementCustom.cs" />
+    <Compile Include="ListGenericExtender.cs" />
+    <Compile Include="LoginResult.cs" />
+    <Compile Include="PasswordResolver.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Enums\UserType.cs" />
+    <Compile Include="Constants\ProvisioningConstants.cs" />
+    <Compile Include="ProvisioningParam.cs" />
+    <Compile Include="ProvisioningParamCollection.cs" />
+    <Compile Include="ProvisioningResult.cs" />
+    <Compile Include="RSAHelper.cs" />
+    <Compile Include="ServiceParameter.cs" />
+    <Compile Include="SMSService.cs" />
+    <Compile Include="StringContains.cs" />
+    <Compile Include="TableInfoAttribute.cs" />
+    <Compile Include="CampaignTaskDetail.cs" />
+    <Compile Include="TaskCompleteness.cs" />
+    <Compile Include="TransformXmlData.cs" />
+    <Compile Include="UserExtension.cs" />
+    <Compile Include="UtilityMethods.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\DI.Chakra.Infrastructure.dll" />
+    <Content Include="bin\Debug\DI.Chakra.Infrastructure.pdb" />
+    <Content Include="bin\Debug\DI.Chakra.Ruleset.Helper.dll" />
+    <Content Include="bin\Debug\DI.Chakra.Ruleset.Helper.pdb" />
+    <Content Include="bin\Debug\log4net.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

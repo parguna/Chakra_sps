@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b022b1cc-1485-4e66-b49c-b9f87e9cec56" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:63825/PasswordResetService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PasswordResetService3.xsd" MetadataType="Schema" ID="b6454582-e08e-4256-a55e-46fd4a448a63" SourceId="1" SourceUrl="http://localhost:63825/PasswordResetService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PasswordResetService31.xsd" MetadataType="Schema" ID="31b63375-b567-43fb-b8e0-6345f94823d7" SourceId="1" SourceUrl="http://localhost:63825/PasswordResetService.svc?xsd=xsd3" />
+    <MetadataFile FileName="PasswordResetService.xsd" MetadataType="Schema" ID="d47b2428-97cd-482c-a9d9-143835d5a806" SourceId="1" SourceUrl="http://localhost:63825/PasswordResetService.svc?xsd=xsd4" />
+    <MetadataFile FileName="PasswordResetService1.xsd" MetadataType="Schema" ID="f3e369a6-3d74-4a35-a37e-74e4d8c837a3" SourceId="1" SourceUrl="http://localhost:63825/PasswordResetService.svc?xsd=xsd5" />
+    <MetadataFile FileName="PasswordResetService32.xsd" MetadataType="Schema" ID="b2092dab-3032-4370-af64-75c262030fb1" SourceId="1" SourceUrl="http://localhost:63825/PasswordResetService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PasswordResetService33.xsd" MetadataType="Schema" ID="64a1a6ac-eaf1-4ec8-aac4-89fb42df1474" SourceId="1" SourceUrl="http://localhost:63825/PasswordResetService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PasswordResetService2.xsd" MetadataType="Schema" ID="b8ec13b5-0f1f-4d28-a035-8ec75ae9101a" SourceId="1" SourceUrl="http://localhost:63825/PasswordResetService.svc?xsd=xsd6" />
+    <MetadataFile FileName="PasswordResetService1.wsdl" MetadataType="Wsdl" ID="ea50454b-7be3-4216-a4e3-702706a906a8" SourceId="1" SourceUrl="http://localhost:63825/PasswordResetService.svc?wsdl" />
+    <MetadataFile FileName="PasswordResetService1.disco" MetadataType="Disco" ID="87e7d931-6bcf-41b6-83f9-2e77d580e2d2" SourceId="1" SourceUrl="http://localhost:63825/PasswordResetService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

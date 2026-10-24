@@ -1,0 +1,400 @@
+.RadEditor.IACMSkin {
+    background-color: #f5f5f5; 
+}
+.RadEditor.IACMSkin table.reLayoutWrapper {
+    border: 0;
+}
+.IACMSkin.reToolbar {
+    background-image: none,-webkit-linear-gradient(top,rgba(255,255,255,.45) 0,rgba(255,255,255,0) 100%);
+    background-image: none,-moz-linear-gradient(top,rgba(255,255,255,.45) 0,rgba(255,255,255,0) 100%);
+    background-image: none,-o-linear-gradient(top,rgba(255,255,255,.45) 0,rgba(255,255,255,0) 100%);
+    background-image: none,linear-gradient(to bottom,rgba(255,255,255,.45) 0,rgba(255,255,255,0) 100%);
+    background-position: 50% 50%;
+    background-color: #e2e2e2;
+	border-left-width: 0;
+	border-right-width: 1px;
+	border-color: #ddd;
+}
+.IACMSkin.RadEditor .reToolbar a,
+.IACMSkin.RadEditor .reDropdown,
+.IACMSkin.RadEditor .reModule,
+.IACMSkin.RadEditor .reModule td,
+.IACMSkin.RadEditor .reDropDownBody,
+.IACMSkin.RadEditor .reDropDownBody td,
+.IACMSkin.RadEditor .reAjaxspell_wrapper,
+.IACMSkin.RadEditor .reAjaxspell_button,
+.IACMSkin.RadEditor .reAjaxspell_addicon,
+.IACMSkin.RadEditor .reAjaxspell_ignoreicon,
+.IACMSkin.RadEditor .reAjaxspell_okicon,
+.IACMSkin.RadEditor .reInsertTable .reTlbVertical ul a.reTool_text span.reButton_text,
+.IACMSkin.RadEditor .reColorPicker .reCustomColor,
+.IACMSkin .reModule_domlink_selected,
+.IACMSkin .reModule_domlink {
+    color: #333
+}
+.RadEditor table.reLayoutWrapper {
+   background-color: #f5f5f5; 
+    border: 1px solid #ddd;
+}
+.IACMSkin .reEmptyMessage {
+    color: #bbb
+}
+.IACMSkin.RadEditor .reEditorModes a {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #333
+}
+.IACMSkin.RadEditor .reEditorModes .reMode_selected {
+    background-image: none;
+    border: 1px solid #ddd;
+    background-color: #207bbd!important;
+    color: #fff
+}
+.IACMSkin.RadEditor .reEditorModes a:hover {
+    border: 1px solid #ddd
+}
+.IACMSkin.RadEditor .reEditorModes span {
+        background-image: url('../../Images/Common/CommonIconsLight.png');
+}
+.IACMSkin.RadEditor .reContentCell, .IACMSkin.RadEditor .reContentCell textarea {
+    background-color: #f9f9f9 
+}
+.IACMSkin.reWrapper,
+.IACMSkin.RadEditor .reContentCell,
+.IACMSkin.reColorPicker,
+.IACMSkin.reInsertTable,
+.IACMSkin.reDropDownBody,
+.IACMSkin.reCustomLinks a:hover {
+    border: 1px solid #ddd
+}
+.IACMSkin.reDropDownBody {
+    background: #fff;
+}
+.IACMSkin.reDropDownBody table {
+    background: transparent
+}
+.IACMSkin.RadEditor .reModule,
+    .IACMSkin.RadEditor .reEditorModes,
+.IACMSkin.RadEditor .reWrapper {
+    background-color: transparent;
+}
+.IACMSkin.RadEditor .reBottomZone .reModule {
+    border-top: 0
+}
+.IACMSkin.RadEditor .reModule {
+    border-top: 1px solid #fff
+}
+.IACMSkin.reCustomLinks a,
+.IACMSkin.reCustomLinks a:link,
+.IACMSkin.reCustomLinks a:visited {
+    border: 1px solid #fff;
+    color: #000!important
+}
+.IACMSkin.reCustomLinks a:hover {
+    background-color: #e8e8e8;
+    border: 1px solid #333
+}
+.IACMSkin .reToolbar li,
+.IACMSkin .reSpinBox a,
+.IACMSkin.reToolbar .reSeparator,
+.IACMSkin.reToolbar .reGrip,
+.IACMSkin .reDialog .reTool,
+.IACMSkin .reModule .reTool,
+.IACMSkin .reDialog .reTool:hover,
+.IACMSkin .reToolbar .reTool:hover,
+.IACMSkin .reModule .reTool:hover,
+.IACMSkin .reToolbar .reTool.reTool_selected,
+.IACMSkin .reToolbar .reTool.reTool_selected:hover,
+.IACMSkin .reToolbar .reTool_text:hover,
+.IACMSkin .reToolbar .reTool_text.reTool_selected,
+.IACMSkin .reToolbar .reTool_text.reTool_selected:hover,
+.IACMSkin .reTool .split_arrow,
+.IACMSkin .reSplitButton.reTool_text .split_arrow,
+.IACMSkin .reToolbar .reTool_text .split_arrow,
+.IACMSkin .reDialog .reTool.reSplitButton,
+.IACMSkin .reModule .reTool.reSplitButton,
+.IACMSkin .reDropdown,
+.IACMSkin .reTool_disabled.reDropdown:hover,
+.IACMSkin .reResizeCell div,
+.IACMSkin.reInsertTable .reToolbar li .reTool:hover,
+.IACMSkin.RadEditor.reRtl .reDropdown:hover {
+/* background-image: url('../../Images/Editor/ToolBarSprites.gif') */
+}
+.IACMSkin.RadEditor .reTlbVertical li,
+.IACMSkin .reDropdown:hover,
+.IACMSkin.RadEditor .reTlbVertical .reToolbar.Default .reGrip,
+.IACMSkin.RadEditor.reTlbVertical .reToolbar.Default .reSeparator,
+.IACMSkin .reTlbVertical .reTool:hover,
+.IACMSkin .reTlbVertical .reTool_text.reSplitButton:hover,
+.IACMSkin .reTlbVertical .reSplitButton:hover,
+.IACMSkin .reTlbVertical .reTool_text:hover,
+.IACMSkin .reTlbVertical .reTool.reTool_selected,
+.IACMSkin .reTlbVertical .reTool_text.reTool_selected,
+.IACMSkin .reTlbVertical .reTool_text.reTool_selected:hover,
+.IACMSkin.reDropDownBody .reTlbVertical ul li a:hover,
+.IACMSkin.reDropDownBody .reTlbVertical .reToolbar,
+.IACMSkin .reMode_selected,
+.IACMSkin.reDropDownBody.reInsertTable div.reTlbVertical a.reTool_text:hover {
+    background-image: url('../../Editor/ToolbarVerticalSprites.gif')
+}
+.IACMSkin .reToolbar li {
+    color: #000
+}
+.IACMSkin .reToolbar .reTool_text:hover {
+    margin-left: 0;
+    margin-right: 0;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333
+}
+.IACMSkin .reToolbar .reTool_text.reTool_selected,
+.IACMSkin .reToolbar .reTool_text.reTool_selected:hover {
+    margin-left: 0;
+    margin-right: 0;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333
+}
+.IACMSkin .reToolbar .reTool_text.reTool_disabled,
+.IACMSkin .reToolbar .reTool_text.reTool_disabled:hover {
+    margin-left: 0;
+    margin-right: 0;
+    border: 0
+}
+.IACMSkin .reDropdown {
+    position: relative;
+    padding-right: 24px;
+}
+.IACMSkin .reDropdown::before {
+   background-image: url("../../images/common/sprite_2x.png");
+    background-position: -4px -573px;
+    content: "";
+    display: inline-block;
+    height: 26px;
+    left: auto;
+    position: absolute;
+    right: 0;
+    top: -9px;
+    width: 24px;
+}
+.IACMSkin .reDropdown:focus:before {
+    background-position: -4px -573px;
+}
+.IACMSkin .reDropdown:link,
+.IACMSkin .reDropdown:visited {
+    color: #333!important
+}
+.IACMSkin .reDropdown,
+.IACMSkin .reTool_disabled.reDropdown:hover {
+    border: 1px solid #ddd;
+    color: #333;
+    background-color: #fff
+}
+.IACMSkin .IACMSkin .reDropdown:hover {
+    background-color: #fff;
+    border: 1px solid #207bbd;
+    color: #333 !important;
+}
+.IACMSkin.reDropDownBody .reTlbVertical ul li .reButton_text {
+    color: #333
+}
+.IACMSkin.reDropDownBody .reTlbVertical ul li .reButton_text:hover {
+    color: #000
+}
+.IACMSkin.reInsertTable {
+    background-color: #fff
+}
+.IACMSkin table.reSpinBox {
+    border: 1px solid #ddd;
+    background: #fff
+}
+.IACMSkin table.reSpinBox:hover {
+    border: 1px solid #333;
+    color: #000
+}
+.IACMSkin.RadEditor input {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #333
+}
+.IACMSkin.RadEditor input:hover {
+    border: 1px solid #333;
+    color: #000
+}
+.IACMSkin.reDropDownBody td {
+    color: #333
+}
+.IACMSkin.reDropDownBody .reItemOver {
+    background: #207bbd;
+    color: #fff;
+}
+.IACMSkin .reTool_selected.reTool {
+    _border-left-width: 0!important;
+    _border-right-width: 0!important
+}
+.IACMSkin.reColorPicker table div {
+    border: 1px solid #ddd
+}
+.IACMSkin.reColorPicker table td.reItemOver div {
+    border-color: #333
+}
+.IACMSkin.reColorPicker span {
+    border: 1px solid #ddd
+}
+.IACMSkin .reAjaxspell_button {
+    border-color: #c9c9c9;
+    color: #767676;
+    background-color: #e3e3e3;
+    background-image: linear-gradient(#fefefe,#e3e3e3);
+}
+.IACMSkin .reAjaxSpellCheckSuggestions table {
+    border-width: 0;
+    width: 100%
+}
+.IACMSkin .reAjaxSpellCheckSeparator {
+    background-color: #979797
+}
+.IACMSkin.reCustomLinks,
+.IACMSkin.reCustomLinks ul {
+    color: #000
+}
+.IACMSkin.reCustomLinks a {
+    background: none transparent;
+    color: #000;
+    cursor: default!important
+}
+.IACMSkin.reCustomLinks a:hover {
+    color: #fff
+}
+.IACMSkin .reInsertTable table {
+    background: #fff
+}
+.IACMSkin.reInsertTable table td {
+    border: 1px solid #ddd;
+    background: #fff
+}
+.IACMSkin .reInsertTable .reTlbVertical ul {
+    background-color: #fff
+}
+.IACMSkin.reDropDownBody.reInsertTable div.reTlbVertical a.reTool_text,
+.IACMSkin.reDropDownBody.reInsertTable div.reTlbVertical a.reTool_text:link,
+.IACMSkin.reDropDownBody.reInsertTable div.reTlbVertical a.reTool_text:visited {
+    color: #000!important;
+    background: transparent none
+}
+.IACMSkin .reCommentEdit,
+.IACMSkin .reCommentTextArea,
+.IACMSkin .reCommentView,
+.IACMSkin.rePopupContainer,
+.IACMSkin.RadEditor .reCommentButton,
+.IACMSkin .rePopupButtonContainer .rePopupButton,
+.IACMSkin .reCommentViewText,
+.IACMSkin .reCommentInfoPanel {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 0
+}
+.IACMSkin .reCommentTitle,
+.IACMSkin .reCommentInfoPanel {
+    color: #000
+}
+.IACMSkin.RadEditor .reCommentButton,
+.IACMSkin .rePopupButtonContainer .rePopupButton {
+    border-color: #ddd;
+    color: #333;
+    background-color: #fff
+}
+.IACMSkin.RadEditor .reCommentButton:hover,
+.IACMSkin .rePopupButtonContainer .rePopupButton:hover {
+    color: #000;
+    border-color: #333;
+    background-color: #e8e8e8
+}
+.IACMSkin.RadEditor .reCommentButton:active,
+.IACMSkin .rePopupButtonContainer .rePopupButton:active {
+    color: #fff;
+    border-color: #207bbd;
+    background-color: #207bbd
+}
+.IACMSkin .rePopupContainer .rePopupTitle {
+    color: #fff;
+    background-color: #207bbd;
+    border-color: #333;
+    border-radius: 0
+}
+.IACMSkin .reTool .ToggleEditMode {
+    background-image: url('../../Images/Common/CommonIconsLight.png');
+    background-position: -7px -38px
+}
+.IACMSkin.RadWindow.RadEditor.reWrapper {
+    border: 1px solid #ddd
+}
+.IACMSkin.RadEditor.reWrapper {
+    height: auto!important;
+}
+.IACMSkin.reWrapper.reInlineEditor.reInlineEditorDimensions {
+    width: 436px!important
+}
+.IACMSkin.reWrapper.reInlineEditor:hover {
+    border-color: #ddd
+}
+.IACMSkin.reWrapper.reInlineEditorSelected,
+.IACMSkin.reWrapper.reInlineEditorSelected:hover {
+    border-color: #207bbd
+}
+.IACMSkin.RadEditor.reRtl .reTool .split_arrow:hover {
+    border-right-color: #333;
+}
+.IACMSkin.RadEditor.reRtl .reDropdown:hover {
+    background-color: #e8e8e8
+}
+.RadWindow.RadWindow_IACMSkin.reToolbarWindow td.rwWindowContent,
+.RadWindow.RadWindow_IACMSkin.reToolbarWindow div.rwContent {
+    background-color: #fff
+}
+.RadWindow_IACMSkin .reInsertTableLightWrapper .lightTable {
+    border-color: #ddd
+}
+.IACMSkin .reTool.reSplitButton:hover {
+    background-image: url('../../Images/Editor/ToolBarSprites.gif')
+}
+.reTool span,
+.IACMSkin.reInsertTable .reTlbVertical ul .reTool_text span,
+.reToolbar .reTool_text span {
+    background-image: url('../../Images/Common/CommandSpritesMonoLight.png')
+}
+.reTool span,
+.reTool_text span,
+.IACMSkin .reTlbVertical .reTool_text span,
+.reToolbar .reSplitButton.reTool_text span {
+    _background-image: url('../../Images/Common/CommandSpritesMonoLightIE6.png')
+}
+.reTool .split_arrow:hover {
+    border-left-color: #333;
+}
+.reContentCell, .reContentCell iframe body {
+    background-color: #fff !important;
+}
+.IACMSkin.RadEditor .reAjaxspell_wrapper {
+    width: auto !important;
+}
+
+.IACMSkin.RadEditor .rePopupButton, .IACMSkin.RadEditor .reCommentButton, .IACMSkin.RadEditor .reAjaxSpellButton {
+    border-color: #c9c9c9;
+    color: #767676;
+    background-color: #e3e3e3;
+    background-image: linear-gradient(#fefefe,#e3e3e3);
+}
+.RadEditor .reToolbar .reTool:hover {
+    border-color: #207bbd;
+    border-radius: 3px;
+    background-color: #25a0da;
+}
+.IACMSkin.RadEditor .reToolbar .reTool:hover span {
+    -webkit-filter: brightness(0%) invert(100%);
+    filter: brightness(0%) invert(100%);
+}
+
+.IACMSkin.RadEditor .reEditorModes .reMode_selected span {
+    -webkit-filter: brightness(0%) invert(100%);
+    filter: brightness(0%) invert(100%);
+}
+

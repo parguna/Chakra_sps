@@ -1,0 +1,43 @@
+[
+  {
+    "type": "JS",
+    "name": "~/bundle/LoginPageJS",
+    "paths": [ "~/assets/js/jquery-1.11.2.min.js", "~/assets/bootstrap/js/bootstrap.min.js", "~/assets/js/validatr.js", "~/assets/js/jquery.placeholder.js" ]
+  },
+  {
+    "type": "CSS",
+    "name": "~/bundle/LoginPageCSS",
+    "paths": [
+      "~/assets/bootstrap/css/bootstrap.css",
+      "~/assets/styles/stylesheet.css",
+      "~/assets/styles/non-responsive.css",
+      "~/assets/styles/Window.css",
+      "~/IACMSkin/Window.IACMSkin.css"
+    ]
+  },
+  {
+    "type": "JS",
+    "name": "~/bundle/MasterPageJS",
+    "paths": [
+      "~/assets/js/jquery-1.11.2.min.js",
+      "~/assets/bootstrap/js/bootstrap.min.js",
+      "~/assets/datepicker/js/bootstrap-datepicker.js",
+      "~/assets/extendbootstrap/js/bootbox.js",
+      "~/assets/extendbootstrap/js/bootstro.min.js",
+      "~/assets/extendbootstrap/js/bootstro.min.js",
+      "~/assets/select/js/bootstrap-select.js",
+      "~/assets/js/validatr.js",
+      "~/assets/iacm/appMain.js",
+      "~/assets/js/AlertJS.js",
+      "~/assets/js/jquery.placeholder.js"
+    ]
+  },
+  {
+    "type": "CSS",
+    "name": "~/bundle/MasterPageCSS",
+    "paths": [
+      "~/assets/iacm/*.css",
+      "~/assets/styles/stylesheet.css"
+    ]
+  }
+]

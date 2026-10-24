@@ -1,0 +1,684 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{795F8D64-8FE6-4218-A2BE-C7355A445162}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DI.Chakra.DomainApi</RootNamespace>
+    <AssemblyName>DI.Chakra.DomainApi</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\Solution\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <Use64BitIISExpress>
+    </Use64BitIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\V5\Release\App\Domain Api\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Solution\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.MappingAPI, Version=6.1.0.9, Culture=neutral, PublicKeyToken=7ee2e825d201459e, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\EntityFramework.MappingAPI.6.1.0.9\lib\net45\EntityFramework.MappingAPI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Solution\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.5.3.2, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\EPPlus.4.5.3.2\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.AppService.ApiApps.Service, Version=0.9.64.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\Microsoft.Azure.AppService.ApiApps.Service.0.9.64\lib\net45\Microsoft.Azure.AppService.ApiApps.Service.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\Swashbuckle.Core.5.3.1\lib\net40\Swashbuckle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\System.IdentityModel.Tokens.Jwt.5.7.0\lib\net461\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=8.14.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\Microsoft.IdentityModel.Tokens.8.14.0\lib\net462\Microsoft.IdentityModel.Tokens.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=8.14.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\Microsoft.IdentityModel.Logging.8.14.0\lib\net462\Microsoft.IdentityModel.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.TimeProvider, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\Microsoft.Bcl.TimeProvider.8.0.1\lib\net462\Microsoft.Bcl.TimeProvider.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\Microsoft.Extensions.Logging.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=6.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\System.Diagnostics.DiagnosticSource.6.0.2\lib\net461\System.Diagnostics.DiagnosticSource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=8.0.0.5, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\System.Text.Json.8.0.5\lib\net462\System.Text.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="TrackerEnabledDbContext.Common, Version=3.6.1.0, Culture=neutral, PublicKeyToken=4f92af0b908c4a0a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Solution\packages\TrackerEnabledDbContext.Common.3.6.1\lib\net45\TrackerEnabledDbContext.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\WebActivatorEx.2.1.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\Solution\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\Solution\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\Solution\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="App_Start\AutoMapperHelper.cs" />
+    <Compile Include="App_Start\AutoMapperTypeConverter\AccessRequestItemConverter.cs" />
+    <Compile Include="App_Start\AutoMapperTypeConverter\ConfigurationMasterConverter.cs" />
+    <Compile Include="App_Start\AutoMapperTypeConverter\EndpointEntitlementInfoConverter.cs" />
+    <Compile Include="App_Start\AutoMapperTypeConverter\EndpointUserInfoConverter.cs" />
+    <Compile Include="App_Start\AutoMapperTypeConverter\UserEntitlementConverter.cs" />
+    <Compile Include="App_Start\AutoMapperTypeConverter\WorkflowCriteriaConverter.cs" />
+    <Compile Include="App_Start\AutoMapperTypeConverter\XLDataConverter.cs" />
+    <Compile Include="App_Start\CustomExceptionFilter.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AdHocRequest\AdHocAccessRequestController.cs" />
+    <Compile Include="Controllers\AdHocRequest\BulkRequestController.cs" />
+    <Compile Include="Controllers\AdHocRequest\Presentation\PresentationAdHocAccessRequestController.cs" />
+    <Compile Include="Controllers\AdHocRequest\Presentation\PresentationSODEntitlementConflictController.cs" />
+    <Compile Include="Controllers\Attestation\AttestationSnapshotActionHistoryController.cs" />
+    <Compile Include="Controllers\Attestation\AttestationSnapshotActionController.cs" />
+    <Compile Include="Controllers\Attestation\FilterDataController.cs" />
+    <Compile Include="Controllers\Base\BaseController.cs" />
+    <Compile Include="Controllers\Core\ACL\AccessRightsController.cs" />
+    <Compile Include="Controllers\Core\ACL\PagePermissionController.cs" />
+    <Compile Include="Controllers\Core\ACL\PageUrlController.cs" />
+    <Compile Include="Controllers\Core\ACL\PermissionController.cs" />
+    <Compile Include="Controllers\Core\ACL\Presentation\PresentationAccessRightsController.cs" />
+    <Compile Include="Controllers\Core\ACL\Presentation\PresentationRoleAccessController.cs" />
+    <Compile Include="Controllers\Core\ACL\RoleController.cs" />
+    <Compile Include="Controllers\Core\Attachment\AttachmentController.cs" />
+    <Compile Include="Controllers\Core\Attestation\AttestationCampaignAttachmentController.cs" />
+    <Compile Include="Controllers\Core\Attestation\AttestationCampaignController.cs" />
+    <Compile Include="Controllers\Core\Attestation\AttestationCampaignReportController.cs" />
+    <Compile Include="Controllers\Core\Attestation\AttestationEndpointController.cs" />
+    <Compile Include="Controllers\Core\Attestation\AttestationScopeController.cs" />
+    <Compile Include="Controllers\Core\Attestation\Presentation\PresentationAttestationController.cs" />
+    <Compile Include="Controllers\Core\Attestation\Presentation\PresentationAttestationEndPointController.cs" />
+    <Compile Include="Controllers\Core\Attestation\Presentation\PresentationAttetstationCampaingController.cs" />
+    <Compile Include="Controllers\Core\Attestation\Presentation\PresentationExportAttestationReportForUIController.cs" />
+    <Compile Include="Controllers\Core\Attestation\Presentation\PresentationAttestationEntitlementReviewDetailController.cs" />
+    <Compile Include="Controllers\Core\Attestation\Presentation\PresentationAttestationScopeController.cs" />
+    <Compile Include="Controllers\Core\Attestation\Presentation\PresentationAttestationStatusSummaryController.cs" />
+    <Compile Include="Controllers\Core\Attestation\Presentation\PresentationJobListAttestationController.cs" />
+    <Compile Include="Controllers\Core\Attestation\Presentation\PresentationMyRequestDataController.cs" />
+    <Compile Include="Controllers\Core\Attestation\Presentation\PresentationPreviousApproversController.cs" />
+    <Compile Include="Controllers\Core\Attestation\Presentation\PresentationReviewerController.cs" />
+    <Compile Include="Controllers\Core\Attestation\Presentation\PresentationSapUserRoleTCodeAuthorizationController.cs" />
+    <Compile Include="Controllers\Core\Common\AccessRequestSourcePieSeriesController.cs" />
+    <Compile Include="Controllers\Core\Common\Chart\AccessRequestProgressStatusByMonthController.cs" />
+    <Compile Include="Controllers\Core\Common\Chart\AdhocRequestAccountTyebyMonthController.cs" />
+    <Compile Include="Controllers\Core\Common\Chart\AttentionController.cs" />
+    <Compile Include="Controllers\Core\Common\Chart\AttetstationCompletedPieSeriesController.cs" />
+    <Compile Include="Controllers\Core\Common\GroupController.cs" />
+    <Compile Include="Controllers\Core\Complaince\ComplianceProcessController.cs" />
+    <Compile Include="Controllers\Core\Configuration\AuditConfigurationController.cs" />
+    <Compile Include="Controllers\Core\Configuration\AuditConfigurationDetailController.cs" />
+    <Compile Include="Controllers\Core\Configuration\ConfigurationMasterIMController.cs" />
+    <Compile Include="Controllers\Core\Configuration\ConfigurationMasterPasswordManagementController.cs" />
+    <Compile Include="Controllers\Core\Email\EmailInfoHistoryController.cs" />
+    <Compile Include="Controllers\Core\Email\EmailInfoController.cs" />
+    <Compile Include="Controllers\Core\Email\MailNotificationSettingsController.cs" />
+    <Compile Include="Controllers\Core\Email\MailServerConfigurationController.cs" />
+    <Compile Include="Controllers\Core\Email\Presentation\PresentationMailController.cs" />
+    <Compile Include="Controllers\Core\Endpoint\EndPointHierarchyController.cs" />
+    <Compile Include="Controllers\Core\Endpoint\EndPointObjectsController.cs" />
+    <Compile Include="Controllers\Core\Endpoint\Presentation\PresentationEndpointForFilterController.cs" />
+    <Compile Include="Controllers\Core\Endpoint\Presentation\PresentationEndpointProvisioningFieldController.cs" />
+    <Compile Include="Controllers\Core\Endpoint\Presentation\PresentationSystemDecommissionController.cs" />
+    <Compile Include="Controllers\Core\Log\EmailLogController.cs" />
+    <Compile Include="Controllers\Core\Log\AttestationLogController.cs" />
+    <Compile Include="Controllers\Core\Log\ProvisioningLogController.cs" />
+    <Compile Include="Controllers\Core\Log\DiscoveryLogController.cs" />
+    <Compile Include="Controllers\Core\MetaData\AccountActionCategoryController.cs" />
+    <Compile Include="Controllers\Core\MetaData\AccountCategoryController.cs" />
+    <Compile Include="Controllers\Core\MetaData\ApprovalUserTypesController.cs" />
+    <Compile Include="Controllers\Core\MetaData\EmployeeTermController.cs" />
+    <Compile Include="Controllers\Core\MetaData\MetaDataController.cs" />
+    <Compile Include="Controllers\Core\ACL\Presentation\PresentationPagePermissionController.cs" />
+    <Compile Include="Controllers\Core\ACL\Presentation\PresentationTabMenuController.cs" />
+    <Compile Include="Controllers\Core\ACL\TabMenuController.cs" />
+    <Compile Include="Controllers\Core\ACL\WebPageController.cs" />
+    <Compile Include="Controllers\Core\Attestation\AttestationController.cs" />
+    <Compile Include="Controllers\Core\Attestation\AttestationProcessController.cs" />
+    <Compile Include="Controllers\Core\Attestation\Presentation\PresentationListAttestationController.cs" />
+    <Compile Include="Controllers\Core\Common\Chart\AccessRequestSourceByMonthController.cs" />
+    <Compile Include="Controllers\Core\Common\Chart\AccessRequestSourceChartDataController.cs" />
+    <Compile Include="Controllers\Core\Common\TablePropertiesController.cs" />
+    <Compile Include="Controllers\Core\Complaince\Presentation\PresentationComplianceProcessController.cs" />
+    <Compile Include="Controllers\Core\Configuration\ConfigGeneralTrustedSourceController.cs" />
+    <Compile Include="Controllers\Core\Configuration\ConfigurationMasterController.cs" />
+    <Compile Include="Controllers\Core\Configuration\PasswordPolicyController.cs" />
+    <Compile Include="Controllers\Core\Discovery\DiscoveryProcessController.cs" />
+    <Compile Include="Controllers\Core\Discovery\Presentation\PresentationDiscoveryProcessController.cs" />
+    <Compile Include="Controllers\Core\Configuration\PasswordPolicyEndpointController.cs" />
+    <Compile Include="Controllers\Core\Email\MailTemplateController.cs" />
+    <Compile Include="Controllers\Core\Endpoint\EndPointController.cs" />
+    <Compile Include="Controllers\Core\Endpoint\EndPointSystemTypeController.cs" />
+    <Compile Include="Controllers\Core\Log\ServiceLogController.cs" />
+    <Compile Include="Controllers\Core\Endpoint\Presentation\PresentationUserAccountController.cs" />
+    <Compile Include="Controllers\Core\MetaData\OffboardingAccountActionController.cs" />
+    <Compile Include="Controllers\Core\MetaData\RoleTypesController.cs" />
+    <Compile Include="Controllers\Core\MetaData\RequestTypesController.cs" />
+    <Compile Include="Controllers\Core\Notification\NotificationAttachmentController.cs" />
+    <Compile Include="Controllers\Core\Notification\NotificationController.cs" />
+    <Compile Include="Controllers\Core\Notification\Presentation\PresentationNotificationController.cs" />
+    <Compile Include="Controllers\Core\Notification\Presentation\PresentationRequestActionUsersController.cs" />
+    <Compile Include="Controllers\Core\OrgChart\Presentation\PresentationOrgChartController.cs" />
+    <Compile Include="Controllers\Core\Preference\AdminModeItemController.cs" />
+    <Compile Include="Controllers\Core\Preference\DashboardAccessRightsController.cs" />
+    <Compile Include="Controllers\Core\Preference\DashboardController.cs" />
+    <Compile Include="Controllers\Core\Preference\DefaultRoleDashboardPreferenceController.cs" />
+    <Compile Include="Controllers\Core\Preference\DefaultRoleQuicklinkController.cs" />
+    <Compile Include="Controllers\Core\Preference\Presentation\PresentationDashBoardPreferenceController.cs" />
+    <Compile Include="Controllers\Core\Preference\Presentation\PresentationDefaultRoleQuickLinkController.cs" />
+    <Compile Include="Controllers\Core\Preference\Presentation\PresentationQuickLinkAccessRightsController.cs" />
+    <Compile Include="Controllers\Core\Preference\Presentation\UserGridAllInfoController.cs" />
+    <Compile Include="Controllers\Core\Preference\QuickLinkAccessRightsController.cs" />
+    <Compile Include="Controllers\Core\Preference\QuickLinkController.cs" />
+    <Compile Include="Controllers\Core\Preference\UserGridColumnInfoController.cs" />
+    <Compile Include="Controllers\Core\Preference\UserCulturePreferenceController.cs" />
+    <Compile Include="Controllers\Core\Preference\UserDashboardPreferenceController.cs" />
+    <Compile Include="Controllers\Core\Preference\UserGridFilterInfoController.cs" />
+    <Compile Include="Controllers\Core\Preference\UserGridInfoController.cs" />
+    <Compile Include="Controllers\Core\Preference\UserPreferenceController.cs" />
+    <Compile Include="Controllers\Core\Preference\UserQuickLinkController.cs" />
+    <Compile Include="Controllers\Core\Recon\ExceptionAttributeChangeController.cs" />
+    <Compile Include="Controllers\Core\Recon\ExceptionAttributeController.cs" />
+    <Compile Include="Controllers\Core\Report\CustomReportController.cs" />
+    <Compile Include="Controllers\Core\Report\Presentation\PresentationReportProcessController.cs" />
+    <Compile Include="Controllers\Core\Report\ReportAttributesController.cs" />
+    <Compile Include="Controllers\Core\Report\ReportController.cs" />
+    <Compile Include="Controllers\Core\Report\ReportHistoryController.cs" />
+    <Compile Include="Controllers\Core\Scheduler\ProcessController.cs" />
+    <Compile Include="Controllers\Core\Scheduler\SchedulerController.cs" />
+    <Compile Include="Controllers\Core\SecurityQA\GlobalAnswerController.cs" />
+    <Compile Include="Controllers\Core\SecurityQA\GlobalQuestionController.cs" />
+    <Compile Include="Controllers\Core\Tasks\InterimStoreController.cs" />
+    <Compile Include="Controllers\Core\Tasks\Presentation\PresentationInterimAdhocRequestController.cs" />
+    <Compile Include="Controllers\Core\Tasks\Presentation\PresentationTaskController.cs" />
+    <Compile Include="Controllers\Core\Tasks\Presentation\PresentationTaskdelegationController.cs" />
+    <Compile Include="Controllers\Core\Tasks\TaskController.cs" />
+    <Compile Include="Controllers\Core\Tasks\TaskDelegationController.cs" />
+    <Compile Include="Controllers\Core\User\PresentationAnonymousUserController.cs" />
+    <Compile Include="Controllers\Core\User\PresentationUserController.cs" />
+    <Compile Include="Controllers\Core\User\PresentationUserExclusionController.cs" />
+    <Compile Include="Controllers\Core\User\UserAttachmentController.cs" />
+    <Compile Include="Controllers\Core\User\UserController.cs" />
+    <Compile Include="Controllers\Core\User\UserExclusionController.cs" />
+    <Compile Include="Controllers\Core\User\UserImageController.cs" />
+    <Compile Include="Controllers\Core\Workflow\Presentation\PresentationWorkflowCriteriaBaseController.cs" />
+    <Compile Include="Controllers\Core\Workflow\Presentation\PresentationWorkflowController.cs" />
+    <Compile Include="Controllers\Core\Workflow\Presentation\PresentationWorkflowApproverGridDataController.cs" />
+    <Compile Include="Controllers\Core\Workflow\WorkflowConfigurationController.cs" />
+    <Compile Include="Controllers\Core\Workflow\WorkflowConfigurationDetailController.cs" />
+    <Compile Include="Controllers\Core\HouseKeeping\PurgeConfigController.cs" />
+    <Compile Include="Controllers\Core\Log\UILogController.cs" />
+    <Compile Include="Controllers\Endpoint\ActiveDirectory\ADSXLProvisioningMatrixController.cs" />
+    <Compile Include="Controllers\Endpoint\ActiveDirectory\ADSGroupInfoController.cs" />
+    <Compile Include="Controllers\Endpoint\ActiveDirectory\ADSOuInfoController.cs" />
+    <Compile Include="Controllers\Endpoint\ActiveDirectory\ADSUserInfoController.cs" />
+    <Compile Include="Controllers\Endpoint\ActiveDirectory\Presentation\PresentationADSFutureAccountExpiryAccount.cs" />
+    <Compile Include="Controllers\Endpoint\ActiveDirectory\Presentation\PresentationADSFuturePasswordExpiryAccountController.cs" />
+    <Compile Include="Controllers\Endpoint\ActiveDirectory\Presentation\PresentationADSActiveAccountsWithInActiveUser.cs" />
+    <Compile Include="Controllers\Endpoint\ActiveDirectory\Presentation\PresentationADSGroupWithNoAccounts.cs" />
+    <Compile Include="Controllers\Endpoint\ActiveDirectory\Presentation\PresentationADSAccountWithNoGroups.cs" />
+    <Compile Include="Controllers\Endpoint\ActiveDirectory\Presentation\PresentationADSLockedDisabledAccountController.cs" />
+    <Compile Include="Controllers\Endpoint\ActiveDirectory\Presentation\PresentationADSOUsController.cs" />
+    <Compile Include="Controllers\Endpoint\ActiveDirectory\Presentation\PresentationADSUsersController.cs" />
+    <Compile Include="Controllers\Endpoint\ActiveDirectory\Presentation\PresentationADSDormantAccountController.cs" />
+    <Compile Include="Controllers\Endpoint\ActiveDirectory\Presentation\PresentationADSUserToGroupsController.cs" />
+    <Compile Include="Controllers\Endpoint\Configuration\EndpointConfigurationDetailController.cs" />
+    <Compile Include="Controllers\Endpoint\Configuration\EndpointUserViewConfigurationController.cs" />
+    <Compile Include="Controllers\Endpoint\Configuration\EndpointConfigurationKeyController.cs" />
+    <Compile Include="Controllers\Endpoint\Configuration\EndpointConfigurationController.cs" />
+    <Compile Include="Controllers\Endpoint\Configuration\EndpointKeyConfigurationController.cs" />
+    <Compile Include="Controllers\Endpoint\GEMS\GEMSUserInfoController.cs" />
+    <Compile Include="Controllers\Endpoint\Inhouse Systems\InhouseFunctionController.cs" />
+    <Compile Include="Controllers\Endpoint\Inhouse Systems\InhouseUserInfoController.cs" />
+    <Compile Include="Controllers\Endpoint\Inhouse Systems\InhUserPermissionFunctionController.cs" />
+    <Compile Include="Controllers\Endpoint\Inhouse Systems\Presentation\PresentationInhouseUserToPermission.cs" />
+    <Compile Include="Controllers\Endpoint\Inhouse Systems\InhousePermissionController.cs" />
+    <Compile Include="Controllers\Endpoint\Inhouse Systems\Presentation\PresentationInhouseUserInfoController.cs" />
+    <Compile Include="Controllers\Endpoint\Nova\SAPEamNovaUserInfoController.cs" />
+    <Compile Include="Controllers\Endpoint\O365\Office365MassLicenseController.cs" />
+    <Compile Include="Controllers\Endpoint\SAPHANA\SAPHANARoleInfoController.cs" />
+    <Compile Include="Controllers\Endpoint\SAPHANA\SAPHANAUserinfoController.cs" />
+    <Compile Include="Controllers\Endpoint\ServiceAccountQuestionController.cs" />
+    <Compile Include="Controllers\Endpoint\SkypeForBusiness\SkypeForBusinessResponseGroupInfoController.cs" />
+    <Compile Include="Controllers\Endpoint\SkypeForBusiness\SkypeForBusinessUnAssignedNumberController.cs" />
+    <Compile Include="Controllers\Endpoint\SkypeForBusiness\SkypeForBusinessUnAssignedNumberMatrixController.cs" />
+    <Compile Include="Controllers\Endpoint\SkypeForBusiness\SkypeForBusinessUserInfoController.cs" />
+    <Compile Include="Controllers\Endpoint\SSIDS\SSIDSRolelnfoController.cs" />
+    <Compile Include="Controllers\Matrix\MISC\ApproverExceptionInfoController.cs" />
+    <Compile Include="Controllers\Matrix\NOVA\NOVACompositeRoleMatrixController.cs" />
+    <Compile Include="Controllers\Matrix\NOVA\NOVAExceptionalRoleMatrixController.cs" />
+    <Compile Include="Controllers\Matrix\NOVA\NOVAManagementRoleMatrixController.cs" />
+    <Compile Include="Controllers\Matrix\NOVA\NOVASoDExceptionsMatrixController.cs" />
+    <Compile Include="Controllers\Matrix\NOVA\NOVAUserRoleMatrixController.cs" />
+    <Compile Include="Controllers\Endpoint\NPAC\NPACLevelInfoController.cs" />
+    <Compile Include="Controllers\Endpoint\O365\Office365LicenseConfigController.cs" />
+    <Compile Include="Controllers\Endpoint\O365\Office365UserInfoController.cs" />
+    <Compile Include="Controllers\Endpoint\OneCard\SMSAccessLevelController.cs" />
+    <Compile Include="Controllers\Endpoint\Presentation\PresentationAccessRequestItemController.cs" />
+    <Compile Include="Controllers\Endpoint\Presentation\PresentationUserAccessDetailController.cs" />
+    <Compile Include="Controllers\Endpoint\Presentation\PresentationUserEntitlementController.cs" />
+    <Compile Include="Controllers\Endpoint\SAPEP\Presentation\PresentationSAPEPGroupToUsersReportController.cs" />
+    <Compile Include="Controllers\Endpoint\SAPEP\Presentation\PresentationSAPEPRoleToUsersReportController.cs" />
+    <Compile Include="Controllers\Endpoint\SAPEP\Presentation\PresentationSAPEPUserInfoController.cs" />
+    <Compile Include="Controllers\Endpoint\SAPEP\Presentation\PresentationSAPEPUserToGroupsController.cs" />
+    <Compile Include="Controllers\Endpoint\SAPEP\Presentation\PresentationSAPEPUserToRolesController.cs" />
+    <Compile Include="Controllers\Endpoint\SAPEP\SAPEPGroupInfoController.cs" />
+    <Compile Include="Controllers\Endpoint\SAPEP\SAPEPRoleInfoController.cs" />
+    <Compile Include="Controllers\Endpoint\SAPEP\SAPEPUserInfoController.cs" />
+    <Compile Include="Controllers\Matrix\GEMS\GEMSRoleMatrixController.cs" />
+    <Compile Include="Controllers\Matrix\NPAC\NPACDesignationInfoController.cs" />
+    <Compile Include="Controllers\Matrix\NPAC\NPACSectionInfoController.cs" />
+    <Compile Include="Controllers\Matrix\O365\OfficeLicenseConfigController.cs" />
+    <Compile Include="Controllers\Matrix\SAPEBS\SAPEBSXLCriticalTCodesMatrixController.cs" />
+    <Compile Include="Controllers\Matrix\SAPEBS\SAPEBSXLPositionsMatrixController.cs" />
+    <Compile Include="Controllers\Matrix\SAPEBS\SAPEBSXLRoleMatrixController.cs" />
+    <Compile Include="Controllers\Matrix\SAPFLINS\ProvisioningConfigMatrixSapEEGroupController.cs" />
+    <Compile Include="Controllers\Matrix\SAPFLINS\ProvisioningConfigMatrixSAPOrgController.cs" />
+    <Compile Include="Controllers\Matrix\SAPFLINS\ProvisioningConfigMatrixSAPPositionController.cs" />
+    <Compile Include="Controllers\Endpoint\SAP\XLControllers\SAPBIRoleCategoryController.cs" />
+    <Compile Include="Controllers\Endpoint\SAP\XLControllers\SAPPIRoleController.cs" />
+    <Compile Include="Controllers\Matrix\SAPFLINS\SAPHRFLINSConflictingRoleController.cs" />
+    <Compile Include="Controllers\Matrix\SAPFLINS\SAPHRFLINSRoleMatrixController.cs" />
+    <Compile Include="Controllers\Matrix\SAPFLINS\SAPHRFLINSSuppRoleMatrixController.cs" />
+    <Compile Include="Controllers\Matrix\SAPFLINS\SAPRoleMandatoryFieldController.cs" />
+    <Compile Include="Controllers\Endpoint\SAP\Presentation\PresentationSAPRoleWithNoUsersController.cs" />
+    <Compile Include="Controllers\Endpoint\SAP\Presentation\PresentationSAPRoleToAuthorizationReportController.cs" />
+    <Compile Include="Controllers\Endpoint\SAP\Presentation\PresentationSAPTCodeReportController.cs" />
+    <Compile Include="Controllers\Endpoint\SAP\Presentation\PresentationSAPProfileReportController.cs" />
+    <Compile Include="Controllers\Endpoint\SAP\Presentation\PresentationSAPRoleReportController.cs" />
+    <Compile Include="Controllers\Endpoint\SAP\Presentation\PresentationSAPDormantUserController.cs" />
+    <Compile Include="Controllers\Endpoint\SAP\Presentation\PresentationSAPLockedUser.cs" />
+    <Compile Include="Controllers\Endpoint\SAP\Presentation\PresentationSAPRoleToUsersController.cs" />
+    <Compile Include="Controllers\Endpoint\SAP\Presentation\PresentationSAPUserToRolesController.cs" />
+    <Compile Include="Controllers\Endpoint\SAP\Presentation\PresentationSAPUserExpiryAccount.cs" />
+    <Compile Include="Controllers\Endpoint\SAP\Presentation\PresentationSAPUserWithNoRolesController.cs" />
+    <Compile Include="Controllers\Endpoint\SAP\Presentation\PresentationSAPUserController.cs" />
+    <Compile Include="Controllers\Endpoint\SAP\Presentation\PresentationSAPUsersToGroupsController.cs" />
+    <Compile Include="Controllers\Endpoint\SAP\SAPAuthorizationToObjectController.cs" />
+    <Compile Include="Controllers\Endpoint\SAP\SAPGroupInfoController.cs" />
+    <Compile Include="Controllers\Endpoint\SAP\SAPObjectInfoController.cs" />
+    <Compile Include="Controllers\Endpoint\SAP\SAPParameterHistoryInfoController.cs" />
+    <Compile Include="Controllers\Endpoint\SAP\SAPProfileInfoController.cs" />
+    <Compile Include="Controllers\Endpoint\SAP\SAPRoleInfoController.cs" />
+    <Compile Include="Controllers\Endpoint\SAP\SAPTCodeInfoController.cs" />
+    <Compile Include="Controllers\Endpoint\SAP\SAPUserinfoController.cs" />
+    <Compile Include="Controllers\Matrix\SAPFLINS\SAPRoleMatrixController.cs" />
+    <Compile Include="Controllers\Matrix\SAPFLINS\SAPSODConfilictingRoleController.cs" />
+    <Compile Include="Controllers\Matrix\SAPHANA\SAPHANAXLCriticalTCodeMatrixController.cs" />
+    <Compile Include="Controllers\Matrix\SAPHANA\SAPHANAXLPositionsMatrixController.cs" />
+    <Compile Include="Controllers\Matrix\SAPHANA\SAPHANAXLRolesMatrixController.cs" />
+    <Compile Include="Controllers\Matrix\SAPMSSL\SAPXLMSSLCriticalTCodeMatrixController.cs" />
+    <Compile Include="Controllers\Matrix\SAPMSSL\SAPXLMSSLPositionsMatrixController.cs" />
+    <Compile Include="Controllers\Matrix\SAPMSSL\SAPXLMSSLRolesMatrixController.cs" />
+    <Compile Include="Controllers\Matrix\SAPGRC\SAPGRCRoleController.cs" />
+    <Compile Include="Controllers\Matrix\SAPSRM\SAPSRMBusinessRoleMappingController.cs" />
+    <Compile Include="Controllers\Matrix\SAPSRM\SAPSRMEnablerRoleMatrixController.cs" />
+    <Compile Include="Controllers\Matrix\SAPSRM\SAPSRMMainRoleMatrixController.cs" />
+    <Compile Include="Controllers\Matrix\SkypeForBusiness\SkypeForBusinessMatrixController.cs" />
+    <Compile Include="Controllers\Matrix\SMS\SMSXLProvisioningMatrixController.cs" />
+    <Compile Include="Controllers\Matrix\SMS\SMSXLRoleCatalogueController.cs" />
+    <Compile Include="Controllers\Matrix\VPN\VPNMatrixController.cs" />
+    <Compile Include="Controllers\OrgRevamp\NCostCenterController.cs" />
+    <Compile Include="Controllers\OrgRevamp\NDesignationController.cs" />
+    <Compile Include="Controllers\OrgRevamp\NProvisioningFieldController.cs" />
+    <Compile Include="Controllers\OrgRevamp\NRulesetForApplicationController.cs" />
+    <Compile Include="Controllers\OrgRevamp\NRulesetTypeController.cs" />
+    <Compile Include="Controllers\OrgRevamp\NOrganisationHeadController.cs" />
+    <Compile Include="Controllers\OrgRevamp\NOrganisationPresentationController.cs" />
+    <Compile Include="Controllers\OrgRevamp\NOrganisationController.cs" />
+    <Compile Include="Controllers\OrgRevamp\NOrganisationScopeController.cs" />
+    <Compile Include="Controllers\OrgRevamp\Presentation\PresentationNRulesetForApplicationController.cs" />
+    <Compile Include="Controllers\OrgRevamp\RulesetController.cs" />
+    <Compile Include="Controllers\Provisioning\AccessRequestController.cs" />
+    <Compile Include="Controllers\Provisioning\EmployeeEventTriggerController.cs" />
+    <Compile Include="Controllers\Provisioning\EntitlementReconcilationController.cs" />
+    <Compile Include="Controllers\Provisioning\Presentation\PresentationAccessRequestController.cs" />
+    <Compile Include="Controllers\Provisioning\Presentation\PresentationAccountReconcilationReportController.cs" />
+    <Compile Include="Controllers\Provisioning\Presentation\PresentationApproverController.cs" />
+    <Compile Include="Controllers\Provisioning\Presentation\PresentationEmployeeEventTriggerController.cs" />
+    <Compile Include="Controllers\Provisioning\Presentation\PresentationEntitlementReconcilationReportController.cs" />
+    <Compile Include="Controllers\Provisioning\Presentation\PresentationOrganisationController.cs" />
+    <Compile Include="Controllers\Provisioning\Presentation\PresentationAccessSnapshotsController.cs" />
+    <Compile Include="Controllers\Provisioning\Presentation\PresentationOUChangeSnapshotsController.cs" />
+    <Compile Include="Controllers\PSScript\PSScriptRunnerController.cs" />
+    <Compile Include="Controllers\PUB\PUBFileController.cs" />
+    <Compile Include="Controllers\SOD\CompliancePolicyController.cs" />
+    <Compile Include="Controllers\SOD\ComplianceReportModulesController.cs" />
+    <Compile Include="Controllers\SOD\ComplianceTypeController.cs" />
+    <Compile Include="Controllers\SOD\Report\SystemSetupReportsController.cs" />
+    <Compile Include="Controllers\SOD\SODConflictController.cs" />
+    <Compile Include="Controllers\SOD\SODConflictFunctionMapController.cs" />
+    <Compile Include="Controllers\SOD\SODConflictFunctionsController.cs" />
+    <Compile Include="Controllers\SOD\SODEndPointPolicySelectionController.cs" />
+    <Compile Include="Controllers\SOD\SODExceptionController.cs" />
+    <Compile Include="Controllers\SOD\SODExceptionItemController.cs" />
+    <Compile Include="Controllers\SOD\SODExecutionConfigController.cs" />
+    <Compile Include="Controllers\Provisioning\AccountReconcilationController.cs" />
+    <Compile Include="Controllers\SOD\SODFunctionController.cs" />
+    <Compile Include="Controllers\SOD\SODFunctionItemController.cs" />
+    <Compile Include="Controllers\SOD\SODMitigationController.cs" />
+    <Compile Include="Controllers\SOD\SODPolicyConfigurationController.cs" />
+    <Compile Include="Controllers\SOD\SODPolicyController.cs" />
+    <Compile Include="Controllers\SOD\SODPolicyExecutionDefinitionController.cs" />
+    <Compile Include="Controllers\SOD\SODPolicyReportController.cs" />
+    <Compile Include="Controllers\SOD\SODReportController.cs" />
+    <Compile Include="Controllers\SOD\SODRiskCodeController.cs" />
+    <Compile Include="Controllers\SOD\SODRiskLevelController.cs" />
+    <Compile Include="Controllers\SOD\SODRiskScoreController.cs" />
+    <Compile Include="Controllers\SOD\SODRunPolicyController.cs" />
+    <Compile Include="Controllers\SOD\SODRunPolicySelectionController.cs" />
+    <Compile Include="Controllers\SOD\UserSODComplianceReportController.cs" />
+    <Compile Include="Controllers\Workflow\Presentation\PresentationApprovalChainController.cs" />
+    <Compile Include="Controllers\Workflow\WorkflowController.cs" />
+    <Compile Include="Controllers\XLProcessor\XLDataController.cs" />
+    <Compile Include="Controllers\XLProcessor\XLDataProcessorController.cs" />
+    <Compile Include="Controllers\XLProcessor\XLTemplatesController.cs" />
+    <Compile Include="Filters\BasicAuthenticationAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="..\Solution Items\ConnectionString.config">
+      <Link>ConnectionString.config</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\WebAPI Deploy.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Controllers\Core\Common\Presentation\" />
+    <Folder Include="Controllers\Core\Database\" />
+    <Folder Include="Controllers\Core\GridSettings\" />
+    <Folder Include="Controllers\Core\Org\" />
+    <Folder Include="Controllers\Core\Tasks\User\" />
+    <Folder Include="Controllers\Endpoint\SAPGRC\" />
+    <Folder Include="Controllers\Helper\" />
+    <Folder Include="Views\AuditConfigurationDetail\" />
+    <Folder Include="Views\AuditConfiguration\" />
+    <Folder Include="Views\BIZCMSUserInfo\" />
+    <Folder Include="Views\CustomReport\" />
+    <Folder Include="Views\NRoleGroupApproval\" />
+    <Folder Include="Views\NRoleGroupDetail\" />
+    <Folder Include="Views\PresentationBIZCMSFunctions\" />
+    <Folder Include="Views\PresentationBIZCMSRoles\" />
+    <Folder Include="Views\PresentationBIZCMSUsers\" />
+    <Folder Include="Views\ProvisioningNameConstructor\" />
+    <Folder Include="Views\PUBFile\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DI.Chakra.DBConfigHelper\DI.Chakra.DBConfigHelper.csproj">
+      <Project>{9a356356-e584-4682-9bdd-f0ae42f59f62}</Project>
+      <Name>DI.Chakra.DBConfigHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.DomainModel\DI.Chakra.DomainModel.csproj">
+      <Project>{dba76d9a-9381-4313-8cf0-b1098be94d41}</Project>
+      <Name>DI.Chakra.DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Dto\DI.Chakra.Dto.csproj">
+      <Project>{cb00bab2-3fa6-4eeb-bfc5-876db1a518bb}</Project>
+      <Name>DI.Chakra.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.EntityModel\DI.Chakra.EntityModel.csproj">
+      <Project>{65af207b-2342-4009-b3ea-0c829ff25cdc}</Project>
+      <Name>DI.Chakra.EntityModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Infrastructure\DI.Chakra.Infrastructure.csproj">
+      <Project>{9a13b27d-b9dc-474a-9fe6-1c60fd52e5a7}</Project>
+      <Name>DI.Chakra.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Logger\DI.Chakra.Logger.csproj">
+      <Project>{1e273971-c665-4e37-88ec-9621c81a7009}</Project>
+      <Name>DI.Chakra.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.ProvisioningUtility\DI.Chakra.ProvisioningUtility.csproj">
+      <Project>{89971326-900c-4030-96b0-04b45d4e9142}</Project>
+      <Name>DI.Chakra.ProvisioningUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Transaction\DI.Chakra.Transaction.csproj">
+      <Project>{4f42aeb0-8003-4791-afc4-3a70a421fd58}</Project>
+      <Name>DI.Chakra.Transaction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Win\Processors\DI.Chakra.Services.EmailingProcessor\DI.Chakra.Services.EmailingProcessor.csproj">
+      <Project>{2335b14f-bbe7-452e-9f99-4a4af01cdc94}</Project>
+      <Name>DI.Chakra.Services.EmailingProcessor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workflows\DI.Chakra.Workflow.Processor\DI.Chakra.Workflow.Processor.csproj">
+      <Project>{93b6dbb6-cec1-4017-b601-b270a79ba2f6}</Project>
+      <Name>DI.Chakra.Workflow.Processor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workflows\DI.Chakra.Workflow.ServiceHelpers\DI.Chakra.Workflow.ServiceHelpers.csproj">
+      <Project>{e741a681-593f-4f62-863e-5a34c19809ff}</Project>
+      <Name>DI.Chakra.Workflow.ServiceHelpers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>54427</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:4427/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!--Start:copy the Connectionstring.config file from solution items to project folder -->
+  <Target Name="CopyLinkedContentFiles" BeforeTargets="Build">
+    <Copy SourceFiles="%(Content.Identity)" DestinationFiles="%(Content.Link)" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" Condition="'%(Content.Link)' != ''" />
+  </Target>
+  <PropertyGroup>
+    <PostBuildEvent>
+        if not exist "$(WebProjectOutputDir)\bin\Roslyn" md "$(WebProjectOutputDir)\bin\Roslyn"
+        start /MIN xcopy /s /y /R "$(OutDir)roslyn\*.*" "$(WebProjectOutputDir)\bin\Roslyn"
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

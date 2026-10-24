@@ -1,0 +1,4 @@
+SELECT U.UserName,U.DisplayName,U.EmployeeId,U.EmailId,UA.extensionAttribute4 as EmailDomain, U.CompanyName,U.DepartmentName,U.DivisionName,U.SectionName,U.PositionName as Position, U.CostCenter,
+CASE WHEN (ISNULL(UA.extensionAttribute4,'')='NoInternetMail') AND (U.EmailId like '%spgroup.com.%')THEN 'No' ELSE 'Yes' End as HasInternetAccess 
+FROM DI_ADS_UserInfo UA INNER JOIN DI_M_AccountReconcilation A on UA.Id = A.EndpointUserId INNER JOIN DI_M_User U on A.UserId = U.Id INNER JOIN DI_M_EndpointSystem E On E.Id = A.EndpointSystemId where U.IsActive=1 and A.IsDeleted=0 AND U.id in(select UserId from DI_M_AccountReconcilation WHERE EndpointSystemId = (select Id from DI_M_EndpointSystem where ApplicationType = 18) and AccountType=1 and Userid is not null and IsDeleted = 0) AND E.ApplicationType = 1 AND A.AccountType=1 AND A.UserId IS NOT NULL
+

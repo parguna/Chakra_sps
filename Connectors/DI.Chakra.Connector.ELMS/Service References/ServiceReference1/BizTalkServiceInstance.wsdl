@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BizTalkServiceInstance" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+    <CreationInfo Created="2017-03-14 18:48:45Z" />
+  </wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://di-yasila:80/RWSDemoSvcNew/WcfService_RWSDemoSvcNew.svc?xsd=xsd2" namespace="http://RWSDemoSvc.CreateUserReqSchema" />
+      <xsd:import schemaLocation="http://di-yasila:80/RWSDemoSvcNew/WcfService_RWSDemoSvcNew.svc?xsd=xsd3" namespace="http://RWSDemoSvc.CreateUserResSchema" />
+      <xsd:import schemaLocation="http://di-yasila:80/RWSDemoSvcNew/WcfService_RWSDemoSvcNew.svc?xsd=xsd4" namespace="http://RWSDemoSvc.DeleteUserReqSchema" />
+      <xsd:import schemaLocation="http://di-yasila:80/RWSDemoSvcNew/WcfService_RWSDemoSvcNew.svc?xsd=xsd5" namespace="http://RWSDemoSvc.DeleteUserResSchema" />
+      <xsd:import schemaLocation="http://di-yasila:80/RWSDemoSvcNew/WcfService_RWSDemoSvcNew.svc?xsd=xsd6" namespace="http://RWSDemoSvc.UpdateRoleReqSchema" />
+      <xsd:import schemaLocation="http://di-yasila:80/RWSDemoSvcNew/WcfService_RWSDemoSvcNew.svc?xsd=xsd7" namespace="http://RWSDemoSvc.UpdateRoleResSchema" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="WcfService_RWSDemoSvcNew_CreateUser_InputMessage">
+    <wsdl:part xmlns:q1="http://RWSDemoSvc.CreateUserReqSchema" name="part" element="q1:UserIntegrationDS" />
+  </wsdl:message>
+  <wsdl:message name="WcfService_RWSDemoSvcNew_CreateUser_OutputMessage">
+    <wsdl:part xmlns:q2="http://RWSDemoSvc.CreateUserResSchema" name="part" element="q2:UserIntegrationDS" />
+  </wsdl:message>
+  <wsdl:message name="WcfService_RWSDemoSvcNew_DeleteUser_InputMessage">
+    <wsdl:part xmlns:q3="http://RWSDemoSvc.DeleteUserReqSchema" name="part" element="q3:UserIntegrationDS" />
+  </wsdl:message>
+  <wsdl:message name="WcfService_RWSDemoSvcNew_DeleteUser_OutputMessage">
+    <wsdl:part xmlns:q4="http://RWSDemoSvc.DeleteUserResSchema" name="part" element="q4:UserIntegrationDS" />
+  </wsdl:message>
+  <wsdl:message name="WcfService_RWSDemoSvcNew_UpdateRole_InputMessage">
+    <wsdl:part xmlns:q5="http://RWSDemoSvc.UpdateRoleReqSchema" name="part" element="q5:UserIntegrationDS" />
+  </wsdl:message>
+  <wsdl:message name="WcfService_RWSDemoSvcNew_UpdateRole_OutputMessage">
+    <wsdl:part xmlns:q6="http://RWSDemoSvc.UpdateRoleResSchema" name="part" element="q6:UserIntegrationDS" />
+  </wsdl:message>
+  <wsdl:portType name="WcfService_RWSDemoSvcNew">
+    <wsdl:documentation>service "*" port "*"</wsdl:documentation>
+    <wsdl:operation name="CreateUser">
+      <wsdl:documentation>operation "CreateUser"</wsdl:documentation>
+      <wsdl:input message="tns:WcfService_RWSDemoSvcNew_CreateUser_InputMessage" />
+      <wsdl:output message="tns:WcfService_RWSDemoSvcNew_CreateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:documentation>operation "DeleteUser"</wsdl:documentation>
+      <wsdl:input message="tns:WcfService_RWSDemoSvcNew_DeleteUser_InputMessage" />
+      <wsdl:output message="tns:WcfService_RWSDemoSvcNew_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRole">
+      <wsdl:documentation>operation "UpdateRole"</wsdl:documentation>
+      <wsdl:input message="tns:WcfService_RWSDemoSvcNew_UpdateRole_InputMessage" />
+      <wsdl:output message="tns:WcfService_RWSDemoSvcNew_UpdateRole_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ITwoWayAsync" type="tns:WcfService_RWSDemoSvcNew">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateUser">
+      <wsdl:documentation>operation "CreateUser"</wsdl:documentation>
+      <soap:operation soapAction="CreateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:documentation>operation "DeleteUser"</wsdl:documentation>
+      <soap:operation soapAction="DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRole">
+      <wsdl:documentation>operation "UpdateRole"</wsdl:documentation>
+      <soap:operation soapAction="UpdateRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BizTalkServiceInstance">
+    <wsdl:port name="BasicHttpBinding_ITwoWayAsync" binding="tns:BasicHttpBinding_ITwoWayAsync">
+      <soap:address location="http://di-yasila/RWSDemoSvcNew/WcfService_RWSDemoSvcNew.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

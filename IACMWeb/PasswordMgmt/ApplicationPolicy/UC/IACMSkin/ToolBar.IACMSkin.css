@@ -1,0 +1,141 @@
+.RadToolBar_IACMSkin {
+    color: #666;
+    background-color: #ebebeb;
+    font-size: 1em;
+    line-height: 1.2em;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+}
+.RadToolBar_IACMSkin .rtbOuter {
+    padding: 5px;
+    border-color: #ddd;
+    background-color: #ebebeb;
+    background-image: linear-gradient(#fefefe 0, #e3e3e3 100%);
+}
+.RadToolBar_IACMSkin .rtbWrap {
+    padding: 3px 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    *color: #666;
+    background-image: url('../Images/Common/radPrimaryGradientButtonSprite.png');
+    background-position: 0 0;
+    background-repeat: repeat-x
+}
+.RadToolBar_IACMSkin .rtbOut,
+.RadToolBar_IACMSkin .rtbMid,
+.RadToolBar_IACMSkin .rtbIn {
+    padding: 0
+}
+.RadToolBar_IACMSkin .rtbText,
+.RadToolBar_IACMSkin .templateText {
+    padding: 0 5px
+}
+.RadToolBar_IACMSkin .rtbChoiceArrow {
+    width: 18px;
+    background-image: url('../Images/Common/radActionsSprite.png');
+    background-position: -16px -65px
+}
+.RadToolBar_IACMSkin .rtbItemClicked .rtbChoiceArrow,
+.RadToolBar_IACMSkin .rtbSplBtnExpanded .rtbChoiceArrow,
+.RadToolBar_IACMSkin .rtbDropDownExpanded .rtbChoiceArrow {
+    background-position: -116px -65px
+}
+.RadToolBar_IACMSkin .rtbItemHovered .rtbWrap {
+    border-color: #007d93;
+    color: white
+}
+.RadToolBar_IACMSkin .rtbChecked .rtbWrap,
+.RadToolBar_IACMSkin .rtbItemClicked .rtbWrap {
+    border-color: #ddd;
+    color: white
+}
+.RadToolBar_IACMSkin .rtbSplBtnExpanded .rtbWrap,
+.RadToolBar_IACMSkin .rtbDropDownExpanded .rtbWrap {
+    border-color: #ddd;
+    color: white
+}
+.RadToolBar_IACMSkin .rtbWrap {
+    background-position: 0 1000px
+}
+.RadToolBar_IACMSkin .rtbItemHovered .rtbWrap,
+.RadToolBar_IACMSkin .rtbItemFocused .rtbWrap {
+    background-position: 0 -1000px
+}
+.RadToolBar_IACMSkin .rtbItemClicked .rtbWrap,
+.RadToolBar_IACMSkin .rtbSplBtnExpanded .rtbWrap,
+.RadToolBar_IACMSkin .rtbDropDownExpanded .rtbWrap,
+.RadToolBar_IACMSkin .rtbChecked .rtbWrap {
+    background-position: 0 -2000px
+}
+.RadToolBar_IACMSkin .rtbSeparator {
+    border-color: #e3e2e2;
+    background-color: #fefefe
+}
+.RadToolBar_IACMSkin_Horizontal .rtbItem {
+    margin-left: 5px
+}
+.RadToolBar_IACMSkin_Horizontal .rtbSeparator {
+    margin: -5px 0 -5px 5px;
+    height: 38px
+}
+.RadToolBar_IACMSkin_Vertical .rtbItem {
+    margin-top: 5px
+}
+.RadToolBar_IACMSkin_Vertical .rtbSeparator {
+    margin: 5px -5px 0
+}
+.RadToolBarDropDown_IACMSkin {
+    font-size: 1em;
+    font-family: inherit;
+    color: #555;
+    border-color: #ddd;
+    background-color: white
+}
+.RadToolBarDropDown_IACMSkin.rtbNoBackground {
+    border-width: 1px;
+    background-color: white
+}
+.RadToolBarDropDown_IACMSkin .rtbWrap,
+.RadToolBarDropDown_IACMSkin .rtbTemplate {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-width: 0;
+    line-height: 24px
+}
+.RadToolBarDropDown_IACMSkin .rtbWrap {
+    *color: #555;
+    background-image: url('../Images/Common/radGradientListSprite.png');
+    background-image: linear-gradient(transparent, transparent)
+}
+.RadToolBarDropDown_IACMSkin .rtbItemHovered .rtbWrap {
+    color: white;
+    background-color: #007d93;
+    background-image: linear-gradient(#00a9c7, #007d93)
+}
+.RadToolBarDropDown_IACMSkin .rtbItemClicked .rtbWrap {
+    color: white;
+    background-color: #2dabc1;
+    background-image: linear-gradient(#2dabc1, #2dabc1)
+}
+.RadToolBarDropDown_IACMSkin .rtbIcon {
+    top: 7px
+}
+.RadToolBarDropDown_IACMSkin .rtbSeparator {
+    border-color: #ddd
+}
+.RadToolBarDropDown_IACMSkin .rtbShadows,
+.RadToolBarDropDown_IACMSkin .rtbRoundedCorners {
+    padding: 0
+}
+.RadToolBarDropDown_IACMSkin .rtbTopLeft,
+.RadToolBarDropDown_IACMSkin .rtbTopRight,
+.RadToolBarDropDown_IACMSkin .rtbBottomLeft,
+.RadToolBarDropDown_IACMSkin .rtbBottomRight,
+.RadToolBarDropDown_IACMSkin .rtbTopFix,
+.RadToolBarDropDown_IACMSkin .rtbBottomFix,
+.RadToolBarDropDown_IACMSkin .rtbTopShadowLeft,
+.RadToolBarDropDown_IACMSkin .rtbTopShadowRight,
+.RadToolBarDropDown_IACMSkin .rtbBottomShadowLeft,
+.RadToolBarDropDown_IACMSkin .rtbBottomShadowRight {
+    display: none
+}

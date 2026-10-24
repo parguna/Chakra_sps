@@ -1,0 +1,6 @@
+﻿Update DI_M_CustomReport Set 
+ReportQuery='select ssidsuinfo.User_Id, ssidsuinfo.UserName, ssidsrinfo.RoleName,ssidsrinfo.Description    from DI_SSIDS_UserInfo ssidsuinfo left outer join SSIDSUserInfoSSIDSRolelnfo ssidsurinfo on ssidsuinfo.Id=ssidsurinfo.SSIDSUserInfo_Id   left outer join DI_SSIDS_RoleInfo ssidsrinfo on ssidsurinfo.SSIDSRolelnfo_Id=ssidsrinfo.Id join DI_M_EndpointSystem ep on ssidsuinfo.EndPointSystemId=ep.Id   where  ep.DisplayName=@endpointsystem'
+where UniqueName='REPORT_SSIDS_USER_ROLES'
+
+Insert DI_M_CustomReportParameter(CustomReportId,ParameterName,Description,ParameterVariant,ParameterType,Sequence,DefaultValue,DataFormatString,CreatedBy,CreatedDate,LastModifiedBy,LastModifiedDate,IsDeleted)
+Select (Select Id from DI_M_CUstomReport where UniqueName='REPORT_SSIDS_USER_ROLES'),ParameterName,Description,ParameterVariant,ParameterType,Sequence,DefaultValue,DataFormatString,CreatedBy,GETDATE(),LastModifiedBy,GETDATE(),0 from DI_M_CustomReportParameter where CustomReportId=(Select Id from DI_M_CUstomReport where UniqueName='REPORT_SSIDS_USERS')

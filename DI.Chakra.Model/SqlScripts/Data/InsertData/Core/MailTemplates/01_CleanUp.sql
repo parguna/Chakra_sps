@@ -1,0 +1,1 @@
+DELETE FROM [dbo].[DI_M_MailTemplate]

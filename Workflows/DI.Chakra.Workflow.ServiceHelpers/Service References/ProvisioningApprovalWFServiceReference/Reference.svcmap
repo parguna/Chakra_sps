@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2d84e6f9-fec3-4a9e-b5a1-77da398ed2bd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>true</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:53412/Provisioning/ProvisioningApprovalWFService.xamlx" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ProvisioningApprovalWFService.xsd" MetadataType="Schema" ID="ecb52b92-42c3-434d-b0e2-b59c18d6aa74" SourceId="1" SourceUrl="http://localhost:53412/Provisioning/ProvisioningApprovalWFService.xamlx?xsd=xsd0" />
+    <MetadataFile FileName="ProvisioningApprovalWFService.disco" MetadataType="Disco" ID="c0593c8d-7a50-46a5-bbdf-14f3c104e99d" SourceId="1" SourceUrl="http://localhost:53412/Provisioning/ProvisioningApprovalWFService.xamlx?disco" />
+    <MetadataFile FileName="ProvisioningApprovalWFService1.xsd" MetadataType="Schema" ID="3fa2dff3-4b83-4396-a241-f91ecc2b10ee" SourceId="1" SourceUrl="http://localhost:53412/Provisioning/ProvisioningApprovalWFService.xamlx?xsd=xsd3" />
+    <MetadataFile FileName="ProvisioningApprovalWFService2.xsd" MetadataType="Schema" ID="a178c43d-b41c-4a50-a478-16c611a62b7d" SourceId="1" SourceUrl="http://localhost:53412/Provisioning/ProvisioningApprovalWFService.xamlx?xsd=xsd1" />
+    <MetadataFile FileName="ProvisioningApprovalWFService.wsdl" MetadataType="Wsdl" ID="cd7a5b9c-f9ef-49bb-8294-f2dba0223747" SourceId="1" SourceUrl="http://localhost:53412/Provisioning/ProvisioningApprovalWFService.xamlx?wsdl" />
+    <MetadataFile FileName="ProvisioningApprovalWFService4.xsd" MetadataType="Schema" ID="47516dbb-f0bd-4f16-bc6a-31317a7def9d" SourceId="1" SourceUrl="http://localhost:53412/Provisioning/ProvisioningApprovalWFService.xamlx?xsd=xsd5" />
+    <MetadataFile FileName="ProvisioningApprovalWFService41.xsd" MetadataType="Schema" ID="49d1d45b-0412-4bc2-bdf8-459c31623abc" SourceId="1" SourceUrl="http://localhost:53412/Provisioning/ProvisioningApprovalWFService.xamlx?xsd=xsd4" />
+    <MetadataFile FileName="ProvisioningApprovalWFService3.xsd" MetadataType="Schema" ID="1f7b6a47-5e6f-47bd-a2a8-4febfd7fb169" SourceId="1" SourceUrl="http://localhost:53412/Provisioning/ProvisioningApprovalWFService.xamlx?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

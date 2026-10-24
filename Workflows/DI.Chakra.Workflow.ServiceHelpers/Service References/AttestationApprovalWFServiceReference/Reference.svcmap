@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6fef53b5-70ee-4901-a0d8-d8de70f922e1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>true</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:53412/Attestation/AttestationApprovalWFService.xamlx" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AttestationApprovalWFService4.xsd" MetadataType="Schema" ID="cc9024b4-be97-4419-a338-c90c50c8681e" SourceId="1" SourceUrl="http://localhost:53412/Attestation/AttestationApprovalWFService.xamlx?xsd=xsd4" />
+    <MetadataFile FileName="AttestationApprovalWFService41.xsd" MetadataType="Schema" ID="bfa93892-feee-4b72-9787-3cf5b930f784" SourceId="1" SourceUrl="http://localhost:53412/Attestation/AttestationApprovalWFService.xamlx?xsd=xsd5" />
+    <MetadataFile FileName="AttestationApprovalWFService.wsdl" MetadataType="Wsdl" ID="337396f8-1683-42da-9529-5e41db96c3b9" SourceId="1" SourceUrl="http://localhost:53412/Attestation/AttestationApprovalWFService.xamlx?wsdl" />
+    <MetadataFile FileName="AttestationApprovalWFService.xsd" MetadataType="Schema" ID="c4cc2403-6a67-4f64-8be3-29b2f9c68f3e" SourceId="1" SourceUrl="http://localhost:53412/Attestation/AttestationApprovalWFService.xamlx?xsd=xsd0" />
+    <MetadataFile FileName="AttestationApprovalWFService1.xsd" MetadataType="Schema" ID="39cbe82a-a92d-45e1-9e91-bd82d508c185" SourceId="1" SourceUrl="http://localhost:53412/Attestation/AttestationApprovalWFService.xamlx?xsd=xsd2" />
+    <MetadataFile FileName="AttestationApprovalWFService2.xsd" MetadataType="Schema" ID="b2ac6b22-7ad0-4eac-91d9-dc70c6680ef8" SourceId="1" SourceUrl="http://localhost:53412/Attestation/AttestationApprovalWFService.xamlx?xsd=xsd3" />
+    <MetadataFile FileName="AttestationApprovalWFService.disco" MetadataType="Disco" ID="b659d50e-d375-4b07-8bd6-3203f5fe2baa" SourceId="1" SourceUrl="http://localhost:53412/Attestation/AttestationApprovalWFService.xamlx?disco" />
+    <MetadataFile FileName="AttestationApprovalWFService3.xsd" MetadataType="Schema" ID="c7ba4365-449d-4d3b-a261-453a9a7aa8f5" SourceId="1" SourceUrl="http://localhost:53412/Attestation/AttestationApprovalWFService.xamlx?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

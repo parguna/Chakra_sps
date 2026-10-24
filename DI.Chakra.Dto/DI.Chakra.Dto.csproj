@@ -1,0 +1,625 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CB00BAB2-3FA6-4EEB-BFC5-876DB1A518BB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DI.Chakra.Dto</RootNamespace>
+    <AssemblyName>DI.Chakra.Dto</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\Solution\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="AdHocRequest\AccessRequestConfiguration.cs" />
+    <Compile Include="AdHocRequest\AdHocAccessRequest.cs" />
+    <Compile Include="AdHocRequest\BulkRequest\BulkRequest.cs" />
+    <Compile Include="AdHocRequest\BulkRequest\BulkRequestDetail.cs" />
+    <Compile Include="AdHocRequest\BulkRequest\BulkRequestParameter.cs" />
+    <Compile Include="AdHocRequest\Presentation\PresentationAdHocAccessRequest.cs" />
+    <Compile Include="AdHocRequest\Presentation\PresentationAdHocRequest.cs" />
+    <Compile Include="AdHocRequest\Presentation\PresentationInterimAdhocRequest.cs" />
+    <Compile Include="AdHocRequest\Presentation\PresentationRiskAssessment.cs" />
+    <Compile Include="AdHocRequest\Presentation\PresentationSODEntitlementConflict.cs" />
+    <Compile Include="AdHocRequest\Presentation\PresentationStandingOrder.cs" />
+    <Compile Include="AdHocRequest\Presentation\SODAccessRequest.cs" />
+    <Compile Include="AdHocRequest\Serialized Objects\AdHocADRequest.cs" />
+    <Compile Include="AdHocRequest\Serialized Objects\AdHocEBSRequest.cs" />
+    <Compile Include="AdHocRequest\Serialized Objects\AdHocGEMSRequest.cs" />
+    <Compile Include="AdHocRequest\Serialized Objects\AdHocIACMRequest.cs" />
+    <Compile Include="AdHocRequest\Serialized Objects\AdHocINHRequest.cs" />
+    <Compile Include="AdHocRequest\Serialized Objects\AdHocMSSLRequest.cs" />
+    <Compile Include="AdHocRequest\Serialized Objects\AdHocNovaRequest.cs" />
+    <Compile Include="AdHocRequest\Serialized Objects\AdHocNPACRequest.cs" />
+    <Compile Include="AdHocRequest\Serialized Objects\AdHocO365Request.cs" />
+    <Compile Include="AdHocRequest\Serialized Objects\AdhocSAPEPRequest.cs" />
+    <Compile Include="AdHocRequest\Serialized Objects\AdHocSAPFLINSBIRequest.cs" />
+    <Compile Include="AdHocRequest\Serialized Objects\AdHocSAPGRCRequest.cs" />
+    <Compile Include="AdHocRequest\Serialized Objects\AdHocSAPHANARequest.cs" />
+    <Compile Include="AdHocRequest\Serialized Objects\AdHocSAPHRFLINSRequest.cs" />
+    <Compile Include="AdHocRequest\Serialized Objects\AdHocSAPLocalRequest.cs" />
+    <Compile Include="AdHocRequest\Serialized Objects\AdHocSAPPIRequest.cs" />
+    <Compile Include="AdHocRequest\Serialized Objects\AdHocSAPSRMRequest.cs" />
+    <Compile Include="AdHocRequest\Serialized Objects\AdhocSkypeForBusinessRequest.cs" />
+    <Compile Include="AdHocRequest\Serialized Objects\AdHocSMSRequest.cs" />
+    <Compile Include="AdHocRequest\Serialized Objects\AdHocSSIDSRequest.cs" />
+    <Compile Include="AdHocRequest\Serialized Objects\AdHocVPNRequest.cs" />
+    <Compile Include="AdHocRequest\Serialized Objects\SecurityResponse.cs" />
+    <Compile Include="AdHocRequest\Serialized Objects\SharedAccountDetail.cs" />
+    <Compile Include="Attestation\AttestationTaskEntitlementUserComparision.cs" />
+    <Compile Include="Attestation\AttestationHierarchy.cs" />
+    <Compile Include="Attestation\AttestationSnapshot.cs" />
+    <Compile Include="Attestation\AttestationSnapshotTaskStatus.cs" />
+    <Compile Include="Attestation\AttestationSnapshotActionInterim.cs" />
+    <Compile Include="Attestation\AttestationSnapshotActionHistory.cs" />
+    <Compile Include="Attestation\AttestationSnapshotAction.cs" />
+    <Compile Include="Attestation\AttestationTaskHistoryEntitlementUserComparision.cs" />
+    <Compile Include="Attestation\EndpointHierarchy.cs" />
+    <Compile Include="Base\DtoBase.cs" />
+    <Compile Include="Base\IDMSHttpResponse.cs" />
+    <Compile Include="Contract\IAccessRequestItem.cs" />
+    <Compile Include="Contract\IConfigurationMaster.cs" />
+    <Compile Include="Contract\IApprover.cs" />
+    <Compile Include="Contract\IDatabaseConfiguration.cs" />
+    <Compile Include="Contract\IEndpointConfiguration.cs" />
+    <Compile Include="Contract\IEndpointEntitlementInfo.cs" />
+    <Compile Include="Contract\IEndpointUserInfo.cs" />
+    <Compile Include="Contract\IEntitlementDetail.cs" />
+    <Compile Include="Contract\ILogger.cs" />
+    <Compile Include="Contract\IXLData.cs" />
+    <Compile Include="Core\ACL\AccessRightHistory.cs" />
+    <Compile Include="Core\ACL\AccessRights.cs" />
+    <Compile Include="Core\ACL\PagePermission.cs" />
+    <Compile Include="Core\ACL\PageUrl.cs" />
+    <Compile Include="Core\ACL\Permission.cs" />
+    <Compile Include="Core\ACL\Presentation\PresentationAccessRights.cs" />
+    <Compile Include="Core\ACL\Presentation\PresentationPagePermission.cs" />
+    <Compile Include="Core\ACL\Presentation\PresentationRoleAccess.cs" />
+    <Compile Include="Core\ACL\Presentation\PresentationTabMenu.cs" />
+    <Compile Include="Core\ACL\Role.cs" />
+    <Compile Include="Core\ACL\RoleHistory.cs" />
+    <Compile Include="Core\ACL\TabMenu.cs" />
+    <Compile Include="Core\ACL\WebPage.cs" />
+    <Compile Include="Core\Attachment\Attachment.cs" />
+    <Compile Include="Core\Attestation\Attestation.cs" />
+    <Compile Include="Core\Attestation\AttestationCampaign.cs" />
+    <Compile Include="Core\Attestation\AttestationCampaignAttachment.cs" />
+    <Compile Include="Core\Attestation\AttestationCampaignReport.cs" />
+    <Compile Include="Core\Attestation\AttestationEndpoint.cs" />
+    <Compile Include="Core\Attestation\AttestationProcess.cs" />
+    <Compile Include="Core\Attestation\AttestationProcessHistory.cs" />
+    <Compile Include="Core\Attestation\AttestationScope.cs" />
+    <Compile Include="Core\Attestation\Presentation\PresentationAttestationCampaignComments.cs" />
+    <Compile Include="Core\Attestation\Presentation\PresentationAttestationSnapshotActionsForTask.cs" />
+    <Compile Include="Core\Attestation\Presentation\PresentationAttetstationCampaign.cs" />
+    <Compile Include="Core\Attestation\Presentation\PresentationExportAttestationEntitlementReviewDetail.cs" />
+    <Compile Include="Core\Attestation\Presentation\PresentationAttestationReview.cs" />
+    <Compile Include="Core\Attestation\Presentation\PresentationAttestationReviewEndpointSystem.cs" />
+    <Compile Include="Core\Attestation\Presentation\PresentationAttestationReviewEndpointSystemL2Detail.cs" />
+    <Compile Include="Core\Attestation\Presentation\PresentationAttestationEntitlementReviewDetail.cs" />
+    <Compile Include="Core\Attestation\Presentation\PresentationAttestationReviewPagePeoplesoft_Level1 .cs" />
+    <Compile Include="Core\Attestation\Presentation\PresentationAttestationReviewPageSAP_Level1.cs" />
+    <Compile Include="Core\Attestation\Presentation\PresentationAttestationScope.cs" />
+    <Compile Include="Core\Attestation\Presentation\PresentationAttestationStatusSummary.cs" />
+    <Compile Include="Core\Attestation\Presentation\PresentationExportAttestationReportForUI.cs" />
+    <Compile Include="Core\Attestation\Presentation\PresentationJobListAttestation.cs" />
+    <Compile Include="Core\Attestation\Presentation\PresentationListAttestation.cs" />
+    <Compile Include="Core\Attestation\Presentation\PresentationMyRequestData.cs" />
+    <Compile Include="Core\Attestation\Presentation\PresentationReviewer.cs" />
+    <Compile Include="Core\Attestation\Presentation\PresentationSapUserRoleTCodeAuthorization.cs" />
+    <Compile Include="Core\Attestation\Presentation\Utility.cs" />
+    <Compile Include="Core\Common\Chart\AccessRequestProgressStatusByMonth.cs" />
+    <Compile Include="Core\Common\Chart\AccessRequestSourceByMonth.cs" />
+    <Compile Include="Core\Common\Chart\AccessRequestSourceChartData.cs" />
+    <Compile Include="Core\Common\Chart\AccessRequestSourcePieSeries.cs" />
+    <Compile Include="Core\Common\Chart\AdhocRequestAccountTyebyMonth.cs" />
+    <Compile Include="Core\Common\Chart\Attention.cs" />
+    <Compile Include="Core\Common\Chart\AttestationcompletedSourcePieSeries.cs" />
+    <Compile Include="Core\Common\Group.cs" />
+    <Compile Include="Core\Common\GroupHistory.cs" />
+    <Compile Include="Core\Common\TableProperties.cs" />
+    <Compile Include="Core\Complaince\ComplianceProcess.cs" />
+    <Compile Include="Core\Complaince\ComplianceProcessHistory.cs" />
+    <Compile Include="Core\Complaince\Presentation\PresentationComplianceProcess.cs" />
+    <Compile Include="Core\Configuration\AuditConfiguration.cs" />
+    <Compile Include="Core\Configuration\AuditConfigurationDetail.cs" />
+    <Compile Include="Core\Configuration\ConfigGeneralTrustedSource.cs" />
+    <Compile Include="Core\Configuration\ConfigurationMaster.cs" />
+    <Compile Include="Core\Configuration\ConfigurationMasterHistory.cs" />
+    <Compile Include="Core\Configuration\ConfigurationMasterPIM.cs" />
+    <Compile Include="Core\Configuration\ConfigurationMasterPasswordManagement.cs" />
+    <Compile Include="Core\Configuration\ConfigurationMasterIM.cs" />
+    <Compile Include="Core\Configuration\ConfigurationMasterDGM.cs" />
+    <Compile Include="Core\Configuration\ConfigurationMasterCompliance.cs" />
+    <Compile Include="Core\Configuration\PasswordPolicy.cs" />
+    <Compile Include="Core\Configuration\PasswordPolicyEndpoint.cs" />
+    <Compile Include="Core\Configuration\PasswordSyncConfiguration.cs" />
+    <Compile Include="Core\Configuration\PasswordSyncConfigurationDetail.cs" />
+    <Compile Include="Core\Configuration\RequestApprovalConfiguration.cs" />
+    <Compile Include="Core\Database\MySqlConfiguration.cs" />
+    <Compile Include="Core\Database\SqlConfiguration.cs" />
+    <Compile Include="Core\Discovery\DiscoveryProcess.cs" />
+    <Compile Include="Core\Discovery\DiscoveryProcessHistory.cs" />
+    <Compile Include="Core\Discovery\Presentation\PresentationDiscoveryProcess.cs" />
+    <Compile Include="Core\Email\EmailInfo.cs" />
+    <Compile Include="Core\Email\EmailInfoHistory.cs" />
+    <Compile Include="Core\Email\MailNotificationSettings.cs" />
+    <Compile Include="Core\Email\MailServerConfiguration.cs" />
+    <Compile Include="Core\Email\MailTemplate.cs" />
+    <Compile Include="Core\Email\Presentation\PresentationMail.cs" />
+    <Compile Include="Core\Endpoint\Presentation\PresentationEndPointForFilter.cs" />
+    <Compile Include="Core\Endpoint\AttributeMappingColumns.cs" />
+    <Compile Include="Core\Endpoint\EndPoint.cs" />
+    <Compile Include="Core\Endpoint\EndPointAutoExpiry.cs" />
+    <Compile Include="Core\Endpoint\EndpointObjects.cs" />
+    <Compile Include="Core\Endpoint\EndPointSystemType.cs" />
+    <Compile Include="Core\Endpoint\Presentation\PresentationEndPoint.cs" />
+    <Compile Include="Core\Endpoint\Presentation\PresentationEndpointProvisioningField.cs" />
+    <Compile Include="Core\Endpoint\Presentation\PresentationExceptionReconData.cs" />
+    <Compile Include="Core\Endpoint\Presentation\PresentationSystemDecommission.cs" />
+    <Compile Include="Core\GridData\PresentationGridPagedData.cs" />
+    <Compile Include="Core\GridSettings\UserGridFilterSettings.cs" />
+    <Compile Include="Core\GridSettings\UserGridSettings.cs" />
+    <Compile Include="Core\HouseKeeping\PurgeConfig.cs" />
+    <Compile Include="Core\Log\AttestationLog.cs" />
+    <Compile Include="Core\Log\DiscoveryLog.cs" />
+    <Compile Include="Core\Log\EmailLog.cs" />
+    <Compile Include="Core\Log\ProvisioningLog.cs" />
+    <Compile Include="Core\Log\SchedulerLog.cs" />
+    <Compile Include="Core\Log\ServiceLog.cs" />
+    <Compile Include="Core\Log\UILog.cs" />
+    <Compile Include="Core\MetaData\AccessRequestCategory.cs" />
+    <Compile Include="Core\MetaData\AccessRequestProgressTBD.cs" />
+    <Compile Include="Core\MetaData\AccessRequestSourceTBD.cs" />
+    <Compile Include="Core\MetaData\AccessRequestStatusTBD.cs" />
+    <Compile Include="Core\MetaData\AccountActionCategory.cs" />
+    <Compile Include="Core\MetaData\AccountCategory.cs" />
+    <Compile Include="Core\MetaData\ApprovalUserTypes.cs" />
+    <Compile Include="Core\MetaData\ServiceAccountQuestion.cs" />
+    <Compile Include="Core\MetaData\EmployeeTerm.cs" />
+    <Compile Include="Core\MetaData\MetaData.cs" />
+    <Compile Include="Core\MetaData\OffboardingAccountAction.cs" />
+    <Compile Include="Core\MetaData\RequestTypes.cs" />
+    <Compile Include="Core\MetaData\RoleTypes.cs" />
+    <Compile Include="Core\Notification\Notification.cs" />
+    <Compile Include="Core\Notification\Presentation\PresentationNotification.cs" />
+    <Compile Include="Core\Notification\Presentation\PresentationRequestActionUsers.cs" />
+    <Compile Include="Core\OrgChart\Presentation\PresentationOrgChart.cs" />
+    <Compile Include="Core\Org\Company.cs" />
+    <Compile Include="Core\Org\PersonnelArea.cs" />
+    <Compile Include="Core\Org\PersonnelSubArea.cs" />
+    <Compile Include="Core\Preference\AdminModeItem.cs" />
+    <Compile Include="Core\Preference\Dashboard.cs" />
+    <Compile Include="Core\Preference\DashboardRights.cs" />
+    <Compile Include="Core\Preference\DefaultRoleDashboardPreference.cs" />
+    <Compile Include="Core\Preference\DefaultRoleQuickLink.cs" />
+    <Compile Include="Core\Preference\Presentation\PresentationDashBoardPreference.cs" />
+    <Compile Include="Core\Preference\Presentation\PresentationDefaultRoleQuickLink.cs" />
+    <Compile Include="Core\Preference\Presentation\PresentationQuickLinkAccessRights.cs" />
+    <Compile Include="Core\Preference\Presentation\UserGridAllInfo.cs" />
+    <Compile Include="Core\Preference\QuickLink.cs" />
+    <Compile Include="Core\Preference\QuickLinkAccessRights.cs" />
+    <Compile Include="Core\Preference\UserGridColumnInfo.cs" />
+    <Compile Include="Core\Preference\UserCulturePreference.cs" />
+    <Compile Include="Core\Preference\UserDashboardPreference.cs" />
+    <Compile Include="Core\Preference\UserGridFilterInfo.cs" />
+    <Compile Include="Core\Preference\UserGridInfo.cs" />
+    <Compile Include="Core\Preference\UserPreference.cs" />
+    <Compile Include="Core\Preference\UserQuickLink.cs" />
+    <Compile Include="Core\Recon\ExceptionAttribute.cs" />
+    <Compile Include="Core\Recon\ExceptionAttributeChange.cs" />
+    <Compile Include="Core\Reporting\CustomReport.cs" />
+    <Compile Include="Core\Reporting\CustomReportParameter.cs" />
+    <Compile Include="Core\Reporting\Presentation\PresentationReportProcess.cs" />
+    <Compile Include="Core\Reporting\Report.cs" />
+    <Compile Include="Core\Reporting\ReportAttributes.cs" />
+    <Compile Include="Core\Reporting\ReportHistory.cs" />
+    <Compile Include="Core\Scheduler\Process.cs" />
+    <Compile Include="Core\Scheduler\ProcessHistory.cs" />
+    <Compile Include="Core\Scheduler\Scheduler.cs" />
+    <Compile Include="Core\SecurityQA\GlobalAnswer.cs" />
+    <Compile Include="Core\SecurityQA\GlobalQuestion.cs" />
+    <Compile Include="Core\Tasks\ApproverDelegationHistory.cs" />
+    <Compile Include="Core\Tasks\InterimStore.cs" />
+    <Compile Include="Core\Notification\NotificationAttachment.cs" />
+    <Compile Include="Core\Tasks\Presentation\PresentationAttestationTaskSummary.cs" />
+    <Compile Include="Core\Tasks\Presentation\PresentationInterimAttachment.cs" />
+    <Compile Include="Core\Tasks\Presentation\PresentationPreviousApprovers.cs" />
+    <Compile Include="Core\Tasks\Presentation\PresentationInterimStore.cs" />
+    <Compile Include="Core\Tasks\Presentation\PresentationTaskdelegation.cs" />
+    <Compile Include="Core\Tasks\Presentation\PresentationTaskDelegationReport.cs" />
+    <Compile Include="Core\Tasks\Presentation\PresentationTask.cs" />
+    <Compile Include="Core\Tasks\RequestAttachment.cs" />
+    <Compile Include="Core\Tasks\SubTask.cs" />
+    <Compile Include="Core\Tasks\Task.cs" />
+    <Compile Include="Core\Tasks\TaskDelegation.cs" />
+    <Compile Include="Core\Tasks\TaskDelegationWrapper.cs" />
+    <Compile Include="Core\Tasks\TaskReminder.cs" />
+    <Compile Include="Core\User\Presentation\PresentationAnonymousUser.cs" />
+    <Compile Include="Core\User\Presentation\PresentationReportingEmployees.cs" />
+    <Compile Include="Core\User\Presentation\PresentationUser.cs" />
+    <Compile Include="Core\User\Presentation\PresentationUserExclusion.cs" />
+    <Compile Include="Core\User\Presentation\UserAccessDetailMatrixGridData.cs" />
+    <Compile Include="Core\User\UserBusinessRoleMapping.cs" />
+    <Compile Include="Core\User\User.cs" />
+    <Compile Include="Core\User\UserAttachment.cs" />
+    <Compile Include="Core\User\UserExclusion.cs" />
+    <Compile Include="Core\User\UserImage.cs" />
+    <Compile Include="Core\Workflow\Presentation\PresentationApprovalChain.cs" />
+    <Compile Include="Core\Workflow\Presentation\PresentationWorkFlowCriteria.cs" />
+    <Compile Include="Core\Workflow\Presentation\PresentationWorkflowCriteriaBase.cs" />
+    <Compile Include="Core\Workflow\Presentation\PresentationWorkflow.cs" />
+    <Compile Include="Core\Workflow\Presentation\PresentationWorkflowApproverGridData.cs" />
+    <Compile Include="Core\Workflow\Presentation\PresentationWorkflowConfiguration.cs" />
+    <Compile Include="Core\Workflow\WorkflowConfiguration.cs" />
+    <Compile Include="Core\Workflow\WorkflowConfigurationDetail.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\ADSComputerGroup.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\ADSComputerInfo.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\ADSGroupInfo.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\ADSGroupInfoHistory.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\ADSNestedGroup.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\ADSOuInfo.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\ADSOuInfoHistory.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\ADSPrinterInfo.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\ADSSharedFolderInfo.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\ADSUserInfo.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\ADSUserInfoHistory.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\Presentation\PresentationADSActiveAccountsWithInActiveUser.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\Presentation\PresentationADSFutureAccountExpiryAccount.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\Presentation\PresentationADSFuturePasswordExpiryAccount.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\Presentation\PresentationADSGroupWithNotAccounts.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\Presentation\PresentationADSComputerInfo.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\Presentation\PresentationADSAccountWithNoGroups.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\Presentation\PresentationADSLockedDisabledAccount.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\Presentation\PresentationADSOUs.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\Presentation\PresentationADSPrinterInfo.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\Presentation\PresentationADSDormantAccount.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\Presentation\PresentationADSUserEntitlement.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\Presentation\PresentationADSUsers.cs" />
+    <Compile Include="Endpoint\ActiveDirectory\Presentation\PresentationADSUserToGroups.cs" />
+    <Compile Include="Endpoint\Configuration\EndpointConfiguration.cs" />
+    <Compile Include="Endpoint\Configuration\EndpointConfigurationDetail.cs" />
+    <Compile Include="Endpoint\Configuration\EndpointConfigurationKey.cs" />
+    <Compile Include="Endpoint\Configuration\EndpointKeyConfiguration.cs" />
+    <Compile Include="Endpoint\Configuration\EndpointUserViewConfiguration.cs" />
+    <Compile Include="Endpoint\GEMS\GEMSRoleInfo.cs" />
+    <Compile Include="Endpoint\GEMS\GEMSRoleMatrix.cs" />
+    <Compile Include="Endpoint\GEMS\GEMSUserInfo.cs" />
+    <Compile Include="Endpoint\HangingRole\SRMHangingRoleInfo.cs" />
+    <Compile Include="Endpoint\IACM\IACMGroupInfo.cs" />
+    <Compile Include="Endpoint\IACM\IACMRoleInfo.cs" />
+    <Compile Include="Endpoint\IACM\IACMUserInfo.cs" />
+    <Compile Include="Endpoint\IACM\Presentation\PresentationIDASUserEntitlement.cs" />
+    <Compile Include="Endpoint\Inhouse Systems\InhouseFunction.cs" />
+    <Compile Include="Endpoint\Inhouse Systems\InhousePermission.cs" />
+    <Compile Include="Endpoint\Inhouse Systems\InhouseUserInfo.cs" />
+    <Compile Include="Endpoint\Inhouse Systems\InhUserPermissionFunction.cs" />
+    <Compile Include="Endpoint\Inhouse Systems\Presentation\PresentationAccountEntitlementAuditTrial.cs" />
+    <Compile Include="Endpoint\Inhouse Systems\Presentation\PresentationInhouseSystem.cs" />
+    <Compile Include="Endpoint\Inhouse Systems\Presentation\PresentationInhouseSystemEntitlements.cs" />
+    <Compile Include="Endpoint\Inhouse Systems\Presentation\PresentationInhouseUserEntitlement.cs" />
+    <Compile Include="Endpoint\Inhouse Systems\Presentation\PresentationInhouseUserToPermission.cs" />
+    <Compile Include="Endpoint\Inhouse Systems\Presentation\PresentationInhouseUserInfo.cs" />
+    <Compile Include="Endpoint\NOVA\NOVACompositeRoleMatrix.cs" />
+    <Compile Include="Endpoint\NOVA\NOVAExceptionalRoleMatrix.cs" />
+    <Compile Include="Endpoint\NOVA\NOVAManagementRoleMatrix.cs" />
+    <Compile Include="Endpoint\NOVA\NOVASoDExceptionsMatrix.cs" />
+    <Compile Include="Endpoint\NOVA\NOVAUserRoleMatrix.cs" />
+    <Compile Include="Endpoint\NOVA\SAPEamNovaUserInfo.cs" />
+    <Compile Include="Endpoint\NOVA\SAPEamNovaUserRoleInfo.cs" />
+    <Compile Include="Endpoint\NPAC\NPACLevelInfo.cs" />
+    <Compile Include="Endpoint\NPAC\NPACSectionInfo.cs" />
+    <Compile Include="Endpoint\NPAC\NPACDesignationInfo.cs" />
+    <Compile Include="Endpoint\NPAC\NPACUserInfo.cs" />
+    <Compile Include="Endpoint\Office365\O365GroupInfo.cs" />
+    <Compile Include="Endpoint\Office365\O365UserInfo.cs" />
+    <Compile Include="Endpoint\Office365\Office365Licenses.cs" />
+    <Compile Include="Endpoint\Office365\Office365MassLicense.cs" />
+    <Compile Include="Endpoint\Office365\Office365RetentionPolicy.cs" />
+    <Compile Include="Endpoint\Office365\Office365RoleAssignmentPolicy.cs" />
+    <Compile Include="Endpoint\Office365\Office365ServicePlans.cs" />
+    <Compile Include="Endpoint\Office365\Office365SharingPolicy.cs" />
+    <Compile Include="Endpoint\Office365\Presentation\PresentationOffice365UserEntitlement.cs" />
+    <Compile Include="Endpoint\Presentation\PresentationAccessRequestFilterCriteria.cs" />
+    <Compile Include="Endpoint\Presentation\PresentationAccessRequestItem.cs" />
+    <Compile Include="Endpoint\Presentation\PresentationAccountDetail.cs" />
+    <Compile Include="Endpoint\Presentation\PresentationOrgChangeTrack.cs" />
+    <Compile Include="Endpoint\Presentation\PresentationUserAccessDetail.cs" />
+    <Compile Include="Endpoint\Presentation\PresentationUserAccount.cs" />
+    <Compile Include="Endpoint\Presentation\PresentationUserEntitlement.cs" />
+    <Compile Include="Endpoint\SAPEP\Presentation\PresentationSAPEPGroupToUsersReport.cs" />
+    <Compile Include="Endpoint\SAPEP\Presentation\PresentationSAPEPRoleToUsersReport.cs" />
+    <Compile Include="Endpoint\SAPEP\Presentation\PresentationSAPEPUserEntitlement.cs" />
+    <Compile Include="Endpoint\SAPEP\Presentation\PresentationSAPEPUserInfo.cs" />
+    <Compile Include="Endpoint\SAPEP\Presentation\PresentationSAPEPUserToGroups.cs" />
+    <Compile Include="Endpoint\SAPEP\Presentation\PresentationSAPEPUserToRoles.cs" />
+    <Compile Include="Endpoint\SAPEP\SAPEPGroupInfo.cs" />
+    <Compile Include="Endpoint\SAPEP\SAPEPGroupInfoHistory.cs" />
+    <Compile Include="Endpoint\SAPEP\SAPEPRoleInfo.cs" />
+    <Compile Include="Endpoint\SAPEP\SAPEPRoleInfoHistory.cs" />
+    <Compile Include="Endpoint\SAPEP\SAPEPRoleInfoTemp.cs" />
+    <Compile Include="Endpoint\SAPEP\SAPEPUserInfo.cs" />
+    <Compile Include="Endpoint\SAPEP\SAPEPUserInfoHistory.cs" />
+    <Compile Include="Endpoint\SAPHANA\Presentation\PresentationSAPHANAProfileReport.cs" />
+    <Compile Include="Endpoint\SAPHANA\Presentation\PresentationSAPHANARoleReport.cs" />
+    <Compile Include="Endpoint\SAPHANA\Presentation\PresentationSAPHANARoleToAuthorizationReport.cs" />
+    <Compile Include="Endpoint\SAPHANA\Presentation\PresentationSAPHANARoleToUsers.cs" />
+    <Compile Include="Endpoint\SAPHANA\Presentation\PresentationSAPHANARoleWithNoUsers.cs" />
+    <Compile Include="Endpoint\SAPHANA\Presentation\PresentationSAPHANATCodeReport.cs" />
+    <Compile Include="Endpoint\SAPHANA\Presentation\PresentationSAPHANAUser.cs" />
+    <Compile Include="Endpoint\SAPHANA\Presentation\PresentationSAPHANAUserEntitlement.cs" />
+    <Compile Include="Endpoint\SAPHANA\Presentation\PresentationSAPHANAUserExpiryAccount.cs" />
+    <Compile Include="Endpoint\SAPHANA\Presentation\PresentationSAPHANAUserinfo.cs" />
+    <Compile Include="Endpoint\SAPHANA\Presentation\PresentationSAPHANAUserRoleTCodeAuth.cs" />
+    <Compile Include="Endpoint\SAPHANA\Presentation\PresentationSAPHANAUsersToGroups.cs" />
+    <Compile Include="Endpoint\SAPHANA\Presentation\PresentationSAPHANAUsersToProfileReport.cs" />
+    <Compile Include="Endpoint\SAPHANA\Presentation\PresentationSAPHANAUsersToRolesReport.cs" />
+    <Compile Include="Endpoint\SAPHANA\Presentation\PresentationSAPHANAUserWithNoRoles.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANAAuthorizationProfile.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANAAuthorizationToObject.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANACompositeProfileInfo.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANACompositeRoleInfo.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANAConflictingRoleReport.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANACriticalTcodeReport.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANAFieldValueMapping.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANAGroupInfo.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANAUserinfo.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANAParameterInfo.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANAProfileInfo.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANARoleInfo.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANAHRP1001.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANAObjectInfo.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANAObjectValues.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANAParameterHistoryInfo.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANAPosition.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANARoleProfileMapping.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANARoleTCodeMapping.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANARoleToAuthMap.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANARoleToTCodes.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANASingleRoleInfo.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANATCodeInfo.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPTHANACodeObjectMap.cs" />
+    <Compile Include="Endpoint\SAPHANA\SAPHANAUserHistoryInfo.cs" />
+    <Compile Include="Endpoint\SAPHANA\SapHANAUserProfile.cs" />
+    <Compile Include="Endpoint\SAP\Presentation\AttestationReviewPageSAP_Level1GridData.cs" />
+    <Compile Include="Endpoint\SAP\Presentation\PresentationConflictRemarks.cs" />
+    <Compile Include="Endpoint\SAP\SAPConflictingRoleReport.cs" />
+    <Compile Include="Endpoint\SAP\SAPCriticalTcodeReport.cs" />
+    <Compile Include="Endpoint\SAP\SAPRoleToTCodes.cs" />
+    <Compile Include="Endpoint\SkypeForBusiness\Presentation\PresentationSkypeForBusinessUserEntitlement.cs" />
+    <Compile Include="Endpoint\SkypeForBusiness\SkypeForBusinessResponseGroupInfo.cs" />
+    <Compile Include="Endpoint\SkypeForBusiness\SkypeForBusinessUnAssignedNumber.cs" />
+    <Compile Include="Endpoint\SkypeForBusiness\SkypeForBusinessUnAssignedNumberMatrix.cs" />
+    <Compile Include="Endpoint\SkypeForBusiness\SkypeForBusinessUserInfo.cs" />
+    <Compile Include="Endpoint\SMS\SMSAccessLevel.cs" />
+    <Compile Include="Endpoint\SMS\SMSBadgeInfo.cs" />
+    <Compile Include="Endpoint\SMS\SMSCompany.cs" />
+    <Compile Include="Endpoint\SMS\SMSUserInfo.cs" />
+    <Compile Include="Endpoint\SSIDS\SSIDSRoleInfo.cs" />
+    <Compile Include="Endpoint\SSIDS\SSIDSUserInfo.cs" />
+    <Compile Include="Endpoint\VPN\Presentation\PresentationVPNUserEntitlement.cs" />
+    <Compile Include="Endpoint\VPN\VPNUserApplicationEnviornment.cs" />
+    <Compile Include="Matrix\SAPFLINS\SAPSODConflictingRole.cs" />
+    <Compile Include="Matrix\SAPHANA\SAPHANAXLCriticalTCodeMatrix.cs" />
+    <Compile Include="Matrix\SAPHANA\SAPHANAXLPositionsMatrix.cs" />
+    <Compile Include="Matrix\SAPHANA\SAPHANAXLRolesMatrix.cs" />
+    <Compile Include="Matrix\SAPSRM\PresentationUserBusinessRole.cs" />
+    <Compile Include="Matrix\SkypeForBusiness\SkypeForBusinessProvisioningMatrix.cs" />
+    <Compile Include="Matrix\VPN\VPNApplicationEnvironment.cs" />
+    <Compile Include="Matrix\VPN\VPNMatrixData.cs" />
+    <Compile Include="Endpoint\VPN\VPNUserInfo.cs" />
+    <Compile Include="Matrix\MISC\ApproverExceptionInfo.cs" />
+    <Compile Include="Matrix\O365\Office365LicenseConfig.cs" />
+    <Compile Include="Matrix\SAPEBS\SAPEBSXLCriticalTCodesMatrix.cs" />
+    <Compile Include="Matrix\SAPEBS\SAPEBSXLPositionsMatrix.cs" />
+    <Compile Include="Matrix\SAPEBS\SAPEBSXLRoleMatrix.cs" />
+    <Compile Include="Matrix\SAPFLINS\ProvisioningConfigMatrixSapEEGroup.cs" />
+    <Compile Include="Matrix\SAPFLINS\ProvisioningConfigMatrixSAPOrg.cs" />
+    <Compile Include="Matrix\SAPFLINS\ProvisioningConfigMatrixSAPPosition.cs" />
+    <Compile Include="Matrix\SAPFLINS\SAPBIRoleCategories.cs" />
+    <Compile Include="Matrix\SAPFLINS\SAPHRFLINSConflictingRole.cs" />
+    <Compile Include="Matrix\SAPFLINS\SAPHRFLINSRoleMatrix.cs" />
+    <Compile Include="Matrix\SAPFLINS\SAPHRFLINSSuppRoleMatrix.cs" />
+    <Compile Include="Matrix\SAPFLINS\SAPRoleMandatoryFields.cs" />
+    <Compile Include="Matrix\SAPMSSL\SAPXLMSSLCriticalTCodeMatrix.cs" />
+    <Compile Include="Matrix\SAPMSSL\SAPXLMSSLPositionsMatrix.cs" />
+    <Compile Include="Matrix\SAPMSSL\SAPXLMSSLRolesMatrix.cs" />
+    <Compile Include="Matrix\SAPOthers\SAPGRCRole.cs" />
+    <Compile Include="Matrix\SAPOthers\SAPPIRole.cs" />
+    <Compile Include="Matrix\SAPOthers\SAPRoleMatrix.cs" />
+    <Compile Include="Endpoint\SAP\Presentation\PresentationSAPProfileReport.cs" />
+    <Compile Include="Endpoint\SAP\Presentation\PresentationSAPRoleWithNoUsers.cs" />
+    <Compile Include="Endpoint\SAP\Presentation\PresentationSAPRoleReport.cs" />
+    <Compile Include="Endpoint\SAP\Presentation\PresentationSAPRoleToAuthorizationReport.cs" />
+    <Compile Include="Endpoint\SAP\Presentation\PresentationSAPTCodeReport.cs" />
+    <Compile Include="Endpoint\SAP\Presentation\PresentationSAPDormantUser.cs" />
+    <Compile Include="Endpoint\SAP\Presentation\PresentationSAPLockedUser.cs" />
+    <Compile Include="Endpoint\SAP\Presentation\PresentationSAPUserEntitlement.cs" />
+    <Compile Include="Endpoint\SAP\Presentation\PresentationSAPUserExpiryAccount.cs" />
+    <Compile Include="Endpoint\SAP\Presentation\PresentationSAPRoleToUsers.cs" />
+    <Compile Include="Endpoint\SAP\Presentation\PresentationSAPUserWithNoRoles.cs" />
+    <Compile Include="Endpoint\SAP\Presentation\PresentationSAPUser.cs" />
+    <Compile Include="Endpoint\SAP\Presentation\PresentationSAPUserinfo.cs" />
+    <Compile Include="Endpoint\SAP\Presentation\PresentationSAPUserRoleTCodeAuth.cs" />
+    <Compile Include="Endpoint\SAP\Presentation\PresentationSAPUsersToGroups.cs" />
+    <Compile Include="Endpoint\SAP\Presentation\PresentationSAPUsersToProfileReport.cs" />
+    <Compile Include="Endpoint\SAP\Presentation\PresentationSAPUsersToRolesReport.cs" />
+    <Compile Include="Endpoint\SAP\SAPActivityInfo.cs" />
+    <Compile Include="Endpoint\SAP\SAPAuthorizationProfile.cs" />
+    <Compile Include="Endpoint\SAP\SAPAuthorizationToObject.cs" />
+    <Compile Include="Endpoint\SAP\SAPCompositeProfileInfo.cs" />
+    <Compile Include="Endpoint\SAP\SAPCompositeRoleInfo.cs" />
+    <Compile Include="Endpoint\SAP\SAPFieldValueMapping.cs" />
+    <Compile Include="Endpoint\SAP\SAPGroupHistoryInfo.cs" />
+    <Compile Include="Endpoint\SAP\SAPGroupInfo.cs" />
+    <Compile Include="Endpoint\SAP\SAPHRP1001.cs" />
+    <Compile Include="Endpoint\SAP\SAPObjectInfo.cs" />
+    <Compile Include="Endpoint\SAP\SAPObjectValues.cs" />
+    <Compile Include="Endpoint\SAP\SAPParameterHistoryInfo.cs" />
+    <Compile Include="Endpoint\SAP\SAPParameterInfo.cs" />
+    <Compile Include="Endpoint\SAP\SAPPosition.cs" />
+    <Compile Include="Endpoint\SAP\SAPProfileInfo.cs" />
+    <Compile Include="Endpoint\SAP\SAPRoleInfo.cs" />
+    <Compile Include="Endpoint\SAP\SapRoleProfileMapping.cs" />
+    <Compile Include="Endpoint\SAP\SapRoleTCodeMapping.cs" />
+    <Compile Include="Endpoint\SAP\SAPRoleToAuthMap.cs" />
+    <Compile Include="Endpoint\SAP\SAPSingleRoleInfo.cs" />
+    <Compile Include="Endpoint\SAP\SAPTCodeInfo.cs" />
+    <Compile Include="Endpoint\SAP\SAPTCodeObjectMap.cs" />
+    <Compile Include="Endpoint\SAP\SAPUserHistoryInfo.cs" />
+    <Compile Include="Endpoint\SAP\SAPUserinfo.cs" />
+    <Compile Include="Endpoint\SAP\SapUserProfile.cs" />
+    <Compile Include="Endpoint\SAP\SAPUserToObject.cs" />
+    <Compile Include="Matrix\SAPSRM\SAPSRMBusinessRoleMapping.cs" />
+    <Compile Include="Matrix\SAPSRM\SAPSRMEnablerRoleMatrix.cs" />
+    <Compile Include="Matrix\SAPSRM\SAPSRMMainRoleMatrix.cs" />
+    <Compile Include="Matrix\SMS\SMSXLProvisioningMatrix.cs" />
+    <Compile Include="Matrix\SMS\SMSXLRoleCatalogue.cs" />
+    <Compile Include="Matrix\VPN\VPNMatrix.cs" />
+    <Compile Include="OrgRevamp\NCostCenter.cs" />
+    <Compile Include="OrgRevamp\NDesignation.cs" />
+    <Compile Include="OrgRevamp\NOrganisation.cs" />
+    <Compile Include="OrgRevamp\NOrganisationHead.cs" />
+    <Compile Include="OrgRevamp\NOrganisationPresentation.cs" />
+    <Compile Include="OrgRevamp\NOrganisationRelationship.cs" />
+    <Compile Include="OrgRevamp\NOrganisationScope.cs" />
+    <Compile Include="OrgRevamp\NProvisioningField.cs" />
+    <Compile Include="OrgRevamp\NRuleset.cs" />
+    <Compile Include="OrgRevamp\NRulesetForApplication.cs" />
+    <Compile Include="OrgRevamp\NRuleSetType.cs" />
+    <Compile Include="OrgRevamp\NScopeFor.cs" />
+    <Compile Include="OrgRevamp\NUserDesignation.cs" />
+    <Compile Include="OrgRevamp\NUserOrganisation.cs" />
+    <Compile Include="OrgRevamp\Presentation\PresentationNRulesetForApplication.cs" />
+    <Compile Include="PasswordResetProcessor\EntitlementWrapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provisioning\AccessRequest.cs" />
+    <Compile Include="Provisioning\AccountReconcilation.cs" />
+    <Compile Include="Provisioning\EmployeeEventTrigger.cs" />
+    <Compile Include="Provisioning\EntitlementReconcilation.cs" />
+    <Compile Include="Provisioning\OUChangeSnapshot.cs" />
+    <Compile Include="Provisioning\Presentation\PresentationAccessRequest.cs" />
+    <Compile Include="Provisioning\Presentation\PresentationAccountReconcilationReport.cs" />
+    <Compile Include="Provisioning\Presentation\PresentationApprovers.cs" />
+    <Compile Include="Provisioning\Presentation\PresentationAttestation.cs" />
+    <Compile Include="Provisioning\Presentation\PresentationAttestationEndPoint.cs" />
+    <Compile Include="Provisioning\Presentation\PresentationEmployeeEventTrigger.cs" />
+    <Compile Include="Provisioning\Presentation\PresentationEntitlementReconcilation.cs" />
+    <Compile Include="Provisioning\Presentation\PresentationEntitlementReconcilationReport.cs" />
+    <Compile Include="Provisioning\Presentation\PresentationOrganisation.cs" />
+    <Compile Include="Provisioning\Presentation\PresentationAccessSnapshots.cs" />
+    <Compile Include="Provisioning\Presentation\PresentationOUChangeSnapshots.cs" />
+    <Compile Include="Provisioning\Presentation\PresentationResolvedAccountReconcilationReport.cs" />
+    <Compile Include="PUB\PUBEmployees.cs" />
+    <Compile Include="PUB\PUBFile.cs" />
+    <Compile Include="SOD\CompliancePolicy.cs" />
+    <Compile Include="SOD\ComplianceReportModules.cs" />
+    <Compile Include="SOD\PolicyType.cs" />
+    <Compile Include="SOD\Report\PresentationCompliancePolicy.cs" />
+    <Compile Include="SOD\Report\PresentationSODConflicts.cs" />
+    <Compile Include="SOD\Report\PresentationSODException.cs" />
+    <Compile Include="SOD\Report\PresentationSODFunction.cs" />
+    <Compile Include="SOD\Report\PresentationSODMitigation.cs" />
+    <Compile Include="SOD\Report\PresentationSODPolicyExecutionDefinition.cs" />
+    <Compile Include="SOD\Report\PresentationSODRiskCode.cs" />
+    <Compile Include="SOD\Report\SystemSetupReports.cs" />
+    <Compile Include="SOD\SODConflict.cs" />
+    <Compile Include="SOD\SODConflictFunctionMap.cs" />
+    <Compile Include="SOD\SODConflictFunctions.cs" />
+    <Compile Include="SOD\SODEndPointPolicySelection.cs" />
+    <Compile Include="SOD\SODException.cs" />
+    <Compile Include="SOD\SODExceptionItem.cs" />
+    <Compile Include="SOD\SODExecutionConfig.cs" />
+    <Compile Include="SOD\SODFunction.cs" />
+    <Compile Include="SOD\SODFunctionItem.cs" />
+    <Compile Include="SOD\SODMitigation.cs" />
+    <Compile Include="SOD\SODPolicy.cs" />
+    <Compile Include="SOD\SODPolicyConfiguration.cs" />
+    <Compile Include="SOD\SODPolicyExecutionDefinition.cs" />
+    <Compile Include="SOD\SODPolicyReport.cs" />
+    <Compile Include="SOD\SODReport.cs" />
+    <Compile Include="SOD\SODRiskCode.cs" />
+    <Compile Include="SOD\SODRiskLevel.cs" />
+    <Compile Include="SOD\SODRiskScore.cs" />
+    <Compile Include="SOD\SODRunPolicy.cs" />
+    <Compile Include="SOD\SODRunPolicySelection.cs" />
+    <Compile Include="SOD\UserSODComplianceReport.cs" />
+    <Compile Include="SOD\UserSODComplianceRequest.cs" />
+    <Compile Include="Matrix\AD\ADSXLProvisioningMatrix.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DI.Chakra.Infrastructure\DI.Chakra.Infrastructure.csproj">
+      <Project>{9a13b27d-b9dc-474a-9fe6-1c60fd52e5a7}</Project>
+      <Name>DI.Chakra.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Logger\DI.Chakra.Logger.csproj">
+      <Project>{1E273971-C665-4E37-88EC-9621C81A7009}</Project>
+      <Name>DI.Chakra.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Repository\DI.Chakra.Repository.csproj">
+      <Project>{5ECFF37E-0617-4642-9D08-7CB0C8423D29}</Project>
+      <Name>DI.Chakra.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Transaction\DI.Chakra.Transaction.csproj">
+      <Project>{4F42AEB0-8003-4791-AFC4-3A70A421FD58}</Project>
+      <Name>DI.Chakra.Transaction</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core\Common\Presentation\" />
+    <Folder Include="XLProcessor\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

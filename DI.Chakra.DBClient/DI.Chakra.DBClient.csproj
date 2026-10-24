@@ -1,0 +1,665 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3F44AC92-447C-4016-9025-4BCCD91B1267}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DI.Chakra.DBClient</RootNamespace>
+    <AssemblyName>DI.Chakra.DBClient</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\Solution\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TrackerEnabledDbContext, Version=3.6.1.0, Culture=neutral, PublicKeyToken=4f92af0b908c4a0a, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\TrackerEnabledDbContext.3.6.1\lib\net45\TrackerEnabledDbContext.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TrackerEnabledDbContext.Common, Version=3.6.1.0, Culture=neutral, PublicKeyToken=4f92af0b908c4a0a, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\TrackerEnabledDbContext.Common.3.6.1\lib\net45\TrackerEnabledDbContext.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="IACMDBContext.cs" />
+    <Compile Include="Migrations\201912230128596_AccountNameMaxLength.cs" />
+    <Compile Include="Migrations\201912230128596_AccountNameMaxLength.Designer.cs">
+      <DependentUpon>201912230128596_AccountNameMaxLength.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912230320473_UserEmployeeID_Length.cs" />
+    <Compile Include="Migrations\201912230320473_UserEmployeeID_Length.Designer.cs">
+      <DependentUpon>201912230320473_UserEmployeeID_Length.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005040835127_SRMHangingRole.cs" />
+    <Compile Include="Migrations\202005040835127_SRMHangingRole.Designer.cs">
+      <DependentUpon>202005040835127_SRMHangingRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005041121123_Add_EAMNovaHangingRoleInfo.cs" />
+    <Compile Include="Migrations\202005041121123_Add_EAMNovaHangingRoleInfo.Designer.cs">
+      <DependentUpon>202005041121123_Add_EAMNovaHangingRoleInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006281703004_AttestationType.cs" />
+    <Compile Include="Migrations\202006281703004_AttestationType.Designer.cs">
+      <DependentUpon>202006281703004_AttestationType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007140644136_AddPUBTables.cs" />
+    <Compile Include="Migrations\202007140644136_AddPUBTables.Designer.cs">
+      <DependentUpon>202007140644136_AddPUBTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009101253274_AttestationSpilitCampaign.cs" />
+    <Compile Include="Migrations\202009101253274_AttestationSpilitCampaign.Designer.cs">
+      <DependentUpon>202009101253274_AttestationSpilitCampaign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010301334371_WorkflowReminder.cs" />
+    <Compile Include="Migrations\202010301334371_WorkflowReminder.Designer.cs">
+      <DependentUpon>202010301334371_WorkflowReminder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011020616593_AddActualEventDateInEmployeeTrigger.cs" />
+    <Compile Include="Migrations\202011020616593_AddActualEventDateInEmployeeTrigger.Designer.cs">
+      <DependentUpon>202011020616593_AddActualEventDateInEmployeeTrigger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012080955312_SelfPasswordreset.cs" />
+    <Compile Include="Migrations\202012080955312_SelfPasswordreset.Designer.cs">
+      <DependentUpon>202012080955312_SelfPasswordreset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109070517081_SuccessFactorEventSequence_SameDay.cs" />
+    <Compile Include="Migrations\202109070517081_SuccessFactorEventSequence_SameDay.Designer.cs">
+      <DependentUpon>202109070517081_SuccessFactorEventSequence_SameDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110270443046_SAPSODConflictingRole.cs" />
+    <Compile Include="Migrations\202110270443046_SAPSODConflictingRole.Designer.cs">
+      <DependentUpon>202110270443046_SAPSODConflictingRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112100625226_SOD_CriticalTCodeReport.cs" />
+    <Compile Include="Migrations\202112100625226_SOD_CriticalTCodeReport.Designer.cs">
+      <DependentUpon>202112100625226_SOD_CriticalTCodeReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110160702354_MSTeam.cs" />
+    <Compile Include="Migrations\202110160702354_MSTeam.Designer.cs">
+      <DependentUpon>202110160702354_MSTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201251342447_SAPSSOImplementation.cs" />
+    <Compile Include="Migrations\202201251342447_SAPSSOImplementation.Designer.cs">
+      <DependentUpon>202201251342447_SAPSSOImplementation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309210824599_OtherSystemReverseEngineering.cs" />
+    <Compile Include="Migrations\202309210824599_OtherSystemReverseEngineering.Designer.cs">
+      <DependentUpon>202309210824599_OtherSystemReverseEngineering.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403120951132_AttestationUserComparision.cs" />
+    <Compile Include="Migrations\202403120951132_AttestationUserComparision.Designer.cs">
+      <DependentUpon>202403120951132_AttestationUserComparision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202405211018329_SAPHANAImplementation.cs" />
+    <Compile Include="Migrations\202405211018329_SAPHANAImplementation.Designer.cs">
+      <DependentUpon>202405211018329_SAPHANAImplementation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406191503099_SAPHANAImplementationv2.cs" />
+    <Compile Include="Migrations\202406191503099_SAPHANAImplementationv2.Designer.cs">
+      <DependentUpon>202406191503099_SAPHANAImplementationv2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="SqlScripts\ProdFix\SSID_Report_Fix_240710.sql" />
+    <Content Include="SqlScripts\SAPHANA_EBS\2. Script.sql" />
+    <Content Include="SqlScripts\CR_032024\AttestationSprint4.sql" />
+    <Content Include="SqlScripts\CR_032024\AttestationSprint3 -Hotfix.sql" />
+    <Content Include="SqlScripts\CR_032024\AttestationSprint3.sql" />
+    <Content Include="SqlScripts\CR_032024\AttestationSprint2.sql" />
+    <Content Include="SqlScripts\CR_032024\schemascript.sql" />
+    <Content Include="SqlScripts\HRMS_TransferwithRetain.sql" />
+    <Content Include="SqlScripts\OtherSystemReverseEngineering.sql" />
+    <Content Include="SqlScripts\ProdFix\01TableScript.sql" />
+    <Content Include="DeploymentScript\01UpdateScripts.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DeploymentScript\PostDeploymentScript.sql" />
+    <Content Include="DeploymentScript\PreDeploymentScript.sql" />
+    <Content Include="SqlScripts\Data\Prod_Fix\Email_NotifyInactiveEmployeeEvent.sql" />
+    <Content Include="SqlScripts\ProdFix\Production_Fix_Script13022022.SQL" />
+    <Content Include="SqlScripts\SAPHANA_EBS\4. Attestation.sql" />
+    <Content Include="SqlScripts\SAPHANA_EBS\3. PostDeployment.sql" />
+    <Content Include="SqlScripts\SAPHANA_EBS\1. Script.sql" />
+    <Content Include="SqlScripts\SAPHANA_MSSL\1. Script.sql" />
+    <Content Include="SqlScripts\SOD\Initial\getRoleFromPosition.sql" />
+    <Content Include="SqlScripts\SOD\Initial\SAPSODConflictHistory_SPGetSODConflict.sql" />
+    <Content Include="SqlScripts\SOD\Initial\SAPSODConflictTable.sql" />
+    <Content Include="SqlScripts\SOD\Initial\USP_CRITICALTCODEREPORT.sql" />
+    <Content Include="SqlScripts\SOD\Initial\USP_GetSAPSODConflicts.sql" />
+    <Content Include="SqlScripts\SOD\Initial\USP_SODCONFLICTING_REPORT.sql" />
+    <Content Include="SqlScripts\SOD\SOD_ConsolidatedScriptForDeployment.sql" />
+    <Content Include="SqlScripts\Attestation\AD.sql" />
+    <Content Include="SqlScripts\Attestation\AttestationColumnCreation.sql" />
+    <Content Include="SqlScripts\Attestation\AttestationIndex.sql" />
+    <Content Include="SqlScripts\Attestation\EAM.sql" />
+    <Content Include="SqlScripts\Attestation\EBS.sql" />
+    <Content Include="SqlScripts\Attestation\FlinsBI.sql" />
+    <Content Include="SqlScripts\Attestation\GEMS.sql" />
+    <Content Include="SqlScripts\Attestation\HRMSFlins.sql" />
+    <Content Include="SqlScripts\Attestation\IDMS.sql" />
+    <Content Include="SqlScripts\Attestation\InhouseSystem.sql" />
+    <Content Include="SqlScripts\Attestation\MailTemplate..sql" />
+    <Content Include="SqlScripts\Attestation\Menu creation.sql" />
+    <Content Include="SqlScripts\Attestation\MSSL.sql" />
+    <Content Include="SqlScripts\Attestation\NPAC.sql" />
+    <Content Include="SqlScripts\Attestation\Office365.sql" />
+    <Content Include="SqlScripts\Attestation\OneCard.sql" />
+    <Content Include="SqlScripts\Attestation\PortalEPCE.sql" />
+    <Content Include="SqlScripts\Attestation\SAP.sql" />
+    <Content Include="SqlScripts\Attestation\SAPGrc.sql" />
+    <Content Include="SqlScripts\Attestation\SFB.sql" />
+    <Content Include="SqlScripts\Attestation\SRM.sql" />
+    <Content Include="SqlScripts\Attestation\SSIDS_GUI.SQL" />
+    <Content Include="SqlScripts\Attestation\SSIDS_SMS.SQL" />
+    <Content Include="SqlScripts\Attestation\VPN.sql" />
+    <Content Include="SqlScripts\Attestation\WorkflowReminderEmail.sql" />
+    <Content Include="SqlScripts\Data\CustomReport.sql" />
+    <Content Include="SqlScripts\Data\DI_M_UserTableInfo.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\SendPasswordForSelfServiceResetFailure.sql" />
+    <Content Include="SqlScripts\Data\InsertData\NoExternalAccess.sql" />
+    <Content Include="SqlScripts\Data\PasswordResetQuery.sql" />
+    <Content Include="SqlScripts\Data\Report_Query.sql" />
+    <Content Include="SqlScripts\Data\UpdateScript.sql" />
+    <Content Include="SqlScripts\MigrationScript_SF.sql" />
+    <Content Include="SqlScripts\SOD\Initial\SOD_ReportScript.sql" />
+    <Content Include="SqlScripts\MSTeam_Script.sql" />
+    <Content Include="SqlScripts\MSTeam_Script_Schema.sql" />
+    <Content Include="SqlScripts\SSO\SSO.sql" />
+    <Content Include="SqlScripts\StoredProcedure\USP_EAM_TECHNICALROLE_FROMBUSINESSROLE.sql" />
+    <Content Include="SqlScripts\StoredProcedure\USP_MSSL_EBS_INDIRECTROLE.sql" />
+    <Content Include="SqlScripts\StoredProcedure\USP_MSSL_EBS_INDIRECTROLE_BYPOSITION.sql" />
+    <Content Include="SqlScripts\StoredProcedure\USP_SAPGRC_SAPFLINSBI_TECHNICALROLEWITHOUTBUSINESSROLE.sql" />
+    <Content Include="SqlScripts\View\Attestation SAP_ALLViews.sql" />
+    <Content Include="SqlScripts\View\VWHRMSFLIN_USER_MAIN_BUSINESSROLE.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DI.Chakra.EntityModel\DI.Chakra.EntityModel.csproj">
+      <Project>{65af207b-2342-4009-b3ea-0c829ff25cdc}</Project>
+      <Name>DI.Chakra.EntityModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Infrastructure\DI.Chakra.Infrastructure.csproj">
+      <Project>{9a13b27d-b9dc-474a-9fe6-1c60fd52e5a7}</Project>
+      <Name>DI.Chakra.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SqlScripts\PS\Compliance\Setup-SOD.ps1" />
+    <None Include="SqlScripts\PS\Core\Setup-Compliance.ps1" />
+    <None Include="SqlScripts\PS\Core\Setup-ACL.ps1" />
+    <None Include="SqlScripts\PS\Core\Setup-All.ps1" />
+    <None Include="SqlScripts\PS\Core\Setup-MailTemplates.ps1" />
+    <None Include="SqlScripts\PS\Core\Setup-Misc.ps1" />
+    <None Include="SqlScripts\PS\Core\Setup-Preference.ps1" />
+    <None Include="SqlScripts\PS\Core\Setup-Provisioning.ps1" />
+    <None Include="SqlScripts\PS\Core\Setup.ps1" />
+    <None Include="SqlScripts\PS\Core\Test.ps1" />
+    <None Include="SqlScripts\PS\Core\Test_INDENV.ps1" />
+    <None Include="SqlScripts\PS\Endpoint\LCS.ps1" />
+    <None Include="SqlScripts\PS\Endpoint\CSC.ps1" />
+    <None Include="SqlScripts\PS\Endpoint\BizCMS.ps1" />
+    <None Include="SqlScripts\PS\Endpoint\PeopleSoftHRMS.ps1" />
+    <None Include="SqlScripts\PS\Endpoint\PeopleSoftFINOrPROC.ps1" />
+    <None Include="SqlScripts\PS\Endpoint\PeoplesoftFinanceBI.ps1" />
+    <None Include="SqlScripts\PS\Endpoint\ISMS.ps1" />
+    <None Include="SqlScripts\PS\Endpoint\ADS.ps1" />
+    <None Include="SqlScripts\PS\Endpoint\Exchange.ps1" />
+    <None Include="SqlScripts\PS\Endpoint\FileHRMS.ps1" />
+    <None Include="SqlScripts\PS\Endpoint\CopHRMS.ps1" />
+    <None Include="SqlScripts\PS\Endpoint\IDAS.ps1" />
+    <None Include="SqlScripts\PS\Endpoint\INH.ps1" />
+    <None Include="SqlScripts\PS\Endpoint\Linux.ps1" />
+    <None Include="SqlScripts\PS\Endpoint\LNS.ps1" />
+    <None Include="SqlScripts\PS\Endpoint\OracleEBS.ps1" />
+    <None Include="SqlScripts\PS\Endpoint\ORCLUM.ps1" />
+    <None Include="SqlScripts\PS\Endpoint\Peoplesoft.ps1" />
+    <None Include="SqlScripts\PS\Endpoint\SAPEP.ps1" />
+    <None Include="SqlScripts\PS\Endpoint\Windows.ps1" />
+    <None Include="SqlScripts\PS\Endpoint\SAP.ps1" />
+    <None Include="SqlScripts\PS\__Var.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlScripts\Data\InsertData\Core\ACL\14_RehirePermission.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\Compliance\ComplianceDatascript.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\ACL\01_Page.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\ACL\02_Page_Data.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\ACL\03_Page_Risk.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\ACL\04_Page_Compliance.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\ACL\05_Page_Conflict.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\ACL\06_Page_Policy.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\ACL\07_Page_PolicyExecution.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\ACL\08_Page_Exception.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\ACL\09_Page_Mitigation.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\ACL\10_Page_BulkOperation.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\ACL\11_Page_Reports.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\ACL\12_Permission.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\ACL\13_AccessRightsScript.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\ACL\AppText.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\AccountUnlock.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\AdvanceDelegation.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\ADAccountCreationforOnboarding.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\AccountExtension.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\EntitlementExtension.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\InstallationNotification.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\AttestationException.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\DelegateAttestationTask.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\GamingApplicationRemoval.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\DelegateBulkTask.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\AttestationJobFailed.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\ExceptionEmailReport.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\ExtractionNotice.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\ExtractionRemainderNotice.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\IACMNewUserNotification.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\Inhouse.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\AmendmentExternalEmail.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\DeleteNonConnectedSystemNotificationResignation.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\DelegateTask.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\SkypeForBusinessNewResponseGroup.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\OffboardMail.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\PasswordChange.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\PromotionNotification.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\SP_V5_MailTemplate.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Provisioning\Process.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Provisioning\Provisioning Field.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Provisioning\RuleSetType.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\RWS\MailTemplate.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\RWS\AdhocJobs.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\RWS\PasswordLetter.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\RWS\ManagmentReportDefinition.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\RWS\Patch_1\MailTemplateVariableUpdateScript.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\RWS\Patch_1\WakeupService.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\RWS\Patch_1\UserExclusion.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\RWS\Phase_II.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Setup\MailNotificationSettings.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\NotifyTaskMailApproval.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\EndPointPasswordReset.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\PromotionMail.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\ReportSchedule.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\TemplateVariables.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\MailServerConfig.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\01_CleanUp.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\Amendment.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\DeleteAccount.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\DeleteNonConnectedSystemNotification.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\DiscoveryJobFailed.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\EscalateAccessRequest.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\EscalateAttestationTask.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\Alert_MissingMatrixData.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\NewAccount.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\NewIDMSAccount.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\NotifyAttestationTask.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\NotifyTask.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\OffboardingApprover.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\OffboardingEmployee.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\OnboardingEmployee.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\OrgTransfer.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\SendOTP.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\PasswordReset.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\RemainderAccessRequest.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\RemainderAttestationTask.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\RequestFailed.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\RequestRejected.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\RequestWithdrawn.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\TransferMail.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\TransferNotification.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\MailTemplates\WelcomeEmail.sql">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScripts\Data\InsertData\Core\Misc\RuntimeCodeCompiler.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Org\Designation.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Preference\AdminModeItem.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Preference\DashboardScript.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Preference\QuickLink.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Misc\Provisioning\Process.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Misc\Provisioning\Provisioning Field.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Misc\Provisioning\RuleSetType.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\RWS\RWSRequiredScripts.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Setup\ConfigMaster.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Setup\EndpointConfigKey.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Setup\GlobalQuestion.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Setup\Initial.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Setup\MetaData.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Setup\Org.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Setup\Rulesets.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Setup\TRS.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Setup\TrustedSource.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Core\Trigger.sql" />
+    <Content Include="SqlScripts\Data\InsertData\DataTfr.sql" />
+    <Content Include="SqlScripts\Data\InsertData\EndpointUserViewConfiguration.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\ADS\ADS.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\ADS\EndPointHierarchy.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\SkypeForBusiness\EndPointHierarchy.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\SkypeForBusiness\ProvisioningField.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\SkypeForBusiness\SkypeForBusiness.sql" />
+    <Content Include="SqlScripts\SP P1\CustomReport\CustomReport.sql" />
+    <Content Include="SqlScripts\SP P1\CustomReport\CustomReportViewer.sql" />
+    <Content Include="SqlScripts\SP P1\Endpoint\IDMS\ProvisioningField.sql" />
+    <Content Include="SqlScripts\SP P1\Endpoint\MSSL-EBS\ProvisioningForm.sql" />
+    <Content Include="SqlScripts\SP P1\Endpoint\NOVA\NOVA.Sql" />
+    <Content Include="SqlScripts\SP P1\Endpoint\NPAC\NPACUnits.sql" />
+    <Content Include="SqlScripts\SP P1\Endpoint\Portal\EndPointHierarchy.sql" />
+    <Content Include="SqlScripts\SP P1\Endpoint\Portal\ProvisioningField.sql" />
+    <Content Include="SqlScripts\SP P1\Endpoint\Portal\Portal.sql" />
+    <Content Include="SqlScripts\SP P1\Endpoint\IDMS\IDMS.sql" />
+    <Content Include="SqlScripts\SP P1\Endpoint\SSIDS\EndPointHierarchy.sql" />
+    <Content Include="SqlScripts\SP P1\Endpoint\SSIDS\SSIDS.sql" />
+    <Content Include="SqlScripts\SP P1\Endpoint\SSIDS\ProvisioningField.sql" />
+    <Content Include="SqlScripts\SP P1\Endpoint\OneCard\EndPointHierarchy.sql" />
+    <Content Include="SqlScripts\SP P1\Endpoint\OneCard\Onecard.sql" />
+    <Content Include="SqlScripts\SP P1\Endpoint\OneCard\ProvisioningField.sql" />
+    <Content Include="SqlScripts\SP P1\Endpoint\Office365\EndPointHierarchy.sql" />
+    <Content Include="SqlScripts\SP P1\Endpoint\Office365\Office365.sql" />
+    <Content Include="SqlScripts\SP P1\Endpoint\Office365\ProvisioningField.sql" />
+    <Content Include="SqlScripts\SP P1\FLINS BI, PI and GRC.sql" />
+    <Content Include="SqlScripts\SP P1\DeleteUnwantedAccessRights.sql" />
+    <Content Include="SqlScripts\SP P1\InsertMenuDataManagement.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\ADS\Page_Report.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\ADS\ProvisioningField.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\ESV\ESV.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\ESV\EndPointHierarchy.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\ESV\Page_Report.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\ESV\ProvisioningField.sql" />
+    <Content Include="SqlScripts\SP P1\Endpoint\GEMS\EndPointHierarchy.sql" />
+    <Content Include="SqlScripts\SP P1\Endpoint\GEMS\GEMS.sql" />
+    <Content Include="SqlScripts\SP P1\Endpoint\GEMS\ProvisioningField.sql" />
+    <Content Include="SqlScripts\SP P1\Endpoint\NPAC\EndPointHierarchy.sql" />
+    <Content Include="SqlScripts\SP P1\Endpoint\NPAC\NPAC.sql" />
+    <Content Include="SqlScripts\SP P1\Endpoint\NPAC\ProvisioningField.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\RCS\RCS.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\RCS\EndPointHierarchy.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\RCS\Page_Report.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\RCS\ProvisioningField.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\Configuration\ConfigurationKey.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\Configuration\ConfigurationKeyDetail.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\LCS\1_LCS.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\LCS\EndPointHierarchy.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\LCS\Page_Report.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\LCS\ProvisioningField.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\CSC\CSC.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\CSC\EndPointHierarchy.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\CSC\Page_Report.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\CSC\ProvisioningField.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\ELM\ProvisioningField.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\ELM\Elm.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\Exchnage\2.EndPointHierarchy.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\Exchnage\ProvisioningField.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\FileHRMS\FileHRMS.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\CopHRMS\CopHRMS.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\EndPointFunctionType.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\Exchnage\Exchange report.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\Exchnage\1.Exchange.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\GeneralScripts\DI_M_EndpointSystemType.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\IDAS\2.EndPointHierarchy.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\IDAS\1.IDAS.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\IDAS\ProvisioningField.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\INH\2.EndPointHierarchy.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\INH\1.INH.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\INH\Page_Report.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\INH\ProvisioningField.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\ISMS\isms.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\ISMS\Page_Report.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\ISMS\isms.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\ISMS\Page_Report.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\Linux\Linux.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\Linux\Page_Report.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\Linux\ProvisioningField.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\LNS\LNS.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\LNS\Page_Report.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\LNS\ProvisioningField.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\MSSQL\MSSQL.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\MSSQL\Page_Report.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\MSSQL\ProvisioningField.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\OracleEBS\OEBS.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\OracleEBS\Page_Report.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\OracleEBS\ProvisioningField.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\ORCLUM\OracleUM.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\ORCLUM\Page_Report.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\ORCLUM\ProvisioningField.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\PeoplesoftFinanceBI\2.EndPointHierarchy.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\PeoplesoftFinanceBI\Page_Report.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\PeoplesoftFinanceBI\1.PeoplesoftFinanceBI.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\PeoplesoftFinanceBI\ProvisioningField.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\PeopleSoftFINOrPROC\2.EndPointHierarchy.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\PeopleSoftFINOrPROC\Page_Report.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\PeopleSoftFINOrPROC\1.PeopleSoftFINOrPROC.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\PeopleSoftFINOrPROC\ProvisioningField.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\PeopleSoftHRMS\Page_Report.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\PeopleSoftHRMS\PeopleSoftHRMS.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\PeopleSoftHRMS\ProvisioningField.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\Peoplesoft\Page_Report.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\Peoplesoft\Peoplesoft.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\Peoplesoft\ProvisioningField.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\SAPEP\SAPEP Report.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\SAPEP\SAPEP.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\SAP\Page_Report.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\SAP\ProvisioningField.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\SAP\1SAP.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\TRS.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\Windows\Page_Report.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\Windows\ProvisioningField.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\Windows\Windows.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\WMS\EndPointHierarchy.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\WMS\Page_Report.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\WMS\ProvisioningField.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Endpoint\WMS\WMS.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Test\Provisioning - INDENV\RultsetConfig.sql" />
+    <Content Include="SqlScripts\Data\InsertData\Test\Provisioning\RultsetConfig.sql" />
+    <Content Include="SqlScripts\PS\ReadMe.txt" />
+    <Content Include="SqlScripts\SP P1\Email Templates.sql" />
+    <Content Include="SqlScripts\SP P1\ConfigurationData.sql" />
+    <Content Include="SqlScripts\SP P1\MasterData.sql" />
+    <Content Include="SqlScripts\SP P1\DefaultDashboard.sql" />
+    <Content Include="SqlScripts\SP P1\MetaData.sql" />
+    <Content Include="SqlScripts\StoredProcedure\DI_SP_GetAuditTableWithouFile.sql" />
+    <Content Include="SqlScripts\Triggers\DI_ADS_GroupInfo_DELETE_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_ADS_GroupInfo_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_ADS_OuInfo_DELETE_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_ADS_OuInfo_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_ADS_UserInfo_DELETE_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_ADS_UserInfo_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_GEMS_UserInfo_TRIGGER.sql" />
+    <Content Include="SqlScripts\Triggers\DI_GTSS_UserInfo_TRIGGER.sql" />
+    <Content Include="SqlScripts\Triggers\DI_LNS_Groups_DELETE_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_LNS_Groups_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_LNS_Users_DELETE_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_LNS_Users_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_M_AccessRequest_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_M_AttestationReview_EndpointSystem_L2Detail_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_M_AttestationReview_EndpointSystem_L3Detail_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_M_AttestationReview_EndpointSystem_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_M_AttestationSnapshotAction_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_M_DiscoveryProcess_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_M_Email_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_M_Organisation_DELETE_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_M_Organisation_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_NPAC_UserInfo_TRIGGER.sql" />
+    <Content Include="SqlScripts\Triggers\DI_SAPEP_GroupInfo_DELETE_Trigger - Copy.sql" />
+    <Content Include="SqlScripts\Triggers\DI_SAPEP_GroupInfo_DELETE_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_SAPEP_GroupInfo_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_SAPEP_RoleInfo_DELETE_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_SAPEP_RoleInfo_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_SAPEP_UserInfo_DELETE_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_SAPEP_UserInfo_TRIGGER.sql" />
+    <Content Include="SqlScripts\Triggers\DI_SAP_UserInfo_DELETE_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_SAP_USERINFO_TRIGGER.sql" />
+    <Content Include="SqlScripts\Triggers\DI_Win_GroupInfo_DELETE_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_Win_GroupInfo_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_Win_ResourceInfo_DELETE_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_Win_ResourceInfo_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_Win_UserInfo_DELETE_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\DI_Win_UserInfo_Trigger.sql" />
+    <Content Include="SqlScripts\Triggers\New Triggers\LogTriggers.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201912230128596_AccountNameMaxLength.resx">
+      <DependentUpon>201912230128596_AccountNameMaxLength.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912230320473_UserEmployeeID_Length.resx">
+      <DependentUpon>201912230320473_UserEmployeeID_Length.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005040835127_SRMHangingRole.resx">
+      <DependentUpon>202005040835127_SRMHangingRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005041121123_Add_EAMNovaHangingRoleInfo.resx">
+      <DependentUpon>202005041121123_Add_EAMNovaHangingRoleInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006281703004_AttestationType.resx">
+      <DependentUpon>202006281703004_AttestationType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007140644136_AddPUBTables.resx">
+      <DependentUpon>202007140644136_AddPUBTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009101253274_AttestationSpilitCampaign.resx">
+      <DependentUpon>202009101253274_AttestationSpilitCampaign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010301334371_WorkflowReminder.resx">
+      <DependentUpon>202010301334371_WorkflowReminder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011020616593_AddActualEventDateInEmployeeTrigger.resx">
+      <DependentUpon>202011020616593_AddActualEventDateInEmployeeTrigger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012080955312_SelfPasswordreset.resx">
+      <DependentUpon>202012080955312_SelfPasswordreset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109070517081_SuccessFactorEventSequence_SameDay.resx">
+      <DependentUpon>202109070517081_SuccessFactorEventSequence_SameDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110160702354_MSTeam.resx">
+      <DependentUpon>202110160702354_MSTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110270443046_SAPSODConflictingRole.resx">
+      <DependentUpon>202110270443046_SAPSODConflictingRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112100625226_SOD_CriticalTCodeReport.resx">
+      <DependentUpon>202112100625226_SOD_CriticalTCodeReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309210824599_OtherSystemReverseEngineering.resx">
+      <DependentUpon>202309210824599_OtherSystemReverseEngineering.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403120951132_AttestationUserComparision.resx">
+      <DependentUpon>202403120951132_AttestationUserComparision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405211018329_SAPHANAImplementation.resx">
+      <DependentUpon>202405211018329_SAPHANAImplementation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406191503099_SAPHANAImplementationv2.resx">
+      <DependentUpon>202406191503099_SAPHANAImplementationv2.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

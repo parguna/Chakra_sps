@@ -1,0 +1,15 @@
+﻿using DI.Chakra.DomainModel;
+using DI.Chakra.Logger;
+
+namespace DI.Chakra.Services.ProvisioningProcessor.FormExecutors.Service
+{
+    class FLINSBI : Common.SAPT1SpecialBase
+    {
+
+        public FLINSBI(EndPoint endpoint, AccessRequest currentRequest, IdmsLogger idmsLogger) : base(endpoint, currentRequest,idmsLogger)
+        {
+            Endpoint = endpoint; CurrentRequest = currentRequest;
+        }
+
+    }
+}

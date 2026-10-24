@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>JavaScript Example - Column Groups - Marry Children</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style media="only screen">
+      :root,
+      body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      html {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0;
+        overflow: auto;
+        font-family: -apple-system, "system-ui", "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+          "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+          "Noto Color Emoji";
+      }
+
+      body {
+        padding: 16px;
+        overflow: auto;
+        background-color: transparent;
+      }
+    </style>
+<script>
+const columnDefs = [
+{
+        headerName: "SystemName",pinned: "left"
+},
+{
+    headerName: "Entitlement",pinned: "left"
+    }
+  //  ,
+  //{
+  //  headerName: "Athlete Details",
+  //  marryChildren: true,
+  //  children: [
+  //    { field: "athlete", colId: "athlete" },
+  //    { field: "country", colId: "country" },
+  //  ],
+  //},
+  //{ field: "age", colId: "age" },
+  //{
+  //  headerName: "Sports Results",
+  //  marryChildren: true,
+  //  children: [
+  //    { field: "sport", colId: "sport" },
+  //    { field: "total", colId: "total" },
+  //    { field: "gold", colId: "gold" },
+  //    { field: "silver", colId: "silver" },
+  //    { field: "bronze", colId: "bronze" },
+  //  ],
+  //},
+];
+
+let gridApi;
+
+const gridOptions = {
+  
+  columnDefs: columnDefs,
+  rowData: null,
+};
+
+// setup the grid after the page has finished loading
+document.addEventListener("DOMContentLoaded", () => {
+  const gridDiv = document.querySelector("#myGrid");
+  gridApi = agGrid.createGrid(gridDiv, gridOptions);
+
+   $.ajax({
+                        type: "POST",
+                        url: `http://localhost:8061/Services/AttestationDataService.svc/GetAttestationUserComparisionData`,
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        data: JSON.stringify({ taskId: 269726, draw: 1, start: 0, length: 20, search: { value: "", regex: false, endpointIds:[] } }),
+       success: function (data) {
+           debugger;
+           gridApi.setGridOption("rowData", data.data)
+						alert(data)
+						}});
+});
+
+</script>
+  </head>
+  <body>
+    <div id="myGrid" style="height: 100%" class="ag-theme-alpine"></div>
+    <script>
+      (function () {
+        const appLocation = "";
+
+        window.__basePath = appLocation;
+      })();
+    </script>
+    <script src="http://localhost:8061/Admin/Attestation/ag-grid-community.min.js"></script>
+    <script type="text/javascript" src="http://localhost:8061/assets/js/jquery-1.11.2.min.js"></script>
+<link rel="stylesheet" href="http://localhost:8061/Admin/Attestation/ag-grid.min.css" />
+    <link rel="stylesheet" href="http://localhost:8061/Admin/Attestation/ag-theme-alpine.min.css" />
+  </body>
+</html>

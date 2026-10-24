@@ -1,0 +1,110 @@
+# For most projects, this workflow file will not need changing; you simply need
+# to commit it to your repository.
+#
+# You may wish to alter this file to override the set of languages analyzed,
+# or to provide custom queries or build logic.
+#
+# ******** NOTE ********
+# We have attempted to detect the languages in your repository. Please check
+# the `language` matrix defined below to confirm you have the correct set of
+# supported CodeQL languages.
+#
+name: "CodeQL Advanced"
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '18 4 * * 1'
+
+jobs:
+  analyze_csharp:
+    name: Analyze (csharp)
+    runs-on: azure-ghas-runner-001
+    timeout-minutes: 360
+    permissions:
+      security-events: write
+      packages: read
+      actions: read
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: csharp
+          build-mode: none
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:csharp"
+          output: ${{ github.workspace }}/../results
+
+      - name: Convert SARIF to CSV
+        run: |
+          sudo apt-get update
+          sudo apt-get install jq -y
+          jq -r '.runs[].results[] | [.ruleId, .message.text, .locations[0].physicalLocation.artifactLocation.uri, .locations[0].physicalLocation.region.startLine] | @csv' "${{ github.workspace }}/../results/csharp.sarif" > "${{ github.workspace }}/../results/csharp.csv"
+
+      - name: Move SARIF and CSV into workspace
+        run: |
+          mkdir -p "${{ github.workspace }}/upload"
+          cp "${{ github.workspace }}/../results/csharp.sarif" "${{ github.workspace }}/upload/"
+          cp "${{ github.workspace }}/../results/csharp.csv" "${{ github.workspace }}/upload/"
+
+      - name: Upload SARIF and CSV
+        uses: actions/upload-artifact@v4
+        with:
+          name: codeql-results-csharp
+          path: ${{ github.workspace }}/upload/
+
+  analyze_js_ts:
+    name: Analyze (javascript-typescript)
+    needs: analyze_csharp
+    runs-on: azure-ghas-runner-001
+    timeout-minutes: 360
+    permissions:
+      security-events: write
+      packages: read
+      actions: read
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: javascript-typescript
+          build-mode: none
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:javascript-typescript"
+          output: ${{ github.workspace }}/../results
+
+      - name: Convert SARIF to CSV
+        run: |
+          sudo apt-get update
+          sudo apt-get install jq -y
+          jq -r '.runs[].results[] | [.ruleId, .message.text, .locations[0].physicalLocation.artifactLocation.uri, .locations[0].physicalLocation.region.startLine] | @csv' "${{ github.workspace }}/../results/javascript.sarif" > "${{ github.workspace }}/../results/javascript.csv"
+
+      - name: Move SARIF and CSV into workspace
+        run: |
+          mkdir -p "${{ github.workspace }}/upload"
+          cp "${{ github.workspace }}/../results/javascript.sarif" "${{ github.workspace }}/upload/"
+          cp "${{ github.workspace }}/../results/javascript.csv" "${{ github.workspace }}/upload/"
+
+      - name: Upload SARIF and CSV
+        uses: actions/upload-artifact@v4
+        with:
+          name: codeql-results-js-ts
+          path: ${{ github.workspace }}/upload/
+      # Add SARIF/CSV conversion and upload steps if needed for JS/TS

@@ -1,0 +1,3 @@
+Catalog,Endpoint,EntitlementType,EntitlementName,Approver
+Fin,AD,Group,Administrators;Print Operators,1|User|IACMAdmin;2|User|00001276 
+

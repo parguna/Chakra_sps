@@ -1,0 +1,418 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ProtoMast4.master.cs" Inherits="DI.Chakra.Web.Master.ProtoMast4" %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<%@ Register Src="~/Master/UC/Header.ascx" TagPrefix="uc1" TagName="Header" %>
+<%@ Register Src="~/Master/UC/AccessPanel.ascx" TagPrefix="uc1" TagName="AccessPanel" %>
+<%@ Register Src="~/UsrControl/Common/MessageBox.ascx" TagPrefix="uc1" TagName="AlertMessage" %>
+<%@ Register Src="~/Master/UC/Footer.ascx" TagPrefix="uc1" TagName="Footer" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head runat="server">
+    <script type="text/javascript">
+        let sessionTimeout = 120;
+        function ColumnHidden(sender, eventArgs) {
+            document.getElementById('<%= hdnButton.ClientID %>').click();
+        }
+
+        function ColumnShown(sender, eventArgs) {
+            document.getElementById('<%= hdnButton.ClientID %>').click();
+        }
+        function stopRKey(evt) {
+            var evt = (evt) ? evt : ((event) ? event : null);
+            var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+            if ((evt.keyCode == 13) && (node.type == "text")) {
+                return false;
+            }
+        }
+        function setSessionTimeout(timeout) {
+            sessionTimeout = timeout;
+        }
+        document.onkeypress = stopRKey;
+        //function disableBackButton() {
+        //    window.history.forward();
+        //}
+        //setTimeout("disableBackButton()", 0);
+          var column = null;
+        function OnFliterMenuShowing(sender, args) {
+
+            //debugger;
+            if (column == null) return;
+            var menu = sender; var items = menu.get_items();
+            if (column.get_dataType() == "System.String") {
+                var i = 0;
+                while (i < items.get_count()) {
+                    if (!(items.getItem(i).get_value() in {
+                        'NoFilter': '',
+                        'Contains': '',
+                        'DoesNotContain': '',                        
+                        'StartsWith': '',
+                        'EndsWth': '',
+                        'EqualTo': '',
+                        'NotEqualTo': '',
+                        'IsEmpty': '',
+                        //'IsNull': '',
+                        //'NotIsNull':'',
+                        'NotIsEmpty': ''
+                    })) {
+                        var item = items.getItem(i);
+                        if (item != null)
+                            item.set_visible(false);
+                    }
+                    else {
+                        var item = items.getItem(i);
+                        if (item != null)
+                            item.set_visible(true);
+                    } i++;
+                }
+                // Below filter options are not applicable
+                //GreaterThan
+                //LessThan
+                //GreaterThanOrEquaITo
+                //LessThanOrEqualTo
+            }
+            if (column.get_dataType() == "System.Int64") {
+                var j = 0; while (j < items.get_count()) {
+                    if (!(items.getItem(j).get_value() in {
+                        'NoFilter': '',
+                        'EqualTo': '',
+                        'NotEqualTo': '',
+                        'GreaterThan': '',
+                        'LessThan': '',
+                        'GreaterThanOrEqualTo':'',
+                        'LessThanOrEqualTo':'', 
+                        //'IsNull': '',
+                        //'NotIsNull':'',
+                         
+                    })) {
+                        var item = items.getItem(j); if (item != null)
+                            item.set_visible(false);
+                    }
+                    else { var item = items.getItem(j); if (item != null) item.set_visible(true); } j++;
+                }
+            }
+            
+            if (column.get_dataType() == "System.DateTime") {
+                var j = 0; while (j < items.get_count()) {
+                    if (!(items.getItem(j).get_value() in {
+                        'NoFilter': '',
+                        'EqualTo': '',
+                        'NotEqualTo': '',
+                        'GreaterThan': '',
+                        'LessThan': '',
+                        'GreaterThanOrEqualTo':'',
+                        'LessThanOrEqualTo':'', 
+                        //'IsNull': '',
+                        //'NotIsNull':'',
+                         
+                    })) {
+                        var item = items.getItem(j); if (item != null)
+                            item.set_visible(false);
+                    }
+                    else { var item = items.getItem(j); if (item != null) item.set_visible(true); } j++;
+                }
+            }
+
+            column = null;
+            menu.repaint();
+        }
+
+        function filterMenuShowing(sender, eventArgs)
+        {
+            column = eventArgs.get_column();
+        }
+        
+    </script>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <%--<meta name="viewport" content="width=device-width, initial-scale=1">--%>
+    <title></title>
+    <link rel="icon" type="image/png" href="../Images/sp.ico" />
+    <link href="../assets/iacm/appMain.css?v=1" rel="stylesheet" />
+    <link href="../assets/iacm/appIacmSkin.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/js/jquery-1.11.2.min.js")%>"></script>
+    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/bootstrap/js/bootstrap.min.js")%>"></script>
+    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/datepicker/js/bootstrap-datepicker.js")%>"></script>
+    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/extendbootstrap/js/bootbox.js")%>"></script>
+    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/extendbootstrap/js/bootstro.min.js")%>"></script>
+    <%--<script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/kendoui/js/kendo.ui.core.min.js")%>"></script>--%>
+    <%--<script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/kendoui/js/kendo.all.min.js")%>"></script>--%>
+    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/select/js/bootstrap-select.js")%>"></script>
+    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/js/validatr.js")%>"></script>
+    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/iacm/appMain.js")%>"></script>
+    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/js/AlertJS.js")%>"></script>
+    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/js/jquery.placeholder.js")%>"></script>
+    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/bootstrap/js/bootstrap-session-timeout.min.js")%>"></script>
+    <!--[if IE]>
+	    <link rel="stylesheet" type="text/css" href="../assets/styles/ie.css" />
+    <![endif]-->
+
+    <%--<style>
+        #cplMain_ctl00 {
+            height: 100% !important;
+            padding-bottom: 10px;
+        }
+    </style>--%>
+
+    <style>
+       
+        div[id$="_PageSizeDropDownList"] {
+width:50% !important;
+}
+        .rddlIcon {
+    
+    background-position: 0px -18px !important;
+}
+        .rddlPopup_IACMSkin .rddlList{
+        height:100%;
+    }
+        .Background {
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+            filter: alpha(opacity=40);
+        }
+
+        .gridAuto a {
+            text-overflow: clip !important;
+        }
+
+        .gridFixed a {
+            white-space: unset;
+        }
+
+        footer {
+            margin-top: 50px !important;
+        }
+
+        .icon-entitlement-info {
+            font-size: 18px !important;
+            padding: 0 !important;
+            margin-top: 8px;
+        }
+
+        .RadGrid_IACMSkin .rgRow > td, .RadGrid_IACMSkin .rgAltRow > td {
+            word-break: break-word !important;
+        }
+
+        #divLoadImg {
+            position: absolute;
+            left: 50%;
+            top: calc(50% - 45px);
+            transform: translateX(-50%);
+            visibility: visible;
+            vertical-align: middle;
+            z-index: 10000000001;
+            border: 1px solid #2077bd;
+            background-color: white;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .RadGridtextWrap {
+            word-break: break-word !important;
+        }
+
+        td, span, label, p {
+            word-break: break-word !important;
+        }
+    </style>
+
+    <script type="text/JavaScript">
+
+        var runNowInProgress = false;
+        var saveInProgress = false;
+
+        function pageLoad() {
+            var manager = Sys.WebForms.PageRequestManager.getInstance();
+            manager.add_endRequest(endRequestHandler);
+            //manager.add_beginRequest(OnBeginRequest);
+        }
+
+
+        function endRequestHandler(sender, args) {
+            $(".fa-filter").removeClass("gridNotFiltered");
+            if ($('.rgFiltered').length == 0) {
+                $(".fa-filter").addClass("gridNotFiltered");
+            }
+            if (runNowInProgress) {
+                $(".RunNow").attr("disabled", "disabled");
+                setTimeout(
+                    function () {
+                        $('.RunNow').removeAttr("disabled");
+                    }
+                    , 30000);
+            }
+            if (saveInProgress) {
+                $(".Save").attr("disabled", "disabled");
+                setTimeout(
+                    function () {
+                        $('.Save').removeAttr("disabled");
+                    }
+                    , 10000);
+            }
+        }
+
+        function BackgroundOnDoubeClick() {
+            var divLoadImage = document.getElementById('divLoadImg');
+            divLoadImage.style.display = 'none';
+            var divBackground = document.getElementById('divBackground');
+            divBackground.style.display = 'none';
+            var objMan = Sys.WebForms.PageRequestManager.getInstance();
+            if (objMan.get_isInAsyncPostBack())
+                objMan.abortPostBack();
+        }
+
+        var flag = false; var scrollLeftPosn = 0;
+        function OnHeaderMenuShowing(sender, eventArgs) {
+            if (!flag) {
+                eventArgs.set_cancel(true);
+            }
+        }
+       
+      
+        function ShowFirstColumnHeaderMenu(sender, args) {
+
+            var gridId = '<%= Session["gridcustomId"] %>';
+            var grid = $find("<%= Session["gridcustomId"] %>");
+            flag = true;
+            var cnt = grid.get_masterTableView().get_columns()
+            var button = $(sender);
+            var leftPn = parseInt(button.position().left) + scrollLeftPosn - 90;
+            var topPn = parseInt(button.position().top) - $('.RadGrid').position().top;
+            var a = grid.get_masterTableView().get_columns();
+            var i = 0;
+            for (var d in a) {
+                if (a[d].get_visible()) {
+                    break;
+                }
+                i = i + 1;
+            }
+            grid.get_masterTableView().get_columns()[i].showHeaderMenu(args, leftPn, topPn);
+            flag = false;
+        }
+        function Scroll(sender, eventArgs) {
+            scrollLeftPosn = eventArgs.get_scrollLeft();
+        }
+
+        $(window).bind("beforeunload", function (event) { // bind the window unload event
+            $("#UpdateProgressBar").show();
+        });
+        $(document).on('click', '.action-attachment', function () {
+            window.setTimeout(function () {
+                $("#UpdateProgressBar").hide();
+            }, 3000);
+        });
+        $(document).on('click', '.modal-footer input', function () {
+            $("#UpdateProgressBar").show();
+            $('.modal-footer').addClass("employeeDetails").append("<div class='disableDIv' style='height: 100% !important;'>&nbsp;</div>");
+        });
+        $(document).ready(function () {
+            $('input').placeholder();
+            applyHeaderStyle();
+            $(".fa-filter").removeClass("gridNotFiltered");
+            if ($('.rgFiltered').length == 0) {
+                $(".fa-filter").addClass("gridNotFiltered");
+            }
+
+            $(document).on('click', '.RunNow', function () {
+                runNowInProgress = true;
+            });
+
+            $(document).on('click', '.Save', function () {
+                saveInProgress = true;
+            });
+
+            var hdnScreenWidth = document.getElementById('<%= hdnScreenWidth.ClientID %>');
+            hdnScreenWidth.value = screen.width;
+            //alert(hdnScreenWidth.value);
+            
+        });
+       
+    </script>
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <form id="form1" class="flex" runat="server">
+            <telerik:radscriptmanager id="RadScriptManager1" runat="server">
+            </telerik:radscriptmanager>
+            <telerik:radwindowmanager id="radWinMgr" runat="server">
+            </telerik:radwindowmanager>
+
+            <asp:UpdatePanel ID="AlertMessageUpdatePanel" runat="server" UpdateMode="Conditional">
+                <contenttemplate>
+                    <uc1:AlertMessage ID="AlertMessage1" runat="server" />
+                </contenttemplate>
+            </asp:UpdatePanel>
+            <uc1:header runat="server" id="Header" />
+
+            <asp:UpdatePanel runat="server" ID="UpdatePanel1">
+                <contenttemplate>
+                    <asp:HiddenField ID="hdnScreenWidth" runat="server"/>
+                    <asp:Button ID="hdnButton" CssClass="hiddnBtn" runat="server" OnClick="hdnButton_Click" Style="display: none" />
+                    <asp:UpdateProgress ID="UpdateProgressBar" runat="server" AssociatedUpdatePanelID="UpdatePanel1" DisplayAfter="1000">
+                        <ProgressTemplate>
+                            <div id="divBackground" ondblclick="BackgroundOnDoubeClick()"
+                                style="position: fixed; top: 0px; left: 0px; z-index: 100000001; height: 100%; width: 100%; background-color: black; opacity: 0.4; filter: alpha(opacity=40)">
+                            </div>
+                            <div id="divLoadImg" align="center" valign="middle" runat="server">
+                                <asp:Image ID="Image1" runat="server" ImageUrl="../Images/Common/loading.gif" Style="padding: 5px" border="0" Width="40" />
+                            </div>
+                        </ProgressTemplate>
+                    </asp:UpdateProgress>
+
+                    <asp:Panel runat="server" ID="PageContent" Visible="true">
+                        <div class="container-fluid content di-tab-content page">
+                            <ul class="nav nav-tabs">
+                                <li role="presentation" class="active">
+                                    <a aria-controls="emergency-access-request" role="tab" data-toggle="tab">
+                                        <asp:Label ID="lblPageTitle" runat="server" Text=""></asp:Label>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content di-tab-main">
+                                <div role="tabpanel" class="tab-pane active" id="emergency-access-request">
+                                    <asp:ContentPlaceHolder ID="cplMain" runat="server">
+                                    </asp:ContentPlaceHolder>
+
+                                </div>
+                            </div>
+                        </div>
+                    </asp:Panel>
+                </contenttemplate>
+            </asp:UpdatePanel>
+            <uc1:footer runat="server" id="Footer" />
+            <uc1:accesspanel runat="server" id="AccessPanel" onaccessactionclicked="AccessPanel_ActionClicked1" />
+        </form>
+    </div>
+    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/js/Custom.js")%>"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var pageUrlDomain = location.protocol + "//" + location.host;
+            $.sessionTimeout({
+                keepAliveUrl: `${pageUrlDomain}/Admin/Attestation/ResetSession.aspx`,
+                logoutUrl: `${pageUrlDomain}/login.aspx`,
+                redirUrl: `${pageUrlDomain}/login.aspx`,
+                warnAfter: ((sessionTimeout - 1) * 60 * 1000),
+                redirAfter: sessionTimeout * 60 * 1000,
+                countdownBar: true,
+                countdownSmart: true,
+                ignoreUserActivity: false
+            });
+        });
+
+    </script>
+</body>
+</html>

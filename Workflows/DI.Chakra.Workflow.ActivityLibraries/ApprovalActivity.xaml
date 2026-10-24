@@ -1,0 +1,641 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="DI.Chakra.Workflow.ActivityLibraries.ApprovalActivity"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:dcd="clr-namespace:DI.Chakra.DomainModel;assembly=DI.Chakra.DomainModel"
+ xmlns:local="clr-namespace:DI.Chakra.Workflow.ActivityLibraries"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities"
+ xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel"
+ xmlns:p1="http://tempuri.org/"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:ssx="clr-namespace:System.ServiceModel.XamlIntegration;assembly=System.ServiceModel"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="workflowInstanceId" Type="InArgument(s:Guid)" />
+    <x:Property Name="ApprovalCorrelationHandle" Type="InArgument(p:CorrelationHandle)" />
+    <x:Property Name="workflowConfiguration" Type="InArgument(dcd:WorkflowConfiguration)" />
+    <x:Property Name="workflowState" Type="InArgument(x:Byte)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap2010:WorkflowViewState.IdRef>DI.Chakra.Workflow.ActivityLibraries.ApprovalActivity_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.ServiceModel.Activities</x:String>
+      <x:String>DI.Chakra.DomainModel</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>DI.Chakra.DomainModel</AssemblyReference>
+      <AssemblyReference>DI.Chakra.EntityModel</AssemblyReference>
+      <AssemblyReference>DI.Chakra.Workflow.Processor</AssemblyReference>
+      <AssemblyReference>DI.Chakra.Infrastructure</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>DI.Chakra.Workflow.ActivityLibraries</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Approval Head" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="isTaskCompleted" />
+      <Variable x:TypeArguments="x:Double" Name="timeoutTimespan" />
+      <Variable x:TypeArguments="x:Double" Name="reminderTimespan" />
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="isMailSent" />
+      <Variable x:TypeArguments="x:Boolean" Name="isReminderRequired" />
+      <Variable x:TypeArguments="x:Int32" Name="totalReminders" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="reminderCount" />
+    </Sequence.Variables>
+    <Assign sap2010:WorkflowViewState.IdRef="Assign_9">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Boolean">
+          <mca:CSharpReference x:TypeArguments="x:Boolean">isTaskCompleted</mca:CSharpReference>
+        </OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap2010:WorkflowViewState.IdRef="Assign_10">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Double">
+          <mca:CSharpReference x:TypeArguments="x:Double">reminderTimespan</mca:CSharpReference>
+        </OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Double">
+          <mca:CSharpValue x:TypeArguments="x:Double">(double)workflowConfiguration.WorkflowConfigurationDetails.FirstOrDefault(item =&gt; item.SequenceNumber == workflowState).ReminderIntervalInDays.Value</mca:CSharpValue>
+        </InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap2010:WorkflowViewState.IdRef="Assign_11">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Double">
+          <mca:CSharpReference x:TypeArguments="x:Double">timeoutTimespan</mca:CSharpReference>
+        </OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Double">
+          <mca:CSharpValue x:TypeArguments="x:Double">(double)workflowConfiguration.WorkflowConfigurationDetails.FirstOrDefault(item =&gt; item.SequenceNumber == workflowState).ResponseTimeInDays</mca:CSharpValue>
+        </InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap2010:WorkflowViewState.IdRef="Assign_12">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Boolean">
+          <mca:CSharpReference x:TypeArguments="x:Boolean">isReminderRequired</mca:CSharpReference>
+        </OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Boolean">
+          <mca:CSharpValue x:TypeArguments="x:Boolean">workflowConfiguration.WorkflowConfigurationDetails.FirstOrDefault(item =&gt; item.SequenceNumber == workflowState).IsReminderRequired</mca:CSharpValue>
+        </InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap2010:WorkflowViewState.IdRef="Assign_31">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">
+          <mca:CSharpReference x:TypeArguments="x:Int32">totalReminders</mca:CSharpReference>
+        </OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">
+          <mca:CSharpValue x:TypeArguments="x:Int32">(int)Math.Floor((double)timeoutTimespan / (double)reminderTimespan)</mca:CSharpValue>
+        </InArgument>
+      </Assign.Value>
+    </Assign>
+    <While sap2010:WorkflowViewState.IdRef="While_1">
+      <While.Condition>
+        <mca:CSharpValue x:TypeArguments="x:Boolean">!isTaskCompleted</mca:CSharpValue>
+      </While.Condition>
+      <Pick sap2010:WorkflowViewState.IdRef="Pick_1">
+        <PickBranch DisplayName="User Response Branch" sap2010:WorkflowViewState.IdRef="PickBranch_1">
+          <PickBranch.Variables>
+            <Variable x:TypeArguments="dcd:Task" Name="task" />
+            <Variable x:TypeArguments="x:Int64" Name="taskId" />
+            <Variable x:TypeArguments="x:Boolean" Name="canContinueApproval" />
+            <Variable x:TypeArguments="x:Boolean" Default="True" Name="isPendingTasksExists" />
+          </PickBranch.Variables>
+          <PickBranch.Trigger>
+            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_13">
+              <p:Receive x:Name="__ReferenceID0" DisplayName="Receive Approval Request" sap2010:WorkflowViewState.IdRef="Receive_2" OperationName="ApprovalRequest" ServiceContractName="p1:IWFService">
+                <p:Receive.CorrelatesOn>
+                  <p:XPathMessageQuery x:Key="workflowInstanceId">
+                    <p:XPathMessageQuery.Namespaces>
+                      <ssx:XPathMessageContextMarkup>
+                        <x:String x:Key="xgSc">http://tempuri.org/</x:String>
+                      </ssx:XPathMessageContextMarkup>
+                    </p:XPathMessageQuery.Namespaces>sm:body()/xgSc:ApprovalRequest/xgSc:workflowInstanceId</p:XPathMessageQuery>
+                </p:Receive.CorrelatesOn>
+                <p:Receive.CorrelatesWith>
+                  <InArgument x:TypeArguments="p:CorrelationHandle">
+                    <mca:CSharpValue x:TypeArguments="p:CorrelationHandle">ApprovalCorrelationHandle</mca:CSharpValue>
+                  </InArgument>
+                </p:Receive.CorrelatesWith>
+                <p:ReceiveParametersContent>
+                  <OutArgument x:TypeArguments="x:Int64" x:Key="taskId">
+                    <mca:CSharpReference x:TypeArguments="x:Int64">taskId</mca:CSharpReference>
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="workflowInstanceId" />
+                </p:ReceiveParametersContent>
+              </p:Receive>
+            </Sequence>
+          </PickBranch.Trigger>
+          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Default="False" Name="isStateDifferent" />
+            </Sequence.Variables>
+            <local:GetTaskFromInterimStore sap2010:WorkflowViewState.IdRef="GetTaskByTaskId_1">
+              <local:GetTaskFromInterimStore.Task>
+                <OutArgument x:TypeArguments="dcd:Task">
+                  <mca:CSharpReference x:TypeArguments="dcd:Task">task</mca:CSharpReference>
+                </OutArgument>
+              </local:GetTaskFromInterimStore.Task>
+              <local:GetTaskFromInterimStore.TaskId>
+                <InArgument x:TypeArguments="x:Int64">
+                  <mca:CSharpValue x:TypeArguments="x:Int64">taskId</mca:CSharpValue>
+                </InArgument>
+              </local:GetTaskFromInterimStore.TaskId>
+            </local:GetTaskFromInterimStore>
+            <local:IsWorkflowStateConflict sap2010:WorkflowViewState.IdRef="IsWorkflowStateConflict_1">
+              <local:IsWorkflowStateConflict.CurrentState>
+                <InArgument x:TypeArguments="x:Byte">
+                  <mca:CSharpValue x:TypeArguments="x:Byte">workflowState</mca:CSharpValue>
+                </InArgument>
+              </local:IsWorkflowStateConflict.CurrentState>
+              <local:IsWorkflowStateConflict.IncomingTask>
+                <InArgument x:TypeArguments="dcd:Task">
+                  <mca:CSharpValue x:TypeArguments="dcd:Task">task</mca:CSharpValue>
+                </InArgument>
+              </local:IsWorkflowStateConflict.IncomingTask>
+              <local:IsWorkflowStateConflict.StateConflict>
+                <OutArgument x:TypeArguments="x:Boolean">
+                  <mca:CSharpReference x:TypeArguments="x:Boolean">isStateDifferent</mca:CSharpReference>
+                </OutArgument>
+              </local:IsWorkflowStateConflict.StateConflict>
+            </local:IsWorkflowStateConflict>
+            <p:SendReply Request="{x:Reference __ReferenceID0}" DisplayName="SendReplyToReceive" sap2010:WorkflowViewState.IdRef="SendReply_2">
+              <p:SendParametersContent>
+                <InArgument x:TypeArguments="x:Boolean" x:Key="status">
+                  <mca:CSharpValue x:TypeArguments="x:Boolean">!isStateDifferent</mca:CSharpValue>
+                </InArgument>
+              </p:SendParametersContent>
+            </p:SendReply>
+            <If sap2010:WorkflowViewState.IdRef="If_12">
+              <If.Condition>
+                <InArgument x:TypeArguments="x:Boolean">
+                  <mca:CSharpValue x:TypeArguments="x:Boolean">!isStateDifferent</mca:CSharpValue>
+                </InArgument>
+              </If.Condition>
+              <If.Then>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_29">
+                  <Assign sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">
+                        <mca:CSharpReference x:TypeArguments="x:Boolean">task.IsCompleted</mca:CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <local:UpdateTask sap2010:WorkflowViewState.IdRef="UpdateTask_1">
+                    <local:UpdateTask.Task>
+                      <InArgument x:TypeArguments="dcd:Task">
+                        <mca:CSharpValue x:TypeArguments="dcd:Task">task</mca:CSharpValue>
+                      </InArgument>
+                    </local:UpdateTask.Task>
+                    <local:UpdateTask.WorkflowConfiguration>
+                      <InArgument x:TypeArguments="dcd:WorkflowConfiguration">
+                        <mca:CSharpValue x:TypeArguments="dcd:WorkflowConfiguration">workflowConfiguration</mca:CSharpValue>
+                      </InArgument>
+                    </local:UpdateTask.WorkflowConfiguration>
+                  </local:UpdateTask>
+                  <local:CheckForPendingParallelTasks sap2010:WorkflowViewState.IdRef="CheckForPendingParallelTasks_3">
+                    <local:CheckForPendingParallelTasks.CanContinueApproval>
+                      <OutArgument x:TypeArguments="x:Boolean">
+                        <mca:CSharpReference x:TypeArguments="x:Boolean">canContinueApproval</mca:CSharpReference>
+                      </OutArgument>
+                    </local:CheckForPendingParallelTasks.CanContinueApproval>
+                    <local:CheckForPendingParallelTasks.IsPendingTasksExists>
+                      <OutArgument x:TypeArguments="x:Boolean">
+                        <mca:CSharpReference x:TypeArguments="x:Boolean">isPendingTasksExists</mca:CSharpReference>
+                      </OutArgument>
+                    </local:CheckForPendingParallelTasks.IsPendingTasksExists>
+                    <local:CheckForPendingParallelTasks.Task>
+                      <InArgument x:TypeArguments="dcd:Task">
+                        <mca:CSharpValue x:TypeArguments="dcd:Task">task</mca:CSharpValue>
+                      </InArgument>
+                    </local:CheckForPendingParallelTasks.Task>
+                    <local:CheckForPendingParallelTasks.WorkflowConfiguration>
+                      <InArgument x:TypeArguments="dcd:WorkflowConfiguration">
+                        <mca:CSharpValue x:TypeArguments="dcd:WorkflowConfiguration">workflowConfiguration</mca:CSharpValue>
+                      </InArgument>
+                    </local:CheckForPendingParallelTasks.WorkflowConfiguration>
+                  </local:CheckForPendingParallelTasks>
+                  <If sap2010:WorkflowViewState.IdRef="If_5">
+                    <If.Condition>
+                      <InArgument x:TypeArguments="x:Boolean">
+                        <mca:CSharpValue x:TypeArguments="x:Boolean">isPendingTasksExists &amp;&amp; canContinueApproval</mca:CSharpValue>
+                      </InArgument>
+                    </If.Condition>
+                    <If.Then>
+                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_14">
+                        <Assign sap2010:WorkflowViewState.IdRef="Assign_16">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">
+                              <mca:CSharpReference x:TypeArguments="x:Boolean">isTaskCompleted</mca:CSharpReference>
+                            </OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_15">
+                        <local:AutoCompletePendingParallelTasks sap2010:WorkflowViewState.IdRef="AutoCompletePendingParallelTasks_1">
+                          <local:AutoCompletePendingParallelTasks.WorkflowInstanceId>
+                            <InArgument x:TypeArguments="s:Guid">
+                              <mca:CSharpValue x:TypeArguments="s:Guid">workflowInstanceId</mca:CSharpValue>
+                            </InArgument>
+                          </local:AutoCompletePendingParallelTasks.WorkflowInstanceId>
+                        </local:AutoCompletePendingParallelTasks>
+                        <Assign sap2010:WorkflowViewState.IdRef="Assign_2">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">
+                              <mca:CSharpReference x:TypeArguments="x:Boolean">isTaskCompleted</mca:CSharpReference>
+                            </OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Assign sap2010:WorkflowViewState.IdRef="Assign_35">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Boolean">
+                      <mca:CSharpReference x:TypeArguments="x:Boolean">isTaskCompleted</mca:CSharpReference>
+                    </OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </If.Else>
+            </If>
+          </Sequence>
+        </PickBranch>
+        <PickBranch DisplayName="Request Withdraw Branch" sap2010:WorkflowViewState.IdRef="PickBranch_3">
+          <PickBranch.Trigger>
+            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_27">
+              <p:Receive x:Name="__ReferenceID1" DisplayName="Receive Withdraw Request" sap2010:WorkflowViewState.IdRef="Receive_3" OperationName="WithdrawRequest" ServiceContractName="p1:IWFService">
+                <p:Receive.CorrelatesOn>
+                  <p:XPathMessageQuery x:Key="workflowInstanceId">
+                    <p:XPathMessageQuery.Namespaces>
+                      <ssx:XPathMessageContextMarkup>
+                        <x:String x:Key="xgSc">http://tempuri.org/</x:String>
+                      </ssx:XPathMessageContextMarkup>
+                    </p:XPathMessageQuery.Namespaces>sm:body()/xgSc:WithdrawRequest/xgSc:workflowInstanceId</p:XPathMessageQuery>
+                </p:Receive.CorrelatesOn>
+                <p:Receive.CorrelatesWith>
+                  <InArgument x:TypeArguments="p:CorrelationHandle">
+                    <mca:CSharpValue x:TypeArguments="p:CorrelationHandle">ApprovalCorrelationHandle</mca:CSharpValue>
+                  </InArgument>
+                </p:Receive.CorrelatesWith>
+                <p:ReceiveParametersContent>
+                  <OutArgument x:TypeArguments="x:String" x:Key="workflowInstanceId" />
+                </p:ReceiveParametersContent>
+              </p:Receive>
+              <p:SendReply Request="{x:Reference __ReferenceID1}" DisplayName="SendReplyToReceive" sap2010:WorkflowViewState.IdRef="SendReply_3" />
+            </Sequence>
+          </PickBranch.Trigger>
+          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_28">
+            <local:WithdrawRequest sap2010:WorkflowViewState.IdRef="WithdrawRequest_2">
+              <local:WithdrawRequest.WorkflowInstanceId>
+                <InArgument x:TypeArguments="s:Guid">
+                  <mca:CSharpValue x:TypeArguments="s:Guid">workflowInstanceId</mca:CSharpValue>
+                </InArgument>
+              </local:WithdrawRequest.WorkflowInstanceId>
+            </local:WithdrawRequest>
+            <Assign sap2010:WorkflowViewState.IdRef="Assign_33">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Boolean">
+                  <mca:CSharpReference x:TypeArguments="x:Boolean">isTaskCompleted</mca:CSharpReference>
+                </OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </PickBranch>
+        <PickBranch DisplayName="Reminder and Response Timeout Alert Branch" sap2010:WorkflowViewState.IdRef="PickBranch_2">
+          <PickBranch.Trigger>
+            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_17">
+              <If sap2010:WorkflowViewState.IdRef="If_11">
+                <If.Condition>
+                  <InArgument x:TypeArguments="x:Boolean">
+                    <mca:CSharpValue x:TypeArguments="x:Boolean">isReminderRequired</mca:CSharpValue>
+                  </InArgument>
+                </If.Condition>
+                <If.Then>
+                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_25">
+                    <While sap2010:WorkflowViewState.IdRef="While_2">
+                      <While.Condition>
+                        <mca:CSharpValue x:TypeArguments="x:Boolean">reminderCount &lt; totalReminders</mca:CSharpValue>
+                      </While.Condition>
+                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_26">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="scg:List(dcd:Task)" Name="pendingTasks" />
+                        </Sequence.Variables>
+                        <Delay DisplayName="Reminder Delay" sap2010:WorkflowViewState.IdRef="Delay_7">
+                          <InArgument x:TypeArguments="x:TimeSpan">
+                            <mca:CSharpValue x:TypeArguments="x:TimeSpan">TimeSpan.FromDays(reminderTimespan)</mca:CSharpValue>
+                          </InArgument>
+                        </Delay>
+                        <local:GetPendingTasksByWorkflowInstance sap2010:WorkflowViewState.IdRef="GetPendingTasksByWorkflowInstance_4">
+                          <local:GetPendingTasksByWorkflowInstance.PendingTasks>
+                            <OutArgument x:TypeArguments="scg:List(dcd:Task)">
+                              <mca:CSharpReference x:TypeArguments="scg:List(dcd:Task)">pendingTasks</mca:CSharpReference>
+                            </OutArgument>
+                          </local:GetPendingTasksByWorkflowInstance.PendingTasks>
+                          <local:GetPendingTasksByWorkflowInstance.WorkflowInstanceId>
+                            <InArgument x:TypeArguments="s:Guid">
+                              <mca:CSharpValue x:TypeArguments="s:Guid">workflowInstanceId</mca:CSharpValue>
+                            </InArgument>
+                          </local:GetPendingTasksByWorkflowInstance.WorkflowInstanceId>
+                        </local:GetPendingTasksByWorkflowInstance>
+                        <ForEach x:TypeArguments="dcd:Task" DisplayName="ForEach&lt;Task&gt;" sap2010:WorkflowViewState.IdRef="ForEach`1_3">
+                          <ForEach.Values>
+                            <InArgument x:TypeArguments="scg:IEnumerable(dcd:Task)">
+                              <mca:CSharpValue x:TypeArguments="scg:IEnumerable(dcd:Task)">pendingTasks</mca:CSharpValue>
+                            </InArgument>
+                          </ForEach.Values>
+                          <ActivityAction x:TypeArguments="dcd:Task">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="dcd:Task" Name="task" />
+                            </ActivityAction.Argument>
+                            <local:SendReminderEmail IsMailSent="{x:Null}" sap2010:WorkflowViewState.IdRef="SendReminderEmail_3">
+                              <local:SendReminderEmail.Task>
+                                <InArgument x:TypeArguments="dcd:Task">
+                                  <mca:CSharpValue x:TypeArguments="dcd:Task">task</mca:CSharpValue>
+                                </InArgument>
+                              </local:SendReminderEmail.Task>
+                              <local:SendReminderEmail.WorkflowConfiguration>
+                                <InArgument x:TypeArguments="dcd:WorkflowConfiguration">
+                                  <mca:CSharpValue x:TypeArguments="dcd:WorkflowConfiguration">workflowConfiguration</mca:CSharpValue>
+                                </InArgument>
+                              </local:SendReminderEmail.WorkflowConfiguration>
+                            </local:SendReminderEmail>
+                          </ActivityAction>
+                        </ForEach>
+                        <Assign sap2010:WorkflowViewState.IdRef="Assign_32">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Int32">
+                              <mca:CSharpReference x:TypeArguments="x:Int32">reminderCount</mca:CSharpReference>
+                            </OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Int32">
+                              <mca:CSharpValue x:TypeArguments="x:Int32">reminderCount + 1</mca:CSharpValue>
+                            </InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </While>
+                    <local:ApprovalTimeoutActivity sap2010:WorkflowViewState.IdRef="ApprovalTimeoutActivity_1">
+                      <local:ApprovalTimeoutActivity.timeoutDelay>
+                        <InArgument x:TypeArguments="x:Double">
+                          <mca:CSharpValue x:TypeArguments="x:Double">timeoutTimespan - (totalReminders * reminderTimespan)</mca:CSharpValue>
+                        </InArgument>
+                      </local:ApprovalTimeoutActivity.timeoutDelay>
+                      <local:ApprovalTimeoutActivity.workflowConfiguration>
+                        <InArgument x:TypeArguments="dcd:WorkflowConfiguration">
+                          <mca:CSharpValue x:TypeArguments="dcd:WorkflowConfiguration">workflowConfiguration</mca:CSharpValue>
+                        </InArgument>
+                      </local:ApprovalTimeoutActivity.workflowConfiguration>
+                      <local:ApprovalTimeoutActivity.workflowInstanceId>
+                        <InArgument x:TypeArguments="s:Guid">
+                          <mca:CSharpValue x:TypeArguments="s:Guid">workflowInstanceId</mca:CSharpValue>
+                        </InArgument>
+                      </local:ApprovalTimeoutActivity.workflowInstanceId>
+                      <local:ApprovalTimeoutActivity.workflowState>
+                        <InArgument x:TypeArguments="x:Byte">
+                          <mca:CSharpValue x:TypeArguments="x:Byte">workflowState</mca:CSharpValue>
+                        </InArgument>
+                      </local:ApprovalTimeoutActivity.workflowState>
+                    </local:ApprovalTimeoutActivity>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Response timeout delay if reminder is not required" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                    <local:ApprovalTimeoutActivity sap2010:WorkflowViewState.IdRef="ApprovalTimeoutActivity_2">
+                      <local:ApprovalTimeoutActivity.timeoutDelay>
+                        <InArgument x:TypeArguments="x:Double">
+                          <mca:CSharpValue x:TypeArguments="x:Double">timeoutTimespan</mca:CSharpValue>
+                        </InArgument>
+                      </local:ApprovalTimeoutActivity.timeoutDelay>
+                      <local:ApprovalTimeoutActivity.workflowConfiguration>
+                        <InArgument x:TypeArguments="dcd:WorkflowConfiguration">
+                          <mca:CSharpValue x:TypeArguments="dcd:WorkflowConfiguration">workflowConfiguration</mca:CSharpValue>
+                        </InArgument>
+                      </local:ApprovalTimeoutActivity.workflowConfiguration>
+                      <local:ApprovalTimeoutActivity.workflowInstanceId>
+                        <InArgument x:TypeArguments="s:Guid">
+                          <mca:CSharpValue x:TypeArguments="s:Guid">workflowInstanceId</mca:CSharpValue>
+                        </InArgument>
+                      </local:ApprovalTimeoutActivity.workflowInstanceId>
+                      <local:ApprovalTimeoutActivity.workflowState>
+                        <InArgument x:TypeArguments="x:Byte">
+                          <mca:CSharpValue x:TypeArguments="x:Byte">workflowState</mca:CSharpValue>
+                        </InArgument>
+                      </local:ApprovalTimeoutActivity.workflowState>
+                    </local:ApprovalTimeoutActivity>
+                  </Sequence>
+                </If.Else>
+              </If>
+            </Sequence>
+          </PickBranch.Trigger>
+          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <local:TerminateTask sap2010:WorkflowViewState.IdRef="TerminateTask_2">
+              <local:TerminateTask.WorkflowInstanceId>
+                <InArgument x:TypeArguments="s:Guid">
+                  <mca:CSharpValue x:TypeArguments="s:Guid">workflowInstanceId</mca:CSharpValue>
+                </InArgument>
+              </local:TerminateTask.WorkflowInstanceId>
+            </local:TerminateTask>
+            <Assign sap2010:WorkflowViewState.IdRef="Assign_30">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Boolean">
+                  <mca:CSharpReference x:TypeArguments="x:Boolean">isTaskCompleted</mca:CSharpReference>
+                </OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </PickBranch>
+      </Pick>
+    </While>
+    <sads:DebugSymbol.Symbol>d2JDOlxXb3JrXHY1X1NwcmludDJfQ1BGXFNPVVJDRVxXb3JrZmxvd3NcREkuQ2hha3JhLldvcmtmbG93LkFjdGl2aXR5TGlicmFyaWVzXEFwcHJvdmFsQWN0aXZpdHkueGFtbHc5A4wEDgIBAT41PjwCAQNBM0E2AgECQwVMDgMBrQZNBVgOAwGUBlkFZA4DAfsFZQVwDgMB4gVxBXwOAwHJBX0FigQNAgEESjFKNgMBugZGC0ZhAwGuBlULVeABAwGhBlALUGEDAZUGYQth1gEDAYgGXAtcYAMB/AVtC23PAQMB7wVoC2hkAwHjBXkLeYsBAwHWBXQLdF4DAcoFgQEHiQQOAgERfwl/WAIBBYIBCbgCFgMBzQK5AgnaAhYDAa8C2wIJ9QIWAwGeAvYCCYgEFgIBEocBO4cBQQMBzgKKAQ2gARgDAacFogELtwIWAwHPArsCDc8CGAMBvgLRAgvZAhYDAbAC3QIN8AIYAwGhAvICC/QCFgMBnwL4Ag3zAxgCAS/1AwuHBBYCAROLAQ+fARsDAagFpAE9pAFEAwHQAqYBDbEBLQMBhAWyAQ3CAS0DAdAEwwENyQEbAwG+BMoBDbYCEgMB0QK8Ag/NAhsDAcACzgIPzgKUAQMBvwLSAg3YAiUDAbEC3gIP7wIbAwGiAvMCDfMCZAMBoAL5Ag/yAxQCATD2Aw38AyMCASL9Aw2GBBYCARSWARWWAXcDAbkFmwEVmwFgAwGpBakBE6kBXQMBlgWuAROuAVYDAYUFvwETvwFqAwHzBLUBE7UBXAMB4gS6ARO6AVUDAdEExgETxgFjAwG/BM0BE80BYwMB0gLRARGoAhwDAfYCqwIRtAIaAwHjAscCFccCdwMBwQLVAhPVAmEDAbIC6QIV6QJ3AwGjAvwCFfwCZgIBMYADE9YDHgIBb9kDE/ADHgIBPfkDE/kDYQIBI4QEOYQEPQIBIYAEE4AEaQIBFdIBE9sBHAMBqwTcARPnASYDAYgE6AET/QE4AwHDA/4BE6cCGAMB9wKyAj2yAkIDAfUCrgIXrgJtAwHkAoEDFb8DHQMBoQHAAxXVAzUCAXDaAxXvAzUCAT7ZAT/ZAUMDAb0E1QEZ1QFwAwGsBN8BGd8BWwMBmgTkARnkAX0DAYkE9QEZ9QFbAwH3A/ABGfABdAMB5gPrARnrAXMDAdUD+gEZ+gF9AwHEA4ECGYECiwEDAfgChQIXkAIiAwGvA5MCF6UCIgMBiQOFAxe+AyIDAa4BgwMZgwN5AwGiAcMDG8MDjgEDAZUBzQMbzQNpAwGJAdIDG9IDZAIBfcgDG8gDfwIBcd0DG90DaAIBY+cDG+cDaQIBV+wDG+wDZAIBS+IDG+IDfwIBP4YCGY8CIgMBsAOUAhmaAkIDAZ0DmwIZpAIiAwGKA4kDGY0DIQMBkAKOAxmZA0MDAfUBmgMZsQMjAwHKAbIDGb0DIgMBrwGNAkWNAkoDAcIDiQIfiQJ1AwGxA5cCH5cCbQMBngOiAkWiAkkDAZwDngIfngJ1AwGLA4sDHYsDgAEDAZECkQMfkQN7AwGDApYDH5YDbQMB9gGdAx+dA3oDAegBpAMdrwM3AwHLAboDH7oDbQMBvQG1Ax+1A3EDAbABpwMjpwNlAwHaAawDI6wDhwEDAcwB</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="Assign_9" sap:VirtualizedContainerService.HintSize="2561.6,62.4" />
+      <sap2010:ViewStateData Id="Assign_10" sap:VirtualizedContainerService.HintSize="2561.6,62.4" />
+      <sap2010:ViewStateData Id="Assign_11" sap:VirtualizedContainerService.HintSize="2561.6,62.4" />
+      <sap2010:ViewStateData Id="Assign_12" sap:VirtualizedContainerService.HintSize="2561.6,62.4" />
+      <sap2010:ViewStateData Id="Assign_31" sap:VirtualizedContainerService.HintSize="2561.6,62.4" />
+      <sap2010:ViewStateData Id="Receive_2" sap:VirtualizedContainerService.HintSize="255.2,88" />
+      <sap2010:ViewStateData Id="Sequence_13" sap:VirtualizedContainerService.HintSize="277.6,212.8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="GetTaskByTaskId_1" sap:VirtualizedContainerService.HintSize="846.4,22.4" />
+      <sap2010:ViewStateData Id="IsWorkflowStateConflict_1" sap:VirtualizedContainerService.HintSize="846.4,22.4" />
+      <sap2010:ViewStateData Id="SendReply_2" sap:VirtualizedContainerService.HintSize="846.4,88" />
+      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="556,62.4" />
+      <sap2010:ViewStateData Id="UpdateTask_1" sap:VirtualizedContainerService.HintSize="556,22.4" />
+      <sap2010:ViewStateData Id="CheckForPendingParallelTasks_3" sap:VirtualizedContainerService.HintSize="556,22.4" />
+      <sap2010:ViewStateData Id="Assign_16" sap:VirtualizedContainerService.HintSize="243.2,62.4" />
+      <sap2010:ViewStateData Id="Sequence_14" sap:VirtualizedContainerService.HintSize="265.6,187.2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="AutoCompletePendingParallelTasks_1" sap:VirtualizedContainerService.HintSize="243.2,22.4" />
+      <sap2010:ViewStateData Id="Assign_2" sap:VirtualizedContainerService.HintSize="243.2,62.4" />
+      <sap2010:ViewStateData Id="Sequence_15" sap:VirtualizedContainerService.HintSize="265.6,249.6">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="If_5" sap:VirtualizedContainerService.HintSize="556,401.6" />
+      <sap2010:ViewStateData Id="Sequence_29" sap:VirtualizedContainerService.HintSize="578.4,753.6">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Assign_35" sap:VirtualizedContainerService.HintSize="243.2,62.4" />
+      <sap2010:ViewStateData Id="If_12" sap:VirtualizedContainerService.HintSize="846.4,905.6" />
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="868.8,1283.2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="PickBranch_1" sap:VirtualizedContainerService.HintSize="899.2,1696" />
+      <sap2010:ViewStateData Id="Receive_3" sap:VirtualizedContainerService.HintSize="255.2,88" />
+      <sap2010:ViewStateData Id="SendReply_3" sap:VirtualizedContainerService.HintSize="255.2,88" />
+      <sap2010:ViewStateData Id="Sequence_27" sap:VirtualizedContainerService.HintSize="277.6,340.8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="WithdrawRequest_2" sap:VirtualizedContainerService.HintSize="200,22.4" />
+      <sap2010:ViewStateData Id="Sequence_28" sap:VirtualizedContainerService.HintSize="222.4,147.2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="PickBranch_3" sap:VirtualizedContainerService.HintSize="308,1696" />
+      <sap2010:ViewStateData Id="Delay_7" sap:VirtualizedContainerService.HintSize="287.2,22.4" />
+      <sap2010:ViewStateData Id="GetPendingTasksByWorkflowInstance_4" sap:VirtualizedContainerService.HintSize="287.2,22.4" />
+      <sap2010:ViewStateData Id="SendReminderEmail_3" sap:VirtualizedContainerService.HintSize="200,22.4" />
+      <sap2010:ViewStateData Id="ForEach`1_3" sap:VirtualizedContainerService.HintSize="287.2,211.2" />
+      <sap2010:ViewStateData Id="Assign_32" sap:VirtualizedContainerService.HintSize="287.2,62.4" />
+      <sap2010:ViewStateData Id="Sequence_26" sap:VirtualizedContainerService.HintSize="309.6,563.2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="While_2" sap:VirtualizedContainerService.HintSize="464,724.8" />
+      <sap2010:ViewStateData Id="ApprovalTimeoutActivity_1" sap:VirtualizedContainerService.HintSize="464,22.4" />
+      <sap2010:ViewStateData Id="Sequence_25" sap:VirtualizedContainerService.HintSize="486.4,912">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ApprovalTimeoutActivity_2" sap:VirtualizedContainerService.HintSize="200,22.4" />
+      <sap2010:ViewStateData Id="Sequence_24" sap:VirtualizedContainerService.HintSize="222.4,147.2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="If_11" sap:VirtualizedContainerService.HintSize="733.6,1064" />
+      <sap2010:ViewStateData Id="Sequence_17" sap:VirtualizedContainerService.HintSize="756,1188.8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="TerminateTask_2" sap:VirtualizedContainerService.HintSize="243.2,22.4" />
+      <sap2010:ViewStateData Id="Assign_30" sap:VirtualizedContainerService.HintSize="243.2,62.4" />
+      <sap2010:ViewStateData Id="Sequence_6" sap:VirtualizedContainerService.HintSize="265.6,249.6">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="PickBranch_2" sap:VirtualizedContainerService.HintSize="786.4,1696" />
+      <sap2010:ViewStateData Id="Pick_1" sap:VirtualizedContainerService.HintSize="2536,1742.4" />
+      <sap2010:ViewStateData Id="While_1" sap:VirtualizedContainerService.HintSize="2561.6,1904" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="2584,2540.8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="DI.Chakra.Workflow.ActivityLibraries.ApprovalActivity_1" sap:VirtualizedContainerService.HintSize="2624,2620.8" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>

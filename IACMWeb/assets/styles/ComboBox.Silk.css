@@ -1,0 +1,245 @@
+﻿/* {
+	color:#666666;
+	font-size:13px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+ */
+.RadComboBox.RadComboBox_IACMSkin {
+    display:inline-block;
+    vertical-align:middle!important;
+}
+
+.rcbInputCell,  .rcbArrowCell {
+	height:26px;
+	border-width:1px;
+	border-style:solid;
+	background-position:0 0;
+	background-repeat:repeat-x;
+}
+
+ table td.rcbInputCell,  table td.rcbArrowCell {
+	border-width:1px;
+}
+
+ .rcbInputCell {
+	border-color:#ddd;
+	color:#555;
+	background-color:#fff;
+}
+
+ table td.rcbInputCellLeft {
+	border-right-width:0;
+}
+
+ table td.rcbInputCellRight {
+	border-left-width:0;
+}
+
+ .rcbInput {
+	color:#555;
+	font-size:13px;
+	font-family:Arial, Helvetica, sans-serif;    
+    width: 3em;
+}
+ ul.rcbList {
+  background: #FFF;
+  border: 1px solid #DDD;
+}
+
+ul.rcbList li {
+    padding: 0.2em;
+}
+
+ .rcbEmptyMessage {
+	color:#b1b1b1;
+}
+
+ .rcbArrowCell {
+	width:24px;
+	border-color:#ddd;
+	background-color:#fff;
+	color:#666666;
+	/*background-image:url('../../images/common/sprite_2x.png');*/
+}
+
+ .rcbArrowCell a {
+	width:24px;
+	height:26px;
+	background-image:url('../../images/common/sprite_2x.png');
+	background-position:-4px -579px;
+    text-indent:-9999px;
+}
+
+ .rcbArrowCellHidden,  .rcbArrowCellHidden a {
+	width:0;
+}
+
+ .rcbArrowCellHidden.rcbArrowCellLeft {
+	border-right-width:0;
+}
+
+ .rcbArrowCellHidden.rcbArrowCellRight {
+	border-left-width:0;
+}
+
+ .rcbReadOnly .rcbArrowCellLeft {
+	border-right-width:0;
+}
+
+ .rcbReadOnly .rcbArrowCellRight {
+	border-left-width:0;
+}
+
+ .rcbLabel {
+	line-height:26px;
+}
+
+ .rcbHovered .rcbInputCell {
+	border-color:#207bbd;
+	color:#444;
+	background-color:#fff;
+}
+
+ .rcbHovered .rcbInput {
+	color:#444;
+}
+
+ .rcbHovered .rcbArrowCell {
+	border-color:#207bbd;
+    border-left: 0;
+	background-position:0 -1000px;
+}
+
+
+ .rcbFocused .rcbInputCell {
+	/*border-color:#2292a8;*/
+	color:#000;
+}
+
+ .rcbFocused .rcbInput {
+	color:#000;
+}
+
+ .rcbFocused .rcbArrowCell {
+	border-color:#207bbd;
+    border-left: 0;
+	color:#fff;
+	background-position:0 -2000px;
+}
+
+ .rcbFocused .rcbArrowCell a {
+	background-position:-4px -515px;
+}
+
+ .rcbDisabled .rcbInputCell {
+	background-position:0 0;
+}
+
+ .rcbDisabled .rcbArrowCell {
+	background-position:0 0;
+}
+
+ .rcbReadOnly .rcbInputCell {
+	color:#999;
+	/*background-image:url('../../images/common/sprite_2x.png');*/
+	background-position:0 0;
+}
+
+ .rcbReadOnly .rcbInput {
+  color: #333;
+  border: 0;
+}
+
+ .rcbReadOnly .rcbArrowCell {
+	background-position:0 0;
+}
+
+ .rcbHovered .rcbReadOnly .rcbInputCell {
+	border-color:#207bbd;
+	background-position:0 -1000px;
+}
+
+
+
+ .rcbHovered .rcbReadOnly .rcbArrowCell {
+	background-position:0 -1000px;
+}
+
+ .rcbFocused .rcbReadOnly .rcbInputCell {
+     border: 1px solid #207BBD;
+     border-right:0;
+	color:#fff;
+	background-color:#fff;
+	background-position:0 -2000px;
+}
+
+ .rcbFocused .rcbReadOnly .rcbInput {
+	color:#207bdd;
+      border: none!important;
+}
+
+ .rcbFocused .rcbReadOnly .rcbArrowCell {
+	background-position:0 -2000px;
+}
+
+ .rcbDisabled .rcbReadOnly .rcbInputCell {
+	background-position:0 0;
+}
+
+ .rcbDisabled .rcbReadOnly .rcbArrowCell {
+	background-position:0 0;
+}
+
+
+ .rcbHeader,  .rcbFooter {
+	color:#5f5f5f;
+	background-color:#eaeaea;
+}
+
+ .rcbHeader {
+	border-bottom-color:#828282;
+}
+
+ .rcbFooter {
+	border-top-color:#828282;
+}
+
+ .rcbHovered {
+	  color: #fff;
+  background-color: #207bdd;
+
+}
+
+ .rcbSelected {
+	color:#000;
+	background-color:#fff1cc;
+}
+
+ .rcbLoading {
+	color:#555;
+	background-color:#fff;
+}
+
+ .rcbItem em {
+	color:#555;
+	background-color:#fff;
+}
+
+ .rcbCheckAllItems {
+	border-color:#207bbd;
+	color:#5f5f5f;
+	background-color:#eaeaea;
+}
+
+ .rcbMoreResults {
+	border-color:#207bbd;
+	color:#5f5f5f;
+	background-color:#eaeaea;
+}
+
+ .rcbSeparator {
+	color:#fff;
+	background:#8a8a8a;
+}
+
+

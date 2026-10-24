@@ -1,0 +1,16 @@
+Application,BusinessRole,Description,TechnicalRole,Level1Approver,Level1ApproverType,Level2Approver,Level2ApproverType,Level3Approver,Level3ApproverType
+Email,Group-Design Engineering,Group-Design Engineering,Design Engineering,,0,,0,,0
+Email,Group-Finance Administration,Group-Finance Administration,Finance Administration,,0,,0,,0
+Email,Group-Legal,Group-Legal,Legal,,0,,0,,0
+Email,Group-LocalDomainAdmins,Group-LocalDomainAdmins,LocalDomainAdmins,,0,,0,,0
+Email,Group-LocalDomainServers,Group-LocalDomainServers,LocalDomainServers,,0,,0,,0
+Email,Group-OtherDomainServers,Group-OtherDomainServers,OtherDomainServers,,0,,0,,0
+Email,Group-Production Group,Group-Production Group,Production Group,,0,,0,,0
+Email,Group-Sales,Group-Sales,Sales,,0,,0,,0
+Email,Group-Finance,Group-Finance,Finance,,0,,0,,0
+Email,Group-Human Resources,Group-Human Resources,Human Resources,,0,,0,,0
+Email,Group-Admissions,Group-Admissions,Admissions,,0,,0,,0
+Email,Group-All_Notes_User Groups,Group-All_Notes_User Groups,All_Notes_User Groups,,0,,0,,0
+Email,Group-Comms IT Group,Group-Comms IT Group,Comms IT Group,,0,,0,,0
+Email,"Group-Admissions,Sales","Group-Admissions,Sales","Admissions,Sales",,0,,0,,0
+Email,"Group-Admissions,Finance","Group-Admissions,Finance","Admissions,Finance",,0,,0,,0

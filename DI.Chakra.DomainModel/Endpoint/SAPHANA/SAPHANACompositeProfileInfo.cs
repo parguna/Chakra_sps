@@ -1,0 +1,62 @@
+﻿using DI.Chakra.Repository;
+using DI.Chakra.Transaction;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DI.Chakra.DomainModel
+{
+    public class SAPHANACompositeProfileInfo : DomainModelBase<SAPHANACompositeProfileInfo, EntityModel.SAPHANACompositeProfileInfo>
+    {
+        
+
+        public long EndPointSystemId { get; set; }
+
+        public string PROFILE_CODE { get; set; }
+
+        public string PROFILE_DESC { get; set; }
+
+        public string SUBProfile_Code { get; set; }
+
+        public string TargetSysId { get; set; }
+
+        public string CreatedBy { get; set; }
+
+        public DateTime CreatedDate { get; set; }
+
+        public string LastModifiedBy { get; set; }
+
+        public DateTime? LastModifiedDate { get; set; }
+
+        public int? Version { get; set; }
+
+
+        public static SAPHANACompositeProfileInfo GetByProfileCode(string profileCode)
+        {
+            using (DataAccessTransaction dataAccessTransaction = new DataAccessTransaction())
+            {
+                return ORMap(new RepositoryBase<EntityModel.SAPHANACompositeProfileInfo>(dataAccessTransaction).Get(compositeProfile => compositeProfile.SUBProfile_Code == profileCode).FirstOrDefault());
+            }
+        }
+
+        public static SAPHANACompositeProfileInfo GetByProfileCode(string profileCode, string subProfileCode, long endPointSystemId)
+        {
+            using (DataAccessTransaction dataAccessTransaction = new DataAccessTransaction())
+            {
+                return ORMap(new RepositoryBase<EntityModel.SAPHANACompositeProfileInfo>(dataAccessTransaction).Get(compositeProfile => compositeProfile.SUBProfile_Code == subProfileCode
+                    && compositeProfile.PROFILE_CODE == profileCode && compositeProfile.EndPointSystemId == endPointSystemId, true).FirstOrDefault());
+            }
+        }
+
+        public static IList<SAPHANACompositeProfileInfo> GetByModifiedDate(long endPointSystemId,DateTime? modifiedDate)
+        {
+            using (DataAccessTransaction dataAccessTransaction = new DataAccessTransaction())
+            {
+                return ORMapList(new RepositoryBase<EntityModel.SAPHANACompositeProfileInfo>(dataAccessTransaction).Get(compositeProfile => compositeProfile.EndPointSystemId == endPointSystemId && compositeProfile.LastModifiedDate < modifiedDate, true).ToList());
+            }
+        }
+
+    }
+}

@@ -1,0 +1,590 @@
+﻿<WorkflowService mc:Ignorable="sap sap2010 sads" p1:TextExpression.Namespaces="{x:Reference __ReferenceID1}" p1:TextExpression.References="{x:Reference __ReferenceID2}" ConfigurationName="AttestationApprovalWFService" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap2010:WorkflowViewState.IdRef="WorkflowService_1" Name="AttestationApprovalWFService"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel"
+ xmlns:dcd="clr-namespace:DI.Chakra.DomainModel;assembly=DI.Chakra.DomainModel"
+ xmlns:dcie="clr-namespace:DI.Chakra.Infrastructure.Enums;assembly=DI.Chakra.Infrastructure"
+ xmlns:dcwa="clr-namespace:DI.Chakra.Workflow.ActivityLibraries;assembly=DI.Chakra.Workflow.ActivityLibraries"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities"
+ xmlns:p="http://tempuri.org/"
+ xmlns:p1="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <p1:Sequence DisplayName="Single Approval Attestation Workflow" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <p1:TextExpression.Namespaces>
+      <sco:Collection x:TypeArguments="x:String" x:Name="__ReferenceID1">
+        <x:String>System</x:String>
+        <x:String>System.Collections.Generic</x:String>
+        <x:String>System.Data</x:String>
+        <x:String>System.Linq</x:String>
+        <x:String>System.Text</x:String>
+        <x:String>DI.Chakra.DomainModel</x:String>
+        <x:String>System.ServiceModel.Activities</x:String>
+        <x:String>DI.Chakra.Infrastructure.Enums</x:String>
+      </sco:Collection>
+    </p1:TextExpression.Namespaces>
+    <p1:TextExpression.References>
+      <sco:Collection x:TypeArguments="p1:AssemblyReference" x:Name="__ReferenceID2">
+        <p1:AssemblyReference>AutoMapper</p1:AssemblyReference>
+        <p1:AssemblyReference>Microsoft.CSharp</p1:AssemblyReference>
+        <p1:AssemblyReference>Newtonsoft.Json</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Data.DataSetExtensions</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Web.DynamicData</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Drawing</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Web.Entity</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Web.ApplicationServices</p1:AssemblyReference>
+        <p1:AssemblyReference>System</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Activities</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Data</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Data.Entity</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Runtime.Serialization</p1:AssemblyReference>
+        <p1:AssemblyReference>System.ServiceModel</p1:AssemblyReference>
+        <p1:AssemblyReference>System.ServiceModel.Activities</p1:AssemblyReference>
+        <p1:AssemblyReference>System.ServiceModel.Channels</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Web</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Web.Extensions</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Xaml</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Xml</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Xml.Linq</p1:AssemblyReference>
+        <p1:AssemblyReference>DI.Chakra.DomainModel</p1:AssemblyReference>
+        <p1:AssemblyReference>DI.Chakra.Dto</p1:AssemblyReference>
+        <p1:AssemblyReference>DI.Chakra.EntityModel</p1:AssemblyReference>
+        <p1:AssemblyReference>DI.Chakra.Workflow.ActivityLibraries</p1:AssemblyReference>
+        <p1:AssemblyReference>DI.Chakra.Infrastructure</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Core</p1:AssemblyReference>
+        <p1:AssemblyReference>mscorlib</p1:AssemblyReference>
+        <p1:AssemblyReference>DI.Chakra.Workflow.Services</p1:AssemblyReference>
+      </sco:Collection>
+    </p1:TextExpression.References>
+    <p1:Sequence.Variables>
+      <p1:Variable x:TypeArguments="CorrelationHandle" Name="handle" />
+      <p1:Variable x:TypeArguments="dcd:Task" Name="task" />
+      <p1:Variable x:TypeArguments="scg:List(dcd:Task)" Name="taskList" />
+      <p1:Variable x:TypeArguments="x:Int64" Name="campaignId" />
+    </p1:Sequence.Variables>
+    <Receive x:Name="__ReferenceID0" CanCreateInstance="True" DisplayName="Initiate Attestation Request" sap2010:WorkflowViewState.IdRef="Receive_1" OperationName="InitiateAttestationRequest" ServiceContractName="p:IWFService">
+      <Receive.CorrelationInitializers>
+        <RequestReplyCorrelationInitializer>
+          <RequestReplyCorrelationInitializer.CorrelationHandle>
+            <p1:InArgument x:TypeArguments="CorrelationHandle">
+              <mca:CSharpValue x:TypeArguments="CorrelationHandle">handle</mca:CSharpValue>
+            </p1:InArgument>
+          </RequestReplyCorrelationInitializer.CorrelationHandle>
+        </RequestReplyCorrelationInitializer>
+      </Receive.CorrelationInitializers>
+      <ReceiveParametersContent>
+        <p1:OutArgument x:TypeArguments="scg:List(dcd:Task)" x:Key="taskList">
+          <mca:CSharpReference x:TypeArguments="scg:List(dcd:Task)">taskList</mca:CSharpReference>
+        </p1:OutArgument>
+        <p1:OutArgument x:TypeArguments="x:Int64" x:Key="campaignId">
+          <mca:CSharpReference x:TypeArguments="x:Int64">campaignId</mca:CSharpReference>
+        </p1:OutArgument>
+      </ReceiveParametersContent>
+    </Receive>
+    <SendReply Request="{x:Reference __ReferenceID0}" DisplayName="SendResponse" sap2010:WorkflowViewState.IdRef="SendReply_1">
+      <SendParametersContent />
+    </SendReply>
+    <p1:Sequence DisplayName="Wait for Reponse" sap2010:WorkflowViewState.IdRef="Sequence_13">
+      <p1:Sequence.Variables>
+        <p1:Variable x:TypeArguments="s:Guid" Name="workflowInstanceId">
+          <p1:Variable.Default>
+            <mca:CSharpValue x:TypeArguments="s:Guid">Guid.NewGuid()</mca:CSharpValue>
+          </p1:Variable.Default>
+        </p1:Variable>
+        <p1:Variable x:TypeArguments="CorrelationHandle" Name="ApprovalCorrelationHandle" />
+        <p1:Variable x:TypeArguments="dcd:WorkflowConfiguration" Name="workflowConfiguration" />
+        <p1:Variable x:TypeArguments="scg:List(dcd:Task)" Name="tasksToNotify" />
+        <p1:Variable x:TypeArguments="x:Boolean" Default="False" Name="isSkipNextLevel" />
+        <p1:Variable x:TypeArguments="x:Boolean" Default="True" Name="isNextLevelApprovalRequired" />
+        <p1:Variable x:TypeArguments="x:Boolean" Default="False" Name="isApproved" />
+        <p1:Variable x:TypeArguments="dcie:AccountType" Name="accountType" />
+        <p1:Variable x:TypeArguments="x:Boolean" Name="isRejected" />
+      </p1:Sequence.Variables>
+      <InitializeCorrelation sap2010:WorkflowViewState.IdRef="InitializeCorrelation_2">
+        <InitializeCorrelation.Correlation>
+          <p1:InArgument x:TypeArguments="CorrelationHandle">
+            <mca:CSharpValue x:TypeArguments="CorrelationHandle">ApprovalCorrelationHandle</mca:CSharpValue>
+          </p1:InArgument>
+        </InitializeCorrelation.Correlation>
+        <p1:InArgument x:TypeArguments="x:String" x:Key="workflowInstanceId">
+          <mca:CSharpValue x:TypeArguments="x:String">workflowInstanceId.ToString()</mca:CSharpValue>
+        </p1:InArgument>
+      </InitializeCorrelation>
+      <p1:Assign sap2010:WorkflowViewState.IdRef="Assign_1">
+        <p1:Assign.To>
+          <p1:OutArgument x:TypeArguments="dcd:Task">
+            <mca:CSharpReference x:TypeArguments="dcd:Task">task</mca:CSharpReference>
+          </p1:OutArgument>
+        </p1:Assign.To>
+        <p1:Assign.Value>
+          <p1:InArgument x:TypeArguments="dcd:Task">
+            <mca:CSharpValue x:TypeArguments="dcd:Task">taskList.FirstOrDefault()</mca:CSharpValue>
+          </p1:InArgument>
+        </p1:Assign.Value>
+      </p1:Assign>
+      <dcwa:GetWorkflowConfigurationByTask sap2010:WorkflowViewState.IdRef="GetWorkflowConfigurationByTask_2">
+        <dcwa:GetWorkflowConfigurationByTask.Task>
+          <p1:InArgument x:TypeArguments="dcd:Task">
+            <mca:CSharpValue x:TypeArguments="dcd:Task">task</mca:CSharpValue>
+          </p1:InArgument>
+        </dcwa:GetWorkflowConfigurationByTask.Task>
+        <dcwa:GetWorkflowConfigurationByTask.WorkflowConfiguration>
+          <p1:OutArgument x:TypeArguments="dcd:WorkflowConfiguration">
+            <mca:CSharpReference x:TypeArguments="dcd:WorkflowConfiguration">workflowConfiguration</mca:CSharpReference>
+          </p1:OutArgument>
+        </dcwa:GetWorkflowConfigurationByTask.WorkflowConfiguration>
+      </dcwa:GetWorkflowConfigurationByTask>
+      <dcwa:UpdateAttestationCampaignInstanceActivity sap2010:WorkflowViewState.IdRef="UpdateAttestationCampaignInstanceActivity_1">
+        <dcwa:UpdateAttestationCampaignInstanceActivity.CampaignId>
+          <p1:InArgument x:TypeArguments="x:Int64">
+            <mca:CSharpValue x:TypeArguments="x:Int64">campaignId</mca:CSharpValue>
+          </p1:InArgument>
+        </dcwa:UpdateAttestationCampaignInstanceActivity.CampaignId>
+        <dcwa:UpdateAttestationCampaignInstanceActivity.WorkflowInstanceId>
+          <p1:InArgument x:TypeArguments="s:Guid">
+            <mca:CSharpValue x:TypeArguments="s:Guid">workflowInstanceId</mca:CSharpValue>
+          </p1:InArgument>
+        </dcwa:UpdateAttestationCampaignInstanceActivity.WorkflowInstanceId>
+      </dcwa:UpdateAttestationCampaignInstanceActivity>
+      <p1:Sequence DisplayName="Approval Section" sap2010:WorkflowViewState.IdRef="Sequence_12">
+        <p1:ForEach x:TypeArguments="dcd:WorkflowConfigurationDetail" DisplayName="ForEach&lt;WorkflowConfigurationDetail&gt;" sap2010:WorkflowViewState.IdRef="ForEach`1_5">
+          <p1:ForEach.Values>
+            <p1:InArgument x:TypeArguments="scg:IEnumerable(dcd:WorkflowConfigurationDetail)">
+              <mca:CSharpValue x:TypeArguments="scg:IEnumerable(dcd:WorkflowConfigurationDetail)">workflowConfiguration.WorkflowConfigurationDetails</mca:CSharpValue>
+            </p1:InArgument>
+          </p1:ForEach.Values>
+          <p1:ActivityAction x:TypeArguments="dcd:WorkflowConfigurationDetail">
+            <p1:ActivityAction.Argument>
+              <p1:DelegateInArgument x:TypeArguments="dcd:WorkflowConfigurationDetail" Name="item" />
+            </p1:ActivityAction.Argument>
+            <p1:Sequence sap2010:WorkflowViewState.IdRef="Sequence_11">
+              <p1:If sap2010:WorkflowViewState.IdRef="If_3">
+                <p1:If.Condition>
+                  <p1:InArgument x:TypeArguments="x:Boolean">
+                    <mca:CSharpValue x:TypeArguments="x:Boolean">item.SequenceNumber==1</mca:CSharpValue>
+                  </p1:InArgument>
+                </p1:If.Condition>
+                <p1:If.Then>
+                  <p1:Sequence DisplayName="First Level Approval" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <dcwa:CreateTask sap2010:WorkflowViewState.IdRef="CreateTask_3">
+                      <dcwa:CreateTask.TaskList>
+                        <p1:InArgument x:TypeArguments="scg:List(dcd:Task)">
+                          <mca:CSharpValue x:TypeArguments="scg:List(dcd:Task)">taskList</mca:CSharpValue>
+                        </p1:InArgument>
+                      </dcwa:CreateTask.TaskList>
+                      <dcwa:CreateTask.WorkflowConfiguration>
+                        <p1:InArgument x:TypeArguments="dcd:WorkflowConfiguration">
+                          <mca:CSharpValue x:TypeArguments="dcd:WorkflowConfiguration">workflowConfiguration</mca:CSharpValue>
+                        </p1:InArgument>
+                      </dcwa:CreateTask.WorkflowConfiguration>
+                      <dcwa:CreateTask.WorkflowInstanceId>
+                        <p1:InArgument x:TypeArguments="s:Guid">
+                          <mca:CSharpValue x:TypeArguments="s:Guid">workflowInstanceId</mca:CSharpValue>
+                        </p1:InArgument>
+                      </dcwa:CreateTask.WorkflowInstanceId>
+                    </dcwa:CreateTask>
+                    <p1:Assign sap2010:WorkflowViewState.IdRef="Assign_2">
+                      <p1:Assign.To>
+                        <p1:OutArgument x:TypeArguments="scg:List(dcd:Task)">
+                          <mca:CSharpReference x:TypeArguments="scg:List(dcd:Task)">taskList</mca:CSharpReference>
+                        </p1:OutArgument>
+                      </p1:Assign.To>
+                      <p1:Assign.Value>
+                        <p1:InArgument x:TypeArguments="scg:List(dcd:Task)">
+                          <mca:CSharpValue x:TypeArguments="scg:List(dcd:Task)">null</mca:CSharpValue>
+                        </p1:InArgument>
+                      </p1:Assign.Value>
+                    </p1:Assign>
+                    <p1:Sequence sap2010:WorkflowViewState.IdRef="Sequence_5">
+                      <dcwa:GetPendingTasksByWorkflowInstance sap2010:WorkflowViewState.IdRef="GetPendingTasksByWorkflowInstance_2">
+                        <dcwa:GetPendingTasksByWorkflowInstance.PendingTasks>
+                          <p1:OutArgument x:TypeArguments="scg:List(dcd:Task)">
+                            <mca:CSharpReference x:TypeArguments="scg:List(dcd:Task)">tasksToNotify</mca:CSharpReference>
+                          </p1:OutArgument>
+                        </dcwa:GetPendingTasksByWorkflowInstance.PendingTasks>
+                        <dcwa:GetPendingTasksByWorkflowInstance.WorkflowInstanceId>
+                          <p1:InArgument x:TypeArguments="s:Guid">
+                            <mca:CSharpValue x:TypeArguments="s:Guid">workflowInstanceId</mca:CSharpValue>
+                          </p1:InArgument>
+                        </dcwa:GetPendingTasksByWorkflowInstance.WorkflowInstanceId>
+                      </dcwa:GetPendingTasksByWorkflowInstance>
+                      <p1:ForEach x:TypeArguments="dcd:Task" DisplayName="ForEach&lt;Task&gt;" sap2010:WorkflowViewState.IdRef="ForEach`1_3">
+                        <p1:ForEach.Values>
+                          <p1:InArgument x:TypeArguments="scg:IEnumerable(dcd:Task)">
+                            <mca:CSharpValue x:TypeArguments="scg:IEnumerable(dcd:Task)">tasksToNotify</mca:CSharpValue>
+                          </p1:InArgument>
+                        </p1:ForEach.Values>
+                        <p1:ActivityAction x:TypeArguments="dcd:Task">
+                          <p1:ActivityAction.Argument>
+                            <p1:DelegateInArgument x:TypeArguments="dcd:Task" Name="task" />
+                          </p1:ActivityAction.Argument>
+                          <dcwa:SendNotificationEmail IsMailSent="{x:Null}" sap2010:WorkflowViewState.IdRef="SendNotificationEmail_3">
+                            <dcwa:SendNotificationEmail.Task>
+                              <p1:InArgument x:TypeArguments="dcd:Task">
+                                <mca:CSharpValue x:TypeArguments="dcd:Task">task</mca:CSharpValue>
+                              </p1:InArgument>
+                            </dcwa:SendNotificationEmail.Task>
+                            <dcwa:SendNotificationEmail.WorkflowConfiguration>
+                              <p1:InArgument x:TypeArguments="dcd:WorkflowConfiguration">
+                                <mca:CSharpValue x:TypeArguments="dcd:WorkflowConfiguration">workflowConfiguration</mca:CSharpValue>
+                              </p1:InArgument>
+                            </dcwa:SendNotificationEmail.WorkflowConfiguration>
+                          </dcwa:SendNotificationEmail>
+                        </p1:ActivityAction>
+                      </p1:ForEach>
+                      <dcwa:MakeTaskLightWeight sap2010:WorkflowViewState.IdRef="MakeTaskLightWeight_1">
+                        <dcwa:MakeTaskLightWeight.LightWeightTask>
+                          <p1:OutArgument x:TypeArguments="dcd:Task">
+                            <mca:CSharpReference x:TypeArguments="dcd:Task">task</mca:CSharpReference>
+                          </p1:OutArgument>
+                        </dcwa:MakeTaskLightWeight.LightWeightTask>
+                        <dcwa:MakeTaskLightWeight.Task>
+                          <p1:InArgument x:TypeArguments="dcd:Task">
+                            <mca:CSharpValue x:TypeArguments="dcd:Task">task</mca:CSharpValue>
+                          </p1:InArgument>
+                        </dcwa:MakeTaskLightWeight.Task>
+                      </dcwa:MakeTaskLightWeight>
+                    </p1:Sequence>
+                    <dcwa:ApprovalActivity DisplayName="Approval Activity" sap2010:WorkflowViewState.IdRef="ApprovalActivity_3">
+                      <dcwa:ApprovalActivity.ApprovalCorrelationHandle>
+                        <p1:InArgument x:TypeArguments="CorrelationHandle">
+                          <mca:CSharpValue x:TypeArguments="CorrelationHandle">ApprovalCorrelationHandle</mca:CSharpValue>
+                        </p1:InArgument>
+                      </dcwa:ApprovalActivity.ApprovalCorrelationHandle>
+                      <dcwa:ApprovalActivity.workflowConfiguration>
+                        <p1:InArgument x:TypeArguments="dcd:WorkflowConfiguration">
+                          <mca:CSharpValue x:TypeArguments="dcd:WorkflowConfiguration">workflowConfiguration</mca:CSharpValue>
+                        </p1:InArgument>
+                      </dcwa:ApprovalActivity.workflowConfiguration>
+                      <dcwa:ApprovalActivity.workflowInstanceId>
+                        <p1:InArgument x:TypeArguments="s:Guid">
+                          <mca:CSharpValue x:TypeArguments="s:Guid">workflowInstanceId</mca:CSharpValue>
+                        </p1:InArgument>
+                      </dcwa:ApprovalActivity.workflowInstanceId>
+                      <dcwa:ApprovalActivity.workflowState>
+                        <p1:InArgument x:TypeArguments="x:Byte">
+                          <mca:CSharpValue x:TypeArguments="x:Byte">item.SequenceNumber</mca:CSharpValue>
+                        </p1:InArgument>
+                      </dcwa:ApprovalActivity.workflowState>
+                    </dcwa:ApprovalActivity>
+                  </p1:Sequence>
+                </p1:If.Then>
+                <p1:If.Else>
+                  <p1:Sequence sap2010:WorkflowViewState.IdRef="Sequence_17">
+                    <dcwa:IsNextLevelApprovalRequired sap2010:WorkflowViewState.IdRef="IsNextLevelApprovalRequired_1">
+                      <dcwa:IsNextLevelApprovalRequired.IsRequired>
+                        <p1:OutArgument x:TypeArguments="x:Boolean">
+                          <mca:CSharpReference x:TypeArguments="x:Boolean">isNextLevelApprovalRequired</mca:CSharpReference>
+                        </p1:OutArgument>
+                      </dcwa:IsNextLevelApprovalRequired.IsRequired>
+                      <dcwa:IsNextLevelApprovalRequired.Task>
+                        <p1:InArgument x:TypeArguments="dcd:Task">
+                          <mca:CSharpValue x:TypeArguments="dcd:Task">task</mca:CSharpValue>
+                        </p1:InArgument>
+                      </dcwa:IsNextLevelApprovalRequired.Task>
+                    </dcwa:IsNextLevelApprovalRequired>
+                    <p1:If sap2010:WorkflowViewState.IdRef="If_6">
+                      <p1:If.Condition>
+                        <p1:InArgument x:TypeArguments="x:Boolean">
+                          <mca:CSharpValue x:TypeArguments="x:Boolean">isNextLevelApprovalRequired</mca:CSharpValue>
+                        </p1:InArgument>
+                      </p1:If.Condition>
+                      <p1:If.Then>
+                        <p1:Sequence DisplayName="Subsequent Approvals" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                          <dcwa:ResetReviewCompleteFlagForNextApprovalLevel sap2010:WorkflowViewState.IdRef="ResetReviewCompleteFlagForNextApprovalLevel_2">
+                            <dcwa:ResetReviewCompleteFlagForNextApprovalLevel.WorkflowInstanceId>
+                              <p1:InArgument x:TypeArguments="s:Guid">
+                                <mca:CSharpValue x:TypeArguments="s:Guid">workflowInstanceId</mca:CSharpValue>
+                              </p1:InArgument>
+                            </dcwa:ResetReviewCompleteFlagForNextApprovalLevel.WorkflowInstanceId>
+                          </dcwa:ResetReviewCompleteFlagForNextApprovalLevel>
+                          <dcwa:GetNextLevelApprovalTasks IsApproved="{x:Null}" sap2010:WorkflowViewState.IdRef="GetNextLevelApprovalTasks_2">
+                            <dcwa:GetNextLevelApprovalTasks.ApprovalLevel>
+                              <p1:InArgument x:TypeArguments="x:Byte">
+                                <mca:CSharpValue x:TypeArguments="x:Byte">item.SequenceNumber</mca:CSharpValue>
+                              </p1:InArgument>
+                            </dcwa:GetNextLevelApprovalTasks.ApprovalLevel>
+                            <dcwa:GetNextLevelApprovalTasks.NextLevelTask>
+                              <p1:OutArgument x:TypeArguments="dcd:Task">
+                                <mca:CSharpReference x:TypeArguments="dcd:Task">task</mca:CSharpReference>
+                              </p1:OutArgument>
+                            </dcwa:GetNextLevelApprovalTasks.NextLevelTask>
+                            <dcwa:GetNextLevelApprovalTasks.SkipNextLevel>
+                              <p1:OutArgument x:TypeArguments="x:Boolean">
+                                <mca:CSharpReference x:TypeArguments="x:Boolean">isSkipNextLevel</mca:CSharpReference>
+                              </p1:OutArgument>
+                            </dcwa:GetNextLevelApprovalTasks.SkipNextLevel>
+                            <dcwa:GetNextLevelApprovalTasks.Task>
+                              <p1:InArgument x:TypeArguments="dcd:Task">
+                                <mca:CSharpValue x:TypeArguments="dcd:Task">task</mca:CSharpValue>
+                              </p1:InArgument>
+                            </dcwa:GetNextLevelApprovalTasks.Task>
+                            <dcwa:GetNextLevelApprovalTasks.WorkflowConfiguration>
+                              <p1:InArgument x:TypeArguments="dcd:WorkflowConfiguration">
+                                <mca:CSharpValue x:TypeArguments="dcd:WorkflowConfiguration">workflowConfiguration</mca:CSharpValue>
+                              </p1:InArgument>
+                            </dcwa:GetNextLevelApprovalTasks.WorkflowConfiguration>
+                          </dcwa:GetNextLevelApprovalTasks>
+                          <p1:If sap2010:WorkflowViewState.IdRef="If_5">
+                            <p1:If.Condition>
+                              <p1:InArgument x:TypeArguments="x:Boolean">
+                                <mca:CSharpValue x:TypeArguments="x:Boolean">!isSkipNextLevel</mca:CSharpValue>
+                              </p1:InArgument>
+                            </p1:If.Condition>
+                            <p1:If.Then>
+                              <p1:Sequence sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                <dcwa:GetPendingTasksByWorkflowInstance sap2010:WorkflowViewState.IdRef="GetPendingTasksByWorkflowInstance_4">
+                                  <dcwa:GetPendingTasksByWorkflowInstance.PendingTasks>
+                                    <p1:OutArgument x:TypeArguments="scg:List(dcd:Task)">
+                                      <mca:CSharpReference x:TypeArguments="scg:List(dcd:Task)">tasksToNotify</mca:CSharpReference>
+                                    </p1:OutArgument>
+                                  </dcwa:GetPendingTasksByWorkflowInstance.PendingTasks>
+                                  <dcwa:GetPendingTasksByWorkflowInstance.WorkflowInstanceId>
+                                    <p1:InArgument x:TypeArguments="s:Guid">
+                                      <mca:CSharpValue x:TypeArguments="s:Guid">workflowInstanceId</mca:CSharpValue>
+                                    </p1:InArgument>
+                                  </dcwa:GetPendingTasksByWorkflowInstance.WorkflowInstanceId>
+                                </dcwa:GetPendingTasksByWorkflowInstance>
+                                <p1:ForEach x:TypeArguments="dcd:Task" DisplayName="ForEach&lt;Task&gt;" sap2010:WorkflowViewState.IdRef="ForEach`1_6">
+                                  <p1:ForEach.Values>
+                                    <p1:InArgument x:TypeArguments="scg:IEnumerable(dcd:Task)">
+                                      <mca:CSharpValue x:TypeArguments="scg:IEnumerable(dcd:Task)">tasksToNotify</mca:CSharpValue>
+                                    </p1:InArgument>
+                                  </p1:ForEach.Values>
+                                  <p1:ActivityAction x:TypeArguments="dcd:Task">
+                                    <p1:ActivityAction.Argument>
+                                      <p1:DelegateInArgument x:TypeArguments="dcd:Task" Name="task" />
+                                    </p1:ActivityAction.Argument>
+                                    <p1:Sequence sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                      <dcwa:SendNotificationEmail IsMailSent="{x:Null}" sap2010:WorkflowViewState.IdRef="SendNotificationEmail_5">
+                                        <dcwa:SendNotificationEmail.Task>
+                                          <p1:InArgument x:TypeArguments="dcd:Task">
+                                            <mca:CSharpValue x:TypeArguments="dcd:Task">task</mca:CSharpValue>
+                                          </p1:InArgument>
+                                        </dcwa:SendNotificationEmail.Task>
+                                        <dcwa:SendNotificationEmail.WorkflowConfiguration>
+                                          <p1:InArgument x:TypeArguments="dcd:WorkflowConfiguration">
+                                            <mca:CSharpValue x:TypeArguments="dcd:WorkflowConfiguration">workflowConfiguration</mca:CSharpValue>
+                                          </p1:InArgument>
+                                        </dcwa:SendNotificationEmail.WorkflowConfiguration>
+                                      </dcwa:SendNotificationEmail>
+                                    </p1:Sequence>
+                                  </p1:ActivityAction>
+                                </p1:ForEach>
+                                <dcwa:MakeTaskLightWeight sap2010:WorkflowViewState.IdRef="MakeTaskLightWeight_3">
+                                  <dcwa:MakeTaskLightWeight.LightWeightTask>
+                                    <p1:OutArgument x:TypeArguments="dcd:Task">
+                                      <mca:CSharpReference x:TypeArguments="dcd:Task">task</mca:CSharpReference>
+                                    </p1:OutArgument>
+                                  </dcwa:MakeTaskLightWeight.LightWeightTask>
+                                  <dcwa:MakeTaskLightWeight.Task>
+                                    <p1:InArgument x:TypeArguments="dcd:Task">
+                                      <mca:CSharpValue x:TypeArguments="dcd:Task">task</mca:CSharpValue>
+                                    </p1:InArgument>
+                                  </dcwa:MakeTaskLightWeight.Task>
+                                </dcwa:MakeTaskLightWeight>
+                                <dcwa:ApprovalActivity DisplayName="Approval Activity" sap2010:WorkflowViewState.IdRef="ApprovalActivity_5">
+                                  <dcwa:ApprovalActivity.ApprovalCorrelationHandle>
+                                    <p1:InArgument x:TypeArguments="CorrelationHandle">
+                                      <mca:CSharpValue x:TypeArguments="CorrelationHandle">ApprovalCorrelationHandle</mca:CSharpValue>
+                                    </p1:InArgument>
+                                  </dcwa:ApprovalActivity.ApprovalCorrelationHandle>
+                                  <dcwa:ApprovalActivity.workflowConfiguration>
+                                    <p1:InArgument x:TypeArguments="dcd:WorkflowConfiguration">
+                                      <mca:CSharpValue x:TypeArguments="dcd:WorkflowConfiguration">workflowConfiguration</mca:CSharpValue>
+                                    </p1:InArgument>
+                                  </dcwa:ApprovalActivity.workflowConfiguration>
+                                  <dcwa:ApprovalActivity.workflowInstanceId>
+                                    <p1:InArgument x:TypeArguments="s:Guid">
+                                      <mca:CSharpValue x:TypeArguments="s:Guid">workflowInstanceId</mca:CSharpValue>
+                                    </p1:InArgument>
+                                  </dcwa:ApprovalActivity.workflowInstanceId>
+                                  <dcwa:ApprovalActivity.workflowState>
+                                    <p1:InArgument x:TypeArguments="x:Byte">
+                                      <mca:CSharpValue x:TypeArguments="x:Byte">item.SequenceNumber</mca:CSharpValue>
+                                    </p1:InArgument>
+                                  </dcwa:ApprovalActivity.workflowState>
+                                </dcwa:ApprovalActivity>
+                              </p1:Sequence>
+                            </p1:If.Then>
+                          </p1:If>
+                        </p1:Sequence>
+                      </p1:If.Then>
+                    </p1:If>
+                  </p1:Sequence>
+                </p1:If.Else>
+              </p1:If>
+            </p1:Sequence>
+          </p1:ActivityAction>
+        </p1:ForEach>
+      </p1:Sequence>
+      <dcwa:SaveAttestationSnapshot sap2010:WorkflowViewState.IdRef="SaveAttestationSnapshot_1">
+        <dcwa:SaveAttestationSnapshot.CampaignId>
+          <p1:InArgument x:TypeArguments="x:Int64">
+            <mca:CSharpValue x:TypeArguments="x:Int64">campaignId</mca:CSharpValue>
+          </p1:InArgument>
+        </dcwa:SaveAttestationSnapshot.CampaignId>
+        <dcwa:SaveAttestationSnapshot.Task>
+          <p1:InArgument x:TypeArguments="dcd:Task">
+            <mca:CSharpValue x:TypeArguments="dcd:Task">task</mca:CSharpValue>
+          </p1:InArgument>
+        </dcwa:SaveAttestationSnapshot.Task>
+      </dcwa:SaveAttestationSnapshot>
+      <dcwa:RemediateAttestation sap2010:WorkflowViewState.IdRef="RemediateAttestation_1">
+        <dcwa:RemediateAttestation.CampaignId>
+          <p1:InArgument x:TypeArguments="x:Int64">
+            <mca:CSharpValue x:TypeArguments="x:Int64">campaignId</mca:CSharpValue>
+          </p1:InArgument>
+        </dcwa:RemediateAttestation.CampaignId>
+        <dcwa:RemediateAttestation.Task>
+          <p1:InArgument x:TypeArguments="dcd:Task">
+            <mca:CSharpValue x:TypeArguments="dcd:Task">task</mca:CSharpValue>
+          </p1:InArgument>
+        </dcwa:RemediateAttestation.Task>
+      </dcwa:RemediateAttestation>
+      <dcwa:UpdateAttestationDateForDeltaActivity sap2010:WorkflowViewState.IdRef="UpdateAttestationDateForDeltaActivity_1">
+        <dcwa:UpdateAttestationDateForDeltaActivity.CampaignId>
+          <p1:InArgument x:TypeArguments="x:Int64">
+            <mca:CSharpValue x:TypeArguments="x:Int64">campaignId</mca:CSharpValue>
+          </p1:InArgument>
+        </dcwa:UpdateAttestationDateForDeltaActivity.CampaignId>
+        <dcwa:UpdateAttestationDateForDeltaActivity.Task>
+          <p1:InArgument x:TypeArguments="dcd:Task">
+            <mca:CSharpValue x:TypeArguments="dcd:Task">task</mca:CSharpValue>
+          </p1:InArgument>
+        </dcwa:UpdateAttestationDateForDeltaActivity.Task>
+      </dcwa:UpdateAttestationDateForDeltaActivity>
+    </p1:Sequence>
+    <sads:DebugSymbol.Symbol>d4EBQzpcUHJvamVjdHNcR0lUXFY1UjJBdHRlc3RhdGlvblxTUFxWNVxTT1VSQ0VcV29ya2Zsb3dzXERJLkNoYWtyYS5Xb3JrZmxvdy5TZXJ2aWNlc1xBdHRlc3RhdGlvblxBdHRlc3RhdGlvbkFwcHJvdmFsV0ZTZXJ2aWNlLnhhbWx4YhEDzwMRAQFFBVcPAtEGWAVaEQLGBlsFzQMTAQJRC1FjAtwGVAtUWgLXBkoPSlwC0gZfDV9XAQZlOmVBAQVmOmZAAQRnOmdBAQNrB3QfAqkGdQeAARMCjAaBAQeMAS0C7wWNAQeYATgC0gWZAQeoAxUBa6kDB7QDJgFOtQMHwAMjATHBAwfMAzQBFHILcmYCuAZuDW5tAqoGfQ19ZAKbBngNeFcCjQaEAQ2EAU8C/gWJAQ2JAXkC8AWQAQ2QAVQC4QWVAQ2VAVsC0wWaAQmnAxYBbLEDDbEDTwFdrAMNrANUAU+9Aw29A08BQLgDDbgDVAEyyQMNyQNPASPEAw3EA1QBFZ0BD50BpwECxAWkAQ2lAxsBbaUBD6QDFwFuqAEVqAFqAW+sAROSAiECyQOVAhOiAyEBfq0BFb0BJwKWBb4BFckBIQL3BMoBFfsBIwKHBPwBFZECLQLKA5YCFaECOAKqA6ICFaEDHQF/sAEbsAFrArUFtQEbtQF/AqYFugEbugFpApcFxgEbxgFnAocFwQEbwQFzAvgEywEX1gFAAtgE1wEX7gEkAqcE7wEX+gEyAogE/wEb/wF7AvgDiQIbiQJpAukDjgIbjgJqAtoDhAIbhAJ/AssDngIbngJdAroDmQIbmQJ9AqsDpQIbpQJ1AoABqQIZnwMnAo8BzgEdzgF6AugE0wEd0wFrAtkE2gEd2gF5AskE4QEb7AE4AqgE8gEd8gFnApgE9wEd9wFfAokEqgIbsAJOApoDsQIbywI8As4CzAIbngMjApAB5AEh5AFjArkE6QEh6QGFAQKpBK0CIa0CbwKbA7QCIbQCcAKLA7kCIbkCawL8AsMCIcMCYwLtAr4CIb4CdwLeAsgCIcgChQECzwLPAiHPAnACkQHTAh+cAy0CoAHUAiHfAkoCrwLgAiH5Ai4C/QH6AiGFAzwC3gGGAyGbAzkCoQHXAifXAoQBAr8C3AIn3AJ1ArAC4wIn4wKDAQKgAuoCJfcCMwL+Af0CJ/0CcQLuAYIDJ4IDaQLfAYkDJ4kDhwECzwGTAyeTA3UCwAGYAyeYA3YCsQGOAyeOA4sBAqIB6wIn9gJEAv8B7gIt7gJvApAC8wIt8wKRAQKAAg==</sads:DebugSymbol.Symbol>
+  </p1:Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="Receive_1" sap:VirtualizedContainerService.HintSize="808.8,88" />
+      <sap2010:ViewStateData Id="SendReply_1" sap:VirtualizedContainerService.HintSize="808.8,88" />
+      <sap2010:ViewStateData Id="InitializeCorrelation_2" sap:VirtualizedContainerService.HintSize="786.4,97.6" />
+      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="786.4,62.4" />
+      <sap2010:ViewStateData Id="GetWorkflowConfigurationByTask_2" sap:VirtualizedContainerService.HintSize="786.4,22.4" />
+      <sap2010:ViewStateData Id="UpdateAttestationCampaignInstanceActivity_1" sap:VirtualizedContainerService.HintSize="786.4,22.4" />
+      <sap2010:ViewStateData Id="CreateTask_3" sap:VirtualizedContainerService.HintSize="309.6,22.4" />
+      <sap2010:ViewStateData Id="Assign_2" sap:VirtualizedContainerService.HintSize="309.6,62.4" />
+      <sap2010:ViewStateData Id="GetPendingTasksByWorkflowInstance_2" sap:VirtualizedContainerService.HintSize="287.2,22.4" />
+      <sap2010:ViewStateData Id="SendNotificationEmail_3" sap:VirtualizedContainerService.HintSize="200,22.4" />
+      <sap2010:ViewStateData Id="ForEach`1_3" sap:VirtualizedContainerService.HintSize="287.2,211.2" />
+      <sap2010:ViewStateData Id="MakeTaskLightWeight_1" sap:VirtualizedContainerService.HintSize="287.2,22.4" />
+      <sap2010:ViewStateData Id="Sequence_5" sap:VirtualizedContainerService.HintSize="309.6,460.8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ApprovalActivity_3" sap:VirtualizedContainerService.HintSize="309.6,22.4" />
+      <sap2010:ViewStateData Id="Sequence_6" sap:VirtualizedContainerService.HintSize="200,52.8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="IsNextLevelApprovalRequired_1" sap:VirtualizedContainerService.HintSize="464,22.4" />
+      <sap2010:ViewStateData Id="ResetReviewCompleteFlagForNextApprovalLevel_2" sap:VirtualizedContainerService.HintSize="200,22.4" />
+      <sap2010:ViewStateData Id="GetNextLevelApprovalTasks_2" sap:VirtualizedContainerService.HintSize="200,22.4" />
+      <sap2010:ViewStateData Id="GetPendingTasksByWorkflowInstance_4" sap:VirtualizedContainerService.HintSize="200,22.4" />
+      <sap2010:ViewStateData Id="SendNotificationEmail_5" sap:VirtualizedContainerService.HintSize="200,22.4" />
+      <sap2010:ViewStateData Id="Sequence_14" sap:VirtualizedContainerService.HintSize="222.4,147.2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ForEach`1_6" sap:VirtualizedContainerService.HintSize="200,52.8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="MakeTaskLightWeight_3" sap:VirtualizedContainerService.HintSize="200,22.4" />
+      <sap2010:ViewStateData Id="ApprovalActivity_5" sap:VirtualizedContainerService.HintSize="200,22.4" />
+      <sap2010:ViewStateData Id="Sequence_15" sap:VirtualizedContainerService.HintSize="222.4,364.8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="If_5" sap:VirtualizedContainerService.HintSize="200,52.8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_16" sap:VirtualizedContainerService.HintSize="222.4,302.4">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="If_6" sap:VirtualizedContainerService.HintSize="464,454.4" />
+      <sap2010:ViewStateData Id="Sequence_17" sap:VirtualizedContainerService.HintSize="486.4,641.6">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="If_3" sap:VirtualizedContainerService.HintSize="711.2,793.6" />
+      <sap2010:ViewStateData Id="Sequence_11" sap:VirtualizedContainerService.HintSize="733.6,918.4">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ForEach`1_5" sap:VirtualizedContainerService.HintSize="764,1069.6" />
+      <sap2010:ViewStateData Id="Sequence_12" sap:VirtualizedContainerService.HintSize="786.4,1194.4">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="SaveAttestationSnapshot_1" sap:VirtualizedContainerService.HintSize="786.4,22.4" />
+      <sap2010:ViewStateData Id="RemediateAttestation_1" sap:VirtualizedContainerService.HintSize="786.4,22.4" />
+      <sap2010:ViewStateData Id="UpdateAttestationDateForDeltaActivity_1" sap:VirtualizedContainerService.HintSize="786.4,22.4" />
+      <sap2010:ViewStateData Id="Sequence_13" sap:VirtualizedContainerService.HintSize="808.8,1871.2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="831.2,2252">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="WorkflowService_1" sap:VirtualizedContainerService.HintSize="860.8,2321.6">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</WorkflowService>

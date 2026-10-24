@@ -1,0 +1,71 @@
+﻿/*@import url("../assets/styles/DropdownList.css");*/
+.RadDropDownList_IACMSkin {
+    color: #333;
+    font-size: 14px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.42857;
+    width: 100%!important;
+}
+
+.RadDropDownList_IACMSkin .rddlInner {
+    border-color: #ccc;
+    color: #333;
+    background-color: #fff;
+    padding: 3px 32px 3px 12px;
+    font-size: 12px;
+}
+.RadDropDownList_IACMSkin .rddlEmptyMessage,
+.RadDropDownList_IACMSkin .rddlDefaultMessage {
+    color: #555
+}
+.RadDropDownList_IACMSkin .rddlIcon {
+    width: 24px;
+    height: 24px;
+    top: 50%;
+    right: 0px;
+    margin-top: -12px;
+    background-image: url('Common/radActionsSprite.png');
+    background-position: -13px -63px
+}
+/*.RadDropDownList_IACMSkin .rddlHovered {
+    border-color: #fff;
+    color: #333;
+    background-color: #e0e0e0
+}
+.RadDropDownList_IACMSkin .rddlFocused {
+    border-color: #fff;
+    color: #333;
+    background-color: #e0e0e0;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.08) inset
+}*/
+.rddlPopup_IACMSkin {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.42857;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    width:350px;
+    font-size: 12px;
+}
+
+.rddlPopup_IACMSkin .rddlList {
+    padding: 6px 0;
+    *padding: 0;
+    box-sizing: border-box;
+    height: 250px;
+}
+.rddlPopup_IACMSkin .rddlItem {
+    padding: 2px 12px
+}
+.rddlPopup_IACMSkin .rddlItemHovered {
+    background-color: #f5f5f5
+}
+.rddlPopup_IACMSkin .rddlItemSelected {
+    color: #fff;
+    background-color: #428bca
+}
+.rddlPopup_IACMSkin .rddlItemLoading {
+    background-color: #f5f5f5
+}

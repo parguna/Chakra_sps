@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DI.Chakra.Connector.PeopleSoft.PeopleSoftDataString" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QABQQAAIAAQhAAogABAFgADBAGEQEBICiAIFBAAoBkA=</HashCode>
+      <FileName>API\APIConstants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DI.Chakra.Connector.PeopleSoftConnector" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQAgCABEQAAxQCEAAEuAIAgCQAAAAAAAAAACAAAAAI=</HashCode>
+      <FileName>PeopleSoftConnector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

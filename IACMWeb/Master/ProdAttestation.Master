@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ProdAttestation.master.cs" Inherits="DI.Chakra.Web.Master.ProdAttestation" %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<%@ Register Src="~/Master/UC/NHeader.ascx" TagPrefix="uc1" TagName="Header" %>
+<%@ Register Src="~/Master/UC/AccessPanel.ascx" TagPrefix="uc1" TagName="AccessPanel" %>
+<%@ Register Src="~/UsrControl/Common/MessageBox.ascx" TagPrefix="uc1" TagName="AlertMessage" %>
+<%@ Register Src="~/Master/UC/NFooter.ascx" TagPrefix="uc1" TagName="Footer" %>
+<html lang="en">
+<head runat="server">
+    <title></title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../assets/bootstrap5/newIacmSkin.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="<%=Page.ResolveClientUrl("~/assets/bootstrap/css/bootstrap.min.css")%>" />
+    <link rel="stylesheet" type="text/css" href="<%=Page.ResolveClientUrl("~/assets/bootstrap/css/bootstrap-select.min.css")%>" />
+    <link rel="stylesheet" type="text/css" href="<%=Page.ResolveClientUrl("~/assets/DataTables/css/attestationcomparision.css")%>" />
+    <link rel="stylesheet" type="text/css" href="<%=Page.ResolveClientUrl("~/assets/bootstrap/css/toast-plugin.css")%>" />
+    <link rel="stylesheet" type="text/css" href="<%=Page.ResolveClientUrl("~/assets/agGrid/ag-grid.min.css")%>" />
+    <link rel="stylesheet" type="text/css" href="<%=Page.ResolveClientUrl("~/assets/agGrid/ag-theme-balham-no-font.min.css")%>" />
+    <link rel="stylesheet" type="text/css" href="<%=Page.ResolveClientUrl("~/assets/agGrid/ag-theme-balham.min.css")%>" />
+    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/bootstrap5/jquerylatest/jquery.min.js")%>"></script>
+    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/bootstrap/js/bootstrap.min.js")%>"></script>
+    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/bootstrap/js/bootstrap-select.min.js")%>"></script>
+    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/bootstrap/js/bootstrap-session-timeout.min.js")%>"></script>
+    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/bootstrap/js/toast-plugin-min.js")%>"></script>
+    <link rel="stylesheet" type="text/css" href="<%=Page.ResolveClientUrl("~/assets/bootstrap5/css/font-awesome.min.css")%>" />
+    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/bootstrap/js/toast-plugin-min.js")%>"></script>
+
+    <link rel="stylesheet" type="text/css" href="<%=Page.ResolveClientUrl("~/assets/bootstrap5/css/fontawesome.min.css")%>" />
+    <link rel="stylesheet" type="text/css" href="<%=Page.ResolveClientUrl("~/assets/bootstrap5/css/brands.min.css")%>" />
+    <link rel="stylesheet" type="text/css" href="<%=Page.ResolveClientUrl("~/assets/bootstrap5/css/solid.min.css")%>" />
+    <link rel="stylesheet" type="text/css" href="<%=Page.ResolveClientUrl("~/assets/bootstrap5/css/v5-font-face.min.css")%>" />
+
+    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/bootstrap5/js/fontawesome.min.js")%>"></script>
+    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/bootstrap5/js/brands.min.js")%>"></script>
+    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/bootstrap5/js/solid.min.js")%>"></script>
+    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/DataTables/FileSaver.min.js")%>"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body class="d-flex flex-column h-100">
+    <form id="form1" runat="server">
+        <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
+        </telerik:RadScriptManager>
+        <telerik:RadWindowManager ID="radWinMgr" runat="server">
+        </telerik:RadWindowManager>
+        <div>
+            <uc1:Header ID="header" runat="server" />
+            <!-- Begin page content -->
+            <main>
+                <asp:ContentPlaceHolder ID="cplMain" runat="server">
+                </asp:ContentPlaceHolder>
+            </main>
+            <uc1:Footer ID="footer" runat="server"></uc1:Footer>
+
+        </div>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+html body .RadInput_IACMSkin .riTextBox,
+html body .RadInputMgr_IACMSkin {
+    background: white;
+    color: #555;
+    border-color: #d7d7d7;
+    font-weight: normal;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.RadInput_IACMSkin.riSingle .riTextBox,
+.RadForm_IACMSkin.RadForm.rfdTextbox input.riTextBox.rfdDecorated {
+    height: 32px;
+    background: transparent;
+}
+
+html body .RadInput_IACMSkin .riTextBox,
+html body .RadInputMgr_IACMSkin,
+*+html .RadInput_IACMSkin.riSingle .riTextBox,
+*+html .RadForm_IACMSkin.RadForm.rfdTextbox input.riTextBox.rfdDecorated {
+    height: 32px;
+    background: transparent;
+}
+
+.RadInput_IACMSkin.riSingle textarea.riTextBox,
+html .RadInput_IACMSkin textarea.riTextBox {
+    height: auto
+}
+
+html body .RadInput_IACMSkin .riEmpty,
+html body .RadInput_Empty_IACMSkin {
+    color: #b1b1b1
+}
+
+html body .RadInput_IACMSkin .riHover,
+html body .RadInput_Hover_IACMSkin {
+    border-color: #207bbd;
+    color: #444
+}
+
+html body .RadInput_IACMSkin .riFocused,
+html body .RadInput_Focused_IACMSkin {
+    border-color: #207bbd
+}
+
+html body .RadInput_IACMSkin .riRead,
+html body .RadInput_Read_IACMSkin {
+    border-color: #d7d7d7
+}
+
+html body .RadInput_IACMSkin .riDisabled,
+html body .RadInput_Disabled_IACMSkin {
+    Opacity: .5;
+    -moz-opacity: .5;
+    filter: alpha(opacity=50);
+    cursor: default
+}
+
+html body .RadInput_IACMSkin .riError,
+html body .RadInput_Error_IACMSkin {
+    border-color: red;
+    background: white;
+    color: red
+}
+
+.RadForm.rfdTextbox .RadInput_IACMSkin .riError[type="text"],
+.RadForm.rfdTextbox .RadInput_Error_IACMSkin[type="text"] {
+    border-color: red;
+    background: white;
+    color: red
+}
+
+html body .RadInput_IACMSkin .riNegative,
+html body .RadInput_Negative_IACMSkin {
+    color: #6e6e6e
+}
+
+.RadInput_IACMSkin a {
+    background: transparent no-repeat url('../Images/Common/radActionsSprite.png')
+}
+
+.RadInput_IACMSkin .riBtn a {
+    width: 20px;
+    height: 28px;
+    line-height: 28px;
+    background-position: -14px -4864px
+}
+
+.RadInput_IACMSkin a.riButton {
+    background-position: -14px -4864px
+}
+
+.RadInput_IACMSkin a.riButton:hover {
+    background-position: -64px -4864px
+}
+
+.RadInput_IACMSkin .riSpin a {
+    width: 15px;
+    height: 14px;
+    line-height: 14px
+}
+
+.RadInput_IACMSkin a.riUp,
+.RadInput_IACMSkin a.riDown {
+    height: 14px
+}
+
+.RadInput_IACMSkin a.riUp {
+    background-position: -18px -17.5px
+}
+
+.RadInput_IACMSkin a.riUp:hover {
+    background-position: -68px -17.5px
+}
+
+.RadInput_IACMSkin a.riDown {
+    background-position: -18px -67.5px
+}
+
+.RadInput_IACMSkin a.riDown:hover {
+    background-position: -68px -67.5px
+}
+
+.RadInput_IACMSkin .riLabel {
+    color: #555
+}
+
+.RadInput_IACMSkin .riResizeIcon {
+    background: transparent 0 0 no-repeat url('Input/ResizeEdge.gif')
+}
+
+html body .RadInputRTL_IACMSkin .riError,
+html body .RadInputRTL_Error_IACMSkin {
+    background-position: 3px -298px
+}
+
+.RadInputRTL_IACMSkin .riResizeIcon {
+    background-position: 0 -19px
+}
+
+.RadForm.rfdTextbox .RadInputRTL_IACMSkin .riError[type="text"],
+.RadForm.rfdTextbox .RadInputRTL_Error_IACMSkin[type="text"] {
+    background-position: 3px -298px
+}

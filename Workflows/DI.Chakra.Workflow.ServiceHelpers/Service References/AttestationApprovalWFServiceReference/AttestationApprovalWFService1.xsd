@@ -1,0 +1,1197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:53412/Attestation/AttestationApprovalWFService.xamlx?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure.Enums" />
+  <xs:import schemaLocation="http://localhost:53412/Attestation/AttestationApprovalWFService.xamlx?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:53412/Attestation/AttestationApprovalWFService.xamlx?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel.Presentation" />
+  <xs:complexType name="ArrayOfTask">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Task" nillable="true" type="tns:Task" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTask" nillable="true" type="tns:ArrayOfTask" />
+  <xs:complexType name="Task">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DomainModelBaseOfTaskTaskkcqH9ksd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccessRequest" nillable="true" type="tns:AccessRequest" />
+          <xs:element minOccurs="0" name="AccessRequestId" nillable="true" type="xs:long" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure.Enums" minOccurs="0" name="Action" type="q1:StatusType" />
+          <xs:element minOccurs="0" name="ActionDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ActionGroupId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="ActionUser" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="ActionUserId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="Approver" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssignedBy" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="AssignedTo" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="Attestation" nillable="true" type="tns:Attestation" />
+          <xs:element minOccurs="0" name="AttestationCampaign" nillable="true" type="tns:AttestationCampaign" />
+          <xs:element minOccurs="0" name="AttestationCampaignId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="AttestationId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DelegatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DelegatedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DelegatedFrom" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="DelegationComments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsActionOnlyRequiredTask" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsCompleted" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsDelegated" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsEscalated" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsGroupTask" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsLocked" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsNotResponded" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RequestTypeId" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="SubTask" nillable="true" type="tns:SubTask" />
+          <xs:element minOccurs="0" name="SubTaskId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="WorkFlowConfiguration" nillable="true" type="tns:WorkflowConfiguration" />
+          <xs:element minOccurs="0" name="WorkflowConfigurationId" type="xs:long" />
+          <xs:element minOccurs="0" name="WorkflowInstanceId" type="ser:guid" />
+          <xs:element minOccurs="0" name="WorkflowStateId" type="xs:unsignedByte" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Task" nillable="true" type="tns:Task" />
+  <xs:complexType name="DomainModelBaseOfTaskTaskkcqH9ksd">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="DomainModelBaseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Task" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" />
+          <GenericParameter Name="Task" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.EntityModel" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DomainModelBaseOfTaskTaskkcqH9ksd" nillable="true" type="tns:DomainModelBaseOfTaskTaskkcqH9ksd" />
+  <xs:complexType name="IdBase">
+    <xs:sequence>
+      <xs:element name="_x003C_Id_x003E_k__BackingField" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IdBase" nillable="true" type="tns:IdBase" />
+  <xs:complexType name="AccessRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DomainModelBaseOfAccessRequestAccessRequestkcqH9ksd">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure.Enums" minOccurs="0" name="AccountType" type="q2:AccountType" />
+          <xs:element minOccurs="0" name="ActivationDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="AdHocAccessRequest" nillable="true" type="tns:AdHocAccessRequest" />
+          <xs:element minOccurs="0" name="AdHocAccessRequestId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="AdditionalInfo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Application" nillable="true" type="tns:EndPoint" />
+          <xs:element minOccurs="0" name="ApproverType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AttestationReviewId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DeactivationDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmployeeEventTriggerId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="EndpointSystemId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="ExecutionTime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IsCurrentLevelApproved" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsDependentRequest" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsDependentRequestCreated" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsParentRequest" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ParentRequestId" nillable="true" type="xs:long" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure.Enums" minOccurs="0" name="ProgressStatus" type="q3:AccessRequestProgress" />
+          <xs:element minOccurs="0" name="ProvisioningFormId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure.Enums" minOccurs="0" name="RequestSource" type="q4:AccessRequestSource" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure.Enums" minOccurs="0" name="RequestStatus" type="q5:AccessRequestStatus" />
+          <xs:element minOccurs="0" name="Requester" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="RequesterId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="TransactionId" type="ser:guid" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AccessRequest" nillable="true" type="tns:AccessRequest" />
+  <xs:complexType name="DomainModelBaseOfAccessRequestAccessRequestkcqH9ksd">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="DomainModelBaseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="AccessRequest" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" />
+          <GenericParameter Name="AccessRequest" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.EntityModel" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DomainModelBaseOfAccessRequestAccessRequestkcqH9ksd" nillable="true" type="tns:DomainModelBaseOfAccessRequestAccessRequestkcqH9ksd" />
+  <xs:complexType name="AdHocAccessRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DomainModelBaseOfAdHocAccessRequestAdHocAccessRequestkcqH9ksd">
+        <xs:sequence>
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure.Enums" minOccurs="0" name="AccountType" type="q6:AccountType" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure.Enums" minOccurs="0" name="AdhocActionType" type="q7:AdHocActionType" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EndPoint" nillable="true" type="tns:EndPoint" />
+          <xs:element minOccurs="0" name="EndpointSystemId" nillable="true" type="xs:long" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure.Enums" minOccurs="0" name="EndpointSystemType" type="q8:EndpointType" />
+          <xs:element minOccurs="0" name="EntitlementDetail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsAddAccess" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSelfRequest" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsÉxpiryHandled" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsÉxpiryMailSend" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" type="xs:dateTime" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel.Presentation" minOccurs="0" name="RequestedItems" nillable="true" type="q9:ArrayOfPresentationAccessRequestItem" />
+          <xs:element minOccurs="0" name="RequesteeUserId" type="xs:long" />
+          <xs:element minOccurs="0" name="RequesterUserId" type="xs:long" />
+          <xs:element minOccurs="0" name="ValidFrom" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ValidTo" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AdHocAccessRequest" nillable="true" type="tns:AdHocAccessRequest" />
+  <xs:complexType name="DomainModelBaseOfAdHocAccessRequestAdHocAccessRequestkcqH9ksd">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="DomainModelBaseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="AdHocAccessRequest" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" />
+          <GenericParameter Name="AdHocAccessRequest" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.EntityModel" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DomainModelBaseOfAdHocAccessRequestAdHocAccessRequestkcqH9ksd" nillable="true" type="tns:DomainModelBaseOfAdHocAccessRequestAdHocAccessRequestkcqH9ksd" />
+  <xs:complexType name="EndPoint">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DomainModelBaseOfEndPointEndPointkcqH9ksd">
+        <xs:sequence>
+          <xs:element name="_x003C_ApplicationCode_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_CreatedBy_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_CreatedDate_x003E_k__BackingField" type="xs:dateTime" />
+          <xs:element name="_x003C_Description_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_DisplayName_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_EndPointSystemType_x003E_k__BackingField" nillable="true" type="tns:EndPointSystemType" />
+          <xs:element name="_x003C_EndpointSystemTypeId_x003E_k__BackingField" nillable="true" type="xs:long" />
+          <xs:element name="_x003C_IncludeInAttestation_x003E_k__BackingField" type="xs:boolean" />
+          <xs:element name="_x003C_IsActive_x003E_k__BackingField" type="xs:boolean" />
+          <xs:element name="_x003C_IsPasswordResetAllowed_x003E_k__BackingField" type="xs:boolean" />
+          <xs:element name="_x003C_IsTrustedSource_x003E_k__BackingField" type="xs:boolean" />
+          <xs:element name="_x003C_LastModifiedBy_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_LastModifiedDate_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+          <xs:element name="_x003C_ListAttributeMappingColumns_x003E_k__BackingField" nillable="true" type="tns:ArrayOfAttributeMappingColumns" />
+          <xs:element name="_x003C_OwnerUserId_x003E_k__BackingField" nillable="true" type="xs:long" />
+          <xs:element name="_x003C_Owner_x003E_k__BackingField" nillable="true" type="tns:User" />
+          <xs:element name="_x003C_UserObjectName_x003E_k__BackingField" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EndPoint" nillable="true" type="tns:EndPoint" />
+  <xs:complexType name="DomainModelBaseOfEndPointEndPointkcqH9ksd">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="DomainModelBaseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="EndPoint" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" />
+          <GenericParameter Name="EndPoint" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.EntityModel" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DomainModelBaseOfEndPointEndPointkcqH9ksd" nillable="true" type="tns:DomainModelBaseOfEndPointEndPointkcqH9ksd" />
+  <xs:complexType name="EndPointSystemType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DomainModelBaseOfEndPointSystemTypeEndPointSystemTypekcqH9ksd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CanBeTrustedSource" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EndPoints" nillable="true" type="tns:ArrayOfEndPoint" />
+          <xs:element minOccurs="0" name="EndpointObjects" nillable="true" type="tns:ArrayOfEndpointObjects" />
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure.Enums" minOccurs="0" name="EndpointSystemTypeName" type="q10:EndpointType" />
+          <xs:element minOccurs="0" name="IsActive" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ObjectName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EndPointSystemType" nillable="true" type="tns:EndPointSystemType" />
+  <xs:complexType name="DomainModelBaseOfEndPointSystemTypeEndPointSystemTypekcqH9ksd">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="DomainModelBaseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="EndPointSystemType" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" />
+          <GenericParameter Name="EndPointSystemType" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.EntityModel" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DomainModelBaseOfEndPointSystemTypeEndPointSystemTypekcqH9ksd" nillable="true" type="tns:DomainModelBaseOfEndPointSystemTypeEndPointSystemTypekcqH9ksd" />
+  <xs:complexType name="ArrayOfEndPoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EndPoint" nillable="true" type="tns:EndPoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEndPoint" nillable="true" type="tns:ArrayOfEndPoint" />
+  <xs:complexType name="ArrayOfEndpointObjects">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EndpointObjects" nillable="true" type="tns:EndpointObjects" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEndpointObjects" nillable="true" type="tns:ArrayOfEndpointObjects" />
+  <xs:complexType name="EndpointObjects">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DomainModelBaseOfEndpointObjectsEndpointObjectskcqH9ksd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DiscoveryProcess" nillable="true" type="tns:ArrayOfDiscoveryProcess" />
+          <xs:element minOccurs="0" name="EndpointSystemTypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="IsTrustedSource" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ObjectName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EndpointObjects" nillable="true" type="tns:EndpointObjects" />
+  <xs:complexType name="DomainModelBaseOfEndpointObjectsEndpointObjectskcqH9ksd">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="DomainModelBaseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="EndpointObjects" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" />
+          <GenericParameter Name="EndpointObjects" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.EntityModel" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DomainModelBaseOfEndpointObjectsEndpointObjectskcqH9ksd" nillable="true" type="tns:DomainModelBaseOfEndpointObjectsEndpointObjectskcqH9ksd" />
+  <xs:complexType name="ArrayOfDiscoveryProcess">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DiscoveryProcess" nillable="true" type="tns:DiscoveryProcess" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDiscoveryProcess" nillable="true" type="tns:ArrayOfDiscoveryProcess" />
+  <xs:complexType name="DiscoveryProcess">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DomainModelBaseOfDiscoveryProcessDiscoveryProcesskcqH9ksd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Default" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DisableDeltaDiscovery" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Endpoint" nillable="true" type="tns:EndPoint" />
+          <xs:element minOccurs="0" name="EndpointObjects" nillable="true" type="tns:ArrayOfEndpointObjects" />
+          <xs:element minOccurs="0" name="Endpointsystemid" type="xs:long" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ProcessName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="process" nillable="true" type="tns:Process" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DiscoveryProcess" nillable="true" type="tns:DiscoveryProcess" />
+  <xs:complexType name="DomainModelBaseOfDiscoveryProcessDiscoveryProcesskcqH9ksd">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="DomainModelBaseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="DiscoveryProcess" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" />
+          <GenericParameter Name="DiscoveryProcess" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.EntityModel" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DomainModelBaseOfDiscoveryProcessDiscoveryProcesskcqH9ksd" nillable="true" type="tns:DomainModelBaseOfDiscoveryProcessDiscoveryProcesskcqH9ksd" />
+  <xs:complexType name="Process">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DomainModelBaseOfProcessProcesskcqH9ksd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastRunOn" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ProcessEndAt" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ProcessStartAt" nillable="true" type="xs:dateTime" />
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure.Enums" minOccurs="0" name="ProcessType" type="q11:ProcessType" />
+          <xs:element minOccurs="0" name="ProcessTypeKeyId" type="xs:long" />
+          <xs:element minOccurs="0" name="Scheduler" nillable="true" type="tns:Scheduler" />
+          <xs:element minOccurs="0" name="Scheduler_SchedulerId" type="xs:long" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Process" nillable="true" type="tns:Process" />
+  <xs:complexType name="DomainModelBaseOfProcessProcesskcqH9ksd">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="DomainModelBaseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Process" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" />
+          <GenericParameter Name="Process" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.EntityModel" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DomainModelBaseOfProcessProcesskcqH9ksd" nillable="true" type="tns:DomainModelBaseOfProcessProcesskcqH9ksd" />
+  <xs:complexType name="Scheduler">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DomainModelBaseOfSchedulerSchedulerkcqH9ksd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure.Enums" minOccurs="0" name="Occurence" nillable="true" type="q12:Occurence" />
+          <xs:element minOccurs="0" name="ProcessName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReccurEveryDays" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ReccurEveryMonths" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ReccurEveryWeeks" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="StartTime" type="ser:duration" />
+          <xs:element minOccurs="0" name="WeekDay" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Scheduler" nillable="true" type="tns:Scheduler" />
+  <xs:complexType name="DomainModelBaseOfSchedulerSchedulerkcqH9ksd">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="DomainModelBaseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Scheduler" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" />
+          <GenericParameter Name="Scheduler" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.EntityModel" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DomainModelBaseOfSchedulerSchedulerkcqH9ksd" nillable="true" type="tns:DomainModelBaseOfSchedulerSchedulerkcqH9ksd" />
+  <xs:complexType name="ArrayOfAttributeMappingColumns">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AttributeMappingColumns" nillable="true" type="tns:AttributeMappingColumns" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAttributeMappingColumns" nillable="true" type="tns:ArrayOfAttributeMappingColumns" />
+  <xs:complexType name="AttributeMappingColumns">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DomainModelBaseOfAttributeMappingColumnsAttributeMappingColumnskcqH9ksd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreateDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DiColumn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EndPoint" nillable="true" type="tns:EndPoint" />
+          <xs:element minOccurs="0" name="EndPointSystemType" nillable="true" type="tns:EndPointSystemType" />
+          <xs:element minOccurs="0" name="EndpointSystemId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="EndpointSystemTypeId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Tgcolumn" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AttributeMappingColumns" nillable="true" type="tns:AttributeMappingColumns" />
+  <xs:complexType name="DomainModelBaseOfAttributeMappingColumnsAttributeMappingColumnskcqH9ksd">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="DomainModelBaseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="AttributeMappingColumns" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" />
+          <GenericParameter Name="AttributeMappingColumns" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.EntityModel" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DomainModelBaseOfAttributeMappingColumnsAttributeMappingColumnskcqH9ksd" nillable="true" type="tns:DomainModelBaseOfAttributeMappingColumnsAttributeMappingColumnskcqH9ksd" />
+  <xs:complexType name="User">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DomainModelBaseOfUserUserkcqH9ksd">
+        <xs:sequence>
+          <xs:element name="RulesetOutput" nillable="true" type="xs:string" />
+          <xs:element name="SortDirection" type="xs:int" />
+          <xs:element name="_x003C_AuthenticationMode_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_Country_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_CreatedBy_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_CreatedDate_x003E_k__BackingField" type="xs:dateTime" />
+          <xs:element name="_x003C_DisplayName_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_EmailId_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_EmployeeId_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure.Enums" name="_x003C_EmployeeType_x003E_k__BackingField" type="q13:EmployeeType" />
+          <xs:element name="_x003C_EndpointSystemId_x003E_k__BackingField" type="xs:long" />
+          <xs:element name="_x003C_Ethinicity_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_FIN_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_Fax_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_FirstName_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_FullTimeEmployee_x003E_k__BackingField" nillable="true" type="xs:boolean" />
+          <xs:element name="_x003C_Groups_x003E_k__BackingField" nillable="true" type="tns:ArrayOfGroup" />
+          <xs:element name="_x003C_HomephoneNumber_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_IsActive_x003E_k__BackingField" nillable="true" type="xs:boolean" />
+          <xs:element name="_x003C_JoinDate_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+          <xs:element name="_x003C_KnownAs_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_LastLogonDate_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+          <xs:element name="_x003C_LastModifiedBy_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_LastModifiedDate_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+          <xs:element name="_x003C_LastName_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_ManagerId_x003E_k__BackingField" nillable="true" type="xs:long" />
+          <xs:element name="_x003C_MiddleName_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_MobileNumber_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_NBusinessRoleId_x003E_k__BackingField" nillable="true" type="xs:long" />
+          <xs:element name="_x003C_NBusinessRole_x003E_k__BackingField" nillable="true" type="tns:NDesignation" />
+          <xs:element name="_x003C_NOrganisationId_x003E_k__BackingField" nillable="true" type="xs:long" />
+          <xs:element name="_x003C_NOrganisation_x003E_k__BackingField" nillable="true" type="tns:NOrganisation" />
+          <xs:element name="_x003C_NRIC_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_OrgChartLevels_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_PassportNo_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_Password_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_PostalAddress_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_PostalCode_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_RehireDate_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+          <xs:element name="_x003C_Reserved10_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_Reserved1_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_Reserved2_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_Reserved3_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_Reserved4_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_Reserved5_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_Reserved6_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_Reserved7_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_Reserved8_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_Reserved9_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_Roles_x003E_k__BackingField" nillable="true" type="tns:ArrayOfRole" />
+          <xs:element name="_x003C_TelephoneNumber_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_TerminationDate_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+          <xs:element name="_x003C_UserName_x003E_k__BackingField" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="DomainModelBaseOfUserUserkcqH9ksd">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="DomainModelBaseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="User" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" />
+          <GenericParameter Name="User" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.EntityModel" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DomainModelBaseOfUserUserkcqH9ksd" nillable="true" type="tns:DomainModelBaseOfUserUserkcqH9ksd" />
+  <xs:complexType name="ArrayOfGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Group" nillable="true" type="tns:Group" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGroup" nillable="true" type="tns:ArrayOfGroup" />
+  <xs:complexType name="Group">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DomainModelBaseOfGroupGroupkcqH9ksd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="GroupDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GroupOwner" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="IsDefaultGroup" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Owner" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="Users" nillable="true" type="tns:ArrayOfUser" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Group" nillable="true" type="tns:Group" />
+  <xs:complexType name="DomainModelBaseOfGroupGroupkcqH9ksd">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="DomainModelBaseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Group" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" />
+          <GenericParameter Name="Group" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.EntityModel" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DomainModelBaseOfGroupGroupkcqH9ksd" nillable="true" type="tns:DomainModelBaseOfGroupGroupkcqH9ksd" />
+  <xs:complexType name="ArrayOfUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
+  <xs:complexType name="NDesignation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DomainModelBaseOfNDesignationNDesignationkcqH9ksd">
+        <xs:sequence>
+          <xs:element name="_x003C_Code_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_CreatedBy_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_CreatedDate_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+          <xs:element name="_x003C_Description_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_IsActive_x003E_k__BackingField" type="xs:boolean" />
+          <xs:element name="_x003C_LastModifiedBy_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_LastModifiedDate_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NDesignation" nillable="true" type="tns:NDesignation" />
+  <xs:complexType name="DomainModelBaseOfNDesignationNDesignationkcqH9ksd">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="DomainModelBaseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="NDesignation" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" />
+          <GenericParameter Name="NDesignation" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.EntityModel" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DomainModelBaseOfNDesignationNDesignationkcqH9ksd" nillable="true" type="tns:DomainModelBaseOfNDesignationNDesignationkcqH9ksd" />
+  <xs:complexType name="NOrganisation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DomainModelBaseOfNOrganisationNOrganisationkcqH9ksd">
+        <xs:sequence>
+          <xs:element name="Level" type="xs:int" />
+          <xs:element name="_x003C_Code_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_CreatedBy_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_CreatedDate_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+          <xs:element name="_x003C_Description_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_IsActive_x003E_k__BackingField" type="xs:boolean" />
+          <xs:element name="_x003C_LastModifiedBy_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_LastModifiedDate_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+          <xs:element name="_x003C_Name_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_OrganisationScope_x003E_k__BackingField" nillable="true" type="tns:NOrganisationScope" />
+          <xs:element name="_x003C_ParentOrgCode_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_ParentOrgId_x003E_k__BackingField" nillable="true" type="xs:long" />
+          <xs:element name="_x003C_ScopeId_x003E_k__BackingField" nillable="true" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NOrganisation" nillable="true" type="tns:NOrganisation" />
+  <xs:complexType name="DomainModelBaseOfNOrganisationNOrganisationkcqH9ksd">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="DomainModelBaseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="NOrganisation" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" />
+          <GenericParameter Name="NOrganisation" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.EntityModel" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DomainModelBaseOfNOrganisationNOrganisationkcqH9ksd" nillable="true" type="tns:DomainModelBaseOfNOrganisationNOrganisationkcqH9ksd" />
+  <xs:complexType name="NOrganisationScope">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DomainModelBaseOfNOrganisationScopeNOrganisationScopekcqH9ksd">
+        <xs:sequence>
+          <xs:element name="_x003C_CreatedBy_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_CreatedDate_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+          <xs:element name="_x003C_IsActive_x003E_k__BackingField" type="xs:boolean" />
+          <xs:element name="_x003C_IsValidForApproval_x003E_k__BackingField" type="xs:boolean" />
+          <xs:element name="_x003C_LastModifiedBy_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_LastModifiedDate_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+          <xs:element name="_x003C_Level_x003E_k__BackingField" type="xs:int" />
+          <xs:element name="_x003C_Scope_x003E_k__BackingField" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NOrganisationScope" nillable="true" type="tns:NOrganisationScope" />
+  <xs:complexType name="DomainModelBaseOfNOrganisationScopeNOrganisationScopekcqH9ksd">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="DomainModelBaseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="NOrganisationScope" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" />
+          <GenericParameter Name="NOrganisationScope" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.EntityModel" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DomainModelBaseOfNOrganisationScopeNOrganisationScopekcqH9ksd" nillable="true" type="tns:DomainModelBaseOfNOrganisationScopeNOrganisationScopekcqH9ksd" />
+  <xs:complexType name="ArrayOfRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Role" nillable="true" type="tns:Role" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRole" nillable="true" type="tns:ArrayOfRole" />
+  <xs:complexType name="Role">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DomainModelBaseOfRoleRolekcqH9ksd">
+        <xs:sequence>
+          <xs:element name="_x003C_CreatedBy_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_CreatedDate_x003E_k__BackingField" type="xs:dateTime" />
+          <xs:element name="_x003C_IsDefaultRole_x003E_k__BackingField" type="xs:boolean" />
+          <xs:element name="_x003C_LastModifiedBy_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_LastModifiedDate_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+          <xs:element name="_x003C_Owner_x003E_k__BackingField" nillable="true" type="tns:User" />
+          <xs:element name="_x003C_RoleDescription_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_RoleName_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_RoleOwner_x003E_k__BackingField" nillable="true" type="xs:int" />
+          <xs:element name="_x003C_Users_x003E_k__BackingField" nillable="true" type="tns:ArrayOfUser" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Role" nillable="true" type="tns:Role" />
+  <xs:complexType name="DomainModelBaseOfRoleRolekcqH9ksd">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="DomainModelBaseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Role" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" />
+          <GenericParameter Name="Role" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.EntityModel" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DomainModelBaseOfRoleRolekcqH9ksd" nillable="true" type="tns:DomainModelBaseOfRoleRolekcqH9ksd" />
+  <xs:complexType name="Attestation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DomainModelBaseOfAttestationAttestationkcqH9ksd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AttestationDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AttestationEndpoint" nillable="true" type="tns:ArrayOfAttestationEndpoint" />
+          <xs:element minOccurs="0" name="AttestationHierarchy" nillable="true" type="tns:ArrayOfAttestationHierarchy" />
+          <xs:element minOccurs="0" name="AttestationName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AttestationProcesses" nillable="true" type="tns:ArrayOfAttestationProcess" />
+          <xs:element minOccurs="0" name="AttestationScopes" nillable="true" type="tns:ArrayOfAttestationScope" />
+          <xs:element minOccurs="0" name="CreateTaskOnNoReviewer" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure.Enums" minOccurs="0" name="DefaultReviewStatus" type="q14:AttestationDefaultReviewStatus" />
+          <xs:element minOccurs="0" name="DormantAccountDays" type="xs:long" />
+          <xs:element minOccurs="0" name="EmailEntityId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="IncludeDormantAccount" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IncludeUnmappedAccount" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsGroupMail" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsGroupTask" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="RequiresAttestationRemediation" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SendEmailOnNoReviewer" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TaskActionUserId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="WorkflowConfiguration" nillable="true" type="tns:WorkflowConfiguration" />
+          <xs:element minOccurs="0" name="WorkflowConfigurationId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Attestation" nillable="true" type="tns:Attestation" />
+  <xs:complexType name="DomainModelBaseOfAttestationAttestationkcqH9ksd">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="DomainModelBaseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Attestation" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" />
+          <GenericParameter Name="Attestation" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.EntityModel" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DomainModelBaseOfAttestationAttestationkcqH9ksd" nillable="true" type="tns:DomainModelBaseOfAttestationAttestationkcqH9ksd" />
+  <xs:complexType name="ArrayOfAttestationEndpoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AttestationEndpoint" nillable="true" type="tns:AttestationEndpoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAttestationEndpoint" nillable="true" type="tns:ArrayOfAttestationEndpoint" />
+  <xs:complexType name="AttestationEndpoint">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DomainModelBaseOfAttestationEndpointAttestationEndpointkcqH9ksd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Attestation" nillable="true" type="tns:Attestation" />
+          <xs:element minOccurs="0" name="AttestationId" type="xs:long" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EndPoint" nillable="true" type="tns:EndPoint" />
+          <xs:element minOccurs="0" name="EndpointSystemId" type="xs:long" />
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure.Enums" minOccurs="0" name="EndpointSystemType" type="q15:EndpointType" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AttestationEndpoint" nillable="true" type="tns:AttestationEndpoint" />
+  <xs:complexType name="DomainModelBaseOfAttestationEndpointAttestationEndpointkcqH9ksd">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="DomainModelBaseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="AttestationEndpoint" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" />
+          <GenericParameter Name="AttestationEndpoint" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.EntityModel" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DomainModelBaseOfAttestationEndpointAttestationEndpointkcqH9ksd" nillable="true" type="tns:DomainModelBaseOfAttestationEndpointAttestationEndpointkcqH9ksd" />
+  <xs:complexType name="ArrayOfAttestationHierarchy">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AttestationHierarchy" nillable="true" type="tns:AttestationHierarchy" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAttestationHierarchy" nillable="true" type="tns:ArrayOfAttestationHierarchy" />
+  <xs:complexType name="AttestationHierarchy">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DomainModelBaseOfAttestationHierarchyAttestationHierarchykcqH9ksd">
+        <xs:sequence>
+          <xs:element name="_x003C_AttestationId_x003E_k__BackingField" nillable="true" type="xs:long" />
+          <xs:element name="_x003C_CreatedBy_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_CreatedDate_x003E_k__BackingField" type="xs:dateTime" />
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure.Enums" name="_x003C_DefaultAttestationAction_x003E_k__BackingField" type="q16:AttestationDefaultReviewStatus" />
+          <xs:element name="_x003C_EndpointHierarchyId_x003E_k__BackingField" nillable="true" type="xs:long" />
+          <xs:element name="_x003C_EndpointHierarchy_x003E_k__BackingField" nillable="true" type="tns:EndpointHierarchy" />
+          <xs:element name="_x003C_EndpointId_x003E_k__BackingField" type="xs:long" />
+          <xs:element name="_x003C_IsActionAllowed_x003E_k__BackingField" type="xs:boolean" />
+          <xs:element name="_x003C_IsActionExtendable_x003E_k__BackingField" type="xs:boolean" />
+          <xs:element name="_x003C_IsActive_x003E_k__BackingField" type="xs:boolean" />
+          <xs:element name="_x003C_IsVisible_x003E_k__BackingField" type="xs:boolean" />
+          <xs:element name="_x003C_LastModifiedBy_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_LastModifiedDate_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AttestationHierarchy" nillable="true" type="tns:AttestationHierarchy" />
+  <xs:complexType name="DomainModelBaseOfAttestationHierarchyAttestationHierarchykcqH9ksd">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="DomainModelBaseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="AttestationHierarchy" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" />
+          <GenericParameter Name="AttestationHierarchy" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.EntityModel" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DomainModelBaseOfAttestationHierarchyAttestationHierarchykcqH9ksd" nillable="true" type="tns:DomainModelBaseOfAttestationHierarchyAttestationHierarchykcqH9ksd" />
+  <xs:complexType name="EndpointHierarchy">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DomainModelBaseOfEndpointHierarchyEndpointHierarchykcqH9ksd">
+        <xs:sequence>
+          <xs:element name="_x003C_CreatedBy_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_CreatedDate_x003E_k__BackingField" type="xs:dateTime" />
+          <xs:element name="_x003C_EndpointId_x003E_k__BackingField" nillable="true" type="xs:long" />
+          <xs:element name="_x003C_EndpointObjectId_x003E_k__BackingField" type="xs:long" />
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure.Enums" name="_x003C_EndpointType_x003E_k__BackingField" type="q17:EndpointType" />
+          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure.Enums" name="_x003C_EntitlementType_x003E_k__BackingField" type="q18:EntitlementType" />
+          <xs:element name="_x003C_IsActionable_x003E_k__BackingField" type="xs:boolean" />
+          <xs:element name="_x003C_IsActive_x003E_k__BackingField" type="xs:boolean" />
+          <xs:element name="_x003C_IsAssociatedWithUser_x003E_k__BackingField" type="xs:boolean" />
+          <xs:element name="_x003C_LastModifiedBy_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_LastModifiedDate_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+          <xs:element name="_x003C_Level_x003E_k__BackingField" type="xs:long" />
+          <xs:element name="_x003C_ParentId_x003E_k__BackingField" nillable="true" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EndpointHierarchy" nillable="true" type="tns:EndpointHierarchy" />
+  <xs:complexType name="DomainModelBaseOfEndpointHierarchyEndpointHierarchykcqH9ksd">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="DomainModelBaseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="EndpointHierarchy" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" />
+          <GenericParameter Name="EndpointHierarchy" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.EntityModel" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DomainModelBaseOfEndpointHierarchyEndpointHierarchykcqH9ksd" nillable="true" type="tns:DomainModelBaseOfEndpointHierarchyEndpointHierarchykcqH9ksd" />
+  <xs:complexType name="ArrayOfAttestationProcess">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AttestationProcess" nillable="true" type="tns:AttestationProcess" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAttestationProcess" nillable="true" type="tns:ArrayOfAttestationProcess" />
+  <xs:complexType name="AttestationProcess">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DomainModelBaseOfAttestationProcessAttestationProcesskcqH9ksd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Attestation" nillable="true" type="tns:Attestation" />
+          <xs:element minOccurs="0" name="AttestationId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HistoryId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ProcessEndAt" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ProcessName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProcessStartAt" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="WorkflowStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="process" nillable="true" type="tns:Process" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AttestationProcess" nillable="true" type="tns:AttestationProcess" />
+  <xs:complexType name="DomainModelBaseOfAttestationProcessAttestationProcesskcqH9ksd">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="DomainModelBaseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="AttestationProcess" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" />
+          <GenericParameter Name="AttestationProcess" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.EntityModel" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DomainModelBaseOfAttestationProcessAttestationProcesskcqH9ksd" nillable="true" type="tns:DomainModelBaseOfAttestationProcessAttestationProcesskcqH9ksd" />
+  <xs:complexType name="ArrayOfAttestationScope">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AttestationScope" nillable="true" type="tns:AttestationScope" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAttestationScope" nillable="true" type="tns:ArrayOfAttestationScope" />
+  <xs:complexType name="AttestationScope">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DomainModelBaseOfAttestationScopeAttestationScopekcqH9ksd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Attestation" nillable="true" type="tns:Attestation" />
+          <xs:element minOccurs="0" name="AttestationId" type="xs:long" />
+          <xs:element minOccurs="0" name="AttestationScopeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AttestationScopeValue" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="AttestationScopeValueDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="NOrganisation" nillable="true" type="tns:NOrganisation" />
+          <xs:element minOccurs="0" name="OrganisationScopeId" nillable="true" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AttestationScope" nillable="true" type="tns:AttestationScope" />
+  <xs:complexType name="DomainModelBaseOfAttestationScopeAttestationScopekcqH9ksd">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="DomainModelBaseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="AttestationScope" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" />
+          <GenericParameter Name="AttestationScope" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.EntityModel" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DomainModelBaseOfAttestationScopeAttestationScopekcqH9ksd" nillable="true" type="tns:DomainModelBaseOfAttestationScopeAttestationScopekcqH9ksd" />
+  <xs:complexType name="WorkflowConfiguration">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DomainModelBaseOfWorkflowConfigurationWorkflowConfigurationkcqH9ksd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ApplicableAccountTypes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ApplicableActionTypes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ApplicableUserTypes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Endpoint" nillable="true" type="tns:EndPoint" />
+          <xs:element minOccurs="0" name="EndpointSystemId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="RequestTypeId" type="xs:long" />
+          <xs:element minOccurs="0" name="RequestTypes" nillable="true" type="tns:RequestTypes" />
+          <xs:element minOccurs="0" name="WorkflowConfigurationDetails" nillable="true" type="tns:ArrayOfWorkflowConfigurationDetail" />
+          <xs:element minOccurs="0" name="WorkflowName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkflowConfiguration" nillable="true" type="tns:WorkflowConfiguration" />
+  <xs:complexType name="DomainModelBaseOfWorkflowConfigurationWorkflowConfigurationkcqH9ksd">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="DomainModelBaseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="WorkflowConfiguration" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" />
+          <GenericParameter Name="WorkflowConfiguration" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.EntityModel" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DomainModelBaseOfWorkflowConfigurationWorkflowConfigurationkcqH9ksd" nillable="true" type="tns:DomainModelBaseOfWorkflowConfigurationWorkflowConfigurationkcqH9ksd" />
+  <xs:complexType name="RequestTypes">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DomainModelBaseOfRequestTypesRequestTypeskcqH9ksd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="RequestTypeDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WorkflowConfigurations" nillable="true" type="tns:ArrayOfWorkflowConfiguration" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RequestTypes" nillable="true" type="tns:RequestTypes" />
+  <xs:complexType name="DomainModelBaseOfRequestTypesRequestTypeskcqH9ksd">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="DomainModelBaseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="RequestTypes" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" />
+          <GenericParameter Name="RequestTypes" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.EntityModel" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DomainModelBaseOfRequestTypesRequestTypeskcqH9ksd" nillable="true" type="tns:DomainModelBaseOfRequestTypesRequestTypeskcqH9ksd" />
+  <xs:complexType name="ArrayOfWorkflowConfiguration">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkflowConfiguration" nillable="true" type="tns:WorkflowConfiguration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkflowConfiguration" nillable="true" type="tns:ArrayOfWorkflowConfiguration" />
+  <xs:complexType name="ArrayOfWorkflowConfigurationDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkflowConfigurationDetail" nillable="true" type="tns:WorkflowConfigurationDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkflowConfigurationDetail" nillable="true" type="tns:ArrayOfWorkflowConfigurationDetail" />
+  <xs:complexType name="WorkflowConfigurationDetail">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DomainModelBaseOfWorkflowConfigurationDetailWorkflowConfigurationDetailkcqH9ksd">
+        <xs:sequence>
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure.Enums" minOccurs="0" name="ApprovalUserType" type="q19:ApprovalUserType" />
+          <xs:element minOccurs="0" name="Approver" type="xs:int" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DaysToWaitAfterEscalation" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IsActionRequired" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsEscalationRequired" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsMockGroup" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsReminderRequired" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ReminderIntervalInDays" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="RequiresApprovalFromAll" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ResponseTimeInDays" type="xs:int" />
+          <xs:element minOccurs="0" name="SequenceNumber" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="WorkflowConfigurationId" type="xs:long" />
+          <xs:element minOccurs="0" name="WorkflowConfigurations" nillable="true" type="tns:WorkflowConfiguration" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkflowConfigurationDetail" nillable="true" type="tns:WorkflowConfigurationDetail" />
+  <xs:complexType name="DomainModelBaseOfWorkflowConfigurationDetailWorkflowConfigurationDetailkcqH9ksd">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="DomainModelBaseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="WorkflowConfigurationDetail" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" />
+          <GenericParameter Name="WorkflowConfigurationDetail" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.EntityModel" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DomainModelBaseOfWorkflowConfigurationDetailWorkflowConfigurationDetailkcqH9ksd" nillable="true" type="tns:DomainModelBaseOfWorkflowConfigurationDetailWorkflowConfigurationDetailkcqH9ksd" />
+  <xs:complexType name="AttestationCampaign">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DomainModelBaseOfAttestationCampaignAttestationCampaignkcqH9ksd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Attestation" nillable="true" type="tns:Attestation" />
+          <xs:element minOccurs="0" name="AttestationID" type="xs:long" />
+          <xs:element minOccurs="0" name="CampaignName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CloseDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure.Enums" minOccurs="0" name="DefaultReviewStatus" type="q20:AttestationDefaultReviewStatus" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="RequiresAttestationRemediation" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SnapshotFileName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WorkflowInstanceID" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AttestationCampaign" nillable="true" type="tns:AttestationCampaign" />
+  <xs:complexType name="DomainModelBaseOfAttestationCampaignAttestationCampaignkcqH9ksd">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="DomainModelBaseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="AttestationCampaign" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" />
+          <GenericParameter Name="AttestationCampaign" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.EntityModel" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DomainModelBaseOfAttestationCampaignAttestationCampaignkcqH9ksd" nillable="true" type="tns:DomainModelBaseOfAttestationCampaignAttestationCampaignkcqH9ksd" />
+  <xs:complexType name="SubTask">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DomainModelBaseOfSubTaskSubTaskkcqH9ksd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="OwnerId" type="xs:long" />
+          <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RoleName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TCodeDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SubTask" nillable="true" type="tns:SubTask" />
+  <xs:complexType name="DomainModelBaseOfSubTaskSubTaskkcqH9ksd">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="DomainModelBaseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="SubTask" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel" />
+          <GenericParameter Name="SubTask" Namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.EntityModel" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DomainModelBaseOfSubTaskSubTaskkcqH9ksd" nillable="true" type="tns:DomainModelBaseOfSubTaskSubTaskkcqH9ksd" />
+</xs:schema>

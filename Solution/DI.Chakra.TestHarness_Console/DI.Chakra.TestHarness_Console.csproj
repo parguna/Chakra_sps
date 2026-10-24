@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8CC0C163-9050-49DD-884F-E04525D20105}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>DI.Chakra.TestHarness_Console</RootNamespace>
+    <AssemblyName>DI.Chakra.TestHarness_Console</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.11.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.11\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz, Version=3.0.7.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Quartz.3.0.7\lib\net452\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.5840.25917, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.6\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ConnectionString.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Connectors\DI.Chakra.Connectors.Factory\DI.Chakra.Connector.Factory.csproj">
+      <Project>{1552f04d-5543-4e0e-b77f-628d059381f9}</Project>
+      <Name>DI.Chakra.Connector.Factory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Connectors\DI.Chakra.Connector\DI.Chakra.Connector.csproj">
+      <Project>{04c4c7c7-177d-462d-ae23-8fc918327791}</Project>
+      <Name>DI.Chakra.Connector</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DI.Chakra.Application\DI.Chakra.Application.csproj">
+      <Project>{9e61c92f-3849-4ef1-b0c1-25f2a3847381}</Project>
+      <Name>DI.Chakra.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DI.Chakra.DBClient\DI.Chakra.DBClient.csproj">
+      <Project>{3f44ac92-447c-4016-9025-4bccd91b1267}</Project>
+      <Name>DI.Chakra.DBClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DI.Chakra.DBConfigHelper\DI.Chakra.DBConfigHelper.csproj">
+      <Project>{9a356356-e584-4682-9bdd-f0ae42f59f62}</Project>
+      <Name>DI.Chakra.DBConfigHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DI.Chakra.DomainModel\DI.Chakra.DomainModel.csproj">
+      <Project>{dba76d9a-9381-4313-8cf0-b1098be94d41}</Project>
+      <Name>DI.Chakra.DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DI.Chakra.Dto\DI.Chakra.Dto.csproj">
+      <Project>{cb00bab2-3fa6-4eeb-bfc5-876db1a518bb}</Project>
+      <Name>DI.Chakra.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DI.Chakra.EntityModel\DI.Chakra.EntityModel.csproj">
+      <Project>{65af207b-2342-4009-b3ea-0c829ff25cdc}</Project>
+      <Name>DI.Chakra.EntityModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DI.Chakra.Infrastructure\DI.Chakra.Infrastructure.csproj">
+      <Project>{9a13b27d-b9dc-474a-9fe6-1c60fd52e5a7}</Project>
+      <Name>DI.Chakra.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DI.Chakra.Logger\DI.Chakra.Logger.csproj">
+      <Project>{1e273971-c665-4e37-88ec-9621c81a7009}</Project>
+      <Name>DI.Chakra.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DI.Chakra.Repository\DI.Chakra.Repository.csproj">
+      <Project>{5ecff37e-0617-4642-9d08-7cb0c8423d29}</Project>
+      <Name>DI.Chakra.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Win\Processors\DI.Chakra.Service.MiscProcessor\DI.Chakra.Services.MiscProcessor.csproj">
+      <Project>{2d59f7fe-9a00-45c5-9b69-b4150a810c9a}</Project>
+      <Name>DI.Chakra.Services.MiscProcessor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Win\Processors\DI.Chakra.Services.ProvisioningProcessor\DI.Chakra.Services.ProvisioningProcessor.csproj">
+      <Project>{e13dd432-b551-4c76-8a6f-b313ef886cd3}</Project>
+      <Name>DI.Chakra.Services.ProvisioningProcessor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

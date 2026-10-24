@@ -1,0 +1,153 @@
+﻿.RadDock_IACMSkin {
+    border: 0;
+    border-radius: 6px;
+    box-shadow: none;
+    font-size: 1em;
+    font-family: Helvetica, Arial, sans-serif;
+    padding: 0 15px;
+    margin: 0 10px 10px 0;
+}
+.RadDock_IACMSkin .rdMiddle .rdLeft,
+.RadDock_IACMSkin .rdMiddle .rdRight,
+.RadDock_IACMSkin .rdTop .rdLeft,
+.RadDock_IACMSkin .rdTop .rdRight,
+.RadDock_IACMSkin .rdTop .rdCenter,
+.RadDock_IACMSkin .rdBottom .rdLeft,
+.RadDock_IACMSkin .rdBottom .rdRight,
+.RadDock_IACMSkin .rdBottom .rdCenter {
+    background-image: none
+}
+.RadDock_IACMSkin .rdTable tr.rdTop td.rdLeft,
+.RadDock_IACMSkin .rdTable tr.rdTop td.rdCenter,
+.RadDock_IACMSkin .rdTable tr.rdTop td.rdRight {
+    height: 36px;
+    display: none;
+    border-bottom: 1px solid #ddd;
+    background-color: #ffffff;
+    background-position: 0 0
+}
+.RadDock_IACMSkin .rdTable tr.rdTop td.rdRight  {
+    display: none;
+}
+.RadDock_IACMSkin .rdTable,
+.RadDock_IACMSkin .rdTable .rdLeft,
+.RadDock_IACMSkin .rdTable .rdCenter,
+.RadDock_IACMSkin .rdTable .rdRight {
+    border-collapse: separate;
+    *border-collapse: collapse;
+    border-spacing: 0
+}
+.RadDock_IACMSkin .rdTable .rdMiddle .rdLeft,
+.RadDock_IACMSkin .rdTable .rdMiddle .rdRight {
+    background-color: white
+}
+.RadDock_IACMSkin .rdTop .rdLeft {
+    border-radius: 6px 0 0
+}
+.RadDock_IACMSkin .rdTop .rdRight {
+    border-radius: 0 6px 0 0
+}
+.RadDock_IACMSkin.rdCollapsed .rdTop .rdLeft {
+    border-radius: 6px 0 0 6px
+}
+.RadDock_IACMSkin.rdCollapsed .rdTop .rdRight {
+    border-radius: 0 6px 6px 0
+}
+.RadDock_IACMSkin .rdBottom .rdLeft {
+    border-radius: 0 0 0 6px
+}
+.RadDock_IACMSkin .rdBottom .rdRight {
+    border-radius: 0 0 6px 0
+}
+.RadDock_IACMSkin div.rdTitleBar em {
+    font: inherit;
+    color: #333333;
+    font-weight: 700;
+    font-size: 1.2em;
+    line-height: 2.2em;
+}
+.RadDock_IACMSkin .rdMiddle .rdCenter,
+.RadDock_IACMSkin .rdBottom .rdCenter,
+.RadDock_IACMSkin .rdBottom .rdLeft,
+.RadDock_IACMSkin .rdBottom .rdRight {
+    background-color: transparent
+}
+.RadDock_IACMSkin div.rdContent {
+    font: inherit;
+    font-size: 1em;
+    color: #666;
+}
+.RadDock_IACMSkin td.rdCenter .rdCommands a span {
+    background-image: url('../Images/Common/radActionsSprite.png')
+}
+.RadDock_IACMSkin td.rdCenter .rdCommands a,
+.RadDock_IACMSkin td.rdCenter .rdCommands a span {
+    width: 28px;
+    height: 28px
+}
+.RadDock_IACMSkin .rdCommands span,
+.RadDock_IACMSkin span.rdExpand {
+    background-position: 4px -16px
+}
+.RadDock_IACMSkin span.rdExpand:hover {
+    background-position: 4px -16px;
+    opacity: 0.8;
+}
+.RadDock_IACMSkin span.rdCollapse {
+    background-position: 4px 4px
+}
+.RadDock_IACMSkin span.rdCollapse:hover {
+    background-position: 4px 4px;
+    opacity: 0.8;
+}
+.RadDock_IACMSkin span.rdCustom {
+    background-position: 4px -2511px
+}
+.RadDock_IACMSkin span.rdCustom:hover {
+    background-position: 4px -2511px;
+    opacity: 0.8;
+}
+.RadDock_IACMSkin span.rdClose {
+    background-position: 4px -756px
+}
+.RadDock_IACMSkin span.rdClose:hover {
+    background-position: 4px -756px;
+    opacity: 0.8;
+}
+.RadDock_IACMSkin span.rdPin {
+    background-position: 4px -1211px
+}
+.RadDock_IACMSkin span.rdPin:hover {
+    background-position: 4px -1211px;
+    opacity: 0.8;
+}
+.RadDock_IACMSkin span.rdUnpin {
+    background-position: 4px -1261px
+}
+.RadDock_IACMSkin span.rdUnpin:hover {
+    background-position: -61px -1261px
+}
+.RadDock_IACMSkin.RadDock.rdCollapsed {
+    height: 37px!important
+}
+.RadDock_IACMSkin.rdRtl .rdTop .rdLeft {
+    border-radius: 0 6px 0 0
+}
+.RadDock_IACMSkin.rdRtl .rdTop .rdRight {
+    border-radius: 6px 0 0 0
+}
+.RadDock_IACMSkin.rdRtl.rdCollapsed .rdTop .rdLeft {
+    border-radius: 0 6px 6px 0
+}
+.RadDock_IACMSkin.rdRtl.rdCollapsed .rdTop .rdRight {
+    border-radius: 6px 0 0 6px
+}
+.RadDock_IACMSkin.rdRtl .rdBottom .rdLeft {
+    border-radius: 0 0 6px 0
+}
+.RadDock_IACMSkin.rdRtl .rdBottom .rdRight {
+    border-radius: 0 0 0 6px
+}
+.RadDock .rdBottom .rdLeft, .RadDock .rdBottom .rdCenter, .RadDock .rdBottom .rdRight {
+    height: 5px;
+}

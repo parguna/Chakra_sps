@@ -1,0 +1,42 @@
+﻿
+.RadOrgChart .rocGroup {
+    background-color: rgba(234, 234, 234, 0.5);
+    border-radius: 10px;
+}
+.RadOrgChart .rocItem {
+    background-color: #e6e6e6;
+    background-image: linear-gradient(white, #e6e6e6);
+    border-color: #cdcdcd;
+    border-radius: 5px;
+    color: #333;
+}
+.RadOrgChart .rocExpandArrow, .RadOrgChart .rocCollapseArrow, .RadOrgChart .rocExpandGroupArrow, .RadOrgChart .rocCollapseGroupArrow {
+    background-color: #e6e6e6;
+    border-color: #cdcdcd;
+    border-radius: 3px;
+    color: #333;
+}
+.RadOrgChart .rocLoadingNodes .rocExpandArrow, .RadOrgChart .rocLoadingNodes .rocCollapseArrow, .RadOrgChart .rocLoadingGroups .rocExpandGroupArrow, .RadOrgChart .rocLoadingGroups .rocCollapseGroupArrow {
+    background-image: url("../Default/Common/loading_small.gif");
+}
+.RadOrgChart .rocDetachedItem, .RadOrgChart .rocDetachedNode {
+    background-color: #e6e6e6;
+    background-image: linear-gradient(white, #e6e6e6);
+    border-color: #cdcdcd;
+    border-radius: 5px;
+    color: #333;
+}
+.rocToolbar{
+    background-color: #e6e6e6;
+    background-image: linear-gradient(white, #e6e6e6);
+    border-color: #cdcdcd;
+    border-radius: 5px;
+    color: #333;
+}
+.rocToolbar .rocToolbarButton {
+    background-color: #e6e6e6;
+    background-image: linear-gradient(white, #e6e6e6);
+    border-color: #cdcdcd;
+    border-radius: 3px;
+    color: #333;
+}

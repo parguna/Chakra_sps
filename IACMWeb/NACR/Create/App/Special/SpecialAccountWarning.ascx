@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SpecialAccountWarning.ascx.cs" Inherits="DI.Chakra.Web.NACR.Create.App.Special.SpecialAccountWarning" %>
+<asp:Label runat="server" ID="lblWarningMessage" Visible="false" ForeColor="Red"></asp:Label>

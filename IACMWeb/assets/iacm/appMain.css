@@ -1,0 +1,19 @@
+﻿@import url("../bootstrap/css/bootstrap.min.css");
+/*@import url("../kendoui/styles/kendo.common.min.css");*/
+/*@import url("../kendoui/styles/kendo.default.min.css");
+@import url("../kendoui/styles/kendo.mobile.all.min.css");
+@import url("../kendoui/styles/kendo.dataviz.min.css");
+@import url("../kendoui/styles/kendo.dataviz.silver.min.css");*/
+@import url("../extendbootstrap/css/checkbox-radio-switch.css");
+@import url("../select/css/bootstrap-select.css");
+@import url("../extendbootstrap/css/font-awesome.min.css");
+
+.HoverPopupMsslEBS {
+    background-color: #2077BD;
+    color: White;
+    padding: 5px;
+    display: none;
+    overflow-y: scroll;
+    max-height: 280px;
+}
+

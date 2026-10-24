@@ -1,0 +1,3 @@
+Rule,Endpoint,AccountType,ProvisioningFieldName,Value
+Fin,AD,User,dfggfgf,Bcd12345
+Fin,AD,User,AccountName,Gomathy

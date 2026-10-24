@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://RWSDemoSvc.UpdateRoleResSchema" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" targetNamespace="http://RWSDemoSvc.UpdateRoleResSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="UserIntegrationDS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="InterfaceResponseHeaderDT">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FaultCodeID" type="xs:string" />
+              <xs:element name="FaultCodeDescription" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="updateRoleVALInfoDT">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CMS_Tnx_ID" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

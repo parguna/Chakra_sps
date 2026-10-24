@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D0BD701F-EA8F-4E78-9E40-C3DA7E9A23E2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ConnectorsTest</RootNamespace>
+    <AssemblyName>ConnectorsTest</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConFactory.cs" />
+    <Compile Include="TestConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestConnection.Designer.cs">
+      <DependentUpon>TestConnection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="TestConnection.resx">
+      <DependentUpon>TestConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="..\..\Solution Items\ConnectionString.config">
+      <Link>ConnectionString.config</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DI.Chakra.DBClient\DI.Chakra.DBClient.csproj">
+      <Project>{3f44ac92-447c-4016-9025-4bccd91b1267}</Project>
+      <Name>DI.Chakra.DBClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DI.Chakra.DBConfigHelper\DI.Chakra.DBConfigHelper.csproj">
+      <Project>{9a356356-e584-4682-9bdd-f0ae42f59f62}</Project>
+      <Name>DI.Chakra.DBConfigHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DI.Chakra.DomainModel\DI.Chakra.DomainModel.csproj">
+      <Project>{DBA76D9A-9381-4313-8CF0-B1098BE94D41}</Project>
+      <Name>DI.Chakra.DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DI.Chakra.Dto\DI.Chakra.Dto.csproj">
+      <Project>{cb00bab2-3fa6-4eeb-bfc5-876db1a518bb}</Project>
+      <Name>DI.Chakra.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DI.Chakra.EntityModel\DI.Chakra.EntityModel.csproj">
+      <Project>{65af207b-2342-4009-b3ea-0c829ff25cdc}</Project>
+      <Name>DI.Chakra.EntityModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DI.Chakra.Infrastructure\DI.Chakra.Infrastructure.csproj">
+      <Project>{9A13B27D-B9DC-474A-9FE6-1C60FD52E5A7}</Project>
+      <Name>DI.Chakra.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DI.Chakra.Logger\DI.Chakra.Logger.csproj">
+      <Project>{1E273971-C665-4E37-88EC-9621C81A7009}</Project>
+      <Name>DI.Chakra.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Solution\DI.Chakra.Connector.SRM\DI.Chakra.Connector.SRM.csproj">
+      <Project>{5ffd85b4-372f-4bbb-959c-60ef5d053fec}</Project>
+      <Name>DI.Chakra.Connector.SRM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CustomApps\DI.Chakra.Connector.GEMS\DI.Chakra.Connector.GEMS.csproj">
+      <Project>{a7511d6b-4f3e-4a21-ab5b-36507552867b}</Project>
+      <Name>DI.Chakra.Connector.GEMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CustomApps\DI.Chakra.Connector.NPAC\DI.Chakra.Connector.NPAC.csproj">
+      <Project>{ec74872f-f6d3-4d30-8b28-1d28dab0436e}</Project>
+      <Name>DI.Chakra.Connector.NPAC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CustomApps\DI.Chakra.Connector.SSIDS\DI.Chakra.Connector.SSIDS.csproj">
+      <Project>{456c34f3-d7a7-434a-b3a6-8b7774a0a2af}</Project>
+      <Name>DI.Chakra.Connector.SSIDS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CustomApps\DI.Chakra.Connetor.NOVA\DI.Chakra.Connector.NOVA.csproj">
+      <Project>{02c214eb-c786-409b-9155-4027ba7a3a6d}</Project>
+      <Name>DI.Chakra.Connector.NOVA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Connector.ActiveDirectory\DI.Chakra.Connector.ActiveDirectory.csproj">
+      <Project>{2645f2de-ef12-414d-a58c-eee410e81f70}</Project>
+      <Name>DI.Chakra.Connector.ActiveDirectory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Connector.IACM\DI.Chakra.Connector.IACM.csproj">
+      <Project>{1f49966d-f25a-4797-862f-0ba7d9ee9a3a}</Project>
+      <Name>DI.Chakra.Connector.IACM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Connector.Lenel\DI.Chakra.Connector.Lenel.csproj">
+      <Project>{7f951383-2920-40da-9768-a76f52bcf573}</Project>
+      <Name>DI.Chakra.Connector.Lenel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Connector.Office365\DI.Chakra.Connector.Office365.csproj">
+      <Project>{d90b9319-f742-45ae-adf7-5f04299702ea}</Project>
+      <Name>DI.Chakra.Connector.Office365</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Connector.SAPBase\DI.Chakra.Connector.SAPBase.csproj">
+      <Project>{a79236ae-f25f-4f41-88e8-0ca1227f1e87}</Project>
+      <Name>DI.Chakra.Connector.SAPBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Connector.SAPEP\DI.Chakra.Connector.SAPEP.csproj">
+      <Project>{55851c9b-0ece-44fb-9bdd-70fe79c8e3bc}</Project>
+      <Name>DI.Chakra.Connector.SAPEP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Connector.SAPHRMS\DI.Chakra.Connector.SAPHRMS.csproj">
+      <Project>{d419e494-94b8-4957-b990-8603161108a8}</Project>
+      <Name>DI.Chakra.Connector.SAPHRMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Connector.SAPV3New\DI.Chakra.Connector.SAPV3New.csproj">
+      <Project>{1ebfbea9-88cd-4741-a7e5-b5bfda53ea6a}</Project>
+      <Name>DI.Chakra.Connector.SAPV3New</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Connector.SkypeForBusiness\DI.Chakra.Connector.SkypeForBusiness.csproj">
+      <Project>{d2464583-875c-40f4-9e80-ea133016a3ae}</Project>
+      <Name>DI.Chakra.Connector.SkypeForBusiness</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Connector.SuccessFactor\DI.Chakra.Connector.SuccessFactor.csproj">
+      <Project>{4205e11e-5934-475b-9102-7cbc13a0f0e3}</Project>
+      <Name>DI.Chakra.Connector.SuccessFactor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Connector.VPN\DI.Chakra.Connector.VPN.csproj">
+      <Project>{7868294f-c74a-4325-bbef-b057c2af9e22}</Project>
+      <Name>DI.Chakra.Connector.VPN</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Connectors.Factory\DI.Chakra.Connector.Factory.csproj">
+      <Project>{1552f04d-5543-4e0e-b77f-628d059381f9}</Project>
+      <Name>DI.Chakra.Connector.Factory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Connector\DI.Chakra.Connector.csproj">
+      <Project>{04c4c7c7-177d-462d-ae23-8fc918327791}</Project>
+      <Name>DI.Chakra.Connector</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\General\DI.Chakra.Connector.General\DI.Chakra.Connector.General.csproj">
+      <Project>{c2b9d4b0-0912-4e58-8a24-4156c271811a}</Project>
+      <Name>DI.Chakra.Connector.General</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

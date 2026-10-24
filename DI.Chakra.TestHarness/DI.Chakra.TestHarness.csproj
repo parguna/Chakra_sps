@@ -1,0 +1,440 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F6246389-EEF1-4926-8AB2-FFA98F4DCC2F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestHarness</RootNamespace>
+    <AssemblyName>TestHarness</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\Solution\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Web - DEBUG|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Web - DEBUG\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Web - DEBUG|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Web - DEBUG\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Web - DEBUG|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Web - DEBUG\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPPlus, Version=4.1.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Solution\packages\EPPlus.4.5.3.2\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="IDVault, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Assemblies\IDVault.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Domino">
+      <HintPath>..\Assemblies\Interop.Domino.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\MicrosoftOfficeCore.15.0.0\lib\net35\Office.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.5840.25917, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\Solution\packages\System.Linq.Dynamic.1.0.6\lib\net40\System.Linq.Dynamic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Management.Automation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Connectors\DI.Chakra.Connector.Office365\bin\Debug\System.Management.Automation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmailTemplateTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmailTemplateTest.Designer.cs">
+      <DependentUpon>frmEmailTemplateTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HRMS_Data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRMS_Data.Designer.cs">
+      <DependentUpon>HRMS_Data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NovaExcelUploadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NovaExcelUploadForm.Designer.cs">
+      <DependentUpon>NovaExcelUploadForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Office365Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Office365Form.Designer.cs">
+      <DependentUpon>Office365Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResolveExceptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResolveExceptions.Designer.cs">
+      <DependentUpon>ResolveExceptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SAPUtilityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SAPUtilityForm.Designer.cs">
+      <DependentUpon>SAPUtilityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SAP_AccountCreation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SAP_AccountCreation.Designer.cs">
+      <DependentUpon>SAP_AccountCreation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VPNTokenUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VPNTokenUpdate.Designer.cs">
+      <DependentUpon>VPNTokenUpdate.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmailTemplateTest.resx">
+      <DependentUpon>frmEmailTemplateTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRMS_Data.resx">
+      <DependentUpon>HRMS_Data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NovaExcelUploadForm.resx">
+      <DependentUpon>NovaExcelUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Office365Form.resx">
+      <DependentUpon>Office365Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ResolveExceptions.resx">
+      <DependentUpon>ResolveExceptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SAPUtilityForm.resx">
+      <DependentUpon>SAPUtilityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SAP_AccountCreation.resx">
+      <DependentUpon>SAP_AccountCreation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VPNTokenUpdate.resx">
+      <DependentUpon>VPNTokenUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="..\Solution Items\ConnectionString.config">
+      <Link>ConnectionString.config</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Connectors\DI.Chakra.Connector.Lenel\DI.Chakra.Connector.Lenel.csproj">
+      <Project>{7f951383-2920-40da-9768-a76f52bcf573}</Project>
+      <Name>DI.Chakra.Connector.Lenel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Connectors\DI.Chakra.Connector.Office365\DI.Chakra.Connector.Office365.csproj">
+      <Project>{d90b9319-f742-45ae-adf7-5f04299702ea}</Project>
+      <Name>DI.Chakra.Connector.Office365</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Connectors\DI.Chakra.Connector.SAPHRMS\DI.Chakra.Connector.SAPHRMS.csproj">
+      <Project>{D419E494-94B8-4957-B990-8603161108A8}</Project>
+      <Name>DI.Chakra.Connector.SAPHRMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Connectors\DI.Chakra.Connector.SAPV3New\DI.Chakra.Connector.SAPV3New.csproj">
+      <Project>{1ebfbea9-88cd-4741-a7e5-b5bfda53ea6a}</Project>
+      <Name>DI.Chakra.Connector.SAPV3New</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Connectors\DI.Chakra.Connector.SkypeForBusiness\DI.Chakra.Connector.SkypeForBusiness.csproj">
+      <Project>{d2464583-875c-40f4-9e80-ea133016a3ae}</Project>
+      <Name>DI.Chakra.Connector.SkypeForBusiness</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Connectors\DI.Chakra.Connector.SuccessFactor\DI.Chakra.Connector.SuccessFactor.csproj">
+      <Project>{4205e11e-5934-475b-9102-7cbc13a0f0e3}</Project>
+      <Name>DI.Chakra.Connector.SuccessFactor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Connectors\DI.Chakra.Connectors.Factory\DI.Chakra.Connector.Factory.csproj">
+      <Project>{1552f04d-5543-4e0e-b77f-628d059381f9}</Project>
+      <Name>DI.Chakra.Connector.Factory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Connectors\DI.Chakra.Connector\DI.Chakra.Connector.csproj">
+      <Project>{04c4c7c7-177d-462d-ae23-8fc918327791}</Project>
+      <Name>DI.Chakra.Connector</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.DomainModel\DI.Chakra.DomainModel.csproj">
+      <Project>{dba76d9a-9381-4313-8cf0-b1098be94d41}</Project>
+      <Name>DI.Chakra.DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Dto\DI.Chakra.Dto.csproj">
+      <Project>{cb00bab2-3fa6-4eeb-bfc5-876db1a518bb}</Project>
+      <Name>DI.Chakra.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.EntityModel\DI.Chakra.EntityModel.csproj">
+      <Project>{65af207b-2342-4009-b3ea-0c829ff25cdc}</Project>
+      <Name>DI.Chakra.EntityModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Infrastructure\DI.Chakra.Infrastructure.csproj">
+      <Project>{9a13b27d-b9dc-474a-9fe6-1c60fd52e5a7}</Project>
+      <Name>DI.Chakra.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.ProvisioningUtility\DI.Chakra.ProvisioningUtility.csproj">
+      <Project>{89971326-900c-4030-96b0-04b45d4e9142}</Project>
+      <Name>DI.Chakra.ProvisioningUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Transaction\DI.Chakra.Transaction.csproj">
+      <Project>{4f42aeb0-8003-4791-afc4-3a70a421fd58}</Project>
+      <Name>DI.Chakra.Transaction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DI.Chakra.Logger\DI.Chakra.Logger.csproj">
+      <Project>{1e273971-c665-4e37-88ec-9621c81a7009}</Project>
+      <Name>DI.Chakra.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IACMWeb\DI.Chakra.Web.csproj">
+      <Project>{69070B5C-D054-49CE-B428-A03A59D0C892}</Project>
+      <Name>DI.Chakra.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Win\Processors\DI.Chakra.Service.MiscProcessor\DI.Chakra.Services.MiscProcessor.csproj">
+      <Project>{2d59f7fe-9a00-45c5-9b69-b4150a810c9a}</Project>
+      <Name>DI.Chakra.Services.MiscProcessor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Win\Processors\DI.Chakra.Services.AttestationProcessor\DI.Chakra.Services.AttestationProcessor.csproj">
+      <Project>{c127e8eb-bf72-4426-a4d7-b32c2e597a69}</Project>
+      <Name>DI.Chakra.Services.AttestationProcessor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Win\Processors\DI.Chakra.Services.ComplianceProcessor\DI.Chakra.Services.ComplianceProcessor.csproj">
+      <Project>{2cd2d6a6-a7f6-4ed5-9275-729080052133}</Project>
+      <Name>DI.Chakra.Services.ComplianceProcessor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Win\Processors\DI.Chakra.Services.DiscoveryProcessor\DI.Chakra.Services.DiscoveryProcessor.csproj">
+      <Project>{8764f290-d6b2-489b-828e-c0965f1aa9ea}</Project>
+      <Name>DI.Chakra.Services.DiscoveryProcessor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Win\Processors\DI.Chakra.Services.EmailingProcessor\DI.Chakra.Services.EmailingProcessor.csproj">
+      <Project>{2335b14f-bbe7-452e-9f99-4a4af01cdc94}</Project>
+      <Name>DI.Chakra.Services.EmailingProcessor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Win\Processors\DI.Chakra.Services.ProvisioningProcessor\DI.Chakra.Services.ProvisioningProcessor.csproj">
+      <Project>{e13dd432-b551-4c76-8a6f-b313ef886cd3}</Project>
+      <Name>DI.Chakra.Services.ProvisioningProcessor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Solution\DI.Chakra.Connector.SRM\DI.Chakra.Connector.SRM.csproj">
+      <Project>{5ffd85b4-372f-4bbb-959c-60ef5d053fec}</Project>
+      <Name>DI.Chakra.Connector.SRM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workflows\DI.Chakra.Workflow.Processor\DI.Chakra.Workflow.Processor.csproj">
+      <Project>{93B6DBB6-CEC1-4017-B601-B270A79BA2F6}</Project>
+      <Name>DI.Chakra.Workflow.Processor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Workflows\DI.Chakra.Workflow.ServiceHelpers\DI.Chakra.Workflow.ServiceHelpers.csproj">
+      <Project>{e741a681-593f-4f62-863e-5a34c19809ff}</Project>
+      <Name>DI.Chakra.Workflow.ServiceHelpers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

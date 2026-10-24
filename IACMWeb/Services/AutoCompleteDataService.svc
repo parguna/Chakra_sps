@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="DI.Chakra.Web.Services.AutoCompleteDataService" CodeBehind="AutoCompleteDataService.svc.cs" %>

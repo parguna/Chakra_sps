@@ -1,0 +1,6 @@
+﻿using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+[assembly: AssemblyTitle("DI.Chakra.Connector.SAPEP701")]
+[assembly: AssemblyDescription("SAPEP Connector")]

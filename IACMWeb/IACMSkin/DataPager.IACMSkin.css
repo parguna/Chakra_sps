@@ -1,0 +1,52 @@
+.RadDataPager_IACMSkin {
+    background-image: none,-webkit-linear-gradient(top,rgba(255,255,255,.6) 0,rgba(255,255,255,.0) 100%);
+    background-image: none,-moz-linear-gradient(top,rgba(255,255,255,.6) 0,rgba(255,255,255,.0) 100%);
+    background-image: none,-o-linear-gradient(top,rgba(255,255,255,.6) 0,rgba(255,255,255,.0) 100%);
+    background-image: none,linear-gradient(to bottom,rgba(255,255,255,.6) 0,rgba(255,255,255,.0) 100%);
+    background-position: 50% 50%;
+    background-color: #e3e3e3;
+    border-color: #c5c5c5;
+    border-left-width: 0;
+    border-right-width: 1px;
+    border-bottom: medium none;
+}
+
+.RadDataPager_IACMSkin .rdpNumPart a {
+    color: inherit
+}
+
+.RadDataPager_IACMSkin .rdpNumPart a:hover {
+    border-color: #bcb4b0;
+    background-color: #bcb4b0
+}
+
+.RadDataPager_IACMSkin .rdpNumPart a.rdpCurrentPage,
+.RadDataPager_IACMSkin .rdpNumPart a.rdpCurrentPage:hover  {
+    border: 1px solid #207bbd;
+    color: #FFF;
+}
+
+.RadDataPager_IACMSkin .rdpPagerButton,
+.RadDataPager_IACMSkin .rdpActionButton {
+    background: transparent;
+    color: inherit;
+    border: 1px solid #c5c5c5
+}
+
+.RadDataPager_IACMSkin .rdpPagerButton:hover,
+.RadDataPager_IACMSkin .rdpActionButton:hover {
+    border-color: #bcb4b0;
+    background-color: #bcb4b0
+}
+
+.RadDataPager_IACMSkin .rdpActionButton {
+    border-radius: 100%
+}
+
+.RadComboBox_IACMSkin .rcbFocused .rcbArrowCell a {
+    background-position: 2px -2256px;
+}
+.RadComboBox_IACMSkin .rcbArrowCell a {
+    background: url(/Images/Common/caret-down.png) no-repeat right transparent !important;
+    background-size: 18px !important;
+}

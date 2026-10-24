@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel.Presentation" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DI.Chakra.DomainModel.Presentation" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:53412/Attestation/AttestationApprovalWFService.xamlx?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure.Enums" />
+  <xs:import schemaLocation="http://localhost:53412/Attestation/AttestationApprovalWFService.xamlx?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure" />
+  <xs:complexType name="ArrayOfPresentationAccessRequestItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PresentationAccessRequestItem" nillable="true" type="tns:PresentationAccessRequestItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPresentationAccessRequestItem" nillable="true" type="tns:ArrayOfPresentationAccessRequestItem" />
+  <xs:complexType name="PresentationAccessRequestItem">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure.Enums" minOccurs="0" name="ACRCategory" type="q1:ACRCategory" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure.Enums" minOccurs="0" name="AccessItemType" type="q2:AccessItemType" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure" minOccurs="0" name="AccessRequestItemType" type="q3:AccessRequestItemType" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure.Enums" minOccurs="0" name="AccountType" type="q4:AccountType" />
+      <xs:element minOccurs="0" name="AdditionalInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EndpointAccountName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndpointName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndpointSystemId" type="xs:long" />
+      <xs:element minOccurs="0" name="EndpointSystemTypeId" type="xs:long" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure.Enums" minOccurs="0" name="EndpointType" type="q5:EndpointType" />
+      <xs:element minOccurs="0" name="EndpointUserId" type="xs:long" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DI.Chakra.Infrastructure.Enums" minOccurs="0" name="EntitlementType" type="q6:EntitlementType" />
+      <xs:element minOccurs="0" name="IsApproved" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ItemDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemDetail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KeyId" type="xs:long" />
+      <xs:element minOccurs="0" name="RequestFor" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PresentationAccessRequestItem" nillable="true" type="tns:PresentationAccessRequestItem" />
+</xs:schema>

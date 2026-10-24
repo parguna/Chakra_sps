@@ -1,0 +1,94 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="FrontPage.master.cs" Inherits="DI.Chakra.Web.Master.FrontPage" %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<%@ Register Src="~/UsrControl/Common/MessageBox.ascx" TagPrefix="uc1" TagName="AlertMessage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Identity & Data Governance Suite</title>
+    <link rel="icon" type="image/png" href="../Images/rws.ico" />
+
+    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/styles/stylesheet.css" rel="stylesheet" />
+    <link href="<%=Page.ResolveClientUrl("~/assets/styles/non-responsive.css")%>?v=1" rel="stylesheet" />
+    <link href="../assets/styles/Window.css" rel="stylesheet" />
+    <link href="../IACMSkin/Window.IACMSkin.css" rel="stylesheet" />
+    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/js/jquery-1.11.2.min.js")%>"></script>
+    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/bootstrap/js/bootstrap.min.js")%>"></script>
+    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/js/validatr.js")%>"></script>
+    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/js/jquery.placeholder.js")%>"></script>
+
+    <script type="text/javascript">
+
+        //function disableBackButton()
+        //{
+        //window.history.forward();
+        //}
+        //setTimeout("disableBackButton()", 0);
+
+        $(document).ready(function () {
+            $('input').placeholder();
+        });
+
+        function BackgroundOnDoubeClick() {
+            var divLoadImage = document.getElementById('divLoadImg');
+            divLoadImage.style.display = 'none';
+            var divBackground = document.getElementById('divBackground');
+            divBackground.style.display = 'none';
+            var objMan = Sys.WebForms.PageRequestManager.getInstance();
+            if (objMan.get_isInAsyncPostBack())
+                objMan.abortPostBack();
+        }
+    </script>
+  
+</head>
+<body class="login">
+    <form id="form1" class="flex" runat="server">
+        <asp:ToolkitScriptManager runat="server"></asp:ToolkitScriptManager>
+
+        <asp:UpdatePanel ID="AlertMessageUpdatePanel" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+                <uc1:AlertMessage runat="server" ID="AlertMessage" />
+            </ContentTemplate>
+        </asp:UpdatePanel>
+
+
+        <div id="wrapper">
+            <div class="login-box center-block">
+                <%--<div class="login-header">
+                    <img class="inline di-logo" alt="Deep Identity" src="../../Images/deep-identity-logo-black.png" />
+                    <h2 class="di-title inline">Identity & Data Governance Suite v5</h2>
+                </div>--%>
+                <div class="customer-login-logo">
+                    <div class="customer-login-logo">
+                        <div class="c-logo">
+                            <asp:Image ID="imgLogo" runat="server" CssClass="img-responsive" ImageUrl="~/Images/Client/DI.png" />
+                        </div>
+
+                        <h1 class="c-app-name">
+                            <span class="c-name hide"><%= T("App.Branding.Company") %></span>
+                            <span class="c-subname"><%= T("App.Branding.SystemName") %></span>
+                        </h1>
+                    </div>
+                </div>
+                <asp:ContentPlaceHolder ID="cplLogin" runat="server">
+                </asp:ContentPlaceHolder>
+                <div class="login-footer">
+                    <p>
+                        &nbsp;&nbsp;
+                      <%--  Copyright © 2015 Deep Identity<br />
+                        All rights reserved.--%>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Chakra>
+
+  <add key="App.Branding.Logo" value="SP.png?V=2" />
+  <add key="App.Branding.Company" value="Singapore Power" />
+  <add key="App.Branding.SystemName" value="Identity Management System" />
+  
+  <add key="App.Common.Endpoint" value="Endpoint" />
+  <add key="App.Common.EndpointType" value="Application Type" />
+  <add key="App.Common.Task" value="Task" />
+  <add key="App.Common.Approvals" value="Approvals" />
+  <add key="App.Common.Executioner" value="Executioner" />
+  <add key="App.Common.MoreDetails" value="More Details" />
+  <add key="App.Common.ApprovalComments" value="Comments:" />
+  <add key="App.Common.ApproverDetail" value="Approver Detail" />
+  <add key="App.Common.ViewApprovalChain" value="View Approval Chain" />
+  <add key="App.Common.SendNotification" value="Send Notification" />
+  <add key="App.Common.ReplyNotification" value="Reply Notification" />
+  <add key="App.Common.ViewNotification" value="View Notification" />
+  <add key="App.Common.AttachFile" value="Attach File" />
+  <add key="App.Common.ViewAttachment" value="View Attachment" />
+  <add key="App.Common.ViewResubmittedAttachment" value="View Resubmitted History" />
+  <add key="App.Common.AccountDetails" value="Account Details" />
+  <add key="App.Common.Name" value="Name" />
+  <add key="App.Common.Description" value="Description" />
+  <add key="App.Common.RequestDate" value="Request Date" />
+  <add key="App.Common.RiskInfo" value="Risk Information" />
+  
+  <add key="App.ACR.AccessRequestFor" value="Access Request For" />
+  <add key="App.ACR.Self" value="Self" />
+  <add key="App.ACR.Others" value="Others" />
+  <add key="App.ACR.UserName" value="User Name" />
+  <add key="App.ACR.RequestType" value="Request Type" />
+  <add key="App.ACR.NewAccount" value="New Account" />
+  <add key="App.ACR.Amendment" value="Amendment" />
+  <add key="App.ACR.DeleteAccount" value="Delete Account" />
+  <add key="App.ACR.ReNewAccount" value="ReNew Account" />
+  
+  <add key="App.ACR.AmendAdd" value="Add" />
+  <add key="App.ACR.AmendRemove" value="Remove" />
+  
+  <add key="App.ACR.ValidFrom" value="Effective Date (Valid From)" />
+  <add key="App.ACR.ValidTo" value="Valid To" />
+  <add key="App.ACR.RequestReason" value="Comments to Approver" />
+  <add key="App.ACR.Supervisor" value="Supervisor" />
+  <add key="App.ACR.ApplicationType" value="Application Type" />
+  <add key="App.ACR.Application" value="Application" />
+  <add key="App.ACR.AccountType" value="Account Type" />
+
+  
+  <add key="App.ACR.Catalog" value="Catalog" />
+  <add key="App.ACR.Entitlement" value="Entitlement" />
+  
+  <add key="App.Request.TaskDetails" value="Access Request" />
+  <add key="App.Request.Approval" value="Approval" />
+  <add key="App.Request.MoreDetails" value="More Details" />
+  <add key="App.Request.ViewApprovalChain" value="View Approval Chain" />
+  <add key="App.Request.ApproverDetail" value="Approver Detail" />
+  <add key="App.Request.AccountType" value="Account Type:" />
+  <add key="App.Request.Entitlement" value="Entitlement:" />
+  <add key="App.Request.RequestFor" value="Request For:" />
+  <add key="App.Request.RequestBy" value="Request By:" />
+  <add key="App.Request.ValidFrom" value="Valid From:" />
+  <add key="App.Request.ValidTo" value="Valid To:" />
+  <add key="App.Request.ExecutionDate" value="Execution Date:" />
+  <add key="App.Request.Status" value="Status:" />
+  <add key="App.Request.Info" value="User Information" />
+  
+  <add key="App.Task.Add" value="Add" />
+  <add key="App.Task.DelegateTo" value="Delegate To" />
+  <add key="App.Task.Comments" value="Comments" />
+
+  <add key="App.Rule.All" value="All Value(*)" />
+  
+  <add key="App.Employee.IdentificationNo" value="Identification Number" />
+  <add key="App.Employee.IdentificationType" value="Identification Type" />
+  <add key="App.Employee.IdentificationCountry" value="Identification Country" />
+  <add key="App.Employee.EmployeeNo" value="Employee Number" />
+  <add key="App.Employee.KnownAs" value="Employee Name" />
+  <add key="App.Employee.FirstName" value="First Name" />
+  <add key="App.Employee.LastName" value="Last Name" />
+  <add key="App.Employee.PreferredName" value="Preferred Name" />
+  <add key="App.Employee.FamilyName" value="Family Name" />
+  <add key="App.Employee.UserName" value="Employee AD-ID" />
+  <add key="App.Employee.Password" value="Password" />
+  <add key="App.Employee.SupervisorUser" value="Supervisor" />
+  <add key="App.Employee.OrgUnit" value="Business Unit" />
+  <add key="App.Employee.Designation" value="Designation" />
+  <add key="App.Employee.Jobcode" value="Job Code" />
+  <add key="App.Employee.Company" value="Company" />
+  <add key="App.Employee.Department" value="Department" />
+  <add key="App.Employee.BusinessUnit" value="BusinessUnit" />
+  <add key="App.Employee.Division" value="Division" />
+  <add key="App.Employee.CostCenter" value="Cost Center" />
+  <add key="App.Employee.JoinDate" value="Join Date" />
+  <add key="App.Employee.TerminationDate" value="Last Service Date" />
+  <add key="App.Employee.EmployeeType" value="Employee Type" />
+  <add key="App.Employee.EmployeeClass" value="Employee Class" />
+  <add key="App.Employee.TelephoneNumber" value="Telephone Number" />
+  <add key="App.Employee.MobileNumber" value="Mobile Number" />
+  <add key="App.Employee.Grade" value="Grade" />
+  <add key="App.Employee.Plan" value="Salary Plan" />
+  <add key="App.Employee.CSEL" value="CSEL" />
+  <add key="App.Employee.Location" value="Location" />
+  <add key="App.Employee.DOB" value="DOB" />
+
+  <add key="App.Attestation.AttestationType" value="Attestation Type" />
+  <add key="App.Attestation.SplitCampaign" value="Split Campaign based on " />
+  <add key="App.Attestation.AttestationName" value="Attestation Name" />
+  <add key="App.Attestation.CampaignName" value="Campaign Name Format" />
+  <add key="App.Attestation.CampaignFormat" value="Campaign Name Format" />
+  <add key="App.Attestation.CampaignFormatMessage" value="d - Date, M - Month, y - Year, Q? - Quarterly, Z? - Half-yearly" />
+  <add key="App.Attestation.AttestationDescription" value="Attestation Description" />
+  <add key="App.Attestation.EnableRemediation" value="Enable Remediation" />
+  <add key="App.Attestation.ExceptionConfiguration" value="Exception Configuration" />
+  <add key="App.Attestation.SendNotification" value="Send Mail Notification to (IAM Team)" />
+  <add key="App.Attestation.CreateTask" value="Create Task" />
+  <add key="App.Attestation.IncludeUnmappedAccount" value="Include Unmapped Accounts" />
+  <add key="App.Attestation.IncludeDormantAccount" value="Include Dormant Accounts" />
+  <add key="App.Attestation.DormantDays" value="No of Dormant Days" />
+  <add key="App.Attestation.Remediation" value="Remediation" />
+  <add key="App.Attestation.RemediationMessage" value="Remediation will invoke provisioning process at the end of review process" />
+  <add key="App.Attestation.ScopeType" value="Scope Type" />
+  <add key="App.Attestation.ScopeValue" value="Scope Value" />
+  <add key="App.Attestation.SubmitBefore" value="Submit Before" />
+  <add key="App.Attestation.CurrentReviewer" value="Reviewer" />
+  <add key="App.Attestation.CurrentLevel" value="Level" />
+  <add key="App.Attestation.AttestationView" value="Attestation View" />
+  <add key="App.Attestation.AttestationDetails" value="Attestation Details" />
+  <add key="App.Attestation.ReviewedBy" value="Reviewed By" />
+  <add key="App.Attestation.On" value="on" />
+  <add key="App.Attestation.AttestationDetail" value="Attestation Detail" />
+  <add key="App.Attestation.Name" value="Name" />
+  <add key="App.Attestation.Description" value="Description" />
+  <add key="App.Attestation.Type" value="Type" />
+  <add key="App.Campaign.Name" value="Campaign Name" />
+       
+  <add key="App.Common.INHFunction" value="Function" />
+  <add key="App.Common.INHPermission" value="Permission" />
+  <add key="App.ManagementReport.ReportType" value="Report Type" />
+  
+  <add key="App.Common.ToEmail" value="To Email Id" />
+  <add key="App.Common.CCEmail" value="CC Email Id" />
+
+  <add key="App.Common.Mock.S.Number" value="Rolling Number" />
+  <add key="App.Common.Mock.S.Status" value="Status" />
+  <add key="App.Common.Mock.S.ApprovedDate" value="Approved Date" />
+  <add key="App.Common.Mock.Instruction" value="Instruction" />
+  <add key="App.Common.Mock.Endpoint" value="Request Subsystem" />
+  <add key="App.Hint.RoleIsDefault" value="If this box is checked, Role can't be deleted. There is also no option to unchecked once checked." />
+  <add key="App.Hint.GroupIsDefault" value="If this box is checked, Group can't be deleted. There is also no option to unchecked once checked." />
+  <add key="App.Hint.ARValidTo" value="Permission will be removed automatically the day after the stated date." />
+  <add key="App.Hint.TechnicalRoles" value="Click here to show the technical roles." />
+</Chakra>
