@@ -77,3 +77,75 @@
 @import url("../../IACMSkin/Tile.IACMSkin.css");
 @import url("../../IACMSkin/ToolTip.IACMSkin.css");
 @import url("../../IACMSkin/Widget.IACMSkin.css");
+
+/* bootstrap-select 1.13.x: the wrapper no longer gets .btn-group and the caret is wrapped in .bs-caret,
+   so the .bootstrap-select.btn-group rules in stylesheet.css do not match. Mirror them for the new markup. */
+.bootstrap-select > .dropdown-toggle,
+.bootstrap-select > .dropdown-toggle:focus,
+.bootstrap-select > .dropdown-toggle:active,
+.bootstrap-select.open > .dropdown-toggle {
+    background: #FFF;
+    color: #555;
+    font-weight: 400;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    box-shadow: none;
+    padding-left: 12px;
+}
+
+.bootstrap-select > .dropdown-toggle:hover {
+    background: #FFF;
+    border-color: #207bbd;
+    cursor: pointer;
+}
+
+.bootstrap-select > .dropdown-toggle.disabled,
+.bootstrap-select > .dropdown-toggle.disabled:hover {
+    color: #a7a7a7;
+    border-color: #ddd;
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.bootstrap-select .filter-option-inner-inner {
+    color: #666;
+    font-weight: 400;
+    text-overflow: ellipsis;
+}
+
+.bootstrap-select > .dropdown-toggle .bs-caret .caret {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    margin-top: -11px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    color: #207bbd;
+    border: 0;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+    .bootstrap-select > .dropdown-toggle .bs-caret .caret:before {
+        font-family: 'FontAwesome';
+        content: '\f107';
+    }
+
+.bootstrap-select .dropdown-menu li a {
+    padding: 3px 12px;
+}
+
+.bootstrap-select .dropdown-menu li.selected a {
+    background: #2077bd;
+    color: #FFF;
+}
+
+.bootstrap-select .dropdown-menu li a:hover {
+    background: #FFF;
+    color: #2077bd;
+}
+
+.bootstrap-select .dropdown-menu.inner {
+    max-height: 200px !important;
+}
