@@ -581,8 +581,8 @@ namespace DI.Chakra.DomainApi
             Mapper.CreateMap<DomainModel.EndPointAutoExpiry, Dto.EndPointAutoExpiry>().ReverseMap();
             Mapper.CreateMap<DomainModel.Presentation.PresentationEndPoint, Dto.Presentation.PresentationEndPoint>()
                 .ReverseMap();
-            Mapper.CreateMap<DomainModel.Presentation.PresentationUserEntitlement, Dto.Presentation.PresentationUserEntitlement>()
-                .ReverseMap();
+            //Mapper.CreateMap<DomainModel.Presentation.PresentationUserEntitlement, Dto.Presentation.PresentationUserEntitlement>()
+            //    .ReverseMap();
             Mapper.CreateMap<DomainModel.Presentation.PresentationExceptionReconData, Dto.Presentation.PresentationExceptionReconData>()
                 .ReverseMap();
             Mapper.CreateMap<DomainModel.Presentation.PresentationAccountDetail, Dto.Presentation.PresentationAccountDetail>()

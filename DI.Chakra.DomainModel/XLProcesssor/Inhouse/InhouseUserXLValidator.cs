@@ -21,7 +21,7 @@ namespace DI.Chakra.DomainModel
         public InhouseUserXLValidator()
         {
             var endpointsystemTypeId = (long)DI.Chakra.Infrastructure.Enums.EndpointType.InhouseSystems;
-            nonConnectedEndpoints = EndPoint.Get(t => t.EndpointSystemTypeId == endpointsystemTypeId, false, 0, 0);
+            nonConnectedEndpoints = EndPoint.GetAll().Where(t => t.EndpointSystemTypeId == endpointsystemTypeId).ToList();
             allPermissions = InhousePermission.GetAll();
             isConsiderForInActiveAccount = MasterConfigHelper.ConsiderInActiveAccountForReconcilation;
             mapAllConfiguration = EndpointConfiguration.GetDictionaryByEndpointSystemTypeId(nonConnectedEndpoints.Select(x => x.Id).ToList());

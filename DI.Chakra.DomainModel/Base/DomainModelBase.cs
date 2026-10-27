@@ -124,7 +124,46 @@ namespace DI.Chakra.DomainModel
         {
             using (DataAccessTransaction dataAccessTransaction = new DataAccessTransaction(false))
             {
-                return ORMapList(new RepositoryBase<TEntity>(dataAccessTransaction).Get(Mapper.Map<Expression<Func<TEntity, bool>>>(filter), eagerLoadAllProperties, pageSize, pageNumber).ToList());
+                return ORMapList(new RepositoryBase<TEntity>(dataAccessTransaction).Get(ModelToEntityFilterVisitor.Convert(filter), eagerLoadAllProperties, pageSize, pageNumber).ToList());
+            }
+        }
+
+        /// <summary>
+        /// Rewrites a filter on TModel into the equivalent filter on TEntity by matching property names.
+        /// AutoMapper 4.x did this via Mapper.Map; the upgraded AutoMapper no longer maps expressions.
+        /// </summary>
+        private class ModelToEntityFilterVisitor : ExpressionVisitor
+        {
+            private readonly ParameterExpression modelParameter;
+            private readonly ParameterExpression entityParameter;
+
+            private ModelToEntityFilterVisitor(ParameterExpression modelParameter)
+            {
+                this.modelParameter = modelParameter;
+                entityParameter = Expression.Parameter(typeof(TEntity), modelParameter.Name);
+            }
+
+            public static Expression<Func<TEntity, bool>> Convert(Expression<Func<TModel, bool>> filter)
+            {
+                var visitor = new ModelToEntityFilterVisitor(filter.Parameters[0]);
+                return Expression.Lambda<Func<TEntity, bool>>(visitor.Visit(filter.Body), visitor.entityParameter);
+            }
+
+            protected override Expression VisitParameter(ParameterExpression node)
+            {
+                return node == modelParameter ? entityParameter : base.VisitParameter(node);
+            }
+
+            protected override Expression VisitMember(MemberExpression node)
+            {
+                if (node.Expression == modelParameter)
+                {
+                    var entityProperty = typeof(TEntity).GetProperty(node.Member.Name);
+                    if (entityProperty == null)
+                        throw new NotSupportedException(string.Format("Property '{0}' on {1} has no matching property on {2}.", node.Member.Name, typeof(TModel).Name, typeof(TEntity).Name));
+                    return Expression.Property(entityParameter, entityProperty);
+                }
+                return base.VisitMember(node);
             }
         }
         #endregion

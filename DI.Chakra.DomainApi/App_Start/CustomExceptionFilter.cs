@@ -28,11 +28,15 @@ namespace DI.Chakra.DomainApi
                     exceptionMessage = "Unable to proceed due to child data exists!";
                 }
             }
+            // ReasonPhrase must be a single line and at most 512 chars, or IIS throws while writing the response
+            var reasonPhrase = (exceptionMessage ?? string.Empty).Replace("\r", " ").Replace("\n", " ");
+            if (reasonPhrase.Length > 500)
+                reasonPhrase = reasonPhrase.Substring(0, 500);
             var response = new HttpResponseMessage(HttpStatusCode.InternalServerError)
             {
                 Content = new StringContent("WepApi Exception"),
                 StatusCode = httpStatusCode,
-                ReasonPhrase = exceptionMessage
+                ReasonPhrase = reasonPhrase
             };
             actionExecutedContext.Response = response;
 
