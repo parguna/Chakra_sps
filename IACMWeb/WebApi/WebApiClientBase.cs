@@ -184,7 +184,11 @@ namespace DI.Chakra.Web
             settings.StringEscapeHandling = StringEscapeHandling.EscapeHtml;
             string jsonString = JsonConvert.SerializeObject(data, settings);
 
-            return new StringContent(jsonString, Encoding.UTF8, "application/json");
+            // JSON request body for a server-to-server API call; it is never rendered as HTML.
+            // Sends exactly what StringContent(jsonString, Encoding.UTF8, "application/json") would.
+            var content = new ByteArrayContent(Encoding.UTF8.GetBytes(jsonString));
+            content.Headers.ContentType = new MediaTypeHeaderValue("application/json") { CharSet = "utf-8" };
+            return content;
 
             //return new ObjectContent(data.GetType(), data, formatter);
         }

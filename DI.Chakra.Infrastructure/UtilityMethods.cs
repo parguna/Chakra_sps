@@ -83,8 +83,10 @@ namespace DI.Chakra.Infrastructure
 
         public static string StripLogForgingCharacters(string value)
         {
-            if (string.IsNullOrEmpty(value))
-                return value;
+            // Never return the raw input: every non-null path goes through Replace so the
+            // result is recognised as sanitized (CodeQL cs/log-forging).
+            if (value == null)
+                return null;
 
             return value.Replace("\r", "").Replace("\n", "");
         }

@@ -1,0 +1,6 @@
+name: "CodeQL config"
+
+# .dotnet/ is the .NET SDK that CodeQL downloads into the workspace for
+# build-mode: none. It is not part of this repository and must not be scanned.
+paths-ignore:
+  - .dotnet
