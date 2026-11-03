@@ -115,6 +115,7 @@ namespace DI.Chakra.DBClient
         {
             Database.SetInitializer<IACMDBContext>(null);
             this.Configuration.LazyLoadingEnabled = false;
+            Database.CommandTimeout = AppSettingsHelper.DbCommandTimeout;
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

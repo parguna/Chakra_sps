@@ -60,7 +60,9 @@ function BindControlEvents() {
     });
     //Remove Attributes
     $('.racRemoveTokenLink').attr('title', 'Remove');
-    $(".action-info input[type=image]").attr("src", "");
+    var transparentPixel = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+    $(".action-info input[type=image]").attr("src", transparentPixel);
+    $("input[type=image]").filter(function () { return !$.trim($(this).attr("src") || ""); }).attr("src", transparentPixel);
 }
 
 //Initial bind

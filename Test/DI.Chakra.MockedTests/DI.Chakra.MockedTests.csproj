@@ -1,0 +1,66 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Mocked end-to-end tests for discovery and provisioning.
+    Runs the real processors against the dev database configured in "Solution Items\ConnectionString.config",
+    with every connector replaced by MockConnector (ConnectorFactory.TestConnectorOverride), so no target
+    system (AD, SAP, O365, ...) is ever contacted. Each test creates its own uniquely named endpoint and
+    user and removes everything it created afterwards.
+
+    Build the processors first (they are referenced as built DLLs):
+      msbuild Services\Win\DI.Chakra.Services.Provisioning\DI.Chakra.Services.Provisioning.csproj
+      msbuild Services\Win\Processors\DI.Chakra.Services.DiscoveryProcessor\DI.Chakra.Services.DiscoveryProcessor.csproj
+    Then: dotnet test Test\DI.Chakra.MockedTests
+  -->
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+    <ProvisioningBin>$(MSBuildThisFileDirectory)..\..\Services\Win\DI.Chakra.Services.Provisioning\bin\Debug\</ProvisioningBin>
+    <DiscoveryBin>$(MSBuildThisFileDirectory)..\..\Services\Win\Processors\DI.Chakra.Services.DiscoveryProcessor\bin\Debug\</DiscoveryBin>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="DI.Chakra.Connector"><HintPath>$(ProvisioningBin)DI.Chakra.Connector.dll</HintPath></Reference>
+    <Reference Include="DI.Chakra.Connector.Factory"><HintPath>$(ProvisioningBin)DI.Chakra.Connector.Factory.dll</HintPath></Reference>
+    <Reference Include="DI.Chakra.DomainModel"><HintPath>$(ProvisioningBin)DI.Chakra.DomainModel.dll</HintPath></Reference>
+    <Reference Include="DI.Chakra.Infrastructure"><HintPath>$(ProvisioningBin)DI.Chakra.Infrastructure.dll</HintPath></Reference>
+    <Reference Include="DI.Chakra.Logger"><HintPath>$(ProvisioningBin)DI.Chakra.Logger.dll</HintPath></Reference>
+    <Reference Include="DI.Chakra.EntityModel"><HintPath>$(ProvisioningBin)DI.Chakra.EntityModel.dll</HintPath></Reference>
+    <Reference Include="DI.Chakra.Dto"><HintPath>$(ProvisioningBin)DI.Chakra.Dto.dll</HintPath></Reference>    <Reference Include="DI.Chakra.Services.ProvisioningProcessor"><HintPath>$(ProvisioningBin)DI.Chakra.Services.ProvisioningProcessor.dll</HintPath></Reference>
+    <Reference Include="DI.Chakra.Services.DiscoveryProcessor"><HintPath>$(DiscoveryBin)DI.Chakra.Services.DiscoveryProcessor.dll</HintPath></Reference>
+    <Reference Include="EntityFramework"><HintPath>$(ProvisioningBin)EntityFramework.dll</HintPath></Reference>
+  </ItemGroup>
+
+  <!-- Runtime dependencies of the processors (connectors, EF provider, SAP/AD interop, ...) -->
+  <ItemGroup>
+    <None Include="$(ProvisioningBin)*.dll" Exclude="$(ProvisioningBin)DI.Chakra.Services.Provisioning.exe">
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>false</Visible>
+    </None>
+    <None Include="$(DiscoveryBin)DI.Chakra.Services.DiscoveryProcessor.dll">
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>false</Visible>
+    </None>
+    <None Include="..\..\Solution Items\ConnectionString.config">
+      <Link>ConnectionString.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

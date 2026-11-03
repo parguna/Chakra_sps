@@ -77,6 +77,7 @@ namespace DI.Chakra.Model
         {
             Database.SetInitializer<IACMDBContext>(null);
             Configuration.ProxyCreationEnabled = false;
+            Database.CommandTimeout = AppSettingsHelper.DbCommandTimeout;
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

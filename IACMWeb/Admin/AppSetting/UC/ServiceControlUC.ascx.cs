@@ -5,6 +5,8 @@ using System.ServiceProcess;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using DI.Chakra.Infrastructure.Enums;
+using DI.Chakra.Logger;
 
 namespace DI.Chakra.Web.Admin.AppSetting.UC
 {
@@ -128,18 +130,44 @@ namespace DI.Chakra.Web.Admin.AppSetting.UC
             }
             catch (System.Exception ex)
             {
-
-                throw;
+                ShowServiceUnavailable(ex);
             }
-            
+
         }
+
+        /// <summary>
+        /// The Domain Service (DomainServiceBaseUrl) controls the Windows services. When it can't be reached,
+        /// show the service as unavailable instead of letting the exception take down the whole settings page.
+        /// </summary>
+        private void ShowServiceUnavailable(System.Exception ex)
+        {
+            DILog.UILogger.WriteLog(null, LogLevelType.Error, $"ServiceControlUC: Domain Service call failed for service '{ServiceControllerName}': {ex}");
+            txtSvc.Text = "Unavailable";
+            txtSvc.ForeColor = System.Drawing.Color.Gray;
+            txtSvc.ToolTip = "The Domain Service could not be reached, so the service status is unknown.";
+            lnkSvcStart.Enabled = false;
+            lnkSvcRestart.Enabled = false;
+        }
+
         private void GetServiceStatus()
         {
             Dictionary<string, string> parameter = new Dictionary<string, string>();
             parameter.Add("servicename", ServiceControllerName);
-            ServiceControllerStatus srvcontProcess = DomainServiceClient.GetByAction<ServiceControllerStatus>
-                (DomainServiceAction.AppWinService.RootName, DomainServiceAction.AppWinService.GetServicesStatus, parameter);
+            ServiceControllerStatus srvcontProcess;
+            try
+            {
+                srvcontProcess = DomainServiceClient.GetByAction<ServiceControllerStatus>
+                    (DomainServiceAction.AppWinService.RootName, DomainServiceAction.AppWinService.GetServicesStatus, parameter);
+            }
+            catch (System.Exception ex)
+            {
+                ShowServiceUnavailable(ex);
+                return;
+            }
 
+            lnkSvcStart.Enabled = true;
+            lnkSvcRestart.Enabled = true;
+            txtSvc.ToolTip = string.Empty;
             string serviceStatus = srvcontProcess.ToString();
             if (srvcontProcess == ServiceControllerStatus.Running)
             {
@@ -162,8 +190,16 @@ namespace DI.Chakra.Web.Admin.AppSetting.UC
             parameter.Add("toStartStop", "Restart");
             parameter.Add("serviceName", ServiceControllerName);
             parameter.Add("timeoutMilliseconds", 20000.ToString());
-            DomainServiceClient.GetByAction<string>
-                (DomainServiceAction.AppWinService.RootName, DomainServiceAction.AppWinService.StartStopWinService, parameter);
+            try
+            {
+                DomainServiceClient.GetByAction<string>
+                    (DomainServiceAction.AppWinService.RootName, DomainServiceAction.AppWinService.StartStopWinService, parameter);
+            }
+            catch (System.Exception ex)
+            {
+                ShowServiceUnavailable(ex);
+                return;
+            }
 
             System.Threading.Thread.Sleep(1200);
             GetServiceStatus();

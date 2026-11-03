@@ -296,25 +296,23 @@ public partial class Provisioning_XLUpload_XLUploadUC : DI.Chakra.Web.UIBaseUC
     {
         try
         {
-            string relativePath = "~/";
-            var filename = e.File.FileName;
-            string dirPath = string.Empty;
-            dirPath = MapPath(relativePath) + @"XLUploadFiles\";
-            _path = dirPath + filename;
+            // AllowedFileExtensions="csv" is only enforced in the browser, so check again here and
+            // never save anything else.
+            if (!DI.Chakra.Web.Helpers.UploadHelper.HasAllowedExtension(e.File.FileName, ".csv"))
+            {
+                _path = string.Empty;
+                MasterPage.ShowAlert(AlertType.Error, "File Format is Wrong");
+                return;
+            }
 
+            // Keep uploads in App_Data (never served by IIS) under a server-generated name, so an
+            // upload can't be requested from the site, overwrite another user's file or escape the folder.
+            string dirPath = MapPath("~/App_Data/XLUploadFiles/");
             if (!Directory.Exists(dirPath))
             {
                 Directory.CreateDirectory(dirPath);
             }
-            if (e.File.GetExtension() != ".csv")
-            {
-                MasterPage.ShowAlert(AlertType.Success, "File Format is Wrong");
-            }
-
-            if (File.Exists(_path))
-            {
-                File.Delete(_path);
-            }
+            _path = Path.Combine(dirPath, DI.Chakra.Web.Helpers.UploadHelper.SafeFileName(e.File.FileName));
             e.File.SaveAs(_path, true);
 
         }

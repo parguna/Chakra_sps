@@ -351,8 +351,7 @@ namespace DI.Chakra.Web.NACR.Create.Common
                 PresentationInterimAttachment presentationIterimAttch = new PresentationInterimAttachment();
 
                 Telerik.Web.UI.UploadedFile file = AsyncUploadAttach.UploadedFiles[0];
-                byte[] fileData = new byte[file.ContentLength];
-                file.InputStream.Read(fileData, 0, Convert.ToInt32(file.ContentLength));
+                byte[] fileData = DI.Chakra.Web.Helpers.UploadHelper.ReadAllBytes(file);
                 presentationIterimAttch.FileName = file.FileName;
                 presentationIterimAttch.AttachmentFile = fileData;
                 presentationIterimAttch.ContentType = file.ContentType;

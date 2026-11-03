@@ -184,8 +184,7 @@ namespace DI.Chakra.Web.Admin.Attestation.UC
                         na.AttestationCampaignId = campaignId; // set campaign id
                         na.ContentType = file.ContentType;
                         na.FileName = file.FileName;
-                        byte[] fileData = new byte[file.ContentLength];
-                        file.InputStream.Read(fileData, 0, Convert.ToInt32(file.ContentLength));
+                        byte[] fileData = DI.Chakra.Web.Helpers.UploadHelper.ReadAllBytes(file);
                         na.AttachmentFile = fileData;
                         na.CreatedBy = CurrentUserName;
                         attachments.Add(na);

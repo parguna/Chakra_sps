@@ -95,7 +95,7 @@ namespace DI.Chakra.Web.Comp.Bulk.UploadExceptions.UC
                     if (RadUploadFile.UploadedFiles.Count > 0)
                         foreach (UploadedFile file in RadUploadFile.UploadedFiles)
                         {
-                            fileName = file.GetName();
+                            fileName = DI.Chakra.Web.Helpers.UploadHelper.SafeFileName(file.GetName());
                             string filExtension = file.GetExtension();
                             if (filExtension == ".csv")
                             {

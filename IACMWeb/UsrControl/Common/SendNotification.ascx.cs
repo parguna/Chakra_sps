@@ -104,8 +104,7 @@ namespace DI.Chakra.Web.UsrControl.Common
                     NotificationAttachment na = new NotificationAttachment();
                     na.ContentType = file.ContentType;
                     na.FileName = file.FileName;
-                    byte[] fileData = new byte[file.ContentLength];
-                    file.InputStream.Read(fileData, 0, Convert.ToInt32(file.ContentLength));
+                    byte[] fileData = DI.Chakra.Web.Helpers.UploadHelper.ReadAllBytes(file);
                     na.Attachment = fileData;
                     attachments.Add(na);
                 }

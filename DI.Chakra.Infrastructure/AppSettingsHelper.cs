@@ -13,6 +13,22 @@ namespace DI.Chakra.Infrastructure
                 return Convert.ToString(ConfigurationManager.AppSettings["Connection"]);
             }
         }
+
+        /// <summary>
+        /// Command timeout (seconds) for Entity Framework queries. Read from the optional
+        /// "DbCommandTimeout" appSetting; defaults to 300 when missing or invalid.
+        /// EF's built-in default is 30s, which long upload/download queries exceed.
+        /// </summary>
+        public static int DbCommandTimeout
+        {
+            get
+            {
+                int timeout;
+                return int.TryParse(ConfigurationManager.AppSettings["DbCommandTimeout"], out timeout) && timeout >= 0
+                    ? timeout
+                    : 300;
+            }
+        }
         public static string DatabaseConnectionString
         {
             get

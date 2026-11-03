@@ -241,6 +241,7 @@ namespace DI.Chakra.Web.CustomControl
         protected override void OnInit(EventArgs e)
         {
             EnableRowOnDemandVS = true;
+            SafeRadGrid.ApplyDefaultImagesPath(this);
             base.OnInit(e);
             gridcustom = this;
             gridcustom.PreRender += gridControl_PreRender;
@@ -1030,6 +1031,7 @@ namespace DI.Chakra.Web.CustomControl
             if (e.CommandName == "Cancel")
             {
                 EnableRowOnDemandVS = true;
+                SafeRadGrid.ApplyDefaultImagesPath(this);
             }
         }
 

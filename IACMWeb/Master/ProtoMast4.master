@@ -397,7 +397,7 @@ width:50% !important;
             <uc1:accesspanel runat="server" id="AccessPanel" onaccessactionclicked="AccessPanel_ActionClicked1" />
         </form>
     </div>
-    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/js/Custom.js")%>"></script>
+    <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/assets/js/Custom.js")%>?v=2"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             var pageUrlDomain = location.protocol + "//" + location.host;

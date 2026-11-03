@@ -9,8 +9,19 @@ namespace DI.Chakra.Connector
 {
     public class ConnectorFactory
     {
+        /// <summary>
+        /// Test hook. When set, every connector request (discovery, provisioning, password services)
+        /// is answered by this function instead of creating a real connector, so automated tests can
+        /// run the full flow against a mock without touching AD, SAP, O365 or any other target system.
+        /// Always null in production; nothing in the product sets it.
+        /// </summary>
+        public static System.Func<EndPoint, AccessRequest, IdmsLogger, ConnectorBase> TestConnectorOverride { get; set; }
+
         public static ConnectorBase GetConnector(EndPoint endpoint, AccessRequest currentRequest, IdmsLogger logger = null)
         {
+            if (TestConnectorOverride != null)
+                return TestConnectorOverride(endpoint, currentRequest, logger);
+
             ConnectorBase connector = null;
 
             if (endpoint.EndPointSystemType == null)

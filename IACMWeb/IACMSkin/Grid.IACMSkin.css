@@ -285,7 +285,7 @@
 }
 
 .RadGrid_IACMSkin .rgDrag {
-    background-image: url('../Images/Grid/rgDrag.gif');
+    background-image: url('Grid/rgDrag.gif');
     width: 25px;
     height: 25px;
 }
@@ -860,7 +860,7 @@ div.RadMenu_IACMSkin_Context .rlbGroup {
 }
 
 .GridContextMenu_IACMSkin .rmLeftImage {
-    background-image: url('"../Images/Grid/contextMenu.gif');
+    background-image: url('Grid/contextMenu.gif');
 }
 
 .GridContextMenu_IACMSkin .rgHCMSortAsc .rmLeftImage {

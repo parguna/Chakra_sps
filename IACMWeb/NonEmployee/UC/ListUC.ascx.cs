@@ -311,8 +311,7 @@ namespace DI.Chakra.Web.Non_Employee.UC
             {
                 Telerik.Web.UI.UploadedFile file = AsyncUploadAttach.UploadedFiles[0];
                 UserAttachment attach = new UserAttachment();
-                byte[] fileData = new byte[file.ContentLength];
-                file.InputStream.Read(fileData, 0, Convert.ToInt32(file.ContentLength));
+                byte[] fileData = DI.Chakra.Web.Helpers.UploadHelper.ReadAllBytes(file);
                 attach.FileName = file.FileName;
                 attach.AttachmentFile = fileData;
                 attach.UserId = userobj.Id;

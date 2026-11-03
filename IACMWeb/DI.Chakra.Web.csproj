@@ -3039,6 +3039,8 @@
     <Content Include="assets\styles\Menu.css" />
     <Content Include="assets\styles\stylesheet.css" />
     <Content Include="assets\styles\Upload.css" />
+    <Content Include="assets\styles\Common\Upload\AsyncProgress.gif" />
+    <Content Include="assets\styles\Common\Upload\AsyncStates.png" />
     <Content Include="assets\styles\Window.css" />
     <Content Include="Dashboard\TasksUC.ascx" />
     <Content Include="Global.asax" />
@@ -4847,6 +4849,9 @@
     <Compile Include="CustomControl\IACMGridCommandItemTemplate.cs" />
     <Compile Include="CustomControl\IACMRadDateTimePicker.cs" />
     <Compile Include="CustomControl\IACMRadGridControl.cs" />
+    <Compile Include="CustomControl\SafeImageButton.cs" />
+    <Compile Include="CustomControl\SafeRadGrid.cs" />
+    <Compile Include="Helpers\UploadHelper.cs" />
     <Compile Include="Dashboard\AccessRequestProgressstatusbyMonthByAdmin.ascx.cs">
       <DependentUpon>AccessRequestProgressstatusbyMonthByAdmin.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

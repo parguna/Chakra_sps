@@ -126,16 +126,31 @@ namespace DI.Chakra.Web.Comp.Mitigation.Common
             }
             else if (this.FileUpload.HasFile)
             {
-                try
+                string originalName = Path.GetFileName(this.FileUpload.FileName);
+                if (!DI.Chakra.Web.Helpers.UploadHelper.HasAllowedExtension(originalName, DI.Chakra.Web.Helpers.UploadHelper.DocumentExtensions))
                 {
-                    string fileName = Path.GetFileName(this.FileUpload.FileName);
-                    this.FileUpload.SaveAs(Server.MapPath("~/") + fileName);
-                    SODMitigation.DocumentName = String.IsNullOrEmpty(this.DocumentName.Text) ? fileName : this.DocumentName.Text;
-                    SODMitigation.DocumentUploadedPath = this.FileUpload.PostedFile != null ? this.FileUpload.PostedFile.FileName : 
-                        this.FileUpload.FileName;
+                    ShowAlertMessage(DI.Chakra.Infrastructure.AlertType.Error, "Document type not allowed. Allowed: " + string.Join(", ", DI.Chakra.Web.Helpers.UploadHelper.DocumentExtensions));
+                    SODMitigation.DocumentUploadedPath = FilePath;
                 }
-                catch (System.Web.HttpException ex)
+                else
                 {
+                    try
+                    {
+                        // Store outside the served web root: App_Data is never served by IIS, so an uploaded
+                        // file can't be requested or executed. The server-generated name prevents overwrites
+                        // and path traversal.
+                        string storedName = DI.Chakra.Web.Helpers.UploadHelper.SafeFileName(originalName);
+                        string relativePath = "~/App_Data/MitigationDocuments/" + storedName;
+                        Directory.CreateDirectory(Server.MapPath("~/App_Data/MitigationDocuments/"));
+                        this.FileUpload.SaveAs(Server.MapPath(relativePath));
+                        SODMitigation.DocumentName = String.IsNullOrEmpty(this.DocumentName.Text) ? originalName : this.DocumentName.Text;
+                        SODMitigation.DocumentUploadedPath = relativePath;
+                    }
+                    catch (System.Web.HttpException)
+                    {
+                        ShowAlertMessage(DI.Chakra.Infrastructure.AlertType.Error, "The document could not be uploaded.");
+                        SODMitigation.DocumentUploadedPath = FilePath;
+                    }
                 }
             }
             else

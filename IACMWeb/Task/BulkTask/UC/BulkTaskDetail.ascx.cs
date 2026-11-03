@@ -1598,8 +1598,7 @@ namespace DI.Chakra.Web.Task.BulkTask.UC
                     attachment.FileName = file.FileName;
                     attachment.AccessRequestId = Convert.ToInt64(this.Task.BulkRequestId);
                     attachment.ContentType = file.ContentType;
-                    byte[] fileData = new byte[file.ContentLength];
-                    file.InputStream.Read(fileData, 0, Convert.ToInt32(file.ContentLength));
+                    byte[] fileData = DI.Chakra.Web.Helpers.UploadHelper.ReadAllBytes(file);
                     attachment.AttachmentFile = fileData;
                     attachments.Add(attachment);
                 }
