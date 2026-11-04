@@ -24,6 +24,9 @@ namespace DI.Chakra.Connector
         string today = DateTime.Today.ToString(SF_Helper.DateFormat);
         readonly string _url;
         readonly SF_Authenticator _authenticator;
+        // Set once the first OData / upsert request of this connector instance has logged its Authorization scheme.
+        int _odataSchemeLogged;
+        int _upsertSchemeLogged;
         readonly SFOData.EntityContainer _entityContainer;
         readonly DI.Chakra.DomainModel.EndPoint _endPoint;
         readonly string MasterConfigHelperServiceUser;
@@ -69,7 +72,9 @@ namespace DI.Chakra.Connector
             _entityContainer.SendingRequest2 += (sender, e) =>
             {
                 //_idmsLogger.WriteLog(LogLevelType.DebugStep, e.RequestMessage.Url.Query);
-                e.RequestMessage.SetHeader("Authorization", _authenticator.GetAuthorizationHeader());
+                string authorization = _authenticator.GetAuthorizationHeader();
+                LogSchemeOnce(ref _odataSchemeLogged, "OData", authorization);
+                e.RequestMessage.SetHeader("Authorization", authorization);
                 e.RequestMessage.SetHeader("Pragma", $"no-cache");
             };
 
@@ -124,12 +129,25 @@ namespace DI.Chakra.Connector
         SF_Authenticator getAuthenticator()
         {
             var settings = SF_AuthenticationSettings.FromConfiguration(key => SF_Helper.Config(key, _endpointConfiguration));
+            _idmsLogger.WriteLog(LogLevelType.Info,
+                UtilityMethods.StripLogForgingCharacters($"{settings.DescribeForLog()} Endpoint '{_endPoint.DisplayName}' (id {_endPoint.Id})."));
+
             if (settings.AuthenticationType != SF_AuthenticationType.OAuth)
                 return new SF_Authenticator(settings);
 
             int timeoutSeconds = MasterConfigHelper.SFAPITimeoutDuration;
-            var tokenProvider = new SF_OAuthTokenProvider(settings, timeout: timeoutSeconds > 0 ? TimeSpan.FromSeconds(timeoutSeconds) : (TimeSpan?)null);
+            var tokenProvider = new SF_OAuthTokenProvider(settings,
+                                                          timeout: timeoutSeconds > 0 ? TimeSpan.FromSeconds(timeoutSeconds) : (TimeSpan?)null,
+                                                          logInfo: message => _idmsLogger.WriteLog(LogLevelType.Info, message));
             return new SF_Authenticator(settings, tokenProvider, message => _idmsLogger.WriteLog(LogLevelType.Warning, message));
+        }
+
+        /// <summary>Logs only the scheme (Bearer/Basic) of the first request of each kind; never the credentials.</summary>
+        void LogSchemeOnce(ref int logged, string requestKind, string authorizationHeader)
+        {
+            if (System.Threading.Interlocked.Exchange(ref logged, 1) == 0)
+                _idmsLogger.WriteLog(LogLevelType.Info, UtilityMethods.StripLogForgingCharacters(
+                    $"SuccessFactors {requestKind} requests use {SF_Authenticator.GetScheme(authorizationHeader)} authentication."));
         }
 
 
@@ -613,7 +631,9 @@ namespace DI.Chakra.Connector
             HttpWebRequest request = WebRequest.CreateHttp(uri);
             request.ContentType = "application/json";
             request.Method = "POST";
-            request.Headers.Set("Authorization", _authenticator.GetAuthorizationHeader());
+            string authorization = _authenticator.GetAuthorizationHeader();
+            LogSchemeOnce(ref _upsertSchemeLogged, "upsert", authorization);
+            request.Headers.Set("Authorization", authorization);
 
             using (var streamWriter = new StreamWriter(request.GetRequestStream()))
             {

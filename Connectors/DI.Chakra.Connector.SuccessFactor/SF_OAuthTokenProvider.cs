@@ -47,19 +47,26 @@ namespace DI.Chakra.Connector
         readonly HttpMessageHandler _httpHandler;
         readonly TimeSpan _timeout;
         readonly Func<DateTime> _utcNow;
+        readonly Action<string> _logInfo;
         readonly string _cacheKey;
 
+        /// <param name="logInfo">
+        /// Optional diagnostic log, called each time a NEW token is fetched (not for cached tokens).
+        /// Messages never contain the token, the assertion or key material.
+        /// </param>
         public SF_OAuthTokenProvider(SF_AuthenticationSettings settings,
                                      Func<RSA> signingKeyProvider = null,
                                      HttpMessageHandler httpHandler = null,
                                      TimeSpan? timeout = null,
-                                     Func<DateTime> utcNow = null)
+                                     Func<DateTime> utcNow = null,
+                                     Action<string> logInfo = null)
         {
             _settings = settings;
             _signingKeyProvider = signingKeyProvider ?? (() => SF_CertificateStore.GetSigningKey(settings.CertificateThumbprint));
             _httpHandler = httpHandler;
             _timeout = timeout ?? TimeSpan.FromSeconds(100);
             _utcNow = utcNow ?? (() => DateTime.UtcNow);
+            _logInfo = logInfo ?? (_ => { });
             _cacheKey = string.Join("|", settings.TokenUrl, settings.CompanyId, settings.ClientId, settings.UserId,
                                     SF_CertificateStore.NormalizeThumbprint(settings.CertificateThumbprint));
         }
@@ -113,6 +120,7 @@ namespace DI.Chakra.Connector
             string assertion;
             using (RSA signingKey = _signingKeyProvider())
             {
+                Log($"SuccessFactors OAuth certificate {SF_CertificateStore.MaskThumbprint(_settings.CertificateThumbprint)} loaded (RSA {signingKey.KeySize} bit).");
                 try
                 {
                     assertion = BuildSignedAssertion(_settings, signingKey, now);
@@ -122,6 +130,7 @@ namespace DI.Chakra.Connector
                     throw new SF_AuthenticationException("SuccessFactors OAuth assertion could not be signed with RSA-SHA256. If the key was imported into a legacy CSP, re-import the PFX into the Microsoft Software Key Storage Provider.", ex);
                 }
             }
+            Log($"SuccessFactors OAuth SAML assertion generated and signed (RSA-SHA256, {assertion.Length} characters, valid until {FormatSamlDate(now + AssertionLifetime)}).");
 
             var form = new FormUrlEncodedContent(new[]
             {
@@ -181,7 +190,16 @@ namespace DI.Chakra.Connector
                 refreshAt = now + lifetime - margin;
             }
 
+            Log(refreshAt.HasValue
+                ? $"SuccessFactors OAuth token request successful (HTTP {(int)statusCode}, expires in {expiresIn} s)."
+                : $"SuccessFactors OAuth token request successful (HTTP {(int)statusCode}, no expiry given; token is not cached).");
+
             return new CachedToken { AccessToken = accessToken, RefreshAtUtc = refreshAt };
+        }
+
+        void Log(string message)
+        {
+            _logInfo(UtilityMethods.StripLogForgingCharacters(message));
         }
 
         static string SanitizeErrorBody(string body)
@@ -327,6 +345,13 @@ namespace DI.Chakra.Connector
             }
 
             throw new SF_AuthenticationException($"SuccessFactors OAuth certificate {normalized} was not found in LocalMachine\\My or CurrentUser\\My.");
+        }
+
+        /// <summary>Thumbprint shortened for logs, e.g. "1F0F...6F5C" (enough to match it in certlm.msc).</summary>
+        public static string MaskThumbprint(string thumbprint)
+        {
+            string normalized = NormalizeThumbprint(thumbprint);
+            return normalized.Length <= 8 ? normalized : normalized.Substring(0, 4) + "..." + normalized.Substring(normalized.Length - 4);
         }
 
         /// <summary>Removes spaces and hidden characters copied from the certificate MMC, and upper-cases the result.</summary>

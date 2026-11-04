@@ -103,6 +103,25 @@ namespace DI.Chakra.Connector
             if (!string.Equals(GrantType, SF_OAuthTokenProvider.SamlBearerGrantType, StringComparison.Ordinal))
                 throw new SF_AuthenticationException($"SuccessFactors OAuth Grant Type is not supported. Only '{SF_OAuthTokenProvider.SamlBearerGrantType}' is supported.");
         }
+
+        /// <summary>
+        /// One-line description of the selected authentication for the diagnostic log.
+        /// Never includes the password; the client ID and certificate thumbprint are shortened.
+        /// </summary>
+        public string DescribeForLog()
+        {
+            string message = AuthenticationType == SF_AuthenticationType.OAuth
+                ? $"SuccessFactors authentication: OAuth (certificate) selected. User ID {UserId}, company {CompanyId}, token URL {TokenUrl}, " +
+                  $"client ID {MaskEnd(ClientId)}, certificate {SF_CertificateStore.MaskThumbprint(CertificateThumbprint)}."
+                : $"SuccessFactors authentication: Basic selected. User {UserId}@{CompanyId}.";
+            return UtilityMethods.StripLogForgingCharacters(message);
+        }
+
+        static string MaskEnd(string value)
+        {
+            value = value ?? string.Empty;
+            return value.Length <= 6 ? "***" : "..." + value.Substring(value.Length - 6);
+        }
     }
 
     /// <summary>
@@ -138,6 +157,15 @@ namespace DI.Chakra.Connector
                 return _basicHeader;
 
             return $"Bearer {_tokenProvider.GetAccessToken()}";
+        }
+
+        /// <summary>Only the scheme of an Authorization header ("Bearer" or "Basic"), safe to log; never the credentials.</summary>
+        public static string GetScheme(string authorizationHeader)
+        {
+            if (string.IsNullOrWhiteSpace(authorizationHeader))
+                return "no";
+            int space = authorizationHeader.IndexOf(' ');
+            return space <= 0 ? "unknown" : authorizationHeader.Substring(0, space);
         }
 
         /// <summary>
