@@ -143,5 +143,10 @@ namespace DI.Chakra.Infrastructure.Enums
         SNCNameSuffix = 72,
         SNCParameterName = 73,
         IsPaginationEnabled = 74, //Added
+        SF_EnableOAuth = 75,
+        SF_BaseCompanyUrl = 76,
+        SF_ClientId = 77,
+        SF_CertificateThumbprint = 78,
+        SF_GrantType = 79,
     }
 }

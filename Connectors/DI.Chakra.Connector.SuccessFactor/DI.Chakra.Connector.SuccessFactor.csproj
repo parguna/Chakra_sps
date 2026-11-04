@@ -78,6 +78,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -91,7 +92,10 @@
     <Compile Include="Objects\SF_FODivision.cs" />
     <Compile Include="Objects\SF_Organisation.cs" />
     <Compile Include="Objects\SF_User.cs" />
+    <Compile Include="SF_Authentication.cs" />
     <Compile Include="SF_Helper.cs" />
+    <Compile Include="SF_OAuthTokenProvider.cs" />
+    <Compile Include="SF_RetryingRequestMessage.cs" />
     <Compile Include="SF_ServiceReference.cs" />
     <Compile Include="SF_UpsertResult.cs" />
     <Compile Include="SuccessFactor.cs" />

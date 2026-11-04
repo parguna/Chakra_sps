@@ -22,10 +22,8 @@ namespace DI.Chakra.Connector
     public class SuccessFactorConnector : ConnectorBase
     {
         string today = DateTime.Today.ToString(SF_Helper.DateFormat);
-        readonly string _userName;
-        readonly string _decrpytedPassword;
         readonly string _url;
-        readonly string _base64Creds;
+        readonly SF_Authenticator _authenticator;
         readonly SFOData.EntityContainer _entityContainer;
         readonly DI.Chakra.DomainModel.EndPoint _endPoint;
         readonly string MasterConfigHelperServiceUser;
@@ -50,17 +48,13 @@ namespace DI.Chakra.Connector
 
             _endpointConfiguration = EndpointConfiguration.GetByEndpointSystemId(endpoint.Id);
 
-            _userName = getUserName();
-
-            _decrpytedPassword = getPassword();
-
             _url = getUrl();
 
-
-            _base64Creds = getBaseCredential();
+            _authenticator = getAuthenticator();
 
             _entityContainer = new SFOData.EntityContainer(new Uri(_url));
             _entityContainer.Timeout = MasterConfigHelper.SFAPITimeoutDuration;
+            _entityContainer.Configurations.RequestPipeline.OnMessageCreating = args => new SF_RetryingRequestMessage(args, _authenticator);
             _entityContainer.BuildingRequest += (sender, e) =>
             {
 
@@ -75,7 +69,7 @@ namespace DI.Chakra.Connector
             _entityContainer.SendingRequest2 += (sender, e) =>
             {
                 //_idmsLogger.WriteLog(LogLevelType.DebugStep, e.RequestMessage.Url.Query);
-                e.RequestMessage.SetHeader("Authorization", $"Basic {_base64Creds}");
+                e.RequestMessage.SetHeader("Authorization", _authenticator.GetAuthorizationHeader());
                 e.RequestMessage.SetHeader("Pragma", $"no-cache");
             };
 
@@ -122,26 +116,20 @@ namespace DI.Chakra.Connector
         #endregion Container
 
         #region Connection 
-        string getUserName()
-        {
-            return $"{SF_Helper.Config(EndpointKey.UserName, _endpointConfiguration)}@{SF_Helper.Config(EndpointKey.SF_Company, _endpointConfiguration)}";
-        }
-
-        string getPassword()
-        {
-            return RSAHelper.DecryptData(SF_Helper.Config(EndpointKey.Password, _endpointConfiguration));
-        }
-
         string getUrl()
         {
             return SF_Helper.Config(EndpointKey.WSDLURL, _endpointConfiguration);
         }
 
-        string getBaseCredential()
+        SF_Authenticator getAuthenticator()
         {
-            string creds = $"{_userName}:{_decrpytedPassword}";
-            byte[] bcreds = Encoding.ASCII.GetBytes(creds);
-            return Convert.ToBase64String(bcreds);
+            var settings = SF_AuthenticationSettings.FromConfiguration(key => SF_Helper.Config(key, _endpointConfiguration));
+            if (settings.AuthenticationType != SF_AuthenticationType.OAuth)
+                return new SF_Authenticator(settings);
+
+            int timeoutSeconds = MasterConfigHelper.SFAPITimeoutDuration;
+            var tokenProvider = new SF_OAuthTokenProvider(settings, timeout: timeoutSeconds > 0 ? TimeSpan.FromSeconds(timeoutSeconds) : (TimeSpan?)null);
+            return new SF_Authenticator(settings, tokenProvider, message => _idmsLogger.WriteLog(LogLevelType.Warning, message));
         }
 
 
@@ -613,29 +601,19 @@ namespace DI.Chakra.Connector
 
         #region Update & Delimit Methods
 
-        HttpWebRequest GetHttpPostMethod(JObject rss, bool isPurgeTypeFull = false)
+        /// <summary>Posts to upsert; with OAuth a 401 is retried once with a new token.</summary>
+        HttpWebResponse PostUpsert(JToken rss, bool isPurgeTypeFull = false)
         {
-            var uri = new Uri(this._entityContainer.BaseUri, (isPurgeTypeFull ? "upsert?purgeType=full" : "upsert"));
-            HttpWebRequest request = WebRequest.CreateHttp(uri);
-            request.ContentType = "application/json";
-            request.Method = "POST";
-            request.Headers.Set("Authorization", $"Basic {_base64Creds}");
-
-            using (var streamWriter = new StreamWriter(request.GetRequestStream()))
-            {
-                streamWriter.Write(rss.ToString());
-            }
-
-            return request;
+            return _authenticator.Send(() => GetHttpPostMethod(rss, isPurgeTypeFull));
         }
 
-        HttpWebRequest GetHttpPostMethod(JArray rss, bool isPurgeTypeFull = false)
+        HttpWebRequest GetHttpPostMethod(JToken rss, bool isPurgeTypeFull = false)
         {
             var uri = new Uri(this._entityContainer.BaseUri, (isPurgeTypeFull ? "upsert?purgeType=full" : "upsert"));
             HttpWebRequest request = WebRequest.CreateHttp(uri);
             request.ContentType = "application/json";
             request.Method = "POST";
-            request.Headers.Set("Authorization", $"Basic {_base64Creds}");
+            request.Headers.Set("Authorization", _authenticator.GetAuthorizationHeader());
 
             using (var streamWriter = new StreamWriter(request.GetRequestStream()))
             {
@@ -667,9 +645,7 @@ namespace DI.Chakra.Connector
                         new JProperty("status", status)
                             );
 
-                HttpWebRequest request = GetHttpPostMethod(rss);
-
-                var httpResponse = (HttpWebResponse)request.GetResponse();
+                var httpResponse = PostUpsert(rss);
                 string result = string.Empty;
                 using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
                 {
@@ -726,9 +702,7 @@ namespace DI.Chakra.Connector
                        new JProperty("isPrimary", true)
                            );
 
-                HttpWebRequest request = GetHttpPostMethod(rss, true);
-
-                var httpResponse = (HttpWebResponse)request.GetResponse();
+                var httpResponse = PostUpsert(rss, true);
 
                 string result = string.Empty;
                 using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
@@ -820,9 +794,7 @@ namespace DI.Chakra.Connector
                       new JProperty("phoneType", phonetype)
                           ));
 
-                HttpWebRequest request = GetHttpPostMethod(rss, true);
-
-                var httpResponse = (HttpWebResponse)request.GetResponse();
+                var httpResponse = PostUpsert(rss, true);
 
                 string result = string.Empty;
                 using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
@@ -905,9 +877,7 @@ namespace DI.Chakra.Connector
                       new JProperty("phoneType", phone.phoneType)));
                 }
 
-                HttpWebRequest request = GetHttpPostMethod(rss, true);
-
-                var httpResponse = (HttpWebResponse)request.GetResponse();
+                var httpResponse = PostUpsert(rss, true);
 
                 string result = string.Empty;
                 using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))

@@ -242,6 +242,11 @@ namespace DI.Chakra.Web.Admin.Endpoint.Common
                     {
 
                     }
+                    if (endpointType == EndpointType.SuccessFactor && Configuration.EndpointConfigurationKey.KeyName == EndpointKey.SF_EnableOAuth.ToString())
+                    {
+                        CheckBox.AutoPostBack = true;
+                        CheckBox.CheckedChanged += new EventHandler(CheckBox_SFOAuthCheckedChanged);
+                    }
                     Div.Attributes.Add("class", "col-xs-4");
                     Div.Controls.Add(CheckBox);
                     HtmlGenericControl span = new HtmlGenericControl("span");
@@ -362,6 +367,10 @@ namespace DI.Chakra.Web.Admin.Endpoint.Common
                                     {
                                     }
                                 }
+
+                                CheckBox chkEnableSFOAuth = (CheckBox)FormLeftHorizontal.FindControl(EndpointKey.SF_EnableOAuth.ToString() + "Field");
+                                if (chkEnableSFOAuth != null)
+                                    SetSuccessFactorsConfiguration(chkEnableSFOAuth.Checked);
                             }
                         }
                     break;
@@ -756,8 +765,46 @@ namespace DI.Chakra.Web.Admin.Endpoint.Common
                     txtSNCParameterName.Enabled = chkSAPEnableSSO.Checked;
                 }
             }
-            catch 
+            catch
             {
+            }
+        }
+        protected void CheckBox_SFOAuthCheckedChanged(object sender, EventArgs e)
+        {
+            SetSuccessFactorsConfiguration(((CheckBox)sender).Checked);
+        }
+
+        /// <summary>
+        /// SuccessFactors OAuth: the OAuth fields become required and Password becomes optional (OAuth never uses it).
+        /// With OAuth off, Password goes back to its configured IsRequired (Basic authentication is unchanged).
+        /// Password stays visible in both modes, so a stored Basic password is kept on save.
+        /// </summary>
+        private void SetSuccessFactorsConfiguration(bool enableOAuth)
+        {
+            EndpointKey[] oAuthRequiredKeys = { EndpointKey.SF_BaseCompanyUrl, EndpointKey.SF_ClientId, EndpointKey.SF_CertificateThumbprint };
+            foreach (EndpointKey key in oAuthRequiredKeys)
+                SetFieldRequired(key, enableOAuth);
+
+            var passwordConfiguration = ControlSource.FirstOrDefault(lq => lq.EndpointConfigurationKey.KeyName == EndpointKey.Password.ToString());
+            SetFieldRequired(EndpointKey.Password, !enableOAuth && passwordConfiguration != null && passwordConfiguration.IsRequired);
+        }
+
+        private void SetFieldRequired(EndpointKey key, bool isRequired)
+        {
+            TextBox textBox = (TextBox)FormLeftHorizontal.FindControl(key.ToString() + "Field");
+            HtmlGenericControl div = (HtmlGenericControl)FormLeftHorizontal.FindControl(key + "divformgroup");
+            if (textBox == null || div == null)
+                return;
+
+            if (isRequired)
+            {
+                textBox.Attributes.Add("required", "required");
+                div.Attributes.Add("class", "form-group required");
+            }
+            else
+            {
+                textBox.Attributes.Remove("required");
+                div.Attributes.Add("class", "form-group");
             }
         }
     }

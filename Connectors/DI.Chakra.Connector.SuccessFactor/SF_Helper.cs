@@ -32,6 +32,12 @@ namespace DI.Chakra.Connector
             return config != null ? config.Value : "";
         }
 
+        /// <summary>dd/MM/yyyy with "/" regardless of the server culture.</summary>
+        public static string FormatNotificationDate(DateTime date)
+        {
+            return date.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+        }
+
         public static NOrganisation GetOrganisation(List<NOrganisation> organisations, string orgCode)
         {
             return organisations.FirstOrDefault(c => c.Code == orgCode);

@@ -147,6 +147,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="SqlScripts\ProdFix\SSID_Report_Fix_240710.sql" />
     <Content Include="SqlScripts\SAPHANA_EBS\2. Script.sql" />
+    <Content Include="SqlScripts\SuccessFactorsOAuth\SuccessFactorsOAuth.sql" />
     <Content Include="SqlScripts\CR_032024\AttestationSprint4.sql" />
     <Content Include="SqlScripts\CR_032024\AttestationSprint3 -Hotfix.sql" />
     <Content Include="SqlScripts\CR_032024\AttestationSprint3.sql" />

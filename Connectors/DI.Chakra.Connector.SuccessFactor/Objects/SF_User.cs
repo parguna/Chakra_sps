@@ -1896,7 +1896,7 @@ namespace DI.Chakra.Connector.SF.Objects
                         try
                         {
                             //Production Fix 2844
-                            ProvisioningUtility.ProvisioningEmailHelper.NotifyInactiveEmployeeEvent(orgChangeTrack.EmployeeId, orgChangeTrack.Event.ToString(), orgChangeTrack.EffectiveDate.ToString("dd/MM/yyyy"), existingEvent.Id.ToString());
+                            ProvisioningUtility.ProvisioningEmailHelper.NotifyInactiveEmployeeEvent(orgChangeTrack.EmployeeId, orgChangeTrack.Event.ToString(), SF_Helper.FormatNotificationDate(orgChangeTrack.EffectiveDate), existingEvent.Id.ToString());
                         }
                         catch
                         {
