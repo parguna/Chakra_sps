@@ -79,6 +79,10 @@ namespace DI.Chakra.DomainService.Controllers
             {
                 ServiceController service = ServiceController.GetServices().Where(t => t.ServiceName == servicename).FirstOrDefault();
 
+                // Service not installed on this machine (e.g. a developer PC): same result as before, without throwing.
+                if (service == null)
+                    return ServiceControllerStatus.ContinuePending;
+
                 ServiceControllerStatus scStatus = service.Status;
 
                 return scStatus;
